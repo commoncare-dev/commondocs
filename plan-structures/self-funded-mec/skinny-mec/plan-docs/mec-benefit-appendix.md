@@ -7,13 +7,14 @@ version: "1.0"
 jurisdiction: United States
 parent_document: CommonCare Welfare Benefit Plan — Core Plan Document
 related_product: plan.self-funded-skinny-mec
+context_schema: ./self-funded-mec-plan-document-context.schema.json
 ---
 
 # Self-Funded Skinny MEC Benefit Appendix
 
-Version: 1.0  
-Benefit Appendix Number: [●]  
-Effective Date: [●]
+Version: ${extensions.selfFundedMec.document.version}<br>
+Benefit Appendix Number: ${extensions.selfFundedMec.document.appendixNumber}<br>
+Effective Date: ${extensions.selfFundedMec.document.effectiveDate|dateLong}
 
 ---
 
@@ -29,31 +30,27 @@ This Appendix establishes a self-funded group health benefit designed to provide
 
 # Schedule A — Employer elections
 
-The Employer must complete this schedule when adopting the Appendix.
+This schedule records the normalized plan and benefit configuration used to generate the Appendix.
 
-| Plan term | Employer election                                                   |
-|---|---------------------------------------------------------------------|
-| Employer | ${Legal name}                                                       |
-| Plan Administrator | ${Name and contact information}                                     |
-| Plan Year | ${Beginning date] through [Ending date}                             |
-| Effective Date | [Date]                                                              |
-| Eligible employee class | [Class]                                                             |
-| Waiting period | [None / description, not exceeding applicable limits]               |
-| Enrollment tier | Employee-only coverage                                              |
-| Employer contribution | [Amount or formula]                                                 |
-| Employee contribution | [Amount or formula]                                                 |
-| Contribution method | [Employer-paid / pre-tax payroll / after-tax payroll / combination] |
-| Intended MEC status | Yes                                                                 |
-| Intended minimum-value status | No                                                                  |
-| Intended HDHP status | [Yes / No]                                                          |
-| Self-only HDHP deductible, if applicable | $[●]                                                                |
-| Family HDHP deductible, if applicable | Not applicable to employee-only coverage unless amended             |
-| Self-only out-of-pocket maximum, if applicable | $[●]                                                                |
-| Claims submission contact | [●]                                                                 |
-| Provider-navigation and approval contact | [●]                                                                 |
-| Appeals contact | [●]                                                                 |
-| COBRA or continuation administrator, if applicable | [●]                                                                 |
-| Adopted optional benefits | [None / identify Schedule C elections]                              |
+| Plan term | Employer election |
+|---|---|
+| Employer | ${sponsor.legalName} |
+| Plan Administrator | ${administration.planAdministrator.name}; ${administration.planAdministrator.contact.formatted} |
+| Plan Year | ${plan.year.startDate|dateLong} through ${plan.year.endDate|dateLong} |
+| Effective Date | ${extensions.selfFundedMec.document.effectiveDate|dateLong} |
+| Eligible employee class | ${eligibility.defaultClass.description} |
+| Waiting period | ${eligibility.defaultWaitingPeriod.description} |
+| Enrollment tier | ${extensions.selfFundedMec.enrollmentTier|titleCase} |
+| Intended MEC status | ${extensions.selfFundedMec.isMec|yesNo} |
+| Intended minimum-value status | ${extensions.selfFundedMec.isMv|yesNo} |
+| Intended HDHP status | ${extensions.selfFundedMec.isHdhp|yesNo} |
+| Self-only HDHP deductible, if applicable | ${extensions.selfFundedMec.hdhp.selfOnlyDeductible|currencyUSDOrDash} |
+| Family HDHP deductible, if applicable | Not applicable to employee-only coverage unless amended |
+| Self-only out-of-pocket maximum, if applicable | ${extensions.selfFundedMec.hdhp.selfOnlyOutOfPocketMaximum|currencyUSDOrDash} |
+| Claims submission contact | ${administration.serviceContacts.claims.formatted} |
+| Provider-navigation and approval contact | ${administration.serviceContacts.providerNavigation.formatted} |
+| Appeals contact | ${administration.serviceContacts.appeals.formatted} |
+| COBRA or continuation administrator, if applicable | ${administration.serviceContacts.continuation.formatted} |
 
 Amounts intended to satisfy Internal Revenue Code §223 must be tested against the indexed requirements for the applicable calendar year before adoption and at each renewal.
 
@@ -146,9 +143,9 @@ The Plan's network consists of Approved Providers willing to furnish Covered Ser
 
 The Plan may establish the Approved Amount using:
 
-- A direct or bundled agreement;
-- A published cash price;
-- A negotiated cash price;
+- A direct or bundled agreement; such agreements will be published and accessible to all participants;
+- A published cash price; such prices will be published and accessible to all participants;
+- A negotiated cash price; timely negotiations will be performed for services with no acceptable in-network provider available. 
 - A second-lowest bona fide negotiable cash price available from comparable qualified providers in the geographic market;
 - A stated percentage of the applicable Medicare amount; or
 - Another reasonable method documented before the service is furnished.
@@ -270,12 +267,9 @@ The following current schedules are incorporated into this Appendix. A schedule 
 
 | Schedule | Version or effective date | Location or custodian |
 |---|---|---|
-| Preventive Services and Claims Schedule | [●] | [●] |
-| Approved Provider and Price Schedule | [●] | [●] |
-| Health Benefit Claims and Appeals Procedure | [●] | [●] |
-| Coordination of Benefits Procedure | [●] | [●] |
-| Privacy Notice and Procedures | [●] | [●] |
-| Summary of Benefits and Coverage | [●] | [●] |
+${#each extensions.selfFundedMec.operationalSchedules as schedule}
+| ${schedule.name} | ${schedule.version}; effective ${schedule.effectiveDate|dateLong} | ${schedule.location} |
+${/each}
 
 ---
 
@@ -285,17 +279,6 @@ No optional benefit is adopted unless described below or in an attached schedule
 
 | Optional benefit | Covered terms | Deductible and participant cost | Effective date |
 |---|---|---|---|
-| [None / benefit name] | [●] | [●] | [●] |
-
----
-
-# Execution
-
-The Employer adopts this Appendix and the completed schedules identified above as part of the Plan.
-
-Employer: [Legal name]  
-By: [Authorized signer]  
-Title: [●]  
-Signature: ______________________________  
-Date: [●]
-
+${#each extensions.selfFundedMec.optionalBenefits as optionalBenefit}
+| ${optionalBenefit.name} | ${optionalBenefit.coveredTerms} | ${optionalBenefit.deductibleAndParticipantCost} | ${optionalBenefit.effectiveDate|dateLong} |
+${/each}
