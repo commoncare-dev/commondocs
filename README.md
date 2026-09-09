@@ -4,7 +4,9 @@
 
 CommonCare gives employers, plan professionals, and healthcare innovators the structures and tools they need to build better health plans without surrendering control to insurance carriers or legacy networks.
 
-This repository documents the concepts, data structures, administrative processes, and integration standards that make that possible.
+This repository documents the concepts, data structures, administrative processes, and integration standards that make that possible. Thousands of pages of regulation are written on these concepts. Thousands of pages are written as web content regarding how to interpret that regulation. That content rarely, if ever, serves the purposes of outlining how to practically implement real-world plan structures that are both compliant and provide practical value in improving health plans.
+
+This guide is meant to be both a human and AI readable data store that enables real implementation of the concepts herein.
 
 ## 🧭 What a group health plan actually is
 
