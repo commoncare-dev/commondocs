@@ -2,7 +2,7 @@
 
 **An open documentation repo for creating and administering group health plans.**
 
-CommonCare gives employers, plan professionals, and healthcare innovators the structures and tools they need to build better health plans—without surrendering control to insurance carriers or legacy networks.
+CommonCare gives employers, plan professionals, and healthcare innovators the structures and tools they need to build better health plans without surrendering control to insurance carriers or legacy networks.
 
 This repository documents the concepts, data structures, administrative processes, and integration standards that make that possible.
 
