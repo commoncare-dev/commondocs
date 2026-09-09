@@ -1,0 +1,287 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/plan-document-context.schema.json",
+  "title": "CommonCare Plan Document Context",
+  "description": "Canonical input supplied to every CommonCare plan-document template.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "sponsor",
+    "plan",
+    "administration",
+    "eligibility",
+    "benefits",
+    "adoption",
+    "extensions"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "sponsor": {
+      "$ref": "#/$defs/sponsor"
+    },
+    "plan": {
+      "$ref": "#/$defs/plan"
+    },
+    "administration": {
+      "$ref": "#/$defs/administration"
+    },
+    "eligibility": {
+      "$ref": "#/$defs/eligibility"
+    },
+    "benefits": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/benefitReference"
+      }
+    },
+    "adoption": {
+      "$ref": "#/$defs/adoption"
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Registered coverage-specific schemas keyed by stable camelCase names.",
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "custom": {
+      "type": "object",
+      "description": "Explicit escape hatch for sponsor-specific fields that do not belong in the common schema.",
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "address": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formatted", "countryCode"],
+      "properties": {
+        "line1": { "type": "string" },
+        "line2": { "type": "string" },
+        "city": { "type": "string" },
+        "region": { "type": "string" },
+        "postalCode": { "type": "string" },
+        "countryCode": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "formatted": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formatted"],
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "phone": { "type": "string" },
+        "website": {
+          "type": "string",
+          "format": "uri"
+        },
+        "formatted": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "party": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "address": {
+          "$ref": "#/$defs/address"
+        },
+        "contact": {
+          "$ref": "#/$defs/contact"
+        }
+      }
+    },
+    "sponsor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["legalName", "ein", "address"],
+      "properties": {
+        "id": { "type": "string" },
+        "legalName": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "ein": {
+          "type": "string",
+          "pattern": "^\\d{2}-\\d{7}$"
+        },
+        "address": {
+          "$ref": "#/$defs/address"
+        }
+      }
+    },
+    "plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "erisaPlanNumber",
+        "originalEffectiveDate",
+        "effectiveDate",
+        "year"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "erisaPlanNumber": {
+          "type": "string",
+          "pattern": "^\\d{3}$"
+        },
+        "originalEffectiveDate": {
+          "$ref": "#/$defs/date"
+        },
+        "effectiveDate": {
+          "$ref": "#/$defs/date"
+        },
+        "year": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["startDate", "endDate"],
+          "properties": {
+            "startDate": {
+              "$ref": "#/$defs/date"
+            },
+            "endDate": {
+              "$ref": "#/$defs/date"
+            }
+          }
+        }
+      }
+    },
+    "administration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "planAdministrator",
+        "agentForServiceOfProcess",
+        "namedFiduciary"
+      ],
+      "properties": {
+        "planAdministrator": {
+          "$ref": "#/$defs/party"
+        },
+        "agentForServiceOfProcess": {
+          "$ref": "#/$defs/party"
+        },
+        "namedFiduciary": {
+          "$ref": "#/$defs/party"
+        }
+      }
+    },
+    "eligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["defaultClass", "defaultWaitingPeriod"],
+      "properties": {
+        "defaultClass": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "description"],
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            "description": {
+              "$ref": "#/$defs/nonEmptyString"
+            }
+          }
+        },
+        "defaultWaitingPeriod": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["description"],
+          "properties": {
+            "description": {
+              "$ref": "#/$defs/nonEmptyString"
+            }
+          }
+        }
+      }
+    },
+    "benefitReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "documentId", "version", "effectiveDate", "status"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "documentId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "effectiveDate": {
+          "$ref": "#/$defs/date"
+        },
+        "terminationDate": {
+          "$ref": "#/$defs/date"
+        },
+        "status": {
+          "enum": ["draft", "adopted", "amended", "terminated", "retired"]
+        }
+      }
+    },
+    "adoption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method"],
+      "properties": {
+        "method": {
+          "enum": ["platform", "written-instrument", "resolution", "other"]
+        },
+        "recordId": { "type": "string" },
+        "acceptedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "acceptedBy": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "userId": { "type": "string" },
+            "name": { "type": "string" },
+            "title": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

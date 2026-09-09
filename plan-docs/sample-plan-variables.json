@@ -1,0 +1,108 @@
+{
+  "$schema": "./schemas/self-funded-mec-plan-document-context.schema.json",
+  "schemaVersion": "1.0.0",
+  "sponsor": {
+    "id": "sponsor.example-company",
+    "legalName": "Example Company, Inc.",
+    "ein": "12-3456789",
+    "address": {
+      "line1": "100 Main Street",
+      "line2": "Suite 200",
+      "city": "Columbus",
+      "region": "OH",
+      "postalCode": "43215",
+      "countryCode": "US",
+      "formatted": "100 Main Street, Suite 200, Columbus, OH 43215"
+    }
+  },
+  "plan": {
+    "id": "plan.example-company-welfare",
+    "name": "Example Company CommonCare Welfare Benefit Plan",
+    "erisaPlanNumber": "501",
+    "originalEffectiveDate": "2027-01-01",
+    "effectiveDate": "2027-01-01",
+    "year": {
+      "startDate": "2027-01-01",
+      "endDate": "2027-12-31"
+    }
+  },
+  "administration": {
+    "planAdministrator": {
+      "name": "Example Company, Inc.",
+      "address": {
+        "line1": "100 Main Street",
+        "line2": "Suite 200",
+        "city": "Columbus",
+        "region": "OH",
+        "postalCode": "43215",
+        "countryCode": "US",
+        "formatted": "100 Main Street, Suite 200, Columbus, OH 43215"
+      },
+      "contact": {
+        "email": "benefits@example.com",
+        "phone": "(555) 555-0100",
+        "formatted": "benefits@example.com; (555) 555-0100"
+      }
+    },
+    "agentForServiceOfProcess": {
+      "name": "Example Company, Inc.",
+      "address": {
+        "line1": "100 Main Street",
+        "line2": "Suite 200",
+        "city": "Columbus",
+        "region": "OH",
+        "postalCode": "43215",
+        "countryCode": "US",
+        "formatted": "100 Main Street, Suite 200, Columbus, OH 43215"
+      }
+    },
+    "namedFiduciary": {
+      "name": "Example Company, Inc."
+    }
+  },
+  "eligibility": {
+    "defaultClass": {
+      "id": "class.full-time-employees",
+      "description": "All common-law employees regularly scheduled to work at least 30 hours per week"
+    },
+    "defaultWaitingPeriod": {
+      "description": "Coverage begins on the first day of the month following 30 days of employment"
+    }
+  },
+  "benefits": [
+    {
+      "id": "benefit.self-funded-skinny-mec",
+      "name": "Self-Funded Skinny MEC",
+      "documentId": "plan-document.benefit-appendix.self-funded-skinny-mec",
+      "version": "1.0",
+      "effectiveDate": "2027-01-01",
+      "status": "adopted"
+    }
+  ],
+  "adoption": {
+    "method": "platform",
+    "recordId": "adoption.example-2027-plan",
+    "acceptedAt": "2026-12-15T15:00:00Z",
+    "acceptedBy": {
+      "userId": "user.example-authorized-sponsor",
+      "name": "Jordan Example",
+      "title": "Chief Executive Officer"
+    }
+  },
+  "extensions": {
+    "selfFundedMec": {
+      "enrollmentTier": "employee-only",
+      "isMec": true,
+      "isMv": false,
+      "isHdhp": true,
+      "hdhp": {
+        "calendarYear": 2027,
+        "currency": "USD",
+        "selfOnlyDeductible": 1700,
+        "selfOnlyOutOfPocketMaximum": 8500
+      },
+      "operationalSchedules": []
+    }
+  },
+  "custom": {}
+}

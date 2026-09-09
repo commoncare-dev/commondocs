@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/extensions/self-funded-mec.schema.json",
+  "title": "Self-Funded Skinny MEC Plan-Document Extension",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["enrollmentTier", "isMec", "isMv", "isHdhp"],
+  "properties": {
+    "enrollmentTier": {
+      "enum": ["single", "family"]
+    },
+    "isMec": { "type": "boolean" },
+    "isMv": { "type": "boolean" },
+    "isHdhp": { "type": "boolean" },
+    "hdhp": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["calendarYear", "currency", "selfOnlyDeductible", "selfOnlyOutOfPocketMaximum"],
+      "properties": {
+        "calendarYear": { "type": "integer", "minimum": 2000 },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "selfOnlyDeductible": { "type": "number", "minimum": 0 },
+        "selfOnlyOutOfPocketMaximum": { "type": "number", "minimum": 0 },
+        "familyDeductible": { "type": "number", "minimum": 0 },
+        "familyOutOfPocketMaximum": { "type": "number", "minimum": 0 }
+      }
+    },
+    "operationalSchedules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "version", "effectiveDate"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "version": { "type": "string", "minLength": 1 },
+          "effectiveDate": { "type": "string", "format": "date" },
+          "location": { "type": "string" }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "isHdhp": { "const": true } },
+        "required": ["isHdhp"]
+      },
+      "then": { "required": ["hdhp"] }
+    }
+  ]
+}
