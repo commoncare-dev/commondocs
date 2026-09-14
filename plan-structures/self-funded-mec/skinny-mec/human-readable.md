@@ -2,9 +2,6 @@
 id: plan.self-funded-skinny-mec
 title: Self-Funded Skinny MEC Plan
 kind: plan-design
-status: draft
-jurisdiction: United States
-effective_context: "2026"
 owners:
   - CommonCare
 aliases:
@@ -502,9 +499,6 @@ It should be judged against the purpose it claims—not against a promise it nev
 id: compliance.preventive-services-inventory
 title: Preventive Services Inventory and Cost Model
 kind: compliance-inventory
-status: draft
-jurisdiction: United States
-effective_context: "Plan years beginning in 2026"
 owners:
 - CommonCare
   related:

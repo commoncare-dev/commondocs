@@ -9,7 +9,6 @@ source_sha256: 7f01eda26c6dcb0aacdb96515d3ad20702fc1d67d8ffc5bcfa397de05510cd8d
 generation_method: deterministic-markdown-conversion
 canonical_source: false
 jurisdiction: United States
-effective_context: 2026
 last_reviewed: 2026-09-08
 ---
 
@@ -669,9 +668,6 @@ It should be judged against the purpose it claims—not against a promise it nev
 id: compliance.preventive-services-inventory
 title: Preventive Services Inventory and Cost Model
 kind: compliance-inventory
-status: draft
-jurisdiction: United States
-effective_context: "Plan years beginning in 2026"
 owners:
 - CommonCare
   related:

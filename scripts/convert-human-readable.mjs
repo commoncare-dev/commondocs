@@ -115,8 +115,6 @@ source_commit: ${sourceCommit}
 source_sha256: ${sourceSha256}
 generation_method: deterministic-markdown-conversion
 canonical_source: false
-jurisdiction: ${getScalar("jurisdiction", "United States")}
-effective_context: ${getScalar("effective_context", '"2026"')}
 last_reviewed: ${getScalar("last_reviewed", "unknown")}
 ---
 
