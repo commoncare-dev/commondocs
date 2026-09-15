@@ -1,22 +1,4 @@
----
-id: plan.self-funded-skinny-mec
-title: Self-Funded Skinny MEC Plan
-kind: plan-design
-owners:
-  - CommonCare
-aliases:
-  - skinny MEC
-  - preventive-only MEC
-  - self-funded MEC
-related:
-  - concept.minimum-essential-coverage
-  - concept.minimum-value
-  - concept.high-deductible-health-plan
-  - compliance.phs-act-2713
-last_reviewed: 2026-09-08
----
-
-# Self-Funded Skinny MEC Plan
+# Self-Funded MEC Plan
 
 > **A narrowly focused, self-funded group health plan designed to provide minimum essential coverage, deliver required preventive care, and—when structured correctly - support HSA eligibility at a low monthly cost.**
 
@@ -50,7 +32,7 @@ Secondarily this plan also offers great access to basic healthcare on a tax-free
 
 Not every health plan can (or should) try to cover everything.
 
-Expansive major medical coverage protects against a broad range of healthcare costs, but it cannot also be extraordinarily inexpensive. A skinny MEC has a different job. It is laser-focused on:
+Expansive major medical coverage protects against a broad range of healthcare costs, but it cannot also be extraordinarily inexpensive. A basic MEC has a different job. It is laser-focused on:
 
 1. Establishing minimum essential coverage;
 2. Complying with the federal market reforms that apply to the plan;
@@ -116,7 +98,7 @@ Minimum value answers another:
 
 > **Does this employer plan provide a sufficiently broad and substantial level of coverage?**
 
-A plan generally provides minimum value when it pays at least 60% of the total allowed cost of benefits expected for a standard population **and** provides substantial coverage of inpatient hospitalization and physician services. A skinny MEC that intentionally excludes broad hospital and physician coverage will ordinarily not provide minimum value. [IRS minimum-value guidance](https://www.irs.gov/affordable-care-act/employers/minimum-value-and-affordability)
+A plan generally provides minimum value when it pays at least 60% of the total allowed cost of benefits expected for a standard population **and** provides substantial coverage of inpatient hospitalization and physician services. A basic MEC that intentionally excludes broad hospital and physician coverage will ordinarily not provide minimum value. [IRS minimum-value guidance](https://www.irs.gov/affordable-care-act/employers/minimum-value-and-affordability)
 
 | Standard | What it measures | Does this design target it? |
 |---|---|---|
@@ -222,7 +204,7 @@ For contraceptive coverage, for example, plans may generally use reasonable medi
 
 >This process cannot make it cumbersome to obtain care, it is in place a matter of protecting plan assets for all participants. Reasonable concessions must be made for bona fide preventive care requests that arise, even if a pre-negotiated network doesn't exist for all services.
 
->A skinny MEC may use a narrow network, direct contracts, reference-based pricing, or other price controls, provided the actual arrangement complies with §2713 and all other applicable law.
+>A basic MEC may use a narrow network, direct contracts, reference-based pricing, or other price controls, provided the actual arrangement complies with §2713 and all other applicable law.
 
 The central network rule is:
 
@@ -349,7 +331,7 @@ To contribute to an HSA, an individual generally must:
 
 For 2026, the general HDHP minimum deductible is **$1,700 for self-only coverage** and **$3,400 for family coverage**, and the maximum out-of-pocket limit is **$8,500 for self-only coverage** and **$17,000 for family coverage**. These amounts are indexed and must be refreshed annually. [IRS Publication 15-B (2026)](https://www.irs.gov/publications/p15b)
 
-An HDHP may provide federally recognized preventive care before the deductible without destroying HSA eligibility. That makes preventive-focused MEC and an HDHP potentially complementary. The plan documents must nevertheless establish all HDHP elements; “skinny MEC” is not itself an IRS-recognized substitute for the HDHP test.
+An HDHP may provide federally recognized preventive care before the deductible without destroying HSA eligibility. That makes preventive-focused MEC and an HDHP potentially complementary. The plan documents must nevertheless establish all HDHP elements; “basic MEC” is not itself an IRS-recognized substitute for the HDHP test.
 
 **Non preventive services covered under the plan must be subject to a high deductible.**
 
@@ -358,7 +340,7 @@ This is a feature, not a bug. It serves to further de-risk the plan and hold pre
 
 ## 8. What the plan may cover beyond the minimum
 
-A skinny MEC can be creative and valuable without pretending to be major medical coverage.
+A basic MEC can be creative and valuable without pretending to be major medical coverage.
 
 Potential additions include:
 
@@ -412,7 +394,7 @@ Potential structures include participant enrollment in a separately qualifying D
 
 ## 9. Participant communication and required documents
 
-A self-funded skinny MEC must be communicated as the plan it actually is: useful, deliberately narrow coverage—not comprehensive major medical insurance.
+A self-funded basic MEC must be communicated as the plan it actually is: useful, deliberately narrow coverage—not comprehensive major medical insurance.
 
 At minimum, implementation should address:
 
@@ -466,7 +448,7 @@ The CommonCare implementation should turn this design into a versioned set of co
 
 ## Design position
 
-> A self-funded skinny MEC is not failed major medical coverage. It is a different tool for a different job.
+> A self-funded basic MEC is not failed major medical coverage. It is a different tool for a different job.
 
 Used honestly and administered well, it can:
 
@@ -502,7 +484,7 @@ kind: compliance-inventory
 owners:
 - CommonCare
   related:
-- plan.self-funded-skinny-mec
+- plan.self-funded-basic-mec
 - compliance.phs-act-2713
   source_of_truth:
 - USPSTF A and B Recommendations
@@ -788,7 +770,7 @@ The Bright Futures periodicity schedule is a visit-by-visit matrix from prenatal
 
 Bright Futures requirements are especially sensitive to age, interval, risk, and state newborn-screening rules. The final adjudication matrix should reproduce the official periodicity schedule at the service-rule level rather than using this human summary as the claims rule.
 
-# Part V — Risk map for a skinny MEC
+# Part V — Risk map for a basic MEC
 
 ## Predictable, readily procurable services
 
