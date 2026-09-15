@@ -1,32 +1,41 @@
 # Self-Funded MEC Plan
 
-> **A narrowly focused, self-funded group health plan designed to provide minimum essential coverage, deliver required preventive care, and—when structured correctly - support HSA eligibility at a low monthly cost.**
+A narrowly focused, self-funded group health plan designed to provide minimum essential coverage, deliver required preventive care, and—when structured correctly—support HSA eligibility at a low monthly cost.
 
-## Primary Purpose
-The primary purpose of this plan is to satsify the minimum requirments for offering a group health plan AND to create HSA eligibility - something that otherwise often requires sacrificing extra premium dollars to inefficient or trivial plan offerings. 
+## Find what you need
 
-It is good to remember that a participant looking for HSA eligibility can sign up just a single participant in the plan to reduce premiums. A plan can also restrict enrollment to employee participants if desired for simplicity. 
+| If you want to… | Start here |
+| --- | --- |
+| Understand the plan | [At a glance](#at-a-glance) · [Design thesis](#the-design-thesis) |
+| Understand MEC and employer requirements | [MEC](#1-mec-means-minimum-essential-coverage) · [Minimum value](#2-mec-is-not-minimum-value) · [Penalty B](#3-penalty-b-is-a-separate-employer-decision) |
+| Explore coverage and provider access | [Preventive care](#5-the-core-coverage-requirement-phs-act-2713) · [Network and price controls](#network-and-price-controls) |
+| Evaluate HSA compatibility | [HSA design test](#7-hsa-compatibility-is-a-separate-design-test) · [Additional benefits](#8-what-the-plan-may-cover-beyond-the-minimum) |
+| Prepare implementation | [Required documents](#9-participant-communication-and-required-documents) · [Implementation model](#10-commoncare-implementation-model) |
+| Look up services and costs | [Appendix A: Service inventory](#appendix-a-inventory-of-preventive-services) · [Appendix B: Pricing](#appendix-b-pricing-guidelines) |
+
+## Primary purpose
+
+The primary purpose of this plan is to satisfy the minimum requirements for offering a group health plan AND to create HSA eligibility - something that otherwise often requires sacrificing extra premium dollars to inefficient or trivial plan offerings.
+
+It is good to remember that a participant looking for HSA eligibility can sign up just a single participant in the plan to reduce premiums. A plan can also restrict enrollment to employee participants if desired for simplicity.
 
 Secondarily this plan also offers great access to basic healthcare on a tax-free basis, fully self fundable by even small employers due to fully definable risk because the covered services are finite, priceable, and measurable.
 
 ## At a glance
 
-| Question | Answer                                                                                                                                  |
-|---|-----------------------------------------------------------------------------------------------------------------------------------------|
-| Is this a group health plan? | Yes                                                                                                                                     |
-| Is it minimum essential coverage? | Generally, yes, when properly established as an eligible employer-sponsored self-funded group health plan                               |
-| Must it comply with the ACA market reforms? | Yes, unless a specific exception applies                                                                                                |
-| Must it cover §2713 preventive services without cost sharing? | Yes, if it is non-grandfathered                                                                                                         |
-| Must it provide minimum value? | No. MEC and minimum value are separate standards                                                                                        |
-| Is it major medical coverage? | No, not in the design described here                                                                                                    |
-| Does it automatically make someone HSA-eligible? | No. The coverage must also satisfy the federal HDHP rules, and the person must have no disqualifying other coverage                     |
+| Question | Answer |
+| --- | --- |
+| Is this a group health plan? | Yes |
+| Is it minimum essential coverage? | Generally, yes, when properly established as an eligible employer-sponsored self-funded group health plan |
+| Must it comply with the ACA market reforms? | Yes, unless a specific exception applies |
+| Must it cover §2713 preventive services without cost sharing? | Yes, if it is non-grandfathered |
+| Must it provide minimum value? | No. MEC and minimum value are separate standards |
+| Is it major medical coverage? | No, not in the design described here |
+| Does it automatically make someone HSA-eligible? | No. The coverage must also satisfy the federal HDHP rules, and the person must have no disqualifying other coverage |
 | Can it still be useful? | Yes. It can provide valuable basic care, satisfy important regulatory objectives, and serve as an HSA-compatible foundation at low cost |
 
 > [!WARNING]
-> This is a product-design reference, not a finalized plan document or a legal opinion. Implentation requires coordination with the full group sponsored plan.
-
-### Appendix A: Lists an inventory of required preventive services last updated September 2026
-### Appendix B: Gives pricing recommendations for premiums on a sef-funded basis
+> This is a product-design reference, not a finalized plan document or a legal opinion. Implementation requires coordination with the full group sponsored plan.
 
 ## The design thesis
 
@@ -57,7 +66,6 @@ Many compliance problems become serious because a plan is unresponsive, not beca
 This document provides means of technical compliance that are practically reachable. Federal regulation of group health plans is not generally a preclearance regime in which an enforcement team collects every plan document and searches for theoretical network inadequacies before the plan can operate. Enforcement more often arises from real complaints, reporting, audits, investigations, and evidence of fraud or actual harm.
 
 You can do this. Much of the law is written to constrain circumstances in which a behemoth insurer or administrator might squash an individual participant. In real life, you can be responsive and reasonable—and that operating posture avoids many of the failures that produce adverse outcomes.
-
 
 ## 1. MEC means minimum essential coverage
 
@@ -101,7 +109,7 @@ Minimum value answers another:
 A plan generally provides minimum value when it pays at least 60% of the total allowed cost of benefits expected for a standard population **and** provides substantial coverage of inpatient hospitalization and physician services. A basic MEC that intentionally excludes broad hospital and physician coverage will ordinarily not provide minimum value. [IRS minimum-value guidance](https://www.irs.gov/affordable-care-act/employers/minimum-value-and-affordability)
 
 | Standard | What it measures | Does this design target it? |
-|---|---|---|
+| --- | --- | --- |
 | Minimum essential coverage | Whether coverage qualifies as MEC | **Yes** |
 | ACA market-reform compliance | Whether the plan obeys applicable federal coverage rules | **Yes** |
 | Minimum value | Breadth and actuarial value, including substantial hospital and physician coverage | **No** |
@@ -157,7 +165,7 @@ Other federal obligations may also apply, depending on the sponsor and plan, inc
 For this product, §2713 is not a footnote. It defines the central covered benefit.
 
 > [!NOTE]
-> See the companion [Preventive Services Inventory and Cost Model](./preventive-services-inventory.md) for a human-readable enumeration of current services, likely recipients, and working cash or 120%-of-Medicare procurement targets.
+> See [Appendix A: Preventive Services Inventory and Cost Model](#appendix-a-inventory-of-preventive-services) for a human-readable enumeration of current services, likely recipients, and working cash or 120%-of-Medicare procurement targets.
 
 A non-grandfathered group health plan must cover specified recommended preventive items and services **without cost sharing**. No cost sharing means no deductible, copayment, or coinsurance when the service is furnished consistently with the applicable recommendation and the plan's lawful network and medical-management rules.
 
@@ -166,7 +174,7 @@ A non-grandfathered group health plan must cover specified recommended preventiv
 The required schedule is dynamic. It is assembled from four federal sources:
 
 | Source | Required recommendations or guidelines |
-|---|---|
+| --- | --- |
 | U.S. Preventive Services Task Force | Evidence-based items and services with an **A** or **B** rating |
 | CDC Advisory Committee on Immunization Practices | Immunizations recommended for routine use and adopted by the CDC |
 | HRSA-supported guidelines for infants, children, and adolescents | Preventive care and screenings not already captured by the USPSTF framework |
@@ -198,13 +206,13 @@ For contraceptive coverage, for example, plans may generally use reasonable medi
 
 ⚠️ CRITICAL: This is the real practical implementation issue for this plan.
 
->**TL;DR for this section:**
+> **TL;DR for this section:**
 >
->The plan should have a list of core services with published prices that establish a cost-based (anything $65 or below is considered in-network for this service, otherwise you pay the excess) network for said services. This will create the primary plan traffic and control costs intentionally. For conditional recommendations and expensive procedures, the plan should maintain a "wait and see" approach where nuanced action is taken in response to needs that arise.
+> The plan should have a list of core services with published prices that establish a cost-based (anything $65 or below is considered in-network for this service, otherwise you pay the excess) network for said services. This will create the primary plan traffic and control costs intentionally. For conditional recommendations and expensive procedures, the plan should maintain a "wait and see" approach where nuanced action is taken in response to needs that arise.
 
->This process cannot make it cumbersome to obtain care, it is in place a matter of protecting plan assets for all participants. Reasonable concessions must be made for bona fide preventive care requests that arise, even if a pre-negotiated network doesn't exist for all services.
+> This process cannot make it cumbersome to obtain care, it is in place a matter of protecting plan assets for all participants. Reasonable concessions must be made for bona fide preventive care requests that arise, even if a pre-negotiated network doesn't exist for all services.
 
->A basic MEC may use a narrow network, direct contracts, reference-based pricing, or other price controls, provided the actual arrangement complies with §2713 and all other applicable law.
+> A basic MEC may use a narrow network, direct contracts, reference-based pricing, or other price controls, provided the actual arrangement complies with §2713 and all other applicable law.
 
 The central network rule is:
 
@@ -212,8 +220,6 @@ The central network rule is:
 - If the network has no provider who can furnish the required service, the plan must cover the service out of network without cost sharing.
 
 A network cannot be merely theoretical. Participants need a practical way to identify and access the providers through whom the plan promises no-cost preventive services. [DOL ACA FAQ Part XII](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/aca-part-12)
-
-
 
 <details>
 <summary><strong>Read the controlling federal guidance</strong></summary>
@@ -254,8 +260,8 @@ Using the second-lowest price instead of the absolute lowest reduces dependence 
 Cash-price care is readily available and priceable through many channels, including direct conversations with medical providers. For less common or more complex services on the preventive schedule, requiring a prompt cash-price approval process need not be cumbersome if CommonCare performs the procurement work and presents the participant with a usable option.
 
 > [!IMPORTANT]
-> Cash price networks ensure there are real providers who offer acceptable services for procedures. This is signficantly stronger than an arbitrary reference like percentage of Medicare. 
-> As stated in the beginning of this document, the real key is to handle claims with sense and humanity. There is time to consider the compliance of any decision in real time, with the facts present. Attempting theoretical document-based compliance is a formula for failure both technically and experientially. 
+> Cash price networks ensure there are real providers who offer acceptable services for procedures. This is significantly stronger than an arbitrary reference like percentage of Medicare.
+> As stated in the beginning of this document, the real key is to handle claims with sense and humanity. There is time to consider the compliance of any decision in real time, with the facts present. Attempting theoretical document-based compliance is a formula for failure both technically and experientially.
 
 Federal reference-pricing guidance emphasizes adequate access to quality providers and warns that reference pricing cannot operate as a subterfuge for otherwise prohibited coverage limitations. It also states that satisfying the reference-pricing guidance under PHS Act §2707(b) does not itself establish compliance with §2713. [CMS, ACA Implementation FAQs Part XXI](https://www.cms.gov/CCIIO/Resources/Fact-Sheets-and-FAQs/Downloads/Reference_Pricing_FAQ_101014.pdf)
 
@@ -286,7 +292,7 @@ Reference pricing is not merely a reimbursement formula. Properly implemented, i
 
 A preventive-focused plan is low-cost because most scheduled services are predictable and can be actively purchased. That does not make its liability risk-free.
 
-### ⚠️ Potiential high-cost procedure: Colorectal-cancer screening
+### Potential high-cost procedure: Colorectal-cancer screening
 
 The USPSTF recognizes multiple screening strategies, including high-sensitivity guaiac fecal occult-blood testing, fecal immunochemical testing, stool DNA-FIT, colonoscopy, CT colonography, and flexible sigmoidoscopy for applicable populations. A plan may be able to use reasonable medical management where the recommendation leaves room to do so. [USPSTF colorectal-cancer recommendation](https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening)
 
@@ -297,25 +303,26 @@ The correct operational strategy is therefore to procure both stages:
 - A convenient, low-cost initial screening pathway; and
 - A contracted, navigated, fairly priced follow-up-colonoscopy pathway. As of late 2026, $1,000 - $1,300 is broadly available in most markets. Far short of the frequent $10,000 hospital bills for this procedure, and not a confounding risk for the plan.
 
-### ⚠️ Potiential high-cost procedure: Female sterilization procedures
+### Potential high-cost procedure: Female sterilization procedures
 
 The HRSA-supported Women's Preventive Services Guidelines include the full range of female-controlled FDA-approved contraceptive methods, effective family-planning practices, and sterilization procedures. This can create a concentrated surgical exposure within an otherwise predictable preventive-only design. [HRSA Women's Preventive Services Guidelines](https://www.hrsa.gov/womens-guidelines)
 
 CommonCare's working design estimate is that a sterilization claim may create approximately **$5,000–$8,000** of plan expense even with strong reference-based pricing or other controls. That figure is a pricing assumption to validate against actual contracts and claims data; it is not a statutory amount or universal market price.
 
-The main risk deterrent for this procedure is the natural fact that women don't want to be cut open and have their reproductive organs modified for fun. The real-world utilization is low. 
+The main risk deterrent for this procedure is the natural fact that women don't want to be cut open and have their reproductive organs modified for fun. The real-world utilization is low.
 
-The best steps to de-risk are: 
+The best steps to de-risk are:
 - Modify premiums for women in the target age for this procedure
-- Obtain a direct agreement with a provider whom the plan can pay in full quickly for services if needed. This can often be done for well below market estimates, establish a legitimate "in-network" provider that allows boxing-out the risk of more expensive services being obtained. 
+- Obtain a direct agreement with a provider whom the plan can pay in full quickly for services if needed. This can often be done for well below market estimates, establish a legitimate "in-network" provider that allows boxing-out the risk of more expensive services being obtained.
 
 > A commercial-claims analysis reported approximately 2.9 procedures per 10,000 women per month in late 2022, which loosely annualizes to approximately 0.35% before adjusting for seasonality or repeat counting. If your group is small, one claim could blow your percentage up - but with a cap of $4,000-8,000 of risk.
 > https://pmc.ncbi.nlm.nih.gov/articles/PMC12303756/
 
-
-> [⚠️ KEY PRACTICAL UNDERSTANDING]
+> [!IMPORTANT]
+> **Key practical understanding**
+>
 > Low utilization may reduce expected cost. The plan document, SPD, SBC, provider information, and participant communications must accurately describe coverage and the conditions for obtaining it. The plan does not need to advertise the availability of all covered services - it can be up to the participant to seek the service and ascertain whether it is covered, although it cannot be obscured.
-> 
+>
 > Female sterilization must be covered under the applicable preventive-services requirements, but the plan is not required to promote the procedure. Coverage may be expressed through the plan’s broader contraceptive and preventive-care provisions, with access available through the plan’s approved-provider process. In practice, utilization requires a participant to identify the benefit, elect the procedure, and follow the plan’s access rules. This materially reduces expected utilization without changing the underlying coverage obligation.
 
 ## 7. HSA compatibility is a separate design test
@@ -337,7 +344,6 @@ An HDHP may provide federally recognized preventive care before the deductible w
 
 This is a feature, not a bug. It serves to further de-risk the plan and hold premiums low.
 
-
 ## 8. What the plan may cover beyond the minimum
 
 A basic MEC can be creative and valuable without pretending to be major medical coverage.
@@ -356,7 +362,7 @@ Potential additions include:
 Each added benefit must pass four tests:
 
 | Test | Question |
-|---|---|
+| --- | --- |
 | Legal | Does the benefit comply with the ACA and other applicable group-plan rules? |
 | HSA | Does it preserve HSA eligibility, or is the product intentionally not HSA-compatible? |
 | Operational | Can participants actually understand and use it? |
@@ -475,9 +481,21 @@ It should be judged against the purpose it claims—not against a promise it nev
 - [DOL: Summary of Benefits and Coverage Resources](https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/affordable-care-act/for-employers-and-advisers/summary-of-benefits)
 - [California FTB: Health Care Mandate](https://www.ftb.ca.gov/file/personal/filing-situations/health-care-mandate/personal.html)
 
-# Appendix A: Inventory of preventive services
+## Appendix A: Inventory of preventive services
 
----
+**Inventory sections**
+
+- [Part I — USPSTF A and B recommendations](#part-i--uspstf-a-and-b-recommendations)
+- [Part II — HRSA-supported preventive services for women](#part-ii--hrsa-supported-preventive-services-for-women)
+- [Part III — Immunizations](#part-iii--immunizations)
+- [Part IV — HRSA/Bright Futures services for infants, children, and adolescents](#part-iv--hrsabright-futures-services-for-infants-children-and-adolescents)
+- [Part V — Risk map for a basic MEC](#part-v--risk-map-for-a-basic-mec)
+- [Part VI — From inventory to product data store](#part-vi--from-inventory-to-product-data-store)
+
+<details>
+<summary>Inventory metadata</summary>
+
+```yaml
 id: compliance.preventive-services-inventory
 title: Preventive Services Inventory and Cost Model
 kind: compliance-inventory
@@ -491,13 +509,13 @@ owners:
 - ACIP immunization recommendations
 - HRSA-supported guidelines
   last_reviewed: 2026-09-08
----
+```
 
-# Preventive Services Inventory and Cost Model
+</details>
 
 > **A practical inventory of the preventive services a non-grandfathered group health plan may need to cover without cost sharing under PHS Act §2713, with likely users and working procurement targets.**
 
-## How to use this document
+### How to use this document
 
 This is a **coverage and budgeting map**, not a claims-adjudication specification. The controlling recommendation, participant facts, attending-provider determination, coding, integral services, plan-year effective date, and network availability determine what must be covered in an individual case.
 
@@ -506,10 +524,10 @@ The inventory reflects recommendations identified as current for plan years begi
 > [!IMPORTANT]
 > “Likely to receive” is plain-language utilization guidance, not a substitute for the legal eligibility criteria in the governing recommendation.
 
-## Pricing method
+### Pricing method
 
 | Label | Meaning |
-|---|---|
+| --- | --- |
 | **Cash target** | A realistic direct-pay or contracted target for a routine, uncomplicated service |
 | **120% Medicare** | A target allowed amount equal to 120% of the applicable Medicare fee-schedule amount for the provider, locality, site, date, modifiers, and component billing |
 | **Episode target** | A planning range for all ordinary professional, facility, laboratory, pathology, drug, and integral-service components identified in the row |
@@ -519,141 +537,141 @@ Prices below are national planning estimates. They are not quotations, fee sched
 
 CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f), [Clinical Laboratory Fee Schedule](https://www.cms.gov/medicare/payment/fee-schedules/clinical-laboratory-fee-schedule-clfs), [preventive-services coding resource](https://www.cms.gov/Medicare/Prevention/PrevntionGenInfo/medicare-preventive-services/MPS-QuickReferenceChart-1.html), and [vaccine pricing](https://www.cms.gov/medicare/payment/part-b-drugs/vaccine-pricing).
 
-## Cost legend
+### Cost legend
 
 | Band | Working episode cost |
-|---|---:|
-| $ | $0–$75 |
-| $$ | $76–$250 |
-| $$$ | $251–$750 |
-| $$$$ | $751–$2,500 |
-| $$$$$ | More than $2,500 or materially open-ended |
+| --- | ---: |
+| `$` | $0–$75 |
+| `$$` | $76–$250 |
+| `$$$` | $251–$750 |
+| `$$$$` | $751–$2,500 |
+| `$$$$$` | More than $2,500 or materially open-ended |
 
-# Part I — USPSTF A and B recommendations
+### Part I — USPSTF A and B recommendations
 
-## Cardiovascular and metabolic health
-
-| Preventive service | Who is likely to receive it? | Typical implementation | Target allowed amount | Band |
-|---|---|---|---:|:---:|
-| Abdominal aortic aneurysm screening | Men ages 65–75 who have ever smoked | One-time abdominal ultrasound | **120% Medicare; $150–$300** | $$ |
-| Blood-pressure screening | All adults without known hypertension | Office measurement; out-of-office confirmation after a positive screen | **$0–$25 incremental; $40–$100 for home/ambulatory confirmation** | $–$$ |
-| Prediabetes and type 2 diabetes screening | Adults ages 35–70 with overweight or obesity | Glucose or A1c; referral to effective prevention for prediabetes | **Cash $10–$35 lab; $100–$600+ intervention** | $–$$$ |
-| Statin preventive medication | Adults ages 40–75 with a qualifying risk factor and ≥10% 10-year CVD risk | Risk calculation, lipid testing, generic statin | **Cash $15–$40 labs; $2–$15/month medication** | $ |
-| Healthy diet and physical-activity counseling | Adults with cardiovascular risk factors | Intensive behavioral counseling or referral | **120% Medicare/cash $75–$200 per session; $300–$900 program** | $$–$$$$ |
-| Obesity behavioral interventions | Adults with BMI ≥30 | Intensive, multicomponent program | **$300–$1,200 per completed program** | $$$–$$$$ |
-| Exercise interventions to prevent falls | Community-dwelling adults 65+ at increased fall risk | Supervised or structured exercise program | **$150–$750 per course** | $$–$$$ |
-
-## Bone health
+#### Cardiovascular and metabolic health
 
 | Preventive service | Who is likely to receive it? | Typical implementation | Target allowed amount | Band |
-|---|---|---|---:|:---:|
-| Osteoporosis screening | Women 65+ and postmenopausal women under 65 whose risk assessment indicates increased fracture risk | DXA, usually central bone-density scan; risk assessment for younger eligible women | **Cash or 120% Medicare $100–$225** | $$ |
+| --- | --- | --- | ---: | :---: |
+| Abdominal aortic aneurysm screening | Men ages 65–75 who have ever smoked | One-time abdominal ultrasound | **120% Medicare; $150–$300** | `$$` |
+| Blood-pressure screening | All adults without known hypertension | Office measurement; out-of-office confirmation after a positive screen | **$0–$25 incremental; $40–$100 for home/ambulatory confirmation** | `$–$$` |
+| Prediabetes and type 2 diabetes screening | Adults ages 35–70 with overweight or obesity | Glucose or A1c; referral to effective prevention for prediabetes | **Cash $10–$35 lab; $100–$600+ intervention** | `$–$$$` |
+| Statin preventive medication | Adults ages 40–75 with a qualifying risk factor and ≥10% 10-year CVD risk | Risk calculation, lipid testing, generic statin | **Cash $15–$40 labs; $2–$15/month medication** | `$` |
+| Healthy diet and physical-activity counseling | Adults with cardiovascular risk factors | Intensive behavioral counseling or referral | **120% Medicare/cash $75–$200 per session; $300–$900 program** | `$$–$$$$` |
+| Obesity behavioral interventions | Adults with BMI ≥30 | Intensive, multicomponent program | **$300–$1,200 per completed program** | `$$$–$$$$` |
+| Exercise interventions to prevent falls | Community-dwelling adults 65+ at increased fall risk | Supervised or structured exercise program | **$150–$750 per course** | `$$–$$$` |
 
-## Cancer prevention and screening
+#### Bone health
 
 | Preventive service | Who is likely to receive it? | Typical implementation | Target allowed amount | Band |
-|---|---|---|---:|:---:|
-| Breast-cancer screening | Women ages 40–74 | Screening mammography every 2 years under current USPSTF recommendation; HRSA may require broader completion services | **Cash or 120% Medicare $150–$275; $300–$1,200 with required follow-up imaging** | $$–$$$$ |
-| BRCA risk assessment | Women with qualifying personal/family history or ancestry | Brief tool in primary care | **$0–$40 incremental** | $ |
-| BRCA genetic counseling | People with a positive risk assessment | Pre-test specialist counseling | **120% Medicare/cash $100–$300** | $$–$$$ |
-| BRCA genetic testing | People for whom testing is indicated after counseling | Targeted or panel test | **Contracted cash $250–$1,000** | $$$–$$$$ |
-| Breast-cancer risk-reducing medication | Women 35+ at increased breast-cancer risk and low adverse-effect risk | Tamoxifen, raloxifene, or aromatase inhibitor plus prescribing visit | **Generic cash $5–$40/month; $75–$200 visit** | $–$$ |
-| Cervical-cancer screening | Women ages 21–65 with a cervix and within recommended interval | Cytology, primary hrHPV, or cotesting by age | **Cash/120% Medicare $75–$200 screening episode** | $–$$ |
-| Colorectal-cancer screening: FIT/gFOBT | Adults ages 45–75 | Annual stool test | **Cash $15–$40** | $ |
-| Colorectal-cancer screening: stool DNA-FIT | Adults ages 45–75 selecting that method | Every 1–3 years per applicable recommendation/product | **Contracted $400–$650** | $$$ |
-| Colorectal-cancer screening: colonoscopy | Adults ages 45–75 selecting colonoscopy, or after a positive non-invasive test | Screening/follow-up colonoscopy with integral anesthesia and pathology | **120% Medicare/bundled ambulatory target $900–$2,000; hospital outpatient can be materially higher** | $$$$ |
-| Colorectal-cancer screening: CT colonography | Adults ages 45–75 selecting that method | CT colonography at recommended interval | **Cash/120% Medicare $300–$700; positive result adds colonoscopy** | $$$ |
-| Colorectal-cancer screening: flexible sigmoidoscopy | Adults ages 45–75 selecting that method | Endoscopic screening, sometimes combined with FIT | **120% Medicare $400–$900; positive result may add colonoscopy** | $$$–$$$$ |
-| Lung-cancer screening | Adults ages 50–80 with ≥20 pack-years who smoke or quit within 15 years | Annual low-dose CT while eligible | **Cash/120% Medicare $200–$400** | $$–$$$ |
-| Skin-cancer prevention counseling | Fair-skinned people ages 6 months–24 years and parents of young children | UV-exposure counseling | **$0–$50 incremental** | $ |
+| --- | --- | --- | ---: | :---: |
+| Osteoporosis screening | Women 65+ and postmenopausal women under 65 whose risk assessment indicates increased fracture risk | DXA, usually central bone-density scan; risk assessment for younger eligible women | **Cash or 120% Medicare $100–$225** | `$$` |
+
+#### Cancer prevention and screening
+
+| Preventive service | Who is likely to receive it? | Typical implementation | Target allowed amount | Band |
+| --- | --- | --- | ---: | :---: |
+| Breast-cancer screening | Women ages 40–74 | Screening mammography every 2 years under current USPSTF recommendation; HRSA may require broader completion services | **Cash or 120% Medicare $150–$275; $300–$1,200 with required follow-up imaging** | `$$–$$$$` |
+| BRCA risk assessment | Women with qualifying personal/family history or ancestry | Brief tool in primary care | **$0–$40 incremental** | `$` |
+| BRCA genetic counseling | People with a positive risk assessment | Pre-test specialist counseling | **120% Medicare/cash $100–$300** | `$$–$$$` |
+| BRCA genetic testing | People for whom testing is indicated after counseling | Targeted or panel test | **Contracted cash $250–$1,000** | `$$$–$$$$` |
+| Breast-cancer risk-reducing medication | Women 35+ at increased breast-cancer risk and low adverse-effect risk | Tamoxifen, raloxifene, or aromatase inhibitor plus prescribing visit | **Generic cash $5–$40/month; $75–$200 visit** | `$–$$` |
+| Cervical-cancer screening | Women ages 21–65 with a cervix and within recommended interval | Cytology, primary hrHPV, or cotesting by age | **Cash/120% Medicare $75–$200 screening episode** | `$–$$` |
+| Colorectal-cancer screening: FIT/gFOBT | Adults ages 45–75 | Annual stool test | **Cash $15–$40** | `$` |
+| Colorectal-cancer screening: stool DNA-FIT | Adults ages 45–75 selecting that method | Every 1–3 years per applicable recommendation/product | **Contracted $400–$650** | `$$$` |
+| Colorectal-cancer screening: colonoscopy | Adults ages 45–75 selecting colonoscopy, or after a positive non-invasive test | Screening/follow-up colonoscopy with integral anesthesia and pathology | **120% Medicare/bundled ambulatory target $900–$2,000; hospital outpatient can be materially higher** | `$$$$` |
+| Colorectal-cancer screening: CT colonography | Adults ages 45–75 selecting that method | CT colonography at recommended interval | **Cash/120% Medicare $300–$700; positive result adds colonoscopy** | `$$$` |
+| Colorectal-cancer screening: flexible sigmoidoscopy | Adults ages 45–75 selecting that method | Endoscopic screening, sometimes combined with FIT | **120% Medicare $400–$900; positive result may add colonoscopy** | `$$$–$$$$` |
+| Lung-cancer screening | Adults ages 50–80 with ≥20 pack-years who smoke or quit within 15 years | Annual low-dose CT while eligible | **Cash/120% Medicare $200–$400** | `$$–$$$` |
+| Skin-cancer prevention counseling | Fair-skinned people ages 6 months–24 years and parents of young children | UV-exposure counseling | **$0–$50 incremental** | `$` |
 
 > [!WARNING]
 > A low-cost stool test controls the initial colorectal-screening cost; it does not close the episode. Federal guidance requires a follow-up colonoscopy after a positive non-invasive test to be covered without cost sharing because it is integral to completing the screen. [DOL FAQ Part 51](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/aca-part-51)
 
-## Infectious-disease screening and prevention
+#### Infectious-disease screening and prevention
 
 | Preventive service | Who is likely to receive it? | Typical implementation | Target allowed amount | Band |
-|---|---|---|---:|:---:|
-| HIV screening | Everyone ages 15–65; younger/older people at increased risk; all pregnant people | Lab antigen/antibody test; repeat based on risk/pregnancy | **Cash $20–$50** | $ |
-| HIV preexposure prophylaxis | Adolescents and adults at increased risk of acquiring HIV | Oral or injectable PrEP plus required baseline and monitoring services | **$0–$2,500+ per episode depending on drug and assistance; monitoring $150–$500/year** | $$$–$$$$$ |
-| Hepatitis C screening | Adults ages 18–79 | Usually one-time antibody test, with reflex RNA confirmation when positive | **Cash $20–$60; positive reflex testing $50–$150** | $–$$ |
-| Hepatitis B screening | Adolescents and adults at increased risk | HBsAg/anti-HBs/anti-HBc panel as clinically indicated | **Cash $30–$90** | $–$$ |
-| Hepatitis B screening in pregnancy | All pregnant people at first prenatal visit | HBsAg or recommended panel | **Cash $10–$40** | $ |
-| Latent tuberculosis screening | Asymptomatic adults at increased risk | IGRA blood test or tuberculin skin test | **Cash $40–$120** | $–$$ |
-| Chlamydia screening | Sexually active women ≤24 and women 25+ at increased risk, including during pregnancy | NAAT, often combined with gonorrhea | **Cash $40–$100 combined panel** | $–$$ |
-| Gonorrhea screening | Same general population as chlamydia recommendation | NAAT, often combined with chlamydia | **Cash $40–$100 combined panel** | $–$$ |
-| Syphilis screening in pregnancy | All pregnant people, early; later repeat when applicable | Treponemal/nontreponemal testing | **Cash $10–$40** | $ |
-| Syphilis screening outside pregnancy | Adolescents and adults at increased risk | Treponemal/nontreponemal testing | **Cash $10–$40** | $ |
-| STI behavioral counseling | Sexually active adolescents and adults at increased risk | Behavioral counseling | **$25–$150 incremental/session** | $–$$ |
+| --- | --- | --- | ---: | :---: |
+| HIV screening | Everyone ages 15–65; younger/older people at increased risk; all pregnant people | Lab antigen/antibody test; repeat based on risk/pregnancy | **Cash $20–$50** | `$` |
+| HIV preexposure prophylaxis | Adolescents and adults at increased risk of acquiring HIV | Oral or injectable PrEP plus required baseline and monitoring services | **$0–$2,500+ per episode depending on drug and assistance; monitoring $150–$500/year** | `$$$–$$$$$` |
+| Hepatitis C screening | Adults ages 18–79 | Usually one-time antibody test, with reflex RNA confirmation when positive | **Cash $20–$60; positive reflex testing $50–$150** | `$–$$` |
+| Hepatitis B screening | Adolescents and adults at increased risk | HBsAg/anti-HBs/anti-HBc panel as clinically indicated | **Cash $30–$90** | `$–$$` |
+| Hepatitis B screening in pregnancy | All pregnant people at first prenatal visit | HBsAg or recommended panel | **Cash $10–$40** | `$` |
+| Latent tuberculosis screening | Asymptomatic adults at increased risk | IGRA blood test or tuberculin skin test | **Cash $40–$120** | `$–$$` |
+| Chlamydia screening | Sexually active women ≤24 and women 25+ at increased risk, including during pregnancy | NAAT, often combined with gonorrhea | **Cash $40–$100 combined panel** | `$–$$` |
+| Gonorrhea screening | Same general population as chlamydia recommendation | NAAT, often combined with chlamydia | **Cash $40–$100 combined panel** | `$–$$` |
+| Syphilis screening in pregnancy | All pregnant people, early; later repeat when applicable | Treponemal/nontreponemal testing | **Cash $10–$40** | `$` |
+| Syphilis screening outside pregnancy | Adolescents and adults at increased risk | Treponemal/nontreponemal testing | **Cash $10–$40** | `$` |
+| STI behavioral counseling | Sexually active adolescents and adults at increased risk | Behavioral counseling | **$25–$150 incremental/session** | `$–$$` |
 
 PrEP is a special severity item. Required coverage can include the drug, baseline testing, follow-up testing, adherence counseling, and other services integral to furnishing PrEP. The plan needs a current drug strategy and cannot budget this as merely an HIV test.
 
-## Mental health, substance use, and interpersonal safety
+#### Mental health, substance use, and interpersonal safety
 
 | Preventive service | Who is likely to receive it? | Typical implementation | Target allowed amount | Band |
-|---|---|---|---:|:---:|
-| Anxiety screening in adults | Adults age 64 or younger, including pregnant/postpartum people | Questionnaire with systems for evaluation and follow-up | **$0–$25 incremental** | $ |
-| Anxiety screening in youth | Children and adolescents ages 8–18 | Questionnaire with systems for evaluation and follow-up | **$0–$25 incremental** | $ |
-| Depression screening in adults | Adults, including pregnant, postpartum, and older adults | Questionnaire with diagnosis/treatment/referral capacity | **$0–$25 incremental** | $ |
-| Depression screening in adolescents | Adolescents ages 12–18 | Questionnaire with diagnosis/treatment/follow-up systems | **$0–$25 incremental** | $ |
-| Perinatal-depression prevention | Pregnant/postpartum people at increased risk | Counseling intervention or referral | **$300–$1,200 per course** | $$$–$$$$ |
-| Unhealthy alcohol-use screening/counseling | Adults 18+, including pregnant people | Questionnaire and brief counseling for risky use | **$0–$75 incremental; $75–$175 standalone** | $–$$ |
-| Unhealthy drug-use screening | Adults 18+ where diagnosis and treatment/referral are available | Verbal/questionnaire screening, not routine specimen testing | **$0–$25 incremental** | $ |
-| Tobacco cessation in adults | All adults; pharmacotherapy applies to nonpregnant adults who use tobacco | Ask/advise, counseling, and FDA-approved cessation medication | **Counseling $30–$150/session; generic drugs $15–$150/course; branded products higher** | $–$$$ |
-| Tobacco-use prevention in youth | School-aged children and adolescents who have not begun using tobacco | Education or brief counseling | **$0–$50 incremental** | $ |
-| Intimate-partner violence screening | Women of reproductive age, including pregnant/postpartum women | Validated screen; referral to multicomponent intervention when indicated | **$0–$25 screen; $100–$1,000+ intervention/navigation** | $–$$$$ |
+| --- | --- | --- | ---: | :---: |
+| Anxiety screening in adults | Adults age 64 or younger, including pregnant/postpartum people | Questionnaire with systems for evaluation and follow-up | **$0–$25 incremental** | `$` |
+| Anxiety screening in youth | Children and adolescents ages 8–18 | Questionnaire with systems for evaluation and follow-up | **$0–$25 incremental** | `$` |
+| Depression screening in adults | Adults, including pregnant, postpartum, and older adults | Questionnaire with diagnosis/treatment/referral capacity | **$0–$25 incremental** | `$` |
+| Depression screening in adolescents | Adolescents ages 12–18 | Questionnaire with diagnosis/treatment/follow-up systems | **$0–$25 incremental** | `$` |
+| Perinatal-depression prevention | Pregnant/postpartum people at increased risk | Counseling intervention or referral | **$300–$1,200 per course** | `$$$–$$$$` |
+| Unhealthy alcohol-use screening/counseling | Adults 18+, including pregnant people | Questionnaire and brief counseling for risky use | **$0–$75 incremental; $75–$175 standalone** | `$–$$` |
+| Unhealthy drug-use screening | Adults 18+ where diagnosis and treatment/referral are available | Verbal/questionnaire screening, not routine specimen testing | **$0–$25 incremental** | `$` |
+| Tobacco cessation in adults | All adults; pharmacotherapy applies to nonpregnant adults who use tobacco | Ask/advise, counseling, and FDA-approved cessation medication | **Counseling $30–$150/session; generic drugs $15–$150/course; branded products higher** | `$–$$$` |
+| Tobacco-use prevention in youth | School-aged children and adolescents who have not begun using tobacco | Education or brief counseling | **$0–$50 incremental** | `$` |
+| Intimate-partner violence screening | Women of reproductive age, including pregnant/postpartum women | Validated screen; referral to multicomponent intervention when indicated | **$0–$25 screen; $100–$1,000+ intervention/navigation** | `$–$$$$` |
 
 A zero-cost questionnaire is only the initial screen. Where a recommendation requires an intervention, referral, or systems for diagnosis and follow-up, the coverage model must account for that next step.
 
-## Pregnancy, postpartum, and newborn services
+#### Pregnancy, postpartum, and newborn services
 
 | Preventive service | Who is likely to receive it? | Typical implementation | Target allowed amount | Band |
-|---|---|---|---:|:---:|
-| Low-dose aspirin to prevent preeclampsia | Pregnant people at high risk, after 12 weeks | 81 mg aspirin and prescribing oversight | **Cash $3–$10/month** | $ |
-| Asymptomatic bacteriuria screening | Pregnant people | Urine culture | **Cash $15–$40** | $ |
-| Gestational-diabetes screening | Asymptomatic pregnant people at 24 weeks or later | Glucose challenge/tolerance testing | **Cash $20–$75** | $ |
-| Hypertensive-disorder screening | All pregnant people | Blood pressure throughout pregnancy | **$0–$15 incremental per visit** | $ |
-| Healthy-weight-gain counseling | Pregnant people | Effective behavioral counseling | **$25–$150 incremental/session; $200–$750 program** | $–$$$ |
-| Breastfeeding counseling/support | Pregnant and postpartum people | Counseling or referral | **$75–$200/session; $150–$600 typical course** | $$–$$$ |
-| Folic-acid supplementation | Anyone planning or able to become pregnant | 400–800 mcg daily | **Cash $2–$10/month** | $ |
-| Rh(D) blood typing and antibody testing | All pregnant people at first pregnancy-related visit | Blood type and antibody screen | **Cash $25–$75** | $ |
-| Repeat Rh(D) antibody testing | Unsensitized Rh-negative pregnant people at 24–28 weeks unless biologic father known Rh-negative | Repeat antibody screen | **Cash $15–$40** | $ |
-| Ocular prophylaxis against gonococcal ophthalmia | All newborns | Erythromycin ophthalmic prophylaxis | **Cash $10–$40** | $ |
+| --- | --- | --- | ---: | :---: |
+| Low-dose aspirin to prevent preeclampsia | Pregnant people at high risk, after 12 weeks | 81 mg aspirin and prescribing oversight | **Cash $3–$10/month** | `$` |
+| Asymptomatic bacteriuria screening | Pregnant people | Urine culture | **Cash $15–$40** | `$` |
+| Gestational-diabetes screening | Asymptomatic pregnant people at 24 weeks or later | Glucose challenge/tolerance testing | **Cash $20–$75** | `$` |
+| Hypertensive-disorder screening | All pregnant people | Blood pressure throughout pregnancy | **$0–$15 incremental per visit** | `$` |
+| Healthy-weight-gain counseling | Pregnant people | Effective behavioral counseling | **$25–$150 incremental/session; $200–$750 program** | `$–$$$` |
+| Breastfeeding counseling/support | Pregnant and postpartum people | Counseling or referral | **$75–$200/session; $150–$600 typical course** | `$$–$$$` |
+| Folic-acid supplementation | Anyone planning or able to become pregnant | 400–800 mcg daily | **Cash $2–$10/month** | `$` |
+| Rh(D) blood typing and antibody testing | All pregnant people at first pregnancy-related visit | Blood type and antibody screen | **Cash $25–$75** | `$` |
+| Repeat Rh(D) antibody testing | Unsensitized Rh-negative pregnant people at 24–28 weeks unless biologic father known Rh-negative | Repeat antibody screen | **Cash $15–$40** | `$` |
+| Ocular prophylaxis against gonococcal ophthalmia | All newborns | Erythromycin ophthalmic prophylaxis | **Cash $10–$40** | `$` |
 
-## Children and adolescents
+#### Children and adolescents
 
 | Preventive service | Who is likely to receive it? | Typical implementation | Target allowed amount | Band |
-|---|---|---|---:|:---:|
-| High-BMI intensive intervention | Children/adolescents age 6+ with BMI ≥95th percentile | Comprehensive intensive behavioral program | **$500–$2,000+ per course** | $$$–$$$$ |
-| Fluoride varnish | Infants/children under 5 from tooth eruption | Primary-care application | **Cash/120% Medicare $20–$50** | $ |
-| Oral fluoride supplementation | Children 6 months+ whose water is fluoride-deficient | Prescription supplement | **Cash $3–$15/month** | $ |
-| Vision screening | All children ages 3–5, at least once | Instrument or chart screening; referral if abnormal | **$0–$40 screen; diagnostic follow-up not automatically preventive** | $ |
+| --- | --- | --- | ---: | :---: |
+| High-BMI intensive intervention | Children/adolescents age 6+ with BMI ≥95th percentile | Comprehensive intensive behavioral program | **$500–$2,000+ per course** | `$$$–$$$$` |
+| Fluoride varnish | Infants/children under 5 from tooth eruption | Primary-care application | **Cash/120% Medicare $20–$50** | `$` |
+| Oral fluoride supplementation | Children 6 months+ whose water is fluoride-deficient | Prescription supplement | **Cash $3–$15/month** | `$` |
+| Vision screening | All children ages 3–5, at least once | Instrument or chart screening; referral if abnormal | **$0–$40 screen; diagnostic follow-up not automatically preventive** | `$` |
 
-# Part II — HRSA-supported preventive services for women
+### Part II — HRSA-supported preventive services for women
 
 These services overlap with USPSTF recommendations in places but may be broader. Do not deduplicate by title alone; compare the actual population, frequency, method, and required completion services in the current HRSA guideline.
 
 | Preventive service | Who is likely to receive it? | Typical implementation | Target allowed amount | Band |
-|---|---|---|---:|:---:|
-| Well-woman preventive visits | Adolescent and adult women, generally at least annually as needed to obtain recommended services | Preventive evaluation; more than one visit may be necessary | **Cash/120% Medicare $125–$250 per visit** | $$ |
-| Breast-cancer screening and completion | Average-risk women beginning between ages 40–50 through at least 74; increased-risk women as indicated | Mammography plus indicated imaging/pathology to complete screening | **$150–$275 initial; $300–$1,200+ completion episode** | $$–$$$$ |
-| Breast/cervical screening navigation | Women needing help completing breast or cervical screening | Person-to-person assessment, education, referrals, and navigation | **$50–$250 per episode** | $–$$ |
-| Cervical-cancer screening | Average-risk women ages 21–65 | Cytology/hrHPV strategy under current guideline | **$75–$200** | $–$$ |
-| Contraceptive counseling | Adolescent and adult women | Annual and as-needed person-centered counseling | **$50–$175/session** | $–$$ |
-| OTC and prescription contraception | Adolescent and adult women with reproductive capacity | At least one form in each applicable category; exceptions process for medically necessary product | **$0–$100/month typical; some branded products higher** | $–$$$ |
-| Long-acting reversible contraception | Women choosing an IUD or implant | Device, insertion, related services, removal when required | **Contracted/120% Medicare $700–$1,500 episode** | $$$–$$$$ |
-| Female sterilization | Women choosing permanent contraception | Surgical procedure and integral anesthesia/facility services | **Bundled target $5,000–$8,000; validate locally** | $$$$$ |
-| Diabetes screening after pregnancy | Women with prior gestational diabetes who are not currently pregnant and have not been diagnosed with type 2 diabetes | Glucose/A1c at least every 3 years for at least 10 years | **Cash $10–$35** | $ |
-| Anxiety screening | Adolescent and adult women, including pregnant/postpartum women | Validated screening tool with follow-up pathway | **$0–$25 incremental** | $ |
-| Urinary-incontinence screening | Women, generally annually | Screening questions; referral for evaluation/treatment when indicated | **$0–$25 incremental** | $ |
-| Intimate-partner/domestic-violence screening | Adolescent and adult women, at least annually | Screen; intervention services or referral when needed | **$0–$25 screen; intervention varies** | $–$$$$ |
-| Tobacco-use counseling | Adolescent and adult women, expanded counseling for pregnant users | Screening and behavioral intervention | **$0–$150 per encounter** | $–$$ |
-| STI counseling | Sexually active women at increased risk | Annual behavioral counseling | **$25–$150 incremental/session** | $–$$ |
-| HIV screening | Adolescent and adult women, at least once; annual based on risk; pregnancy requirements | Lab screening | **Cash $20–$50** | $ |
-| Breastfeeding services and supplies | Pregnant and postpartum women | Prenatal/postpartum consultation and breastfeeding equipment | **Consultation $75–$200; pump/supplies $100–$500+** | $$–$$$ |
-| Preventing obesity in midlife | Women ages 40–60 with normal or overweight BMI | Counseling to maintain weight or limit gain | **$200–$750 program** | $$–$$$ |
+| --- | --- | --- | ---: | :---: |
+| Well-woman preventive visits | Adolescent and adult women, generally at least annually as needed to obtain recommended services | Preventive evaluation; more than one visit may be necessary | **Cash/120% Medicare $125–$250 per visit** | `$$` |
+| Breast-cancer screening and completion | Average-risk women beginning between ages 40–50 through at least 74; increased-risk women as indicated | Mammography plus indicated imaging/pathology to complete screening | **$150–$275 initial; $300–$1,200+ completion episode** | `$$–$$$$` |
+| Breast/cervical screening navigation | Women needing help completing breast or cervical screening | Person-to-person assessment, education, referrals, and navigation | **$50–$250 per episode** | `$–$$` |
+| Cervical-cancer screening | Average-risk women ages 21–65 | Cytology/hrHPV strategy under current guideline | **$75–$200** | `$–$$` |
+| Contraceptive counseling | Adolescent and adult women | Annual and as-needed person-centered counseling | **$50–$175/session** | `$–$$` |
+| OTC and prescription contraception | Adolescent and adult women with reproductive capacity | At least one form in each applicable category; exceptions process for medically necessary product | **$0–$100/month typical; some branded products higher** | `$–$$$` |
+| Long-acting reversible contraception | Women choosing an IUD or implant | Device, insertion, related services, removal when required | **Contracted/120% Medicare $700–$1,500 episode** | `$$$–$$$$` |
+| Female sterilization | Women choosing permanent contraception | Surgical procedure and integral anesthesia/facility services | **Bundled target $5,000–$8,000; validate locally** | `$$$$$` |
+| Diabetes screening after pregnancy | Women with prior gestational diabetes who are not currently pregnant and have not been diagnosed with type 2 diabetes | Glucose/A1c at least every 3 years for at least 10 years | **Cash $10–$35** | `$` |
+| Anxiety screening | Adolescent and adult women, including pregnant/postpartum women | Validated screening tool with follow-up pathway | **$0–$25 incremental** | `$` |
+| Urinary-incontinence screening | Women, generally annually | Screening questions; referral for evaluation/treatment when indicated | **$0–$25 incremental** | `$` |
+| Intimate-partner/domestic-violence screening | Adolescent and adult women, at least annually | Screen; intervention services or referral when needed | **$0–$25 screen; intervention varies** | `$–$$$$` |
+| Tobacco-use counseling | Adolescent and adult women, expanded counseling for pregnant users | Screening and behavioral intervention | **$0–$150 per encounter** | `$–$$` |
+| STI counseling | Sexually active women at increased risk | Annual behavioral counseling | **$25–$150 incremental/session** | `$–$$` |
+| HIV screening | Adolescent and adult women, at least once; annual based on risk; pregnancy requirements | Lab screening | **Cash $20–$50** | `$` |
+| Breastfeeding services and supplies | Pregnant and postpartum women | Prenatal/postpartum consultation and breastfeeding equipment | **Consultation $75–$200; pump/supplies $100–$500+** | `$$–$$$` |
+| Preventing obesity in midlife | Women ages 40–60 with normal or overweight BMI | Counseling to maintain weight or limit gain | **$200–$750 program** | `$$–$$$` |
 
-## Contraceptive categories requiring an operational pathway
+#### Contraceptive categories requiring an operational pathway
 
 The current legal implementation should map the HRSA guideline and federal FAQ requirements to at least one no-cost form in each applicable category, plus an exceptions process. Operational categories include:
 
@@ -677,14 +695,14 @@ The current legal implementation should map the HRSA guideline and federal FAQ r
 
 The precise categories and products must be synchronized to current federal guidance and FDA status. “One cheap contraceptive” is not a compliant substitute for category-based coverage and medical-necessity exceptions.
 
-# Part III — Immunizations
+### Part III — Immunizations
 
 The legal schedule is ACIP's recommendation as adopted by the CDC, not merely a static vaccine list. Age, prior vaccination, pregnancy, season, medical condition, occupation, travel, and shared clinical decision-making affect eligibility.
 
-## Routine child and adolescent immunizations
+#### Routine child and adolescent immunizations
 
 | Vaccine or immunizing agent | Who is likely to receive it? | Typical series/use | Working product + administration target |
-|---|---|---|---:|
+| --- | --- | --- | ---: |
 | Hepatitis B | Infants beginning at birth; catch-up youth | 2–4 doses depending on product/combination | **$40–$120/dose** |
 | Rotavirus | Infants | 2- or 3-dose oral series | **$100–$180/dose** |
 | DTaP | Infants and children under 7 | 5-dose primary series | **$45–$100/dose** |
@@ -702,10 +720,10 @@ The legal schedule is ACIP's recommendation as adopted by the CDC, not merely a 
 | Meningococcal B | Adolescents/young adults under shared decision-making; high-risk groups | Product-specific 2- or 3-dose series | **$175–$300/dose** |
 | RSV maternal vaccine or infant antibody | Pregnant person during specified gestational/seasonal window or eligible infant | Usually one maternal dose or infant monoclonal dose | **$300–$650** |
 
-## Routine and risk-based adult immunizations
+#### Routine and risk-based adult immunizations
 
 | Vaccine | Who is likely to receive it? | Typical use | Working product + administration target |
-|---|---|---|---:|
+| --- | --- | --- | ---: |
 | Influenza | Nearly all adults each season | Annual | **$35–$80** |
 | COVID-19 | Adults meeting current age/risk/recommendation criteria | Current seasonal product | **Use current CMS allowance + administration; often $200–$300** |
 | Tdap/Td | Adults lacking Tdap; booster every 10 years; each pregnancy | One Tdap then Td/Tdap boosters | **$55–$110/dose** |
@@ -723,23 +741,23 @@ The legal schedule is ACIP's recommendation as adopted by the CDC, not merely a 
 > [!NOTE]
 > Vaccine recommendations and prices are unusually dynamic. The claims system should ingest the current CDC schedule and CMS vaccine-price file rather than hard-code this table.
 
-# Part IV — HRSA/Bright Futures services for infants, children, and adolescents
+### Part IV — HRSA/Bright Futures services for infants, children, and adolescents
 
 The Bright Futures periodicity schedule is a visit-by-visit matrix from prenatal/newborn care through age 21. The plan should procure the **well-child encounter as a bundled preventive platform**, then separately account for vaccines, laboratory tests, screening instruments, fluoride varnish, and follow-up services when billed independently.
 
-## Preventive visits
+#### Preventive visits
 
 | Likely recipient | Typical timing | Working target |
-|---|---|---:|
+| --- | --- | ---: |
 | Newborns and infants | Newborn, first week, 1, 2, 4, 6, and 9 months | **Cash/120% Medicare-equivalent $125–$250 per visit**, plus vaccines/tests |
 | Toddlers | 12, 15, 18, 24, and 30 months | **$125–$250 per visit**, plus vaccines/tests |
 | Children | Annual from age 3 through 11 | **$125–$250 per visit**, plus vaccines/tests |
 | Adolescents and young adults | Annual from age 12 through 21 | **$125–$250 per visit**, plus vaccines/tests |
 
-## Services embedded in or triggered by the periodicity schedule
+#### Services embedded in or triggered by the periodicity schedule
 
 | Preventive domain | Who is likely to receive it? | Practical service | Typical incremental target |
-|---|---|---|---:|
+| --- | --- | --- | ---: |
 | Newborn blood screening | Newborns | State newborn metabolic panel | **$50–$200**, state-dependent |
 | Critical congenital heart-disease screening | Newborns | Pulse oximetry | **$0–$25** |
 | Newborn hearing screening | Newborns | OAE/AABR | **$50–$150** |
@@ -770,9 +788,9 @@ The Bright Futures periodicity schedule is a visit-by-visit matrix from prenatal
 
 Bright Futures requirements are especially sensitive to age, interval, risk, and state newborn-screening rules. The final adjudication matrix should reproduce the official periodicity schedule at the service-rule level rather than using this human summary as the claims rule.
 
-# Part V — Risk map for a basic MEC
+### Part V — Risk map for a basic MEC
 
-## Predictable, readily procurable services
+#### Predictable, readily procurable services
 
 These are typically easy to contract at low fixed prices:
 
@@ -785,7 +803,7 @@ These are typically easy to contract at low fixed prices:
 - Basic vision and hearing screens; and
 - Preventive visits through a contracted primary-care or DPC network.
 
-## Moderate episodic services
+#### Moderate episodic services
 
 These require active site-of-service and bundled-price controls:
 
@@ -798,10 +816,10 @@ These require active site-of-service and bundled-price controls:
 - Long-acting contraception; and
 - Multi-session behavioral interventions.
 
-## Concentrated or open-ended risks
+#### Concentrated or open-ended risks
 
 | Risk | Why it matters | Primary control |
-|---|---|---|
+| --- | --- | --- |
 | Female sterilization | Surgical professional, facility, and anesthesia expense | Bundled approved-provider pathway; target **$5,000–$8,000** |
 | Positive stool screening | Converts a $15–$40 test into a required no-cost colonoscopy episode | Pre-contracted ambulatory colonoscopy pathway |
 | Positive breast/cervical screen | Additional imaging, pathology, colposcopy, or biopsy may be integral to completing screening under applicable guidance | Defined completion pathway and contracted diagnostic providers |
@@ -810,7 +828,7 @@ These require active site-of-service and bundled-price controls:
 | Vaccines and immunizing agents | Product prices change and some are several hundred dollars per dose | Current CMS/CDC price feed and pharmacy/clinic contracts |
 | No in-network provider | Required service may have to be covered out of network without cost sharing | Network completeness audit before launch |
 
-# Part VI — From inventory to product data store
+### Part VI — From inventory to product data store
 
 The inventory above should ultimately be represented in CommonCare’s structured product data store. Each service record should include:
 
@@ -840,14 +858,13 @@ This structured record serves two purposes:
 
 > **The human-readable document explains the product. The product data store structures its meaning. The claims specification tells the system how to pay it.**
 
+## Appendix B: Pricing guidelines
 
-
-Appendix B: Pricing Guidelines
-
-> ⚠️ Do we have to say it? This pricing is a good-faith guideline based on our experience and models. It's not a guarantee of anything.
+> [!CAUTION]
+> Do we have to say it? This pricing is a good-faith guideline based on our experience and models. It's not a guarantee of anything.
 
 | Age band | Cohort | Expected claims | Aggressive | Medium | Low-risk |
-|---|---|---:|---:|---:|---:|
+| --- | --- | ---: | ---: | ---: | ---: |
 | 0–17 | Female | $58.00 | $61 | $79 | $104 |
 | 0–17 | Male | $57.50 | $60 | $78 | $103 |
 | 18–25 | Female | $36.50 | $41 | $53 | $70 |
