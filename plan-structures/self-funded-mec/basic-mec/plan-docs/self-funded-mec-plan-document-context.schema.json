@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://commoncare.dev/schemas/self-funded-mec-plan-document-context.schema.json",
-  "title": "CommonCare Self-Funded Skinny MEC Plan Document Context",
+  "title": "CommonCare Self-Funded Basic MEC Plan Document Context",
   "allOf": [
     { "$ref": "../../../../plan-docs/plan-document-context.schema.json" },
     {

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://commoncare.dev/schemas/extensions/self-funded-mec.schema.json",
-  "title": "Self-Funded Skinny MEC Plan-Document Extension",
+  "title": "Self-Funded Basic MEC Plan-Document Extension",
   "type": "object",
   "additionalProperties": false,
   "required": ["enrollmentTier", "isMec", "isMv", "isHdhp"],

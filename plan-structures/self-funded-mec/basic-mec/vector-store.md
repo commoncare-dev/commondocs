@@ -1,9 +1,9 @@
 ---
-id: plan.self-funded-skinny-mec.vector-store
-title: Self-Funded Skinny MEC Plan — Vector Store Source
+id: plan.self-funded-basic-mec.vector-store
+title: Self-Funded Basic MEC Plan — Vector Store Source
 kind: vector-store-source
 schema_version: "1.0"
-source_document: plan-structures/self-funded-mec/skinny-mec/human-readable.md
+source_document: plan-structures/self-funded-mec/basic-mec/human-readable.md
 source_commit: 60e70311beb1445caf6faea4c5bd6c60ac8e1a5b
 source_sha256: 7f01eda26c6dcb0aacdb96515d3ad20702fc1d67d8ffc5bcfa397de05510cd8d
 generation_method: deterministic-markdown-conversion
@@ -12,74 +12,74 @@ jurisdiction: United States
 last_reviewed: 2026-09-08
 ---
 
-# Self-Funded Skinny MEC Plan — Vector Store Source
+# Self-Funded Basic MEC Plan — Vector Store Source
 
-> Retrieval context: This generated document restructures `plan-structures/self-funded-mec/skinny-mec/human-readable.md` for semantic retrieval. The human-readable source remains canonical. Substantive edits belong in the source and must be regenerated here.
+> Retrieval context: This generated document restructures `plan-structures/self-funded-mec/basic-mec/human-readable.md` for semantic retrieval. The human-readable source remains canonical. Substantive edits belong in the source and must be regenerated here.
 
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan -->
-## Self-Funded Skinny MEC Plan
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan -->
+## Self-Funded Basic MEC Plan
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan
 
 > **A narrowly focused, self-funded group health plan designed to provide minimum essential coverage, deliver required preventive care, and—when structured correctly - support HSA eligibility at a low monthly cost.**
 
-<!-- record_id: plan.self-funded-skinny-mec.primary-purpose -->
+<!-- record_id: plan.self-funded-basic-mec.primary-purpose -->
 ## Primary Purpose
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > Primary Purpose
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > Primary Purpose
 The primary purpose of this plan is to satsify the minimum requirments for offering a group health plan AND to create HSA eligibility - something that otherwise often requires sacrificing extra premium dollars to inefficient or trivial plan offerings. 
 
 It is good to remember that a participant looking for HSA eligibility can sign up just a single participant in the plan to reduce premiums. A plan can also restrict enrollment to employee participants if desired for simplicity. 
 
 Secondarily this plan also offers great access to basic healthcare on a tax-free basis, fully self fundable by even small employers due to fully definable risk because the covered services are finite, priceable, and measurable.
 
-<!-- record_id: plan.self-funded-skinny-mec.at-a-glance -->
+<!-- record_id: plan.self-funded-basic-mec.at-a-glance -->
 ## At a glance
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > At a glance
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > At a glance
 
 #### Is this a group health plan?
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-at-a-glance.is-this-a-group-health-plan; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > At a glance
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-at-a-glance.is-this-a-group-health-plan; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > At a glance
 - Question: Is this a group health plan?
 - Answer: Yes
 
 #### Is it minimum essential coverage?
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-at-a-glance.is-it-minimum-essential-coverage; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > At a glance
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-at-a-glance.is-it-minimum-essential-coverage; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > At a glance
 - Question: Is it minimum essential coverage?
 - Answer: Generally, yes, when properly established as an eligible employer-sponsored self-funded group health plan
 
 #### Must it comply with the ACA market reforms?
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-at-a-glance.must-it-comply-with-the-aca-market-reforms; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > At a glance
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-at-a-glance.must-it-comply-with-the-aca-market-reforms; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > At a glance
 - Question: Must it comply with the ACA market reforms?
 - Answer: Yes, unless a specific exception applies
 
 #### Must it cover §2713 preventive services without cost sharing?
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-at-a-glance.must-it-cover-2713-preventive-services-without-cost-sharing; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > At a glance
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-at-a-glance.must-it-cover-2713-preventive-services-without-cost-sharing; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > At a glance
 - Question: Must it cover §2713 preventive services without cost sharing?
 - Answer: Yes, if it is non-grandfathered
 
 #### Must it provide minimum value?
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-at-a-glance.must-it-provide-minimum-value; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > At a glance
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-at-a-glance.must-it-provide-minimum-value; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > At a glance
 - Question: Must it provide minimum value?
 - Answer: No. MEC and minimum value are separate standards
 
 #### Is it major medical coverage?
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-at-a-glance.is-it-major-medical-coverage; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > At a glance
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-at-a-glance.is-it-major-medical-coverage; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > At a glance
 - Question: Is it major medical coverage?
 - Answer: No, not in the design described here
 
 #### Does it automatically make someone HSA-eligible?
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-at-a-glance.does-it-automatically-make-someone-hsa-eligible; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > At a glance
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-at-a-glance.does-it-automatically-make-someone-hsa-eligible; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > At a glance
 - Question: Does it automatically make someone HSA-eligible?
 - Answer: No. The coverage must also satisfy the federal HDHP rules, and the person must have no disqualifying other coverage
 
 #### Can it still be useful?
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-at-a-glance.can-it-still-be-useful; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > At a glance
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-at-a-glance.can-it-still-be-useful; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > At a glance
 - Question: Can it still be useful?
 - Answer: Yes. It can provide valuable basic care, satisfy important regulatory objectives, and serve as an HSA-compatible foundation at low cost
 
@@ -87,20 +87,20 @@ Secondarily this plan also offers great access to basic healthcare on a tax-free
 > [!WARNING]
 > This is a product-design reference, not a finalized plan document or a legal opinion. Implentation requires coordination with the full group sponsored plan.
 
-<!-- record_id: plan.self-funded-skinny-mec.appendix-a-lists-an-inventory-of-required-preventive-services-last-updat -->
+<!-- record_id: plan.self-funded-basic-mec.appendix-a-lists-an-inventory-of-required-preventive-services-last-updat -->
 ### Appendix A: Lists an inventory of required preventive services last updated September 2026
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > At a glance > Appendix A: Lists an inventory of required preventive services last updated September 2026
-<!-- record_id: plan.self-funded-skinny-mec.appendix-b-gives-pricing-recommendations-for-premiums-on-a-sef-funded-ba -->
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > At a glance > Appendix A: Lists an inventory of required preventive services last updated September 2026
+<!-- record_id: plan.self-funded-basic-mec.appendix-b-gives-pricing-recommendations-for-premiums-on-a-sef-funded-ba -->
 ### Appendix B: Gives pricing recommendations for premiums on a sef-funded basis
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > At a glance > Appendix B: Gives pricing recommendations for premiums on a sef-funded basis
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > At a glance > Appendix B: Gives pricing recommendations for premiums on a sef-funded basis
 
-<!-- record_id: plan.self-funded-skinny-mec.the-design-thesis -->
+<!-- record_id: plan.self-funded-basic-mec.the-design-thesis -->
 ## The design thesis
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > The design thesis
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > The design thesis
 
 Not every health plan can (or should) try to cover everything.
 
-Expansive major medical coverage protects against a broad range of healthcare costs, but it cannot also be extraordinarily inexpensive. A skinny MEC has a different job. It is laser-focused on:
+Expansive major medical coverage protects against a broad range of healthcare costs, but it cannot also be extraordinarily inexpensive. A basic MEC has a different job. It is laser-focused on:
 
 1. Establishing minimum essential coverage;
 2. Complying with the federal market reforms that apply to the plan;
@@ -110,9 +110,9 @@ Expansive major medical coverage protects against a broad range of healthcare co
 
 The goal is not to deny valid care or valid claims. The goal is to define the plan's promise precisely, fulfill that promise reliably, and keep its cost proportional to its deliberately narrow purpose.
 
-<!-- record_id: plan.self-funded-skinny-mec.a-word-on-self-funding -->
+<!-- record_id: plan.self-funded-basic-mec.a-word-on-self-funding -->
 ## A word on self-funding
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > A word on self-funding
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > A word on self-funding
 
 This plan is self-fundable even for small employers with little or no experience in self-funding because its required benefits are limited, identifiable, and priceable. The remaining outliers are not catastrophically expensive.
 
@@ -129,25 +129,25 @@ This document provides means of technical compliance that are practically reacha
 You can do this. Much of the law is written to constrain circumstances in which a behemoth insurer or administrator might squash an individual participant. In real life, you can be responsive and reasonable—and that operating posture avoids many of the failures that produce adverse outcomes.
 
 
-<!-- record_id: plan.self-funded-skinny-mec.1-mec-means-minimum-essential-coverage -->
+<!-- record_id: plan.self-funded-basic-mec.1-mec-means-minimum-essential-coverage -->
 ## 1. MEC means minimum essential coverage
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 1. MEC means minimum essential coverage
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 1. MEC means minimum essential coverage
 
 **MEC** is short for **minimum essential coverage**. It is a legal classification under the Affordable Care Act - not a statement that a plan is comprehensive, generous, or equivalent to major medical insurance.
 
 An eligible employer-sponsored plan is generally MEC. The ACA regulations do not permit offering non excepted (excepted is a specific set of benefit concepts) plans of any kind that don't meet the market reform requirements. Therefore, any legitimate plan offered is MEC. [CMS MEC guidance](https://www.cms.gov/CCIIO/Resources/Regulations-and-Guidance/Downloads/mec-guidance-10-31-2013.pdf)
 
-<!-- record_id: plan.self-funded-skinny-mec.individual-coverage-mandates -->
+<!-- record_id: plan.self-funded-basic-mec.individual-coverage-mandates -->
 ### Individual coverage mandates
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 1. MEC means minimum essential coverage > Individual coverage mandates
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 1. MEC means minimum essential coverage > Individual coverage mandates
 
 The federal individual shared-responsibility payment has been reduced to zero, but some states maintain their own coverage mandates. California, for example, generally requires residents and their dependents to have MEC for each month, qualify for an exemption, or pay a state individual shared-responsibility penalty. [California Franchise Tax Board](https://www.ftb.ca.gov/file/personal/filing-situations/health-care-mandate/personal.html)
 
 A properly structured employer-sponsored MEC can therefore have concrete value even when it is not major medical coverage: enrollment can satisfy the participant's MEC requirement.
 
-<!-- record_id: plan.self-funded-skinny-mec.employer-shared-responsibility-4980h-a-commonly-called-penalty-a -->
+<!-- record_id: plan.self-funded-basic-mec.employer-shared-responsibility-4980h-a-commonly-called-penalty-a -->
 ### Employer shared responsibility: §4980H(a), commonly called Penalty A
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 1. MEC means minimum essential coverage > Employer shared responsibility: §4980H(a), commonly called Penalty A
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 1. MEC means minimum essential coverage > Employer shared responsibility: §4980H(a), commonly called Penalty A
 
 The employer shared-responsibility rules apply only to an **applicable large employer**, generally an employer that averaged at least 50 full-time employees, including full-time equivalents, during the preceding calendar year.
 
@@ -164,9 +164,9 @@ When triggered, the §4980H(a) calculation is generally based on the employer's 
 
 An employee must receive an **effective opportunity to enroll or decline** at least once for each plan year. Mandatory enrollment is subject to special rules and should not be assumed to count as an offer merely because the employer placed an employee in coverage.
 
-<!-- record_id: plan.self-funded-skinny-mec.2-mec-is-not-minimum-value -->
+<!-- record_id: plan.self-funded-basic-mec.2-mec-is-not-minimum-value -->
 ## 2. MEC is not minimum value
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 2. MEC is not minimum value
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 2. MEC is not minimum value
 
 MEC answers one question:
 
@@ -176,39 +176,39 @@ Minimum value answers another:
 
 > **Does this employer plan provide a sufficiently broad and substantial level of coverage?**
 
-A plan generally provides minimum value when it pays at least 60% of the total allowed cost of benefits expected for a standard population **and** provides substantial coverage of inpatient hospitalization and physician services. A skinny MEC that intentionally excludes broad hospital and physician coverage will ordinarily not provide minimum value. [IRS minimum-value guidance](https://www.irs.gov/affordable-care-act/employers/minimum-value-and-affordability)
+A plan generally provides minimum value when it pays at least 60% of the total allowed cost of benefits expected for a standard population **and** provides substantial coverage of inpatient hospitalization and physician services. A basic MEC that intentionally excludes broad hospital and physician coverage will ordinarily not provide minimum value. [IRS minimum-value guidance](https://www.irs.gov/affordable-care-act/employers/minimum-value-and-affordability)
 
 #### Minimum essential coverage
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-2-mec-is-not-minimum-value.minimum-essential-coverage; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 2. MEC is not minimum value
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-2-mec-is-not-minimum-value.minimum-essential-coverage; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 2. MEC is not minimum value
 - Standard: Minimum essential coverage
 - What it measures: Whether coverage qualifies as MEC
 - Does this design target it?: **Yes**
 
 #### ACA market-reform compliance
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-2-mec-is-not-minimum-value.aca-market-reform-compliance; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 2. MEC is not minimum value
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-2-mec-is-not-minimum-value.aca-market-reform-compliance; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 2. MEC is not minimum value
 - Standard: ACA market-reform compliance
 - What it measures: Whether the plan obeys applicable federal coverage rules
 - Does this design target it?: **Yes**
 
 #### Minimum value
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-2-mec-is-not-minimum-value.minimum-value; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 2. MEC is not minimum value
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-2-mec-is-not-minimum-value.minimum-value; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 2. MEC is not minimum value
 - Standard: Minimum value
 - What it measures: Breadth and actuarial value, including substantial hospital and physician coverage
 - Does this design target it?: **No**
 
 #### Major medical protection
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-2-mec-is-not-minimum-value.major-medical-protection; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 2. MEC is not minimum value
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-2-mec-is-not-minimum-value.major-medical-protection; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 2. MEC is not minimum value
 - Standard: Major medical protection
 - What it measures: Broad protection from routine and catastrophic medical expense
 - Does this design target it?: **No**
 
 #### HSA eligibility
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-2-mec-is-not-minimum-value.hsa-eligibility; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 2. MEC is not minimum value
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-2-mec-is-not-minimum-value.hsa-eligibility; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 2. MEC is not minimum value
 - Standard: HSA eligibility
 - What it measures: Whether the person has qualifying HDHP coverage and no disqualifying coverage
 - Does this design target it?: **Only when separately and deliberately designed for it**
@@ -216,9 +216,9 @@ A plan generally provides minimum value when it pays at least 60% of the total a
 
 Calling all five concepts “ACA compliance” obscures the actual design choices. A plan can be MEC and market-reform compliant without providing minimum value. It can also be MEC without being HSA-compatible.
 
-<!-- record_id: plan.self-funded-skinny-mec.3-penalty-b-is-a-separate-employer-decision -->
+<!-- record_id: plan.self-funded-basic-mec.3-penalty-b-is-a-separate-employer-decision -->
 ## 3. Penalty B is a separate employer decision
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 3. Penalty B is a separate employer decision
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 3. Penalty B is a separate employer decision
 
 Internal Revenue Code §4980H(b), commonly called **Penalty B**, concerns affordability and minimum value. It is not the same exposure as Penalty A.
 
@@ -244,9 +244,9 @@ This makes Penalty B a financial design consideration rather than proof that eve
 
 CommonCare does not take the position that employers should avoid minimum-value coverage. It takes the position that minimum value is a separate plan-design and financial question that should be understood and modeled accurately rather than conflated with MEC.
 
-<!-- record_id: plan.self-funded-skinny-mec.4-a-self-funded-mec-is-still-a-real-group-health-plan -->
+<!-- record_id: plan.self-funded-basic-mec.4-a-self-funded-mec-is-still-a-real-group-health-plan -->
 ## 4. A self-funded MEC is still a real group health plan
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 4. A self-funded MEC is still a real group health plan
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 4. A self-funded MEC is still a real group health plan
 
 An employer does not escape the ACA's group-market reforms merely because:
 
@@ -262,9 +262,9 @@ A non-grandfathered self-funded group health plan generally must comply with app
 
 Other federal obligations may also apply, depending on the sponsor and plan, including ERISA plan-document, fiduciary, claims, disclosure, reporting, HIPAA, COBRA, PCORI-fee, and ACA information-reporting rules. State rules require separate analysis, especially for governmental plans, church plans, multiple-employer arrangements, stop-loss coverage, providers, administrators, and state individual mandates.
 
-<!-- record_id: plan.self-funded-skinny-mec.5-the-core-coverage-requirement-phs-act-2713 -->
+<!-- record_id: plan.self-funded-basic-mec.5-the-core-coverage-requirement-phs-act-2713 -->
 ## 5. The core coverage requirement: PHS Act §2713
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 5. The core coverage requirement: PHS Act §2713
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 5. The core coverage requirement: PHS Act §2713
 
 For this product, §2713 is not a footnote. It defines the central covered benefit.
 
@@ -273,42 +273,42 @@ For this product, §2713 is not a footnote. It defines the central covered benef
 
 A non-grandfathered group health plan must cover specified recommended preventive items and services **without cost sharing**. No cost sharing means no deductible, copayment, or coinsurance when the service is furnished consistently with the applicable recommendation and the plan's lawful network and medical-management rules.
 
-<!-- record_id: plan.self-funded-skinny-mec.where-the-preventive-schedule-comes-from -->
+<!-- record_id: plan.self-funded-basic-mec.where-the-preventive-schedule-comes-from -->
 ### Where the preventive schedule comes from
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Where the preventive schedule comes from
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Where the preventive schedule comes from
 
 The required schedule is dynamic. It is assembled from four federal sources:
 
 #### U.S. Preventive Services Task Force
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-5-the-core-coverage-requirement-phs-act-2713.u-s-preventive-services-task-force; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Where the preventive schedule comes from
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-5-the-core-coverage-requirement-phs-act-2713.u-s-preventive-services-task-force; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Where the preventive schedule comes from
 - Source: U.S. Preventive Services Task Force
 - Required recommendations or guidelines: Evidence-based items and services with an **A** or **B** rating
 
 #### CDC Advisory Committee on Immunization Practices
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-5-the-core-coverage-requirement-phs-act-2713.cdc-advisory-committee-on-immunization-practices; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Where the preventive schedule comes from
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-5-the-core-coverage-requirement-phs-act-2713.cdc-advisory-committee-on-immunization-practices; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Where the preventive schedule comes from
 - Source: CDC Advisory Committee on Immunization Practices
 - Required recommendations or guidelines: Immunizations recommended for routine use and adopted by the CDC
 
 #### HRSA-supported guidelines for infants, children, and adolescents
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-5-the-core-coverage-requirement-phs-act-2713.hrsa-supported-guidelines-for-infants-children-and-adolescents; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Where the preventive schedule comes from
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-5-the-core-coverage-requirement-phs-act-2713.hrsa-supported-guidelines-for-infants-children-and-adolescents; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Where the preventive schedule comes from
 - Source: HRSA-supported guidelines for infants, children, and adolescents
 - Required recommendations or guidelines: Preventive care and screenings not already captured by the USPSTF framework
 
 #### HRSA-supported Women's Preventive Services Guidelines
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-5-the-core-coverage-requirement-phs-act-2713.hrsa-supported-women-s-preventive-services-guidelines; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Where the preventive schedule comes from
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-5-the-core-coverage-requirement-phs-act-2713.hrsa-supported-women-s-preventive-services-guidelines; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Where the preventive schedule comes from
 - Source: HRSA-supported Women's Preventive Services Guidelines
 - Required recommendations or guidelines: Evidence-informed preventive care and screenings for women not already captured by specified USPSTF recommendations
 
 
 The plan must monitor these sources. New or revised recommendations generally become mandatory for plan years beginning on or after the date one year after the recommendation or guideline is issued. The effective schedule is therefore determined by both the recommendation date and the plan-year start date—not simply by whatever appears on a website on the date a claim arrives. [DOL preventive-services FAQ Part 64](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/aca-part-64)
 
-<!-- record_id: plan.self-funded-skinny-mec.what-without-cost-sharing-includes -->
+<!-- record_id: plan.self-funded-basic-mec.what-without-cost-sharing-includes -->
 ### What “without cost sharing” includes
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 5. The core coverage requirement: PHS Act §2713 > What “without cost sharing” includes
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 5. The core coverage requirement: PHS Act §2713 > What “without cost sharing” includes
 
 Compliance is broader than paying a code labeled “preventive.” The plan must account for:
 
@@ -322,17 +322,17 @@ Compliance is broader than paying a code labeled “preventive.” The plan must
 
 The plan should maintain a versioned coverage matrix connecting each operative recommendation to eligibility logic, codes, frequency rules, integral services, network providers, prior-authorization rules if lawful, and claims instructions.
 
-<!-- record_id: plan.self-funded-skinny-mec.reasonable-medical-management -->
+<!-- record_id: plan.self-funded-basic-mec.reasonable-medical-management -->
 ### Reasonable medical management
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Reasonable medical management
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Reasonable medical management
 
 When the controlling recommendation or guideline does not specify the frequency, method, treatment, or setting, a plan may use **reasonable medical-management techniques** to determine coverage limitations. That authority is useful, but it is not unlimited.
 
 For contraceptive coverage, for example, plans may generally use reasonable medical management within a specified contraceptive category when the guideline does not dictate the precise method or product. The plan must cover at least one form in each identified category without cost sharing and must maintain an accessible, transparent, and sufficiently expedient exceptions process when a participant's provider determines that a particular service or product is medically necessary. [DOL ACA FAQ Part 54](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/aca-part-54)
 
-<!-- record_id: plan.self-funded-skinny-mec.network-and-price-controls -->
+<!-- record_id: plan.self-funded-basic-mec.network-and-price-controls -->
 ### Network and price controls
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Network and price controls
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Network and price controls
 
 ⚠️ CRITICAL: This is the real practical implementation issue for this plan.
 
@@ -342,7 +342,7 @@ For contraceptive coverage, for example, plans may generally use reasonable medi
 
 >This process cannot make it cumbersome to obtain care, it is in place a matter of protecting plan assets for all participants. Reasonable concessions must be made for bona fide preventive care requests that arise, even if a pre-negotiated network doesn't exist for all services.
 
->A skinny MEC may use a narrow network, direct contracts, reference-based pricing, or other price controls, provided the actual arrangement complies with §2713 and all other applicable law.
+>A basic MEC may use a narrow network, direct contracts, reference-based pricing, or other price controls, provided the actual arrangement complies with §2713 and all other applicable law.
 
 The central network rule is:
 
@@ -372,9 +372,9 @@ Price control should therefore be designed as a procurement function:
 5. Adjudicate the service and its integral components at zero participant cost; and
 6. Provide an exception and appeal path when the network or medical-management rule does not work for the individual.
 
-<!-- record_id: plan.self-funded-skinny-mec.commoncare-s-second-lowest-negotiable-cash-price-model -->
+<!-- record_id: plan.self-funded-basic-mec.commoncare-s-second-lowest-negotiable-cash-price-model -->
 ### CommonCare's second-lowest negotiable cash-price model
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 5. The core coverage requirement: PHS Act §2713 > CommonCare's second-lowest negotiable cash-price model
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 5. The core coverage requirement: PHS Act §2713 > CommonCare's second-lowest negotiable cash-price model
 
 “Reference-based” pricing is often tied to Medicare. CommonCare proposes another approach designed to reflect the price at which care is actually available: the **second-lowest negotiable cash price** in the participant's geographic market.
 
@@ -396,9 +396,9 @@ Cash-price care is readily available and priceable through many channels, includ
 
 Federal reference-pricing guidance emphasizes adequate access to quality providers and warns that reference pricing cannot operate as a subterfuge for otherwise prohibited coverage limitations. It also states that satisfying the reference-pricing guidance under PHS Act §2707(b) does not itself establish compliance with §2713. [CMS, ACA Implementation FAQs Part XXI](https://www.cms.gov/CCIIO/Resources/Fact-Sheets-and-FAQs/Downloads/Reference_Pricing_FAQ_101014.pdf)
 
-<!-- record_id: plan.self-funded-skinny-mec.reference-based-pricing-is-a-recognized-network-design -->
+<!-- record_id: plan.self-funded-basic-mec.reference-based-pricing-is-a-recognized-network-design -->
 ### Reference-based pricing is a recognized network design
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Reference-based pricing is a recognized network design
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 5. The core coverage requirement: PHS Act §2713 > Reference-based pricing is a recognized network design
 
 Federal guidance expressly recognizes reference-based pricing as a legitimate network design for self-funded and large-group health plans.
 
@@ -421,15 +421,15 @@ Reference pricing is not merely a reimbursement formula. Properly implemented, i
 
 **Authority:** [ACA Implementation FAQs Part XIX, Q4](https://www.cms.gov/cciio/resources/fact-sheets-and-faqs/aca_implementation_faqs19); [ACA Implementation FAQs Part XXI](https://www.cms.gov/CCIIO/Resources/Fact-Sheets-and-FAQs/Downloads/Reference_Pricing_FAQ_101014.pdf); [ACA Implementation FAQs Part XII, Q3](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/aca-part-12).
 
-<!-- record_id: plan.self-funded-skinny-mec.6-concentrated-risks-within-the-preventive-schedule -->
+<!-- record_id: plan.self-funded-basic-mec.6-concentrated-risks-within-the-preventive-schedule -->
 ## 6. Concentrated risks within the preventive schedule
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 6. Concentrated risks within the preventive schedule
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 6. Concentrated risks within the preventive schedule
 
 A preventive-focused plan is low-cost because most scheduled services are predictable and can be actively purchased. That does not make its liability risk-free.
 
-<!-- record_id: plan.self-funded-skinny-mec.potiential-high-cost-procedure-colorectal-cancer-screening -->
+<!-- record_id: plan.self-funded-basic-mec.potiential-high-cost-procedure-colorectal-cancer-screening -->
 ### ⚠️ Potiential high-cost procedure: Colorectal-cancer screening
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 6. Concentrated risks within the preventive schedule > ⚠️ Potiential high-cost procedure: Colorectal-cancer screening
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 6. Concentrated risks within the preventive schedule > ⚠️ Potiential high-cost procedure: Colorectal-cancer screening
 
 The USPSTF recognizes multiple screening strategies, including high-sensitivity guaiac fecal occult-blood testing, fecal immunochemical testing, stool DNA-FIT, colonoscopy, CT colonography, and flexible sigmoidoscopy for applicable populations. A plan may be able to use reasonable medical management where the recommendation leaves room to do so. [USPSTF colorectal-cancer recommendation](https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening)
 
@@ -440,9 +440,9 @@ The correct operational strategy is therefore to procure both stages:
 - A convenient, low-cost initial screening pathway; and
 - A contracted, navigated, fairly priced follow-up-colonoscopy pathway. As of late 2026, $1,000 - $1,300 is broadly available in most markets. Far short of the frequent $10,000 hospital bills for this procedure, and not a confounding risk for the plan.
 
-<!-- record_id: plan.self-funded-skinny-mec.potiential-high-cost-procedure-female-sterilization-procedures -->
+<!-- record_id: plan.self-funded-basic-mec.potiential-high-cost-procedure-female-sterilization-procedures -->
 ### ⚠️ Potiential high-cost procedure: Female sterilization procedures
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 6. Concentrated risks within the preventive schedule > ⚠️ Potiential high-cost procedure: Female sterilization procedures
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 6. Concentrated risks within the preventive schedule > ⚠️ Potiential high-cost procedure: Female sterilization procedures
 
 The HRSA-supported Women's Preventive Services Guidelines include the full range of female-controlled FDA-approved contraceptive methods, effective family-planning practices, and sterilization procedures. This can create a concentrated surgical exposure within an otherwise predictable preventive-only design. [HRSA Women's Preventive Services Guidelines](https://www.hrsa.gov/womens-guidelines)
 
@@ -463,9 +463,9 @@ The best steps to de-risk are:
 > 
 > Female sterilization must be covered under the applicable preventive-services requirements, but the plan is not required to promote the procedure. Coverage may be expressed through the plan’s broader contraceptive and preventive-care provisions, with access available through the plan’s approved-provider process. In practice, utilization requires a participant to identify the benefit, elect the procedure, and follow the plan’s access rules. This materially reduces expected utilization without changing the underlying coverage obligation.
 
-<!-- record_id: plan.self-funded-skinny-mec.7-hsa-compatibility-is-a-separate-design-test -->
+<!-- record_id: plan.self-funded-basic-mec.7-hsa-compatibility-is-a-separate-design-test -->
 ## 7. HSA compatibility is a separate design test
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 7. HSA compatibility is a separate design test
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 7. HSA compatibility is a separate design test
 
 One of the strongest potential uses of this plan is to provide valuable first-dollar preventive coverage while preserving access to a health savings account. But MEC status alone does not accomplish that.
 
@@ -478,18 +478,18 @@ To contribute to an HSA, an individual generally must:
 
 For 2026, the general HDHP minimum deductible is **$1,700 for self-only coverage** and **$3,400 for family coverage**, and the maximum out-of-pocket limit is **$8,500 for self-only coverage** and **$17,000 for family coverage**. These amounts are indexed and must be refreshed annually. [IRS Publication 15-B (2026)](https://www.irs.gov/publications/p15b)
 
-An HDHP may provide federally recognized preventive care before the deductible without destroying HSA eligibility. That makes preventive-focused MEC and an HDHP potentially complementary. The plan documents must nevertheless establish all HDHP elements; “skinny MEC” is not itself an IRS-recognized substitute for the HDHP test.
+An HDHP may provide federally recognized preventive care before the deductible without destroying HSA eligibility. That makes preventive-focused MEC and an HDHP potentially complementary. The plan documents must nevertheless establish all HDHP elements; “basic MEC” is not itself an IRS-recognized substitute for the HDHP test.
 
 **Non preventive services covered under the plan must be subject to a high deductible.**
 
 This is a feature, not a bug. It serves to further de-risk the plan and hold premiums low.
 
 
-<!-- record_id: plan.self-funded-skinny-mec.8-what-the-plan-may-cover-beyond-the-minimum -->
+<!-- record_id: plan.self-funded-basic-mec.8-what-the-plan-may-cover-beyond-the-minimum -->
 ## 8. What the plan may cover beyond the minimum
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 8. What the plan may cover beyond the minimum
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 8. What the plan may cover beyond the minimum
 
-A skinny MEC can be creative and valuable without pretending to be major medical coverage.
+A basic MEC can be creative and valuable without pretending to be major medical coverage.
 
 Potential additions include:
 
@@ -505,35 +505,35 @@ Potential additions include:
 Each added benefit must pass four tests:
 
 #### Legal
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-8-what-the-plan-may-cover-beyond-the-minimum.legal; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 8. What the plan may cover beyond the minimum
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-8-what-the-plan-may-cover-beyond-the-minimum.legal; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 8. What the plan may cover beyond the minimum
 - Test: Legal
 - Question: Does the benefit comply with the ACA and other applicable group-plan rules?
 
 #### HSA
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-8-what-the-plan-may-cover-beyond-the-minimum.hsa; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 8. What the plan may cover beyond the minimum
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-8-what-the-plan-may-cover-beyond-the-minimum.hsa; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 8. What the plan may cover beyond the minimum
 - Test: HSA
 - Question: Does it preserve HSA eligibility, or is the product intentionally not HSA-compatible?
 
 #### Operational
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-8-what-the-plan-may-cover-beyond-the-minimum.operational; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 8. What the plan may cover beyond the minimum
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-8-what-the-plan-may-cover-beyond-the-minimum.operational; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 8. What the plan may cover beyond the minimum
 - Test: Operational
 - Question: Can participants actually understand and use it?
 
 #### Financial
-<!-- record_id: plan.self-funded-skinny-mec.self-funded-skinny-mec-plan-8-what-the-plan-may-cover-beyond-the-minimum.financial; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 8. What the plan may cover beyond the minimum
+<!-- record_id: plan.self-funded-basic-mec.self-funded-basic-mec-plan-8-what-the-plan-may-cover-beyond-the-minimum.financial; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 8. What the plan may cover beyond the minimum
 - Test: Financial
 - Question: Can it be funded predictably without defeating the low-cost purpose?
 
 
 Benefits should not be added merely because they sound attractive. Every addition expands administrative complexity, claims exposure, or both.
 
-<!-- record_id: plan.self-funded-skinny-mec.generic-prescriptions -->
+<!-- record_id: plan.self-funded-basic-mec.generic-prescriptions -->
 ### Generic prescriptions
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 8. What the plan may cover beyond the minimum > Generic prescriptions
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 8. What the plan may cover beyond the minimum > Generic prescriptions
 
 Generic prescriptions can be a valuable, frequently used benefit—but broad first-dollar prescription coverage can disqualify an individual from HSA contributions.
 
@@ -546,9 +546,9 @@ HSA-compatible options include:
 
 The plan should maintain an HSA preventive-drug list tied to current IRS guidance rather than assuming that “generic” means “preventive.”
 
-<!-- record_id: plan.self-funded-skinny-mec.a-dpc-enhanced-version -->
+<!-- record_id: plan.self-funded-basic-mec.a-dpc-enhanced-version -->
 ### A DPC-enhanced version
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 8. What the plan may cover beyond the minimum > A DPC-enhanced version
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 8. What the plan may cover beyond the minimum > A DPC-enhanced version
 
 Beginning January 1, 2026, an otherwise HSA-eligible individual may participate in certain qualifying direct-primary-care service arrangements without the DPC arrangement itself being treated as disqualifying health-plan coverage.
 
@@ -563,17 +563,17 @@ A **$99-per-month DPC arrangement** may therefore fit within the 2026 individual
 
 Potential structures include participant enrollment in a separately qualifying DPC arrangement, participant payment using HSA funds, or carefully reviewed employer funding outside the HDHP. An employer reimbursement arrangement can itself become health-plan coverage and must not be assumed HSA-compatible - it also doesn't constitute a health plan that meets the ACA market reforms and is likely illegal.
 
-<!-- record_id: plan.self-funded-skinny-mec.9-participant-communication-and-required-documents -->
+<!-- record_id: plan.self-funded-basic-mec.9-participant-communication-and-required-documents -->
 ## 9. Participant communication and required documents
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 9. Participant communication and required documents
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 9. Participant communication and required documents
 
-A self-funded skinny MEC must be communicated as the plan it actually is: useful, deliberately narrow coverage—not comprehensive major medical insurance.
+A self-funded basic MEC must be communicated as the plan it actually is: useful, deliberately narrow coverage—not comprehensive major medical insurance.
 
 At minimum, implementation should address:
 
-<!-- record_id: plan.self-funded-skinny-mec.formal-plan-terms -->
+<!-- record_id: plan.self-funded-basic-mec.formal-plan-terms -->
 ### Formal plan terms
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 9. Participant communication and required documents > Formal plan terms
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 9. Participant communication and required documents > Formal plan terms
 
 - Governing plan document;
 - Summary Plan Description when ERISA applies;
@@ -585,17 +585,17 @@ At minimum, implementation should address:
 - Amendment and termination provisions; and
 - Coordination with stop-loss coverage, if any.
 
-<!-- record_id: plan.self-funded-skinny-mec.summary-of-benefits-and-coverage -->
+<!-- record_id: plan.self-funded-basic-mec.summary-of-benefits-and-coverage -->
 ### Summary of Benefits and Coverage
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 9. Participant communication and required documents > Summary of Benefits and Coverage
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 9. Participant communication and required documents > Summary of Benefits and Coverage
 
 The plan must furnish a compliant **Summary of Benefits and Coverage**, or SBC, at the required times. The SBC uses a prescribed federal template and plain language to describe covered benefits, cost sharing, limitations, and coverage examples. It does not replace the plan document or SPD. [DOL SBC resources](https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/affordable-care-act/for-employers-and-advisers/summary-of-benefits)
 
 CommonCare's SBC engine can generate the document from the canonical plan specification, but generation should include validation against the current federal template, instructions, coverage-example calculator, language-access requirements, and delivery rules.
 
-<!-- record_id: plan.self-funded-skinny-mec.clear-enrollment-disclosure -->
+<!-- record_id: plan.self-funded-basic-mec.clear-enrollment-disclosure -->
 ### Clear enrollment disclosure
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 9. Participant communication and required documents > Clear enrollment disclosure
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 9. Participant communication and required documents > Clear enrollment disclosure
 
 Enrollment material should say prominently:
 
@@ -611,9 +611,9 @@ Enrollment material should say prominently:
 
 Clarity is part of the product. The plan's low price should come from disciplined scope, procurement, and administration—not from participant confusion.
 
-<!-- record_id: plan.self-funded-skinny-mec.10-commoncare-implementation-model -->
+<!-- record_id: plan.self-funded-basic-mec.10-commoncare-implementation-model -->
 ## 10. CommonCare implementation model
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > 10. CommonCare implementation model
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > 10. CommonCare implementation model
 
 The CommonCare implementation should turn this design into a versioned set of connected artifacts:
 
@@ -627,11 +627,11 @@ The CommonCare implementation should turn this design into a versioned set of co
 8. **Employer-mandate model** — Penalty A and Penalty B analyzed separately; and
 9. **Annual update process** — indexed HDHP limits, preventive recommendations, regulatory changes, and plan-document amendments.
 
-<!-- record_id: plan.self-funded-skinny-mec.design-position -->
+<!-- record_id: plan.self-funded-basic-mec.design-position -->
 ## Design position
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > Design position
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > Design position
 
-> A self-funded skinny MEC is not failed major medical coverage. It is a different tool for a different job.
+> A self-funded basic MEC is not failed major medical coverage. It is a different tool for a different job.
 
 Used honestly and administered well, it can:
 
@@ -643,9 +643,9 @@ Used honestly and administered well, it can:
 
 It should be judged against the purpose it claims—not against a promise it never made.
 
-<!-- record_id: plan.self-funded-skinny-mec.primary-references -->
+<!-- record_id: plan.self-funded-basic-mec.primary-references -->
 ## Primary references
-> Retrieval context: Self-Funded Skinny MEC Plan — Self-Funded Skinny MEC Plan > Primary references
+> Retrieval context: Self-Funded Basic MEC Plan — Self-Funded Basic MEC Plan > Primary references
 
 - [CMS: Minimum Essential Coverage Guidance](https://www.cms.gov/CCIIO/Resources/Regulations-and-Guidance/Downloads/mec-guidance-10-31-2013.pdf)
 - [IRS: Employer Shared Responsibility Provisions](https://www.irs.gov/affordable-care-act/employers/questions-and-answers-on-employer-shared-responsibility-provisions-under-the-affordable-care-act)
@@ -660,9 +660,9 @@ It should be judged against the purpose it claims—not against a promise it nev
 - [DOL: Summary of Benefits and Coverage Resources](https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/affordable-care-act/for-employers-and-advisers/summary-of-benefits)
 - [California FTB: Health Care Mandate](https://www.ftb.ca.gov/file/personal/filing-situations/health-care-mandate/personal.html)
 
-<!-- record_id: plan.self-funded-skinny-mec.appendix-a-inventory-of-preventive-services -->
+<!-- record_id: plan.self-funded-basic-mec.appendix-a-inventory-of-preventive-services -->
 # Appendix A: Inventory of preventive services
-> Retrieval context: Self-Funded Skinny MEC Plan — Appendix A: Inventory of preventive services
+> Retrieval context: Self-Funded Basic MEC Plan — Appendix A: Inventory of preventive services
 
 ---
 id: compliance.preventive-services-inventory
@@ -671,7 +671,7 @@ kind: compliance-inventory
 owners:
 - CommonCare
   related:
-- plan.self-funded-skinny-mec
+- plan.self-funded-basic-mec
 - compliance.phs-act-2713
   source_of_truth:
 - USPSTF A and B Recommendations
@@ -680,15 +680,15 @@ owners:
   last_reviewed: 2026-09-08
 ---
 
-<!-- record_id: plan.self-funded-skinny-mec.preventive-services-inventory-and-cost-model -->
+<!-- record_id: plan.self-funded-basic-mec.preventive-services-inventory-and-cost-model -->
 # Preventive Services Inventory and Cost Model
-> Retrieval context: Self-Funded Skinny MEC Plan — Preventive Services Inventory and Cost Model
+> Retrieval context: Self-Funded Basic MEC Plan — Preventive Services Inventory and Cost Model
 
 > **A practical inventory of the preventive services a non-grandfathered group health plan may need to cover without cost sharing under PHS Act §2713, with likely users and working procurement targets.**
 
-<!-- record_id: plan.self-funded-skinny-mec.how-to-use-this-document -->
+<!-- record_id: plan.self-funded-basic-mec.how-to-use-this-document -->
 ## How to use this document
-> Retrieval context: Self-Funded Skinny MEC Plan — Preventive Services Inventory and Cost Model > How to use this document
+> Retrieval context: Self-Funded Basic MEC Plan — Preventive Services Inventory and Cost Model > How to use this document
 
 This is a **coverage and budgeting map**, not a claims-adjudication specification. The controlling recommendation, participant facts, attending-provider determination, coding, integral services, plan-year effective date, and network availability determine what must be covered in an individual case.
 
@@ -697,31 +697,31 @@ The inventory reflects recommendations identified as current for plan years begi
 > [!IMPORTANT]
 > “Likely to receive” is plain-language utilization guidance, not a substitute for the legal eligibility criteria in the governing recommendation.
 
-<!-- record_id: plan.self-funded-skinny-mec.pricing-method -->
+<!-- record_id: plan.self-funded-basic-mec.pricing-method -->
 ## Pricing method
-> Retrieval context: Self-Funded Skinny MEC Plan — Preventive Services Inventory and Cost Model > Pricing method
+> Retrieval context: Self-Funded Basic MEC Plan — Preventive Services Inventory and Cost Model > Pricing method
 
 #### Cash target
-<!-- record_id: plan.self-funded-skinny-mec.preventive-services-inventory-and-cost-model-pricing-method.cash-target; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Preventive Services Inventory and Cost Model > Pricing method
+<!-- record_id: plan.self-funded-basic-mec.preventive-services-inventory-and-cost-model-pricing-method.cash-target; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Preventive Services Inventory and Cost Model > Pricing method
 - Label: **Cash target**
 - Meaning: A realistic direct-pay or contracted target for a routine, uncomplicated service
 
 #### 120% Medicare
-<!-- record_id: plan.self-funded-skinny-mec.preventive-services-inventory-and-cost-model-pricing-method.120-medicare; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Preventive Services Inventory and Cost Model > Pricing method
+<!-- record_id: plan.self-funded-basic-mec.preventive-services-inventory-and-cost-model-pricing-method.120-medicare; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Preventive Services Inventory and Cost Model > Pricing method
 - Label: **120% Medicare**
 - Meaning: A target allowed amount equal to 120% of the applicable Medicare fee-schedule amount for the provider, locality, site, date, modifiers, and component billing
 
 #### Episode target
-<!-- record_id: plan.self-funded-skinny-mec.preventive-services-inventory-and-cost-model-pricing-method.episode-target; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Preventive Services Inventory and Cost Model > Pricing method
+<!-- record_id: plan.self-funded-basic-mec.preventive-services-inventory-and-cost-model-pricing-method.episode-target; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Preventive Services Inventory and Cost Model > Pricing method
 - Label: **Episode target**
 - Meaning: A planning range for all ordinary professional, facility, laboratory, pathology, drug, and integral-service components identified in the row
 
 #### Incremental
-<!-- record_id: plan.self-funded-skinny-mec.preventive-services-inventory-and-cost-model-pricing-method.incremental; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Preventive Services Inventory and Cost Model > Pricing method
+<!-- record_id: plan.self-funded-basic-mec.preventive-services-inventory-and-cost-model-pricing-method.incremental; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Preventive Services Inventory and Cost Model > Pricing method
 - Label: **Incremental**
 - Meaning: Often completed inside an office or preventive visit; the listed amount represents likely additional plan cost rather than the entire visit
 
@@ -730,52 +730,52 @@ Prices below are national planning estimates. They are not quotations, fee sched
 
 CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f), [Clinical Laboratory Fee Schedule](https://www.cms.gov/medicare/payment/fee-schedules/clinical-laboratory-fee-schedule-clfs), [preventive-services coding resource](https://www.cms.gov/Medicare/Prevention/PrevntionGenInfo/medicare-preventive-services/MPS-QuickReferenceChart-1.html), and [vaccine pricing](https://www.cms.gov/medicare/payment/part-b-drugs/vaccine-pricing).
 
-<!-- record_id: plan.self-funded-skinny-mec.cost-legend -->
+<!-- record_id: plan.self-funded-basic-mec.cost-legend -->
 ## Cost legend
-> Retrieval context: Self-Funded Skinny MEC Plan — Preventive Services Inventory and Cost Model > Cost legend
+> Retrieval context: Self-Funded Basic MEC Plan — Preventive Services Inventory and Cost Model > Cost legend
 
 #### $
-<!-- record_id: plan.self-funded-skinny-mec.preventive-services-inventory-and-cost-model-cost-legend.record; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Preventive Services Inventory and Cost Model > Cost legend
+<!-- record_id: plan.self-funded-basic-mec.preventive-services-inventory-and-cost-model-cost-legend.record; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Preventive Services Inventory and Cost Model > Cost legend
 - Band: $
 - Working episode cost: $0–$75
 
 #### $$
-<!-- record_id: plan.self-funded-skinny-mec.preventive-services-inventory-and-cost-model-cost-legend.record-2; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Preventive Services Inventory and Cost Model > Cost legend
+<!-- record_id: plan.self-funded-basic-mec.preventive-services-inventory-and-cost-model-cost-legend.record-2; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Preventive Services Inventory and Cost Model > Cost legend
 - Band: $$
 - Working episode cost: $76–$250
 
 #### $$$
-<!-- record_id: plan.self-funded-skinny-mec.preventive-services-inventory-and-cost-model-cost-legend.record-3; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Preventive Services Inventory and Cost Model > Cost legend
+<!-- record_id: plan.self-funded-basic-mec.preventive-services-inventory-and-cost-model-cost-legend.record-3; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Preventive Services Inventory and Cost Model > Cost legend
 - Band: $$$
 - Working episode cost: $251–$750
 
 #### $$$$
-<!-- record_id: plan.self-funded-skinny-mec.preventive-services-inventory-and-cost-model-cost-legend.record-4; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Preventive Services Inventory and Cost Model > Cost legend
+<!-- record_id: plan.self-funded-basic-mec.preventive-services-inventory-and-cost-model-cost-legend.record-4; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Preventive Services Inventory and Cost Model > Cost legend
 - Band: $$$$
 - Working episode cost: $751–$2,500
 
 #### $$$$$
-<!-- record_id: plan.self-funded-skinny-mec.preventive-services-inventory-and-cost-model-cost-legend.record-5; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Preventive Services Inventory and Cost Model > Cost legend
+<!-- record_id: plan.self-funded-basic-mec.preventive-services-inventory-and-cost-model-cost-legend.record-5; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Preventive Services Inventory and Cost Model > Cost legend
 - Band: $$$$$
 - Working episode cost: More than $2,500 or materially open-ended
 
 
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations -->
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations -->
 # Part I — USPSTF A and B recommendations
-> Retrieval context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations
+> Retrieval context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations
 
-<!-- record_id: plan.self-funded-skinny-mec.cardiovascular-and-metabolic-health -->
+<!-- record_id: plan.self-funded-basic-mec.cardiovascular-and-metabolic-health -->
 ## Cardiovascular and metabolic health
-> Retrieval context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
+> Retrieval context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
 
 #### Abdominal aortic aneurysm screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.abdominal-aortic-aneurysm-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.abdominal-aortic-aneurysm-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
 - Preventive service: Abdominal aortic aneurysm screening
 - Who is likely to receive it?: Men ages 65–75 who have ever smoked
 - Typical implementation: One-time abdominal ultrasound
@@ -783,8 +783,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$
 
 #### Blood-pressure screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.blood-pressure-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.blood-pressure-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
 - Preventive service: Blood-pressure screening
 - Who is likely to receive it?: All adults without known hypertension
 - Typical implementation: Office measurement; out-of-office confirmation after a positive screen
@@ -792,8 +792,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $–$$
 
 #### Prediabetes and type 2 diabetes screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.prediabetes-and-type-2-diabetes-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.prediabetes-and-type-2-diabetes-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
 - Preventive service: Prediabetes and type 2 diabetes screening
 - Who is likely to receive it?: Adults ages 35–70 with overweight or obesity
 - Typical implementation: Glucose or A1c; referral to effective prevention for prediabetes
@@ -801,8 +801,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $–$$$
 
 #### Statin preventive medication
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.statin-preventive-medication; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.statin-preventive-medication; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
 - Preventive service: Statin preventive medication
 - Who is likely to receive it?: Adults ages 40–75 with a qualifying risk factor and ≥10% 10-year CVD risk
 - Typical implementation: Risk calculation, lipid testing, generic statin
@@ -810,8 +810,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $
 
 #### Healthy diet and physical-activity counseling
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.healthy-diet-and-physical-activity-counseling; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.healthy-diet-and-physical-activity-counseling; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
 - Preventive service: Healthy diet and physical-activity counseling
 - Who is likely to receive it?: Adults with cardiovascular risk factors
 - Typical implementation: Intensive behavioral counseling or referral
@@ -819,8 +819,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$–$$$$
 
 #### Obesity behavioral interventions
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.obesity-behavioral-interventions; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.obesity-behavioral-interventions; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
 - Preventive service: Obesity behavioral interventions
 - Who is likely to receive it?: Adults with BMI ≥30
 - Typical implementation: Intensive, multicomponent program
@@ -828,8 +828,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$$–$$$$
 
 #### Exercise interventions to prevent falls
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.exercise-interventions-to-prevent-falls; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cardiovascular-and-metabolic-healt.exercise-interventions-to-prevent-falls; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cardiovascular and metabolic health
 - Preventive service: Exercise interventions to prevent falls
 - Who is likely to receive it?: Community-dwelling adults 65+ at increased fall risk
 - Typical implementation: Supervised or structured exercise program
@@ -837,13 +837,13 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$–$$$
 
 
-<!-- record_id: plan.self-funded-skinny-mec.bone-health -->
+<!-- record_id: plan.self-funded-basic-mec.bone-health -->
 ## Bone health
-> Retrieval context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Bone health
+> Retrieval context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Bone health
 
 #### Osteoporosis screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-bone-health.osteoporosis-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Bone health
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-bone-health.osteoporosis-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Bone health
 - Preventive service: Osteoporosis screening
 - Who is likely to receive it?: Women 65+ and postmenopausal women under 65 whose risk assessment indicates increased fracture risk
 - Typical implementation: DXA, usually central bone-density scan; risk assessment for younger eligible women
@@ -851,13 +851,13 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$
 
 
-<!-- record_id: plan.self-funded-skinny-mec.cancer-prevention-and-screening -->
+<!-- record_id: plan.self-funded-basic-mec.cancer-prevention-and-screening -->
 ## Cancer prevention and screening
-> Retrieval context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+> Retrieval context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 
 #### Breast-cancer screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.breast-cancer-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.breast-cancer-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 - Preventive service: Breast-cancer screening
 - Who is likely to receive it?: Women ages 40–74
 - Typical implementation: Screening mammography every 2 years under current USPSTF recommendation; HRSA may require broader completion services
@@ -865,8 +865,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$–$$$$
 
 #### BRCA risk assessment
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.brca-risk-assessment; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.brca-risk-assessment; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 - Preventive service: BRCA risk assessment
 - Who is likely to receive it?: Women with qualifying personal/family history or ancestry
 - Typical implementation: Brief tool in primary care
@@ -874,8 +874,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $
 
 #### BRCA genetic counseling
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.brca-genetic-counseling; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.brca-genetic-counseling; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 - Preventive service: BRCA genetic counseling
 - Who is likely to receive it?: People with a positive risk assessment
 - Typical implementation: Pre-test specialist counseling
@@ -883,8 +883,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$–$$$
 
 #### BRCA genetic testing
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.brca-genetic-testing; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.brca-genetic-testing; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 - Preventive service: BRCA genetic testing
 - Who is likely to receive it?: People for whom testing is indicated after counseling
 - Typical implementation: Targeted or panel test
@@ -892,8 +892,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$$–$$$$
 
 #### Breast-cancer risk-reducing medication
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.breast-cancer-risk-reducing-medication; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.breast-cancer-risk-reducing-medication; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 - Preventive service: Breast-cancer risk-reducing medication
 - Who is likely to receive it?: Women 35+ at increased breast-cancer risk and low adverse-effect risk
 - Typical implementation: Tamoxifen, raloxifene, or aromatase inhibitor plus prescribing visit
@@ -901,8 +901,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $–$$
 
 #### Cervical-cancer screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.cervical-cancer-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.cervical-cancer-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 - Preventive service: Cervical-cancer screening
 - Who is likely to receive it?: Women ages 21–65 with a cervix and within recommended interval
 - Typical implementation: Cytology, primary hrHPV, or cotesting by age
@@ -910,8 +910,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $–$$
 
 #### Colorectal-cancer screening: FIT/gFOBT
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.colorectal-cancer-screening-fit-gfobt; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.colorectal-cancer-screening-fit-gfobt; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 - Preventive service: Colorectal-cancer screening: FIT/gFOBT
 - Who is likely to receive it?: Adults ages 45–75
 - Typical implementation: Annual stool test
@@ -919,8 +919,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $
 
 #### Colorectal-cancer screening: stool DNA-FIT
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.colorectal-cancer-screening-stool-dna-fit; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.colorectal-cancer-screening-stool-dna-fit; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 - Preventive service: Colorectal-cancer screening: stool DNA-FIT
 - Who is likely to receive it?: Adults ages 45–75 selecting that method
 - Typical implementation: Every 1–3 years per applicable recommendation/product
@@ -928,8 +928,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$$
 
 #### Colorectal-cancer screening: colonoscopy
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.colorectal-cancer-screening-colonoscopy; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.colorectal-cancer-screening-colonoscopy; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 - Preventive service: Colorectal-cancer screening: colonoscopy
 - Who is likely to receive it?: Adults ages 45–75 selecting colonoscopy, or after a positive non-invasive test
 - Typical implementation: Screening/follow-up colonoscopy with integral anesthesia and pathology
@@ -937,8 +937,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$$$
 
 #### Colorectal-cancer screening: CT colonography
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.colorectal-cancer-screening-ct-colonography; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.colorectal-cancer-screening-ct-colonography; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 - Preventive service: Colorectal-cancer screening: CT colonography
 - Who is likely to receive it?: Adults ages 45–75 selecting that method
 - Typical implementation: CT colonography at recommended interval
@@ -946,8 +946,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$$
 
 #### Colorectal-cancer screening: flexible sigmoidoscopy
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.colorectal-cancer-screening-flexible-sigmoidoscopy; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.colorectal-cancer-screening-flexible-sigmoidoscopy; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 - Preventive service: Colorectal-cancer screening: flexible sigmoidoscopy
 - Who is likely to receive it?: Adults ages 45–75 selecting that method
 - Typical implementation: Endoscopic screening, sometimes combined with FIT
@@ -955,8 +955,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$$–$$$$
 
 #### Lung-cancer screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.lung-cancer-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.lung-cancer-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 - Preventive service: Lung-cancer screening
 - Who is likely to receive it?: Adults ages 50–80 with ≥20 pack-years who smoke or quit within 15 years
 - Typical implementation: Annual low-dose CT while eligible
@@ -964,8 +964,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$–$$$
 
 #### Skin-cancer prevention counseling
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.skin-cancer-prevention-counseling; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-cancer-prevention-and-screening.skin-cancer-prevention-counseling; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Cancer prevention and screening
 - Preventive service: Skin-cancer prevention counseling
 - Who is likely to receive it?: Fair-skinned people ages 6 months–24 years and parents of young children
 - Typical implementation: UV-exposure counseling
@@ -976,13 +976,13 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 > [!WARNING]
 > A low-cost stool test controls the initial colorectal-screening cost; it does not close the episode. Federal guidance requires a follow-up colonoscopy after a positive non-invasive test to be covered without cost sharing because it is integral to completing the screen. [DOL FAQ Part 51](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/aca-part-51)
 
-<!-- record_id: plan.self-funded-skinny-mec.infectious-disease-screening-and-prevention -->
+<!-- record_id: plan.self-funded-basic-mec.infectious-disease-screening-and-prevention -->
 ## Infectious-disease screening and prevention
-> Retrieval context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
+> Retrieval context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
 
 #### HIV screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.hiv-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.hiv-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
 - Preventive service: HIV screening
 - Who is likely to receive it?: Everyone ages 15–65; younger/older people at increased risk; all pregnant people
 - Typical implementation: Lab antigen/antibody test; repeat based on risk/pregnancy
@@ -990,8 +990,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $
 
 #### HIV preexposure prophylaxis
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.hiv-preexposure-prophylaxis; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.hiv-preexposure-prophylaxis; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
 - Preventive service: HIV preexposure prophylaxis
 - Who is likely to receive it?: Adolescents and adults at increased risk of acquiring HIV
 - Typical implementation: Oral or injectable PrEP plus required baseline and monitoring services
@@ -999,8 +999,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $$$–$$$$$
 
 #### Hepatitis C screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.hepatitis-c-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.hepatitis-c-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
 - Preventive service: Hepatitis C screening
 - Who is likely to receive it?: Adults ages 18–79
 - Typical implementation: Usually one-time antibody test, with reflex RNA confirmation when positive
@@ -1008,8 +1008,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $–$$
 
 #### Hepatitis B screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.hepatitis-b-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.hepatitis-b-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
 - Preventive service: Hepatitis B screening
 - Who is likely to receive it?: Adolescents and adults at increased risk
 - Typical implementation: HBsAg/anti-HBs/anti-HBc panel as clinically indicated
@@ -1017,8 +1017,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $–$$
 
 #### Hepatitis B screening in pregnancy
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.hepatitis-b-screening-in-pregnancy; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.hepatitis-b-screening-in-pregnancy; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
 - Preventive service: Hepatitis B screening in pregnancy
 - Who is likely to receive it?: All pregnant people at first prenatal visit
 - Typical implementation: HBsAg or recommended panel
@@ -1026,8 +1026,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $
 
 #### Latent tuberculosis screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.latent-tuberculosis-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.latent-tuberculosis-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
 - Preventive service: Latent tuberculosis screening
 - Who is likely to receive it?: Asymptomatic adults at increased risk
 - Typical implementation: IGRA blood test or tuberculin skin test
@@ -1035,8 +1035,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $–$$
 
 #### Chlamydia screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.chlamydia-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.chlamydia-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
 - Preventive service: Chlamydia screening
 - Who is likely to receive it?: Sexually active women ≤24 and women 25+ at increased risk, including during pregnancy
 - Typical implementation: NAAT, often combined with gonorrhea
@@ -1044,8 +1044,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $–$$
 
 #### Gonorrhea screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.gonorrhea-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.gonorrhea-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
 - Preventive service: Gonorrhea screening
 - Who is likely to receive it?: Same general population as chlamydia recommendation
 - Typical implementation: NAAT, often combined with chlamydia
@@ -1053,8 +1053,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $–$$
 
 #### Syphilis screening in pregnancy
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.syphilis-screening-in-pregnancy; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.syphilis-screening-in-pregnancy; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
 - Preventive service: Syphilis screening in pregnancy
 - Who is likely to receive it?: All pregnant people, early; later repeat when applicable
 - Typical implementation: Treponemal/nontreponemal testing
@@ -1062,8 +1062,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $
 
 #### Syphilis screening outside pregnancy
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.syphilis-screening-outside-pregnancy; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.syphilis-screening-outside-pregnancy; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
 - Preventive service: Syphilis screening outside pregnancy
 - Who is likely to receive it?: Adolescents and adults at increased risk
 - Typical implementation: Treponemal/nontreponemal testing
@@ -1071,8 +1071,8 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 - Band: $
 
 #### STI behavioral counseling
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.sti-behavioral-counseling; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-infectious-disease-screening-and-p.sti-behavioral-counseling; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Infectious-disease screening and prevention
 - Preventive service: STI behavioral counseling
 - Who is likely to receive it?: Sexually active adolescents and adults at increased risk
 - Typical implementation: Behavioral counseling
@@ -1082,13 +1082,13 @@ CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/ne
 
 PrEP is a special severity item. Required coverage can include the drug, baseline testing, follow-up testing, adherence counseling, and other services integral to furnishing PrEP. The plan needs a current drug strategy and cannot budget this as merely an HIV test.
 
-<!-- record_id: plan.self-funded-skinny-mec.mental-health-substance-use-and-interpersonal-safety -->
+<!-- record_id: plan.self-funded-basic-mec.mental-health-substance-use-and-interpersonal-safety -->
 ## Mental health, substance use, and interpersonal safety
-> Retrieval context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
+> Retrieval context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
 
 #### Anxiety screening in adults
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.anxiety-screening-in-adults; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.anxiety-screening-in-adults; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
 - Preventive service: Anxiety screening in adults
 - Who is likely to receive it?: Adults age 64 or younger, including pregnant/postpartum people
 - Typical implementation: Questionnaire with systems for evaluation and follow-up
@@ -1096,8 +1096,8 @@ PrEP is a special severity item. Required coverage can include the drug, baselin
 - Band: $
 
 #### Anxiety screening in youth
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.anxiety-screening-in-youth; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.anxiety-screening-in-youth; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
 - Preventive service: Anxiety screening in youth
 - Who is likely to receive it?: Children and adolescents ages 8–18
 - Typical implementation: Questionnaire with systems for evaluation and follow-up
@@ -1105,8 +1105,8 @@ PrEP is a special severity item. Required coverage can include the drug, baselin
 - Band: $
 
 #### Depression screening in adults
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.depression-screening-in-adults; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.depression-screening-in-adults; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
 - Preventive service: Depression screening in adults
 - Who is likely to receive it?: Adults, including pregnant, postpartum, and older adults
 - Typical implementation: Questionnaire with diagnosis/treatment/referral capacity
@@ -1114,8 +1114,8 @@ PrEP is a special severity item. Required coverage can include the drug, baselin
 - Band: $
 
 #### Depression screening in adolescents
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.depression-screening-in-adolescents; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.depression-screening-in-adolescents; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
 - Preventive service: Depression screening in adolescents
 - Who is likely to receive it?: Adolescents ages 12–18
 - Typical implementation: Questionnaire with diagnosis/treatment/follow-up systems
@@ -1123,8 +1123,8 @@ PrEP is a special severity item. Required coverage can include the drug, baselin
 - Band: $
 
 #### Perinatal-depression prevention
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.perinatal-depression-prevention; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.perinatal-depression-prevention; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
 - Preventive service: Perinatal-depression prevention
 - Who is likely to receive it?: Pregnant/postpartum people at increased risk
 - Typical implementation: Counseling intervention or referral
@@ -1132,8 +1132,8 @@ PrEP is a special severity item. Required coverage can include the drug, baselin
 - Band: $$$–$$$$
 
 #### Unhealthy alcohol-use screening/counseling
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.unhealthy-alcohol-use-screening-counseling; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.unhealthy-alcohol-use-screening-counseling; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
 - Preventive service: Unhealthy alcohol-use screening/counseling
 - Who is likely to receive it?: Adults 18+, including pregnant people
 - Typical implementation: Questionnaire and brief counseling for risky use
@@ -1141,8 +1141,8 @@ PrEP is a special severity item. Required coverage can include the drug, baselin
 - Band: $–$$
 
 #### Unhealthy drug-use screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.unhealthy-drug-use-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.unhealthy-drug-use-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
 - Preventive service: Unhealthy drug-use screening
 - Who is likely to receive it?: Adults 18+ where diagnosis and treatment/referral are available
 - Typical implementation: Verbal/questionnaire screening, not routine specimen testing
@@ -1150,8 +1150,8 @@ PrEP is a special severity item. Required coverage can include the drug, baselin
 - Band: $
 
 #### Tobacco cessation in adults
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.tobacco-cessation-in-adults; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.tobacco-cessation-in-adults; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
 - Preventive service: Tobacco cessation in adults
 - Who is likely to receive it?: All adults; pharmacotherapy applies to nonpregnant adults who use tobacco
 - Typical implementation: Ask/advise, counseling, and FDA-approved cessation medication
@@ -1159,8 +1159,8 @@ PrEP is a special severity item. Required coverage can include the drug, baselin
 - Band: $–$$$
 
 #### Tobacco-use prevention in youth
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.tobacco-use-prevention-in-youth; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.tobacco-use-prevention-in-youth; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
 - Preventive service: Tobacco-use prevention in youth
 - Who is likely to receive it?: School-aged children and adolescents who have not begun using tobacco
 - Typical implementation: Education or brief counseling
@@ -1168,8 +1168,8 @@ PrEP is a special severity item. Required coverage can include the drug, baselin
 - Band: $
 
 #### Intimate-partner violence screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.intimate-partner-violence-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-mental-health-substance-use-and-in.intimate-partner-violence-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Mental health, substance use, and interpersonal safety
 - Preventive service: Intimate-partner violence screening
 - Who is likely to receive it?: Women of reproductive age, including pregnant/postpartum women
 - Typical implementation: Validated screen; referral to multicomponent intervention when indicated
@@ -1179,13 +1179,13 @@ PrEP is a special severity item. Required coverage can include the drug, baselin
 
 A zero-cost questionnaire is only the initial screen. Where a recommendation requires an intervention, referral, or systems for diagnosis and follow-up, the coverage model must account for that next step.
 
-<!-- record_id: plan.self-funded-skinny-mec.pregnancy-postpartum-and-newborn-services -->
+<!-- record_id: plan.self-funded-basic-mec.pregnancy-postpartum-and-newborn-services -->
 ## Pregnancy, postpartum, and newborn services
-> Retrieval context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
+> Retrieval context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
 
 #### Low-dose aspirin to prevent preeclampsia
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.low-dose-aspirin-to-prevent-preeclampsia; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.low-dose-aspirin-to-prevent-preeclampsia; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
 - Preventive service: Low-dose aspirin to prevent preeclampsia
 - Who is likely to receive it?: Pregnant people at high risk, after 12 weeks
 - Typical implementation: 81 mg aspirin and prescribing oversight
@@ -1193,8 +1193,8 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $
 
 #### Asymptomatic bacteriuria screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.asymptomatic-bacteriuria-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.asymptomatic-bacteriuria-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
 - Preventive service: Asymptomatic bacteriuria screening
 - Who is likely to receive it?: Pregnant people
 - Typical implementation: Urine culture
@@ -1202,8 +1202,8 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $
 
 #### Gestational-diabetes screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.gestational-diabetes-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.gestational-diabetes-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
 - Preventive service: Gestational-diabetes screening
 - Who is likely to receive it?: Asymptomatic pregnant people at 24 weeks or later
 - Typical implementation: Glucose challenge/tolerance testing
@@ -1211,8 +1211,8 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $
 
 #### Hypertensive-disorder screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.hypertensive-disorder-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.hypertensive-disorder-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
 - Preventive service: Hypertensive-disorder screening
 - Who is likely to receive it?: All pregnant people
 - Typical implementation: Blood pressure throughout pregnancy
@@ -1220,8 +1220,8 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $
 
 #### Healthy-weight-gain counseling
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.healthy-weight-gain-counseling; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.healthy-weight-gain-counseling; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
 - Preventive service: Healthy-weight-gain counseling
 - Who is likely to receive it?: Pregnant people
 - Typical implementation: Effective behavioral counseling
@@ -1229,8 +1229,8 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $–$$$
 
 #### Breastfeeding counseling/support
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.breastfeeding-counseling-support; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.breastfeeding-counseling-support; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
 - Preventive service: Breastfeeding counseling/support
 - Who is likely to receive it?: Pregnant and postpartum people
 - Typical implementation: Counseling or referral
@@ -1238,8 +1238,8 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $$–$$$
 
 #### Folic-acid supplementation
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.folic-acid-supplementation; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.folic-acid-supplementation; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
 - Preventive service: Folic-acid supplementation
 - Who is likely to receive it?: Anyone planning or able to become pregnant
 - Typical implementation: 400–800 mcg daily
@@ -1247,8 +1247,8 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $
 
 #### Rh(D) blood typing and antibody testing
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.rh-d-blood-typing-and-antibody-testing; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.rh-d-blood-typing-and-antibody-testing; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
 - Preventive service: Rh(D) blood typing and antibody testing
 - Who is likely to receive it?: All pregnant people at first pregnancy-related visit
 - Typical implementation: Blood type and antibody screen
@@ -1256,8 +1256,8 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $
 
 #### Repeat Rh(D) antibody testing
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.repeat-rh-d-antibody-testing; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.repeat-rh-d-antibody-testing; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
 - Preventive service: Repeat Rh(D) antibody testing
 - Who is likely to receive it?: Unsensitized Rh-negative pregnant people at 24–28 weeks unless biologic father known Rh-negative
 - Typical implementation: Repeat antibody screen
@@ -1265,8 +1265,8 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $
 
 #### Ocular prophylaxis against gonococcal ophthalmia
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.ocular-prophylaxis-against-gonococcal-ophthalmia; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-pregnancy-postpartum-and-newborn-s.ocular-prophylaxis-against-gonococcal-ophthalmia; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Pregnancy, postpartum, and newborn services
 - Preventive service: Ocular prophylaxis against gonococcal ophthalmia
 - Who is likely to receive it?: All newborns
 - Typical implementation: Erythromycin ophthalmic prophylaxis
@@ -1274,13 +1274,13 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $
 
 
-<!-- record_id: plan.self-funded-skinny-mec.children-and-adolescents -->
+<!-- record_id: plan.self-funded-basic-mec.children-and-adolescents -->
 ## Children and adolescents
-> Retrieval context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Children and adolescents
+> Retrieval context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Children and adolescents
 
 #### High-BMI intensive intervention
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-children-and-adolescents.high-bmi-intensive-intervention; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Children and adolescents
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-children-and-adolescents.high-bmi-intensive-intervention; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Children and adolescents
 - Preventive service: High-BMI intensive intervention
 - Who is likely to receive it?: Children/adolescents age 6+ with BMI ≥95th percentile
 - Typical implementation: Comprehensive intensive behavioral program
@@ -1288,8 +1288,8 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $$$–$$$$
 
 #### Fluoride varnish
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-children-and-adolescents.fluoride-varnish; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Children and adolescents
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-children-and-adolescents.fluoride-varnish; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Children and adolescents
 - Preventive service: Fluoride varnish
 - Who is likely to receive it?: Infants/children under 5 from tooth eruption
 - Typical implementation: Primary-care application
@@ -1297,8 +1297,8 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $
 
 #### Oral fluoride supplementation
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-children-and-adolescents.oral-fluoride-supplementation; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Children and adolescents
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-children-and-adolescents.oral-fluoride-supplementation; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Children and adolescents
 - Preventive service: Oral fluoride supplementation
 - Who is likely to receive it?: Children 6 months+ whose water is fluoride-deficient
 - Typical implementation: Prescription supplement
@@ -1306,8 +1306,8 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $
 
 #### Vision screening
-<!-- record_id: plan.self-funded-skinny-mec.part-i-uspstf-a-and-b-recommendations-children-and-adolescents.vision-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part I — USPSTF A and B recommendations > Children and adolescents
+<!-- record_id: plan.self-funded-basic-mec.part-i-uspstf-a-and-b-recommendations-children-and-adolescents.vision-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part I — USPSTF A and B recommendations > Children and adolescents
 - Preventive service: Vision screening
 - Who is likely to receive it?: All children ages 3–5, at least once
 - Typical implementation: Instrument or chart screening; referral if abnormal
@@ -1315,15 +1315,15 @@ A zero-cost questionnaire is only the initial screen. Where a recommendation req
 - Band: $
 
 
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women -->
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women -->
 # Part II — HRSA-supported preventive services for women
-> Retrieval context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+> Retrieval context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 
 These services overlap with USPSTF recommendations in places but may be broader. Do not deduplicate by title alone; compare the actual population, frequency, method, and required completion services in the current HRSA guideline.
 
 #### Well-woman preventive visits
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.well-woman-preventive-visits; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.well-woman-preventive-visits; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Well-woman preventive visits
 - Who is likely to receive it?: Adolescent and adult women, generally at least annually as needed to obtain recommended services
 - Typical implementation: Preventive evaluation; more than one visit may be necessary
@@ -1331,8 +1331,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $$
 
 #### Breast-cancer screening and completion
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.breast-cancer-screening-and-completion; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.breast-cancer-screening-and-completion; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Breast-cancer screening and completion
 - Who is likely to receive it?: Average-risk women beginning between ages 40–50 through at least 74; increased-risk women as indicated
 - Typical implementation: Mammography plus indicated imaging/pathology to complete screening
@@ -1340,8 +1340,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $$–$$$$
 
 #### Breast/cervical screening navigation
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.breast-cervical-screening-navigation; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.breast-cervical-screening-navigation; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Breast/cervical screening navigation
 - Who is likely to receive it?: Women needing help completing breast or cervical screening
 - Typical implementation: Person-to-person assessment, education, referrals, and navigation
@@ -1349,8 +1349,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $–$$
 
 #### Cervical-cancer screening
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.cervical-cancer-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.cervical-cancer-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Cervical-cancer screening
 - Who is likely to receive it?: Average-risk women ages 21–65
 - Typical implementation: Cytology/hrHPV strategy under current guideline
@@ -1358,8 +1358,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $–$$
 
 #### Contraceptive counseling
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.contraceptive-counseling; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.contraceptive-counseling; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Contraceptive counseling
 - Who is likely to receive it?: Adolescent and adult women
 - Typical implementation: Annual and as-needed person-centered counseling
@@ -1367,8 +1367,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $–$$
 
 #### OTC and prescription contraception
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.otc-and-prescription-contraception; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.otc-and-prescription-contraception; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: OTC and prescription contraception
 - Who is likely to receive it?: Adolescent and adult women with reproductive capacity
 - Typical implementation: At least one form in each applicable category; exceptions process for medically necessary product
@@ -1376,8 +1376,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $–$$$
 
 #### Long-acting reversible contraception
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.long-acting-reversible-contraception; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.long-acting-reversible-contraception; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Long-acting reversible contraception
 - Who is likely to receive it?: Women choosing an IUD or implant
 - Typical implementation: Device, insertion, related services, removal when required
@@ -1385,8 +1385,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $$$–$$$$
 
 #### Female sterilization
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.female-sterilization; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.female-sterilization; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Female sterilization
 - Who is likely to receive it?: Women choosing permanent contraception
 - Typical implementation: Surgical procedure and integral anesthesia/facility services
@@ -1394,8 +1394,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $$$$$
 
 #### Diabetes screening after pregnancy
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.diabetes-screening-after-pregnancy; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.diabetes-screening-after-pregnancy; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Diabetes screening after pregnancy
 - Who is likely to receive it?: Women with prior gestational diabetes who are not currently pregnant and have not been diagnosed with type 2 diabetes
 - Typical implementation: Glucose/A1c at least every 3 years for at least 10 years
@@ -1403,8 +1403,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $
 
 #### Anxiety screening
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.anxiety-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.anxiety-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Anxiety screening
 - Who is likely to receive it?: Adolescent and adult women, including pregnant/postpartum women
 - Typical implementation: Validated screening tool with follow-up pathway
@@ -1412,8 +1412,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $
 
 #### Urinary-incontinence screening
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.urinary-incontinence-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.urinary-incontinence-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Urinary-incontinence screening
 - Who is likely to receive it?: Women, generally annually
 - Typical implementation: Screening questions; referral for evaluation/treatment when indicated
@@ -1421,8 +1421,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $
 
 #### Intimate-partner/domestic-violence screening
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.intimate-partner-domestic-violence-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.intimate-partner-domestic-violence-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Intimate-partner/domestic-violence screening
 - Who is likely to receive it?: Adolescent and adult women, at least annually
 - Typical implementation: Screen; intervention services or referral when needed
@@ -1430,8 +1430,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $–$$$$
 
 #### Tobacco-use counseling
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.tobacco-use-counseling; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.tobacco-use-counseling; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Tobacco-use counseling
 - Who is likely to receive it?: Adolescent and adult women, expanded counseling for pregnant users
 - Typical implementation: Screening and behavioral intervention
@@ -1439,8 +1439,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $–$$
 
 #### STI counseling
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.sti-counseling; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.sti-counseling; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: STI counseling
 - Who is likely to receive it?: Sexually active women at increased risk
 - Typical implementation: Annual behavioral counseling
@@ -1448,8 +1448,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $–$$
 
 #### HIV screening
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.hiv-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.hiv-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: HIV screening
 - Who is likely to receive it?: Adolescent and adult women, at least once; annual based on risk; pregnancy requirements
 - Typical implementation: Lab screening
@@ -1457,8 +1457,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $
 
 #### Breastfeeding services and supplies
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.breastfeeding-services-and-supplies; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.breastfeeding-services-and-supplies; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Breastfeeding services and supplies
 - Who is likely to receive it?: Pregnant and postpartum women
 - Typical implementation: Prenatal/postpartum consultation and breastfeeding equipment
@@ -1466,8 +1466,8 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $$–$$$
 
 #### Preventing obesity in midlife
-<!-- record_id: plan.self-funded-skinny-mec.part-ii-hrsa-supported-preventive-services-for-women.preventing-obesity-in-midlife; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women
+<!-- record_id: plan.self-funded-basic-mec.part-ii-hrsa-supported-preventive-services-for-women.preventing-obesity-in-midlife; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women
 - Preventive service: Preventing obesity in midlife
 - Who is likely to receive it?: Women ages 40–60 with normal or overweight BMI
 - Typical implementation: Counseling to maintain weight or limit gain
@@ -1475,9 +1475,9 @@ These services overlap with USPSTF recommendations in places but may be broader.
 - Band: $$–$$$
 
 
-<!-- record_id: plan.self-funded-skinny-mec.contraceptive-categories-requiring-an-operational-pathway -->
+<!-- record_id: plan.self-funded-basic-mec.contraceptive-categories-requiring-an-operational-pathway -->
 ## Contraceptive categories requiring an operational pathway
-> Retrieval context: Self-Funded Skinny MEC Plan — Part II — HRSA-supported preventive services for women > Contraceptive categories requiring an operational pathway
+> Retrieval context: Self-Funded Basic MEC Plan — Part II — HRSA-supported preventive services for women > Contraceptive categories requiring an operational pathway
 
 The current legal implementation should map the HRSA guideline and federal FAQ requirements to at least one no-cost form in each applicable category, plus an exceptions process. Operational categories include:
 
@@ -1501,248 +1501,248 @@ The current legal implementation should map the HRSA guideline and federal FAQ r
 
 The precise categories and products must be synchronized to current federal guidance and FDA status. “One cheap contraceptive” is not a compliant substitute for category-based coverage and medical-necessity exceptions.
 
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations -->
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations -->
 # Part III — Immunizations
-> Retrieval context: Self-Funded Skinny MEC Plan — Part III — Immunizations
+> Retrieval context: Self-Funded Basic MEC Plan — Part III — Immunizations
 
 The legal schedule is ACIP's recommendation as adopted by the CDC, not merely a static vaccine list. Age, prior vaccination, pregnancy, season, medical condition, occupation, travel, and shared clinical decision-making affect eligibility.
 
-<!-- record_id: plan.self-funded-skinny-mec.routine-child-and-adolescent-immunizations -->
+<!-- record_id: plan.self-funded-basic-mec.routine-child-and-adolescent-immunizations -->
 ## Routine child and adolescent immunizations
-> Retrieval context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+> Retrieval context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 
 #### Hepatitis B
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.hepatitis-b; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.hepatitis-b; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: Hepatitis B
 - Who is likely to receive it?: Infants beginning at birth; catch-up youth
 - Typical series/use: 2–4 doses depending on product/combination
 - Working product + administration target: **$40–$120/dose**
 
 #### Rotavirus
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.rotavirus; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.rotavirus; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: Rotavirus
 - Who is likely to receive it?: Infants
 - Typical series/use: 2- or 3-dose oral series
 - Working product + administration target: **$100–$180/dose**
 
 #### DTaP
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.dtap; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.dtap; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: DTaP
 - Who is likely to receive it?: Infants and children under 7
 - Typical series/use: 5-dose primary series
 - Working product + administration target: **$45–$100/dose**
 
 #### Hib
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.hib; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.hib; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: Hib
 - Who is likely to receive it?: Infants and young children; certain high-risk catch-up
 - Typical series/use: 3- or 4-dose series
 - Working product + administration target: **$40–$100/dose**
 
 #### Pneumococcal conjugate
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.pneumococcal-conjugate; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.pneumococcal-conjugate; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: Pneumococcal conjugate
 - Who is likely to receive it?: Infants/young children; risk-based catch-up
 - Typical series/use: Multi-dose series
 - Working product + administration target: **$150–$275/dose**
 
 #### Polio (IPV)
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.polio-ipv; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.polio-ipv; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: Polio (IPV)
 - Who is likely to receive it?: Infants and children
 - Typical series/use: 4-dose series
 - Working product + administration target: **$40–$90/dose**
 
 #### Influenza
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.influenza; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.influenza; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: Influenza
 - Who is likely to receive it?: Children 6 months+ each season
 - Typical series/use: Annual; 2 doses first season for some young children
 - Working product + administration target: **$35–$80/dose**
 
 #### COVID-19
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.covid-19; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.covid-19; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: COVID-19
 - Who is likely to receive it?: Children meeting current age/risk/recommendation criteria
 - Typical series/use: Current seasonal product/series
 - Working product + administration target: **CMS product allowance + administration; often $150–$300/dose**
 
 #### MMR
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.mmr; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.mmr; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: MMR
 - Who is likely to receive it?: Children beginning around 12 months; catch-up
 - Typical series/use: 2 doses
 - Working product + administration target: **$90–$160/dose**
 
 #### Varicella
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.varicella; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.varicella; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: Varicella
 - Who is likely to receive it?: Children beginning around 12 months; catch-up
 - Typical series/use: 2 doses
 - Working product + administration target: **$150–$240/dose**
 
 #### Hepatitis A
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.hepatitis-a; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.hepatitis-a; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: Hepatitis A
 - Who is likely to receive it?: Children beginning around 12 months; catch-up
 - Typical series/use: 2 doses
 - Working product + administration target: **$55–$110/dose**
 
 #### Tdap
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.tdap; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.tdap; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: Tdap
 - Who is likely to receive it?: Adolescents; pregnancy; catch-up
 - Typical series/use: Routine adolescent dose and each pregnancy
 - Working product + administration target: **$55–$110/dose**
 
 #### HPV
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.hpv; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.hpv; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: HPV
 - Who is likely to receive it?: All youth through age 26 under routine/catch-up rules
 - Typical series/use: 2 or 3 doses depending on starting age/condition
 - Working product + administration target: **$250–$350/dose**
 
 #### Meningococcal ACWY
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.meningococcal-acwy; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.meningococcal-acwy; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: Meningococcal ACWY
 - Who is likely to receive it?: Adolescents; certain high-risk children
 - Typical series/use: Routine adolescent series/risk-based doses
 - Working product + administration target: **$140–$240/dose**
 
 #### Meningococcal B
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.meningococcal-b; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.meningococcal-b; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: Meningococcal B
 - Who is likely to receive it?: Adolescents/young adults under shared decision-making; high-risk groups
 - Typical series/use: Product-specific 2- or 3-dose series
 - Working product + administration target: **$175–$300/dose**
 
 #### RSV maternal vaccine or infant antibody
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.rsv-maternal-vaccine-or-infant-antibody; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-child-and-adolescent-immunizations.rsv-maternal-vaccine-or-infant-antibody; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine child and adolescent immunizations
 - Vaccine or immunizing agent: RSV maternal vaccine or infant antibody
 - Who is likely to receive it?: Pregnant person during specified gestational/seasonal window or eligible infant
 - Typical series/use: Usually one maternal dose or infant monoclonal dose
 - Working product + administration target: **$300–$650**
 
 
-<!-- record_id: plan.self-funded-skinny-mec.routine-and-risk-based-adult-immunizations -->
+<!-- record_id: plan.self-funded-basic-mec.routine-and-risk-based-adult-immunizations -->
 ## Routine and risk-based adult immunizations
-> Retrieval context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+> Retrieval context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 
 #### Influenza
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.influenza; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.influenza; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 - Vaccine: Influenza
 - Who is likely to receive it?: Nearly all adults each season
 - Typical use: Annual
 - Working product + administration target: **$35–$80**
 
 #### COVID-19
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.covid-19; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.covid-19; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 - Vaccine: COVID-19
 - Who is likely to receive it?: Adults meeting current age/risk/recommendation criteria
 - Typical use: Current seasonal product
 - Working product + administration target: **Use current CMS allowance + administration; often $200–$300**
 
 #### Tdap/Td
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.tdap-td; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.tdap-td; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 - Vaccine: Tdap/Td
 - Who is likely to receive it?: Adults lacking Tdap; booster every 10 years; each pregnancy
 - Typical use: One Tdap then Td/Tdap boosters
 - Working product + administration target: **$55–$110/dose**
 
 #### HPV
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.hpv; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.hpv; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 - Vaccine: HPV
 - Who is likely to receive it?: Adults through age 26; ages 27–45 by shared decision-making
 - Typical use: 2- or 3-dose series
 - Working product + administration target: **$250–$350/dose**
 
 #### Zoster
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.zoster; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.zoster; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 - Vaccine: Zoster
 - Who is likely to receive it?: Adults 50+ and immunocompromised adults 19+
 - Typical use: 2-dose recombinant series
 - Working product + administration target: **$220–$320/dose**
 
 #### Pneumococcal
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.pneumococcal; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.pneumococcal; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 - Vaccine: Pneumococcal
 - Who is likely to receive it?: Older adults and younger adults with specified risks
 - Typical use: Product/history-specific PCV/PPSV pathway
 - Working product + administration target: **$150–$300/dose**
 
 #### RSV
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.rsv; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.rsv; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 - Vaccine: RSV
 - Who is likely to receive it?: Adults 75+; ages 50–74 at increased risk; specified pregnancy window
 - Typical use: Generally one dose under current recommendation
 - Working product + administration target: **$275–$400/dose**
 
 #### Hepatitis B
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.hepatitis-b; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.hepatitis-b; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 - Vaccine: Hepatitis B
 - Who is likely to receive it?: Routine through age 59; age 60+ by risk/request
 - Typical use: 2-, 3-, or 4-dose product-specific series
 - Working product + administration target: **$60–$150/dose**
 
 #### Hepatitis A
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.hepatitis-a; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.hepatitis-a; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 - Vaccine: Hepatitis A
 - Who is likely to receive it?: Anyone requesting it and specified risk groups
 - Typical use: 2-dose or combination series
 - Working product + administration target: **$80–$160/dose**
 
 #### MMR
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.mmr; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.mmr; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 - Vaccine: MMR
 - Who is likely to receive it?: Adults without evidence of immunity when indicated
 - Typical use: 1–2 doses
 - Working product + administration target: **$90–$160/dose**
 
 #### Varicella
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.varicella; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.varicella; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 - Vaccine: Varicella
 - Who is likely to receive it?: Adults without evidence of immunity
 - Typical use: 2 doses
 - Working product + administration target: **$150–$240/dose**
 
 #### Meningococcal ACWY/B
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.meningococcal-acwy-b; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.meningococcal-acwy-b; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 - Vaccine: Meningococcal ACWY/B
 - Who is likely to receive it?: Adults with specified medical, occupational, travel, or outbreak risks
 - Typical use: Product/risk-specific series and boosters
 - Working product + administration target: **$150–$300/dose**
 
 #### Polio
-<!-- record_id: plan.self-funded-skinny-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.polio; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
+<!-- record_id: plan.self-funded-basic-mec.part-iii-immunizations-routine-and-risk-based-adult-immunizations.polio; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part III — Immunizations > Routine and risk-based adult immunizations
 - Vaccine: Polio
 - Who is likely to receive it?: Adults known/suspected unvaccinated; exposure-risk booster
 - Typical use: Complete 3-dose series or one lifetime booster
@@ -1752,260 +1752,260 @@ The legal schedule is ACIP's recommendation as adopted by the CDC, not merely a 
 > [!NOTE]
 > Vaccine recommendations and prices are unusually dynamic. The claims system should ingest the current CDC schedule and CMS vaccine-price file rather than hard-code this table.
 
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent -->
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent -->
 # Part IV — HRSA/Bright Futures services for infants, children, and adolescents
-> Retrieval context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents
+> Retrieval context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents
 
 The Bright Futures periodicity schedule is a visit-by-visit matrix from prenatal/newborn care through age 21. The plan should procure the **well-child encounter as a bundled preventive platform**, then separately account for vaccines, laboratory tests, screening instruments, fluoride varnish, and follow-up services when billed independently.
 
-<!-- record_id: plan.self-funded-skinny-mec.preventive-visits -->
+<!-- record_id: plan.self-funded-basic-mec.preventive-visits -->
 ## Preventive visits
-> Retrieval context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Preventive visits
+> Retrieval context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Preventive visits
 
 #### Newborns and infants
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.newborns-and-infants; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Preventive visits
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.newborns-and-infants; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Preventive visits
 - Likely recipient: Newborns and infants
 - Typical timing: Newborn, first week, 1, 2, 4, 6, and 9 months
 - Working target: **Cash/120% Medicare-equivalent $125–$250 per visit**, plus vaccines/tests
 
 #### Toddlers
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.toddlers; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Preventive visits
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.toddlers; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Preventive visits
 - Likely recipient: Toddlers
 - Typical timing: 12, 15, 18, 24, and 30 months
 - Working target: **$125–$250 per visit**, plus vaccines/tests
 
 #### Children
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.children; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Preventive visits
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.children; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Preventive visits
 - Likely recipient: Children
 - Typical timing: Annual from age 3 through 11
 - Working target: **$125–$250 per visit**, plus vaccines/tests
 
 #### Adolescents and young adults
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.adolescents-and-young-adults; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Preventive visits
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.adolescents-and-young-adults; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Preventive visits
 - Likely recipient: Adolescents and young adults
 - Typical timing: Annual from age 12 through 21
 - Working target: **$125–$250 per visit**, plus vaccines/tests
 
 
-<!-- record_id: plan.self-funded-skinny-mec.services-embedded-in-or-triggered-by-the-periodicity-schedule -->
+<!-- record_id: plan.self-funded-basic-mec.services-embedded-in-or-triggered-by-the-periodicity-schedule -->
 ## Services embedded in or triggered by the periodicity schedule
-> Retrieval context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+> Retrieval context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 
 #### Newborn blood screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.newborn-blood-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.newborn-blood-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Newborn blood screening
 - Who is likely to receive it?: Newborns
 - Practical service: State newborn metabolic panel
 - Typical incremental target: **$50–$200**, state-dependent
 
 #### Critical congenital heart-disease screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.critical-congenital-heart-disease-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.critical-congenital-heart-disease-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Critical congenital heart-disease screening
 - Who is likely to receive it?: Newborns
 - Practical service: Pulse oximetry
 - Typical incremental target: **$0–$25**
 
 #### Newborn hearing screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.newborn-hearing-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.newborn-hearing-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Newborn hearing screening
 - Who is likely to receive it?: Newborns
 - Practical service: OAE/AABR
 - Typical incremental target: **$50–$150**
 
 #### Bilirubin screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.bilirubin-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.bilirubin-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Bilirubin screening
 - Who is likely to receive it?: Newborns
 - Practical service: Transcutaneous or serum bilirubin
 - Typical incremental target: **$10–$50**
 
 #### Developmental surveillance
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.developmental-surveillance; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.developmental-surveillance; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Developmental surveillance
 - Who is likely to receive it?: All children at well visits
 - Practical service: Clinician surveillance
 - Typical incremental target: **Included in visit**
 
 #### Standardized developmental screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.standardized-developmental-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.standardized-developmental-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Standardized developmental screening
 - Who is likely to receive it?: Young children at scheduled ages
 - Practical service: Validated instrument
 - Typical incremental target: **$10–$40**
 
 #### Autism screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.autism-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.autism-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Autism screening
 - Who is likely to receive it?: Toddlers at scheduled ages
 - Practical service: Validated instrument
 - Typical incremental target: **$10–$40**
 
 #### Behavioral/social/emotional screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.behavioral-social-emotional-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.behavioral-social-emotional-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Behavioral/social/emotional screening
 - Who is likely to receive it?: Children and adolescents at scheduled visits
 - Practical service: Validated instrument
 - Typical incremental target: **$10–$40**
 
 #### Maternal depression screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.maternal-depression-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.maternal-depression-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Maternal depression screening
 - Who is likely to receive it?: Mothers during specified infant visits
 - Practical service: Validated instrument
 - Typical incremental target: **$10–$40**
 
 #### Psychosocial/behavioral assessment
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.psychosocial-behavioral-assessment; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.psychosocial-behavioral-assessment; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Psychosocial/behavioral assessment
 - Who is likely to receive it?: Children and adolescents
 - Practical service: Assessment during preventive encounter
 - Typical incremental target: **Included or $10–$50**
 
 #### Substance-use assessment
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.substance-use-assessment; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.substance-use-assessment; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Substance-use assessment
 - Who is likely to receive it?: Adolescents
 - Practical service: Validated screening
 - Typical incremental target: **$0–$30**
 
 #### Depression/suicide-risk screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.depression-suicide-risk-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.depression-suicide-risk-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Depression/suicide-risk screening
 - Who is likely to receive it?: Adolescents
 - Practical service: Validated instrument and follow-up pathway
 - Typical incremental target: **$0–$30 screen**
 
 #### Oral-health risk assessment
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.oral-health-risk-assessment; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.oral-health-risk-assessment; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Oral-health risk assessment
 - Who is likely to receive it?: Infants and children
 - Practical service: Risk assessment/referral
 - Typical incremental target: **Included in visit**
 
 #### Fluoride varnish
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.fluoride-varnish; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.fluoride-varnish; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Fluoride varnish
 - Who is likely to receive it?: Young children after tooth eruption
 - Practical service: Varnish application
 - Typical incremental target: **$20–$50**
 
 #### Vision screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.vision-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.vision-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Vision screening
 - Who is likely to receive it?: Children at scheduled ages/risk points
 - Practical service: Instrument/chart screen
 - Typical incremental target: **$0–$40**
 
 #### Hearing screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.hearing-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.hearing-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Hearing screening
 - Who is likely to receive it?: Newborns and children/adolescents at scheduled ages
 - Practical service: Audiometry/OAE
 - Typical incremental target: **$25–$100**
 
 #### Blood-pressure measurement
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.blood-pressure-measurement; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.blood-pressure-measurement; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Blood-pressure measurement
 - Who is likely to receive it?: Children beginning at scheduled age and younger when risk-based
 - Practical service: Office measurement
 - Typical incremental target: **Included in visit**
 
 #### Growth/BMI assessment
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.growth-bmi-assessment; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.growth-bmi-assessment; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Growth/BMI assessment
 - Who is likely to receive it?: All children; BMI beginning at recommended age
 - Practical service: Height, weight, BMI percentile
 - Typical incremental target: **Included in visit**
 
 #### Dyslipidemia screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.dyslipidemia-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.dyslipidemia-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Dyslipidemia screening
 - Who is likely to receive it?: Children/adolescents at universal and risk-based ages
 - Practical service: Lipid panel
 - Typical incremental target: **Cash $15–$35**
 
 #### Anemia screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.anemia-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.anemia-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Anemia screening
 - Who is likely to receive it?: Infants/children/adolescents when scheduled or risk-based
 - Practical service: Hemoglobin/CBC
 - Typical incremental target: **Cash $10–$30**
 
 #### Lead screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.lead-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.lead-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Lead screening
 - Who is likely to receive it?: Infants/children at required ages or risk
 - Practical service: Blood lead level
 - Typical incremental target: **Cash $15–$40**
 
 #### Tuberculosis screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.tuberculosis-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.tuberculosis-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Tuberculosis screening
 - Who is likely to receive it?: Children/adolescents at risk
 - Practical service: Risk assessment, TST, or IGRA
 - Typical incremental target: **$0 assessment; $40–$120 test**
 
 #### STI screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.sti-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.sti-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: STI screening
 - Who is likely to receive it?: Sexually active adolescents under applicable recommendations
 - Practical service: NAAT/serology
 - Typical incremental target: **$40–$150**
 
 #### HIV screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.hiv-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.hiv-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: HIV screening
 - Who is likely to receive it?: Adolescents under applicable schedule/risk
 - Practical service: Lab test
 - Typical incremental target: **$20–$50**
 
 #### Cervical screening
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.cervical-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.cervical-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Cervical screening
 - Who is likely to receive it?: Young adults with a cervix beginning at applicable age
 - Practical service: Cytology/hrHPV strategy
 - Typical incremental target: **$75–$200**
 
 #### Immunizations
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.immunizations; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.immunizations; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Immunizations
 - Who is likely to receive it?: Children/adolescents under current CDC schedule
 - Practical service: Vaccine product and administration
 - Typical incremental target: **See vaccine tables**
 
 #### Anticipatory guidance
-<!-- record_id: plan.self-funded-skinny-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.anticipatory-guidance; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
+<!-- record_id: plan.self-funded-basic-mec.part-iv-hrsa-bright-futures-services-for-infants-children-and-adolescent.anticipatory-guidance; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part IV — HRSA/Bright Futures services for infants, children, and adolescents > Services embedded in or triggered by the periodicity schedule
 - Preventive domain: Anticipatory guidance
 - Who is likely to receive it?: Children, adolescents, and caregivers
 - Practical service: Safety, nutrition, activity, development, sexual health, and other age-appropriate counseling
@@ -2014,13 +2014,13 @@ The Bright Futures periodicity schedule is a visit-by-visit matrix from prenatal
 
 Bright Futures requirements are especially sensitive to age, interval, risk, and state newborn-screening rules. The final adjudication matrix should reproduce the official periodicity schedule at the service-rule level rather than using this human summary as the claims rule.
 
-<!-- record_id: plan.self-funded-skinny-mec.part-v-risk-map-for-a-skinny-mec -->
-# Part V — Risk map for a skinny MEC
-> Retrieval context: Self-Funded Skinny MEC Plan — Part V — Risk map for a skinny MEC
+<!-- record_id: plan.self-funded-basic-mec.part-v-risk-map-for-a-basic-mec -->
+# Part V — Risk map for a basic MEC
+> Retrieval context: Self-Funded Basic MEC Plan — Part V — Risk map for a basic MEC
 
-<!-- record_id: plan.self-funded-skinny-mec.predictable-readily-procurable-services -->
+<!-- record_id: plan.self-funded-basic-mec.predictable-readily-procurable-services -->
 ## Predictable, readily procurable services
-> Retrieval context: Self-Funded Skinny MEC Plan — Part V — Risk map for a skinny MEC > Predictable, readily procurable services
+> Retrieval context: Self-Funded Basic MEC Plan — Part V — Risk map for a basic MEC > Predictable, readily procurable services
 
 These are typically easy to contract at low fixed prices:
 
@@ -2033,9 +2033,9 @@ These are typically easy to contract at low fixed prices:
 - Basic vision and hearing screens; and
 - Preventive visits through a contracted primary-care or DPC network.
 
-<!-- record_id: plan.self-funded-skinny-mec.moderate-episodic-services -->
+<!-- record_id: plan.self-funded-basic-mec.moderate-episodic-services -->
 ## Moderate episodic services
-> Retrieval context: Self-Funded Skinny MEC Plan — Part V — Risk map for a skinny MEC > Moderate episodic services
+> Retrieval context: Self-Funded Basic MEC Plan — Part V — Risk map for a basic MEC > Moderate episodic services
 
 These require active site-of-service and bundled-price controls:
 
@@ -2048,63 +2048,63 @@ These require active site-of-service and bundled-price controls:
 - Long-acting contraception; and
 - Multi-session behavioral interventions.
 
-<!-- record_id: plan.self-funded-skinny-mec.concentrated-or-open-ended-risks -->
+<!-- record_id: plan.self-funded-basic-mec.concentrated-or-open-ended-risks -->
 ## Concentrated or open-ended risks
-> Retrieval context: Self-Funded Skinny MEC Plan — Part V — Risk map for a skinny MEC > Concentrated or open-ended risks
+> Retrieval context: Self-Funded Basic MEC Plan — Part V — Risk map for a basic MEC > Concentrated or open-ended risks
 
 #### Female sterilization
-<!-- record_id: plan.self-funded-skinny-mec.part-v-risk-map-for-a-skinny-mec-concentrated-or-open-ended-risks.female-sterilization; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part V — Risk map for a skinny MEC > Concentrated or open-ended risks
+<!-- record_id: plan.self-funded-basic-mec.part-v-risk-map-for-a-basic-mec-concentrated-or-open-ended-risks.female-sterilization; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part V — Risk map for a basic MEC > Concentrated or open-ended risks
 - Risk: Female sterilization
 - Why it matters: Surgical professional, facility, and anesthesia expense
 - Primary control: Bundled approved-provider pathway; target **$5,000–$8,000**
 
 #### Positive stool screening
-<!-- record_id: plan.self-funded-skinny-mec.part-v-risk-map-for-a-skinny-mec-concentrated-or-open-ended-risks.positive-stool-screening; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part V — Risk map for a skinny MEC > Concentrated or open-ended risks
+<!-- record_id: plan.self-funded-basic-mec.part-v-risk-map-for-a-basic-mec-concentrated-or-open-ended-risks.positive-stool-screening; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part V — Risk map for a basic MEC > Concentrated or open-ended risks
 - Risk: Positive stool screening
 - Why it matters: Converts a $15–$40 test into a required no-cost colonoscopy episode
 - Primary control: Pre-contracted ambulatory colonoscopy pathway
 
 #### Positive breast/cervical screen
-<!-- record_id: plan.self-funded-skinny-mec.part-v-risk-map-for-a-skinny-mec-concentrated-or-open-ended-risks.positive-breast-cervical-screen; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part V — Risk map for a skinny MEC > Concentrated or open-ended risks
+<!-- record_id: plan.self-funded-basic-mec.part-v-risk-map-for-a-basic-mec-concentrated-or-open-ended-risks.positive-breast-cervical-screen; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part V — Risk map for a basic MEC > Concentrated or open-ended risks
 - Risk: Positive breast/cervical screen
 - Why it matters: Additional imaging, pathology, colposcopy, or biopsy may be integral to completing screening under applicable guidance
 - Primary control: Defined completion pathway and contracted diagnostic providers
 
 #### HIV PrEP
-<!-- record_id: plan.self-funded-skinny-mec.part-v-risk-map-for-a-skinny-mec-concentrated-or-open-ended-risks.hiv-prep; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part V — Risk map for a skinny MEC > Concentrated or open-ended risks
+<!-- record_id: plan.self-funded-basic-mec.part-v-risk-map-for-a-basic-mec-concentrated-or-open-ended-risks.hiv-prep; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part V — Risk map for a basic MEC > Concentrated or open-ended risks
 - Risk: HIV PrEP
 - Why it matters: Drug and monitoring costs can be substantial and product-dependent
 - Primary control: Current formulary consistent with federal requirements, assistance coordination, and contracted labs
 
 #### Intensive behavioral interventions
-<!-- record_id: plan.self-funded-skinny-mec.part-v-risk-map-for-a-skinny-mec-concentrated-or-open-ended-risks.intensive-behavioral-interventions; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part V — Risk map for a skinny MEC > Concentrated or open-ended risks
+<!-- record_id: plan.self-funded-basic-mec.part-v-risk-map-for-a-basic-mec-concentrated-or-open-ended-risks.intensive-behavioral-interventions; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part V — Risk map for a basic MEC > Concentrated or open-ended risks
 - Risk: Intensive behavioral interventions
 - Why it matters: “Screening” may obligate referral to a real multi-session program
 - Primary control: Defined network programs with episode pricing
 
 #### Vaccines and immunizing agents
-<!-- record_id: plan.self-funded-skinny-mec.part-v-risk-map-for-a-skinny-mec-concentrated-or-open-ended-risks.vaccines-and-immunizing-agents; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part V — Risk map for a skinny MEC > Concentrated or open-ended risks
+<!-- record_id: plan.self-funded-basic-mec.part-v-risk-map-for-a-basic-mec-concentrated-or-open-ended-risks.vaccines-and-immunizing-agents; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part V — Risk map for a basic MEC > Concentrated or open-ended risks
 - Risk: Vaccines and immunizing agents
 - Why it matters: Product prices change and some are several hundred dollars per dose
 - Primary control: Current CMS/CDC price feed and pharmacy/clinic contracts
 
 #### No in-network provider
-<!-- record_id: plan.self-funded-skinny-mec.part-v-risk-map-for-a-skinny-mec-concentrated-or-open-ended-risks.no-in-network-provider; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part V — Risk map for a skinny MEC > Concentrated or open-ended risks
+<!-- record_id: plan.self-funded-basic-mec.part-v-risk-map-for-a-basic-mec-concentrated-or-open-ended-risks.no-in-network-provider; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part V — Risk map for a basic MEC > Concentrated or open-ended risks
 - Risk: No in-network provider
 - Why it matters: Required service may have to be covered out of network without cost sharing
 - Primary control: Network completeness audit before launch
 
 
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store -->
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store -->
 # Part VI — From inventory to product data store
-> Retrieval context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+> Retrieval context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 
 The inventory above should ultimately be represented in CommonCare’s structured product data store. Each service record should include:
 
@@ -2141,8 +2141,8 @@ Appendix B: Pricing Guidelines
 > ⚠️ Do we have to say it? This pricing is a good-faith guideline based on our experience and models. It's not a guarantee of anything.
 
 #### 0–17
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.0-17; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.0-17; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 0–17
 - Cohort: Female
 - Expected claims: $58.00
@@ -2151,8 +2151,8 @@ Appendix B: Pricing Guidelines
 - Low-risk: $104
 
 #### 0–17
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.0-17-2; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.0-17-2; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 0–17
 - Cohort: Male
 - Expected claims: $57.50
@@ -2161,8 +2161,8 @@ Appendix B: Pricing Guidelines
 - Low-risk: $103
 
 #### 18–25
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.18-25; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.18-25; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 18–25
 - Cohort: Female
 - Expected claims: $36.50
@@ -2171,8 +2171,8 @@ Appendix B: Pricing Guidelines
 - Low-risk: $70
 
 #### 18–25
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.18-25-2; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.18-25-2; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 18–25
 - Cohort: Male
 - Expected claims: $24.50
@@ -2181,8 +2181,8 @@ Appendix B: Pricing Guidelines
 - Low-risk: $52
 
 #### 26–34
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.26-34; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.26-34; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 26–34
 - Cohort: Female
 - Expected claims: $43.50
@@ -2191,8 +2191,8 @@ Appendix B: Pricing Guidelines
 - Low-risk: $81
 
 #### 26–34
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.26-34-2; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.26-34-2; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 26–34
 - Cohort: Male
 - Expected claims: $23.00
@@ -2201,8 +2201,8 @@ Appendix B: Pricing Guidelines
 - Low-risk: $49
 
 #### 35–44
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.35-44; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.35-44; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 35–44
 - Cohort: Female
 - Expected claims: $50.00
@@ -2211,8 +2211,8 @@ Appendix B: Pricing Guidelines
 - Low-risk: $91
 
 #### 35–44
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.35-44-2; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.35-44-2; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 35–44
 - Cohort: Male
 - Expected claims: $27.00
@@ -2221,8 +2221,8 @@ Appendix B: Pricing Guidelines
 - Low-risk: $55
 
 #### 45–54
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.45-54; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.45-54; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 45–54
 - Cohort: Female
 - Expected claims: $64.00
@@ -2231,8 +2231,8 @@ Appendix B: Pricing Guidelines
 - Low-risk: $113
 
 #### 45–54
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.45-54-2; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.45-54-2; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 45–54
 - Cohort: Male
 - Expected claims: $41.00
@@ -2241,8 +2241,8 @@ Appendix B: Pricing Guidelines
 - Low-risk: $77
 
 #### 55–64
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.55-64; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.55-64; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 55–64
 - Cohort: Female
 - Expected claims: $75.00
@@ -2251,8 +2251,8 @@ Appendix B: Pricing Guidelines
 - Low-risk: $130
 
 #### 55–64
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.55-64-2; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.55-64-2; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 55–64
 - Cohort: Male
 - Expected claims: $58.00
@@ -2261,8 +2261,8 @@ Appendix B: Pricing Guidelines
 - Low-risk: $104
 
 #### 65+
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.65; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.65; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 65+
 - Cohort: Female
 - Expected claims: $88.50
@@ -2271,8 +2271,8 @@ Appendix B: Pricing Guidelines
 - Low-risk: $151
 
 #### 65+
-<!-- record_id: plan.self-funded-skinny-mec.part-vi-from-inventory-to-product-data-store.65-2; record_type: table-row -->
-- Context: Self-Funded Skinny MEC Plan — Part VI — From inventory to product data store
+<!-- record_id: plan.self-funded-basic-mec.part-vi-from-inventory-to-product-data-store.65-2; record_type: table-row -->
+- Context: Self-Funded Basic MEC Plan — Part VI — From inventory to product data store
 - Age band: 65+
 - Cohort: Male
 - Expected claims: $81.00

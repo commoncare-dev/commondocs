@@ -51,8 +51,8 @@ Each substantive topic must have a stable `record_id` derived from the document 
 Good:
 
 ```text
-plan.self-funded-skinny-mec.minimum-essential-coverage
-plan.self-funded-skinny-mec.preventive-services.female-sterilization
+plan.self-funded-basic-mec.minimum-essential-coverage
+plan.self-funded-basic-mec.preventive-services.female-sterilization
 ```
 
 Avoid IDs based only on section numbers, line numbers, row positions, or prose order. Those values change during ordinary editing.
@@ -166,7 +166,7 @@ Never accept a pull request that changes substantive content only in `vector-sto
 From the repository root:
 
 ```bash
-node scripts/convert-human-readable.mjs plan-structures/self-funded-mec/skinny-mec/human-readable.md
+node scripts/convert-human-readable.mjs plan-structures/self-funded-mec/basic-mec/human-readable.md
 ```
 
 The converter performs deterministic structural conversion, assigns record IDs and retrieval context, expands Markdown tables into row-level records, removes disclosure-only HTML wrappers, and records source provenance. It does not use an AI model and therefore cannot silently rewrite the source.

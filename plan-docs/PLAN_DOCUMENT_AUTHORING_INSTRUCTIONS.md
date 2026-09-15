@@ -175,7 +175,7 @@ Each template declares its input contract in front matter:
 context_schema: ./schemas/plan-document-context.schema.json
 ```
 
-A coverage-specific template points to a composed schema that applies the common context first and then requires its registered extension. For example, the skinny MEC appendix uses `schemas/self-funded-mec-plan-document-context.schema.json`, which composes the common schema with `schemas/extensions/self-funded-mec.schema.json`.
+A coverage-specific template points to a composed schema that applies the common context first and then requires its registered extension. For example, the basic MEC appendix uses `schemas/self-funded-mec-plan-document-context.schema.json`, which composes the common schema with `schemas/extensions/self-funded-mec.schema.json`.
 
 This produces three deliberate levels:
 

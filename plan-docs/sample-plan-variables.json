@@ -71,9 +71,9 @@
   },
   "benefits": [
     {
-      "id": "benefit.self-funded-skinny-mec",
-      "name": "Self-Funded Skinny MEC",
-      "documentId": "plan-document.benefit-appendix.self-funded-skinny-mec",
+      "id": "benefit.self-funded-basic-mec",
+      "name": "Self-Funded Basic MEC",
+      "documentId": "plan-document.benefit-appendix.self-funded-basic-mec",
       "version": "1.0",
       "effectiveDate": "2027-01-01",
       "status": "adopted"

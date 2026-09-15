@@ -1,16 +1,16 @@
 ---
-id: plan-document.benefit-appendix.self-funded-skinny-mec
-title: Self-Funded Skinny MEC Benefit Appendix
+id: plan-document.benefit-appendix.self-funded-basic-mec
+title: Self-Funded Basic MEC Benefit Appendix
 kind: benefit-appendix
 status: template
 version: "1.0"
 jurisdiction: United States
 parent_document: CommonCare Welfare Benefit Plan — Core Plan Document
-related_product: plan.self-funded-skinny-mec
+related_product: plan.self-funded-basic-mec
 context_schema: ./self-funded-mec-plan-document-context.schema.json
 ---
 
-# Self-Funded Skinny MEC Benefit Appendix
+# Self-Funded Basic MEC Benefit Appendix
 
 Version: ${extensions.selfFundedMec.document.version}<br>
 Benefit Appendix Number: ${extensions.selfFundedMec.document.appendixNumber}<br>
@@ -20,7 +20,7 @@ Effective Date: ${extensions.selfFundedMec.document.effectiveDate|dateLong}
 
 # Adoption and incorporation
 
-The Employer adopts this Self-Funded Skinny MEC Benefit Appendix ("Appendix") as a Benefit Appendix under the CommonCare Welfare Benefit Plan ("Plan"). This Appendix is incorporated into and forms part of the Plan.
+The Employer adopts this Self-Funded Basic MEC Benefit Appendix ("Appendix") as a Benefit Appendix under the CommonCare Welfare Benefit Plan ("Plan"). This Appendix is incorporated into and forms part of the Plan.
 
 The Core Plan Document governs matters not addressed by this Appendix. If this Appendix and the Core Plan Document address the same subject, this Appendix controls only with respect to the benefit established here.
 
