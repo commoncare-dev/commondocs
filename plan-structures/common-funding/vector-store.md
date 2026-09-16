@@ -3,7 +3,7 @@ id: product.commonfunding.vector-store
 title: CommonFunding — Vector Store Source
 kind: vector-store-source
 schema_version: "1.0"
-source_document: plan-structures/commonfunds/common-funding/human-readable.md
+source_document: plan-structures/common-funding/human-readable.md
 source_commit: 1cef2924767fd56f15826d842856163d671c7afb
 source_sha256: 47960d34dc8dfe06b9ee665f245c9f00df7abac3717877828be3f386a25edfa8
 generation_method: deterministic-markdown-conversion
@@ -13,13 +13,13 @@ last_reviewed: 2026-09-15
 
 # CommonFunding — Vector Store Source
 
-> Retrieval context: This generated document restructures `plan-structures/commonfunds/common-funding/human-readable.md` for semantic retrieval. The human-readable source remains canonical. Substantive edits belong in the source and must be regenerated here.
+> Retrieval context: This generated document restructures `plan-structures/common-funding/human-readable.md` for semantic retrieval. The human-readable source remains canonical. Substantive edits belong in the source and must be regenerated here.
 
 <!-- record_id: product.commonfunding.commonfunding -->
 ## CommonFunding
 > Retrieval context: CommonFunding — CommonFunding
 
-> **CommonFunding pairs [CommonFunds](https://commoncare.org/products/commonfunds) with major medical insurance or an alternative coverage arrangement to reduce sunk premium costs, preserve participant choice, and turn predictable healthcare spending into a bounded employer-funded benefit.**
+> **CommonFunding pairs [CommonFunds](https://commoncare.org/products/common-funds) with major medical insurance or an alternative coverage arrangement to reduce sunk premium costs, preserve participant choice, and turn predictable healthcare spending into a bounded employer-funded benefit.**
 
 CommonFunding is CommonCare’s core plan structure. It combines:
 
@@ -149,7 +149,7 @@ When the applicable participant benefit has been exhausted, CommonFunds does not
 
 CommonFunds combines EBHRA and Health FSA components designed to qualify as excepted benefits. The components therefore operate under their own account limits and plan terms rather than assuming the comprehensive coverage obligations imposed on non-excepted ACA group health plans.
 
-For the component structure, classifications, annual limits, and availability rules, see the [CommonFunds product documentation](https://commoncare.org/products/commonfunds).
+For the component structure, classifications, annual limits, and availability rules, see the [CommonFunds product documentation](https://commoncare.org/products/common-funds).
 
 ---
 

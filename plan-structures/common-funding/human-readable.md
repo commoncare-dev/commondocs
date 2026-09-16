@@ -1,6 +1,6 @@
 ## CommonFunding
 
-> **CommonFunding pairs [CommonFunds](https://commoncare.org/products/commonfunds) with major medical insurance or an alternative coverage arrangement to reduce sunk premium costs, preserve participant choice, and turn predictable healthcare spending into a bounded employer-funded benefit.**
+> **CommonFunding pairs [CommonFunds](https://commoncare.org/products/common-funds) with major medical insurance or an alternative coverage arrangement to reduce sunk premium costs, preserve participant choice, and turn predictable healthcare spending into a bounded employer-funded benefit.**
 
 CommonFunding is CommonCare’s core plan structure. It combines:
 
@@ -79,7 +79,7 @@ When the applicable participant benefit has been exhausted, CommonFunds does not
 
 CommonFunds combines EBHRA and Health FSA components designed to qualify as excepted benefits. The components therefore operate under their own account limits and plan terms rather than assuming the comprehensive coverage obligations imposed on non-excepted ACA group health plans.
 
-For the component structure, classifications, annual limits, and availability rules, see the [CommonFunds product documentation](https://commoncare.org/products/commonfunds).
+For the component structure, classifications, annual limits, and availability rules, see the [CommonFunds product documentation](https://commoncare.org/products/common-funds).
 
 ---
 
