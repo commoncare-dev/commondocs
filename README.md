@@ -106,7 +106,7 @@ A plan with 30 participants paying \$40 PEPM is paying $14,400 for a nebulous jo
 - Year-end compliance reporting, review, and form-filing: $1,000
 - Year-end letter of legal review: $500
 
-We're \$4,700 in + \$2,000 in CommonCare fees (\$5 PEPM) and everyone was a specialist.
+We're \$4,700 in + \$2,000 in CommonCare fees (\$5 PEPM), and everyone was a specialist. This isn't even the biggest place we can cut your costs, but we just returned $7,200 to your plan for significantly more capable technical support.
 
 
 ## 🚀 Why CommonCare exists
