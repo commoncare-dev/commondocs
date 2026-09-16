@@ -4,8 +4,8 @@ title: CommonFunds — Explanation and Design Rationale
 kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/common-funds/human-readable.md
-source_commit: 8fc7e4008f0c686d96361a2028456ce9c5bcd3db
-source_sha256: 1fde57cbac07e379e04f59defc70c054b5c72a1b611ae0275b8db058278556f9
+source_commit: fed8062947b6045779a0fea1438b9e1ffcdc6f5f
+source_sha256: 28bd18d311eddf271bfd7b1e8e3f8a8a52e53ea8b79f261fecac56cb3e87beec
 generation_method: deterministic-commonfunds-split-conversion
 canonical_source: false
 scope: explanation-and-design-rationale
@@ -17,7 +17,7 @@ last_reviewed: unknown
 > Retrieval context: This generated document is the explanation-and-design-rationale retrieval view of `plan-structures/common-funds/human-readable.md`. The human-readable source remains canonical. Substantive edits belong in that source and must be regenerated here.
 
 <!-- record_id: product.commonfunds.explaining.vector-store.commonfunds -->
-# CommonFunds
+## CommonFunds
 > Retrieval context: CommonFunds — CommonFunds
 
 > A unified way to administer multiple account-based health benefits—without confusing the participant experience with the legal structure underneath it.
@@ -33,11 +33,11 @@ CommonFunds is an administrative structure. It is not a separate statutory benef
 
 <!-- record_id: product.commonfunds.explaining.vector-store.foreword-commonfunds-origin-and-purpose -->
 ## Foreword: CommonFunds origin and purpose
-> Retrieval context: CommonFunds — CommonFunds > Foreword: CommonFunds origin and purpose
+> Retrieval context: CommonFunds — Foreword: CommonFunds origin and purpose
 
 <!-- record_id: product.commonfunds.explaining.vector-store.how-it-started-because-of-how-commoncare-scores-health-coverages -->
 ### How it started: because of how CommonCare scores health coverages
-> Retrieval context: CommonFunds — CommonFunds > Foreword: CommonFunds origin and purpose > How it started: because of how CommonCare scores health coverages
+> Retrieval context: CommonFunds — Foreword: CommonFunds origin and purpose > How it started: because of how CommonCare scores health coverages
 CommonCare's process for ranking health plan options dismisses sentiment and behavioral economics entirely and instead looks at the actuarial efficiency of plans. The actuarial efficiency means: how much you pay for each dollar the plan is expected to pay.
 
 To look at plan value, CommonCare takes realistic medical bills for a given household and simulates many years of randomized bills against the benefits of all plans in question. This produces realistic results, and CommonCare displays overall results as well as which plans perform well in specific scenarios such as high-claim years.
@@ -63,11 +63,11 @@ For all insurance arrangements, it's critical to understand the economic utility
 
 <!-- record_id: product.commonfunds.explaining.vector-store.understanding-why-the-problems-commonfunds-solves-exist-in-health-insura -->
 ## Understanding why the problems CommonFunds solves exist in health insurance
-> Retrieval context: CommonFunds — CommonFunds > Understanding why the problems CommonFunds solves exist in health insurance
+> Retrieval context: CommonFunds — Understanding why the problems CommonFunds solves exist in health insurance
 
 <!-- record_id: product.commonfunds.explaining.vector-store.economic-utility-of-insurance -->
 ### Economic utility of insurance
-> Retrieval context: CommonFunds — CommonFunds > Understanding why the problems CommonFunds solves exist in health insurance > Economic utility of insurance
+> Retrieval context: CommonFunds — Understanding why the problems CommonFunds solves exist in health insurance > Economic utility of insurance
 - Reduce the drastic effects of the outlying tragic scenarios
 - Increase the accuracy of insurable event probability data
 - If the insured population is large, and claim events unlikely, costs of reducing severe risk can be small
@@ -75,7 +75,7 @@ For all insurance arrangements, it's critical to understand the economic utility
 
 <!-- record_id: product.commonfunds.explaining.vector-store.economic-hazards-of-insurance -->
 ### Economic hazards of insurance
-> Retrieval context: CommonFunds — CommonFunds > Understanding why the problems CommonFunds solves exist in health insurance > Economic hazards of insurance
+> Retrieval context: CommonFunds — Understanding why the problems CommonFunds solves exist in health insurance > Economic hazards of insurance
 - Decreased consumer price sensitivity due to participant incentives to file claims or waste premiums
 - Decreased service provider price sensitivity due to bureaucracy and an impersonal payer creating a "victimless crime" mentality for inflating prices
 - Increased costs of services due to insurance profit & overhead
@@ -86,7 +86,7 @@ These are well-known problems and worthwhile tradeoffs where an insurable risk i
 
 <!-- record_id: product.commonfunds.explaining.vector-store.key-confounding-differences-in-health-insurance -->
 ### Key confounding differences in health insurance
-> Retrieval context: CommonFunds — CommonFunds > Understanding why the problems CommonFunds solves exist in health insurance > Key confounding differences in health insurance
+> Retrieval context: CommonFunds — Understanding why the problems CommonFunds solves exist in health insurance > Key confounding differences in health insurance
 
 Employer health coverage has long operated within the unusual federal framework created by ERISA. The ACA added guaranteed availability, rating restrictions, required benefits, medical-loss-ratio rules, and other reforms that further separated major medical coverage from conventional risk-priced insurance.
 
@@ -134,7 +134,7 @@ All of these challenges create the framework for why CommonFunds is uniquely val
 
 <!-- record_id: product.commonfunds.explaining.vector-store.how-commonfunds-creates-unique-value-amid-the-problems-facing-group-heal -->
 ## How CommonFunds creates unique value amid the problems facing group health plans today
-> Retrieval context: CommonFunds — CommonFunds > How CommonFunds creates unique value amid the problems facing group health plans today
+> Retrieval context: CommonFunds — How CommonFunds creates unique value amid the problems facing group health plans today
 
 CommonFunds takes these significant challenges and cherry-picks the easiest improvement with the lowest risk. It restores a normal efficient marketplace to the relatively routine and low-cost elements of healthcare, and does it in a tax-free manner to boot.
 
@@ -157,29 +157,29 @@ Furthermore, CommonCare's implementation of this solution enables participant-le
 
 <!-- record_id: product.commonfunds.explaining.vector-store.the-essential-idea -->
 ## The essential idea
-> Retrieval context: CommonFunds — CommonFunds > The essential idea
+> Retrieval context: CommonFunds — The essential idea
 
 One participant may see one CommonFunds balance while the system maintains multiple classifications behind it:
 
 #### EBHRA
-<!-- record_id: product.commonfunds.explaining.vector-store.commonfunds-the-essential-idea.ebhra; record_type: table-row -->
-- Context: CommonFunds — CommonFunds > The essential idea
+<!-- record_id: product.commonfunds.explaining.vector-store.the-essential-idea.ebhra; record_type: table-row -->
+- Context: CommonFunds — The essential idea
 - Component: EBHRA
 - Typical funding source: Employer-only
 - Core availability rule: Available according to the plan document
 - Treatment of unused amounts: Governed by the plan; may carry over or be forfeited
 
 #### CHOICE/ICHRA
-<!-- record_id: product.commonfunds.explaining.vector-store.commonfunds-the-essential-idea.choice-ichra; record_type: table-row -->
-- Context: CommonFunds — CommonFunds > The essential idea
+<!-- record_id: product.commonfunds.explaining.vector-store.the-essential-idea.choice-ichra; record_type: table-row -->
+- Context: CommonFunds — The essential idea
 - Component: CHOICE/ICHRA
 - Typical funding source: Employer-only
 - Core availability rule: Available only while the individual satisfies the ICHRA coverage conditions and according to the plan document
 - Treatment of unused amounts: Governed by the ICHRA; may reimburse premiums and, if the plan permits, nonpremium §213(d) expenses
 
 #### Health FSA
-<!-- record_id: product.commonfunds.explaining.vector-store.commonfunds-the-essential-idea.health-fsa; record_type: table-row -->
-- Context: CommonFunds — CommonFunds > The essential idea
+<!-- record_id: product.commonfunds.explaining.vector-store.the-essential-idea.health-fsa; record_type: table-row -->
+- Context: CommonFunds — The essential idea
 - Component: Health FSA
 - Typical funding source: Employee salary reduction and permitted employer contributions
 - Core availability rule: Maximum annual benefit is generally available throughout the coverage period

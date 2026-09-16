@@ -4,8 +4,8 @@ title: CommonFunds — Rules and Calculation Specification
 kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/common-funds/human-readable.md
-source_commit: 8fc7e4008f0c686d96361a2028456ce9c5bcd3db
-source_sha256: 1fde57cbac07e379e04f59defc70c054b5c72a1b611ae0275b8db058278556f9
+source_commit: fed8062947b6045779a0fea1438b9e1ffcdc6f5f
+source_sha256: 28bd18d311eddf271bfd7b1e8e3f8a8a52e53ea8b79f261fecac56cb3e87beec
 generation_method: deterministic-commonfunds-split-conversion
 canonical_source: false
 scope: rules-and-calculation-specification
@@ -91,6 +91,543 @@ On the excepted pathway, the default position for a genuinely employer-only, non
 After the EBHRA is filled, employer-only amounts may flow into the Health FSA only to the extent permitted by the Health FSA excepted-benefit rules and governing documents.
 
 On the ICHRA pathway, the EBHRA allocation is zero. The ICHRA amount is established in advance under the governing plan terms. When the employee accepts the ICHRA and maintains qualifying coverage, any amount remaining after premium reimbursement can serve as the CommonFunds primary layer for eligible nonpremium expenses—but only when those expenses are reimbursable under the ICHRA document.
+
+---
+
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine -->
+## Allowance design: the priority engine
+> Retrieval context: CommonFunds — Allowance design: the priority engine
+
+An employer allowance has several competing jobs:
+
+1. Make the benefits feel substantial and useful;
+2. Reduce the employee contribution used for affordability testing when the employer wants that result;
+3. Avoid forcing employees to buy a narrow category of coverage or lose compensation;
+4. Avoid paying unrestricted taxable cash to employees who make no benefit election; and
+5. Put as much value as possible into efficient account-based benefits.
+
+The primary target is not simply “maximize affordability” or “maximize cash.” It is:
+
+> **Create the maximum flexible qualified-benefit value, preserve the desired affordability result, and prevent passive access to unrestricted cash.**
+
+The decision tree falls away from that target in two directions:
+
+- Too little health-only flex leaves an affordability gap; or
+- Too much freely cashable flex turns the benefit allowance into an automatic wage supplement.
+
+CommonCare divides the allowance into legally distinct tranches so the engine can remain between those two failures.
+
+<!-- record_id: product.commonfunds.rules.vector-store.the-four-allowance-tranches -->
+### The four allowance tranches
+> Retrieval context: CommonFunds — Allowance design: the priority engine > The four allowance tranches
+
+#### Health-only flex credit
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-the-four-allowance-tranches.health-only-flex-credit; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > The four allowance tranches
+- Tranche: **Health-only flex credit**
+- May become cash?: No
+- Primary job: Preserve affordability while allowing allocation among qualified health benefits
+- Affordability treatment: Creditable when it satisfies the health-flex rules described below
+- CommonFunds treatment: May pay the qualifying premium, Health FSA, HSA when permitted, or another qualified medical benefit under the cafeteria terms
+
+#### Primary employer account
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-the-four-allowance-tranches.primary-employer-account; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > The four allowance tranches
+- Tranche: **Primary employer account**
+- May become cash?: No
+- Primary job: Provide employer-controlled health value
+- Affordability treatment: Counts only when the governing affordability rule treats that particular contribution as reducing required contribution
+- CommonFunds treatment: EBHRA on the excepted path; ICHRA on the ICHRA path
+
+#### Conditional cashable flex
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-the-four-allowance-tranches.conditional-cashable-flex; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > The four allowance tranches
+- Tranche: **Conditional cashable flex**
+- May become cash?: Yes, after the plan's required allocation or election conditions are satisfied
+- Primary job: Preserve employee choice without making the entire allowance an automatic bonus
+- Affordability treatment: The cashable amount does not reduce required contribution
+- CommonFunds treatment: Defaults by election into the Health FSA or another qualified benefit; may ultimately be taken as taxable wages
+
+#### True employer Health FSA contribution
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-the-four-allowance-tranches.true-employer-health-fsa-contribution; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > The four allowance tranches
+- Tranche: **True employer Health FSA contribution**
+- May become cash?: No
+- Primary job: Move health-only value into the FSA as capacity is unlocked by salary reduction
+- Affordability treatment: Retains affordability value when it is an allocation of a health-only flex credit that was made available to pay MEC; a separate FSA-only contribution does not qualify merely because it pays medical expenses
+- CommonFunds treatment: Added within the excepted-benefit maximum-benefit test
+
+
+The tranches may appear as one allowance in the enrollment experience, but the plan documents, payroll records, affordability calculation, and claims engine must preserve their separate classifications.
+
+<!-- record_id: product.commonfunds.rules.vector-store.the-controlling-affordability-rule -->
+### The controlling affordability rule
+> Retrieval context: CommonFunds — Allowance design: the priority engine > The controlling affordability rule
+
+Under 26 CFR §1.36B-2(c)(3)(v)(A)(6), an employer cafeteria-plan amount reduces the employee's required contribution only when all three conditions are met:
+
+1. The employee may not elect the amount as cash or another taxable benefit;
+2. The employee may use it to pay for minimum essential coverage; and
+3. The employee may use it exclusively for §213(d) medical care.
+
+[26 CFR §1.36B-2(c)(3)(v)(A)(6)](https://www.law.cornell.edu/cfr/text/26/1.36B-2) · [IRS Notice 2015-87, Q&A 8](https://www.irs.gov/irb/2015-52_IRB)
+
+This produces a clean rule:
+
+> **A health-only, noncashable flex dollar that can pay the applicable coverage premium may reduce required contribution. A dollar that can become taxable cash does not.**
+
+The allowance can contain both kinds of dollars. Making only the amount above a defined health-only threshold cashable does not contaminate the health-only tranche, provided the cafeteria plan and enrollment system establish two genuinely separate rights.
+
+The regulation turns on what the employee **may use** the health-only amount to purchase—not whether every dollar is ultimately spent on premium. A health-only flex credit can therefore remain available for the applicable MEC premium while the employee allocates some of it to the Health FSA or another permitted medical benefit.
+
+<!-- record_id: product.commonfunds.rules.vector-store.what-the-health-fsa-does-and-does-not-do -->
+### What the Health FSA does—and does not do
+> Retrieval context: CommonFunds — Allowance design: the priority engine > What the Health FSA does—and does not do
+
+A cashable flex credit elected into the Health FSA is treated as employee salary reduction. It consumes the Section 125(i) salary-reduction limit and increases permitted true-employer Health FSA capacity under the excepted-benefit maximum-benefit test.
+
+If the employee directs `$1` of cashable flex into the Health FSA, that election generally permits up to another `$1` of true employer Health FSA contribution, after accounting for the `$500` floor and all other FSA contributions:
+
+```text
+maximum_true_employer_fsa_contribution = max(S, 500)
+```
+
+where `S` is total Health FSA salary reduction.
+
+The cashable dollar does not itself produce affordability credit. Its value is that the FSA salary-reduction election unlocks another dollar of true employer FSA capacity. CommonCare can then place a dollar of the **health-only flex credit** into that capacity instead of forcing that dollar into the ICHRA or premium.
+
+The health-only flex credit still performs its affordability function because the cafeteria arrangement made it available for MEC and restricted it exclusively to medical care. The employee's actual allocation of part of that credit to the FSA does not retroactively make the credit cashable.
+
+This is the core optimization:
+
+```text
+cashable flex elected to FSA
+→ creates FSA salary reduction
+→ unlocks true employer FSA capacity
+→ allows health-only flex to fund flexible FSA benefits
+→ while the health-only flex remains affordability-creditable
+```
+
+A standalone employer contribution offered only inside the Health FSA is different: it does not satisfy the affordability rule merely because the FSA reimburses §213(d) expenses. The credit must have been made available under the cafeteria plan for MEC premiums.
+
+<!-- record_id: product.commonfunds.rules.vector-store.why-commoncare-does-not-default-every-employer-dollar-to-the-ichra -->
+### Why CommonCare does not default every employer dollar to the ICHRA
+> Retrieval context: CommonFunds — Allowance design: the priority engine > Why CommonCare does not default every employer dollar to the ICHRA
+
+An ICHRA dollar requires participation in qualifying individual coverage. That can create a poor incentive: select the coverage category the ICHRA recognizes or forfeit part of the employer's compensation package.
+
+An employer may deliberately accept some §4980H(b) exposure instead of eliminating every theoretical affordability gap. Penalty B is employee-specific and arises only when the other statutory conditions occur, including the employee's receipt of a premium tax credit. An employer offering strong overall benefits may decide that preserving employee flexibility is worth more than closing the final portion of the gap for every employee.
+
+Other employers will prefer certainty. The engine therefore does not make that policy decision silently. It asks the employer how much of the calculated affordability gap to close.
+
+<!-- record_id: product.commonfunds.rules.vector-store.sponsor-priority-settings -->
+### Sponsor priority settings
+> Retrieval context: CommonFunds — Allowance design: the priority engine > Sponsor priority settings
+
+#### balanced
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-sponsor-priority-settings.balanced; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Sponsor priority settings
+- Setting: `balanced`
+- Meaning: Preserve the full desired affordability credit, default conditional cashable flex to the FSA, and move health-only dollars into the resulting employer FSA capacity
+- Principal tradeoff: Default CommonCare target: maximum qualified-benefit flexibility without an affordability loss or passive cash bonus
+
+#### strictaffordability
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-sponsor-priority-settings.strictaffordability; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Sponsor priority settings
+- Setting: `strict_affordability`
+- Meaning: Preserve the full calculated affordability requirement even when doing so requires more premium- or ICHRA-directed funding
+- Principal tradeoff: Lowest modeled Penalty B exposure; less flexible use when FSA capacity is insufficient
+
+#### targetedaffordability
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-sponsor-priority-settings.targetedaffordability; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Sponsor priority settings
+- Setting: `targeted_affordability`
+- Meaning: Preserve a stated percentage or dollar amount of the affordability requirement
+- Principal tradeoff: Employer knowingly accepts the remaining gap to preserve more employee flexibility
+
+#### cashaccess
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-sponsor-priority-settings.cashaccess; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Sponsor priority settings
+- Setting: `cash_access`
+- Meaning: Permit more of the allowance to become taxable cash
+- Principal tradeoff: Maximum employee cash choice; reduced affordability credit and greater automatic-compensation risk
+
+
+<!-- record_id: product.commonfunds.rules.vector-store.normalized-priority-engine-inputs -->
+### Normalized priority-engine inputs
+> Retrieval context: CommonFunds — Allowance design: the priority engine > Normalized priority-engine inputs
+
+#### totalemployerallowance
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-normalized-priority-engine-inputs.totalemployerallowance; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Normalized priority-engine inputs
+- Input: `total_employer_allowance`
+- Meaning: Total employer budget for the employee or coverage tier
+
+#### requiredcontributionbeforeflex
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-normalized-priority-engine-inputs.requiredcontributionbeforeflex; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Normalized priority-engine inputs
+- Input: `required_contribution_before_flex`
+- Meaning: Employee contribution used by the applicable affordability method before cafeteria credits
+
+#### maximumaffordablecontribution
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-normalized-priority-engine-inputs.maximumaffordablecontribution; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Normalized priority-engine inputs
+- Input: `maximum_affordable_contribution`
+- Meaning: Maximum employee contribution permitted under the selected affordability safe harbor or calculation
+
+#### affordabilitytarget
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-normalized-priority-engine-inputs.affordabilitytarget; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Normalized priority-engine inputs
+- Input: `affordability_target`
+- Meaning: `balanced`, `strict_affordability`, `targeted_affordability`, or `cash_access`
+
+#### affordabilitytargetpercentage
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-normalized-priority-engine-inputs.affordabilitytargetpercentage; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Normalized priority-engine inputs
+- Input: `affordability_target_percentage`
+- Meaning: Portion of the gap the employer elects to close; `1.00` under strict affordability
+
+#### minimumhealthonlyallowance
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-normalized-priority-engine-inputs.minimumhealthonlyallowance; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Normalized priority-engine inputs
+- Input: `minimum_health_only_allowance`
+- Meaning: Sponsor-selected noncashable health-only floor, if any
+
+#### benefitpath
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-normalized-priority-engine-inputs.benefitpath; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Normalized priority-engine inputs
+- Input: `benefit_path`
+- Meaning: `excepted` or `ichra`
+
+#### ichrarequiredamount
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-normalized-priority-engine-inputs.ichrarequiredamount; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Normalized priority-engine inputs
+- Input: `ichra_required_amount`
+- Meaning: Amount the ICHRA terms make available, if applicable
+
+#### cashableflexdefault
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-normalized-priority-engine-inputs.cashableflexdefault; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Normalized priority-engine inputs
+- Input: `cashable_flex_default`
+- Meaning: Qualified benefit into which a valid cashable election defaults, ordinarily the Health FSA
+
+#### cashunlockthreshold
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-normalized-priority-engine-inputs.cashunlockthreshold; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Normalized priority-engine inputs
+- Input: `cash_unlock_threshold`
+- Meaning: Qualified-benefit commitment required before the excess allowance becomes cashable
+
+#### cashunlockscope
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-normalized-priority-engine-inputs.cashunlockscope; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Normalized priority-engine inputs
+- Input: `cash_unlock_scope`
+- Meaning: `any_qualified_benefit` or a specified benefit such as `ichra`
+
+#### outsidecoverageattested
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-normalized-priority-engine-inputs.outsidecoverageattested; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Normalized priority-engine inputs
+- Input: `outside_coverage_attested`
+- Meaning: Whether the employee declares qualifying outside coverage for an administrative path that uses that fact
+
+
+<!-- record_id: product.commonfunds.rules.vector-store.step-1-calculate-the-affordability-gap -->
+### Step 1: calculate the affordability gap
+> Retrieval context: CommonFunds — Allowance design: the priority engine > Step 1: calculate the affordability gap
+
+```text
+affordability_gap = max(
+  required_contribution_before_flex
+  - maximum_affordable_contribution,
+  0
+)
+```
+
+<!-- record_id: product.commonfunds.rules.vector-store.step-2-calculate-the-required-health-only-flex-credit -->
+### Step 2: calculate the required health-only flex credit
+> Retrieval context: CommonFunds — Allowance design: the priority engine > Step 2: calculate the required health-only flex credit
+
+```text
+targeted_gap =
+  affordability_gap
+  × affordability_target_percentage
+
+health_only_flex_credit = min(
+  total_employer_allowance,
+  max(targeted_gap, minimum_health_only_allowance)
+)
+```
+
+`health_only_flex_credit` is noncashable. The cafeteria plan must permit it to pay the applicable MEC premium and restrict it exclusively to medical care. It may also be allocated to the Health FSA or another qualified medical benefit. If the arrangement does not satisfy the three affordability conditions, the engine must report it as `noncreditable_health_allowance` rather than reducing required contribution.
+
+<!-- record_id: product.commonfunds.rules.vector-store.step-3-calculate-the-amount-eligible-to-become-cashable -->
+### Step 3: calculate the amount eligible to become cashable
+> Retrieval context: CommonFunds — Allowance design: the priority engine > Step 3: calculate the amount eligible to become cashable
+
+```text
+allowance_above_floor = max(
+  total_employer_allowance - health_only_flex_credit,
+  0
+)
+```
+
+Only `allowance_above_floor` may enter the conditional cashable-flex process. The enrollment system may default a valid election to the CommonFunds Health FSA while allowing the employee to redirect it among permitted cafeteria benefits or taxable wages according to the plan.
+
+Defaulting the election to the Health FSA prevents passive inattention from automatically producing a cash bonus. It also creates Health FSA salary reduction that may unlock true employer FSA capacity. The system must still obtain and retain whatever election the cafeteria plan requires; an administrative default does not erase Section 125 election rules.
+
+<!-- record_id: product.commonfunds.rules.vector-store.apply-the-cash-unlock-condition -->
+#### Apply the cash-unlock condition
+> Retrieval context: CommonFunds — Allowance design: the priority engine > Step 3: calculate the amount eligible to become cashable > Apply the cash-unlock condition
+
+The employer may condition access to the excess cashable allowance on the employee first committing a stated amount to qualified benefits.
+
+The condition may be broad:
+
+> The employee must commit at least `$X` to any qualified health benefit before the excess allowance becomes available through the cashable-flex election.
+
+Or narrow:
+
+> The employee must commit at least `$X` specifically to CHOICE/ICHRA before the excess allowance becomes available through the cashable-flex election.
+
+```text
+if cash_unlock_scope == "any_qualified_benefit":
+    qualifying_commitment =
+      total_qualified_benefit_elections
+
+if cash_unlock_scope == "ichra":
+    qualifying_commitment =
+      ichra_qualified_commitment
+
+cashable_flex_unlocked =
+  qualifying_commitment >= cash_unlock_threshold
+  ? allowance_above_floor
+  : 0
+
+cashable_flex_locked =
+  allowance_above_floor - cashable_flex_unlocked
+```
+
+Before the condition is satisfied, `cashable_flex_locked` is not payable as wages and is not treated as an employee FSA election. It remains employer budget. Once unlocked and validly elected into the Health FSA, that amount is treated as salary reduction and can create matching true-employer FSA capacity.
+
+The broad condition is the CommonCare default because it rewards meaningful benefit participation without forcing the employee into one narrow product. The ICHRA-specific condition is available when the sponsor places greater priority on individual-coverage enrollment.
+
+<!-- record_id: product.commonfunds.rules.vector-store.step-4-allocate-the-employer-health-benefit-match -->
+### Step 4: allocate the employer health-benefit match
+> Retrieval context: CommonFunds — Allowance design: the priority engine > Step 4: allocate the employer health-benefit match
+
+After the employee's cashable-flex election is known:
+
+```text
+S = total_health_fsa_salary_reduction
+
+remaining_true_employer_fsa_capacity
+= max(max(S, 500)
+      - existing_true_employer_fsa_contributions,
+      0)
+```
+
+The engine should fill this capacity first from the health-only flex credit. Doing so moves value away from a narrow premium or ICHRA use and into the more flexible Health FSA without sacrificing affordability treatment:
+
+```text
+health_only_flex_to_fsa = min(
+  health_only_flex_credit,
+  remaining_true_employer_fsa_capacity
+)
+
+health_only_flex_remaining_for_premium =
+  health_only_flex_credit
+  - health_only_flex_to_fsa
+```
+
+Both amounts remain parts of the same noncashable health-only credit. The split describes actual benefit allocation; it does not reduce the credit that was made available for affordability purposes.
+
+<!-- record_id: product.commonfunds.rules.vector-store.step-5-close-the-allocation -->
+### Step 5: close the allocation
+> Retrieval context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+
+The priority engine must return each result separately:
+
+#### affordabilitygap
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.affordabilitygap; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `affordability_gap`
+- Meaning: Gap before the CommonCare allowance design
+
+#### healthonlyflexcredit
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.healthonlyflexcredit; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `health_only_flex_credit`
+- Meaning: Noncashable health-flex amount preserving the selected affordability result
+
+#### healthonlyflextofsa
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.healthonlyflextofsa; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `health_only_flex_to_fsa`
+- Meaning: Portion allocated into unlocked true-employer FSA capacity
+
+#### healthonlyflexforpremium
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.healthonlyflexforpremium; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `health_only_flex_for_premium`
+- Meaning: Portion remaining available for the qualifying premium or ICHRA-related need
+
+#### remainingaffordabilitygap
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.remainingaffordabilitygap; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `remaining_affordability_gap`
+- Meaning: Gap intentionally left open after the selected priority is applied
+
+#### ichraallocation
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.ichraallocation; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `ichra_allocation`
+- Meaning: Employer amount legally assigned to the ICHRA
+
+#### ebhraallocation
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.ebhraallocation; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `ebhra_allocation`
+- Meaning: Employer amount legally assigned to the EBHRA
+
+#### cashableflexavailable
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.cashableflexavailable; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `cashable_flex_available`
+- Meaning: Amount above the noncashable floor that may enter the cashable election process
+
+#### cashableflexunlocked
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.cashableflexunlocked; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `cashable_flex_unlocked`
+- Meaning: Excess allowance made available after the qualified-benefit condition is satisfied
+
+#### cashableflexlocked
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.cashableflexlocked; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `cashable_flex_locked`
+- Meaning: Excess allowance remaining employer budget because the condition was not satisfied
+
+#### cashableflextofsa
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.cashableflextofsa; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `cashable_flex_to_fsa`
+- Meaning: Employee-elected amount treated as FSA salary reduction
+
+#### trueemployerfsacontribution
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.trueemployerfsacontribution; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `true_employer_fsa_contribution`
+- Meaning: Employer-only FSA amount permitted by the maximum-benefit test
+
+#### cashableflextowages
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.cashableflextowages; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `cashable_flex_to_wages`
+- Meaning: Residual amount validly elected as taxable compensation
+
+#### unallocatedemployerbudget
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-step-5-close-the-allocation.unallocatedemployerbudget; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Step 5: close the allocation
+- Output: `unallocated_employer_budget`
+- Meaning: Employer budget not legally or administratively assigned
+
+
+```text
+remaining_affordability_gap = max(
+  affordability_gap - health_only_flex_credit,
+  0
+)
+```
+
+<!-- record_id: product.commonfunds.rules.vector-store.recommended-decision-order -->
+### Recommended decision order
+> Retrieval context: CommonFunds — Allowance design: the priority engine > Recommended decision order
+
+1. **Calculate the gap.** Do not guess how much allowance is needed for affordability.
+2. **Ask the sponsor how much of the gap to preserve.** The balanced default preserves all of it; choosing less is the first explicit departure from the target.
+3. **Establish that amount as health-only and noncashable.** Keep the full credit available for the applicable premium under the cafeteria terms.
+4. **Make only the allowance above that amount conditionally cashable.** Default a valid election to the CommonFunds Health FSA rather than wages.
+5. **Use the cashable FSA election to calculate true employer FSA capacity.**
+6. **Move health-only flex into that unlocked capacity.** This is the preferred use because it increases flexibility without losing affordability.
+7. **Assign any health-only remainder to the premium or ICHRA need.** Use no more narrow-purpose funding than the structure requires.
+8. **Show the employee the result plainly.** Distinguish health-only dollars, FSA dollars, premium dollars, and amounts that can become taxable wages.
+
+<!-- record_id: product.commonfunds.rules.vector-store.outside-coverage-and-the-excepted-pathway -->
+### Outside coverage and the excepted pathway
+> Retrieval context: CommonFunds — Allowance design: the priority engine > Outside coverage and the excepted pathway
+
+CommonCare may collect an employee declaration that the employee participates in a spouse's plan or other outside coverage. That declaration can support enrollment administration and explain why the employee is declining the employer's ICHRA. It does not turn spouse-plan enrollment into ICHRA-qualifying individual coverage, and the employee cannot receive ICHRA reimbursement while merely enrolled in a spouse's group plan.
+
+For an employer not using ICHRA, CommonCare can pair a self-funded MEC with the excepted CommonFunds pathway. The employer makes non-excepted group coverage available, while CommonFunds uses the EBHRA and excepted-benefit Health FSA structure for account-based value. This often produces a cleaner home for a generous allowance when individual-coverage participation is not the employer's objective.
+
+<!-- record_id: product.commonfunds.rules.vector-store.worked-example-preserve-affordability-while-maximizing-fsa-flexibility -->
+### Worked example: preserve affordability while maximizing FSA flexibility
+> Retrieval context: CommonFunds — Allowance design: the priority engine > Worked example: preserve affordability while maximizing FSA flexibility
+
+Assume:
+
+#### Total employer allowance
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-worked-example-preserve-affordabili.total-employer-allowance; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Worked example: preserve affordability while maximizing FSA flexibility
+- Input: Total employer allowance
+- Amount: `$5,000`
+
+#### Required contribution before flex
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-worked-example-preserve-affordabili.required-contribution-before-flex; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Worked example: preserve affordability while maximizing FSA flexibility
+- Input: Required contribution before flex
+- Amount: `$3,000`
+
+#### Maximum affordable contribution
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-worked-example-preserve-affordabili.maximum-affordable-contribution; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Worked example: preserve affordability while maximizing FSA flexibility
+- Input: Maximum affordable contribution
+- Amount: `$1,800`
+
+#### Affordability gap
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-worked-example-preserve-affordabili.affordability-gap; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Worked example: preserve affordability while maximizing FSA flexibility
+- Input: Affordability gap
+- Amount: `$1,200`
+
+#### Sponsor target
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-worked-example-preserve-affordabili.sponsor-target; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Worked example: preserve affordability while maximizing FSA flexibility
+- Input: Sponsor target
+- Amount: Preserve the full affordability result
+
+#### Conditional cashable flex elected to FSA
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-worked-example-preserve-affordabili.conditional-cashable-flex-elected-to-fsa; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Worked example: preserve affordability while maximizing FSA flexibility
+- Input: Conditional cashable flex elected to FSA
+- Amount: `$1,500`
+
+#### Cash-unlock condition
+<!-- record_id: product.commonfunds.rules.vector-store.allowance-design-the-priority-engine-worked-example-preserve-affordabili.cash-unlock-condition; record_type: table-row -->
+- Context: CommonFunds — Allowance design: the priority engine > Worked example: preserve affordability while maximizing FSA flexibility
+- Input: Cash-unlock condition
+- Amount: At least `$1,500` committed to any qualified health benefit
+
+
+```text
+health_only_flex_credit = 1,200
+allowance_above_floor = 5,000 - 1,200 = 3,800
+
+cashable_flex_to_fsa = 1,500
+new_true_employer_fsa_capacity = 1,500
+cashable_flex_unlocked = 3,800
+cashable_flex_remaining_after_fsa = 2,300
+
+health_only_flex_to_fsa = 1,200
+health_only_flex_remaining_for_premium = 0
+remaining_affordability_gap = 0
+```
+
+The `$1,200` health-only flex credit is noncashable, exclusively medical, and available for the applicable premium. It therefore preserves the selected affordability result. The employee's `$1,500` cashable-flex election into the Health FSA creates enough true-employer FSA capacity to place the full `$1,200` health-only credit into the FSA.
+
+The employee's `$1,500` qualified-benefit commitment satisfies the cash-unlock condition. The result is the desired center: the employer has not lost affordability credit, has not forced the `$1,200` into the ICHRA, and has not made the allowance freely cashable for an employee who does nothing. The employee receives `$2,700` of Health FSA value—`$1,500` of salary reduction plus `$1,200` of health-only employer flex—and may direct the remaining unlocked flex according to the cafeteria plan.
+
+> [!IMPORTANT]
+> For a traditional employer plan, the cafeteria-plan affordability rule expressly describes when a health flex contribution reduces required contribution. ICHRA affordability also has a specific regulatory calculation based on the applicable lowest-cost silver-plan premium and the HRA amount. CommonCare should preserve both calculations in the data model and identify the authority used for the final affordability result rather than silently applying a traditional-plan output to an ICHRA calculation.
 
 ---
 
