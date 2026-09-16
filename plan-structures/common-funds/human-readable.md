@@ -1,12 +1,15 @@
-# CommonFunds
+## CommonFunds
 
 > A unified way to administer multiple account-based health benefits—without confusing the participant experience with the legal structure underneath it.
 
-Account-based health plans create important incentive structure within health coverage. Assigning an "account" to a single individual means what they don't use, isn't used to offset group costs. This is in stark contrast to the universal risk pooling the ACA seeks to implement. For this reason, the conditions under which account-based health plans can be used are explicitly regulated.
+CommonFunds can combine multiple account-based benefits in one participant experience. Its primary employer-funded layer is either:
+
+- An **Excepted Benefit Health Reimbursement Arrangement (EBHRA)** for an eligible excepted-benefit design; or
+- A **CHOICE/ICHRA** for an employee offered and participating in qualifying individual coverage.
+
+An **excepted-benefit Health Flexible Spending Arrangement (Health FSA)** may provide an additional layer under either pathway when its separate requirements are satisfied.
 
 CommonFunds is an administrative structure. It is not a separate statutory benefit category, a replacement for an HRA, or a replacement for a Health FSA. Every dollar retains the rules of its underlying benefit component.
-
-CommonFunds can be used to create significant value when used in a traditional group health plan, CHOICE (formerly ICHRA), a level-funded plan, a self-insured plan, or as a stand-alone benefit.
 
 ## Foreword: CommonFunds origin and purpose
 
@@ -116,25 +119,22 @@ In short, CommonFunds pushes health insurance into a box where it spends more ti
 
 Furthermore, CommonCare's implementation of this solution enables participant-level cherry-picking in the beneficial sense: each employee can select the available combination that produces the best projected economic result for that employee. A predictable high-cost claimant may belong in the lower-deductible plan, while a lower-utilizing participant may perform better with a high deductible and CommonFunds. The optimization favors the participant’s actual economics; it does not exclude or disadvantage people because they are expensive.
 
+---
 
-
-## Legal Structure
-
-CommonFunds can combine an **Excepted Benefit Health Reimbursement Arrangement (EBHRA)** and an **excepted-benefit Health Flexible Spending Arrangement (Health FSA)** into one participant experience. This maximizes the ability to put flexible funds aside on a per-participant basis by unifying the pathways for doing so administratively.
+## The essential idea
 
 One participant may see one CommonFunds balance while the system maintains multiple classifications behind it:
 
 | Component | Typical funding source | Core availability rule | Treatment of unused amounts |
 |---|---|---|---|
 | EBHRA | Employer-only | Available according to the plan document | Governed by the plan; may carry over or be forfeited |
+| CHOICE/ICHRA | Employer-only | Available only while the individual satisfies the ICHRA coverage conditions and according to the plan document | Governed by the ICHRA; may reimburse premiums and, if the plan permits, nonpremium §213(d) expenses |
 | Health FSA | Employee salary reduction and permitted employer contributions | Maximum annual benefit is generally available throughout the coverage period | Generally forfeited unless the plan provides a permitted carryover or grace period |
 
+> [!IMPORTANT]
+> The combined user experience does not merge the legal classifications. Compliance, tax treatment, limits, claims eligibility, and availability are determined component by component.
 
 ---
-
-## A comment on CHOICE (formerly ICHRA)
-
-The structure of account-based coverage can also be achieved via a CHOICE arrangement. CommonCare facilitates this arrangement using the same workflow as CommonFunds. It is not in the same category however, because it is not excepted. You must elect qualifying individual health insurance to participate. It is not excepted and cannot be offered à la carte. This diminishes flexibility and control of the approach.
 
 ## 1. Classify the dollar before applying a limit
 
@@ -147,11 +147,12 @@ Every CommonFunds dollar must be classified according to:
 
 The product name and displayed balance do not determine classification.
 
-### The default classification rule
+### The classification rule
 
 | Dollar | CommonFunds treatment |
 |---|---|
-| Genuinely employer-only and unavailable as cash or another taxable benefit | Allocate to the EBHRA first, up to the applicable annual EBHRA limit |
+| Genuinely employer-only and unavailable as cash or another taxable benefit on the excepted pathway | Allocate to the EBHRA first, up to the applicable annual EBHRA limit |
+| Genuinely employer-only amount established under CHOICE/ICHRA | Keep within the ICHRA; any balance remaining after premium reimbursement may fund eligible nonpremium expenses if the ICHRA document permits them |
 | Available as cash or another taxable benefit and elected into the Health FSA | Treat as employee salary reduction; it consumes the Section 125(i) Health FSA limit |
 | Direct employee payroll election into the Health FSA | Treat as employee salary reduction |
 | Employer-only amount remaining after the EBHRA is filled | May be allocated to the Health FSA as an employer contribution, but only within the excepted-benefit maximum-benefit test and the plan documents |
@@ -164,185 +165,408 @@ An employer credit elected into the Health FSA is treated as salary reduction wh
 
 A choice solely among employer-provided nontaxable health benefits, with no cash or taxable option, is not by itself a Section 125 election.
 
-### Why the EBHRA is the default home for employer-only dollars
+### The primary home for employer-only dollars
 
-The default position for a genuinely employer-only, noncashable health allowance is the EBHRA until the applicable annual limit is reached. This gives the employer cleaner and more flexible control over the funds and has no technical downside.
+On the excepted pathway, the default position for a genuinely employer-only, noncashable health allowance is the EBHRA until the applicable annual limit is reached. This gives the employer cleaner and more flexible control over the funds.
 
-After the EBHRA is filled, employer-only amounts may flow into the Health FSA only to the extent permitted by the Health FSA excepted-benefit rules and governing documents. Excepted Benefit FSA employer contribution limits beyond $500 are governed by the employee or flex contribution made to the FSA (they cannot exceed it except for $500).
+After the EBHRA is filled, employer-only amounts may flow into the Health FSA only to the extent permitted by the Health FSA excepted-benefit rules and governing documents.
+
+On the ICHRA pathway, the EBHRA allocation is zero. The ICHRA amount is established in advance under the governing plan terms. When the employee accepts the ICHRA and maintains qualifying coverage, any amount remaining after premium reimbursement can serve as the CommonFunds primary layer for eligible nonpremium expenses—but only when those expenses are reimbursable under the ICHRA document.
 
 ---
 
-## 2. Employer allowance allocation engine
+## 2. CommonFunds calculation engine
 
-This is the canonical process for allocating an employer allowance, flex credit, or by coverage contribution within CommonFunds. Complete classification before calculating account limits.
+The calculation has two separate jobs:
 
-### Required inputs
+1. **Plan-year allocation:** classify each dollar and assign it to the benefit component that legally governs it.
+2. **Runtime availability:** after enrollment, premiums, and claims occur, calculate how much each component can still reimburse.
 
-Use annual plan-year amounts unless a monthly illustration is specifically needed.
+Do not combine these jobs. The ICHRA amount is established by the plan before claims occur. The portion not used for individual premiums is a remaining ICHRA balance—not a new contribution created later by the calculation.
+
+### The two benefit pathways
+
+Every employee class follows exactly one primary account pathway:
+
+| `benefit_path` | Primary employer account | EBHRA treatment |
+|---|---|---|
+| `excepted` | EBHRA | EBHRA may be funded within its indexed limit |
+| `ichra` | CHOICE/ICHRA | EBHRA capacity is zero for every employee offered the ICHRA, including an employee who opts out |
+
+The Health FSA is calculated separately. An ICHRA may serve as the non-excepted group coverage that must be made available for the Health FSA to qualify as an excepted benefit.
+
+> [!IMPORTANT]
+> The pathway is determined by what the employer offers to the employee's class—not by whether one employee accepts the ICHRA. An employee cannot unlock EBHRA funding merely by opting out of the ICHRA.
+
+### Normalized input schema
+
+Use annual plan-year amounts. Every value is an argument supplied to the calculation unless it appears later in the output table.
+
+#### A. Plan structure
+
+| Input | Type | Meaning |
+|---|---|---|
+| `benefit_path` | `"excepted" \| "ichra"` | Primary account pathway offered to the employee's class |
+| `ichra_participation` | `"accepted" \| "opted_out" \| "not_applicable"` | Employee's ICHRA election; must be `not_applicable` on the excepted path |
+| `ichra_covers_nonpremium_expenses` | Boolean | Whether the ICHRA document permits reimbursement of eligible §213(d) expenses beyond premiums |
+
+#### B. Employer and employee dollars
 
 | Input | Meaning |
 |---|---|
-| `allowance_total` | Total general employer allowance |
-| `cashable_total` | Portion available as cash or another taxable benefit |
-| `byCoverage` | Dedicated employer contribution that cannot be received as cash |
-| `cashable_elected_to_fsa` | Cashable amount actually directed to the Health FSA |
-| `direct_employee_fsa_election` | Additional payroll salary reduction elected to the Health FSA |
-| `cashable_used_for_premiums` | Cashable amount elected for eligible premiums |
-| `cashable_taken_as_wages` | Cashable amount paid as taxable compensation |
-| `ebhra_limit` | Applicable indexed EBHRA limit |
-| `existing_ebhra_newly_available` | Other amounts newly made available under the EBHRA |
-| `fsa_salary_reduction_limit` | Applicable Section 125(i) Health FSA limit |
-| `other_health_fsa_salary_reduction_for_plan_year` | Other salary reduction already counted for the year |
-| `existing_fsa_employer_contribution` | Other true employer Health FSA contributions |
+| `employer_noncashable_budget` | Total employer-only amount available for allocation; cannot be taken as cash or another taxable benefit |
+| `cashable_flex_credit` | Employer flex amount the employee may receive as cash or another taxable benefit |
+| `cashable_flex_to_fsa` | Cashable flex credit elected into the Health FSA |
+| `cashable_flex_to_premiums` | Cashable flex credit elected for premiums permitted under Section 125 |
+| `cashable_flex_to_wages` | Cashable flex credit elected as taxable compensation |
+| `cashable_flex_to_other` | Cashable flex credit directed to another permitted cashable benefit |
+| `direct_employee_fsa_election` | Additional employee salary reduction elected into the Health FSA |
 
-The cashable allocations must reconcile:
+`employer_noncashable_budget` and `cashable_flex_credit` are separate sources. This eliminates the former ambiguity over whether `byCoverage` was inside or outside `allowance_total`.
+
+#### C. Primary account settings
+
+| Input | Applies when | Meaning |
+|---|---|---|
+| `ebhra_limit` | `excepted` | Indexed maximum newly available under the EBHRA |
+| `existing_ebhra_newly_available` | `excepted` | EBHRA amount already made available from another allocation source |
+| `ichra_newly_available` | `ichra` | Amount established under the ICHRA for the plan year |
+
+`ichra_newly_available` is an input fixed by the governing ICHRA terms. It is not calculated from unused flex dollars after enrollment.
+
+#### D. Health FSA settings
+
+| Input | Meaning |
+|---|---|
+| `fsa_salary_reduction_limit` | Applicable Section 125(i) limit |
+| `other_fsa_salary_reduction` | Salary reduction already counted for the plan year |
+| `existing_fsa_employer_contribution` | True employer Health FSA contributions already assigned from another source |
+
+#### E. Runtime activity
+
+| Input | Applies when | Meaning |
+|---|---|---|
+| `ichra_premium_reimbursements` | Accepted ICHRA | Premium reimbursements paid or reserved for the measurement period |
+| `ichra_nonpremium_reimbursements` | Accepted ICHRA | Other ICHRA reimbursements already paid or approved |
+| `ebhra_reimbursements` | Excepted path | EBHRA reimbursements already paid or approved |
+| `fsa_reimbursements` | Both paths | Health FSA reimbursements already paid or approved |
+
+Runtime values do not change the legal classification established at plan-year allocation.
+
+### Input validation
+
+#### Cashable credit reconciliation
 
 ```text
-cashable_total
-= cashable_elected_to_fsa
-+ cashable_used_for_premiums
-+ cashable_taken_as_wages
-+ other permitted cashable allocations
+cashable_flex_credit
+= cashable_flex_to_fsa
++ cashable_flex_to_premiums
++ cashable_flex_to_wages
++ cashable_flex_to_other
 ```
 
-### Step 1 — Split the allowance by cashability
+Every amount must be nonnegative. The engine rejects an election that does not reconcile.
+
+#### Path validation
 
 ```text
-noncashable_allowance = max(allowance_total - cashable_total, 0)
+if benefit_path == "excepted":
+    ichra_participation must equal "not_applicable"
+    ichra_newly_available must equal 0
+
+if benefit_path == "ichra":
+    existing_ebhra_newly_available must equal 0
 ```
 
-Validate:
+An ICHRA participant may receive nonpremium reimbursements only when:
 
 ```text
-0 <= cashable_total <= allowance_total
+benefit_path == "ichra"
+and ichra_participation == "accepted"
+and ichra_covers_nonpremium_expenses == true
 ```
 
-Cashability means the employee can elect to receive the amount as cash or another taxable benefit.
+### Phase 1 — Plan-year allocation
 
-### Step 2 — Build the employer-only pool
+#### Step 1: calculate Health FSA salary reduction
+
+Cashable flex elected into the Health FSA is treated as salary reduction because the employee could have taken a taxable benefit instead.
 
 ```text
-employer_only_pool = noncashable_allowance + byCoverage
+fsa_salary_reduction_requested
+= cashable_flex_to_fsa
++ direct_employee_fsa_election
+
+fsa_salary_reduction_capacity
+= max(fsa_salary_reduction_limit
+      - other_fsa_salary_reduction, 0)
+
+fsa_salary_reduction
+= min(fsa_salary_reduction_requested,
+      fsa_salary_reduction_capacity)
+
+fsa_salary_reduction_excess
+= max(fsa_salary_reduction_requested
+      - fsa_salary_reduction_capacity, 0)
 ```
 
-For this calculation, `byCoverage` is treated like any other noncashable allowance: it is a dedicated employer contribution that cannot be converted to cash or another taxable benefit.
+The enrollment process should reject the excess before the election becomes effective. It cannot remain in the Health FSA.
 
-### Step 3 — Fill the available EBHRA capacity
+#### Step 2: allocate the primary employer account
+
+##### Excepted pathway
 
 ```text
-remaining_ebhra_capacity
+ebhra_capacity
 = max(ebhra_limit - existing_ebhra_newly_available, 0)
 
-ebhra_creditable
-= min(employer_only_pool, remaining_ebhra_capacity)
+primary_employer_allocation
+= min(employer_noncashable_budget, ebhra_capacity)
 
-employer_only_overflow
-= max(employer_only_pool - ebhra_creditable, 0)
+ebhra_newly_available
+= existing_ebhra_newly_available
++ primary_employer_allocation
 ```
 
-Do not include `cashable_total` in the employer-only pool.
-
-### Step 4 — Calculate Health FSA employee salary reduction
+##### ICHRA pathway
 
 ```text
-fsa_employee_contribution_requested
-= cashable_elected_to_fsa + direct_employee_fsa_election
-
-remaining_fsa_salary_reduction_capacity
-= max(fsa_salary_reduction_limit
-      - other_health_fsa_salary_reduction_for_plan_year, 0)
-
-fsa_employee_contribution
-= min(fsa_employee_contribution_requested,
-      remaining_fsa_salary_reduction_capacity)
-
-excess_fsa_salary_reduction
-= max(fsa_employee_contribution_requested
-      - remaining_fsa_salary_reduction_capacity, 0)
+ebhra_capacity = 0
+primary_employer_allocation = ichra_newly_available
 ```
 
-An excess cannot remain in the Health FSA. Subject to the plan, an otherwise cashable excess may be paid as taxable wages or directed to another permitted non-FSA option. The election process should prevent the excess rather than depend on a later correction.
-
-### Step 5 — Calculate employer Health FSA capacity
-
-Let `S` equal the participant’s total Health FSA salary reduction election, including direct payroll salary reduction and cashable flex credits elected into the Health FSA.
+Validate that the ICHRA amount does not exceed the employer-only budget being modeled:
 
 ```text
-maximum_excepted_fsa_benefit = max(2 * S, S + 500)
+0 <= ichra_newly_available <= employer_noncashable_budget
+```
 
-maximum_total_employer_fsa_contribution
-= maximum_excepted_fsa_benefit - S
+The ICHRA remains offered on its governing terms whether the employee accepts or opts out. An opt-out changes participant access, not the amount stated in the plan's offer.
+
+#### Step 3: calculate employer-only budget remaining after the primary account
+
+```text
+employer_budget_after_primary
+= employer_noncashable_budget
+- primary_employer_allocation
+```
+
+On the excepted path, this is EBHRA overflow. On the ICHRA path, this is employer budget not assigned to the ICHRA. It is **not** “unused ICHRA.”
+
+#### Step 4: calculate true employer Health FSA capacity
+
+Let `S` equal the total Health FSA salary reduction after applying the Section 125(i) limit:
+
+```text
+S = other_fsa_salary_reduction + fsa_salary_reduction
+
+maximum_total_fsa_benefit
+= max(2 * S, S + 500)
+
+maximum_true_employer_fsa_contribution
+= maximum_total_fsa_benefit - S
 = max(S, 500)
 
 remaining_employer_fsa_capacity
-= max(maximum_total_employer_fsa_contribution
+= max(maximum_true_employer_fsa_contribution
       - existing_fsa_employer_contribution, 0)
 
-fsa_employer_contribution_from_overflow
-= min(employer_only_overflow, remaining_employer_fsa_capacity)
+fsa_employer_contribution_from_budget
+= min(employer_budget_after_primary,
+      remaining_employer_fsa_capacity)
+
+fsa_employer_contribution
+= existing_fsa_employer_contribution
++ fsa_employer_contribution_from_budget
 ```
 
-A true employer Health FSA contribution does not consume the Section 125(i) salary reduction limit. It does increase the maximum benefit payable and must fit within the excepted-benefit formula.
+The financial test is only one requirement. The Health FSA must also satisfy the other conditions for excepted-benefit treatment.
 
-The Health FSA must separately satisfy the requirement that other non-excepted group health plan coverage be made available for the year to the applicable class.
+#### Step 5: close the employer-only allocation
 
-### Step 6 — Reconcile the result
+```text
+unallocated_employer_noncashable_budget
+= employer_budget_after_primary
+- fsa_employer_contribution_from_budget
+```
 
-The calculation should produce separate results for:
+The amount must reconcile:
+
+```text
+employer_noncashable_budget
+= primary_employer_allocation
++ fsa_employer_contribution_from_budget
++ unallocated_employer_noncashable_budget
+```
+
+Do not convert the unallocated amount into wages automatically. A noncashable benefit does not become cash merely because an account limit or plan allocation has been reached.
+
+### Phase 1 outputs
 
 | Output | Meaning |
 |---|---|
-| `ebhra_creditable` | Employer-only amount allocated within EBHRA capacity |
-| `fsa_employee_contribution` | Direct salary reduction plus cashable credits elected to the FSA, capped under Section 125(i) |
-| `fsa_employer_contribution` | Employer-only overflow allocated within excepted-benefit FSA capacity |
-| `cashable_used_for_premiums` | Cashable election used for eligible premiums |
-| `taxable_wages` | Cash elected as wages plus cashable amounts that cannot be placed in the FSA |
-| `unallocated_employer_only_overflow` | Employer-only amount that fits neither component |
+| `primary_account_type` | `ebhra` or `ichra` |
+| `primary_employer_allocation` | Employer-only amount assigned to the primary account |
+| `ebhra_newly_available` | Total EBHRA amount newly available; always zero on the ICHRA path |
+| `ichra_offered_amount` | ICHRA amount stated by the plan; always zero on the excepted path |
+| `fsa_salary_reduction` | Valid cashable-flex and direct employee salary reduction assigned to the Health FSA |
+| `fsa_salary_reduction_excess` | Requested Health FSA salary reduction that must be rejected or redirected |
+| `fsa_employer_contribution` | Total true employer contribution assigned to the Health FSA |
+| `cashable_flex_to_premiums` | Cashable election assigned to eligible premiums |
+| `cashable_flex_to_wages` | Cashable election paid as taxable compensation |
+| `cashable_flex_to_other` | Cashable election assigned to another permitted benefit |
+| `unallocated_employer_noncashable_budget` | Employer-only budget not assigned to a benefit component |
 
-Do not automatically convert unallocated employer-only overflow into wages. A noncashable amount does not become payable as cash merely because account capacity is exhausted. Its treatment depends on the plan and any other available employer-provided benefits.
+### Phase 2 — Runtime availability
 
-### Worked example
+#### Excepted pathway balance
 
-Assume the following for the 2026 plan year:
+```text
+ebhra_available
+= max(ebhra_newly_available - ebhra_reimbursements, 0)
+```
+
+Actual availability may be lower when the plan uses monthly accrual or another plan-defined schedule. The balance engine must apply that schedule before approving a claim.
+
+#### ICHRA pathway balance
+
+If the employee opts out:
+
+```text
+ichra_available = 0
+ichra_nonpremium_available = 0
+```
+
+If the employee accepts and maintains qualifying individual coverage:
+
+```text
+ichra_remaining
+= max(ichra_newly_available
+      - ichra_premium_reimbursements
+      - ichra_nonpremium_reimbursements, 0)
+
+ichra_nonpremium_available
+= ichra_covers_nonpremium_expenses
+   ? ichra_remaining
+   : 0
+```
+
+`ichra_nonpremium_available` is the ICHRA-funded CommonFunds layer. It replaces the EBHRA layer for an employee participating in CHOICE and qualifying individual coverage. Every dollar remains an ICHRA dollar and follows the ICHRA plan document.
+
+#### Health FSA balance
+
+```text
+fsa_maximum_benefit
+= S + fsa_employer_contribution
+
+fsa_available
+= max(fsa_maximum_benefit - fsa_reimbursements, 0)
+```
+
+The Health FSA uniform-coverage rule determines when the maximum annual benefit becomes available; payroll collections to date do not cap the participant's valid reimbursement rights.
+
+### Participant-facing CommonFunds output
+
+The unified display is the sum of amounts currently available for the submitted expense—not merely every positive account balance.
+
+```text
+if benefit_path == "excepted":
+    primary_available = ebhra_available
+else:
+    primary_available = ichra_nonpremium_available
+
+commonfunds_available_for_claim
+= eligible_primary_amount_for_claim
++ eligible_fsa_amount_for_claim
+```
+
+The claims engine must evaluate component eligibility and ordering before displaying or paying the combined amount.
+
+### Worked example A — EBHRA pathway
+
+Assume:
 
 | Input | Amount |
 |---|---:|
-| General allowance | $4,800 |
-| Cashable portion | $2,400 |
-| `byCoverage` | $600 |
-| Cashable amount elected to FSA | $2,000 |
+| `benefit_path` | `excepted` |
+| Employer noncashable budget | $3,000 |
+| Cashable flex credit | $2,400 |
+| Cashable flex to Health FSA | $2,000 |
+| Cashable flex to wages | $400 |
 | Direct employee FSA election | $1,000 |
-| Cashable amount taken as wages | $400 |
 | EBHRA limit | $2,200 |
 | Existing EBHRA amount | $0 |
 | Existing employer FSA contribution | $0 |
 | FSA salary reduction limit | $3,400 |
 
 ```text
-noncashable_allowance = 4,800 - 2,400 = 2,400
-employer_only_pool = 2,400 + 600 = 3,000
-ebhra_creditable = min(3,000, 2,200) = 2,200
-employer_only_overflow = 3,000 - 2,200 = 800
+fsa_salary_reduction = 2,000 + 1,000 = 3,000
 
-fsa_employee_contribution = 2,000 + 1,000 = 3,000
-maximum_excepted_fsa_benefit = max(6,000, 3,500) = 6,000
-maximum_employer_fsa_contribution = 6,000 - 3,000 = 3,000
-fsa_employer_contribution_from_overflow = min(800, 3,000) = 800
+primary_employer_allocation
+= min(3,000, 2,200)
+= 2,200 to EBHRA
 
-total_health_fsa_benefit = 3,000 + 800 = 3,800
-taxable_wages from allowance = 400
-unallocated_employer_only_overflow = 0
+employer_budget_after_primary = 3,000 - 2,200 = 800
+
+maximum_true_employer_fsa_contribution
+= max(3,000, 500)
+= 3,000
+
+fsa_employer_contribution_from_budget
+= min(800, 3,000)
+= 800
+
+unallocated_employer_noncashable_budget = 0
 ```
 
-| Result | Classification | Amount |
-|---|---|---:|
-| EBHRA | Employer contribution | $2,200 |
-| Health FSA | Employee salary reduction | $3,000 |
-| Health FSA | Employer contribution | $800 |
-| Health FSA | Total maximum benefit | $3,800 |
-| Wages | Taxable compensation | $400 |
+| Output | Amount |
+|---|---:|
+| EBHRA newly available | $2,200 |
+| Health FSA salary reduction | $3,000 |
+| Health FSA employer contribution | $800 |
+| Total Health FSA maximum benefit | $3,800 |
+| Taxable wages | $400 |
+| Unallocated employer-only budget | $0 |
 
-The Health FSA excepted-benefit financial test is satisfied.
+### Worked example B — ICHRA pathway
+
+Assume:
+
+| Input | Amount |
+|---|---:|
+| `benefit_path` | `ichra` |
+| `ichra_participation` | `accepted` |
+| ICHRA covers nonpremium expenses | `true` |
+| Employer noncashable budget | $4,800 |
+| ICHRA newly available | $4,800 |
+| Premium reimbursements for the year | $3,600 |
+| Other ICHRA reimbursements already paid | $200 |
+| Health FSA salary reduction | $1,000 |
+| Health FSA reimbursements paid | $250 |
+
+```text
+ebhra_newly_available = 0
+
+ichra_remaining
+= 4,800 - 3,600 - 200
+= 1,000
+
+ichra_nonpremium_available = 1,000
+
+fsa_available
+= 1,000 - 250
+= 750
+```
+
+For an expense eligible under both components, the participant may see up to `$1,750` of CommonFunds availability, subject to the plan's claims-ordering rule:
+
+| Internal component | Available |
+|---|---:|
+| ICHRA available for nonpremium §213(d) expenses | $1,000 |
+| Health FSA | $750 |
+| **Unified CommonFunds availability** | **$1,750** |
+
+The participant has no EBHRA. The `$1,000` primary balance is simply the unused portion of the predetermined ICHRA after premium and other reimbursements.
 
 ---
 

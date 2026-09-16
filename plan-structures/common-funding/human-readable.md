@@ -332,6 +332,14 @@ An offer of employer major medical coverage generally blocks the premium tax cre
 
 This option allows employees to benefit from the premium tax credit while the employer offers the same streamlined CommonFunds companion structure for out of pocket costs. CommonCare administers a turn-key plan structure for achieving this compliantly.
 
+Like the alternative coverages, this option generally cannot be employer-sponsored. Generally because of an important but realistic exception for some groups: 
+
+- If the ages/income mix of employees is a fit, the employer may offer an CHOICE/ICHRA arrangement with minimal allowance. This will mean some employees (those most able to benefit from the PTC) still have access to the PTC due to the coverage not being legally affordable. The employer can still offer an allowance, but it is a flex-allowance and therefore does not count toward affordability.
+- These employees opt-out of the CHOICE/ICHRA and CommonCare helps them enroll in individual coverage seamlessly (still payroll-funded, only post-tax, and not employer-sponsored)
+- The remaining employees still get the benefit of tax-free premiums through the CHOICE/ICHRA arrangement. 
+
+This is a really potent option for employers with less than 50 full-time-equivalent employees. Often the total optimal arrangement cannot be known until enrollment is already underway, but CommonCare can allow an easy migration to this arrangement where it is optimal. The savings netted make the bother of a small change very worthwhile.
+
 See the [PTC Plan documentation](https://commoncare.org/products/ptc).
 
 ---

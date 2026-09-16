@@ -1,1645 +1,1326 @@
+---
+id: product.commonfunds.rules.vector-store
+title: CommonFunds — Rules and Calculation Specification
+kind: vector-store-source
+schema_version: "1.0"
+source_document: plan-structures/common-funds/human-readable.md
+source_commit: 8fc7e4008f0c686d96361a2028456ce9c5bcd3db
+source_sha256: 1fde57cbac07e379e04f59defc70c054b5c72a1b611ae0275b8db058278556f9
+generation_method: deterministic-commonfunds-split-conversion
+canonical_source: false
+scope: rules-and-calculation-specification
+last_reviewed: unknown
+---
 
-# CommonFunds Canonical Knowledge Base
+# CommonFunds — Rules and Calculation Specification
+
+> Retrieval context: This generated document is the rules-and-calculation-specification retrieval view of `plan-structures/common-funds/human-readable.md`. The human-readable source remains canonical. Substantive edits belong in that source and must be regenerated here.
+
+<!-- record_id: product.commonfunds.rules.vector-store.1-classify-the-dollar-before-applying-a-limit -->
+## 1. Classify the dollar before applying a limit
+> Retrieval context: CommonFunds — 1. Classify the dollar before applying a limit
+
+Every CommonFunds dollar must be classified according to:
+
+1. Its funding source;
+2. The governing plan document;
+3. Its applicable tax treatment; and
+4. The regulations governing the benefit component.
+
+The product name and displayed balance do not determine classification.
+
+<!-- record_id: product.commonfunds.rules.vector-store.the-classification-rule -->
+### The classification rule
+> Retrieval context: CommonFunds — 1. Classify the dollar before applying a limit > The classification rule
+
+#### Genuinely employer-only and unavailable as cash or another taxable benefit on the excepted pathway
+<!-- record_id: product.commonfunds.rules.vector-store.1-classify-the-dollar-before-applying-a-limit-the-classification-rule.genuinely-employer-only-and-unavailable-as-cash-or-another-taxable-benef; record_type: table-row -->
+- Context: CommonFunds — 1. Classify the dollar before applying a limit > The classification rule
+- Dollar: Genuinely employer-only and unavailable as cash or another taxable benefit on the excepted pathway
+- CommonFunds treatment: Allocate to the EBHRA first, up to the applicable annual EBHRA limit
+
+#### Genuinely employer-only amount established under CHOICE/ICHRA
+<!-- record_id: product.commonfunds.rules.vector-store.1-classify-the-dollar-before-applying-a-limit-the-classification-rule.genuinely-employer-only-amount-established-under-choice-ichra; record_type: table-row -->
+- Context: CommonFunds — 1. Classify the dollar before applying a limit > The classification rule
+- Dollar: Genuinely employer-only amount established under CHOICE/ICHRA
+- CommonFunds treatment: Keep within the ICHRA; any balance remaining after premium reimbursement may fund eligible nonpremium expenses if the ICHRA document permits them
+
+#### Available as cash or another taxable benefit and elected into the Health FSA
+<!-- record_id: product.commonfunds.rules.vector-store.1-classify-the-dollar-before-applying-a-limit-the-classification-rule.available-as-cash-or-another-taxable-benefit-and-elected-into-the-health; record_type: table-row -->
+- Context: CommonFunds — 1. Classify the dollar before applying a limit > The classification rule
+- Dollar: Available as cash or another taxable benefit and elected into the Health FSA
+- CommonFunds treatment: Treat as employee salary reduction; it consumes the Section 125(i) Health FSA limit
+
+#### Direct employee payroll election into the Health FSA
+<!-- record_id: product.commonfunds.rules.vector-store.1-classify-the-dollar-before-applying-a-limit-the-classification-rule.direct-employee-payroll-election-into-the-health-fsa; record_type: table-row -->
+- Context: CommonFunds — 1. Classify the dollar before applying a limit > The classification rule
+- Dollar: Direct employee payroll election into the Health FSA
+- CommonFunds treatment: Treat as employee salary reduction
+
+#### Employer-only amount remaining after the EBHRA is filled
+<!-- record_id: product.commonfunds.rules.vector-store.1-classify-the-dollar-before-applying-a-limit-the-classification-rule.employer-only-amount-remaining-after-the-ebhra-is-filled; record_type: table-row -->
+- Context: CommonFunds — 1. Classify the dollar before applying a limit > The classification rule
+- Dollar: Employer-only amount remaining after the EBHRA is filled
+- CommonFunds treatment: May be allocated to the Health FSA as an employer contribution, but only within the excepted-benefit maximum-benefit test and the plan documents
+
+#### Cashable amount elected for eligible premiums
+<!-- record_id: product.commonfunds.rules.vector-store.1-classify-the-dollar-before-applying-a-limit-the-classification-rule.cashable-amount-elected-for-eligible-premiums; record_type: table-row -->
+- Context: CommonFunds — 1. Classify the dollar before applying a limit > The classification rule
+- Dollar: Cashable amount elected for eligible premiums
+- CommonFunds treatment: May be a Section 125 salary reduction amount, but does not consume the separate Section 125(i) Health FSA limit
+
+#### Cashable amount elected as wages
+<!-- record_id: product.commonfunds.rules.vector-store.1-classify-the-dollar-before-applying-a-limit-the-classification-rule.cashable-amount-elected-as-wages; record_type: table-row -->
+- Context: CommonFunds — 1. Classify the dollar before applying a limit > The classification rule
+- Dollar: Cashable amount elected as wages
+- CommonFunds treatment: Taxable compensation
 
 
-Each chunk contains: - stable semantic ID - retrieval purpose - original
-detailed guidance - preserved examples and reasoning patterns
+The decisive question is not who originally budgeted the money. It is whether the employee can elect cash or another taxable benefit and what the employee actually elects.
 
-------------------------------------------------------------------------
+An employer credit elected into the Health FSA is treated as salary reduction when the employee could have taken it as cash or another taxable benefit. Calling it an “employer allowance,” “flex credit,” or “contribution” does not change that result.
 
-# CommonFunds Canonical Knowledge Base
+A choice solely among employer-provided nontaxable health benefits, with no cash or taxable option, is not by itself a Section 125 election.
 
-# Topic: Benefit Classification and Funding Source Rules
+<!-- record_id: product.commonfunds.rules.vector-store.the-primary-home-for-employer-only-dollars -->
+### The primary home for employer-only dollars
+> Retrieval context: CommonFunds — 1. Classify the dollar before applying a limit > The primary home for employer-only dollars
 
-## Purpose
+On the excepted pathway, the default position for a genuinely employer-only, noncashable health allowance is the EBHRA until the applicable annual limit is reached. This gives the employer cleaner and more flexible control over the funds.
 
-This document defines how an AI assistant must interpret and explain
-CommonFunds.
+After the EBHRA is filled, employer-only amounts may flow into the Health FSA only to the extent permitted by the Health FSA excepted-benefit rules and governing documents.
 
-The assistant must use these definitions as the primary framework when
-answering questions about:
+On the ICHRA pathway, the EBHRA allocation is zero. The ICHRA amount is established in advance under the governing plan terms. When the employee accepts the ICHRA and maintains qualifying coverage, any amount remaining after premium reimbursement can serve as the CommonFunds primary layer for eligible nonpremium expenses—but only when those expenses are reimbursable under the ICHRA document.
 
--   account balances
--   employee contributions
--   employer contributions
--   claim eligibility
--   tax treatment
--   compliance rules
--   reporting
--   plan administration
+---
 
-The assistant must not rely on the product name "CommonFunds" to
-determine regulatory treatment.
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine -->
+## 2. CommonFunds calculation engine
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine
 
-CommonFunds is an administrative structure. Regulatory treatment is
-determined by the underlying benefit component.
+The calculation has two separate jobs:
 
-------------------------------------------------------------------------
+1. **Plan-year allocation:** classify each dollar and assign it to the benefit component that legally governs it.
+2. **Runtime availability:** after enrollment, premiums, and claims occur, calculate how much each component can still reimburse.
 
-# CommonFunds Classification Framework
+Do not combine these jobs. The ICHRA amount is established by the plan before claims occur. The portion not used for individual premiums is a remaining ICHRA balance—not a new contribution created later by the calculation.
 
-## Definition
+<!-- record_id: product.commonfunds.rules.vector-store.the-two-benefit-pathways -->
+### The two benefit pathways
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > The two benefit pathways
 
-CommonFunds is a unified administration system for multiple
-account-based health benefit arrangements.
+Every employee class follows exactly one primary account pathway:
 
-CommonFunds may combine:
+#### excepted
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-the-two-benefit-pathways.excepted; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > The two benefit pathways
+- `benefit_path`: `excepted`
+- Primary employer account: EBHRA
+- EBHRA treatment: EBHRA may be funded within its indexed limit
 
--   Excepted Benefit Health Reimbursement Arrangement (EBHRA)
--   Excepted Benefit Health Flexible Spending Arrangement (Health FSA)
+#### ichra
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-the-two-benefit-pathways.ichra; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > The two benefit pathways
+- `benefit_path`: `ichra`
+- Primary employer account: CHOICE/ICHRA
+- EBHRA treatment: EBHRA capacity is zero for every employee offered the ICHRA, including an employee who opts out
 
-into a single participant experience.
 
-CommonFunds itself is not:
+The Health FSA is calculated separately. An ICHRA may serve as the non-excepted group coverage that must be made available for the Health FSA to qualify as an excepted benefit.
 
--   a separate statutory benefit category
--   a replacement for an HRA
--   a replacement for a Health FSA
+> [!IMPORTANT]
+> The pathway is determined by what the employer offers to the employee's class—not by whether one employee accepts the ICHRA. An employee cannot unlock EBHRA funding merely by opting out of the ICHRA.
 
-The underlying benefit rules continue to apply separately.
+<!-- record_id: product.commonfunds.rules.vector-store.normalized-input-schema -->
+### Normalized input schema
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema
 
-------------------------------------------------------------------------
+Use annual plan-year amounts. Every value is an argument supplied to the calculation unless it appears later in the output table.
 
-# Primary Classification Rule
+<!-- record_id: product.commonfunds.rules.vector-store.a-plan-structure -->
+#### A. Plan structure
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > A. Plan structure
 
-## Rule
+#### benefitpath
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-a-plan-structur.benefitpath; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > A. Plan structure
+- Input: `benefit_path`
+- Type: `"excepted"
+- Meaning: "ichra"`
 
-Every dollar within CommonFunds must be classified according to:
+#### ichraparticipation
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-a-plan-structur.ichraparticipation; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > A. Plan structure
+- Input: `ichra_participation`
+- Type: `"accepted"
+- Meaning: "opted_out"
 
-1.  Funding source
-2.  Governing plan document
-3.  Applicable tax treatment
-4.  Applicable benefit regulations
+#### ichracoversnonpremiumexpenses
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-a-plan-structur.ichracoversnonpremiumexpenses; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > A. Plan structure
+- Input: `ichra_covers_nonpremium_expenses`
+- Type: Boolean
+- Meaning: Whether the ICHRA document permits reimbursement of eligible §213(d) expenses beyond premiums
 
-The same employee may have multiple types of funds available through one
-CommonFunds account.
 
-The displayed account balance does not determine regulatory
-classification.
+<!-- record_id: product.commonfunds.rules.vector-store.b-employer-and-employee-dollars -->
+#### B. Employer and employee dollars
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > B. Employer and employee dollars
 
-The rules for which funds belong in each account type are always the
-same, as follows:
+#### employernoncashablebudget
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-b-employer-and-.employernoncashablebudget; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > B. Employer and employee dollars
+- Input: `employer_noncashable_budget`
+- Meaning: Total employer-only amount available for allocation; cannot be taken as cash or another taxable benefit
 
-The default position for a genuinely employer-only, noncashable health
-allowance, including a `byCoverage` contribution, is the EBHRA until the
-applicable annual EBHRA limit is reached. This is because the EBHRA
-provides cleaner and more flexible employer controls over the funds.
+#### cashableflexcredit
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-b-employer-and-.cashableflexcredit; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > B. Employer and employee dollars
+- Input: `cashable_flex_credit`
+- Meaning: Employer flex amount the employee may receive as cash or another taxable benefit
 
-An allowance is not classified solely by who initially budgets or pays
-it. Cashability and the employee's election determine whether a dollar
-is treated as employer-funded or as salary reduction for the relevant
-rule.
+#### cashableflextofsa
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-b-employer-and-.cashableflextofsa; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > B. Employer and employee dollars
+- Input: `cashable_flex_to_fsa`
+- Meaning: Cashable flex credit elected into the Health FSA
 
-Amounts an employee could receive as cash or another taxable benefit,
-but instead elects into the Health FSA, are treated as employee salary
-reduction contributions. Their only CommonFunds account-based component
-is the Health FSA, and they consume the applicable Section 125(i) annual
-salary reduction limit.
+#### cashableflextopremiums
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-b-employer-and-.cashableflextopremiums; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > B. Employer and employee dollars
+- Input: `cashable_flex_to_premiums`
+- Meaning: Cashable flex credit elected for premiums permitted under Section 125
 
-Amounts that can never be received as cash or another taxable benefit
-remain employer contributions. After the EBHRA limit is filled, unused
-employer-only amounts may be allocated to the Health FSA as employer
-contributions, but only to the extent permitted by the Health FSA
-excepted-benefit maximum-benefit test and the governing plan documents.
+#### cashableflextowages
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-b-employer-and-.cashableflextowages; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > B. Employer and employee dollars
+- Input: `cashable_flex_to_wages`
+- Meaning: Cashable flex credit elected as taxable compensation
 
-------------------------------------------------------------------------
+#### cashableflextoother
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-b-employer-and-.cashableflextoother; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > B. Employer and employee dollars
+- Input: `cashable_flex_to_other`
+- Meaning: Cashable flex credit directed to another permitted cashable benefit
 
-# Employer Allowance Classification and Allocation Engine
+#### directemployeefsaelection
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-b-employer-and-.directemployeefsaelection; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > B. Employer and employee dollars
+- Input: `direct_employee_fsa_election`
+- Meaning: Additional employee salary reduction elected into the Health FSA
 
-## Purpose
 
-This is the canonical decision flow for classifying an employer
-allowance, flex credit, or `byCoverage` contribution within CommonFunds.
+`employer_noncashable_budget` and `cashable_flex_credit` are separate sources. This eliminates the former ambiguity over whether `byCoverage` was inside or outside `allowance_total`.
 
-The AI must complete classification before calculating account limits.
-It must not assume that every dollar described as an "employer
-allowance" remains an employer contribution after the employee is given
-a cash election.
+<!-- record_id: product.commonfunds.rules.vector-store.c-primary-account-settings -->
+#### C. Primary account settings
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > C. Primary account settings
 
-## Required Inputs
+#### ebhralimit
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-c-primary-accou.ebhralimit; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > C. Primary account settings
+- Input: `ebhra_limit`
+- Applies when: `excepted`
+- Meaning: Indexed maximum newly available under the EBHRA
 
-Use annual plan-year amounts unless the question explicitly requires a
-monthly illustration.
+#### existingebhranewlyavailable
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-c-primary-accou.existingebhranewlyavailable; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > C. Primary account settings
+- Input: `existing_ebhra_newly_available`
+- Applies when: `excepted`
+- Meaning: EBHRA amount already made available from another allocation source
 
-``` json
-{
-  "allowance_total": "total general employer allowance",
-  "cashable_total": "portion that may be received as cash or another taxable benefit",
-  "byCoverage": "dedicated employer contribution that cannot be received as cash",
-  "cashable_elected_to_fsa": "cashable amount actually directed to the Health FSA",
-  "direct_employee_fsa_election": "additional payroll salary reduction elected to the Health FSA",
-  "cashable_used_for_premiums": "cashable amount elected for eligible premiums",
-  "cashable_taken_as_wages": "cashable amount paid as taxable compensation",
-  "ebhra_limit": "applicable indexed EBHRA limit",
-  "existing_ebhra_newly_available": "other amounts newly made available under the EBHRA",
-  "existing_fsa_employer_contribution": "other true employer Health FSA contributions"
-}
+#### ichranewlyavailable
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-c-primary-accou.ichranewlyavailable; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > C. Primary account settings
+- Input: `ichra_newly_available`
+- Applies when: `ichra`
+- Meaning: Amount established under the ICHRA for the plan year
+
+
+`ichra_newly_available` is an input fixed by the governing ICHRA terms. It is not calculated from unused flex dollars after enrollment.
+
+<!-- record_id: product.commonfunds.rules.vector-store.d-health-fsa-settings -->
+#### D. Health FSA settings
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > D. Health FSA settings
+
+#### fsasalaryreductionlimit
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-d-health-fsa-se.fsasalaryreductionlimit; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > D. Health FSA settings
+- Input: `fsa_salary_reduction_limit`
+- Meaning: Applicable Section 125(i) limit
+
+#### otherfsasalaryreduction
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-d-health-fsa-se.otherfsasalaryreduction; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > D. Health FSA settings
+- Input: `other_fsa_salary_reduction`
+- Meaning: Salary reduction already counted for the plan year
+
+#### existingfsaemployercontribution
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-d-health-fsa-se.existingfsaemployercontribution; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > D. Health FSA settings
+- Input: `existing_fsa_employer_contribution`
+- Meaning: True employer Health FSA contributions already assigned from another source
+
+
+<!-- record_id: product.commonfunds.rules.vector-store.e-runtime-activity -->
+#### E. Runtime activity
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > E. Runtime activity
+
+#### ichrapremiumreimbursements
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-e-runtime-activ.ichrapremiumreimbursements; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > E. Runtime activity
+- Input: `ichra_premium_reimbursements`
+- Applies when: Accepted ICHRA
+- Meaning: Premium reimbursements paid or reserved for the measurement period
+
+#### ichranonpremiumreimbursements
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-e-runtime-activ.ichranonpremiumreimbursements; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > E. Runtime activity
+- Input: `ichra_nonpremium_reimbursements`
+- Applies when: Accepted ICHRA
+- Meaning: Other ICHRA reimbursements already paid or approved
+
+#### ebhrareimbursements
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-e-runtime-activ.ebhrareimbursements; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > E. Runtime activity
+- Input: `ebhra_reimbursements`
+- Applies when: Excepted path
+- Meaning: EBHRA reimbursements already paid or approved
+
+#### fsareimbursements
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-normalized-input-schema-e-runtime-activ.fsareimbursements; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Normalized input schema > E. Runtime activity
+- Input: `fsa_reimbursements`
+- Applies when: Both paths
+- Meaning: Health FSA reimbursements already paid or approved
+
+
+Runtime values do not change the legal classification established at plan-year allocation.
+
+<!-- record_id: product.commonfunds.rules.vector-store.input-validation -->
+### Input validation
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Input validation
+
+<!-- record_id: product.commonfunds.rules.vector-store.cashable-credit-reconciliation -->
+#### Cashable credit reconciliation
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Input validation > Cashable credit reconciliation
+
+```text
+cashable_flex_credit
+= cashable_flex_to_fsa
++ cashable_flex_to_premiums
++ cashable_flex_to_wages
++ cashable_flex_to_other
 ```
 
-The allocation fields for the cashable amount must reconcile:
+Every amount must be nonnegative. The engine rejects an election that does not reconcile.
 
-``` text
-cashable_total
-= cashable_elected_to_fsa
-+ cashable_used_for_premiums
-+ cashable_taken_as_wages
-+ other permitted cashable allocations
+<!-- record_id: product.commonfunds.rules.vector-store.path-validation -->
+#### Path validation
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Input validation > Path validation
+
+```text
+if benefit_path == "excepted":
+    ichra_participation must equal "not_applicable"
+    ichra_newly_available must equal 0
+
+if benefit_path == "ichra":
+    existing_ebhra_newly_available must equal 0
 ```
 
-Only `cashable_elected_to_fsa` counts toward the Health FSA salary
-reduction limit. A cashable amount used for eligible premiums may be a
-Section 125 salary reduction amount, but it does not count toward the
-separate Section 125(i) Health FSA limit.
+An ICHRA participant may receive nonpremium reimbursements only when:
 
-## Step 1 — Split the General Allowance by Cashability
-
-``` text
-noncashable_allowance = max(allowance_total - cashable_total, 0)
+```text
+benefit_path == "ichra"
+and ichra_participation == "accepted"
+and ichra_covers_nonpremium_expenses == true
 ```
 
-Validation:
+<!-- record_id: product.commonfunds.rules.vector-store.phase-1-plan-year-allocation -->
+### Phase 1 — Plan-year allocation
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 — Plan-year allocation
 
-``` text
-0 <= cashable_total <= allowance_total
+<!-- record_id: product.commonfunds.rules.vector-store.step-1-calculate-health-fsa-salary-reduction -->
+#### Step 1: calculate Health FSA salary reduction
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 — Plan-year allocation > Step 1: calculate Health FSA salary reduction
+
+Cashable flex elected into the Health FSA is treated as salary reduction because the employee could have taken a taxable benefit instead.
+
+```text
+fsa_salary_reduction_requested
+= cashable_flex_to_fsa
++ direct_employee_fsa_election
+
+fsa_salary_reduction_capacity
+= max(fsa_salary_reduction_limit
+      - other_fsa_salary_reduction, 0)
+
+fsa_salary_reduction
+= min(fsa_salary_reduction_requested,
+      fsa_salary_reduction_capacity)
+
+fsa_salary_reduction_excess
+= max(fsa_salary_reduction_requested
+      - fsa_salary_reduction_capacity, 0)
 ```
 
-Cashability means the employee can elect to receive the amount as cash
-or another taxable benefit. It does not matter whether payroll or the
-plan labels the amount an employer credit, allowance, or contribution.
+The enrollment process should reject the excess before the election becomes effective. It cannot remain in the Health FSA.
 
-## Step 2 — Build the Employer-Only Pool
+<!-- record_id: product.commonfunds.rules.vector-store.step-2-allocate-the-primary-employer-account -->
+#### Step 2: allocate the primary employer account
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 — Plan-year allocation > Step 2: allocate the primary employer account
 
-``` text
-employer_only_pool = noncashable_allowance + byCoverage
-```
+<!-- record_id: product.commonfunds.rules.vector-store.excepted-pathway -->
+##### Excepted pathway
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 — Plan-year allocation > Step 2: allocate the primary employer account > Excepted pathway
 
-For this calculation, `byCoverage` is treated the same as a noncashable
-allowance because it is a dedicated employer contribution and cannot be
-converted to cash or another taxable benefit.
-
-The employer-only pool may be used for the EBHRA because it is not
-attributable to employee salary reduction. A choice solely among
-employer-provided nontaxable health benefits, with no cash or taxable
-option, is not by itself a Section 125 election.
-
-Authority: IRS Notice 2002-45, Parts I and IV.
-
-## Step 3 — Calculate EBHRA Capacity and Credit
-
-``` text
-remaining_ebhra_capacity
+```text
+ebhra_capacity
 = max(ebhra_limit - existing_ebhra_newly_available, 0)
 
-ebhra_creditable
-= min(employer_only_pool, remaining_ebhra_capacity)
+primary_employer_allocation
+= min(employer_noncashable_budget, ebhra_capacity)
 
-employer_only_overflow
-= max(employer_only_pool - ebhra_creditable, 0)
+ebhra_newly_available
+= existing_ebhra_newly_available
++ primary_employer_allocation
 ```
 
-Do not include `cashable_total` in `employer_only_pool`. If an employee
-can take a dollar as taxable cash and instead elects an account benefit,
-that election must be analyzed as salary reduction for the rules below.
+<!-- record_id: product.commonfunds.rules.vector-store.ichra-pathway -->
+##### ICHRA pathway
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 — Plan-year allocation > Step 2: allocate the primary employer account > ICHRA pathway
 
-## Step 4 — Classify Health FSA Employee Salary Reduction
-
-``` text
-fsa_employee_contribution_requested
-= cashable_elected_to_fsa + direct_employee_fsa_election
-
-remaining_fsa_salary_reduction_capacity
-= max(fsa_salary_reduction_limit
-      - other_health_fsa_salary_reduction_for_plan_year, 0)
-
-fsa_employee_contribution
-= min(fsa_employee_contribution_requested,
-      remaining_fsa_salary_reduction_capacity)
-
-excess_fsa_salary_reduction
-= max(fsa_employee_contribution_requested
-      - remaining_fsa_salary_reduction_capacity, 0)
+```text
+ebhra_capacity = 0
+primary_employer_allocation = ichra_newly_available
 ```
 
-`cashable_elected_to_fsa` is treated as salary reduction even though the
-employer supplied the original allowance. Notice 2012-40 states
-explicitly that employer flex credits available as cash or a taxable
-benefit are treated as salary reduction contributions for purposes of
-Section 125(i).
+Validate that the ICHRA amount does not exceed the employer-only budget being modeled:
 
-An excess amount cannot remain in the Health FSA. Subject to the plan's
-terms, an otherwise cashable excess is paid as taxable wages or directed
-to another permitted non-FSA option. The plan should prevent the excess
-election rather than rely on a later correction.
-
-## Step 5 — Calculate Employer Health FSA Capacity
-
-For an excepted-benefit Health FSA, define:
-
-``` text
-S = total participant salary reduction election under the Health FSA
+```text
+0 <= ichra_newly_available <= employer_noncashable_budget
 ```
 
-`S` includes both direct payroll salary reduction and cashable flex
-credits elected into the Health FSA.
+The ICHRA remains offered on its governing terms whether the employee accepts or opts out. An opt-out changes participant access, not the amount stated in the plan's offer.
 
-The maximum total Health FSA benefit is:
+<!-- record_id: product.commonfunds.rules.vector-store.step-3-calculate-employer-only-budget-remaining-after-the-primary-accoun -->
+#### Step 3: calculate employer-only budget remaining after the primary account
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 — Plan-year allocation > Step 3: calculate employer-only budget remaining after the primary account
 
-``` text
-maximum_excepted_fsa_benefit = max(2 * S, S + 500)
+```text
+employer_budget_after_primary
+= employer_noncashable_budget
+- primary_employer_allocation
 ```
 
-Therefore, the maximum true employer contribution is:
+On the excepted path, this is EBHRA overflow. On the ICHRA path, this is employer budget not assigned to the ICHRA. It is **not** “unused ICHRA.”
 
-``` text
-maximum_total_employer_fsa_contribution
-= maximum_excepted_fsa_benefit - S
+<!-- record_id: product.commonfunds.rules.vector-store.step-4-calculate-true-employer-health-fsa-capacity -->
+#### Step 4: calculate true employer Health FSA capacity
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 — Plan-year allocation > Step 4: calculate true employer Health FSA capacity
+
+Let `S` equal the total Health FSA salary reduction after applying the Section 125(i) limit:
+
+```text
+S = other_fsa_salary_reduction + fsa_salary_reduction
+
+maximum_total_fsa_benefit
+= max(2 * S, S + 500)
+
+maximum_true_employer_fsa_contribution
+= maximum_total_fsa_benefit - S
 = max(S, 500)
 
 remaining_employer_fsa_capacity
-= max(maximum_total_employer_fsa_contribution
+= max(maximum_true_employer_fsa_contribution
       - existing_fsa_employer_contribution, 0)
 
-fsa_employer_contribution_from_overflow
-= min(employer_only_overflow, remaining_employer_fsa_capacity)
+fsa_employer_contribution_from_budget
+= min(employer_budget_after_primary,
+      remaining_employer_fsa_capacity)
+
+fsa_employer_contribution
+= existing_fsa_employer_contribution
++ fsa_employer_contribution_from_budget
 ```
 
-This employer contribution does not consume the Section 125(i) salary
-reduction limit. It does increase the maximum benefit payable and must
-fit within the excepted-benefit formula.
+The financial test is only one requirement. The Health FSA must also satisfy the other conditions for excepted-benefit treatment.
 
-The Health FSA must also satisfy the separate requirement that other
-non-excepted group health plan coverage be made available for the year
-to the applicable class of participants.
+<!-- record_id: product.commonfunds.rules.vector-store.step-5-close-the-employer-only-allocation -->
+#### Step 5: close the employer-only allocation
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 — Plan-year allocation > Step 5: close the employer-only allocation
 
-Authority: 45 C.F.R. § 146.145(b)(3)(v) and the parallel Treasury rule,
-26 C.F.R. § 54.9831-1(c)(3)(v).
-
-## Step 6 — Reconcile the Result
-
-The AI should produce these separate outputs:
-
-``` json
-{
-  "ebhra_creditable": "noncashable employer-only amount allocated within EBHRA capacity",
-  "fsa_employee_contribution": "direct salary reduction plus cashable credits elected to the FSA, capped under Section 125(i)",
-  "fsa_employer_contribution": "employer-only overflow allocated within excepted-benefit FSA capacity",
-  "cashable_used_for_premiums": "cashable election used for eligible premiums",
-  "taxable_wages": "cash elected as wages plus any cashable amount that cannot be placed in the FSA",
-  "unallocated_employer_only_overflow": "noncashable employer amount that fits neither the EBHRA nor the excepted-benefit FSA"
-}
+```text
+unallocated_employer_noncashable_budget
+= employer_budget_after_primary
+- fsa_employer_contribution_from_budget
 ```
 
-Do not automatically convert `unallocated_employer_only_overflow` into
-taxable wages. A noncashable amount does not become payable as wages
-merely because account capacity is exhausted. Its treatment depends on
-the written plan and other available employer-provided benefits.
+The amount must reconcile:
 
-## Canonical Worked Example
-
-Assume for a 2026 plan year:
-
-``` json
-{
-  "allowance_total": 4800,
-  "cashable_total": 2400,
-  "byCoverage": 600,
-  "cashable_elected_to_fsa": 2000,
-  "direct_employee_fsa_election": 1000,
-  "cashable_taken_as_wages": 400,
-  "ebhra_limit": 2200,
-  "existing_ebhra_newly_available": 0,
-  "existing_fsa_employer_contribution": 0,
-  "fsa_salary_reduction_limit": 3400
-}
+```text
+employer_noncashable_budget
+= primary_employer_allocation
++ fsa_employer_contribution_from_budget
++ unallocated_employer_noncashable_budget
 ```
 
-Calculation:
+Do not convert the unallocated amount into wages automatically. A noncashable benefit does not become cash merely because an account limit or plan allocation has been reached.
 
-``` text
-noncashable_allowance = 4,800 - 2,400 = 2,400
-employer_only_pool = 2,400 + 600 = 3,000
-ebhra_creditable = min(3,000, 2,200) = 2,200
-employer_only_overflow = 3,000 - 2,200 = 800
+<!-- record_id: product.commonfunds.rules.vector-store.phase-1-outputs -->
+### Phase 1 outputs
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 outputs
 
-fsa_employee_contribution = 2,000 + 1,000 = 3,000
-maximum_excepted_fsa_benefit = max(6,000, 3,500) = 6,000
-maximum_employer_fsa_contribution = 6,000 - 3,000 = 3,000
-fsa_employer_contribution_from_overflow = min(800, 3,000) = 800
+#### primaryaccounttype
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-phase-1-outputs.primaryaccounttype; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 outputs
+- Output: `primary_account_type`
+- Meaning: `ebhra` or `ichra`
 
-total_health_fsa_benefit = 3,000 + 800 = 3,800
-taxable_wages from allowance = 400
-unallocated_employer_only_overflow = 0
+#### primaryemployerallocation
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-phase-1-outputs.primaryemployerallocation; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 outputs
+- Output: `primary_employer_allocation`
+- Meaning: Employer-only amount assigned to the primary account
+
+#### ebhranewlyavailable
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-phase-1-outputs.ebhranewlyavailable; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 outputs
+- Output: `ebhra_newly_available`
+- Meaning: Total EBHRA amount newly available; always zero on the ICHRA path
+
+#### ichraofferedamount
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-phase-1-outputs.ichraofferedamount; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 outputs
+- Output: `ichra_offered_amount`
+- Meaning: ICHRA amount stated by the plan; always zero on the excepted path
+
+#### fsasalaryreduction
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-phase-1-outputs.fsasalaryreduction; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 outputs
+- Output: `fsa_salary_reduction`
+- Meaning: Valid cashable-flex and direct employee salary reduction assigned to the Health FSA
+
+#### fsasalaryreductionexcess
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-phase-1-outputs.fsasalaryreductionexcess; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 outputs
+- Output: `fsa_salary_reduction_excess`
+- Meaning: Requested Health FSA salary reduction that must be rejected or redirected
+
+#### fsaemployercontribution
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-phase-1-outputs.fsaemployercontribution; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 outputs
+- Output: `fsa_employer_contribution`
+- Meaning: Total true employer contribution assigned to the Health FSA
+
+#### cashableflextopremiums
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-phase-1-outputs.cashableflextopremiums; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 outputs
+- Output: `cashable_flex_to_premiums`
+- Meaning: Cashable election assigned to eligible premiums
+
+#### cashableflextowages
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-phase-1-outputs.cashableflextowages; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 outputs
+- Output: `cashable_flex_to_wages`
+- Meaning: Cashable election paid as taxable compensation
+
+#### cashableflextoother
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-phase-1-outputs.cashableflextoother; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 outputs
+- Output: `cashable_flex_to_other`
+- Meaning: Cashable election assigned to another permitted benefit
+
+#### unallocatedemployernoncashablebudget
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-phase-1-outputs.unallocatedemployernoncashablebudget; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Phase 1 outputs
+- Output: `unallocated_employer_noncashable_budget`
+- Meaning: Employer-only budget not assigned to a benefit component
+
+
+<!-- record_id: product.commonfunds.rules.vector-store.phase-2-runtime-availability -->
+### Phase 2 — Runtime availability
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Phase 2 — Runtime availability
+
+<!-- record_id: product.commonfunds.rules.vector-store.excepted-pathway-balance -->
+#### Excepted pathway balance
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Phase 2 — Runtime availability > Excepted pathway balance
+
+```text
+ebhra_available
+= max(ebhra_newly_available - ebhra_reimbursements, 0)
 ```
 
-Classification result:
+Actual availability may be lower when the plan uses monthly accrual or another plan-defined schedule. The balance engine must apply that schedule before approving a claim.
 
-``` json
-{
-  "EBHRA": {
-    "employer_contribution": 2200
-  },
-  "Health_FSA": {
-    "employee_salary_reduction": 3000,
-    "employer_contribution": 800,
-    "total_maximum_benefit": 3800,
-    "excepted_benefit_financial_test": "satisfied"
-  },
-  "taxable_wages": 400
-}
+<!-- record_id: product.commonfunds.rules.vector-store.ichra-pathway-balance -->
+#### ICHRA pathway balance
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Phase 2 — Runtime availability > ICHRA pathway balance
+
+If the employee opts out:
+
+```text
+ichra_available = 0
+ichra_nonpremium_available = 0
 ```
 
-## Critical Classification Rules
+If the employee accepts and maintains qualifying individual coverage:
 
-1. Employer origin does not conclusively mean employer contribution.
-2. Cashable and elected into the Health FSA means salary reduction.
-3. Noncashable and restricted to employer-provided nontaxable health
-   benefits means employer contribution.
-4. `byCoverage` is employer-only unless its actual terms create a cash
-   or taxable-benefit election.
-5. Cashable amounts elected for premiums do not consume the Health FSA
-   salary reduction limit.
-6. The EBHRA limit and the Health FSA rules apply independently.
-7. Filling the EBHRA does not automatically authorize all remaining
-   employer dollars as Health FSA contributions; the excepted-benefit
-   formula must be applied.
-8. An amount's classification can be rule-specific. Always state which
-   legal test is being applied.
+```text
+ichra_remaining
+= max(ichra_newly_available
+      - ichra_premium_reimbursements
+      - ichra_nonpremium_reimbursements, 0)
 
-------------------------------------------------------------------------
-
-# Account-Based Group Health Plan Concept
-
-## Definition
-
-An account-based group health plan provides reimbursement of medical
-expenses through a defined account or allowance structure.
-
-Examples include:
-
--   Health Reimbursement Arrangements
--   Health Flexible Spending Arrangements
--   Other employer reimbursement arrangements
-
-Account-based health plans differ from traditional insurance because
-they generally provide a limited dollar amount rather than unlimited
-payment of covered claims.
-
-------------------------------------------------------------------------
-
-# ACA Market Reform Framework
-
-## Rule
-
-After implementation of ACA market reforms, an account-based group
-health plan generally must either:
-
-1.  integrate with other qualifying group health coverage; or
-2.  qualify as an excepted benefit; or
-3.  satisfy another applicable exception
-
-A limited account-based arrangement that fails to satisfy one of these
-frameworks may violate ACA market reform requirements.
-
-CommonFunds is designed so that each underlying component independently
-maintains a valid compliance pathway.
-
-Excepted benefit structures mean the plan does not have to meet the ACA
-market reforms, specifically the PHS act 2711 and 2713 statutes
-requiring all plans to cover preventive services with no employee
-out-of-pocket cost and the prohibition of limiting benefit amounts -
-which an account-based plan inherently does.
-
-It's critical that these accounts follow the limitations that enable
-them to be considered excepted under the ACA reforms.
-
-------------------------------------------------------------------------
-
-# HRA Classification
-
-## Definition
-
-An HRA is an employer reimbursement arrangement for medical care
-expenses.
-
-Important attributes:
-
--   employer makes reimbursement amounts available
--   benefits reimburse eligible medical expenses
--   unused amounts may carry forward if permitted by plan terms
--   reimbursement occurs according to plan rules
--   non-discrimination rules apply - the same benefits must be offered
-    to all eligible employees that are similarly situated
--   employer funds alone can be contributed
-
-An arrangement is not an HRA simply because it is labeled as one.
-
-Classification depends on operation.
-
-------------------------------------------------------------------------
-
-# HRA Funding Source Principle
-
-## Rule
-
-Amounts attributable to employee salary reduction are not treated as HRA
-funds.
-
-This does not mean:
-
-"Employee money creates a prohibited HRA."
-
-The correct interpretation is:
-
-"Amounts funded through employee salary reduction are not classified
-under HRA rules."
-
-This means they don't recieve the regulatory protection from being an
-illegal benefit structure under the ACA.
-
-When employee salary reduction exists, those amounts must be analyzed
-under the applicable rules governing that arrangement, typically Section
-125 and Health FSA rules.
-
-## HRA and Cafeteria-Plan Interaction
-
-An HRA may be offered alongside a cafeteria plan. That fact alone does
-not cause the HRA to fail.
-
-A choice solely between employer-provided nontaxable health benefits,
-such as HRA coverage and HMO coverage, is not a Section 125 election when
-no cash or other taxable benefit is available.
-
-However, an arrangement is not treated as an HRA when its interaction
-with a cafeteria plan permits salary reduction to fund the reimbursement
-arrangement directly or indirectly. Relevant indicators include:
-
-- the employee can increase the reimbursement amount by increasing a
-  salary reduction election;
-- the employee receives a larger reimbursement amount by forgoing a
-  taxable benefit; or
-- the reimbursement amount otherwise correlates with the employee's
-  salary reduction election.
-
-For this rule, salary reduction includes a choice to forgo receipt of a
-benefit that would be taxable but for its offering through the Section
-125 cafeteria plan.
-
-Authority: [IRS Notice 2002-45, Parts I and
-IV](https://www.irs.gov/pub/irs-drop/n-02-45.pdf).
-
-------------------------------------------------------------------------
-
-# EBHRA Component Classification
-
-## Definition
-
-An EBHRA is an HRA or other account-based group health plan that
-qualifies as an excepted benefit.
-
-The EBHRA classification applies to funds that satisfy EBHRA
-requirements.
-
-CommonFunds EBHRA funds:
-
-``` json
-{
-  "component": "EBHRA",
-  "funding_source": "employer",
-  "employee_salary_reduction": false,
-  "aca_classification": "excepted benefit account-based group health plan"
-  "commonFundLoanMultiple": 12
-}
+ichra_nonpremium_available
+= ichra_covers_nonpremium_expenses
+   ? ichra_remaining
+   : 0
 ```
 
-------------------------------------------------------------------------
+`ichra_nonpremium_available` is the ICHRA-funded CommonFunds layer. It replaces the EBHRA layer for an employee participating in CHOICE and qualifying individual coverage. Every dollar remains an ICHRA dollar and follows the ICHRA plan document.
 
-# Employee Salary Reduction Classification
+<!-- record_id: product.commonfunds.rules.vector-store.health-fsa-balance -->
+#### Health FSA balance
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Phase 2 — Runtime availability > Health FSA balance
 
-## Rule
+```text
+fsa_maximum_benefit
+= S + fsa_employer_contribution
 
-Employee pre-tax elections through a cafeteria plan are not allocated to
-the EBHRA component.
-
-They are classified according to Section 125 rules.
-
-Typical classification:
-
-``` json
-{
-  "funding_source": "employee_salary_reduction",
-  "component": "Health FSA",
-  "section_125_rules_apply": true,
-  "hra_rules_apply": false
-}
+fsa_available
+= max(fsa_maximum_benefit - fsa_reimbursements, 0)
 ```
 
-The compliance question is not whether the employee may contribute.
+The Health FSA uniform-coverage rule determines when the maximum annual benefit becomes available; payroll collections to date do not cap the participant's valid reimbursement rights.
 
-The question is:
+<!-- record_id: product.commonfunds.rules.vector-store.participant-facing-commonfunds-output -->
+### Participant-facing CommonFunds output
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Participant-facing CommonFunds output
 
-"What type of benefit arrangement does the contribution create?"
+The unified display is the sum of amounts currently available for the submitted expense—not merely every positive account balance.
 
-------------------------------------------------------------------------
+```text
+if benefit_path == "excepted":
+    primary_available = ebhra_available
+else:
+    primary_available = ichra_nonpremium_available
 
-# Health FSA Component Classification
-
-## Definition
-
-A Health FSA is an account-based health arrangement that may receive
-employee salary reduction elections under a cafeteria plan. Health FSA
-funds are subject to the uniform coverage rule
-
-CommonFunds Health FSA funds may include:
-
--   employee salary reduction elections
--   employer contributions permitted under applicable rules
-
-A cashable employer allowance elected into the Health FSA belongs in
-the first category, not the second. It is treated as salary reduction
-for the Section 125(i) limit and for the excepted-benefit Health FSA
-maximum-benefit calculation.
-
-Primary authorities:
-
-- [IRS Notice 2012-40](https://www.irs.gov/pub/irs-drop/n-12-40.pdf),
-  treating cashable employer flex credits elected into a Health FSA as
-  salary reduction for Section 125(i).
-- [45 C.F.R. §
-  146.145(b)(3)(v)](https://www.law.cornell.edu/cfr/text/45/146.145),
-  expressly treating an amount available as taxable income but elected
-  into the Health FSA as salary reduction regardless of whether it is
-  labeled salary or a credit.
-- [26 C.F.R. §
-  54.9831-1(c)(3)(v)](https://www.law.cornell.edu/cfr/text/26/54.9831-1),
-  the parallel Treasury excepted-benefit rule.
-
-Example:
-
-``` json
-{
-  "component": "Health FSA",
-  "funding_sources": [
-    "employee_salary_reduction",
-    "eligible_employer_contribution"
-  ],
-  "section_125_available": true
-}
+commonfunds_available_for_claim
+= eligible_primary_amount_for_claim
++ eligible_fsa_amount_for_claim
 ```
 
-------------------------------------------------------------------------
+The claims engine must evaluate component eligibility and ordering before displaying or paying the combined amount.
 
-# Health FSA Uniform Coverage Rule
+<!-- record_id: product.commonfunds.rules.vector-store.worked-example-a-ebhra-pathway -->
+### Worked example A — EBHRA pathway
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
 
-## Purpose
+Assume:
 
-This section explains the Health FSA uniform coverage requirement and
-how it applies within CommonFunds.
+#### benefitpath
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.benefitpath; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Input: `benefit_path`
+- Amount: `excepted`
 
-The AI must distinguish between:
+#### Employer noncashable budget
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.employer-noncashable-budget; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Input: Employer noncashable budget
+- Amount: $3,000
 
--   the participant's displayed CommonFunds balance
--   the Health FSA component balance
--   the EBHRA component balance
+#### Cashable flex credit
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.cashable-flex-credit; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Input: Cashable flex credit
+- Amount: $2,400
 
-Uniform coverage applies only where required by the underlying benefit
-component.
+#### Cashable flex to Health FSA
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.cashable-flex-to-health-fsa; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Input: Cashable flex to Health FSA
+- Amount: $2,000
 
-------------------------------------------------------------------------
+#### Cashable flex to wages
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.cashable-flex-to-wages; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Input: Cashable flex to wages
+- Amount: $400
 
-# Definition
+#### Direct employee FSA election
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.direct-employee-fsa-election; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Input: Direct employee FSA election
+- Amount: $1,000
 
-The uniform coverage rule is a special requirement applicable to Health
-Flexible Spending Arrangements.
+#### EBHRA limit
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.ebhra-limit; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Input: EBHRA limit
+- Amount: $2,200
 
-A Health FSA must make the maximum amount of reimbursement available to
-a participant throughout the coverage period.
+#### Existing EBHRA amount
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.existing-ebhra-amount; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Input: Existing EBHRA amount
+- Amount: $0
 
-The available reimbursement amount cannot be limited based only on how
-much the employee has contributed through payroll at the time of the
-claim.
+#### Existing employer FSA contribution
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.existing-employer-fsa-contribution; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Input: Existing employer FSA contribution
+- Amount: $0
 
-------------------------------------------------------------------------
+#### FSA salary reduction limit
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.fsa-salary-reduction-limit; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Input: FSA salary reduction limit
+- Amount: $3,400
 
-# Health FSA Availability Rule
 
-## Rule
+```text
+fsa_salary_reduction = 2,000 + 1,000 = 3,000
 
-For a Health FSA:
+primary_employer_allocation
+= min(3,000, 2,200)
+= 2,200 to EBHRA
 
-Annual election amount is available immediately.
+employer_budget_after_primary = 3,000 - 2,200 = 800
 
-Example:
+maximum_true_employer_fsa_contribution
+= max(3,000, 500)
+= 3,000
 
-Employee election:
+fsa_employer_contribution_from_budget
+= min(800, 3,000)
+= 800
 
-``` json
-{
-  "annual_health_fsa_election": 2400,
-  "payroll_contribution_schedule": "200_per_month",
-  "month": "January",
-  "employee_contributions_collected": 200,
-  "available_for_reimbursement": 2400
-}
+unallocated_employer_noncashable_budget = 0
 ```
 
-The employee may submit eligible claims up to the full annual election
-even though payroll deductions have not yet been collected.
+#### EBHRA newly available
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.ebhra-newly-available; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Output: EBHRA newly available
+- Amount: $2,200
 
-------------------------------------------------------------------------
+#### Health FSA salary reduction
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.health-fsa-salary-reduction; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Output: Health FSA salary reduction
+- Amount: $3,000
 
-# Employer Health FSA Contributions
+#### Health FSA employer contribution
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.health-fsa-employer-contribution; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Output: Health FSA employer contribution
+- Amount: $800
 
-Employer contributions included in the Health FSA benefit are also
-subject to Health FSA availability rules.
+#### Total Health FSA maximum benefit
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.total-health-fsa-maximum-benefit; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Output: Total Health FSA maximum benefit
+- Amount: $3,800
 
-Example:
+#### Taxable wages
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.taxable-wages; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Output: Taxable wages
+- Amount: $400
 
-``` json
-{
-  "health_fsa": {
-    "employee_salary_reduction": 3000,
-    "employer_contribution": 1000,
-    "total_health_fsa_benefit": 4000,
-    "available_beginning_of_year": 4000
-  }
-}
+#### Unallocated employer-only budget
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.unallocated-employer-only-budget; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
+- Output: Unallocated employer-only budget
+- Amount: $0
+
+
+<!-- record_id: product.commonfunds.rules.vector-store.worked-example-b-ichra-pathway -->
+### Worked example B — ICHRA pathway
+> Retrieval context: CommonFunds — 2. CommonFunds calculation engine > Worked example B — ICHRA pathway
+
+Assume:
+
+#### benefitpath
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-b-ichra-pathway.benefitpath; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example B — ICHRA pathway
+- Input: `benefit_path`
+- Amount: `ichra`
+
+#### ichraparticipation
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-b-ichra-pathway.ichraparticipation; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example B — ICHRA pathway
+- Input: `ichra_participation`
+- Amount: `accepted`
+
+#### ICHRA covers nonpremium expenses
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-b-ichra-pathway.ichra-covers-nonpremium-expenses; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example B — ICHRA pathway
+- Input: ICHRA covers nonpremium expenses
+- Amount: `true`
+
+#### Employer noncashable budget
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-b-ichra-pathway.employer-noncashable-budget; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example B — ICHRA pathway
+- Input: Employer noncashable budget
+- Amount: $4,800
+
+#### ICHRA newly available
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-b-ichra-pathway.ichra-newly-available; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example B — ICHRA pathway
+- Input: ICHRA newly available
+- Amount: $4,800
+
+#### Premium reimbursements for the year
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-b-ichra-pathway.premium-reimbursements-for-the-year; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example B — ICHRA pathway
+- Input: Premium reimbursements for the year
+- Amount: $3,600
+
+#### Other ICHRA reimbursements already paid
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-b-ichra-pathway.other-ichra-reimbursements-already-paid; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example B — ICHRA pathway
+- Input: Other ICHRA reimbursements already paid
+- Amount: $200
+
+#### Health FSA salary reduction
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-b-ichra-pathway.health-fsa-salary-reduction; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example B — ICHRA pathway
+- Input: Health FSA salary reduction
+- Amount: $1,000
+
+#### Health FSA reimbursements paid
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-b-ichra-pathway.health-fsa-reimbursements-paid; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example B — ICHRA pathway
+- Input: Health FSA reimbursements paid
+- Amount: $250
+
+
+```text
+ebhra_newly_available = 0
+
+ichra_remaining
+= 4,800 - 3,600 - 200
+= 1,000
+
+ichra_nonpremium_available = 1,000
+
+fsa_available
+= 1,000 - 250
+= 750
 ```
 
-------------------------------------------------------------------------
+For an expense eligible under both components, the participant may see up to `$1,750` of CommonFunds availability, subject to the plan's claims-ordering rule:
 
-# Health FSA Risk Transfer Concept
+#### ICHRA available for nonpremium §213(d) expenses
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-b-ichra-pathway.ichra-available-for-nonpremium-213-d-expenses; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example B — ICHRA pathway
+- Internal component: ICHRA available for nonpremium §213(d) expenses
+- Available: $1,000
 
-The uniform coverage rule creates risk transfer between employer and
-employee.
+#### Health FSA
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-b-ichra-pathway.health-fsa; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example B — ICHRA pathway
+- Internal component: Health FSA
+- Available: $750
 
-Example:
+#### Unified CommonFunds availability
+<!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-b-ichra-pathway.unified-commonfunds-availability; record_type: table-row -->
+- Context: CommonFunds — 2. CommonFunds calculation engine > Worked example B — ICHRA pathway
+- Internal component: **Unified CommonFunds availability**
+- Available: **$1,750**
 
-Employee uses entire election early:
 
-``` json
-{
-  "annual_election": 3000,
-  "claims_paid_in_january": 3000,
-  "payroll_contributions_collected": 250
-}
+The participant has no EBHRA. The `$1,000` primary balance is simply the unused portion of the predetermined ICHRA after premium and other reimbursements.
+
+---
+
+<!-- record_id: product.commonfunds.rules.vector-store.3-the-underlying-benefit-components -->
+## 3. The underlying benefit components
+> Retrieval context: CommonFunds — 3. The underlying benefit components
+
+<!-- record_id: product.commonfunds.rules.vector-store.account-based-group-health-plans -->
+### Account-based group health plans
+> Retrieval context: CommonFunds — 3. The underlying benefit components > Account-based group health plans
+
+An account-based group health plan reimburses medical expenses through a defined account or allowance structure. HRAs and Health FSAs are common examples. Unlike traditional insurance, these arrangements generally provide a limited dollar amount rather than unlimited payment of covered claims.
+
+Under the ACA market-reform framework, an account-based group health plan generally must:
+
+1. Integrate with other qualifying group health coverage;
+2. Qualify as an excepted benefit; or
+3. Satisfy another applicable exception.
+
+An arrangement that does not satisfy a valid pathway may violate the ACA market reforms, including the prohibition on annual dollar limits and the preventive-services requirements. CommonFunds is designed so each underlying component independently maintains its own compliance pathway.
+
+<!-- record_id: product.commonfunds.rules.vector-store.ebhra -->
+### EBHRA
+> Retrieval context: CommonFunds — 3. The underlying benefit components > EBHRA
+
+An EBHRA is an HRA or other account-based group health plan that qualifies as an excepted benefit.
+
+Its defining attributes include:
+
+- Employer-only funding;
+- Reimbursement of eligible medical expenses;
+- Availability and carryover controlled by the plan document;
+- Application of nondiscrimination rules to similarly situated eligible employees; and
+- An annual limit on the amount newly made available.
+
+An arrangement is not an HRA merely because it is labeled one. Classification follows actual operation.
+
+Amounts attributable to employee salary reduction are not HRA funds. That does not prohibit an employee from contributing to CommonFunds; it means those dollars belong to a different component, normally the Health FSA.
+
+An HRA may operate alongside a cafeteria plan. A choice only among employer-provided nontaxable health benefits does not by itself turn the HRA into a Section 125 election. The concern arises when an employee can increase the reimbursement amount through salary reduction, obtain a larger reimbursement by forgoing a taxable benefit, or otherwise correlate the reimbursement with a salary reduction election.
+
+<!-- record_id: product.commonfunds.rules.vector-store.health-fsa -->
+### Health FSA
+> Retrieval context: CommonFunds — 3. The underlying benefit components > Health FSA
+
+A Health FSA may receive:
+
+- Employee salary reduction elections; and
+- Employer contributions permitted under the applicable rules.
+
+A cashable employer allowance elected into the Health FSA belongs to the first category. It is treated as salary reduction for both the Section 125(i) limit and the excepted-benefit maximum-benefit calculation.
+
+---
+
+<!-- record_id: product.commonfunds.rules.vector-store.4-when-funds-become-available -->
+## 4. When funds become available
+> Retrieval context: CommonFunds — 4. When funds become available
+
+<!-- record_id: product.commonfunds.rules.vector-store.health-fsa-uniform-coverage -->
+### Health FSA: uniform coverage
+> Retrieval context: CommonFunds — 4. When funds become available > Health FSA: uniform coverage
+
+The Health FSA must make the maximum reimbursement amount available throughout the coverage period. Availability is not limited to payroll contributions collected when a claim occurs.
+
+For example, an employee who elects $2,400 for the year may have the full $2,400 available in January even though only $200 has been collected through payroll.
+
+Employer contributions included in the Health FSA benefit follow the same availability rule. A Health FSA containing a $3,000 employee election and a $1,000 employer contribution generally makes the full $4,000 benefit available at the beginning of the coverage period.
+
+<!-- record_id: product.commonfunds.rules.vector-store.the-risk-runs-both-ways -->
+### The risk runs both ways
+> Retrieval context: CommonFunds — 4. When funds become available > The risk runs both ways
+
+Uniform coverage creates a group risk arrangement, not a one-sided employer loss.
+
+#### Participant incurs $3,000 in eligible claims early, then terminates after only $250 has been collected
+<!-- record_id: product.commonfunds.rules.vector-store.4-when-funds-become-available-the-risk-runs-both-ways.participant-incurs-3-000-in-eligible-claims-early-then-terminates-after-; record_type: table-row -->
+- Context: CommonFunds — 4. When funds become available > The risk runs both ways
+- Scenario: Participant incurs $3,000 in eligible claims early, then terminates after only $250 has been collected
+- Result: The plan generally bears the shortfall and cannot require repayment merely because employment ended
+
+#### Participant contributes $3,000 but submits only $500 in claims
+<!-- record_id: product.commonfunds.rules.vector-store.4-when-funds-become-available-the-risk-runs-both-ways.participant-contributes-3-000-but-submits-only-500-in-claims; record_type: table-row -->
+- Context: CommonFunds — 4. When funds become available > The risk runs both ways
+- Scenario: Participant contributes $3,000 but submits only $500 in claims
+- Result: The unused $2,500 is generally forfeited unless the plan provides a permitted carryover or grace period
+
+
+The employer bears early-utilization risk. Participants bear forfeiture risk. The plan is not required to pay unused Health FSA amounts as cash compensation.
+
+<!-- record_id: product.commonfunds.rules.vector-store.ebhra-availability-follows-the-plan -->
+### EBHRA: availability follows the plan
+> Retrieval context: CommonFunds — 4. When funds become available > EBHRA: availability follows the plan
+
+The Health FSA uniform coverage rule does not apply to the EBHRA. The plan may make EBHRA funds available annually, monthly, or under another permitted schedule.
+
+CommonFunds represents accelerated EBHRA availability through `commonFundLoanMultiple`.
+
+#### $100
+<!-- record_id: product.commonfunds.rules.vector-store.4-when-funds-become-available-ebhra-availability-follows-the-plan.100; record_type: table-row -->
+- Context: CommonFunds — 4. When funds become available > EBHRA: availability follows the plan
+- Monthly allocation: $100
+- `commonFundLoanMultiple`: 1
+- Initial availability: $100
+- Meaning: Funds become available as they accrue monthly
+
+#### $100
+<!-- record_id: product.commonfunds.rules.vector-store.4-when-funds-become-available-ebhra-availability-follows-the-plan.100-2; record_type: table-row -->
+- Context: CommonFunds — 4. When funds become available > EBHRA: availability follows the plan
+- Monthly allocation: $100
+- `commonFundLoanMultiple`: 6
+- Initial availability: $600
+- Meaning: Up to six months of future allocations are available
+
+#### $100
+<!-- record_id: product.commonfunds.rules.vector-store.4-when-funds-become-available-ebhra-availability-follows-the-plan.100-3; record_type: table-row -->
+- Context: CommonFunds — 4. When funds become available > EBHRA: availability follows the plan
+- Monthly allocation: $100
+- `commonFundLoanMultiple`: 12
+- Initial availability: $1,200
+- Meaning: The full annual allocation is available immediately
+
+
+The property determines timing only. Despite its name, it does not automatically make the arrangement a legal loan or create a repayment obligation.
+
+Accelerated access must be applied uniformly according to the plan’s terms. It cannot be selectively granted to particular participants outside those terms.
+
+<!-- record_id: product.commonfunds.rules.vector-store.recourse-after-accelerated-ebhra-reimbursement -->
+### Recourse after accelerated EBHRA reimbursement
+> Retrieval context: CommonFunds — 4. When funds become available > Recourse after accelerated EBHRA reimbursement
+
+Availability and recourse are separate design decisions. When a participant is reimbursed more than the EBHRA amount accrued before termination, the plan document determines whether the employer has recourse.
+
+#### Accelerated access with no recourse
+<!-- record_id: product.commonfunds.rules.vector-store.4-when-funds-become-available-recourse-after-accelerated-ebhra-reimburse.accelerated-access-with-no-recourse; record_type: table-row -->
+- Context: CommonFunds — 4. When funds become available > Recourse after accelerated EBHRA reimbursement
+- Plan design: Accelerated access with no recourse
+- Result: Employer accepts the risk of unrecovered advanced reimbursements
+
+#### Accelerated access with recourse
+<!-- record_id: product.commonfunds.rules.vector-store.4-when-funds-become-available-recourse-after-accelerated-ebhra-reimburse.accelerated-access-with-recourse; record_type: table-row -->
+- Context: CommonFunds — 4. When funds become available > Recourse after accelerated EBHRA reimbursement
+- Plan design: Accelerated access with recourse
+- Result: The plan may require repayment according to the applicable agreement
+
+
+Never infer repayment from `commonFundLoanMultiple`; review the plan document.
+
+---
+
+<!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific -->
+## 5. Annual limits are component-specific
+> Retrieval context: CommonFunds — 5. Annual limits are component-specific
+
+There is no single annual limit on the combined CommonFunds balance.
+
+<!-- record_id: product.commonfunds.rules.vector-store.ebhra-annual-limit -->
+### EBHRA annual limit
+> Retrieval context: CommonFunds — 5. Annual limits are component-specific > EBHRA annual limit
+
+The EBHRA limit applies to the amount newly made available for a plan year. It does not apply to Health FSA funds, employee salary reduction, separate account-based benefits, or permitted prior-year carryover.
+
+#### 2025
+<!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-ebhra-annual-limit.2025; record_type: table-row -->
+- Context: CommonFunds — 5. Annual limits are component-specific > EBHRA annual limit
+- Plan year: 2025
+- Annual EBHRA limit: $2,150
+- Status in source data: Official
+
+#### 2026
+<!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-ebhra-annual-limit.2026; record_type: table-row -->
+- Context: CommonFunds — 5. Annual limits are component-specific > EBHRA annual limit
+- Plan year: 2026
+- Annual EBHRA limit: $2,200
+- Status in source data: Official
+
+#### 2027
+<!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-ebhra-annual-limit.2027; record_type: table-row -->
+- Context: CommonFunds — 5. Annual limits are component-specific > EBHRA annual limit
+- Plan year: 2027
+- Annual EBHRA limit: Not stated
+- Status in source data: Not released when the source was prepared
+
+
+<!-- record_id: product.commonfunds.rules.vector-store.health-fsa-salary-reduction-limit -->
+### Health FSA salary reduction limit
+> Retrieval context: CommonFunds — 5. Annual limits are component-specific > Health FSA salary reduction limit
+
+The Section 125(i) limit restricts employee salary reduction into the Health FSA. It is not a total account limit.
+
+It includes:
+
+- Direct employee payroll salary reduction; and
+- Employer flex credits that the employee could receive as cash or another taxable benefit but elects into the Health FSA.
+
+A genuine noncashable employer contribution does not consume this limit.
+
+<!-- record_id: product.commonfunds.rules.vector-store.employer-health-fsa-contributions -->
+### Employer Health FSA contributions
+> Retrieval context: CommonFunds — 5. Annual limits are component-specific > Employer Health FSA contributions
+
+True employer contributions may increase the total Health FSA benefit beyond the employee salary reduction limit. To remain an excepted benefit, the maximum Health FSA benefit cannot exceed the greater of:
+
+1. Two times the participant’s salary reduction election; or
+2. The participant’s salary reduction election plus $500.
+
+If `S` is total Health FSA salary reduction:
+
+```text
+maximum total Health FSA benefit = max(2 * S, S + 500)
+maximum true employer contribution = max(S, 500)
 ```
 
-The plan must reimburse according to the annual election.
+#### $3,400
+<!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-employer-health-fsa-contributions.3-400; record_type: table-row -->
+- Context: CommonFunds — 5. Annual limits are component-specific > Employer Health FSA contributions
+- Salary reduction (`S`): $3,400
+- Maximum total benefit: $6,800
+- Maximum employer contribution under this test: $3,400
+
+#### $1,000
+<!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-employer-health-fsa-contributions.1-000; record_type: table-row -->
+- Context: CommonFunds — 5. Annual limits are component-specific > Employer Health FSA contributions
+- Salary reduction (`S`): $1,000
+- Maximum total benefit: $2,000
+- Maximum employer contribution under this test: $1,000
+
+#### $100
+<!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-employer-health-fsa-contributions.100; record_type: table-row -->
+- Context: CommonFunds — 5. Annual limits are component-specific > Employer Health FSA contributions
+- Salary reduction (`S`): $100
+- Maximum total benefit: $600
+- Maximum employer contribution under this test: $500
+
+
+This financial test is not the only excepted-benefit requirement. Other non-excepted group health coverage must also be made available for the year to the applicable class.
+
+<!-- record_id: product.commonfunds.rules.vector-store.combined-limit-example -->
+### Combined-limit example
+> Retrieval context: CommonFunds — 5. Annual limits are component-specific > Combined-limit example
+
+One participant could have:
+
+#### EBHRA
+<!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-combined-limit-example.ebhra; record_type: table-row -->
+- Context: CommonFunds — 5. Annual limits are component-specific > Combined-limit example
+- Component: EBHRA
+- Source: Employer-only
+- Amount: $2,200
+
+#### Health FSA
+<!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-combined-limit-example.health-fsa; record_type: table-row -->
+- Context: CommonFunds — 5. Annual limits are component-specific > Combined-limit example
+- Component: Health FSA
+- Source: Employee salary reduction
+- Amount: $3,400
+
+#### Health FSA
+<!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-combined-limit-example.health-fsa-2; record_type: table-row -->
+- Context: CommonFunds — 5. Annual limits are component-specific > Combined-limit example
+- Component: Health FSA
+- Source: Employer contribution
+- Amount: $3,400
 
-# Health FSA Risk Allocation
+#### Combined availability
+<!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-combined-limit-example.combined-availability; record_type: table-row -->
+- Context: CommonFunds — 5. Annual limits are component-specific > Combined-limit example
+- Component: **Combined availability**
+- Source:
+- Amount: **$9,000**
 
-## Rule
 
-The Health FSA uniform coverage rule creates risk transfer between the
-employer and participant.
+The combined balance exceeding an individual component’s limit does not itself create a compliance problem. Each component is tested separately.
 
-The rule is not exclusively favorable to either party.
+---
 
-The employer accepts the risk that a participant may receive
-reimbursements exceeding payroll contributions collected.
+<!-- record_id: product.commonfunds.rules.vector-store.6-what-a-commonfunds-balance-means -->
+## 6. What a CommonFunds balance means
+> Retrieval context: CommonFunds — 6. What a CommonFunds balance means
 
-The participant accepts the risk that unused Health FSA amounts may be
-forfeited according to applicable plan rules.
+A CommonFunds balance is generally a notional reimbursement record—not a participant-owned bank account.
 
-------------------------------------------------------------------------
+It tracks:
 
-# Employer Loss Scenario
+- Allocated benefit amounts;
+- Claims incurred;
+- Claims approved;
+- Reimbursements paid; and
+- Remaining reimbursement availability.
 
-Example:
+When the application displays `$2,500 available`, it means the participant may receive up to $2,500 in additional eligible reimbursements under the applicable benefit terms. It does not necessarily mean that:
 
-``` json
-{
-  "annual_health_fsa_election": 3000,
-  "claims_paid": 3000,
-  "employee_contributions_collected_before_termination": 250,
-  "result": "Plan generally cannot require repayment of the remaining election amount solely because employment ended."
-}
-```
+- Cash is held in the participant’s name;
+- The employer deposited that amount into a segregated account;
+- The amount is wages owed to the participant; or
+- The participant owns the unused balance.
 
-The employer bears the shortfall created by early claims.
+<!-- record_id: product.commonfunds.rules.vector-store.funded-and-unfunded-arrangements -->
+### Funded and unfunded arrangements
+> Retrieval context: CommonFunds — 6. What a CommonFunds balance means > Funded and unfunded arrangements
 
-# Employer Gain Scenario
+The employer may pay approved claims as they arise or reserve funds in advance. The participant’s reimbursement rights follow the plan terms, not the employer’s internal funding method.
 
-Example:
-`json{   "annual_health_fsa_election": 3000,   "employee_contributions_collected": 3000,   "claims_submitted": 500,   "unused_balance": 2500,   "result": "Unused Health FSA funds are generally forfeited unless an applicable carryover or grace period rule applies." }`
+<!-- record_id: product.commonfunds.rules.vector-store.ownership-of-unused-amounts -->
+### Ownership of unused amounts
+> Retrieval context: CommonFunds — 6. What a CommonFunds balance means > Ownership of unused amounts
 
-The employer is not required to pay unused Health FSA amounts to the
-participant as cash compensation.
+#### Health FSA
+<!-- record_id: product.commonfunds.rules.vector-store.6-what-a-commonfunds-balance-means-ownership-of-unused-amounts.health-fsa; record_type: table-row -->
+- Context: CommonFunds — 6. What a CommonFunds balance means > Ownership of unused amounts
+- Component: Health FSA
+- Participant right: Reimbursement of eligible expenses up to the available benefit
+- Treatment of unused amount: Generally forfeited unless a permitted carryover or grace period applies
 
-## AI Interpretation Rule
+#### EBHRA
+<!-- record_id: product.commonfunds.rules.vector-store.6-what-a-commonfunds-balance-means-ownership-of-unused-amounts.ebhra; record_type: table-row -->
+- Context: CommonFunds — 6. What a CommonFunds balance means > Ownership of unused amounts
+- Component: EBHRA
+- Participant right: Reimbursement according to the EBHRA terms
+- Treatment of unused amount: Forfeiture, carryover, or another permitted treatment under the plan
 
-Incorrect:
 
-"The employer loses money because FSA funds are available immediately."
+Neither component automatically creates employee ownership of unused funds.
 
-Correct:
+<!-- record_id: product.commonfunds.rules.vector-store.employer-accounting-views -->
+### Employer accounting views
+> Retrieval context: CommonFunds — 6. What a CommonFunds balance means > Employer accounting views
 
-"The uniform coverage rule creates both potential gains and losses. The
-employer bears the risk of early utilization, while participants bear
-the risk of unused amounts being forfeited."
+#### Maximum exposure
+<!-- record_id: product.commonfunds.rules.vector-store.6-what-a-commonfunds-balance-means-employer-accounting-views.maximum-exposure; record_type: table-row -->
+- Context: CommonFunds — 6. What a CommonFunds balance means > Employer accounting views
+- Measure: Maximum exposure
+- Meaning: The maximum amount that could be reimbursed; sometimes described as accrued liability
 
-## Key Point
+#### Actual claims liability
+<!-- record_id: product.commonfunds.rules.vector-store.6-what-a-commonfunds-balance-means-employer-accounting-views.actual-claims-liability; record_type: table-row -->
+- Context: CommonFunds — 6. What a CommonFunds balance means > Employer accounting views
+- Measure: Actual claims liability
+- Meaning: Claims already approved, scheduled, payable, or paid
 
-This distinction is actually important for CommonFunds because employers
-will ask things like:
+#### Expected cost
+<!-- record_id: product.commonfunds.rules.vector-store.6-what-a-commonfunds-balance-means-employer-accounting-views.expected-cost; record_type: table-row -->
+- Context: CommonFunds — 6. What a CommonFunds balance means > Employer accounting views
+- Measure: Expected cost
+- Meaning: The actuarially expected cost, which may be lower than maximum exposure because participants may not use every available dollar
 
-> "Why would I let someone spend \$3,000 on January 1?"
 
-The accurate answer is not "because the law requires you to take a
-loss." It is:
+Do not describe unused balances as employer debt unless the plan terms create that obligation.
 
-> "The Health FSA operates as a group risk arrangement. Early
-> overspending and unused forfeitures are both features of the
-> structure."
+<!-- record_id: product.commonfunds.rules.vector-store.accumulated-balance-and-real-time-balance -->
+### Accumulated balance and real-time balance
+> Retrieval context: CommonFunds — 6. What a CommonFunds balance means > Accumulated balance and real-time balance
 
-For CommonFunds specifically, later we may also want a section on
-**forfeiture allocation**, because the FSA forfeiture side and EBHRA
-carryover side are almost opposites. The AI needs to know that "unused
-balance" is not a universal concept across the combined account.
+These values can differ:
 
-------------------------------------------------------------------------
+- **Accumulated balance** describes the employer-side accrued cash position or liability.
+- **Real-time balance** describes what the participant may claim at that moment, including accelerated availability and Health FSA uniform coverage.
 
-# EBHRA Difference
+Uniform coverage or accelerated access can make the real-time balance exceed the accumulated balance. The accumulated balance may therefore become negative after an early reimbursement without changing the participant’s valid availability under the plan.
 
-The Health FSA uniform coverage rule does not apply to the EBHRA
-component.
+---
 
-EBHRA availability is determined by the plan document.
+<!-- record_id: product.commonfunds.rules.vector-store.7-one-balance-separate-claims-rules -->
+## 7. One balance, separate claims rules
+> Retrieval context: CommonFunds — 7. One balance, separate claims rules
 
-An EBHRA may define availability rules such as:
+A participant-facing balance may combine amounts that follow different rules:
 
--   entire annual amount available immediately
--   monthly availability
--   other allocation schedules permitted by plan terms
-
-Example:
-
-``` json
-{
-  "EBHRA": {
-    "annual_allocation": 1200,
-    "availability_schedule": "monthly",
-    "available_month_1": 100
-  }
-}
-```
-
-This differs from Health FSA treatment.
-
-# EBHRA Availability Schedule
-
-## Rule
-
-The Health FSA uniform coverage rule does not apply to the EBHRA
-component.
-
-EBHRA funds become available according to the terms defined by the plan
-document.
-
-CommonFunds tracks EBHRA accelerated availability using the application
-property:
-
-``` json
-{
-  "property": "commonFundLoanMultiple"
-}
-```
-
-This value determines how many months of future EBHRA allocations are
-made available to the participant before they have accumulated.
-
-------------------------------------------------------------------------
-
-# commonFundLoanMultiple Definition
-
-## Rule
-
-`commonFundLoanMultiple` represents the number of months of EBHRA
-availability that may be advanced to the participant.
-
-A larger multiple gives the participant access to more future benefit
-amounts earlier in the plan year.
-
-Examples:
-
-``` json
-{
-  "monthly_ebhra_allocation": 100,
-  "commonFundLoanMultiple": 1,
-  "available_month_1": 100,
-  "description": "Participant accesses EBHRA funds as they accrue monthly."
-}
-```
-
-``` json
-{
-  "monthly_ebhra_allocation": 100,
-  "commonFundLoanMultiple": 6,
-  "available_month_1": 600,
-  "description": "Participant may access up to six months of EBHRA funds."
-}
-```
-
-``` json
-{
-  "monthly_ebhra_allocation": 100,
-  "commonFundLoanMultiple": 12,
-  "available_month_1": 1200,
-  "description": "Participant has access to the full annual EBHRA allocation immediately."
-}
-```
-
-------------------------------------------------------------------------
-
-# Uniform Application Requirement
-
-## Rule
-
-The EBHRA availability schedule is a plan design feature.
-
-Employees within the same applicable plan terms must receive the same
-availability methodology.
-
-The employer may not selectively accelerate EBHRA access for individual
-participants outside the terms of the plan.
-
-------------------------------------------------------------------------
-
-# Advanced EBHRA Availability and Recourse
-
-## Important Distinction
-
-Accelerated availability determines when a participant may access EBHRA
-funds.
-
-It does not independently determine whether repayment obligations exist.
-
-The application property name `commonFundLoanMultiple` describes the
-ability to access future allocations early.
-
-It does not automatically mean the arrangement is legally treated as a
-loan.
-
-------------------------------------------------------------------------
-
-# Recourse Rules
-
-The plan document determines whether the employer has recourse when:
-
--   a participant receives reimbursement exceeding accrued EBHRA
-    allocations; and
--   the participant terminates employment before future allocations are
-    earned.
-
-Possible plan designs:
-
-``` json
-{
-  "accelerated_access": true,
-  "recourse": false,
-  "result": "Employer assumes risk of unrecovered advanced reimbursements."
-}
-```
-
-``` json
-{
-  "accelerated_access": true,
-  "recourse": true,
-  "result": "Plan terms may require repayment according to the applicable agreement."
-}
-```
-
-The AI must review the plan document before stating whether repayment is
-required.
-
-------------------------------------------------------------------------
-
-# AI Reasoning Rules
-
-Incorrect:
-
-"The EBHRA balance works like an FSA because the employee can access the
-full year immediately."
-
-Correct:
-
-"The EBHRA component may provide accelerated access by plan design. This
-is separate from the Health FSA uniform coverage rule."
-
-------------------------------------------------------------------------
-
-Incorrect:
-
-"`commonFundLoanMultiple` means the employee owes repayment."
-
-Correct:
-
-"`commonFundLoanMultiple` determines availability timing only. Repayment
-rights depend on the plan document."
-
-------------------------------------------------------------------------
-
-# CommonFunds Balance Interpretation
-
-A CommonFunds account may contain both immediately available and
-scheduled funds.
-
-Example:
-
-``` json
-{
-  "CommonFunds": {
-    "display_balance": 5000,
-    "components": [
-      {
-        "type": "Health_FSA",
-        "annual_election": 3000,
-        "uniform_coverage": true,
-        "available_now": 3000
-      },
-      {
-        "type": "EBHRA",
-        "annual_allocation": 2000,
-        "uniform_coverage": false,
-        "available_now": 500
-      }
-    ]
-  }
-}
-```
-
-The AI must calculate availability using the rules for each component.
-
-------------------------------------------------------------------------
-
-# AI Reasoning Rules
-
-Incorrect:
-
-"The employee has only contributed \$100, so only \$100 is available."
-
-Correct:
-
-"For Health FSA funds, availability is based on the annual election, not
-collected payroll contributions."
-
-------------------------------------------------------------------------
-
-Incorrect:
-
-"All CommonFunds dollars are available immediately."
-
-Correct:
-
-"The Health FSA component follows uniform coverage rules. Other
-components follow their applicable plan rules."
-
-------------------------------------------------------------------------
-
-Incorrect:
-
-"The employee owes back unused payroll deductions after leaving
-employment."
-
-Correct:
-
-"Under the Health FSA uniform coverage rule, the plan generally bears
-the risk if claims exceed contributions collected before termination."
-
-------------------------------------------------------------------------
-
-# Unified Balance Rule
-
-## Rule
-
-A participant-facing CommonFunds balance may combine multiple regulatory
-components.
-
-Example:
-
-Employee view:
-
-``` text
-CommonFunds Balance:
-$2,500 Available
-```
+```text
+CommonFunds available: $2,500
 
 Internal classification:
-
-``` json
-{
-  "total_available": 2500,
-  "components": [
-    {
-      "type": "EBHRA",
-      "amount": 1000,
-      "funding_source": "employer"
-    },
-    {
-      "type": "Health FSA",
-      "amount": 1500,
-      "funding_source": "salary_reduction"
-    }
-  ]
-}
+  EBHRA employer funds:          $1,000
+  Health FSA salary reduction:   $1,500
 ```
 
-The combined user experience does not merge the legal classifications.
+The application must determine which component can reimburse an expense. “CommonFunds covers it” is not a complete eligibility rule.
+
+For every claim, determine:
+
+1. Which component applies;
+2. Whether that component covers the expense;
+3. Whether funds are currently available under that component’s rules; and
+4. What the governing plan document requires.
+
+---
+
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide -->
+## 8. Practical interpretation guide
+> Retrieval context: CommonFunds — 8. Practical interpretation guide
+
+#### “Employees cannot contribute to CommonFunds because EBHRAs cannot accept employee contributions.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.employees-cannot-contribute-to-commonfunds-because-ebhras-cannot-accept-; record_type: table-row -->
+- Context: CommonFunds — 8. Practical interpretation guide
+- Avoid: “Employees cannot contribute to CommonFunds because EBHRAs cannot accept employee contributions.”
+- Use instead: “Employee salary reductions are allocated to the Health FSA component because they are not HRA funds.”
+
+#### “Employer funds are always EBHRA funds.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.employer-funds-are-always-ebhra-funds; record_type: table-row -->
+- Context: CommonFunds — 8. Practical interpretation guide
+- Avoid: “Employer funds are always EBHRA funds.”
+- Use instead: “Employer funds may be EBHRA funds or permitted Health FSA employer contributions, depending on cashability, plan design, and applicable limits.”
+
+#### “The employer credit is an employer contribution.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.the-employer-credit-is-an-employer-contribution; record_type: table-row -->
+- Context: CommonFunds — 8. Practical interpretation guide
+- Avoid: “The employer credit is an employer contribution.”
+- Use instead: “If the employee could take the credit as cash or another taxable benefit and elects it into the Health FSA, it is treated as salary reduction for the relevant rules.”
+
+#### “The employee has only contributed $100, so only $100 is available.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.the-employee-has-only-contributed-100-so-only-100-is-available; record_type: table-row -->
+- Context: CommonFunds — 8. Practical interpretation guide
+- Avoid: “The employee has only contributed $100, so only $100 is available.”
+- Use instead: “Health FSA availability follows the annual election, not payroll contributions collected to date.”
+
+#### “All CommonFunds dollars are available immediately.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.all-commonfunds-dollars-are-available-immediately; record_type: table-row -->
+- Context: CommonFunds — 8. Practical interpretation guide
+- Avoid: “All CommonFunds dollars are available immediately.”
+- Use instead: “The Health FSA follows uniform coverage; the EBHRA follows its plan-defined availability schedule.”
+
+#### “The employer loses money because FSA funds are available immediately.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.the-employer-loses-money-because-fsa-funds-are-available-immediately; record_type: table-row -->
+- Context: CommonFunds — 8. Practical interpretation guide
+- Avoid: “The employer loses money because FSA funds are available immediately.”
+- Use instead: “The Health FSA transfers risk in both directions: employers bear early-claim risk and participants bear forfeiture risk.”
+
+#### “commonFundLoanMultiple means the participant owes repayment.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.commonfundloanmultiple-means-the-participant-owes-repayment; record_type: table-row -->
+- Context: CommonFunds — 8. Practical interpretation guide
+- Avoid: “`commonFundLoanMultiple` means the participant owes repayment.”
+- Use instead: “The property controls availability timing; recourse depends on the plan document.”
+
+#### “You have $2,000 saved in CommonFunds.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.you-have-2-000-saved-in-commonfunds; record_type: table-row -->
+- Context: CommonFunds — 8. Practical interpretation guide
+- Avoid: “You have $2,000 saved in CommonFunds.”
+- Use instead: “You have $2,000 available for eligible reimbursement.”
+
+#### “Your employer deposited $2,000 for you.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.your-employer-deposited-2-000-for-you; record_type: table-row -->
+- Context: CommonFunds — 8. Practical interpretation guide
+- Avoid: “Your employer deposited $2,000 for you.”
+- Use instead: “Your employer made $2,000 available for eligible reimbursement.”
+
+#### “You lose your money if you do not use the EBHRA.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.you-lose-your-money-if-you-do-not-use-the-ebhra; record_type: table-row -->
+- Context: CommonFunds — 8. Practical interpretation guide
+- Avoid: “You lose your money if you do not use the EBHRA.”
+- Use instead: “Unused EBHRA amounts are handled according to the plan terms.”
+
+#### “The Health FSA limit is the most an employee can have available.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.the-health-fsa-limit-is-the-most-an-employee-can-have-available; record_type: table-row -->
+- Context: CommonFunds — 8. Practical interpretation guide
+- Avoid: “The Health FSA limit is the most an employee can have available.”
+- Use instead: “The indexed limit applies to salary reduction; permitted employer contributions may increase the total benefit.”
+
+#### “The CommonFunds balance exceeds the EBHRA limit.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.the-commonfunds-balance-exceeds-the-ebhra-limit; record_type: table-row -->
+- Context: CommonFunds — 8. Practical interpretation guide
+- Avoid: “The CommonFunds balance exceeds the EBHRA limit.”
+- Use instead: “Apply the EBHRA limit only to the EBHRA component and test the other components separately.”
+
+#### “CommonFunds reimburses this expense.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.commonfunds-reimburses-this-expense; record_type: table-row -->
+- Context: CommonFunds — 8. Practical interpretation guide
+- Avoid: “CommonFunds reimburses this expense.”
+- Use instead: “The applicable CommonFunds component determines whether the expense is eligible.”
+
+
+---
+
+<!-- record_id: product.commonfunds.rules.vector-store.9-authorities-cited-in-this-document -->
+## 9. Authorities cited in this document
+> Retrieval context: CommonFunds — 9. Authorities cited in this document
+
+- [IRS Notice 2002-45](https://www.irs.gov/pub/irs-drop/n-02-45.pdf), Parts I and IV—HRA funding and cafeteria-plan interaction.
+- [IRS Notice 2012-40](https://www.irs.gov/pub/irs-drop/n-12-40.pdf)—cashable employer flex credits elected into a Health FSA are treated as salary reduction for Section 125(i).
+- [45 C.F.R. § 146.145(b)(3)(v)](https://www.law.cornell.edu/cfr/text/45/146.145)—Health FSA excepted-benefit requirements and treatment of taxable options elected into the FSA.
+- [26 C.F.R. § 54.9831-1(c)(3)(v)](https://www.law.cornell.edu/cfr/text/26/54.9831-1)—parallel Treasury excepted-benefit rule.
 
-------------------------------------------------------------------------
+---
 
-# Account-Based Benefit Annual Limits
+<!-- record_id: product.commonfunds.rules.vector-store.core-principle -->
+## Core principle
+> Retrieval context: CommonFunds — Core principle
 
-## Purpose
+> **CommonFunds unifies accounting and user experience. Compliance remains component-specific.**
 
-This section defines how annual contribution and availability limits
-apply to CommonFunds components.
-
-The AI must not apply a single annual limit to the combined CommonFunds
-balance.
-
-Each underlying benefit component has its own rules.
-
-------------------------------------------------------------------------
-
-# EBHRA Annual Limit
-
-## Rule
-
-An Excepted Benefit Health Reimbursement Arrangement (EBHRA) has a limit
-on the amount newly made available for a plan year.
-
-The limit applies only to the EBHRA component.
-
-The limit does not apply to:
-
--   Health FSA funds
--   employee salary reduction elections
--   separate account-based benefits
--   permitted carryover amounts from prior years
-
-## Known EBHRA Limits
-
-``` json
-{
-  "EBHRA_LIMITS": {
-    "2025": {
-      "annual_limit": 2150,
-      "status": "official"
-    },
-    "2026": {
-      "annual_limit": 2200,
-      "status": "official"
-    },
-    "2027": {
-      "annual_limit": null,
-      "status": "not_released"
-    }
-  }
-}
-```
-
-------------------------------------------------------------------------
-
-# Health FSA Employee Salary Reduction Limit
-
-## Rule
-
-The Health FSA salary reduction limit restricts the amount an employee
-may elect through a cafeteria plan.
-
-This is not a total Health FSA account limit.
-
-It applies only to salary reduction contributions. For this purpose,
-the term includes an employer flex credit that the employee could have
-received as cash or another taxable benefit but instead elects into the
-Health FSA. The amount's employer origin or "credit" label does not
-prevent it from consuming the Section 125(i) limit.
-
-A genuinely noncashable employer contribution does not consume this
-limit.
-
-Example:
-
-An employee elects the maximum Health FSA salary reduction.
-
-``` json
-{
-  "component": "Health FSA",
-  "funding_source": "employee_salary_reduction",
-  "amount": 3400,
-  "plan_year": 2026
-}
-```
-
-The employee has reached the salary reduction limit.
-
-The employee has not necessarily reached the maximum possible Health FSA
-benefit.
-
-------------------------------------------------------------------------
-
-# Employer Health FSA Contributions
-
-## Rule
-
-True employer contributions to a Health FSA are analyzed separately from
-employee salary reduction elections. A contribution is a true employer
-contribution for this purpose only if the employee cannot elect to
-receive it as cash or another taxable benefit.
-
-If the employee can receive the amount as cash but elects the Health
-FSA, classify it as salary reduction, not as an employer contribution,
-for the Section 125(i) limit and the excepted-benefit maximum-benefit
-test.
-
-Employer contributions may increase the total Health FSA benefit beyond
-the employee salary reduction limit.
-
-Example:
-
-``` json
-{
-  "component": "Health FSA",
-  "employee_salary_reduction": 3400,
-  "employer_contribution": 3400,
-  "total_health_fsa_benefit": 6800
-}
-```
-
-This structure may be permitted if the Health FSA continues to satisfy
-applicable rules, including excepted benefit requirements.
-
-------------------------------------------------------------------------
-
-# Health FSA Excepted Benefit Maximum Benefit Test
-
-## Rule
-
-A Health FSA must satisfy the maximum benefit requirement to remain an
-excepted benefit.
-
-The maximum benefit payable cannot exceed the greater of:
-
-1.  two times the participant's salary reduction election; or
-2.  the participant's salary reduction election plus \$500
-
-This rule determines how much employer contribution can be added while
-maintaining excepted benefit status.
-
-For this test, any amount the employee can elect to receive as taxable
-income but instead applies to the Health FSA is expressly considered a
-salary reduction election, regardless of whether it is characterized as
-salary or as a credit.
-
-If `S` is total Health FSA salary reduction, the maximum true employer
-contribution permitted by this financial test is:
-
-``` text
-max(S, 500)
-```
-
-This is derived by subtracting `S` from the permitted maximum total
-benefit of `max(2 * S, S + 500)`.
-
-Examples:
-
-Employee election:
-
-``` json
-{
-  "salary_reduction": 3400,
-  "maximum_excepted_health_fsa_benefit": 6800
-}
-```
-
-Employee election:
-
-``` json
-{
-  "salary_reduction": 1000,
-  "maximum_excepted_health_fsa_benefit": 2000
-}
-```
-
-Employee election:
-
-``` json
-{
-  "salary_reduction": 100,
-  "maximum_excepted_health_fsa_benefit": 600
-}
-```
-
-------------------------------------------------------------------------
-
-# CommonFunds Combined Limit Example
-
-A participant may have:
-
-``` json
-{
-  "CommonFunds": {
-    "EBHRA": {
-      "employer_amount": 2200
-    },
-    "Health_FSA": {
-      "employee_salary_reduction": 3400,
-      "employer_contribution": 3400
-    },
-    "combined_available_amount": 9000
-  }
-}
-```
-
-The combined amount exceeding any individual component limit does not
-automatically create a compliance issue.
-
-Cashable amounts that exceed the Health FSA salary reduction limit
-cannot remain in the Health FSA and may be paid as taxable wages or used
-for another permitted option under the plan.
-
-Noncashable employer amounts that exceed both EBHRA capacity and
-permitted employer Health FSA capacity do not automatically become
-wages. They remain subject to the written plan and may be unavailable,
-forfeited, or used for another permitted employer-provided benefit.
-
-The AI must evaluate each component separately.
-
-------------------------------------------------------------------------
-
-# CommonFunds Account Balance and Funding Concepts
-
-## Purpose
-
-This section explains the difference between:
-
--   participant-facing balances
--   available reimbursement amounts
--   employer funding obligations
--   actual assets
--   employee ownership rights
-
-The AI must not assume that a displayed CommonFunds balance represents a
-segregated bank account or employee-owned asset.
-
-------------------------------------------------------------------------
-
-# Account-Based Benefit Terminology
-
-## Rule
-
-Account-based health plans often use account terminology, but the
-account balance generally represents a reimbursement right rather than
-ownership of specific funds.
-
-A participant's CommonFunds balance represents:
-
--   the maximum amount currently available for eligible reimbursements
--   according to the applicable plan terms
--   from the applicable benefit component
-
-It does not necessarily represent:
-
--   cash held in the participant's name
--   wages owed to the participant
--   property owned by the participant
-
-------------------------------------------------------------------------
-
-# Notional Account Concept
-
-## Definition
-
-CommonFunds balances are generally notional accounting records.
-
-The application tracks:
-
--   allocated benefit amounts
--   claims incurred
--   claims approved
--   reimbursements paid
--   remaining availability
-
-Example:
-
-``` json
-{
-  "participant_display": {
-    "commonfunds_available": 2500
-  },
-  "internal_accounting": {
-    "cash_account_owned_by_employee": false,
-    "reimbursement_limit_available": 2500
-  }
-}
-```
-
-------------------------------------------------------------------------
-
-# Funded vs Unfunded Arrangements
-
-## Rule
-
-The existence of a CommonFunds balance does not determine whether the
-employer has deposited cash into a separate account.
-
-Employer funding method is determined by plan design and administration.
-
-Possible structures include:
-
-``` json
-{
-  "funding_method": "pay_as_you_go",
-  "description": "Employer pays reimbursements when eligible claims are approved."
-}
-```
-
-``` json
-{
-  "funding_method": "prefunded",
-  "description": "Employer reserves funds in advance for expected reimbursements."
-}
-```
-
-The participant reimbursement right is determined by the plan terms, not
-the employer's internal funding method.
-
-------------------------------------------------------------------------
-
-# Employee Ownership Rule
-
-## Health FSA Component
-
-A Health FSA election creates a right to reimbursement of eligible
-expenses.
-
-It does not create ownership of unused funds.
-
-Example:
-
-``` json
-{
-  "employee_salary_reduction": 3000,
-  "claims_submitted": 1000,
-  "remaining_unused": 2000,
-  "cash_payment_to_employee": false
-}
-```
-
-Unused Health FSA balances may be forfeited unless a permitted carryover
-or grace period applies. These too are optional allowances given by
-regulators and whether they are offered is governed by the plan
-document.
-
-------------------------------------------------------------------------
-
-# EBHRA Component
-
-An EBHRA allocation creates a reimbursement benefit.
-
-It does not create an employee-owned account.
-
-Example:
-
-``` json
-{
-  "employer_ebhra_allocation": 2200,
-  "employee_medical_claims": 500,
-  "unused_amount": 1700,
-  "employee_cash_right": false
-}
-```
-
-Unused EBHRA amounts follow plan terms.
-
-Possible treatment:
-
--   forfeiture
--   carryover
--   other permitted plan rules
-
-------------------------------------------------------------------------
-
-# Employer Accounting Perspective
-
-Employers may see multiple balance concepts.
-
-## Maximum Exposure
-
-The maximum amount that could be reimbursed. This can be referred to an
-"accrued" and is a liability the employer needs to fund.
-
-Example:
-
-``` json
-{
-  "participants": 100,
-  "average_available_balance": 2000,
-  "maximum_exposure": 200000
-}
-```
-
-------------------------------------------------------------------------
-
-## Actual Claims Liability
-
-Amounts already approved or payable. This is either scheduled
-(approved/authorized) or paid claims.
-
-Example:
-
-``` json
-{
-  "approved_claims": 35000,
-  "current_payment_obligation": 35000
-}
-```
-
-------------------------------------------------------------------------
-
-## Expected Cost
-
-The employer's expected financial cost may be lower than maximum
-exposure because not all participants use all available benefits.
-
-The AI should not describe unused balances as employer debt unless plan
-terms create an obligation.
-
-------------------------------------------------------------------------
-
-# CommonFunds Balance Calculation
-
-The application may calculate:
-
-``` json
-{
-  "scheduled_annual_benefit": 5000,
-  "claims_paid": 1200,
-  "accumulated_balance": 3800,
-  "real_time_balance": 3800
-}
-```
-
-This means:
-
-"The participant may receive up to \$3,800 of additional eligible
-reimbursements."
-
-It does not mean:
-
-"The participant owns \$3,800."
-
-The real_time_balance may differ from the accumulated_balance.
-"Accumulated" is an employer-perspective and represents the real cash
-position/liability of the benefit account to the employer. The
-real_time_balance reflects uniform coverage rules as well as benefit
-design to describe the real_time liability - or what a participant may
-claim at a moment in time, even if it causes the accumulated_balance to
-go negative.
-
-------------------------------------------------------------------------
-
-# AI Reasoning Rules
-
-Incorrect:
-
-"You have \$2,000 saved in your CommonFunds account."
-
-Correct:
-
-"You have \$2,000 available for eligible reimbursements under your
-CommonFunds plan."
-
-------------------------------------------------------------------------
-
-Incorrect:
-
-"Your employer deposited \$2,000 for you."
-
-Correct:
-
-"Your employer made \$2,000 available for eligible reimbursements."
-
-------------------------------------------------------------------------
-
-Incorrect:
-
-"You lose your money if you do not use your EBHRA."
-
-Correct:
-
-"Unused EBHRA amounts are handled according to your employer's plan
-terms."
-
-------------------------------------------------------------------------
-
-# Core Principle
-
-CommonFunds tracks reimbursement availability.
-
-Availability does not automatically mean:
-
--   cash funding occurred
--   assets were transferred
--   employee ownership exists
--   unused funds must be paid out
-
-Always evaluate ownership and availability according to the underlying
-benefit component and plan document.
-
-------------------------------------------------------------------------
-
-# AI Reasoning Rules
-
-Incorrect:
-
-"The indexed Health FSA limit is the most an employee can have
-available."
-
-Correct:
-
-"The indexed Section 125(i) limit applies to Health FSA salary reduction
-elections, including cashable credits elected into the FSA. True
-employer Health FSA contributions may increase the total available
-benefit subject to the Health FSA excepted-benefit rules."
-
-------------------------------------------------------------------------
-
-Incorrect:
-
-"The CommonFunds balance exceeds the EBHRA limit."
-
-Correct:
-
-"The EBHRA limit applies only to the EBHRA component. Other properly
-classified components must be analyzed separately."
-
-# AI Reasoning Instructions
-
-When answering a CommonFunds question:
-
-NEVER start with:
-
-"What does CommonFunds allow?"
-
-ALWAYS determine:
-
-1.  Which component applies?
-2.  What is the funding source?
-3.  Which regulatory framework governs the funds?
-4.  What does the plan document allow?
-
-------------------------------------------------------------------------
-
-# Incorrect Reasoning Patterns
-
-Incorrect:
-
-"EBHRAs cannot accept employee contributions, therefore employees cannot
-contribute to CommonFunds."
-
-Correct:
-
-"Employee salary reductions are allocated to the Health FSA component of
-CommonFunds because salary reduction amounts are not treated as HRA
-funds."
-
-------------------------------------------------------------------------
-
-Incorrect:
-
-"CommonFunds reimburses this expense."
-
-Correct:
-
-"The applicable CommonFunds component determines whether this expense is
-eligible."
-
-------------------------------------------------------------------------
-
-Incorrect:
-
-"Employer funds are always EBHRA funds."
-
-Correct:
-
-"Employer funds may be structured as EBHRA funds or Health FSA employer
-contributions depending on plan design."
-
-------------------------------------------------------------------------
-
-# Core Principle
-
-CommonFunds is a unified accounting and user experience layer.
-
-Compliance exists at the component level.
-
-The AI must preserve the distinction between:
-
--   user experience
--   accounting structure
--   statutory classification
--   tax treatment
-
-------------------------------------------------------------------------
+Always preserve the distinction between the participant experience, accounting structure, statutory classification, tax treatment, and governing plan document.
