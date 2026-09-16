@@ -1,12 +1,3 @@
----
-id: product.commonfunds
-title: CommonFunds
-kind: human-readable
-status: draft
-version: "1.0"
-jurisdiction: United States
----
-
 ## CommonFunds
 
 > A unified way to administer multiple account-based health benefits—without confusing the participant experience with the legal structure underneath it.

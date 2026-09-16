@@ -1,11 +1,3 @@
----
-id: product.non-employer-sponsored-options
-title: Private Health Options Alongside an Employer Plan
-kind: human-readable
-status: draft
-owner: CommonCare
----
-
 ## Private health options alongside an employer plan
 
 > **A defined employer plan and genuine individual choice can coexist.** CommonCare keeps the employer's plan within the employer-plan rules while giving employees a separate, post-tax path to private options the employer does not sponsor.

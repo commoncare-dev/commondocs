@@ -1,13 +1,3 @@
----
-id: product.choice
-title: CHOICE
-kind: human-readable
-status: draft
-version: "1.0"
-jurisdiction: United States
-last_reviewed: 2026-09-15
----
-
 ## CHOICE
 
 > **CHOICE is CommonCare’s implementation of an Individual Coverage Health Reimbursement Arrangement (ICHRA): an employer-sponsored structure that lets employees select individual major medical coverage instead of forcing an entire workforce into one insurance contract.**
