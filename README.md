@@ -37,33 +37,77 @@ Employer-sponsored plans represent the overwhelming majority (~85%) of the priva
 
 This market is foundational to health insurance carriers. It is also the only market where they are able to underwrite their risk. They modify premiums based on the historical claims performance of a given group. In the private marketplace, they cannot do this. 
 
-### 💰 Force 3: Distribution is paid to preserve the status quo
+### 💰 Force 3: Nobody's incentives are aligned with your plan
 
-Most employers do not design group health plans themselves. They rely on brokers and consultants to explain the market, recommend a plan, select vendors, and manage implementation.
+Most employers do not design group health plans themselves. They rely on brokers and consultants to explain the market, recommend a plan, select vendors, and manage implementation. Just like individuals, this means price sensitivity is largely absent from the marketplace. People marvel at the total bill, but don't know where to begin when it comes to pointing to the problem.
 
-That makes brokers and consultants the practical distribution layer for nearly every alternative to the status quo. Unfortunately, their incentives often run in the opposite direction.
+Consider for a moment the intense complexity of managing the competing priorities and complexity while trying to merge:
 
-CommonCare has a highly technical staff in matters of both tax law and technology and we accept no commissions; it's still a behemoth effort to organize the expansive and competing landscapes of the natural and dire complexity of healthcare as a science and service, the tax code and ACA legal landscape, employer priorities and incentives, participant preferences and incentives - and to provide adaptable pathways forward for managing these elements simultaneously. 
+- The inherent complexity of delivering and paying for high-quality healthcare
+- Merging costs among a group of people with different priorities and values
+- Navigating the mountain of regulatory complexity that governs group health plans under the ACA and beyond
+- Communicating this complex compensation structure to employees who expect this to be solved for them in a way that costs very little and pays for a lot—quickly and with no gatekeeping
 
-Forgive us, but we're just not sure your commissioned insurance agent is really grasping these matters rather than simply drinking from the well of insurance incentives (which favors them financially). Even if hearts were pure, which they aren't, knowing how to tackle these concerns is beyond challenging. 
-
-For many brokers and consultants, recommending a structurally different plan means:
-
-- Doing substantially more work
-- Accepting lower or less predictable compensation
-- Taking responsibility for unfamiliar decisions
-- Challenging carrier and vendor relationships
-- Asking clients to understand complexity they have historically outsourced
-- Narrowing the addressable market to early adopters and organizations willing to depart from convention
-
-Selling the incumbent model is easier. The products are familiar, carrier relationships already exist, implementation is repeatable, and compensation is often embedded within premiums or vendor arrangements that receive little scrutiny from the employer paying for them.
-
-This does not require bad actors. It is what the system predictably produces.
-
-Even an excellent advisor must choose between recommending the conventional arrangement—which is easier to sell, easier to administer, and often better compensated—or asking the client to undertake a more demanding change that may reduce the advisor’s own revenue, and eating every complaint and failing that produces along the way. 
+If every broker or consultant were working with pure hearts and no financial incentives, this would still be a monumental task to manage.
 
 > [!CAUTION]
-> **The people employers depend on to challenge the status quo are frequently paid more to preserve it.**
+> **The problems we face in healthcare do not require bad actors. The incentives are controlling the outcomes precisely.**
+
+CommonCare is highly focused on incentives as the core element that will drive better health plans. Incentives are always there, pressuring, looking for cracks in understanding or attention. The bigger a system grows, the more totally they control outcomes.
+
+This can be hard to understand, but it doesn't require bad people making evil plans to exploit the masses. People and businesses are always facing significant pressure. Even if we assume most people have the moral fortitude to consistently resist perverse incentives 🤔, the bigger a system grows, the more blurry and impersonal the impact of a single transaction becomes. The actions that are rewarded survive expansion, those that don't are cut off.
+
+### Look at the core incentives today:
+
+### Insurance carriers:
+
+First, insurance always has an incentive for premiums to outweigh the projected claims by a healthy amount. This pressures both premiums and also how often and how much they want to pay for claims. 
+
+This is why the ACA implemented the [MLR](https://www.cms.gov/marketplace/private-health-insurance/medical-loss-ratio) regs ensuring carriers had to pay out 80-85% (market dependent) of collected premiums or refund them. But wait, if the profit opportunity is a fixed percentage of the total claims, one of the best pathways to more profitability is for total claims to grow? 
+
+Combine that with the fact that when the ACA first rolled out the federal government set up a program to take profits from profitable insurers and cover the losses of those who overspent. Also, the risk per-participant was mandatory as unlimited, underwriting (a pillar of insurance success) is virtually not allowed, and cost-sharing is tightly controlled. We had a near unimaginably bad cocktail of incentives set up our current landscape.
+
+**Most importantly, by far** though is just the natural backward incentive of pooling medical bills to begin with. 
+- Everyone wants to pay in as little as possible.
+- Everyone wants to get more out than they paid in; that structurally cannot happen, or it's death to the program.
+- Nobody shares values or priorities; everyone wants their doctor, their time-schedule, their price preference. 
+- The highest consumers get the best deal.
+
+This is why underwriting is a pillar of insurance, but it's also why insurance is a poor way to fund anything you can practically afford to bear the cost of. We're asking for something to perform other than how it was designed to perform.
+
+### Hospitals: 
+
+Few people understand the regulatory and practical challenges that create pricing pressure for hospitals. They must provide care to a wide range of patients with different sources of payment and price tolerance: from illegal immigrants to Medicare and Medicaid as the payers.
+
+Compulsion and complexity don't tend to favor the little guy. Hospitals operate like a government agency; bureaucracy is their weapon of choice. They have layers of costs that do nothing to improve healthcare, they are just a soft spot that was found in the payer layer that turned into space, jobs, and a permanent process.
+
+The excess from big ugly processes tends to fall down to the largest center of gravity.
+
+### Doctors & providers:
+
+The incentives at this level, every business understands perfectly well. Every business wants to make more money for less work. That's regular healthy economic pressure best managed by consumer price sensitivity. 
+
+The more middle-men and third-party payers there are, the less understandable the incentives of providers are.
+
+### Insurance agents, brokers, and consultants:
+
+Again, the incentives here are easier to understand. We just think you should spend some time to take a frank account of what they are.
+
+Like all consulting services, sales charisma rewards a lot more readily than high-quality technical acumen. Almost universally brokers will concede that attempting to get clients to make very many changes will result in no change, a pay cut, and less time for golf.
+
+Our bigger concern in working with plan brokers is that much of the insurance salesforce lacks the technical ability to create better plans even if all parties were willing. We think the heavy shrinking of the plan advisor fee has already begun. 
+
+We care to see extra dollars go back to the employer at year-end or live on in employee HSAs.
+
+A plan with 30 participants paying \$40 PEPM is paying $14,400 for a nebulous job description. They could have: 
+
+- White-glove enrollment support: \$1,200,
+- Quarterly accounting and payroll reconciliation: $2,000/yr
+- Year-end compliance reporting, review, and form-filing: $1,000
+- Year-end letter of legal review: $500
+
+We're \$4,700 in + \$2,000 in CommonCare fees (\$5 PEPM) and everyone was a specialist.
+
 
 ## 🚀 Why CommonCare exists
 
@@ -93,7 +137,7 @@ CommonCare publishes its models and data stores so that others can inspect them,
 
 Good plan design is useful only when it can be implemented and operated reliably.
 
-CommonCare provides the software and administrative tooling needed to put these structures into practice. Our goal is turnkey implementation at a flat, all-inclusive price of **$5 per employee per month**.
+CommonCare provides the software and administrative tooling needed to put these structures into practice. Our goal is turnkey implementation at a flat, all-inclusive price of **\$5 per employee per month**.
 
 Keeping the operational cost low removes one of the largest barriers to adopting better plan structures.
 
