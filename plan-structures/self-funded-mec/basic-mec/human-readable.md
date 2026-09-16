@@ -1,4 +1,4 @@
-# Self-Funded MEC Plan
+## Self-Funded MEC Plan
 
 A narrowly focused, self-funded group health plan designed to provide minimum essential coverage, deliver required preventive care, and—when structured correctly—support HSA eligibility at a low monthly cost.
 
@@ -858,7 +858,7 @@ This structured record serves two purposes:
 
 > **The human-readable document explains the product. The product data store structures its meaning. The claims specification tells the system how to pay it.**
 
-## Appendix B: Pricing guidelines
+### Appendix B: Pricing guidelines
 
 > [!CAUTION]
 > Do we have to say it? This pricing is a good-faith guideline based on our experience and models. It's not a guarantee of anything.
