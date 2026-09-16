@@ -99,15 +99,18 @@ Our bigger concern in working with plan brokers is that much of the insurance sa
 
 We care to see extra dollars go back to the employer at year-end or live on in employee HSAs.
 
-A plan with 30 participants paying \$40 PEPM is paying $14,400 for a nebulous job description. They could have: 
+A plan with 100 participants paying \$40 PEPM is paying $40,000 for a nebulous job description. They could have the following (all from pluggable specialized third-party services): 
 
-- White-glove enrollment support: \$1,200,
-- Quarterly accounting and payroll reconciliation: $2,000/yr
-- Year-end compliance reporting, review, and form-filing: $1,000
-- Year-end letter of legal review: $500
+- White-glove support: \$5 PEPM - \$6,000/year
+- Quarterly accounting and payroll reconciliation: \$2,000/yr
+- Year-end compliance reporting, review, and form-filing: \$2,000
+- Year-end letter of legal review: \$500
 
-We're \$4,700 in + \$2,000 in CommonCare fees (\$5 PEPM), and everyone was a specialist. This isn't even the biggest place we can cut your costs, but we just returned $7,200 to your plan for significantly more capable technical support.
+That's \$10,500 + \$6,000 in CommonCare fees (\$5 PEPM), and everyone was an absolute specialist. This isn't even the biggest place we can cut your costs, but we just returned $23,500 to your plan for a significantly more capable technical support team.
 
+We don't want to disable quality consulting. Restructuring your plans can save the same 100-employee group $200,000 easily. We simply think our process does exactly that without abandoning our roots of price sensitivity and transparency. 
+
+Structure and incentives matter.
 
 ## 🚀 Why CommonCare exists
 
