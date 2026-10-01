@@ -8,6 +8,20 @@ This repository documents the concepts, data structures, administrative processe
 
 This guide is meant to be both a human and AI readable data store that enables real implementation of the concepts herein.
 
+## Start with a plan structure
+
+Read the human-readable guide for the model you are reviewing. These links point to the canonical explanations; adjacent metadata and vector-store files support indexing and retrieval.
+
+| Guide | Repository location |
+|---|---|
+| Premium Tax Credit Plan | [PTC Plan](plan-structures/ptc-plan/human-readable.md) |
+| CHOICE / ICHRA | [CHOICE guide](plan-structures/choice-ichra/human-readable.md) |
+| Common-Funded | [Common-Funded guide](plan-structures/common-funded/human-readable.md) |
+| CommonFunds | [Account classification, limits, and availability](plan-structures/common-funds/human-readable.md) |
+| Private alternatives alongside an employer plan | [Companion structure](plan-structures/alternative-companion/human-readable.md) |
+| Self-funded dental | [Dental benefit design and claims calculation](plan-structures/self-funded-dental/human-readable.md) |
+| Self-funded Basic MEC | [Basic MEC guide](plan-structures/self-funded-mec/basic-mec/human-readable.md) |
+
 ## 🧭 What a group health plan actually is
 
 > [!IMPORTANT]
