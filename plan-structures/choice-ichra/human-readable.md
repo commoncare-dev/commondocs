@@ -148,7 +148,33 @@ An ICHRA must be offered on the same terms to every employee within a permitted 
 - The number of dependents covered by the ICHRA, provided participants covering the same number of dependents receive the same amount attributable to family size; and
 - Permitted proration for participants who become eligible during the plan year or experience an applicable change in covered dependents.
 
-Different fixed-dollar amounts may be assigned to different classes only when each class is one the ICHRA rules permit, such as full-time and part-time employees, salaried and non-salaried employees, or employees in different qualifying geographic areas. Applicable minimum-class-size rules must also be satisfied. An employer may not invent compensation bands, management levels, job titles, or similar categories as ICHRA classes.
+Different fixed-dollar amounts may be assigned to different classes only when each class is one the ICHRA rules permit, such as full-time and part-time employees, salaried and non-salaried employees, or employees whose primary sites of employment are in different qualifying geographic areas. An employer may not invent compensation bands, management levels, job titles, or similar categories as ICHRA classes.
+
+#### ICHRA-only employers and the minimum-class-size rule
+
+The minimum-class-size requirement does **not** apply merely because an employer using only an ICHRA establishes separate permitted employee classes. It applies only when the employer offers a traditional group health plan to one or more employee classes and an ICHRA to one or more other employee classes, and then only to the classes and circumstances identified in the rule. [26 CFR §54.9802-4(d)(3)(ii)](https://www.ecfr.gov/current/title-26/chapter-I/subchapter-D/part-54/section-54.9802-4)
+
+This distinction gives an ICHRA-only employer substantial freedom to align its allowance with individual-market pricing. The employer may establish separate classes for employees whose primary sites of employment are in different ACA rating areas, assign different amounts to those classes, and vary the amount within each class by age, subject to the same-age consistency rule and the ICHRA's 3:1 limit between the oldest and youngest participants.
+
+The ICHRA class and same-terms rules do not require the employer to use the lowest-cost silver plan—or any particular insurance plan—as its contribution benchmark. The employer may use an age-and-location schedule derived from the LCSP, another identified individual-market plan or plan design, a selected metal level, or another consistently administered benchmark. The benchmark is a plan-design choice; the legal constraints apply to the resulting allowance amounts and classifications. An LCSP-based design is one example:
+
+```text
+Reference LCSP premium for the employee's worksite rating-area class and age
+− defined employee premium responsibility
+= ICHRA allowance
+```
+
+The same structure could substitute a different individual-market benchmark for the LCSP. An age-and-location benchmark can closely reproduce the geographic and age-based pricing architecture of the selected reference plan. It does not, however, guarantee a mathematically exact match for every employee.
+
+#### The worksite-versus-residence idiosyncrasy
+
+The geographic ICHRA class is based on the rating area of the employee's **primary site of employment**. The employee's actual individual-market plans and the ordinary ICHRA affordability calculation are generally based on the rating area in which the employee **resides**. Those locations often coincide or have similar pricing, but they need not.
+
+The class regulation does not separately define “primary site of employment” for remote workers. Closely related ICHRA employer-affordability guidance describes the intended treatment: for a fully remote employee who has no assigned office or particular location to which the employee must report, the residence is treated as the primary site of employment; for a remote or hybrid employee with an assigned office, available workspace, or another location to which the employee may be required to report, that reporting location is treated as the primary site. An occasional ability to work from home therefore does not necessarily make the home the employee's primary worksite. The plan document and administration should use a reasonable, consistent interpretation supported by the actual employment arrangement. [Proposed ICHRA employer-affordability regulations, remote-worker discussion](https://www.federalregister.gov/d/2019-20034)
+
+As a result, an office-based employee may live in one rating area while belonging to an ICHRA class associated with another. If the employer's allowance tracks a reference plan for the worksite rating area, the allowance may be slightly higher or lower than the amount that would precisely equalize the corresponding residence-based premium. This is a limited regulatory mismatch, not a failure of the design: an age-and-location-referenced allowance can still approximate traditional-plan premium equalization closely, while remaining based on the permitted worksite classification.
+
+The employer should also test the resulting age-based allowance schedule directly against the ICHRA's 3:1 contribution limit. An allowance does not automatically satisfy that limit merely because it was derived from ACA-compliant premiums, particularly when participants under age 21 are included.
 
 > [!IMPORTANT]
 > **Do not define the ICHRA contribution as a percentage of income, salary, compensation, or the premium an employee selects.** Applying the same percentage can produce different maximum dollar amounts for participants in the same class. Compensation and selected-premium differences are not permitted bases for varying the ICHRA amount within a class. In the final-rule preamble, the Departments specifically declined requests to allow amounts to vary by earnings, salary, role, or title. [2019 final ICHRA rules, same-terms discussion](https://www.irs.gov/irb/2019-28_IRB)
