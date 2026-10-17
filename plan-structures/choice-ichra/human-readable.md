@@ -440,6 +440,12 @@ An employee may use Section 125 salary reduction to pay the portion of an **off-
 
 That is why CommonCare’s integrated CHOICE enrollment generally presents off-Exchange coverage when pre-tax payment of the participant remainder is part of the design.
 
+### Catastrophic coverage for participants age 30 or older
+
+An ACA catastrophic plan—whether sold on- or off-Exchange—may enroll a participant age 30 or older only while an affordability or hardship exemption certification is in effect. Projected household income above 250% of the applicable FPL is a categorical hardship basis because it makes the applicant ineligible for cost-sharing reductions. [42 U.S.C. §18022(e)](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/pdf/USCODE-2024-title42-chap157-subchapIII-partA-sec18022.pdf) · [45 CFR §155.605(d)(1)(iv)](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-155/subpart-G/section-155.605)
+
+The exemption is not self-executing: the participant must request it from the Exchange, which determines eligibility and issues the exemption certificate. The resulting certification can support enrollment in catastrophic coverage purchased off-Exchange and reimbursed through the ICHRA. [45 CFR §155.610](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-155/subpart-G/section-155.610) · [CMS income-based hardship guidance](https://www.cms.gov/files/document/guidance-hardship-exemptions.pdf)
+
 ### Premium tax credits
 
 | ICHRA offer | Participant action | Potential PTC result |
