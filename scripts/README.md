@@ -45,3 +45,26 @@ It splits the source at `## 1. Classify the dollar before applying a limit`. Kee
 The scripts overwrite their target files without prompting. Run them on the intended branch and review any existing local changes first.
 
 [generate-interpolated-docs.mjs](generate-interpolated-docs.mjs) is a separate template-population utility; it does not regenerate these retrieval companions.
+
+## Generate plan documents and an SPD
+
+Populate one template with the canonical context:
+
+```sh
+node scripts/generate-interpolated-docs.mjs \
+  --template plan-docs/core-doc-template.md \
+  --values plan-docs/sample-plan-variables.json \
+  --output generated/core-plan-document.md
+```
+
+Assemble the common SPD and one or more benefit-specific SPD sections:
+
+```sh
+node scripts/generate-spd.mjs \
+  --template plan-docs/spd-template.md \
+  --values plan-docs/sample-plan-variables.json \
+  --benefit-template plan-structures/self-funded-mec/basic-mec/plan-docs/mec-spd-section.md \
+  --output generated/summary-plan-description.md
+```
+
+Both commands refuse to overwrite an existing output unless `--overwrite` is supplied.

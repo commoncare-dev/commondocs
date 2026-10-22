@@ -2,7 +2,7 @@
 id: plan-document.core-appendix-b
 title: Adopted Benefit Appendices
 kind: plan-document-template
-context_schema: ./schemas/plan-document-context.schema.json
+context_schema: ./plan-document-context.schema.json
 ---
 
 # Appendix B — Adopted Benefit Appendices

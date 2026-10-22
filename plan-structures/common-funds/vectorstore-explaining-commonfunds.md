@@ -5,8 +5,8 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/common-funds/human-readable.md
 metadata_document: plan-structures/common-funds/metadata.yaml
-source_commit: 4c66b2f8254f45dc7647ec4ba83255eefe58d286
-source_sha256: 5f5f8b80477f5d60428d0ecaebd56eba32ffbd2833adf0b3980311c67c71f0c8
+source_commit: 4d7391725cf1bfc53f946c93a8150e0a330d3bae
+source_sha256: 9a96a6fa8bd438112973047ab9e9ce21711d275a0b5980cea76fa83b7e85f9b8
 metadata_sha256: ec2da998690975e56cbbb2bd3f6e342a3faf67c8c52304eb46facc31c41c1c61
 generation_method: deterministic-commonfunds-split-conversion
 canonical_source: false
@@ -256,7 +256,7 @@ Participants see one CommonFunds balance while the system maintains multiple cla
 - Component: EBHRA
 - Typical funding source: Employer-only
 - Core availability rule: Available according to the plan document
-- Treatment of unused amounts: Governed by the plan; may carry over or be forfeited
+- Treatment of unused amounts: Defaults to no carryover; a rollover applies only when expressly adopted
 
 #### CHOICE/ICHRA
 <!-- record_id: product.commonfunds.explaining.vector-store.the-essential-idea.choice-ichra; record_type: table-row -->

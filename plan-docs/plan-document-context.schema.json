@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://commoncare.dev/schemas/plan-document-context.schema.json",
   "title": "CommonCare Plan Document Context",
-  "description": "Canonical input supplied to every CommonCare plan-document template.",
+  "description": "Canonical input supplied to governing-plan and participant-facing document templates.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -11,45 +11,32 @@
     "plan",
     "administration",
     "eligibility",
+    "cafeteriaPlan",
+    "enrollmentSchedule",
     "benefits",
+    "spd",
     "adoption",
     "extensions"
   ],
   "properties": {
-    "$schema": {
-      "type": "string",
-      "format": "uri-reference"
-    },
-    "schemaVersion": {
-      "const": "1.0.0"
-    },
-    "sponsor": {
-      "$ref": "#/$defs/sponsor"
-    },
-    "plan": {
-      "$ref": "#/$defs/plan"
-    },
-    "administration": {
-      "$ref": "#/$defs/administration"
-    },
-    "eligibility": {
-      "$ref": "#/$defs/eligibility"
-    },
+    "$schema": { "type": "string", "format": "uri-reference" },
+    "schemaVersion": { "const": "1.3.0" },
+    "sponsor": { "$ref": "#/$defs/sponsor" },
+    "plan": { "$ref": "#/$defs/plan" },
+    "administration": { "$ref": "#/$defs/administration" },
+    "eligibility": { "$ref": "#/$defs/eligibility" },
+    "cafeteriaPlan": { "$ref": "#/$defs/cafeteriaPlan" },
+    "enrollmentSchedule": { "$ref": "#/$defs/enrollmentSchedule" },
     "benefits": {
       "type": "array",
-      "items": {
-        "$ref": "#/$defs/benefitReference"
-      }
+      "items": { "$ref": "#/$defs/benefitReference" }
     },
-    "adoption": {
-      "$ref": "#/$defs/adoption"
-    },
+    "spd": { "$ref": "#/$defs/spd" },
+    "adoption": { "$ref": "#/$defs/adoption" },
     "extensions": {
       "type": "object",
       "description": "Registered coverage-specific schemas keyed by stable camelCase names.",
-      "additionalProperties": {
-        "type": "object"
-      }
+      "additionalProperties": { "type": "object" }
     },
     "custom": {
       "type": "object",
@@ -58,14 +45,8 @@
     }
   },
   "$defs": {
-    "nonEmptyString": {
-      "type": "string",
-      "minLength": 1
-    },
-    "date": {
-      "type": "string",
-      "format": "date"
-    },
+    "nonEmptyString": { "type": "string", "minLength": 1 },
+    "date": { "type": "string", "format": "date" },
     "address": {
       "type": "object",
       "additionalProperties": false,
@@ -76,13 +57,8 @@
         "city": { "type": "string" },
         "region": { "type": "string" },
         "postalCode": { "type": "string" },
-        "countryCode": {
-          "type": "string",
-          "pattern": "^[A-Z]{2}$"
-        },
-        "formatted": {
-          "$ref": "#/$defs/nonEmptyString"
-        }
+        "countryCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "formatted": { "$ref": "#/$defs/nonEmptyString" }
       }
     },
     "contact": {
@@ -90,18 +66,10 @@
       "additionalProperties": false,
       "required": ["formatted"],
       "properties": {
-        "email": {
-          "type": "string",
-          "format": "email"
-        },
+        "email": { "type": "string", "format": "email" },
         "phone": { "type": "string" },
-        "website": {
-          "type": "string",
-          "format": "uri"
-        },
-        "formatted": {
-          "$ref": "#/$defs/nonEmptyString"
-        }
+        "website": { "type": "string", "format": "uri" },
+        "formatted": { "$ref": "#/$defs/nonEmptyString" }
       }
     },
     "party": {
@@ -109,154 +77,184 @@
       "additionalProperties": false,
       "required": ["name"],
       "properties": {
-        "name": {
-          "$ref": "#/$defs/nonEmptyString"
-        },
-        "address": {
-          "$ref": "#/$defs/address"
-        },
-        "contact": {
-          "$ref": "#/$defs/contact"
-        }
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "address": { "$ref": "#/$defs/address" },
+        "contact": { "$ref": "#/$defs/contact" }
+      }
+    },
+    "documentMetadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "status", "owner"],
+      "properties": {
+        "id": { "$ref": "#/$defs/nonEmptyString" },
+        "version": { "$ref": "#/$defs/nonEmptyString" },
+        "status": { "enum": ["draft", "adopted", "amended", "terminated", "retired"] },
+        "owner": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "participatingEmployer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "legalName", "effectiveDate", "terminationDate", "status"],
+      "properties": {
+        "id": { "$ref": "#/$defs/nonEmptyString" },
+        "legalName": { "$ref": "#/$defs/nonEmptyString" },
+        "ein": { "type": "string", "pattern": "^\\d{2}-\\d{7}$" },
+        "effectiveDate": { "$ref": "#/$defs/date" },
+        "terminationDate": { "anyOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }] },
+        "status": { "enum": ["active", "terminated"] }
       }
     },
     "sponsor": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["legalName", "ein", "address"],
+      "required": ["legalName", "ein", "address", "participatingEmployers"],
       "properties": {
         "id": { "type": "string" },
-        "legalName": {
-          "$ref": "#/$defs/nonEmptyString"
-        },
-        "ein": {
-          "type": "string",
-          "pattern": "^\\d{2}-\\d{7}$"
-        },
-        "address": {
-          "$ref": "#/$defs/address"
+        "legalName": { "$ref": "#/$defs/nonEmptyString" },
+        "ein": { "type": "string", "pattern": "^\\d{2}-\\d{7}$" },
+        "address": { "$ref": "#/$defs/address" },
+        "participatingEmployers": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/participatingEmployer" }
         }
       }
     },
     "plan": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "id",
-        "name",
-        "erisaPlanNumber",
-        "originalEffectiveDate",
-        "effectiveDate",
-        "year"
-      ],
+      "required": ["id", "name", "erisaPlanNumber", "originalEffectiveDate", "effectiveDate", "year", "document"],
       "properties": {
-        "id": {
-          "$ref": "#/$defs/nonEmptyString"
-        },
-        "name": {
-          "$ref": "#/$defs/nonEmptyString"
-        },
-        "erisaPlanNumber": {
-          "type": "string",
-          "pattern": "^\\d{3}$"
-        },
-        "originalEffectiveDate": {
-          "$ref": "#/$defs/date"
-        },
-        "effectiveDate": {
-          "$ref": "#/$defs/date"
-        },
+        "id": { "$ref": "#/$defs/nonEmptyString" },
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "erisaPlanNumber": { "type": "string", "pattern": "^\\d{3}$" },
+        "originalEffectiveDate": { "$ref": "#/$defs/date" },
+        "effectiveDate": { "$ref": "#/$defs/date" },
         "year": {
           "type": "object",
           "additionalProperties": false,
           "required": ["startDate", "endDate"],
           "properties": {
-            "startDate": {
-              "$ref": "#/$defs/date"
-            },
-            "endDate": {
-              "$ref": "#/$defs/date"
-            }
+            "startDate": { "$ref": "#/$defs/date" },
+            "endDate": { "$ref": "#/$defs/date" }
           }
-        }
+        },
+        "document": { "$ref": "#/$defs/documentMetadata" }
+      }
+    },
+    "serviceProvider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "function", "contact"],
+      "properties": {
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "function": { "$ref": "#/$defs/nonEmptyString" },
+        "contact": { "$ref": "#/$defs/contact" }
       }
     },
     "administration": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "planAdministrator",
-        "agentForServiceOfProcess",
-        "namedFiduciary"
-      ],
+      "required": ["planAdministrator", "agentForServiceOfProcess", "namedFiduciary", "serviceContacts", "materialServiceProviders"],
       "properties": {
-        "planAdministrator": {
-          "$ref": "#/$defs/party"
+        "planAdministrator": { "$ref": "#/$defs/party" },
+        "agentForServiceOfProcess": { "$ref": "#/$defs/party" },
+        "namedFiduciary": { "$ref": "#/$defs/party" },
+        "serviceContacts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["eligibility", "claims", "appeals", "providerNavigation", "continuation", "privacy"],
+          "properties": {
+            "eligibility": { "$ref": "#/$defs/contact" },
+            "claims": { "$ref": "#/$defs/contact" },
+            "appeals": { "$ref": "#/$defs/contact" },
+            "providerNavigation": { "$ref": "#/$defs/contact" },
+            "continuation": { "$ref": "#/$defs/contact" },
+            "privacy": { "$ref": "#/$defs/contact" }
+          }
         },
-        "agentForServiceOfProcess": {
-          "$ref": "#/$defs/party"
-        },
-        "namedFiduciary": {
-          "$ref": "#/$defs/party"
+        "materialServiceProviders": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/serviceProvider" }
         }
       }
     },
     "eligibility": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["defaultClass", "defaultWaitingPeriod"],
+      "required": ["defaultClass", "defaultWaitingPeriod", "enrollmentProcedure", "coverageTermination", "rehireRule", "leaveRule"],
       "properties": {
         "defaultClass": {
           "type": "object",
           "additionalProperties": false,
           "required": ["id", "description"],
           "properties": {
-            "id": {
-              "$ref": "#/$defs/nonEmptyString"
-            },
-            "description": {
-              "$ref": "#/$defs/nonEmptyString"
-            }
+            "id": { "$ref": "#/$defs/nonEmptyString" },
+            "description": { "$ref": "#/$defs/nonEmptyString" }
           }
         },
         "defaultWaitingPeriod": {
           "type": "object",
           "additionalProperties": false,
           "required": ["description"],
-          "properties": {
-            "description": {
-              "$ref": "#/$defs/nonEmptyString"
-            }
-          }
-        }
+          "properties": { "description": { "$ref": "#/$defs/nonEmptyString" } }
+        },
+        "enrollmentProcedure": { "$ref": "#/$defs/nonEmptyString" },
+        "coverageTermination": { "$ref": "#/$defs/nonEmptyString" },
+        "rehireRule": { "$ref": "#/$defs/nonEmptyString" },
+        "leaveRule": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "cafeteriaPlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["isEstablished", "documentId", "electionPeriod", "midyearElectionProcedure"],
+      "properties": {
+        "isEstablished": { "type": "boolean" },
+        "documentId": { "$ref": "#/$defs/nonEmptyString" },
+        "electionPeriod": { "$ref": "#/$defs/nonEmptyString" },
+        "midyearElectionProcedure": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "enrollmentSchedule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["documentId", "name", "description", "deliveryMethod"],
+      "properties": {
+        "documentId": { "$ref": "#/$defs/nonEmptyString" },
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "description": { "$ref": "#/$defs/nonEmptyString" },
+        "deliveryMethod": { "$ref": "#/$defs/nonEmptyString" }
       }
     },
     "benefitReference": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "name", "documentId", "version", "effectiveDate", "status"],
+      "required": ["id", "name", "documentId", "version", "effectiveDate", "terminationDate", "status", "participantSummary", "fundingDescription"],
       "properties": {
-        "id": {
-          "$ref": "#/$defs/nonEmptyString"
-        },
-        "name": {
-          "$ref": "#/$defs/nonEmptyString"
-        },
-        "documentId": {
-          "$ref": "#/$defs/nonEmptyString"
-        },
-        "version": {
-          "$ref": "#/$defs/nonEmptyString"
-        },
-        "effectiveDate": {
-          "$ref": "#/$defs/date"
-        },
-        "terminationDate": {
-          "$ref": "#/$defs/date"
-        },
-        "status": {
-          "enum": ["draft", "adopted", "amended", "terminated", "retired"]
-        }
+        "id": { "$ref": "#/$defs/nonEmptyString" },
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "documentId": { "$ref": "#/$defs/nonEmptyString" },
+        "version": { "$ref": "#/$defs/nonEmptyString" },
+        "effectiveDate": { "$ref": "#/$defs/date" },
+        "terminationDate": { "anyOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }] },
+        "status": { "enum": ["draft", "adopted", "amended", "terminated", "retired"] },
+        "participantSummary": { "$ref": "#/$defs/nonEmptyString" },
+        "fundingDescription": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "spd": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["documentId", "version", "issueDate", "audience", "howToUse", "statementOfErisaRightsApplies"],
+      "properties": {
+        "documentId": { "$ref": "#/$defs/nonEmptyString" },
+        "version": { "$ref": "#/$defs/nonEmptyString" },
+        "issueDate": { "$ref": "#/$defs/date" },
+        "audience": { "$ref": "#/$defs/nonEmptyString" },
+        "howToUse": { "$ref": "#/$defs/nonEmptyString" },
+        "statementOfErisaRightsApplies": { "type": "boolean" }
       }
     },
     "adoption": {
@@ -264,14 +262,9 @@
       "additionalProperties": false,
       "required": ["method"],
       "properties": {
-        "method": {
-          "enum": ["platform", "written-instrument", "resolution", "other"]
-        },
+        "method": { "enum": ["platform", "written-instrument", "resolution", "other"] },
         "recordId": { "type": "string" },
-        "acceptedAt": {
-          "type": "string",
-          "format": "date-time"
-        },
+        "acceptedAt": { "type": "string", "format": "date-time" },
         "acceptedBy": {
           "type": "object",
           "additionalProperties": false,

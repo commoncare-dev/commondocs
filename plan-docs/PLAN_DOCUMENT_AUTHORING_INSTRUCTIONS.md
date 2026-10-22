@@ -13,6 +13,7 @@ Welfare Benefit Plan
 ├── Core Plan Document
 ├── Appendix A — Employer and Plan Information
 ├── Appendix B — Adopted Benefit Appendices
+├── Appendix C — Enrollment Schedule Incorporation
 ├── Benefit Appendix — [Coverage 1]
 │   ├── Coverage elections
 │   └── Incorporated operational schedules
@@ -22,7 +23,9 @@ Welfare Benefit Plan
 └── Required participant notices and summaries
 ```
 
-Use the CommonCare `core-plan-document-template.md` as the starting point. Do not recreate the core for each benefit.
+Use the CommonCare `plan-docs/core-doc-template.md` as the starting point. Do not recreate the core for each benefit.
+
+The product-specific inventory is maintained in `plan-docs/PRODUCT_DOCUMENT_TEMPLATE_INDEX.md`. Use the document type identified there; not every product structure is itself a Plan benefit.
 
 ## The anti-repetition rule
 
@@ -30,7 +33,7 @@ Use the CommonCare `core-plan-document-template.md` as the starting point. Do no
 
 - If a rule applies to the entire welfare benefit plan, put it in the Core Plan Document.
 - If a rule applies only to one benefit, put it in that Benefit Appendix.
-- If a value changes by employer, plan year, geography, provider, or product, put it in a schedule referenced by the applicable document.
+- If a value changes by employer, employee class, plan year, geography, age, family tier, provider, or product, put it in the Enrollment Schedule referenced by the applicable document. Do not restate allowance amounts in the Plan Document, Benefit Appendix, or SPD.
 - If an appendix merely agrees with the core, do not repeat the core language. Incorporate it by reference.
 - If an appendix needs a different rule, state only the difference and its scope.
 
@@ -145,14 +148,14 @@ Every blank must have:
 - A completed value before execution; and
 - A validation rule when applicable.
 
-Every plan-document template receives the same versioned `PlanDocumentContext` defined by `schemas/plan-document-context.schema.json`. Templates use `${dot.path}` tokens from that canonical object; authors do not invent a new top-level variable model for each document. Token names must contain only letters, numbers, underscores, and dot-separated object paths.
+Every plan-document template receives the same versioned `PlanDocumentContext` defined by `plan-docs/plan-document-context.schema.json`. Templates use `${dot.path}` tokens from that canonical object; authors do not invent a new top-level variable model for each document. Token names must contain only letters, numbers, underscores, and dot-separated object paths.
 
 ```markdown
 | Employer | ${sponsor.legalName} |
 | Plan Year | ${plan.year.startDate} through ${plan.year.endDate} |
 ```
 
-Generate the completed document with `generate-interpolated-file.mjs`. The directly executable Node module performs literal token replacement without evaluating the template as code, rejects missing or non-scalar values, refuses to overwrite an existing output unless directed, and writes through a temporary file before completing the destination. Its JSDoc documents JavaScript usage, and `generate-interpolated-file.d.ts` supplies matching types for TypeScript consumers.
+Generate a completed individual document with `scripts/generate-interpolated-docs.mjs`. The directly executable Node module performs literal token replacement without evaluating the template as code, rejects missing or non-scalar values, supports deterministic repeat and truthy conditional blocks, refuses to overwrite an existing output unless directed, and writes through a temporary file before completing the destination.
 
 Configuration values are inserted exactly as supplied. When generating Markdown, a value intended for a table cell must not contain an unescaped pipe character or other text that would corrupt the table structure.
 
@@ -172,7 +175,7 @@ Before adding a field under `custom`, determine whether it is reusable across sp
 Each template declares its input contract in front matter:
 
 ```yaml
-context_schema: ./schemas/plan-document-context.schema.json
+context_schema: ./plan-document-context.schema.json
 ```
 
 A coverage-specific template points to a composed schema that applies the common context first and then requires its registered extension. For example, the basic MEC appendix uses `schemas/self-funded-mec-plan-document-context.schema.json`, which composes the common schema with `schemas/extensions/self-funded-mec.schema.json`.
@@ -206,6 +209,18 @@ Read the Core Plan Document, completed employer appendices, Benefit Appendix, an
 ### 7. Generate participant-facing documents
 
 The governing Plan is not a substitute for an SPD, SBC, enrollment materials, provider instructions, privacy notices, or other required communications. Generate those documents from the same adopted terms; do not allow them to establish conflicting benefits.
+
+The common SPD template is `plan-docs/spd-template.md`. Each Benefit Appendix that appears in an SPD must have a paired, participant-facing SPD section template whose front matter identifies the governing source document. Assemble them with `scripts/generate-spd.mjs`:
+
+```sh
+node scripts/generate-spd.mjs \
+  --template plan-docs/spd-template.md \
+  --values plan-docs/sample-plan-variables.json \
+  --benefit-template plan-structures/self-funded-mec/basic-mec/plan-docs/mec-spd-section.md \
+  --output generated/example-spd.md
+```
+
+The script renders every section from the same context, removes section-template front matter, inserts the sections at the explicit benefit marker, rejects unresolved values, and writes the assembled SPD atomically. A benefit-specific SPD section must summarize—not replace—the adopted Benefit Appendix. New substantive coverage language belongs in the governing appendix first.
 
 ## Conflict hierarchy
 

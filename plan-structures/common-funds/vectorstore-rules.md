@@ -5,8 +5,8 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/common-funds/human-readable.md
 metadata_document: plan-structures/common-funds/metadata.yaml
-source_commit: 4c66b2f8254f45dc7647ec4ba83255eefe58d286
-source_sha256: 5f5f8b80477f5d60428d0ecaebd56eba32ffbd2833adf0b3980311c67c71f0c8
+source_commit: 4d7391725cf1bfc53f946c93a8150e0a330d3bae
+source_sha256: 9a96a6fa8bd438112973047ab9e9ce21711d275a0b5980cea76fa83b7e85f9b8
 metadata_sha256: ec2da998690975e56cbbb2bd3f6e342a3faf67c8c52304eb46facc31c41c1c61
 generation_method: deterministic-commonfunds-split-conversion
 canonical_source: false
@@ -1546,13 +1546,13 @@ The employer bears early-utilization risk. Participants bear forfeiture risk. Th
 
 The Health FSA uniform coverage rule does not apply to the EBHRA. The plan may make EBHRA funds available annually, monthly, or under another permitted schedule.
 
-CommonFunds represents accelerated EBHRA availability through `commonFundLoanMultiple`.
+CommonFunds represents accelerated EBHRA availability in plan documents through `advanceMonths`. The application property `commonFundLoanMultiple` is a legacy alias for the same timing input and should be normalized to `advanceMonths` before document generation.
 
 #### \$100
 <!-- record_id: product.commonfunds.rules.vector-store.4-when-funds-become-available-ebhra-availability-follows-the-plan.100; record_type: table-row -->
 - Context: CommonFunds — 4. When funds become available > EBHRA: availability follows the plan
 - Monthly allocation: \$100
-- `commonFundLoanMultiple`: 1
+- `advanceMonths`: 1
 - Initial availability: \$100
 - Meaning: Funds become available as they accrue monthly
 
@@ -1560,7 +1560,7 @@ CommonFunds represents accelerated EBHRA availability through `commonFundLoanMul
 <!-- record_id: product.commonfunds.rules.vector-store.4-when-funds-become-available-ebhra-availability-follows-the-plan.100-2; record_type: table-row -->
 - Context: CommonFunds — 4. When funds become available > EBHRA: availability follows the plan
 - Monthly allocation: \$100
-- `commonFundLoanMultiple`: 6
+- `advanceMonths`: 6
 - Initial availability: \$600
 - Meaning: Up to six months of future allocations are available
 
@@ -1568,12 +1568,12 @@ CommonFunds represents accelerated EBHRA availability through `commonFundLoanMul
 <!-- record_id: product.commonfunds.rules.vector-store.4-when-funds-become-available-ebhra-availability-follows-the-plan.100-3; record_type: table-row -->
 - Context: CommonFunds — 4. When funds become available > EBHRA: availability follows the plan
 - Monthly allocation: \$100
-- `commonFundLoanMultiple`: 12
+- `advanceMonths`: 12
 - Initial availability: \$1,200
 - Meaning: The full annual allocation is available immediately
 
 
-The property determines timing only. Despite its name, it does not automatically make the arrangement a legal loan or create a repayment obligation.
+The default is `advanceMonths: 1`, meaning only the current accumulated monthly amount is available. A larger value determines timing only; it does not make the arrangement a legal loan or create a repayment obligation.
 
 Accelerated access must be applied uniformly according to the plan’s terms. It cannot be selectively granted to particular participants outside those terms.
 
@@ -1596,7 +1596,7 @@ Availability and recourse are separate design decisions. When a participant is r
 - Result: The plan may require repayment according to the applicable agreement
 
 
-Never infer repayment from `commonFundLoanMultiple`; review the plan document.
+Never infer repayment from `advanceMonths` or the legacy `commonFundLoanMultiple` alias; review the plan document.
 
 ---
 
@@ -1764,17 +1764,17 @@ The employer may pay approved claims as they arise or reserve funds in advance. 
 - Context: CommonFunds — 6. What a CommonFunds balance means > Ownership of unused amounts
 - Component: Health FSA
 - Participant right: Reimbursement of eligible expenses up to the available benefit
-- Treatment of unused amount: Generally forfeited unless a permitted carryover or grace period applies
+- Treatment of unused amount: Defaults to forfeiture after the applicable claims period; a permitted carryover or grace period applies only when expressly adopted
 
 #### EBHRA
 <!-- record_id: product.commonfunds.rules.vector-store.6-what-a-commonfunds-balance-means-ownership-of-unused-amounts.ebhra; record_type: table-row -->
 - Context: CommonFunds — 6. What a CommonFunds balance means > Ownership of unused amounts
 - Component: EBHRA
 - Participant right: Reimbursement according to the EBHRA terms
-- Treatment of unused amount: Forfeiture, carryover, or another permitted treatment under the plan
+- Treatment of unused amount: Defaults to no carryover; a rollover or other treatment applies only when expressly adopted
 
 
-Neither component automatically creates employee ownership of unused funds.
+Neither component automatically creates employee ownership of unused funds. Under the default CommonFunds design, excess amounts remain or revert to the employer or plan after timely claims are resolved, subject to applicable plan-asset and cafeteria-plan rules.
 
 <!-- record_id: product.commonfunds.rules.vector-store.employer-accounting-views -->
 ### Employer accounting views

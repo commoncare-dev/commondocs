@@ -10,6 +10,10 @@ const EACH_PATTERN = new RegExp(
 	String.raw`\$\{#each\s+(${PATH_SOURCE})\s+as\s+(${IDENTIFIER_SOURCE})\}([\s\S]*?)\$\{\/each\}`,
 	"g",
 );
+const IF_PATTERN = new RegExp(
+	String.raw`\$\{#if\s+(${PATH_SOURCE})\}([\s\S]*?)\$\{\/if\}`,
+	"g",
+);
 const BLOCKED_SEGMENTS = new Set(["__proto__", "prototype", "constructor"]);
 
 /**
@@ -102,6 +106,26 @@ function renderValue(value, formatter) {
 			.replace(/[-_]+/g, " ")
 			.replace(/\b\w/g, (character) => character.toUpperCase());
 	}
+	if (formatter === "currencyUSD" || formatter === "currencyUSDOrDash") {
+		if (value === null || value === "") return formatter === "currencyUSDOrDash" ? "—" : "";
+		if (typeof value !== "number" || !Number.isFinite(value)) {
+			throw new Error(`Formatter ${formatter} requires a finite number; received: ${String(value)}`);
+		}
+		return new Intl.NumberFormat("en-US", {
+			style: "currency",
+			currency: "USD",
+			maximumFractionDigits: 2,
+		}).format(value);
+	}
+	if (formatter === "percent") {
+		if (typeof value !== "number" || !Number.isFinite(value)) {
+			throw new Error(`Formatter ${formatter} requires a finite number; received: ${String(value)}`);
+		}
+		return new Intl.NumberFormat("en-US", {
+			style: "percent",
+			maximumFractionDigits: 2,
+		}).format(value);
+	}
 	if (formatter === "dateLong" || formatter === "dateLongOrDash") {
 		if (value === null || value === "") return formatter === "dateLongOrDash" ? "—" : "";
 		const text = String(value);
@@ -114,6 +138,24 @@ function renderValue(value, formatter) {
 		}).format(new Date(`${text}T00:00:00Z`));
 	}
 	throw new Error(`Unknown interpolation formatter: ${formatter}`);
+}
+
+/**
+ * Includes `${#if dot.path}...${/if}` content only when the resolved value is
+ * truthy. Conditional blocks cannot be nested.
+ *
+ * @param {string} template
+ * @param {object} values
+ * @returns {string}
+ */
+function expandIfBlocks(template, values) {
+	const expanded = template.replace(IF_PATTERN, (_whole, conditionPath, block) => {
+		return resolvePath(values, conditionPath) ? block.replace(/^\r?\n/, "").replace(/\r?\n$/, "") : "";
+	});
+	if (expanded.includes("${#if") || expanded.includes("${/if}")) {
+		throw new Error("Malformed or nested conditional block");
+	}
+	return expanded;
 }
 
 /**
@@ -190,13 +232,8 @@ export async function generateInterpolatedFile(args) {
 	}
 	
 	const template = await readFile(templatePath, "utf8");
-	const templateTokens = processTokens(template).expressions;
-	const expandedTemplate = expandEachBlocks(template, args.values);
-	const generated = processTokens(expandedTemplate, args.values).content;
-	const unresolved = processTokens(generated).expressions;
-	if (unresolved.length > 0) {
-		throw new Error(`Unresolved interpolation values: ${[...new Set(unresolved)].join(", ")}`);
-	}
+	const rendered = renderInterpolatedTemplate(template, args.values);
+	const generated = rendered.content;
 	
 	await mkdir(dirname(outputPath), { recursive: true });
 	const temporaryPath = `${outputPath}.tmp-${process.pid}-${Date.now()}`;
@@ -219,8 +256,31 @@ export async function generateInterpolatedFile(args) {
 	
 	return {
 		outputPath,
-		replacedTokens: [...new Set(templateTokens)].sort(),
+		replacedTokens: rendered.replacedTokens,
 		byteLength: Buffer.byteLength(generated, "utf8"),
+	};
+}
+
+/**
+ * Renders template text in memory. This is used by assemblers that combine
+ * several templates, including the SPD generator.
+ *
+ * @param {string} template
+ * @param {object} values
+ * @returns {{ content: string, replacedTokens: string[] }}
+ */
+export function renderInterpolatedTemplate(template, values) {
+	const templateTokens = processTokens(template).expressions;
+	const conditionalTemplate = expandIfBlocks(template, values);
+	const expandedTemplate = expandEachBlocks(conditionalTemplate, values);
+	const generated = processTokens(expandedTemplate, values).content;
+	const unresolved = processTokens(generated).expressions;
+	if (unresolved.length > 0) {
+		throw new Error(`Unresolved interpolation values: ${[...new Set(unresolved)].join(", ")}`);
+	}
+	return {
+		content: generated,
+		replacedTokens: [...new Set(templateTokens)].sort(),
 	};
 }
 

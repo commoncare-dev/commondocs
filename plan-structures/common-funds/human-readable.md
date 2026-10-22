@@ -156,7 +156,7 @@ Participants see one CommonFunds balance while the system maintains multiple cla
 
 | Component | Typical funding source | Core availability rule | Treatment of unused amounts |
 |---|---|---|---|
-| EBHRA | Employer-only | Available according to the plan document | Governed by the plan; may carry over or be forfeited |
+| EBHRA | Employer-only | Available according to the plan document | Defaults to no carryover; a rollover applies only when expressly adopted |
 | CHOICE/ICHRA | Employer-only | Available only while the individual satisfies the ICHRA coverage conditions and according to the plan document | Governed by the ICHRA; may reimburse premiums and, if the plan permits, nonpremium §213(d) expenses |
 | Health FSA | Employee salary reduction and permitted employer contributions | Maximum annual benefit is generally available throughout the coverage period | Generally forfeited unless the plan provides a permitted carryover or grace period |
 
@@ -1169,15 +1169,15 @@ The employer bears early-utilization risk. Participants bear forfeiture risk. Th
 
 The Health FSA uniform coverage rule does not apply to the EBHRA. The plan may make EBHRA funds available annually, monthly, or under another permitted schedule.
 
-CommonFunds represents accelerated EBHRA availability through `commonFundLoanMultiple`.
+CommonFunds represents accelerated EBHRA availability in plan documents through `advanceMonths`. The application property `commonFundLoanMultiple` is a legacy alias for the same timing input and should be normalized to `advanceMonths` before document generation.
 
-| Monthly allocation | `commonFundLoanMultiple` | Initial availability | Meaning |
+| Monthly allocation | `advanceMonths` | Initial availability | Meaning |
 |---:|---:|---:|---|
 | \$100 | 1 | \$100 | Funds become available as they accrue monthly |
 | \$100 | 6 | \$600 | Up to six months of future allocations are available |
 | \$100 | 12 | \$1,200 | The full annual allocation is available immediately |
 
-The property determines timing only. Despite its name, it does not automatically make the arrangement a legal loan or create a repayment obligation.
+The default is `advanceMonths: 1`, meaning only the current accumulated monthly amount is available. A larger value determines timing only; it does not make the arrangement a legal loan or create a repayment obligation.
 
 Accelerated access must be applied uniformly according to the plan’s terms. It cannot be selectively granted to particular participants outside those terms.
 
@@ -1190,7 +1190,7 @@ Availability and recourse are separate design decisions. When a participant is r
 | Accelerated access with no recourse | Employer accepts the risk of unrecovered advanced reimbursements |
 | Accelerated access with recourse | The plan may require repayment according to the applicable agreement |
 
-Never infer repayment from `commonFundLoanMultiple`; review the plan document.
+Never infer repayment from `advanceMonths` or the legacy `commonFundLoanMultiple` alias; review the plan document.
 
 ---
 
@@ -1285,10 +1285,10 @@ The employer may pay approved claims as they arise or reserve funds in advance. 
 
 | Component | Participant right | Treatment of unused amount |
 |---|---|---|
-| Health FSA | Reimbursement of eligible expenses up to the available benefit | Generally forfeited unless a permitted carryover or grace period applies |
-| EBHRA | Reimbursement according to the EBHRA terms | Forfeiture, carryover, or another permitted treatment under the plan |
+| Health FSA | Reimbursement of eligible expenses up to the available benefit | Defaults to forfeiture after the applicable claims period; a permitted carryover or grace period applies only when expressly adopted |
+| EBHRA | Reimbursement according to the EBHRA terms | Defaults to no carryover; a rollover or other treatment applies only when expressly adopted |
 
-Neither component automatically creates employee ownership of unused funds.
+Neither component automatically creates employee ownership of unused funds. Under the default CommonFunds design, excess amounts remain or revert to the employer or plan after timely claims are resolved, subject to applicable plan-asset and cafeteria-plan rules.
 
 ### Employer accounting views
 

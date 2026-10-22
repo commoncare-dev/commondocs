@@ -1,6 +1,6 @@
 {
-  "$schema": "./schemas/self-funded-mec-plan-document-context.schema.json",
-  "schemaVersion": "1.0.0",
+  "$schema": "../plan-structures/self-funded-mec/basic-mec/plan-docs/self-funded-mec-plan-document-context.schema.json",
+  "schemaVersion": "1.3.0",
   "sponsor": {
     "id": "sponsor.example-company",
     "legalName": "Example Company, Inc.",
@@ -13,7 +13,8 @@
       "postalCode": "43215",
       "countryCode": "US",
       "formatted": "100 Main Street, Suite 200, Columbus, OH 43215"
-    }
+    },
+    "participatingEmployers": []
   },
   "plan": {
     "id": "plan.example-company-welfare",
@@ -24,6 +25,12 @@
     "year": {
       "startDate": "2027-01-01",
       "endDate": "2027-12-31"
+    },
+    "document": {
+      "id": "plan-document.core.example-company-welfare",
+      "version": "2.0",
+      "status": "adopted",
+      "owner": "Example Company, Inc."
     }
   },
   "administration": {
@@ -58,7 +65,16 @@
     },
     "namedFiduciary": {
       "name": "Example Company, Inc."
-    }
+    },
+    "serviceContacts": {
+      "eligibility": { "email": "benefits@example.com", "phone": "(555) 555-0100", "formatted": "benefits@example.com; (555) 555-0100" },
+      "claims": { "email": "claims@example.com", "phone": "(555) 555-0101", "formatted": "claims@example.com; (555) 555-0101" },
+      "appeals": { "email": "appeals@example.com", "phone": "(555) 555-0102", "formatted": "appeals@example.com; (555) 555-0102" },
+      "providerNavigation": { "email": "navigation@example.com", "phone": "(555) 555-0103", "formatted": "navigation@example.com; (555) 555-0103" },
+      "continuation": { "email": "cobra@example.com", "phone": "(555) 555-0104", "formatted": "cobra@example.com; (555) 555-0104" },
+      "privacy": { "email": "privacy@example.com", "phone": "(555) 555-0105", "formatted": "privacy@example.com; (555) 555-0105" }
+    },
+    "materialServiceProviders": []
   },
   "eligibility": {
     "defaultClass": {
@@ -67,7 +83,23 @@
     },
     "defaultWaitingPeriod": {
       "description": "Coverage begins on the first day of the month following 30 days of employment"
-    }
+    },
+    "enrollmentProcedure": "Enroll through the Employer's benefits enrollment system during the stated initial or annual enrollment period.",
+    "coverageTermination": "Coverage ordinarily ends on the last day of the month in which eligibility ends, subject to the applicable Benefit Appendix and continuation rights.",
+    "rehireRule": "An Employee rehired within 30 days resumes the elections in effect immediately before termination when the applicable coverage can be reinstated; a later rehire is administered as a new eligibility event unless law or a Benefit Appendix requires otherwise.",
+    "leaveRule": "Coverage and contribution collection during an approved leave are administered under the Employer's leave procedures and applicable FMLA and USERRA restoration requirements."
+  },
+  "cafeteriaPlan": {
+    "isEstablished": true,
+    "documentId": "plan-document.cafeteria-plan.example-company",
+    "electionPeriod": "The Plan Year, with initial and annual elections made before coverage begins.",
+    "midyearElectionProcedure": "Request a permitted prospective election change through the Employer's benefits enrollment system within the period stated in the cafeteria plan."
+  },
+  "enrollmentSchedule": {
+    "documentId": "enrollment-schedule.example-company",
+    "name": "Example Company Benefits Enrollment Schedule",
+    "description": "The enrollment schedule applicable to the Participant's eligible class, coverage period, age, location, and elected coverage.",
+    "deliveryMethod": "Available in the Employer's benefits enrollment system and provided with the applicable enrollment materials."
   },
   "benefits": [
     {
@@ -76,9 +108,20 @@
       "documentId": "plan-document.benefit-appendix.self-funded-basic-mec",
       "version": "1.0",
       "effectiveDate": "2027-01-01",
-      "status": "adopted"
+      "terminationDate": null,
+      "status": "adopted",
+      "participantSummary": "Employee-only preventive coverage delivered through approved providers; it is not comprehensive major medical coverage.",
+      "fundingDescription": "Self-funded by the Employer and paid from its general assets."
     }
   ],
+  "spd": {
+    "documentId": "spd.example-company-welfare-2027",
+    "version": "1.0",
+    "issueDate": "2026-12-15",
+    "audience": "Employees and other persons eligible for benefits under the Plan",
+    "howToUse": "Read the common information in this SPD together with the benefit section for each coverage in which you enroll.",
+    "statementOfErisaRightsApplies": true
+  },
   "adoption": {
     "method": "platform",
     "recordId": "adoption.example-2027-plan",
@@ -90,8 +133,112 @@
     }
   },
   "extensions": {
+    "alternativeCompanion": {
+      "document": { "version": "1.0", "effectiveDate": "2027-01-01" },
+      "marketplaceOperator": "CommonCare",
+      "marketplaceContact": "support@example.com; (555) 555-0110",
+      "postTaxPayrollAvailable": true,
+      "monthlyUnrestrictedTaxableAllowance": 150,
+      "employerSponsoredPlanDescription": "The benefits listed in Appendix B of the CommonCare Welfare Benefit Plan",
+      "acknowledgmentDeadline": "Before the first payroll deduction or direct payment"
+    },
+    "choiceIchra": {
+      "document": { "version": "1.0", "appendixNumber": "ICHRA-1", "effectiveDate": "2027-01-01" },
+      "eligibleClass": "All full-time salaried Employees in the adopted ICHRA class",
+      "monthlyEmployerContribution": 400,
+      "contributionVariation": "Amount varies only by participant age and family size under the adopted contribution schedule",
+      "permittedExpenses": "Individual health insurance premiums and other Code section 213(d) medical expenses",
+      "claimsRunoutDays": 90,
+      "operationalSchedules": []
+    },
+    "commonFunded": {
+      "document": { "version": "1.0", "effectiveDate": "2027-01-01" },
+      "majorMedicalCoverage": {
+        "name": "Example Major Medical Coverage",
+        "documentId": "plan-document.benefit-appendix.example-major-medical",
+        "coverageType": "self-funded"
+      },
+      "commonFunds": {
+        "name": "CommonFunds",
+        "documentId": "plan-document.benefit-appendix.common-funds"
+      },
+      "allocationObjective": "Coordinate lower-premium major medical coverage with CommonFunds amounts available for eligible Participant expenses.",
+      "bandingDescription": "Allowance amounts may be adjusted by Participant age and applicable insurance rating area as shown in the Enrollment Schedule and permitted by the underlying coverage rules."
+    },
+    "commonFunds": {
+      "document": { "version": "1.0", "appendixNumber": "CF-1", "effectiveDate": "2027-01-01" },
+      "pathway": "excepted",
+      "groupCoverage": {
+        "isOffered": true,
+        "documentId": "plan-document.benefit-appendix.self-funded-basic-mec",
+        "description": "Self-Funded Basic MEC",
+        "isNonExcepted": true
+      },
+      "allocation": {
+        "monthlyEmployerOnlyAmount": 200,
+        "monthlyHealthOnlyFlexCredit": 100,
+        "monthlyCashableFlexCredit": 100,
+        "annualDirectEmployeeFsaElection": 1000,
+        "priorityRule": "Allocate genuinely Employer-only amounts to the EBHRA up to its limit, then allocate valid Employer Health FSA funding; treat cashable amounts elected into the Health FSA as salary reduction."
+      },
+      "hra": {
+        "componentEnabled": true,
+        "componentType": "ebhra",
+        "coordinatedCoverageType": "ebhra",
+        "documentId": "plan-document.component.common-funds-ebhra",
+        "annualEmployerAmount": 2200,
+        "monthlyAccrual": 183.33,
+        "advanceMonths": 1,
+        "recourseForUnaccruedAdvance": false,
+        "eligibleExpenses": "Eligible Code section 213(d) medical expenses other than premiums prohibited for an EBHRA",
+        "carryoverAllowed": false,
+        "carryoverRule": "No carryover is adopted; unused amounts remain Employer property after the applicable claims period."
+      },
+      "healthFsa": {
+        "documentId": "plan-document.component.common-funds-health-fsa",
+        "annualSalaryReduction": 1000,
+        "annualCashableFlexElected": 1200,
+        "annualTrueEmployerContribution": 1200,
+        "annualMaximumBenefit": 3400,
+        "uniformCoverage": true,
+        "eligibleExpenses": "Eligible Code section 213(d) medical expenses permitted by the adopted Health FSA schedule",
+        "carryoverAllowed": false,
+        "gracePeriodAllowed": false,
+        "unusedAmountRule": "After the claims runout, unused amounts are forfeited and remain or revert to the Employer or Plan, subject to applicable law."
+      },
+      "endingBalance": {
+        "defaultRule": "No component carries over by default. After timely claims are paid, unused amounts remain or revert to the Employer or Plan, subject to applicable law.",
+        "employerPropertySubjectToLaw": true
+      },
+      "operationalSchedules": []
+    },
+    "ptcPlan": {
+      "document": { "version": "1.0", "effectiveDate": "2027-01-01" },
+      "employerAleStatus": "non-ale",
+      "mecOfferDocumentId": "plan-document.benefit-appendix.self-funded-basic-mec",
+      "ptcParticipantsMustDeclineMec": true,
+      "employerSponsoredBenefits": "Dental, vision, and separately adopted excepted benefits",
+      "monthlyUnrestrictedTaxableAllowance": 150,
+      "payrollRemittanceAvailable": true,
+      "acknowledgmentDeadline": "Before the Marketplace coverage effective date"
+    },
+    "selfFundedDental": {
+      "document": { "version": "1.0", "appendixNumber": "DENTAL-1", "effectiveDate": "2027-01-01" },
+      "coverageTier": "family",
+      "deductiblePerEvent": 50,
+      "planCoinsurance": 0.75,
+      "individualAnnualMaximum": 1000,
+      "familyAnnualMaximum": 3000,
+      "claimFilingDeadlineDays": 180,
+      "operationalSchedules": []
+    },
     "selfFundedMec": {
-      "enrollmentTier": "employee-only",
+      "document": {
+        "version": "1.0",
+        "appendixNumber": "MEC-1",
+        "effectiveDate": "2027-01-01"
+      },
+      "enrollmentTier": "single",
       "isMec": true,
       "isMv": false,
       "isHdhp": true,
@@ -101,7 +248,8 @@
         "selfOnlyDeductible": 1700,
         "selfOnlyOutOfPocketMaximum": 8500
       },
-      "operationalSchedules": []
+      "operationalSchedules": [],
+      "optionalBenefits": []
     }
   },
   "custom": {}
