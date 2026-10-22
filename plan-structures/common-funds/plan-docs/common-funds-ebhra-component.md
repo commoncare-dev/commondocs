@@ -44,6 +44,16 @@ An advance-month value of `1` is the default and makes only the current accumula
 
 If recourse is elected, the Plan may recover reimbursement exceeding accrued allocations after participation ends only under a separately stated, legally permitted recovery method. Payroll withholding requires independent authorization where applicable. If recourse is not elected, the Employer bears the risk of an unrecovered accelerated reimbursement.
 
-# 5. End-of-year treatment
+# 5. Deductible restriction
+
+Deductible restriction enabled for this component: ${extensions.commonFunds.deductible.appliesToHra|yesNo}. The applicable deductible is identified by ${extensions.commonFunds.deductible.enrollmentScheduleReference}.
+
+When the restriction applies, the HRA pays an otherwise eligible expense only if the expense is incurred after the deductible has been satisfied, except as stated in the adopted before-deductible benefit rule: ${extensions.commonFunds.deductible.preDeductibleBenefitRule}
+
+Deductible accumulation rule: ${extensions.commonFunds.deductible.accumulationRule}<br>
+Credited expenses: ${extensions.commonFunds.deductible.creditedExpenses}<br>
+Required evidence: ${extensions.commonFunds.deductible.satisfactionEvidence}
+
+# 6. End-of-year treatment
 
 No carryover applies unless the adopted carryover field expressly says yes and the carryover rule states the amount and operation. Without an adopted carryover, unused amounts remain Employer property after the applicable claims period, subject to applicable Plan-asset law.

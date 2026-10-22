@@ -33,6 +33,7 @@ The result preserves a familiar participant choice structure while reducing reli
 - [How to understand the concept versus reality](#how-to-understand-the-concept-versus-reality)
 - [Bounded partial self-funding](#bounded-partial-self-funding)
 - [The participant experience](#the-participant-experience)
+- [How the CommonFunded deductible works](#how-the-commonfunded-deductible-works)
 - [Where the savings come from](#where-the-savings-come-from)
 - [How CommonCare identifies the optimal plan](#how-commoncare-identifies-the-optimal-plan)
 - [Why cash-pay routine care matters](#why-cash-pay-routine-care-matters)
@@ -153,12 +154,31 @@ Instead, CommonCare can display:
 | Participant sees | System administers |
 |---|---|
 | Normalized plan choices such as A, B, and C | The underlying insurance or alternative coverage options |
-| Effective deductible after CommonFunds | The contractual deductible plus available reimbursement |
+| Effective exposure after CommonFunds | The participant-paid threshold plus any cost sharing not reimbursed by CommonFunds |
 | Effective maximum exposure | Premium, cost sharing, and available benefit |
 | One enrollment process | Coverage enrollment, CommonFunds elections, and payroll instructions |
 | One place to understand costs | Separate legal and accounting components maintained behind the interface |
 
 The participant sees the terms that matter economically without having to perform the reconciliation personally.
+
+### How the CommonFunded deductible works
+
+CommonFunded does not change the deductible in the major-medical contract. Instead, it can annex the CommonFunds documents and apply a separate **CommonFunds reimbursement deductible** before the applicable HRA or Health FSA begins paying.
+
+For example, assume the major-medical coverage has a \$9,200 contractual deductible and the Enrollment Schedule gives the participant a \$1,500 CommonFunds deductible. The participant bears eligible expenses through the CommonFunds threshold. After that threshold is satisfied, CommonFunds can reimburse otherwise eligible expenses under its HRA or Health FSA terms, up to the amount available. The carrier continues to apply its own \$9,200 deductible throughout. The participant-facing result may resemble lower-deductible coverage, but the two legal deductibles remain distinct.
+
+The Enrollment Schedule supplies the participant-specific CommonFunds deductible. The annexed CommonFunds documents supply the durable rules:
+
+- Which HRA or Health FSA component is subject to the deductible;
+- Which expenses accumulate toward it;
+- Whether it is individual, family, embedded, or aggregate;
+- What evidence establishes satisfaction;
+- Whether preventive care, dental, vision, or another permitted category may be reimbursed before satisfaction; and
+- Which component pays once the threshold is met.
+
+The Health FSA point is deliberate. Federal tax guidance expressly recognizes a post-deductible Health FSA, not only a post-deductible HRA. Ordinary medical expenses incurred before the applicable deductible is satisfied do not become reimbursable merely because the participant meets the deductible later. [IRS Revenue Ruling 2004-45](https://www.irs.gov/pub/irs-drop/rr-04-45.pdf) · [IRS Notice 2008-59](https://www.irs.gov/pub/irs-drop/n-08-59.pdf) · [IRS Publication 969](https://www.irs.gov/publications/p969)
+
+When HSA eligibility is intended, every reimbursement component available to the participant must independently satisfy the applicable HSA-compatibility rules. A CommonFunds threshold used only to shape participant cost sharing is a plan-design term; it should not be represented as HSA-compatible unless it also meets the statutory minimum and all related restrictions.
 
 ---
 
@@ -166,7 +186,7 @@ The participant sees the terms that matter economically without having to perfor
 
 CommonFunded replaces a portion of fixed insurance premium with a capped reimbursement promise.
 
-Suppose a participant chooses coverage with a \$9,200 deductible. CommonFunds can reduce the participant’s effective exposure to \$0—or another employer-selected amount—even though the insurance contract still has a \$9,200 deductible.
+Suppose a participant chooses coverage with a \$9,200 deductible and the Enrollment Schedule states a \$1,500 CommonFunds deductible. After the participant satisfies that threshold, CommonFunds can reimburse the eligible layer above it—even though the insurance contract still has a \$9,200 deductible. The participant's modeled exposure to deductible-subject expenses can therefore be reduced toward \$1,500, subject to the available CommonFunds amount and governing component terms.
 
 The economic difference appears when the participant incurs less than \$9,200 of eligible expense:
 
@@ -442,6 +462,7 @@ The flexibility of CommonFunded comes from coordinating distinct components, not
 | Individual optimization | Recommend and enroll participants among valid available options; do not alter plan terms arbitrarily for an individual |
 | EBHRA availability | Apply the same terms to similarly situated individuals, regardless of health factor |
 | Health FSA risk | Apply uniform coverage and the governing forfeiture, carryover, and runout provisions |
+| CommonFunds deductible | Source the participant threshold from the Enrollment Schedule; apply the annexed component rules to accumulation, expense-date testing, pre-deductible benefits, substantiation, and payment |
 | Participant-facing normalization | Show effective economics without replacing or contradicting the underlying coverage documents |
 | Premium tax credits | Evaluate affordability, minimum value, ICHRA rules, household eligibility, and the actual employer offer |
 | Independent alternatives | Preserve voluntariness and employer neutrality when the option is not employer sponsored |

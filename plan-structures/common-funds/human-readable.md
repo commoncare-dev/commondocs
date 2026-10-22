@@ -32,6 +32,7 @@ For account administration, jump directly to the relevant rule. The foreword exp
 | Which annual limit applies? | [Component-specific limits](human-readable.md#5-annual-limits-are-component-specific) |
 | Is the displayed balance owned cash? | [Balance meaning](human-readable.md#6-what-a-commonfunds-balance-means) |
 | Which component can pay a claim? | [Separate claims rules](human-readable.md#7-one-balance-separate-claims-rules) |
+| How does the CommonFunds deductible work? | [Deductible concepts](human-readable.md#three-different-deductible-concepts) |
 | Does the design preserve HSA eligibility? | [HSA compatibility](human-readable.md#hsa-compatibility-is-a-separate-test) |
 | How do common plan structures differ in practice? | [Implementation examples](human-readable.md#common-implementation-examples) |
 | How should the benefit be explained? | [Interpretation guide](human-readable.md#8-practical-interpretation-guide) |
@@ -176,6 +177,20 @@ Participants see one CommonFunds balance while the system maintains multiple cla
 
 The calculation engine must never infer one value from the other. In particular, `ptc_marketplace` remains an `excepted` account pathway; PTC is not a third type of HRA.
 
+### Three different deductible concepts
+
+CommonFunds must keep three related concepts separate:
+
+1. **The major-medical deductible** belongs to the insurance policy or self-funded major-medical plan. It determines when that coverage begins paying deductible-subject claims.
+2. **The CommonFunds reimbursement deductible** belongs to the applicable HRA or Health FSA component. When adopted, it determines when CommonFunds begins reimbursing otherwise eligible expenses. Its amount comes from the participant's Enrollment Schedule, while the governing CommonFunds documents determine what accumulates, how satisfaction is proven, and which pre-deductible expenses remain payable.
+3. **The participant's effective exposure** is the amount the participant ultimately bears after insurance payments and CommonFunds reimbursements. It is an economic result, not a replacement legal deductible.
+
+These values may be equal, but they do not have to be. A major-medical plan might have a \$9,200 contractual deductible while CommonFunds begins reimbursing eligible claims only after the participant bears the first \$1,500. In that design, the insurance deductible remains \$9,200, the CommonFunds reimbursement deductible is \$1,500, and CommonFunds can reimburse the eligible layer between those points subject to its available amount and component rules.
+
+A deductible may apply to an HRA, a Health FSA, or both. The IRS expressly recognizes **post-deductible Health FSAs** as well as post-deductible HRAs. For a post-deductible component, an ordinary medical expense incurred before satisfaction is not made reimbursable by later satisfaction; the claims system tests the expense date. Preventive care and limited-purpose dental or vision expenses may be available earlier only when the governing design and applicable law permit them. [IRS Revenue Ruling 2004-45](https://www.irs.gov/pub/irs-drop/rr-04-45.pdf) · [IRS Notice 2008-59](https://www.irs.gov/pub/irs-drop/n-08-59.pdf) · [IRS Publication 969](https://www.irs.gov/publications/p969)
+
+The CommonFunds deductible is data-driven. The Enrollment Schedule supplies the participant-specific threshold; the plan configuration separately supplies the components to which it applies, the accumulation method, credited expenses, permitted pre-deductible benefits, and evidence required to establish satisfaction. This keeps class-specific amounts out of the plan document while preserving an auditable claims rule.
+
 ### HSA compatibility is a separate test
 
 PTC compatibility does not establish HSA compatibility. Neither does excepted-benefit status. These are separate legal tests serving different purposes:
@@ -255,7 +270,7 @@ Assume the applicable statutory minimum HDHP deductible is satisfied on June 18:
 | Ordinary office visit | June 20 | May be reimbursed, if otherwise eligible |
 | Dental or vision expense | May 5 | May be reimbursed if the arrangement includes a limited-purpose benefit |
 
-This design is recognized in IRS Revenue Ruling 2004-45 and IRS Notice 2008-59. IRS Publications 969 and 15-B provide current plain-language summaries. The governing plan documents and current law control if guidance or indexed thresholds change.
+This design is recognized in [IRS Revenue Ruling 2004-45](https://www.irs.gov/pub/irs-drop/rr-04-45.pdf) and [IRS Notice 2008-59](https://www.irs.gov/pub/irs-drop/n-08-59.pdf). [IRS Publication 969](https://www.irs.gov/publications/p969) provides a current plain-language summary. The governing plan documents and current law control if guidance or indexed thresholds change.
 
 ---
 

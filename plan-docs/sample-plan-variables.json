@@ -162,6 +162,11 @@
         "name": "CommonFunds",
         "documentId": "plan-document.benefit-appendix.common-funds"
       },
+      "annexedCommonFundsDocuments": [
+        { "name": "CommonFunds Coordinated Benefit Appendix", "documentId": "plan-document.benefit-appendix.common-funds" },
+        { "name": "CommonFunds Health FSA Component", "documentId": "plan-document.component.common-funds-health-fsa" },
+        { "name": "CommonFunds Excepted Benefit HRA Component", "documentId": "plan-document.component.common-funds-ebhra" }
+      ],
       "allocationObjective": "Coordinate lower-premium major medical coverage with CommonFunds amounts available for eligible Participant expenses.",
       "bandingDescription": "Allowance amounts may be adjusted by Participant age and applicable insurance rating area as shown in the Enrollment Schedule and permitted by the underlying coverage rules."
     },
@@ -180,6 +185,17 @@
         "monthlyCashableFlexCredit": 100,
         "annualDirectEmployeeFsaElection": 1000,
         "priorityRule": "Allocate genuinely Employer-only amounts to the EBHRA up to its limit, then allocate valid Employer Health FSA funding; treat cashable amounts elected into the Health FSA as salary reduction."
+      },
+      "deductible": {
+        "enabled": true,
+        "appliesToHealthFsa": true,
+        "appliesToHra": true,
+        "amountSource": "enrollment-schedule",
+        "enrollmentScheduleReference": "The deductible shown for the Participant's CommonFunded election in the applicable Enrollment Schedule",
+        "accumulationRule": "Individual deductible; eligible expenses incurred by the Participant accumulate during the coverage period.",
+        "creditedExpenses": "Expenses credited by the major medical coverage toward its in-network deductible, plus any additional eligible expenses expressly identified in the Enrollment Schedule.",
+        "preDeductibleBenefitRule": "No CommonFunds reimbursement before satisfaction of the deductible, except preventive care or another expense category expressly identified as available before the deductible and legally permitted for the applicable component.",
+        "satisfactionEvidence": "An explanation of benefits or other independent third-party record showing the service date, eligible expense, and amount credited toward the deductible."
       },
       "hra": {
         "componentEnabled": true,

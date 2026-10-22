@@ -31,6 +31,16 @@ The Plan Administrator will evaluate and administer this structure using the ado
 
 The Major Medical Coverage document controls eligibility, enrollment, covered services, exclusions, networks, cost sharing, claims, appeals, and continuation for that coverage. The CommonFunds document controls the legal character, allocation, availability, eligible expenses, forfeiture, reimbursement, and claims rules for CommonFunds. This overlay does not restate or enlarge either benefit.
 
+The following CommonFunds documents are annexed to and incorporated into this overlay to state the applicable reimbursement and deductible terms:
+
+| Annexed document | Document ID |
+|---|---|
+${#each extensions.commonFunded.annexedCommonFundsDocuments as annex}
+| ${annex.name} | `${annex.documentId}` |
+${/each}
+
+The annexed CommonFunds documents determine which component pays an expense and whether its deductible restriction applies. The applicable Enrollment Schedule states the deductible amount without restating that amount here.
+
 ## 3. CommonFunded allowance
 
 The allowance applicable to a Participant is stated in the Enrollment Schedule for that Participant's eligible class, coverage period, and coverage election. The Enrollment Schedule is incorporated by reference but the amount is not restated in this document. ${extensions.commonFunded.bandingDescription}

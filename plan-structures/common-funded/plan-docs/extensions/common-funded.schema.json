@@ -4,7 +4,7 @@
   "title": "CommonFunded Overlay Extension",
   "type": "object",
   "additionalProperties": false,
-  "required": ["document", "majorMedicalCoverage", "commonFunds", "allocationObjective", "bandingDescription"],
+  "required": ["document", "majorMedicalCoverage", "commonFunds", "annexedCommonFundsDocuments", "allocationObjective", "bandingDescription"],
   "properties": {
     "document": {
       "type": "object",
@@ -32,6 +32,19 @@
       "properties": {
         "name": { "type": "string", "minLength": 1 },
         "documentId": { "type": "string", "minLength": 1 }
+      }
+    },
+    "annexedCommonFundsDocuments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "documentId"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "documentId": { "type": "string", "minLength": 1 }
+        }
       }
     },
     "allocationObjective": { "type": "string", "minLength": 1 },

@@ -24,6 +24,16 @@ Your CommonFunds pathway is **${extensions.commonFunds.pathway|titleCase}**. The
 | Monthly cashable flex credit | ${extensions.commonFunds.allocation.monthlyCashableFlexCredit|currencyUSD}; treated as salary reduction if you elect it into the Health FSA, or taxable wages when validly elected as cash |
 | Direct annual Health FSA election | ${extensions.commonFunds.allocation.annualDirectEmployeeFsaElection|currencyUSD}; Participant salary reduction |
 
+### Your deductible
+
+CommonFunds pays an otherwise eligible expense only after the applicable deductible has been satisfied when the deductible restriction applies to the paying component. Your deductible is identified by ${extensions.commonFunds.deductible.enrollmentScheduleReference}.
+
+Accumulation rule: ${extensions.commonFunds.deductible.accumulationRule}<br>
+Expenses credited toward it: ${extensions.commonFunds.deductible.creditedExpenses}<br>
+Benefits available before it is met: ${extensions.commonFunds.deductible.preDeductibleBenefitRule}
+
+Deductible satisfaction is determined on the date an expense is incurred. An expense incurred too early does not become reimbursable merely because you meet the deductible later. Evidence required: ${extensions.commonFunds.deductible.satisfactionEvidence}
+
 ### Health FSA portion
 
 Your Health FSA maximum benefit is ${extensions.commonFunds.healthFsa.annualMaximumBenefit|currencyUSD}. The full maximum is available during your coverage period, reduced by prior reimbursements, even if payroll deductions collected to date are lower. This is the uniform coverage rule.

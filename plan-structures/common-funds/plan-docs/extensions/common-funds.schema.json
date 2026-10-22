@@ -4,7 +4,7 @@
   "title": "CommonFunds Coordinated Benefit Extension",
   "type": "object",
   "additionalProperties": false,
-  "required": ["document", "pathway", "groupCoverage", "allocation", "hra", "healthFsa", "endingBalance", "operationalSchedules"],
+  "required": ["document", "pathway", "groupCoverage", "allocation", "deductible", "hra", "healthFsa", "endingBalance", "operationalSchedules"],
   "properties": {
     "document": {
       "type": "object",
@@ -38,6 +38,22 @@
         "monthlyCashableFlexCredit": { "type": "number", "minimum": 0 },
         "annualDirectEmployeeFsaElection": { "type": "number", "minimum": 0 },
         "priorityRule": { "type": "string", "minLength": 1 }
+      }
+    },
+    "deductible": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "appliesToHealthFsa", "appliesToHra", "amountSource", "enrollmentScheduleReference", "accumulationRule", "creditedExpenses", "preDeductibleBenefitRule", "satisfactionEvidence"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "appliesToHealthFsa": { "type": "boolean" },
+        "appliesToHra": { "type": "boolean" },
+        "amountSource": { "const": "enrollment-schedule" },
+        "enrollmentScheduleReference": { "type": "string", "minLength": 1 },
+        "accumulationRule": { "type": "string", "minLength": 1 },
+        "creditedExpenses": { "type": "string", "minLength": 1 },
+        "preDeductibleBenefitRule": { "type": "string", "minLength": 1 },
+        "satisfactionEvidence": { "type": "string", "minLength": 1 }
       }
     },
     "hra": {
@@ -100,6 +116,17 @@
     }
   },
   "allOf": [
+    {
+      "if": { "properties": { "deductible": { "properties": { "enabled": { "const": true } }, "required": ["enabled"] } }, "required": ["deductible"] },
+      "then": { "properties": { "deductible": { "anyOf": [
+        { "properties": { "appliesToHealthFsa": { "const": true } }, "required": ["appliesToHealthFsa"] },
+        { "properties": { "appliesToHra": { "const": true } }, "required": ["appliesToHra"] }
+      ] } } }
+    },
+    {
+      "if": { "properties": { "deductible": { "properties": { "enabled": { "const": false } }, "required": ["enabled"] } }, "required": ["deductible"] },
+      "then": { "properties": { "deductible": { "properties": { "appliesToHealthFsa": { "const": false }, "appliesToHra": { "const": false } } } } }
+    },
     {
       "if": { "properties": { "pathway": { "const": "excepted" } }, "required": ["pathway"] },
       "then": { "properties": { "hra": { "properties": { "componentEnabled": { "const": true }, "componentType": { "const": "ebhra" }, "coordinatedCoverageType": { "const": "ebhra" } } } } }

@@ -74,14 +74,32 @@ The administrator will reject, redirect, or return an amount that cannot lawfull
 
 # 6. Claim routing
 
+## CommonFunds deductible
+
+| Term | Adopted rule |
+|---|---|
+| Deductible enabled | ${extensions.commonFunds.deductible.enabled|yesNo} |
+| Applies to Health FSA | ${extensions.commonFunds.deductible.appliesToHealthFsa|yesNo} |
+| Applies to HRA | ${extensions.commonFunds.deductible.appliesToHra|yesNo} |
+| Amount source | ${extensions.commonFunds.deductible.enrollmentScheduleReference} |
+| Accumulation | ${extensions.commonFunds.deductible.accumulationRule} |
+| Expenses credited | ${extensions.commonFunds.deductible.creditedExpenses} |
+| Before-deductible benefits | ${extensions.commonFunds.deductible.preDeductibleBenefitRule} |
+| Evidence of satisfaction | ${extensions.commonFunds.deductible.satisfactionEvidence} |
+
+When enabled for a component, CommonFunds does not reimburse an expense incurred before the applicable deductible is satisfied unless the expense falls within the adopted before-deductible benefit rule. An expense does not become reimbursable later merely because the Participant subsequently satisfies the deductible. The Plan Administrator must determine deductible status as of the date the expense was incurred and retain the evidence used.
+
+For a Health FSA intended to preserve HSA eligibility, the restriction is administered as a post-deductible Health FSA: before the applicable statutory minimum deductible is satisfied, it may reimburse only preventive care or another category permitted without destroying HSA eligibility. The Enrollment Schedule may use a higher deductible, but not a lower one, when HSA compatibility depends on the post-deductible design.
+
 The administrator applies the following sequence to every reimbursement request:
 
 1. Determine the expense, service date, claimant, and substantiation.
 2. Determine which adopted components could reimburse that expense.
-3. Apply any HSA-compatible limited-purpose or post-deductible restriction.
-4. Apply the component priority stated in the operational schedule.
-5. Confirm the component's available amount under its own availability rule.
-6. Pay from that component and retain the source, rule, and remaining component balance.
+3. Determine whether the CommonFunds deductible applied to that component was satisfied on the expense date.
+4. Apply any HSA-compatible limited-purpose or post-deductible restriction.
+5. Apply the component priority stated in the operational schedule.
+6. Confirm the component's available amount under its own availability rule.
+7. Pay from that component and retain the source, deductible determination, rule, and remaining component balance.
 
 The same expense may not be reimbursed twice. A Participant-facing combined balance is a display of component availability, not a new source of benefits.
 
