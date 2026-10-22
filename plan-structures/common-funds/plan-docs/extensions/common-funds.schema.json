@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/extensions/common-funds.schema.json",
+  "title": "CommonFunds Coordinated Benefit Extension",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["document", "pathway", "groupCoverage", "allocation", "hra", "healthFsa", "endingBalance", "operationalSchedules"],
+  "properties": {
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "appendixNumber", "effectiveDate"],
+      "properties": {
+        "version": { "type": "string", "minLength": 1 },
+        "appendixNumber": { "type": "string", "minLength": 1 },
+        "effectiveDate": { "type": "string", "format": "date" }
+      }
+    },
+    "pathway": { "enum": ["excepted", "ichra", "integrated-group"] },
+    "groupCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["isOffered", "documentId", "description", "isNonExcepted"],
+      "properties": {
+        "isOffered": { "const": true },
+        "documentId": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "isNonExcepted": { "const": true }
+      }
+    },
+    "allocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["monthlyEmployerOnlyAmount", "monthlyHealthOnlyFlexCredit", "monthlyCashableFlexCredit", "annualDirectEmployeeFsaElection", "priorityRule"],
+      "properties": {
+        "monthlyEmployerOnlyAmount": { "type": "number", "minimum": 0 },
+        "monthlyHealthOnlyFlexCredit": { "type": "number", "minimum": 0 },
+        "monthlyCashableFlexCredit": { "type": "number", "minimum": 0 },
+        "annualDirectEmployeeFsaElection": { "type": "number", "minimum": 0 },
+        "priorityRule": { "type": "string", "minLength": 1 }
+      }
+    },
+    "hra": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["componentEnabled", "componentType", "coordinatedCoverageType", "documentId", "annualEmployerAmount", "monthlyAccrual", "advanceMonths", "recourseForUnaccruedAdvance", "eligibleExpenses", "carryoverAllowed", "carryoverRule"],
+      "properties": {
+        "componentEnabled": { "type": "boolean" },
+        "componentType": { "enum": ["ebhra", "integrated-hra", "none"] },
+        "coordinatedCoverageType": { "enum": ["ebhra", "ichra", "integrated-hra", "none"] },
+        "documentId": { "type": "string", "minLength": 1 },
+        "annualEmployerAmount": { "type": "number", "minimum": 0 },
+        "monthlyAccrual": { "type": "number", "minimum": 0 },
+        "advanceMonths": { "type": "integer", "minimum": 1, "maximum": 12, "default": 1 },
+        "recourseForUnaccruedAdvance": { "type": "boolean" },
+        "eligibleExpenses": { "type": "string", "minLength": 1 },
+        "carryoverAllowed": { "type": "boolean", "default": false },
+        "carryoverRule": { "type": "string", "minLength": 1 }
+      }
+    },
+    "healthFsa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["documentId", "annualSalaryReduction", "annualCashableFlexElected", "annualTrueEmployerContribution", "annualMaximumBenefit", "uniformCoverage", "eligibleExpenses", "carryoverAllowed", "gracePeriodAllowed", "unusedAmountRule"],
+      "properties": {
+        "documentId": { "type": "string", "minLength": 1 },
+        "annualSalaryReduction": { "type": "number", "minimum": 0 },
+        "annualCashableFlexElected": { "type": "number", "minimum": 0 },
+        "annualTrueEmployerContribution": { "type": "number", "minimum": 0 },
+        "annualMaximumBenefit": { "type": "number", "minimum": 0 },
+        "uniformCoverage": { "const": true },
+        "eligibleExpenses": { "type": "string", "minLength": 1 },
+        "carryoverAllowed": { "type": "boolean", "default": false },
+        "gracePeriodAllowed": { "type": "boolean", "default": false },
+        "unusedAmountRule": { "type": "string", "minLength": 1 }
+      }
+    },
+    "endingBalance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["defaultRule", "employerPropertySubjectToLaw"],
+      "properties": {
+        "defaultRule": { "type": "string", "minLength": 1 },
+        "employerPropertySubjectToLaw": { "const": true }
+      }
+    },
+    "operationalSchedules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "version", "effectiveDate", "location"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "version": { "type": "string", "minLength": 1 },
+          "effectiveDate": { "type": "string", "format": "date" },
+          "location": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "pathway": { "const": "excepted" } }, "required": ["pathway"] },
+      "then": { "properties": { "hra": { "properties": { "componentEnabled": { "const": true }, "componentType": { "const": "ebhra" }, "coordinatedCoverageType": { "const": "ebhra" } } } } }
+    },
+    {
+      "if": { "properties": { "pathway": { "const": "ichra" } }, "required": ["pathway"] },
+      "then": { "properties": { "hra": { "properties": { "componentEnabled": { "const": false }, "componentType": { "const": "none" }, "coordinatedCoverageType": { "const": "ichra" } } } } }
+    },
+    {
+      "if": { "properties": { "pathway": { "const": "integrated-group" } }, "required": ["pathway"] },
+      "then": { "properties": { "hra": { "properties": { "componentType": { "enum": ["integrated-hra", "none"] }, "coordinatedCoverageType": { "enum": ["integrated-hra", "none"] } } } } }
+    }
+  ]
+}

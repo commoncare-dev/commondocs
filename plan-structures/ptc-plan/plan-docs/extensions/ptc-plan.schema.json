@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/extensions/ptc-plan.schema.json",
+  "title": "Premium Tax Credit Plan Strategy Extension",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["document", "employerAleStatus", "mecOfferDocumentId", "ptcParticipantsMustDeclineMec", "employerSponsoredBenefits", "monthlyUnrestrictedTaxableAllowance", "payrollRemittanceAvailable", "acknowledgmentDeadline"],
+  "properties": {
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "effectiveDate"],
+      "properties": {
+        "version": { "type": "string", "minLength": 1 },
+        "effectiveDate": { "type": "string", "format": "date" }
+      }
+    },
+    "employerAleStatus": { "enum": ["ale", "non-ale", "undetermined"] },
+    "mecOfferDocumentId": { "type": "string", "minLength": 1 },
+    "ptcParticipantsMustDeclineMec": { "type": "boolean" },
+    "employerSponsoredBenefits": { "type": "string", "minLength": 1 },
+    "monthlyUnrestrictedTaxableAllowance": { "type": "number", "minimum": 0 },
+    "payrollRemittanceAvailable": { "type": "boolean" },
+    "acknowledgmentDeadline": { "type": "string", "minLength": 1 }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/choice-ichra-plan-document-context.schema.json",
+  "title": "CommonCare CHOICE ICHRA Plan Document Context",
+  "allOf": [
+    { "$ref": "../../../plan-docs/plan-document-context.schema.json" },
+    {
+      "type": "object",
+      "properties": {
+        "extensions": {
+          "type": "object",
+          "required": ["choiceIchra"],
+          "properties": { "choiceIchra": { "$ref": "./extensions/choice-ichra.schema.json" } }
+        }
+      }
+    }
+  ]
+}

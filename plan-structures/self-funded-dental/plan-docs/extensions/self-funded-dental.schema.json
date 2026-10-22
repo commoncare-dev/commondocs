@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/extensions/self-funded-dental.schema.json",
+  "title": "CommonCare Self-Funded Dental Extension",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["document", "coverageTier", "deductiblePerEvent", "planCoinsurance", "individualAnnualMaximum", "familyAnnualMaximum", "claimFilingDeadlineDays", "operationalSchedules"],
+  "properties": {
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "appendixNumber", "effectiveDate"],
+      "properties": {
+        "version": { "type": "string", "minLength": 1 },
+        "appendixNumber": { "type": "string", "minLength": 1 },
+        "effectiveDate": { "type": "string", "format": "date" }
+      }
+    },
+    "coverageTier": { "enum": ["employee-only", "employee-plus-spouse", "employee-plus-child", "family"] },
+    "deductiblePerEvent": { "type": "number", "minimum": 0 },
+    "planCoinsurance": { "type": "number", "minimum": 0, "maximum": 1 },
+    "individualAnnualMaximum": { "type": "number", "minimum": 0 },
+    "familyAnnualMaximum": { "type": "number", "minimum": 0 },
+    "claimFilingDeadlineDays": { "type": "integer", "minimum": 1 },
+    "operationalSchedules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "version", "effectiveDate", "location"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "version": { "type": "string", "minLength": 1 },
+          "effectiveDate": { "type": "string", "format": "date" },
+          "location": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

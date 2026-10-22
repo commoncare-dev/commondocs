@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/extensions/choice-ichra.schema.json",
+  "title": "CommonCare CHOICE ICHRA Extension",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["document", "eligibleClass", "monthlyEmployerContribution", "contributionVariation", "permittedExpenses", "claimsRunoutDays", "operationalSchedules"],
+  "properties": {
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "appendixNumber", "effectiveDate"],
+      "properties": {
+        "version": { "type": "string", "minLength": 1 },
+        "appendixNumber": { "type": "string", "minLength": 1 },
+        "effectiveDate": { "type": "string", "format": "date" }
+      }
+    },
+    "eligibleClass": { "type": "string", "minLength": 1 },
+    "monthlyEmployerContribution": { "type": "number", "minimum": 0 },
+    "contributionVariation": { "type": "string", "minLength": 1 },
+    "permittedExpenses": { "type": "string", "minLength": 1 },
+    "claimsRunoutDays": { "type": "integer", "minimum": 0 },
+    "operationalSchedules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "version", "effectiveDate", "location"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "version": { "type": "string", "minLength": 1 },
+          "effectiveDate": { "type": "string", "format": "date" },
+          "location": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

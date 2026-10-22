@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/self-funded-dental-plan-document-context.schema.json",
+  "title": "CommonCare Self-Funded Dental Plan Document Context",
+  "allOf": [
+    { "$ref": "../../../plan-docs/plan-document-context.schema.json" },
+    {
+      "type": "object",
+      "properties": {
+        "extensions": {
+          "type": "object",
+          "required": ["selfFundedDental"],
+          "properties": {
+            "selfFundedDental": { "$ref": "./extensions/self-funded-dental.schema.json" }
+          }
+        }
+      }
+    }
+  ]
+}

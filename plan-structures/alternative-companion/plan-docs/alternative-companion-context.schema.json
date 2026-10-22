@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/alternative-companion-context.schema.json",
+  "title": "Alternative Companion Document Context",
+  "allOf": [
+    { "$ref": "../../../plan-docs/plan-document-context.schema.json" },
+    {
+      "type": "object",
+      "properties": {
+        "extensions": {
+          "type": "object",
+          "required": ["alternativeCompanion"],
+          "properties": { "alternativeCompanion": { "$ref": "./extensions/alternative-companion.schema.json" } }
+        }
+      }
+    }
+  ]
+}

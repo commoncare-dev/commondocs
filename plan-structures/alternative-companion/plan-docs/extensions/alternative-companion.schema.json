@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/extensions/alternative-companion.schema.json",
+  "title": "Alternative Companion Extension",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["document", "marketplaceOperator", "marketplaceContact", "postTaxPayrollAvailable", "monthlyUnrestrictedTaxableAllowance", "employerSponsoredPlanDescription", "acknowledgmentDeadline"],
+  "properties": {
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "effectiveDate"],
+      "properties": {
+        "version": { "type": "string", "minLength": 1 },
+        "effectiveDate": { "type": "string", "format": "date" }
+      }
+    },
+    "marketplaceOperator": { "type": "string", "minLength": 1 },
+    "marketplaceContact": { "type": "string", "minLength": 1 },
+    "postTaxPayrollAvailable": { "type": "boolean" },
+    "monthlyUnrestrictedTaxableAllowance": { "type": "number", "minimum": 0 },
+    "employerSponsoredPlanDescription": { "type": "string", "minLength": 1 },
+    "acknowledgmentDeadline": { "type": "string", "minLength": 1 }
+  }
+}
