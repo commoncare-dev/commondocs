@@ -1,4 +1,5 @@
 ---
+template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"appendix-a","role":"appendix","order":10,"required":true,"requires":["base"],"description":"Employer, plan, administrator, and eligibility information for the core welfare plan."}}}
 id: plan-document.core-appendix-a
 title: Employer and Plan Information
 kind: plan-document-template

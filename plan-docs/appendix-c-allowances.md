@@ -1,4 +1,5 @@
 ---
+template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"appendix-c","role":"appendix","order":30,"required":true,"requires":["base"],"description":"Incorporates the enrollment schedule into the core welfare plan."}}}
 id: plan-document.core-appendix-c
 title: Enrollment Schedule Incorporation
 kind: plan-document-template

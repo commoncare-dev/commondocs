@@ -1,4 +1,5 @@
 ---
+template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"appendix-b","role":"appendix","order":20,"required":true,"requires":["base"],"description":"Schedule identifying the benefit appendices adopted by the core welfare plan."}}}
 id: plan-document.core-appendix-b
 title: Adopted Benefit Appendices
 kind: plan-document-template
