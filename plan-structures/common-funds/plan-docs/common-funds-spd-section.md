@@ -1,4 +1,5 @@
 ---
+template_set: {"key":"common-funds","name":"CommonFunds","implementations":{"spd":{"key":"summary","role":"summary","order":10,"required":true,"description":"Participant-facing implementation of CommonFunds. Insert into the base SPD; do not insert the detailed governing components into the SPD."}}}
 id: spd-section.common-funds
 title: CommonFunds — SPD Section
 kind: spd-section-template

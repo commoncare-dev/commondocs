@@ -1,4 +1,5 @@
 ---
+template_set: {"key":"common-funds","name":"CommonFunds","implementations":{"plan-document":{"key":"health-fsa","role":"component","order":20,"required":true,"requires":["administration"],"description":"Governing Health FSA provisions for the CommonFunds concept, including the ICHRA pathway where the CommonFunds HRA component is disabled."}}}
 id: plan-document.component.common-funds-health-fsa
 title: CommonFunds Health FSA Component
 kind: benefit-component-template

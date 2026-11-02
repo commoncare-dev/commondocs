@@ -1,4 +1,5 @@
 ---
+template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"spd":{"key":"base","role":"base","order":0,"required":true,"description":"Base SPD containing the BENEFIT_SECTIONS insertion marker. Add the SPD-summary implementations of the applicable benefit concepts."}}}
 id: plan-document.spd
 title: CommonCare Welfare Benefit Plan — Summary Plan Description
 kind: spd-template

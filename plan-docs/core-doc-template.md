@@ -1,4 +1,5 @@
 ---
+template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"base","role":"base","order":0,"required":true,"description":"Base governing welfare plan document. Add the applicable benefit concepts and their governing components."}}}
 id: plan-document.core
 title: CommonCare Welfare Benefit Plan — Core Plan Document
 kind: plan-document-template

@@ -1,4 +1,5 @@
 ---
+template_set: {"key":"common-funds","name":"CommonFunds","implementations":{"plan-document":{"key":"administration","role":"appendix","order":10,"required":true,"requires":["health-fsa"],"description":"Adopt the coordinated administration provisions with the Health FSA component. Include the EBHRA component only when enabled in plan context."}}}
 id: plan-document.benefit-appendix.common-funds
 title: CommonFunds Coordinated Benefit Appendix
 kind: benefit-appendix

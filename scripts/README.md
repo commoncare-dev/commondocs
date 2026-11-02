@@ -68,3 +68,10 @@ node scripts/generate-spd.mjs \
 ```
 
 Both commands refuse to overwrite an existing output unless `--overwrite` is supplied.
+
+
+### Related document implementations
+
+CommonFunds' governing sources and SPD summary publish a `template_set` JSON flow value in their YAML front matter. They share the `common-funds` concept key, with member contracts under `implementations.plan-document` or `implementations.spd`. The core governing document and base SPD similarly share `welfare-plan`. These declare roles, suggested ordering, required/optional participation, dependencies within an output, and conditional applicability. They do not change the rendering scripts or select a project's sources automatically.
+
+CommonCare imports this metadata onto doc-templates. Governing generation selects the administration appendix and Health FSA component, adding the EBHRA component only when `extensions.commonFunds.hra.componentEnabled` is true. SPD generation selects the base SPD and the CommonFunds summary instead of its governing components. Other applicable benefit concepts may supply additional summary sections. A caller still chooses the output, provides complete context, and explicitly selects its sources.
