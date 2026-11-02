@@ -82,7 +82,7 @@ The administrator will reject, redirect, or return an amount that cannot lawfull
 | Deductible enabled | ${extensions.commonFunds.deductible.enabled|yesNo} |
 | Applies to Health FSA | ${extensions.commonFunds.deductible.appliesToHealthFsa|yesNo} |
 | Applies to HRA | ${extensions.commonFunds.deductible.appliesToHra|yesNo} |
-| Amount source | ${extensions.commonFunds.deductible.enrollmentScheduleReference} |
+| Amount source | the participant's coverage and enrollment records |
 | Accumulation | ${extensions.commonFunds.deductible.accumulationRule} |
 | Expenses credited | ${extensions.commonFunds.deductible.creditedExpenses} |
 | Before-deductible benefits | ${extensions.commonFunds.deductible.preDeductibleBenefitRule} |
@@ -90,7 +90,7 @@ The administrator will reject, redirect, or return an amount that cannot lawfull
 
 When enabled for a component, CommonFunds does not reimburse an expense incurred before the applicable deductible is satisfied unless the expense falls within the adopted before-deductible benefit rule. An expense does not become reimbursable later merely because the Participant subsequently satisfies the deductible. The Plan Administrator must determine deductible status as of the date the expense was incurred and retain the evidence used.
 
-For a Health FSA intended to preserve HSA eligibility, the restriction is administered as a post-deductible Health FSA: before the applicable statutory minimum deductible is satisfied, it may reimburse only preventive care or another category permitted without destroying HSA eligibility. The Enrollment Schedule may use a higher deductible, but not a lower one, when HSA compatibility depends on the post-deductible design.
+For a Health FSA intended to preserve HSA eligibility, the restriction is administered as a post-deductible Health FSA: before the applicable statutory minimum deductible is satisfied, it may reimburse only preventive care or another category permitted without destroying HSA eligibility. The Plan's benefit terms and enrollment records may state a higher deductible, but not a lower one, when HSA compatibility depends on the post-deductible design.
 
 The administrator applies the following sequence to every reimbursement request:
 

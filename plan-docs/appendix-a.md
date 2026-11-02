@@ -17,7 +17,6 @@ This Appendix A forms part of the CommonCare Welfare Benefit Plan Core Plan Docu
 | Employer address | ${sponsor.address.formatted} |
 | Plan name | ${plan.name} |
 | ERISA plan number | ${plan.erisaPlanNumber} |
-| Original effective date | ${plan.originalEffectiveDate} |
 | Current effective date | ${plan.effectiveDate} |
 | Plan Year | ${plan.year.startDate} through ${plan.year.endDate} |
 | Plan Administrator | ${administration.planAdministrator.name} |
@@ -27,29 +26,16 @@ This Appendix A forms part of the CommonCare Welfare Benefit Plan Core Plan Docu
 | Named fiduciary, if different | ${administration.namedFiduciary.name} |
 | General eligibility class | ${eligibility.defaultClass.description} |
 | General waiting period | ${eligibility.defaultWaitingPeriod.description} |
-| General enrollment procedure | ${eligibility.enrollmentProcedure} |
-| General coverage termination rule | ${eligibility.coverageTermination} |
-| Rehire rule | ${eligibility.rehireRule} |
-| Approved-leave rule | ${eligibility.leaveRule} |
-| Cafeteria plan document | ${cafeteriaPlan.documentId} |
-| Cafeteria plan election period | ${cafeteriaPlan.electionPeriod} |
+| Section 125 elections | Integrated into this Plan and administered through its enrollment workflow. |
 
 ## Participating Employers
 
 The following employers have adopted the Plan for their eligible Employees. The Plan Sponsor is not repeated in this table.
 
-| Participating Employer | Employer ID | Effective date | Termination date | Status |
-|---|---|---|---|---|
+| Participating Employer | Employer ID |
+|---|---|
 ${#each sponsor.participatingEmployers as participatingEmployer}
-| ${participatingEmployer.legalName} | ${participatingEmployer.id} | ${participatingEmployer.effectiveDate|dateLong} | ${participatingEmployer.terminationDate|dateLongOrDash} | ${participatingEmployer.status|titleCase} |
+| ${participatingEmployer.legalName} | ${participatingEmployer.id} |
 ${/each}
 
-## Material administrative delegations
-
-| Service provider | Delegated function | Contact |
-|---|---|---|
-${#each administration.materialServiceProviders as serviceProvider}
-| ${serviceProvider.name} | ${serviceProvider.function} | ${serviceProvider.contact.formatted} |
-${/each}
-
-Benefit-specific eligibility, contributions, and other terms stated in an adopted Benefit Appendix control for that benefit.
+The Core Plan Document states the general enrollment, termination, rehire, and leave rules. Benefit-specific eligibility, contributions, and other terms stated in an adopted Benefit Appendix control for that benefit.

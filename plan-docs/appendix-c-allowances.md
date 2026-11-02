@@ -1,23 +1,15 @@
 ---
-template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"appendix-c","role":"appendix","order":30,"required":true,"requires":["base"],"description":"Incorporates the enrollment schedule into the core welfare plan."}}}
+template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"appendix-c","role":"appendix","order":30,"required":true,"requires":["base"],"description":"Connects plan contribution settings and participant enrollment records to the core welfare plan; no separate schedule document is required."}}}
 id: plan-document.core-appendix-c
-title: Enrollment Schedule Incorporation
+title: Contributions and Enrollment Records
 kind: plan-document-template
 context_schema: ./plan-document-context.schema.json
 ---
 
-# Appendix C — Enrollment Schedule Incorporation
+# Appendix C — Contributions and Enrollment Records
 
-The Plan incorporates the following Enrollment Schedule by reference:
+Employer contribution methods and amounts are maintained in the Plan's contribution settings. The enrollment workflow applies those settings to the participant's eligible class, offered benefits, coverage period, and elections. Participant enrollment confirmations and payroll records show the resulting employer and employee contributions.
 
-| Schedule | Document ID |
-|---|---|
-| ${enrollmentSchedule.name} | `${enrollmentSchedule.documentId}` |
+These settings and records are maintained with the Plan in CommonCare and communicated through the enrollment workflow. No separate enrollment schedule document, document ID, or manually restated list of participant amounts is required by this Appendix.
 
-${enrollmentSchedule.description}
-
-The applicable Enrollment Schedule states the allowance or contribution amount offered to a Participant based on the Participant's eligible class, coverage period, coverage election, and any lawful age, geographic, or family-tier adjustment. Amounts are intentionally not restated in this Plan Document or a Benefit Appendix.
-
-${enrollmentSchedule.deliveryMethod}
-
-The Plan Administrator will preserve the schedule and eligibility inputs applicable to each coverage period. The Enrollment Schedule controls the amount offered to the Participant. The Core Plan Document and applicable Benefit Appendix control eligibility, elections, legal and tax classification, permitted use, availability, claims, forfeiture, and all other substantive terms of the benefit.
+The Plan Administrator retains the settings and enrollment records applicable to each coverage period. This Appendix records how those amounts are administered; it does not turn a contribution amount into a benefit component limit or change the legal or tax classification of a benefit. The Core Plan Document, integrated Section 125 provisions, and applicable benefit provisions govern eligibility, permitted elections, availability, claims, and forfeiture.

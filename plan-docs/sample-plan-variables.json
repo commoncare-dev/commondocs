@@ -91,7 +91,6 @@
   },
   "cafeteriaPlan": {
     "isEstablished": true,
-    "documentId": "plan-document.cafeteria-plan.example-company",
     "electionPeriod": "The Plan Year, with initial and annual elections made before coverage begins.",
     "midyearElectionProcedure": "Request a permitted prospective election change through the Employer's benefits enrollment system within the period stated in the cafeteria plan."
   },

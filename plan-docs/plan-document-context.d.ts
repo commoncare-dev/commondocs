@@ -90,9 +90,8 @@ export interface PlanDocumentContext {
     rehireRule: string;
     leaveRule: string;
   };
-  cafeteriaPlan: {
+  cafeteriaPlan?: {
     isEstablished: boolean;
-    documentId: string;
     electionPeriod: string;
     midyearElectionProcedure: string;
   };

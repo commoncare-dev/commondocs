@@ -3,14 +3,22 @@
   "$id": "https://commoncare.dev/schemas/common-funds-plan-document-context.schema.json",
   "title": "CommonFunds Plan Document Context",
   "allOf": [
-    { "$ref": "../../../plan-docs/plan-document-context.schema.json" },
+    {
+      "$ref": "../../../plan-docs/plan-document-context.schema.json"
+    },
     {
       "type": "object",
       "properties": {
         "extensions": {
           "type": "object",
-          "required": ["commonFunds"],
-          "properties": { "commonFunds": { "$ref": "./extensions/common-funds.schema.json" } }
+          "required": [
+            "commonFunds"
+          ],
+          "properties": {
+            "commonFunds": {
+              "$ref": "./extensions/common-funds.schema.json"
+            }
+          }
         }
       }
     }

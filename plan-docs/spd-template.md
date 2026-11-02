@@ -10,6 +10,7 @@ source_documents:
   - ./core-doc-template.md
   - ./appendix-a.md
   - ./appendix-b.md
+  - ./appendix-d-section-125.md
 ---
 
 # ${plan.name}
@@ -39,10 +40,10 @@ The governing Plan consists of the Core Plan Document and adopted Benefit Append
 
 # Benefits included in the Plan
 
-| Benefit | What it provides | How it is funded | Effective date |
-|---|---|---|---|
+| Employer-sponsored benefit |
+|---|
 ${#each benefits as benefit}
-| ${benefit.name} | ${benefit.participantSummary} | ${benefit.fundingDescription} | ${benefit.effectiveDate|dateLong} |
+| ${benefit.name} |
 ${/each}
 
 The table identifies adopted Plan components. You receive only a benefit for which you satisfy the applicable eligibility and enrollment rules.
@@ -65,9 +66,9 @@ A benefit section below controls if it states a different or more specific rule.
 
 # Elections and contributions
 
-The Plan's election period is: ${cafeteriaPlan.electionPeriod}
+Appendix D of the Core Plan Document contains the Plan's Section 125 election and employer flex-credit terms. Your available Employer allowance, allocation restrictions, any cashable amount, and resulting payroll deductions are communicated through enrollment. Complete your elections by the communicated deadline.
 
-To request a permitted midyear change: ${cafeteriaPlan.midyearElectionProcedure}
+Request a permitted midyear change through the Plan's enrollment workflow, with the required supporting information. Elections remain binding except for changes permitted by the Plan and applicable law.
 
 The applicable benefit section or contribution schedule states the Employer contribution, Participant contribution, and whether payroll deductions are intended to be pre-tax or after-tax. Tax treatment depends on the governing arrangement and applicable law.
 
@@ -81,12 +82,7 @@ Use the benefit-specific instructions above when they identify a different claim
 
 | Question or request | Contact |
 |---|---|
-| Eligibility and enrollment | ${administration.serviceContacts.eligibility.formatted} |
-| Claims | ${administration.serviceContacts.claims.formatted} |
-| Appeals | ${administration.serviceContacts.appeals.formatted} |
-| Provider navigation | ${administration.serviceContacts.providerNavigation.formatted} |
-| Continuation coverage | ${administration.serviceContacts.continuation.formatted} |
-| Privacy | ${administration.serviceContacts.privacy.formatted} |
+| Plan questions and help finding benefit-specific contacts | ${administration.planAdministrator.contact.formatted} |
 
 An adverse benefit determination will explain the material reason, identify the controlling term, state what additional information is needed when applicable, and describe how to request review. The benefit-specific claims procedure controls filing methods and deadlines.
 

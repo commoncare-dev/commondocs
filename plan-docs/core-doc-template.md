@@ -1,5 +1,5 @@
 ---
-template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"base","role":"base","order":0,"required":true,"description":"Base governing welfare plan document. Include required Appendices A, B, and C, then add applicable benefit concepts and their governing components.","requires":["appendix-a","appendix-b","appendix-c"]}}}
+template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"base","role":"base","order":0,"required":true,"description":"Base governing welfare plan document. Include required Appendices A, B, C, and D, then add applicable benefit concepts and their governing components.","requires":["appendix-a","appendix-b","appendix-c","appendix-d"]}}}
 id: plan-document.core
 title: CommonCare Welfare Benefit Plan — Core Plan Document
 kind: plan-document-template
@@ -13,8 +13,6 @@ spd_source: true
 # ${plan.name}
 ## Core Plan Document
 
-Document ID: ${plan.document.id}<br>
-Version: ${plan.document.version}<br>
 Effective Date: ${plan.effectiveDate|dateLong}
 
 ---
@@ -23,7 +21,7 @@ Effective Date: ${plan.effectiveDate|dateLong}
 
 ${sponsor.legalName} (the **Employer** or **Plan Sponsor**) establishes ${plan.name} (the **Plan**) to provide the employee welfare benefits identified in adopted Benefit Appendices.
 
-The Plan consists of this Core Plan Document, Appendix A, Appendix B, Appendix C, each adopted Benefit Appendix, and each schedule or amendment incorporated by those documents. Together, those materials state the governing terms of the Plan. The Plan is intended to be maintained as an employee welfare benefit plan under ERISA except to the extent an adopted Benefit Appendix identifies a benefit to which ERISA does not apply.
+The Plan consists of this Core Plan Document, Appendix A, Appendix B, Appendix C, Appendix D, each adopted Benefit Appendix, and each schedule or amendment incorporated by those documents. Together, those materials state the governing terms of the Plan. The Plan is intended to be maintained as an employee welfare benefit plan under ERISA except to the extent an adopted Benefit Appendix identifies a benefit to which ERISA does not apply.
 
 This Core Plan Document states rules shared across the Plan. A Benefit Appendix states the promise, eligibility rules, funding method, limitations, claims rules, and other terms specific to a benefit. A schedule may state operational or frequently changing details only within the authority granted by the document incorporating it.
 
@@ -86,7 +84,7 @@ Appendix A states the Plan's general rules for rehire, transfer between eligibil
 
 # 6. Elections and Section 125 treatment
 
-When the Employer permits pre-tax payment or another qualified benefit election, the election is administered under the Employer's cafeteria plan identified in Appendix A. The cafeteria plan—not this general reference—states the binding-election rule, permitted midyear changes, election deadlines, salary-reduction terms, and correction authority.
+Appendix D establishes the Plan's Section 125 arrangement and states the governing terms for qualified-benefit elections, prospective salary reductions, employer flex credits, contribution limits, and permitted election changes. Employer-specific allowances and cashability restrictions are communicated through enrollment and retained with the applicable records as described in Appendix C. Appendix D forms part of this Plan's written terms.
 
 An election affects only the benefits and coverage period to which it applies. Tax treatment depends on the Code, the terms of the applicable arrangement, and the facts applicable to the Participant. The Plan Administrator may make or require a prospective correction reasonably necessary to administer an election, satisfy nondiscrimination requirements, correct payroll treatment, or preserve the intended tax treatment, subject to applicable law.
 
@@ -155,7 +153,7 @@ An SPD explains the Plan but does not silently create, remove, or amend a benefi
 
 # 14. Nondiscrimination
 
-The Plan is intended to comply with each nondiscrimination rule applicable to an adopted benefit. The Plan Administrator may require reasonable election, contribution, or benefit adjustments permitted by law to correct or prevent a test failure. The applicable Benefit Appendix or cafeteria-plan document identifies the affected test and correction method.
+The Plan is intended to comply with each nondiscrimination rule applicable to an adopted benefit. The Plan Administrator may require reasonable election, contribution, or benefit adjustments permitted by law to correct or prevent a test failure. The applicable Benefit Appendix or the integrated Section 125 provisions of this Plan identifies the affected test and correction method.
 
 # 15. Amendment and termination
 
@@ -177,7 +175,7 @@ The Plan is governed by applicable federal law, including ERISA and the Code whe
 
 # 18. Incorporation and execution
 
-Appendix A states the Plan's adopted identifying and administrative information. Appendix B identifies the Benefit Appendices currently adopted into the Plan. Appendix C incorporates the Enrollment Schedule that states the allowances or contributions applicable to eligible Participants without restating class-specific amounts in the Plan Document. A document not identified or otherwise validly adopted is not part of the Plan merely because it is distributed with Plan materials.
+Appendix A states the Plan's adopted identifying and administrative information. Appendix B identifies the Benefit Appendices currently adopted into the Plan. Appendix D states the Section 125 election and flex-credit terms. Appendix C describes how the Plan's contribution settings and participant enrollment records establish applicable contributions without requiring a separately authored schedule. A document not identified or otherwise validly adopted is not part of the Plan merely because it is distributed with Plan materials.
 
 This Core Plan Document becomes effective on the effective date stated above and remains in effect until amended, replaced, or terminated according to the Plan.
 

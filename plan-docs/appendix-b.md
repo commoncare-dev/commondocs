@@ -10,10 +10,10 @@ context_schema: ./plan-document-context.schema.json
 
 This Appendix B forms part of the CommonCare Welfare Benefit Plan Core Plan Document and identifies the Benefit Appendices currently adopted by the Employer.
 
-| Benefit Appendix | Stable ID | Version | Effective date | Termination date | Status |
-|---|---|---:|---|---|---|
+| Employer-sponsored benefit |
+|---|
 ${#each benefits as benefit}
-| ${benefit.name} | `${benefit.documentId}` | ${benefit.version} | ${benefit.effectiveDate|dateLong} | ${benefit.terminationDate|dateLongOrDash} | ${benefit.status|titleCase} |
+| ${benefit.name} |
 ${/each}
 
-An appendix not listed here is not adopted as part of the Plan unless another written adoption instrument clearly provides otherwise.
+This list reflects the employer-sponsored benefits included in the Plan. Individual marketplace options and other arrangements outside group sponsorship are excluded. The Plan and applicable benefit provisions govern; contribution settings and enrollment records identify the terms and coverage periods applicable to each participant.

@@ -44,7 +44,7 @@ The benefit pays preventive dental care and a defined share of covered nonpreven
 
 # Eligibility and enrollment
 
-Employees in the eligible class may enroll after satisfying the waiting period. Dependents may enroll only when included in the adopted coverage tier and when they satisfy the Plan's dependent rules. General enrollment, election-change, leave, rehire, and termination rules appear in the Core Plan Document, Appendix A, and the applicable cafeteria plan.
+Employees in the eligible class may enroll after satisfying the waiting period. Dependents may enroll only when included in the adopted coverage tier and when they satisfy the Plan's dependent rules. General enrollment, election-change, leave, rehire, and termination rules appear in the Core Plan Document, Appendix A, and Appendix D of the Core Plan Document.
 
 # Funding
 

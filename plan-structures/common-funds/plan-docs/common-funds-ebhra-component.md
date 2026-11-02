@@ -47,7 +47,7 @@ If recourse is elected, the Plan may recover reimbursement exceeding accrued all
 
 # 5. Deductible restriction
 
-Deductible restriction enabled for this component: ${extensions.commonFunds.deductible.appliesToHra|yesNo}. The applicable deductible is identified by ${extensions.commonFunds.deductible.enrollmentScheduleReference}.
+Deductible restriction enabled for this component: ${extensions.commonFunds.deductible.appliesToHra|yesNo}. The applicable deductible is identified by the participant's coverage and enrollment records.
 
 When the restriction applies, the HRA pays an otherwise eligible expense only if the expense is incurred after the deductible has been satisfied, except as stated in the adopted before-deductible benefit rule: ${extensions.commonFunds.deductible.preDeductibleBenefitRule}
 

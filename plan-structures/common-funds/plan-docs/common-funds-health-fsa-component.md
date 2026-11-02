@@ -13,7 +13,7 @@ context_schema: ./common-funds-plan-document-context.schema.json
 
 # 1. Establishment
 
-The Employer establishes this Health Flexible Spending Arrangement (**Health FSA**) component under the cafeteria plan identified in Appendix A. This component receives Participant salary reduction and any true Employer contribution validly allocated to it.
+The Employer establishes this Health Flexible Spending Arrangement (**Health FSA**) component under the Section 125 arrangement established in Appendix D of the Core Plan Document. This component receives Participant salary reduction and any true Employer contribution validly allocated to it.
 
 # 2. Adopted terms
 
@@ -42,7 +42,7 @@ Uniform coverage allocates risk in both directions. The Plan bears the risk that
 
 # 5. Deductible restriction
 
-This Health FSA may be designed as a post-deductible Health FSA. Deductible restriction enabled for this component: ${extensions.commonFunds.deductible.appliesToHealthFsa|yesNo}. The applicable deductible is identified by ${extensions.commonFunds.deductible.enrollmentScheduleReference}.
+This Health FSA may be designed as a post-deductible Health FSA. Deductible restriction enabled for this component: ${extensions.commonFunds.deductible.appliesToHealthFsa|yesNo}. The applicable deductible is identified by the participant's coverage and enrollment records.
 
 When the restriction applies, the Health FSA pays an otherwise eligible expense only if the expense is incurred after the deductible has been satisfied, except as stated in the adopted before-deductible benefit rule: ${extensions.commonFunds.deductible.preDeductibleBenefitRule}
 

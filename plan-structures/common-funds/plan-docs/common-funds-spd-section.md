@@ -27,7 +27,7 @@ Your CommonFunds pathway is **${extensions.commonFunds.pathway|titleCase}**. The
 
 ### Your deductible
 
-CommonFunds pays an otherwise eligible expense only after the applicable deductible has been satisfied when the deductible restriction applies to the paying component. Your deductible is identified by ${extensions.commonFunds.deductible.enrollmentScheduleReference}.
+CommonFunds pays an otherwise eligible expense only after the applicable deductible has been satisfied when the deductible restriction applies to the paying component. Your deductible is identified by the participant's coverage and enrollment records.
 
 Accumulation rule: ${extensions.commonFunds.deductible.accumulationRule}<br>
 Expenses credited toward it: ${extensions.commonFunds.deductible.creditedExpenses}<br>
