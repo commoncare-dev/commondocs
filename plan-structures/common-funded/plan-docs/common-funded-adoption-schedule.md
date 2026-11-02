@@ -27,7 +27,6 @@ The Plan Administrator will evaluate and administer this structure using the ado
 |---|---|---|
 | Major medical coverage (${extensions.commonFunded.majorMedicalCoverage.coverageType|titleCase}) | ${extensions.commonFunded.majorMedicalCoverage.name} | `${extensions.commonFunded.majorMedicalCoverage.documentId}` |
 | Flexible expense funding | ${extensions.commonFunded.commonFunds.name} | `${extensions.commonFunded.commonFunds.documentId}` |
-| Participant-specific allowance | ${enrollmentSchedule.name} | `${enrollmentSchedule.documentId}` |
 
 The Major Medical Coverage document controls eligibility, enrollment, covered services, exclusions, networks, cost sharing, claims, appeals, and continuation for that coverage. The CommonFunds document controls the legal character, allocation, availability, eligible expenses, forfeiture, reimbursement, and claims rules for CommonFunds. This overlay does not restate or enlarge either benefit.
 
@@ -39,14 +38,14 @@ ${#each extensions.commonFunded.annexedCommonFundsDocuments as annex}
 | ${annex.name} | `${annex.documentId}` |
 ${/each}
 
-The annexed CommonFunds documents determine which component pays an expense and whether its deductible restriction applies. The applicable Enrollment Schedule states the deductible amount without restating that amount here.
+The annexed CommonFunds documents determine which component pays an expense and whether its deductible restriction applies. The participant's coverage and enrollment records identify any applicable deductible amount.
 
 ## 3. CommonFunded allowance
 
-The allowance applicable to a Participant is stated in the Enrollment Schedule for that Participant's eligible class, coverage period, and coverage election. The Enrollment Schedule is incorporated by reference but the amount is not restated in this document. ${extensions.commonFunded.bandingDescription}
+The allowance applicable to a Participant is calculated through the Plan's contribution settings and disclosed through enrollment for that Participant's eligible class, coverage period, and coverage election. Appendix C of the Core Plan Document describes the retained settings and enrollment records; no separate schedule-document reference is used. ${extensions.commonFunded.bandingDescription}
 
 Age or location adjustments must be administered consistently for similarly situated Participants and only to the extent permitted by the law and rules governing the underlying coverage. The Plan Administrator will retain the applicable age, location, class, formula, and effective-date inputs for each allowance determination.
 
 ## 4. Coordination and controlling terms
 
-Enrollment in, eligibility for, or payment under one underlying benefit does not itself establish entitlement under the other. Each claim or payment must be assigned to the component legally responsible for it. If this overlay conflicts with an underlying coverage document, that underlying document controls the benefit it governs; the applicable Enrollment Schedule controls the Participant's allowance amount.
+Enrollment in, eligibility for, or payment under one underlying benefit does not itself establish entitlement under the other. Each claim or payment must be assigned to the component legally responsible for it. If this overlay conflicts with an underlying coverage document, that underlying document controls the benefit it governs; the contribution settings and enrollment disclosures applicable to the coverage period establish the Participant's allowance amount.
