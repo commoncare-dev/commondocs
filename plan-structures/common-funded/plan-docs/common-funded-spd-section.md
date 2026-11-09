@@ -4,20 +4,20 @@ template_set: {"key":"common-funded","name":"CommonFunded","implementations":{"s
 id: spd-section.common-funded
 title: CommonFunded — SPD Section
 kind: spd-section-template
-context_schema: ./common-funded-plan-document-context.schema.json
+context_schema: ../../../plan-docs/plan-document-context.schema.json
 source_document: ./common-funded-adoption-schedule.md
 ---
 
 ## How CommonFunded works
 
-CommonFunded pairs ${extensions.commonFunded.majorMedicalCoverage.name} with ${extensions.commonFunded.commonFunds.name}. The arrangement is designed to lower your combined exposure to premiums and eligible out-of-pocket costs by pairing major medical protection with a flexible allowance, instead of putting the maximum available benefit dollars into higher premiums for lower-deductible coverage.
+CommonFunded pairs the adopted major medical coverage with CommonFunds. The arrangement is designed to lower your combined exposure to premiums and eligible out-of-pocket costs by pairing major medical protection with a flexible allowance, instead of putting the maximum available benefit dollars into higher premiums for lower-deductible coverage.
 
 Your combined cost is determined by the premium you pay, the allowance that applies to you, your healthcare use, and the cost-sharing terms of your major medical coverage. The coverage terms and your enrollment disclosures give you the information needed to compare that combined cost.
 
-Your major medical coverage is governed by `${extensions.commonFunded.majorMedicalCoverage.documentId}`. That document explains covered services, exclusions, networks, cost sharing, claims, and appeals. CommonFunds is governed by `${extensions.commonFunded.commonFunds.documentId}`. That document explains how funds are classified, when they become available, eligible expenses, reimbursements, claims, and any forfeiture or carryover rule.
+Your major medical coverage is governed by its adopted coverage document and contract. That document explains covered services, exclusions, networks, cost sharing, claims, and appeals. CommonFunds is governed by its adopted administration appendix and applicable component documents. That document explains how funds are classified, when they become available, eligible expenses, reimbursements, claims, and any forfeiture or carryover rule.
 
 CommonFunds may pay only after the deductible shown in your coverage and enrollment records is met. The annexed CommonFunds component documents explain which expenses count toward the deductible, when it is treated as satisfied, which component pays, and whether any permitted expense is available before the deductible.
 
 Your available allowance, allocation restrictions, any cashable amount, and resulting payroll contributions are shown during enrollment, based on the eligible class, coverage period, and coverage election that apply to you. The Plan retains the applicable settings and election records as described in Appendix C of the Core Plan Document.
 
-${extensions.commonFunded.bandingDescription} The underlying coverage rules control whether and how those adjustments may be used. If an amount in an enrollment display conflicts with this SPD, the applicable contribution settings and enrollment disclosures establish the amount and the governing benefit document controls how the allowance may be used.
+Any adopted age, location, or other permitted adjustments are recorded in the applicable coverage and contribution settings. The underlying coverage rules control whether and how those adjustments may be used. If an amount in an enrollment display conflicts with this SPD, the applicable contribution settings and enrollment disclosures establish the amount and the governing benefit document controls how the allowance may be used.

@@ -14,13 +14,13 @@ This is employee-only, self-funded coverage intended to provide minimum essentia
 
 | Term | Description |
 |---|---|
-| Effective date | ${extensions.selfFundedMec.document.effectiveDate|dateLong} |
+| Effective date | ${plan.year.startDate|dateLong} |
 | Eligible class | ${eligibility.defaultClass.description} |
 | Waiting period | ${eligibility.defaultWaitingPeriod.description} |
-| Enrollment tier | ${extensions.selfFundedMec.enrollmentTier|titleCase} |
-| Intended MEC status | ${extensions.selfFundedMec.isMec|yesNo} |
-| Intended minimum-value status | ${extensions.selfFundedMec.isMv|yesNo} |
-| Intended HDHP status | ${extensions.selfFundedMec.isHdhp|yesNo} |
+| Enrollment tier | As stated in the adopted coverage and enrollment records |
+| Intended MEC status | Intended to provide MEC as described in the governing benefit document |
+| Intended minimum-value status | Not promised; any determination follows the governing coverage terms |
+| Intended HDHP status | Only if established by the adopted coverage terms; not implied by MEC status |
 
 ### What is covered
 

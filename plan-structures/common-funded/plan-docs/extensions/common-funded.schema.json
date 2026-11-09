@@ -4,34 +4,65 @@
   "title": "CommonFunded Overlay Extension",
   "type": "object",
   "additionalProperties": false,
-  "required": ["document", "majorMedicalCoverage", "commonFunds", "annexedCommonFundsDocuments", "allocationObjective", "bandingDescription"],
+  "required": [
+    "document"
+  ],
   "properties": {
     "document": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["version", "effectiveDate"],
+      "required": [
+        "version",
+        "effectiveDate"
+      ],
       "properties": {
-        "version": { "type": "string", "minLength": 1 },
-        "effectiveDate": { "type": "string", "format": "date" }
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effectiveDate": {
+          "type": "string",
+          "format": "date"
+        }
       }
     },
     "majorMedicalCoverage": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name", "documentId", "coverageType"],
+      "required": [],
       "properties": {
-        "name": { "type": "string", "minLength": 1 },
-        "documentId": { "type": "string", "minLength": 1 },
-        "coverageType": { "type": "string", "enum": ["choice-ichra", "self-funded", "group-insurance-contract", "other"] }
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "documentId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "coverageType": {
+          "type": "string",
+          "enum": [
+            "choice-ichra",
+            "self-funded",
+            "group-insurance-contract",
+            "other"
+          ]
+        }
       }
     },
     "commonFunds": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name", "documentId"],
+      "required": [],
       "properties": {
-        "name": { "type": "string", "minLength": 1 },
-        "documentId": { "type": "string", "minLength": 1 }
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "documentId": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
     "annexedCommonFundsDocuments": {
@@ -40,14 +71,29 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["name", "documentId"],
+        "required": [
+          "name",
+          "documentId"
+        ],
         "properties": {
-          "name": { "type": "string", "minLength": 1 },
-          "documentId": { "type": "string", "minLength": 1 }
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "documentId": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       }
     },
-    "allocationObjective": { "type": "string", "minLength": 1 },
-    "bandingDescription": { "type": "string", "minLength": 1 }
+    "allocationObjective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bandingDescription": {
+      "type": "string",
+      "minLength": 1
+    }
   }
 }

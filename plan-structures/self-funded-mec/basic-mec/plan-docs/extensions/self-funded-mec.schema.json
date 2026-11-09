@@ -5,12 +5,7 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "document",
-    "enrollmentTier",
-    "isMec",
-    "isMv",
-    "isHdhp",
-    "optionalBenefits"
+    "document"
   ],
   "properties": {
     "document": {

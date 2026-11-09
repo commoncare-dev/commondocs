@@ -6,7 +6,7 @@ title: CommonFunds DCAP — Participant Summary
 kind: spd-section-template
 status: template
 version: "1.0"
-context_schema: ./common-funds-dcap-plan-document-context.schema.json
+context_schema: ../../../plan-docs/plan-document-context.schema.json
 source_document: ./common-funds-dcap-rider.md
 ---
 
@@ -16,11 +16,11 @@ This summary applies only when the Employer expressly adopts the DCAP rider. It 
 
 | Feature | Your program |
 |---|---|
-| Effective date | ${extensions.commonFundsDcap.effectiveDate|dateLong} |
-| Adopted total annual Plan limit | ${extensions.commonFundsDcap.annualPlanLimit|currencyUSD}, subject to lower applicable limits |
+| Effective date | ${plan.year.startDate|dateLong} |
+| Adopted total annual Plan limit | The limit stated in the adopted DCAP terms and enrollment records, subject to lower applicable limits |
 | Availability | Credited contributions actually available, less prior reimbursements; no Health FSA uniform coverage |
 | Eligible care | Work-related care satisfying Sections 21 and 129 for an eligible child under 13 or qualifying person incapable of self-care |
-| Claim filing | Within ${extensions.commonFundsDcap.claimRunoutDays} days after the earlier of Plan Year end or end of participation, for care provided during participation |
+| Claim filing | Within the filing period stated in the adopted DCAP terms after the earlier of Plan Year end or end of participation, for care provided during participation |
 | Carryover, grace period, and post-termination spend-down | None adopted |
 | Claims / review | ${administration.serviceContacts.claims.formatted} / ${administration.serviceContacts.appeals.formatted} |
 
