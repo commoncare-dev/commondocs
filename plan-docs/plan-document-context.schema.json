@@ -237,7 +237,7 @@
     "spd": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["documentId", "version", "issueDate", "audience", "howToUse", "statementOfErisaRightsApplies"],
+      "required": [],
       "properties": {
         "documentId": { "$ref": "#/$defs/nonEmptyString" },
         "version": { "$ref": "#/$defs/nonEmptyString" },

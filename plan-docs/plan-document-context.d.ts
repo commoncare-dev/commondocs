@@ -102,13 +102,13 @@ export interface PlanDocumentContext {
     deliveryMethod: string;
   };
   benefits: BenefitReference[];
-  spd: {
-    documentId: string;
-    version: string;
-    issueDate: string;
-    audience: string;
-    howToUse: string;
-    statementOfErisaRightsApplies: boolean;
+  spd?: {
+    documentId?: string;
+    version?: string;
+    issueDate?: string;
+    audience?: string;
+    howToUse?: string;
+    statementOfErisaRightsApplies?: boolean;
   };
   adoption: {
     method: "platform" | "written-instrument" | "resolution" | "other";
