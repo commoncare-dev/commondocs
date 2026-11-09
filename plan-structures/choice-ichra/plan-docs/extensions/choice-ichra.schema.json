@@ -5,12 +5,7 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "document",
-    "eligibleClass",
-    "monthlyEmployerContribution",
-    "contributionVariation",
-    "permittedExpenses",
-    "claimsRunoutDays"
+    "document"
   ],
   "properties": {
     "document": {
@@ -38,11 +33,13 @@
     },
     "eligibleClass": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "Mapped from the Plan eligibility/class rules; not an independent document election."
     },
     "monthlyEmployerContribution": {
       "type": "number",
-      "minimum": 0
+      "minimum": 0,
+      "default": 1
     },
     "contributionVariation": {
       "type": "string",
@@ -54,7 +51,8 @@
     },
     "claimsRunoutDays": {
       "type": "integer",
-      "minimum": 0
+      "minimum": 0,
+      "default": 180
     }
   }
 }

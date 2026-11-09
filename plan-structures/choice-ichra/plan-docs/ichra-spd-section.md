@@ -12,6 +12,8 @@ source_document: ./ichra-benefit-appendix.md
 
 The ICHRA provides up to ${extensions.choiceIchra.monthlyEmployerContribution|currencyUSD} per month to reimburse ${extensions.choiceIchra.permittedExpenses}. You must be in the eligible class—${extensions.choiceIchra.eligibleClass}—and maintain qualifying individual health insurance or Medicare for every month reimbursed.
 
+The standard ICHRA amount is $1 per month unless the Employer adopts a different amount. Separate health-flex credits, general flex credits, and salary reductions are not added to the ICHRA amount merely because they appear together in enrollment. Your required ICHRA notice and enrollment records identify your actual maximum.
+
 You may opt out at least annually. An ICHRA offer can affect premium-tax-credit eligibility even if you decline it. CommonCare may help compare coverage, but you select and enroll in your individual policy and the insurer controls that policy.
 
 Submit reimbursement claims to ${administration.serviceContacts.claims.formatted}. Claims must include proof of the expense and required coverage. Unused amounts are not payable as cash. Claims incurred before participation ends may be submitted for ${extensions.choiceIchra.claimsRunoutDays} days afterward.

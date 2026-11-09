@@ -140,6 +140,12 @@ CHOICE separates four functions that are often collapsed into one employer contr
 
 These components can appear together in one enrollment and payroll experience while retaining their separate legal classifications.
 
+### Document defaults
+
+The standard CHOICE ICHRA amount is **$1 per month** unless the Employer adopts a different ICHRA amount. It is separate from health-flex credits, general flex credits, and Employee salary reductions. The required notice must still disclose the actual Participant-specific ICHRA maximum. Document generation maps an expressly configured flat coverage-specific ICHRA contribution when present; otherwise it uses the $1 default rather than treating a general allowance or percentage contribution as the ICHRA amount.
+
+Document setup uses the Plan's eligible class, standard same-terms wording, qualifying individual/Medicare premium reimbursement (additional expenses only if expressly adopted), and a 180-day post-participation claims runout unless another runout term is expressly adopted. These are standard document terms, not mandatory custom answers.
+
 ### How ICHRA contribution amounts may vary
 
 An ICHRA must be offered on the same terms to every employee within a permitted employee class. In general, that means every participant in the class receives the same maximum dollar amount. The rules expressly permit the maximum to increase based on:

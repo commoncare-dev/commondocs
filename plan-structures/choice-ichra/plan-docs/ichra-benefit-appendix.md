@@ -22,7 +22,7 @@ The Employer adopts this Appendix to establish an individual coverage health rei
 
 CHOICE may provide analysis and navigation concerning available individual coverage. A recommendation does not change the Participant's responsibility to select and enroll in coverage or change the terms of the policy selected.
 
-# Employer elections
+# Adopted coverage terms
 
 | Term | Election |
 |---|---|
@@ -33,9 +33,11 @@ CHOICE may provide analysis and navigation concerning available individual cover
 | Reimbursable expenses | ${extensions.choiceIchra.permittedExpenses} |
 | Claims runout after participation ends | ${extensions.choiceIchra.claimsRunoutDays} days |
 
+The standard CHOICE ICHRA amount is $1 per month unless the Employer adopts a different ICHRA amount. Health-flex credits, general flex credits, and Employee salary reductions remain separate funding sources; displaying a combined allowance does not increase this ICHRA amount. Enrollment disclosures and the required ICHRA notice must state the actual Participant-specific maximum, including any lawful proration.
+
 # Eligibility and class treatment
 
-An Employee may participate only while included in the eligible class and otherwise satisfying the Plan's requirements. Class definitions and contribution variations must be administered uniformly according to the adopted schedule and applicable ICHRA class rules. If the Employer offers a traditional group health plan to another class, the class structure and any minimum-class-size requirement must be satisfied before the Plan Year begins.
+An Employee may participate only while included in the eligible class and otherwise satisfying the Plan's requirements. Class definitions and contribution variations follow the adopted Plan settings and participant notices and must be administered uniformly and applicable ICHRA class rules. If the Employer offers a traditional group health plan to another class, the class structure and any minimum-class-size requirement must be satisfied before the Plan Year begins.
 
 # Individual coverage requirement
 
@@ -49,7 +51,7 @@ An eligible Employee may decline or opt out of the ICHRA at least annually and w
 
 # Reimbursements
 
-The ICHRA reimburses only expenses within the scope elected above, incurred during participation, properly substantiated, and not reimbursed from another source. Insurance-premium reimbursement is made after proof of the expense and required individual coverage. The Participant may not receive cash instead of an unused ICHRA amount.
+The ICHRA reimburses only expenses within the scope stated above, incurred during participation, properly substantiated, and not reimbursed from another source. Insurance-premium reimbursement is made after proof of the expense and required individual coverage. The Participant may not receive cash instead of an unused ICHRA amount.
 
 Reimbursements are limited to the Participant's available balance. Unused amounts remain Employer assets unless the adopted schedule expressly provides lawful carryover. The arrangement is unfunded and paid from Employer general assets unless a schedule identifies another funding method.
 

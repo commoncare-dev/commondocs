@@ -5,8 +5,8 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/choice-ichra/human-readable.md
 metadata_document: plan-structures/choice-ichra/metadata.yaml
-source_commit: d07c308a6937440611fef88df6a2bf52403c6b81
-source_sha256: e313131b7076f7145e5b995d73a9bfbf3b726912c70f152abb9515f5a3740df2
+source_commit: 2eb5a041ab7e0e85ce25d4dcd1bf54f659a209f1
+source_sha256: 346948dbf36718b17ad1d6978c9d79692d85d5a4daffbfc80448f7473c705b55
 metadata_sha256: 9b769bd2d50959f57bfb1171245902f69217a5d83d81470045364dd1d8325bb9
 generation_method: deterministic-markdown-conversion
 canonical_source: false
@@ -260,6 +260,14 @@ CHOICE separates four functions that are often collapsed into one employer contr
 
 
 These components can appear together in one enrollment and payroll experience while retaining their separate legal classifications.
+
+<!-- record_id: product.choice.document-defaults -->
+### Document defaults
+> Retrieval context: CHOICE — The CHOICE funding architecture > Document defaults
+
+The standard CHOICE ICHRA amount is **$1 per month** unless the Employer adopts a different ICHRA amount. It is separate from health-flex credits, general flex credits, and Employee salary reductions. The required notice must still disclose the actual Participant-specific ICHRA maximum. Document generation maps an expressly configured flat coverage-specific ICHRA contribution when present; otherwise it uses the $1 default rather than treating a general allowance or percentage contribution as the ICHRA amount.
+
+Document setup uses the Plan's eligible class, standard same-terms wording, qualifying individual/Medicare premium reimbursement (additional expenses only if expressly adopted), and a 180-day post-participation claims runout unless another runout term is expressly adopted. These are standard document terms, not mandatory custom answers.
 
 <!-- record_id: product.choice.how-ichra-contribution-amounts-may-vary -->
 ### How ICHRA contribution amounts may vary
