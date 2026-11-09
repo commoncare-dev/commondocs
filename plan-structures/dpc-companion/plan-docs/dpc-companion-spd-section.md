@@ -1,4 +1,5 @@
 ---
+class: spd
 template_set: {"key":"dpc-companion","name":"DPC Companion","implementations":{"spd":{"key":"summary","role":"summary","order":10,"required":true,"description":"Participant summary of the DPC coverage election and its relationship to the applicable underlying benefits."}}}
 id: spd-section.dpc-companion
 title: DPC Companion — SPD Section

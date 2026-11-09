@@ -1,4 +1,5 @@
 ---
+class: spd
 template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"spd":{"key":"base","role":"base","order":0,"required":true,"description":"Base SPD containing the BENEFIT_SECTIONS insertion marker. Add the SPD-summary implementations of the applicable benefit concepts."}}}
 id: plan-document.spd
 title: CommonCare Welfare Benefit Plan — Summary Plan Description
@@ -63,9 +64,9 @@ To enroll: ${eligibility.enrollmentProcedure}
 
 General coverage termination rule: ${eligibility.coverageTermination}
 
-Rehire rule: ${eligibility.rehireRule}
+After rehire or return to an eligible class, participation and elections follow the applicable benefit's eligibility, enrollment, and reinstatement terms, subject to statutory restoration rights and Section 125 election rules. ${eligibility.rehireRule|optional}
 
-Approved leaves: ${eligibility.leaveRule}
+During approved leave, coverage and contributions follow the applicable benefit terms and the Core Plan Document's protected-leave and restoration provisions. ${eligibility.leaveRule|optional}
 
 Where FMLA applies, eligible group health coverage may continue during qualifying leave on the same terms, including the Employer's contribution. During unpaid leave, you may discontinue coverage or payments as permitted by FMLA. You may pay your share after tax as payments come due; voluntary prepayment or an agreed catch-up arrangement may also be available under the Plan's rules. Required notices and grace periods apply before coverage ends for nonpayment. Coverage discontinued during leave is restored on qualifying return as required by law, including applicable Health FSA rights.
 

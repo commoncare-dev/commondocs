@@ -1,4 +1,5 @@
 ---
+class: coverage
 template_set: {"key":"common-funds","name":"CommonFunds","implementations":{"plan-document":{"key":"administration","role":"appendix","order":10,"required":true,"description":"Shared CommonFunds administration. Add only the component documents enabled in the plan."}}}
 id: plan-document.benefit-appendix.common-funds
 title: CommonFunds Coordinated Benefit Appendix
@@ -29,6 +30,8 @@ CommonFunds does not assume that every dollar has the same source or rules. The 
 Any coordinated medical coverage is identified in the Plan's coverage and enrollment records. Each component remains subject to its applicable eligibility and coverage conditions. Where an EBHRA requires an offer of non-excepted group health coverage, the Employer must make that coverage available to eligible Employees.
 
 # 3. Components
+
+An optional DCAP rider may be expressly adopted alongside the medical components. It establishes a separate Section 129 dependent care program with its own accounting, limits, expense rules, availability, claims review, and forfeitures. The medical deductible and medical-component balance rules below do not apply to DCAP. Its governing rider controls; CommonFunds adoption alone does not enable it.
 
 The Health FSA and HRA portions are independently offered according to the CommonFunds coverage settings. The component provisions included in this Plan govern the portions offered. A separately offered ICHRA is governed by its own terms; the EBHRA component does not apply when an ICHRA is coordinated.
 

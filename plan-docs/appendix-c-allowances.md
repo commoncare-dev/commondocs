@@ -1,4 +1,5 @@
 ---
+class: core
 template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"appendix-c","role":"appendix","order":30,"required":true,"requires":["base"],"description":"Connects plan contribution settings and participant enrollment records to the core welfare plan; no separate schedule document is required."}}}
 id: plan-document.core-appendix-c
 title: Contributions and Enrollment Records

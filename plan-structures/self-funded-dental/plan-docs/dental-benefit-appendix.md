@@ -1,4 +1,5 @@
 ---
+class: coverage
 template_set: {"key":"self-funded-dental","name":"Self-Funded Dental","implementations":{"plan-document":{"key":"administration","role":"appendix","order":10,"required":true,"description":"Self-funded limited-scope dental benefit terms."}}}
 id: plan-document.benefit-appendix.self-funded-dental
 title: CommonCare Self-Funded Dental Benefit Appendix

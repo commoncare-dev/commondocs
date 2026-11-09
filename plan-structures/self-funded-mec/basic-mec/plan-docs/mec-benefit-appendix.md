@@ -1,4 +1,5 @@
 ---
+class: coverage
 template_set: {"key":"self-funded-basic-mec","name":"Self-Funded Basic MEC","implementations":{"plan-document":{"key":"administration","role":"appendix","order":10,"required":true,"description":"Self-funded Basic MEC benefit terms."}}}
 id: plan-document.benefit-appendix.self-funded-basic-mec
 title: Self-Funded Basic MEC Benefit Appendix

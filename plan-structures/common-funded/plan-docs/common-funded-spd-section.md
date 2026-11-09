@@ -1,4 +1,5 @@
 ---
+class: spd
 template_set: {"key":"common-funded","name":"CommonFunded","implementations":{"spd":{"key":"summary","role":"summary","order":10,"required":true,"description":"Participant-facing CommonFunded summary for the base SPD; excludes detailed governing provisions."}}}
 id: spd-section.common-funded
 title: CommonFunded — SPD Section

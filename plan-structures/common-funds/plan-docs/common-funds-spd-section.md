@@ -1,4 +1,5 @@
 ---
+class: spd
 template_set: {"key":"common-funds","name":"CommonFunds","implementations":{"spd":{"key":"summary","role":"summary","order":10,"required":true,"description":"Participant-facing implementation of CommonFunds. Insert into the base SPD; do not insert the detailed governing components into the SPD."}}}
 id: spd-section.common-funds
 title: CommonFunds — SPD Section
@@ -14,7 +15,7 @@ source_documents:
 
 CommonFunds is one coordinated way to receive and use several kinds of health-benefit funding. The administrator classifies each amount before applying a limit or paying a claim. This lets Employer-only funding and Participant-directed funding use the rules appropriate to each without requiring you to navigate separate systems.
 
-Your offered components and any coordinated medical coverage are identified in your coverage and enrollment records.
+Your offered components and any coordinated medical coverage are identified in your coverage and enrollment records. If the Employer separately adopts a dependent care assistance rider, its accompanying participant summary governs that nonmedical account. Medical deductibles, Health FSA uniform coverage, HRA availability, and medical year-end settings do not apply to dependent care assistance.
 
 ### Contributions and elections
 

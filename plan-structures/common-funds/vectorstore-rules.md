@@ -5,8 +5,8 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/common-funds/human-readable.md
 metadata_document: plan-structures/common-funds/metadata.yaml
-source_commit: 4d7391725cf1bfc53f946c93a8150e0a330d3bae
-source_sha256: 9a96a6fa8bd438112973047ab9e9ce21711d275a0b5980cea76fa83b7e85f9b8
+source_commit: 04820c4d79fd9dffcc4e4f4db9774fe231f57ad3
+source_sha256: e69461ee7ae4e0de73f2f302a4a62d564185a1b0e14f90fdd4562130d3e567cf
 metadata_sha256: ec2da998690975e56cbbb2bd3f6e342a3faf67c8c52304eb46facc31c41c1c61
 generation_method: deterministic-commonfunds-split-conversion
 canonical_source: false
@@ -1880,7 +1880,7 @@ For every claim, determine:
 - Use instead: “The Health FSA transfers risk in both directions: employers bear early-claim risk and participants bear forfeiture risk.”
 
 #### “settings.advanceMonths means the participant owes repayment.”
-<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.settings.advanceMonths-means-the-participant-owes-repayment; record_type: table-row -->
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.settings-advancemonths-means-the-participant-owes-repayment; record_type: table-row -->
 - Context: CommonFunds — 8. Practical interpretation guide
 - Avoid: “`settings.advanceMonths` means the participant owes repayment.”
 - Use instead: “The property controls availability timing; recourse depends on the plan document.”
@@ -1988,3 +1988,16 @@ For every claim, determine:
 > **CommonFunds unifies accounting and user experience. Compliance remains component-specific.**
 
 Always preserve the distinction between the participant experience, accounting structure, statutory classification, tax treatment, and governing plan document.
+
+
+<!-- record_id: product.commonfunds.rules.vector-store.optional-dependent-care-assistance-rider -->
+## Optional dependent care assistance rider
+> Retrieval context: CommonFunds — Optional dependent care assistance rider
+
+An Employer may expressly adopt `plan-docs/common-funds-dcap-rider.md` alongside CommonFunds and furnish `common-funds-dcap-spd-section.md`. This is an identifiable separate written Section 129 program, not additional Health FSA or HRA coverage. The `common-funds` set exposes optional governing slot `dcap` and optional participant-summary slot `dcap-summary`. Select both applicable sources explicitly; neither is automatically enabled for existing CommonFunds plans. The governing slot requires `administration`; the summary requires `summary`. Both use `extensions.commonFundsDcap` and its composed schema. Publication of templates does not configure payroll or implement DCAP claims accounting.
+
+The rider permits qualifying work-related dependent care; it pays only from available credited contributions, has no uniform coverage, no medical deductible, no inter-account transfers, and adopts no carryover, grace period, or post-termination spend-down. Its annual Plan limit and filing period are supplied as document terms. Employee elections and actual Employer contributions remain in enrollment and contribution records. For tax years beginning after 2025 the federal exclusion is $7,500 ($3,750 married filing separately), subject to earned income, household aggregation, and other statutory rules. Health FSA and EBHRA limits do not apply. The rider contains separate substantiation, related-provider restrictions, nondiscrimination testing, January 31 reporting, and contractual review provisions.
+
+The reimbursement-only DCAP is intended to remain outside ERISA under DOL Advisory Opinion 88-10A. Its inclusion in a combined participant document does not confer ERISA health-claim or COBRA rights. Different actual benefit arrangements require review of their classification.
+
+References: [Code Section 129](https://www.law.cornell.edu/uscode/text/26/129), [IRS Publication 503](https://www.irs.gov/publications/p503), [DOL Advisory Opinion 88-10A](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/advisory-opinions/1988-10a).

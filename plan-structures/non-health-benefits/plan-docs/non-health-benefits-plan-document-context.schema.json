@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/non-health-benefits-plan-document-context.schema.json",
+  "title": "Non-Health Welfare Benefits Context",
+  "allOf": [
+    {
+      "$ref": "../../../plan-docs/plan-document-context.schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "extensions"
+      ],
+      "properties": {
+        "extensions": {
+          "type": "object",
+          "required": [
+            "nonHealthBenefits"
+          ],
+          "properties": {
+            "nonHealthBenefits": {
+              "$ref": "./extensions/non-health-benefits.schema.json"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

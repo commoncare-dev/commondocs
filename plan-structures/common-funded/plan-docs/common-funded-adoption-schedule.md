@@ -1,4 +1,5 @@
 ---
+class: coverage
 template_set: {"key":"common-funded","name":"CommonFunded","implementations":{"plan-document":{"key":"administration","role":"component","order":10,"required":true,"description":"Coordination overlay for the separately adopted major medical coverage and CommonFunds benefits."}}}
 id: plan-document.package-adoption.common-funded
 title: CommonFunded Coverage Overlay

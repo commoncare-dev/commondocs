@@ -1,4 +1,5 @@
 ---
+class: coverage
 template_set: {"key":"common-funds","name":"CommonFunds","implementations":{"plan-document":{"key":"health-fsa","role":"component","order":20,"required":true,"requires":["administration"],"description":"Governing Health FSA provisions, required only when the optional Health FSA component is enabled.","includeWhen":{"path":"extensions.commonFunds.healthFsa.componentEnabled","equals":true}}}}
 id: plan-document.component.common-funds-health-fsa
 title: CommonFunds Health FSA Component

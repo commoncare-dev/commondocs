@@ -1,4 +1,5 @@
 ---
+class: spd
 template_set: {"key":"self-funded-basic-mec","name":"Self-Funded Basic MEC","implementations":{"spd":{"key":"summary","role":"summary","order":10,"required":true,"description":"Participant-facing Self-Funded Basic MEC summary for the base SPD; excludes detailed governing provisions."}}}
 id: spd-section.self-funded-basic-mec
 title: Self-Funded Basic MEC — SPD Section

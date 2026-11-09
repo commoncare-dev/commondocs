@@ -1,5 +1,6 @@
 ---
-template_set: {"key":"common-funds","name":"CommonFunds","implementations":{"plan-document":{"key":"ebhra","role":"component","order":30,"required":true,"requires":["administration"],"includeWhen":{"path":"extensions.commonFunds.hra.componentEnabled","equals":true},"description":"Governing EBHRA provisions, applicable only when the CommonFunds HRA component is enabled. The ICHRA itself uses its separate governing document."}}}
+class: coverage
+template_set: {"key":"common-funds","name":"CommonFunds","implementations":{"plan-document":{"key":"ebhra","role":"component","order":30,"required":true,"requires":["administration"],"includeWhen":{"path":"extensions.commonFunds.hra.componentType","equals":"ebhra"},"description":"Governing EBHRA provisions, applicable only when the adopted CommonFunds HRA type is EBHRA; not for disabled, integrated-HRA, or ICHRA arrangements. The ICHRA itself uses its separate governing document."}}}
 id: plan-document.component.common-funds-ebhra
 title: CommonFunds Excepted Benefit HRA Component
 kind: benefit-component-template

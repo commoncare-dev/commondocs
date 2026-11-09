@@ -10,6 +10,9 @@ Each product structure has the document form appropriate to what the product act
 | CommonFunds | `plan-structures/common-funds/plan-docs/common-funds-administration-appendix.md`, `common-funds-health-fsa-component.md`, and conditional `common-funds-ebhra-component.md` | `common-funds-spd-section.md` | One coordinated benefit with separately governed Health FSA and pathway-dependent HRA components |
 | DPC Companion | `plan-structures/dpc-companion/plan-docs/dpc-companion-benefit-appendix.md` | `dpc-companion-spd-section.md` | Independent DPC coverage election; allowance and employee contributions retain their classification under the applicable adopted benefits |
 | Premium Tax Credit Plan | `plan-structures/ptc-plan/plan-docs/ptc-strategy-adoption-schedule.md` | `ptc-participant-notice.md` | Employer strategy and participant notice; Marketplace policy remains outside the Plan |
+| Non-Health Benefits | `plan-structures/non-health-benefits/plan-docs/non-health-benefits-appendix.md` | `non-health-benefits-spd-section.md` | Insured life, AD&D, disability, and identified non-health welfare wrap; actual contracts incorporated |
+| DCAP (standalone) | `plan-structures/dcap/plan-docs/dcap-benefit-appendix.md` | `dcap-participant-summary.md` | Independently adopted Section 129 program; no CommonFunds coverage required |
+| CommonFunds DCAP (optional) | `plan-structures/common-funds/plan-docs/common-funds-dcap-rider.md` | `common-funds-dcap-spd-section.md` | Separate Section 129 program and clearly identified non-ERISA participant summary alongside CommonFunds |
 | Self-Funded Dental | `plan-structures/self-funded-dental/plan-docs/dental-benefit-appendix.md` | `dental-spd-section.md` | Benefit Appendix and SPD section |
 | Self-Funded Vision | `plan-structures/self-funded-vision/plan-docs/vision-benefit-appendix.md` | `vision-spd-section.md` | Benefit Appendix and SPD section |
 | Self-Funded Basic MEC | `plan-structures/self-funded-mec/basic-mec/plan-docs/mec-benefit-appendix.md` | `mec-spd-section.md` | Benefit Appendix and SPD section |
@@ -51,3 +54,7 @@ Each product's governing and SPD sources share the set key but participate only 
 Alternative Companion policies/disclosures and PTC strategy/notices remain outside Plan/SPD template sets. They are separate employer or participant documents, not missing benefit summaries. Do not register their participant notices as SPD sections or add them to Plan benefit assembly.
 
 Publish and sync the changed source templates before relying on these groups in CommonCare. Saved plan documents retain their existing content until explicitly regenerated.
+
+`non-health-benefits` has a required governing appendix and separate required SPD summary. CommonFunds additionally exposes optional `dcap` and `dcap-summary` slots. Explicitly select the governing rider when adopted and furnish its corresponding summary; output-specific metadata cannot infer adoption in the other output. Existing CommonFunds defaults do not change. DCAP is not an ERISA benefit merely because its participant summary is included in a combined document. Non-health contract versions and substantive terms must be supplied and retained; the wrap alone is not a complete insurance policy.
+
+The standalone `dcap` set has required governing and participant-summary members, using `extensions.dcap`. The CommonFunds rider remains an alternative. Select one DCAP governing package per actual program, not both; separate document labels do not create additional household exclusions.

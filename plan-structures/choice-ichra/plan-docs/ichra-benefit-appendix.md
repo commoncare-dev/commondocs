@@ -1,4 +1,5 @@
 ---
+class: coverage
 template_set: {"key":"choice-ichra","name":"CHOICE ICHRA","implementations":{"plan-document":{"key":"administration","role":"appendix","order":10,"required":true,"description":"ICHRA eligibility, integration, substantiation, and reimbursement terms."}}}
 id: plan-document.benefit-appendix.choice-ichra
 title: CHOICE Individual Coverage HRA Benefit Appendix

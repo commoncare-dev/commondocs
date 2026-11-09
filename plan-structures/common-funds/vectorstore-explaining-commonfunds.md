@@ -5,8 +5,8 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/common-funds/human-readable.md
 metadata_document: plan-structures/common-funds/metadata.yaml
-source_commit: 4d7391725cf1bfc53f946c93a8150e0a330d3bae
-source_sha256: 9a96a6fa8bd438112973047ab9e9ce21711d275a0b5980cea76fa83b7e85f9b8
+source_commit: 04820c4d79fd9dffcc4e4f4db9774fe231f57ad3
+source_sha256: e69461ee7ae4e0de73f2f302a4a62d564185a1b0e14f90fdd4562130d3e567cf
 metadata_sha256: ec2da998690975e56cbbb2bd3f6e342a3faf67c8c52304eb46facc31c41c1c61
 generation_method: deterministic-commonfunds-split-conversion
 canonical_source: false
@@ -91,6 +91,12 @@ For account administration, jump directly to the relevant rule. The foreword exp
 - Context: CommonFunds — Find the operating rule
 - Question: Which component can pay a claim?
 - Section: [Separate claims rules](human-readable.md#7-one-balance-separate-claims-rules)
+
+#### How does the CommonFunds deductible work?
+<!-- record_id: product.commonfunds.explaining.vector-store.find-the-operating-rule.how-does-the-commonfunds-deductible-work; record_type: table-row -->
+- Context: CommonFunds — Find the operating rule
+- Question: How does the CommonFunds deductible work?
+- Section: [Deductible concepts](human-readable.md#three-different-deductible-concepts)
 
 #### Does the design preserve HSA eligibility?
 <!-- record_id: product.commonfunds.explaining.vector-store.find-the-operating-rule.does-the-design-preserve-hsa-eligibility; record_type: table-row -->
@@ -319,6 +325,22 @@ Participants see one CommonFunds balance while the system maintains multiple cla
 
 The calculation engine must never infer one value from the other. In particular, `ptc_marketplace` remains an `excepted` account pathway; PTC is not a third type of HRA.
 
+<!-- record_id: product.commonfunds.explaining.vector-store.three-different-deductible-concepts -->
+### Three different deductible concepts
+> Retrieval context: CommonFunds — The essential idea > Three different deductible concepts
+
+CommonFunds must keep three related concepts separate:
+
+1. **The major-medical deductible** belongs to the insurance policy or self-funded major-medical plan. It determines when that coverage begins paying deductible-subject claims.
+2. **The CommonFunds reimbursement deductible** belongs to the applicable HRA or Health FSA component. When adopted, it determines when CommonFunds begins reimbursing otherwise eligible expenses. Its amount comes from the participant's Enrollment Schedule, while the governing CommonFunds documents determine what accumulates, how satisfaction is proven, and which pre-deductible expenses remain payable.
+3. **The participant's effective exposure** is the amount the participant ultimately bears after insurance payments and CommonFunds reimbursements. It is an economic result, not a replacement legal deductible.
+
+These values may be equal, but they do not have to be. A major-medical plan might have a \$9,200 contractual deductible while CommonFunds begins reimbursing eligible claims only after the participant bears the first \$1,500. In that design, the insurance deductible remains \$9,200, the CommonFunds reimbursement deductible is \$1,500, and CommonFunds can reimburse the eligible layer between those points subject to its available amount and component rules.
+
+A deductible may apply to an HRA, a Health FSA, or both. The IRS expressly recognizes **post-deductible Health FSAs** as well as post-deductible HRAs. For a post-deductible component, an ordinary medical expense incurred before satisfaction is not made reimbursable by later satisfaction; the claims system tests the expense date. Preventive care and limited-purpose dental or vision expenses may be available earlier only when the governing design and applicable law permit them. [IRS Revenue Ruling 2004-45](https://www.irs.gov/pub/irs-drop/rr-04-45.pdf) · [IRS Notice 2008-59](https://www.irs.gov/pub/irs-drop/n-08-59.pdf) · [IRS Publication 969](https://www.irs.gov/publications/p969)
+
+The CommonFunds deductible is data-driven. The Enrollment Schedule supplies the participant-specific threshold; the plan configuration separately supplies the components to which it applies, the accumulation method, credited expenses, permitted pre-deductible benefits, and evidence required to establish satisfaction. This keeps class-specific amounts out of the plan document while preserving an auditable claims rule.
+
 <!-- record_id: product.commonfunds.explaining.vector-store.hsa-compatibility-is-a-separate-test -->
 ### HSA compatibility is a separate test
 > Retrieval context: CommonFunds — The essential idea > HSA compatibility is a separate test
@@ -459,7 +481,7 @@ Assume the applicable statutory minimum HDHP deductible is satisfied on June 18:
 - Result under a post-deductible Health FSA: May be reimbursed if the arrangement includes a limited-purpose benefit
 
 
-This design is recognized in IRS Revenue Ruling 2004-45 and IRS Notice 2008-59. IRS Publications 969 and 15-B provide current plain-language summaries. The governing plan documents and current law control if guidance or indexed thresholds change.
+This design is recognized in [IRS Revenue Ruling 2004-45](https://www.irs.gov/pub/irs-drop/rr-04-45.pdf) and [IRS Notice 2008-59](https://www.irs.gov/pub/irs-drop/n-08-59.pdf). [IRS Publication 969](https://www.irs.gov/publications/p969) provides a current plain-language summary. The governing plan documents and current law control if guidance or indexed thresholds change.
 
 ---
 

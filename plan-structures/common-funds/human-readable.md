@@ -1399,3 +1399,14 @@ For every claim, determine:
 > **CommonFunds unifies accounting and user experience. Compliance remains component-specific.**
 
 Always preserve the distinction between the participant experience, accounting structure, statutory classification, tax treatment, and governing plan document.
+
+
+## Optional dependent care assistance rider
+
+An Employer may expressly adopt `plan-docs/common-funds-dcap-rider.md` alongside CommonFunds and furnish `common-funds-dcap-spd-section.md`. This is an identifiable separate written Section 129 program, not additional Health FSA or HRA coverage. The `common-funds` set exposes optional governing slot `dcap` and optional participant-summary slot `dcap-summary`. Select both applicable sources explicitly; neither is automatically enabled for existing CommonFunds plans. The governing slot requires `administration`; the summary requires `summary`. Both use `extensions.commonFundsDcap` and its composed schema. Publication of templates does not configure payroll or implement DCAP claims accounting.
+
+The rider permits qualifying work-related dependent care; it pays only from available credited contributions, has no uniform coverage, no medical deductible, no inter-account transfers, and adopts no carryover, grace period, or post-termination spend-down. Its annual Plan limit and filing period are supplied as document terms. Employee elections and actual Employer contributions remain in enrollment and contribution records. For tax years beginning after 2025 the federal exclusion is $7,500 ($3,750 married filing separately), subject to earned income, household aggregation, and other statutory rules. Health FSA and EBHRA limits do not apply. The rider contains separate substantiation, related-provider restrictions, nondiscrimination testing, January 31 reporting, and contractual review provisions.
+
+The reimbursement-only DCAP is intended to remain outside ERISA under DOL Advisory Opinion 88-10A. Its inclusion in a combined participant document does not confer ERISA health-claim or COBRA rights. Different actual benefit arrangements require review of their classification.
+
+References: [Code Section 129](https://www.law.cornell.edu/uscode/text/26/129), [IRS Publication 503](https://www.irs.gov/publications/p503), [DOL Advisory Opinion 88-10A](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/advisory-opinions/1988-10a).

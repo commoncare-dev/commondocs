@@ -1,4 +1,5 @@
 ---
+class: core
 template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"appendix-a","role":"appendix","order":10,"required":true,"requires":["base"],"description":"Employer, plan, administrator, and eligibility information for the core welfare plan."}}}
 id: plan-document.core-appendix-a
 title: Employer and Plan Information
@@ -40,9 +41,9 @@ ${/each}
 
 ## General rehire and leave rules
 
-Rehire and transfer back into an eligible class: ${eligibility.rehireRule}
+After rehire or return to an eligible class, participation and elections follow the applicable benefit's eligibility, enrollment, and reinstatement terms, subject to statutory restoration rights and Section 125 election rules. ${eligibility.rehireRule|optional}
 
-Approved leave: ${eligibility.leaveRule}
+During approved leave, coverage and contributions follow the applicable benefit terms and the Core Plan Document's protected-leave and restoration provisions. ${eligibility.leaveRule|optional}
 
 These rules are subject to the Core Plan Document's protected-leave, contribution, continuation, and restoration provisions. The Plan Administrator administers FMLA contribution notices and payment arrangements and USERRA continuation requests.
 

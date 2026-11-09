@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/dcap-plan-document-context.schema.json",
+  "title": "Dependent Care Assistance Program Context",
+  "allOf": [
+    {
+      "$ref": "../../../plan-docs/plan-document-context.schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "extensions"
+      ],
+      "properties": {
+        "extensions": {
+          "type": "object",
+          "required": [
+            "dcap"
+          ],
+          "properties": {
+            "dcap": {
+              "$ref": "./extensions/dcap.schema.json"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

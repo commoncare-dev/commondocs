@@ -94,7 +94,7 @@ Maintain detailed administrative data in the existing coverage, Plan, and enroll
 
 ### 1. Establish the core
 
-Start with the CommonCare Core Plan Document template. Complete its employer-specific Appendix A, including the general rehire and leave rules, and adopted-benefits Appendix B. Include required Appendices C, D, and E. Appendix E applies only where HIPAA applies; retain the separate sponsor certification before sponsor access to PHI for Plan administration. The SPD must summarize the protected-leave and privacy rules consistently with the governing documents. Confirm that the core does not contain assumptions unique to one benefit.
+Start with the CommonCare Core Plan Document template. Complete its employer-specific Appendix A, including any optional employer-specific rehire and leave wording, and adopted-benefits Appendix B. Include required Appendices C, D, and E. Appendix E applies only where HIPAA applies; retain the separate sponsor certification before sponsor access to PHI for Plan administration. The SPD must summarize the protected-leave and privacy rules consistently with the governing documents. Confirm that the core does not contain assumptions unique to one benefit.
 
 ### 2. Define the benefit before drafting
 
@@ -285,3 +285,9 @@ Unused funds remain Employer property at year end, subject to eligible claims an
 Coverage-owned optional text may use `${path|optional}`. Missing, null, or empty values render as blank, including in CommonCare drafts; they do not create a value-to-complete prompt. Reserve this for genuinely optional terms such as a coverage-defined year-end exception. Required values and inclusion conditions remain strict. Allocation, coordinated-coverage metadata, and ending-balance rules are not manually entered document argument groups.
 
 CommonFunds credits all Code section 213(d) medical expenses toward its applicable deductible unless expressly excluded by an applicable Appendix or the terms of coordinated coverage. This is a standing default, not a document-specific argument. Credit toward a deductible does not itself authorize reimbursement. For HSA-compatible post-deductible benefits, only expenses covered by the coordinated HDHP count toward its required deductible (Notice 2008-59, Q&A 15).
+
+## Document classification
+
+Every grouped source template declares `class` in YAML front matter: `core` for the welfare core and its shared Appendices A–E, `coverage` for governing benefit appendices/components/overlays, and `spd` for the SPD base and benefit summaries. Use `class`, not `docClass`. The importer stores the declared value in the existing template `class` field and rejects unsupported values or a conflict with the output implementation. Older sources without this declaration preserve locally managed classification. Outside-Plan policies and notices are not reclassified as benefits. Generation rejects mixing SPD and governing classes; governing assemblies containing a core source are classified `core`, coverage-only assemblies `coverage`, and SPD output `spd`.
+
+Rehire and leave narratives (`eligibility.rehireRule` and `eligibility.leaveRule`) are optional supplements. Appendix A and the SPD contain general governing wording and use `|optional` for those narratives; do not require a separate document-setup answer when no supplemental rule is needed. Benefit-specific terms and statutory restoration protections continue to control.

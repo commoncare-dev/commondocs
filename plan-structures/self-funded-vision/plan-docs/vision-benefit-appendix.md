@@ -1,4 +1,5 @@
 ---
+class: coverage
 template_set: {"key":"self-funded-vision","name":"Self-Funded Vision","implementations":{"plan-document":{"key":"vision-appendix","role":"appendix","order":100,"required":true,"description":"Self-funded limited-scope vision governing provisions."}}}
 id: plan-document.benefit-appendix.self-funded-vision
 title: CommonCare Self-Funded Vision Benefit Appendix

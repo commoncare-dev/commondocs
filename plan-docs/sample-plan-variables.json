@@ -262,6 +262,35 @@
       "payrollRemittanceAvailable": true,
       "acknowledgmentDeadline": "Before the Marketplace coverage effective date"
     },
+    "dcap": {
+      "effectiveDate": "2027-01-01",
+      "annualPlanLimit": 7500,
+      "claimRunoutDays": 90
+    },
+    "commonFundsDcap": {
+      "effectiveDate": "2027-01-01",
+      "annualPlanLimit": 7500,
+      "claimRunoutDays": 90
+    },
+    "nonHealthBenefits": {
+      "effectiveDate": "2027-01-01",
+      "benefits": [
+        {
+          "name": "Example Group Term Life",
+          "benefitType": "life",
+          "insurer": "Example Life Insurer \u2014 sample only",
+          "policyNumber": "SAMPLE-LIFE-001",
+          "effectiveDate": "2027-01-01",
+          "incorporatedDocuments": "Sample group policy, certificate, benefit schedule, and endorsements, version 1 dated January 1, 2027; demonstration only, replace with actual contract identifiers.",
+          "eligibility": "Eligible Employees under Appendix A; actual policy active-at-work and evidence-of-insurability conditions apply.",
+          "benefitDescription": "Illustrative $50,000 employee life benefit; replace with actual policy formula, exclusions, reductions, and eligibility terms before adoption.",
+          "contributions": "Illustrative Employer-paid premium; apply applicable imputed-income rules. Replace with adopted funding and tax election.",
+          "claimsContact": "Example insurer claims department \u2014 replace before adoption.",
+          "appealsContact": "Example insurer appeals department \u2014 replace before adoption.",
+          "continuationRights": "Use actual certificate conversion, portability, and premium-waiver rules and deadlines; no right established by this example."
+        }
+      ]
+    },
     "selfFundedVision": {
       "document": {
         "version": "1.0",

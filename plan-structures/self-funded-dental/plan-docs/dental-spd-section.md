@@ -1,4 +1,5 @@
 ---
+class: spd
 template_set: {"key":"self-funded-dental","name":"Self-Funded Dental","implementations":{"spd":{"key":"summary","role":"summary","order":10,"required":true,"description":"Participant-facing Self-Funded Dental summary for the base SPD; excludes detailed governing provisions."}}}
 id: spd-section.self-funded-dental
 title: CommonCare Self-Funded Dental — SPD Section

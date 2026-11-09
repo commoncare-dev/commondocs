@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/extensions/common-funds-dcap.schema.json",
+  "title": "CommonFunds Dependent Care Assistance Rider",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "effectiveDate",
+    "annualPlanLimit",
+    "claimRunoutDays"
+  ],
+  "properties": {
+    "effectiveDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "annualPlanLimit": {
+      "type": "number",
+      "minimum": 0
+    },
+    "claimRunoutDays": {
+      "type": "integer",
+      "minimum": 1
+    }
+  }
+}

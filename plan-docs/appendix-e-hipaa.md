@@ -1,4 +1,5 @@
 ---
+class: core
 template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"appendix-e","role":"appendix","order":50,"required":true,"requires":["base"],"description":"HIPAA privacy and security plan-document provisions, applicable to covered health benefits and sponsor access to protected health information."}}}
 id: plan-document.core-appendix-e
 title: HIPAA Plan Administration

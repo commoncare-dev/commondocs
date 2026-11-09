@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/extensions/non-health-benefits.schema.json",
+  "title": "Non-Health Welfare Benefits",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "effectiveDate",
+    "benefits"
+  ],
+  "properties": {
+    "effectiveDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "benefits": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "benefitType",
+          "insurer",
+          "policyNumber",
+          "effectiveDate",
+          "incorporatedDocuments",
+          "eligibility",
+          "benefitDescription",
+          "contributions",
+          "claimsContact",
+          "appealsContact",
+          "continuationRights"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "insurer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "policyNumber": {
+            "type": "string",
+            "minLength": 1
+          },
+          "incorporatedDocuments": {
+            "type": "string",
+            "minLength": 1
+          },
+          "eligibility": {
+            "type": "string",
+            "minLength": 1
+          },
+          "benefitDescription": {
+            "type": "string",
+            "minLength": 1
+          },
+          "contributions": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claimsContact": {
+            "type": "string",
+            "minLength": 1
+          },
+          "appealsContact": {
+            "type": "string",
+            "minLength": 1
+          },
+          "continuationRights": {
+            "type": "string",
+            "minLength": 1
+          },
+          "benefitType": {
+            "enum": [
+              "life",
+              "ad-and-d",
+              "short-term-disability",
+              "long-term-disability",
+              "other-non-health-welfare"
+            ]
+          },
+          "effectiveDate": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    }
+  }
+}

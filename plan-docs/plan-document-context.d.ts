@@ -87,8 +87,8 @@ export interface PlanDocumentContext {
     defaultWaitingPeriod: { description: string };
     enrollmentProcedure: string;
     coverageTermination: string;
-    rehireRule: string;
-    leaveRule: string;
+    rehireRule?: string;
+    leaveRule?: string;
   };
   cafeteriaPlan?: {
     isEstablished: boolean;

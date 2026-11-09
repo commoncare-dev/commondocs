@@ -1,4 +1,5 @@
 ---
+class: coverage
 template_set: {"key":"dpc-companion","name":"DPC Companion","implementations":{"plan-document":{"key":"administration","role":"appendix","order":10,"required":true,"description":"DPC coverage election and qualified-benefit coordination. The applicable underlying benefit documents govern the legal classification of funding."}}}
 id: plan-document.benefit-appendix.dpc-companion
 title: DPC Companion Coverage Appendix

@@ -1,4 +1,5 @@
 ---
+class: core
 template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"appendix-d","role":"appendix","order":40,"required":true,"requires":["base"],"description":"Section 125 elections, salary reductions, and employer flex credits within the core Plan. Employee-specific allowances and restrictions are communicated through enrollment; class formulas are not restated here."}}}
 id: plan-document.core-appendix-d
 title: Section 125 Elections and Employer Flex Credits

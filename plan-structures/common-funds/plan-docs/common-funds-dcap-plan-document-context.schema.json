@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/common-funds-dcap-plan-document-context.schema.json",
+  "title": "CommonFunds DCAP Rider Context",
+  "allOf": [
+    {
+      "$ref": "../../../plan-docs/plan-document-context.schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "extensions"
+      ],
+      "properties": {
+        "extensions": {
+          "type": "object",
+          "required": [
+            "commonFundsDcap"
+          ],
+          "properties": {
+            "commonFundsDcap": {
+              "$ref": "./extensions/common-funds-dcap.schema.json"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

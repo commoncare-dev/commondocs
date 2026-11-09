@@ -1,4 +1,5 @@
 ---
+class: spd
 template_set: {"key":"self-funded-vision","name":"Self-Funded Vision","implementations":{"spd":{"key":"vision-summary","role":"summary","order":100,"required":true,"description":"Self-funded limited-scope vision summary provisions."}}}
 id: spd-section.self-funded-vision
 title: CommonCare Self-Funded Vision — SPD Section
