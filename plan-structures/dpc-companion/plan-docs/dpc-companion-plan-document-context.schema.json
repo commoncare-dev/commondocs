@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://commoncare.dev/schemas/dpc-companion-plan-document-context.schema.json",
+  "title": "DPC Companion Plan Document Context",
+  "allOf": [
+    {
+      "$ref": "../../../plan-docs/plan-document-context.schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "extensions"
+      ],
+      "properties": {
+        "extensions": {
+          "type": "object",
+          "required": [
+            "dpcCompanion"
+          ],
+          "properties": {
+            "dpcCompanion": {
+              "$ref": "./extensions/dpc-companion.schema.json"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
