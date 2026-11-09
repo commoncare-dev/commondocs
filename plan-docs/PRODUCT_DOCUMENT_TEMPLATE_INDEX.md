@@ -32,3 +32,22 @@ node scripts/generate-spd.mjs \
   --benefit-template plan-structures/self-funded-dental/plan-docs/dental-spd-section.md \
   --output generated/summary-plan-description.md
 ```
+
+## Template-set grouping
+
+| Set key | Governing implementation (`plan-document`) | Participant implementation (`spd`) |
+|---|---|---|
+| `welfare-plan` | Core and required Appendices A–E | Base SPD |
+| `choice-ichra` | ICHRA Benefit Appendix | ICHRA SPD section |
+| `common-funded` | CommonFunded coordination overlay | CommonFunded SPD section |
+| `common-funds` | Shared administration and applicable Health FSA / EBHRA components | CommonFunds SPD section |
+| `dpc-companion` | DPC Benefit Appendix | DPC SPD section |
+| `self-funded-dental` | Dental Benefit Appendix | Dental SPD section |
+| `self-funded-vision` | Vision Benefit Appendix | Vision SPD section |
+| `self-funded-basic-mec` | Basic MEC Benefit Appendix | Basic MEC SPD section |
+
+Each product's governing and SPD sources share the set key but participate only in the corresponding output implementation. Selecting a product requires its unambiguous member for that output. `requires` names member keys within an implementation of the same set, not another concept set. Combine applicable product sets with `welfare-plan`; CommonFunded's underlying major medical and CommonFunds documents remain separately adopted and must also be selected as applicable.
+
+Alternative Companion policies/disclosures and PTC strategy/notices remain outside Plan/SPD template sets. They are separate employer or participant documents, not missing benefit summaries. Do not register their participant notices as SPD sections or add them to Plan benefit assembly.
+
+Publish and sync the changed source templates before relying on these groups in CommonCare. Saved plan documents retain their existing content until explicitly regenerated.

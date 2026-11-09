@@ -1,4 +1,5 @@
 ---
+template_set: {"key":"choice-ichra","name":"CHOICE ICHRA","implementations":{"spd":{"key":"summary","role":"summary","order":10,"required":true,"description":"Participant-facing CHOICE ICHRA summary for the base SPD; excludes detailed governing provisions."}}}
 id: spd-section.choice-ichra
 title: CHOICE ICHRA — SPD Section
 kind: spd-section-template
