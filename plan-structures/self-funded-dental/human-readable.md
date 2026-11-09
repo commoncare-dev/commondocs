@@ -1,5 +1,8 @@
 ## CommonCare Self-Funded Dental Plan
 
+> Document-generation note: The governing appendix and participant summary now use a schedule mapped from the selected coverage's actual variants, deductibles, coinsurance, caps, copayments, and other benefit details. Illustrative amounts, service lists, and frequency assumptions in this guide do not override that adopted coverage. Missing descriptive values refer to the incorporated coverage terms; the document setup does not require duplicate financial elections. The original claim filing deadline defaults to 180 days unless the coverage specifies another period.
+
+
 A simple employer dental plan that pays routine preventive care in full, shares the cost of restorative care, and limits employer exposure through individual and family benefit maximums.
 
 ## Find what you need

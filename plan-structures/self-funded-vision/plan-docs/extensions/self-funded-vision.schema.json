@@ -5,13 +5,7 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "document",
-    "coverageTier",
-    "deductiblePerEvent",
-    "planCoinsurance",
-    "individualAnnualMaximum",
-    "familyAnnualMaximum",
-    "claimFilingDeadlineDays"
+    "document"
   ],
   "properties": {
     "document": {
@@ -38,12 +32,8 @@
       }
     },
     "coverageTier": {
-      "enum": [
-        "employee-only",
-        "employee-plus-spouse",
-        "employee-plus-child",
-        "family"
-      ]
+      "type": "string",
+      "description": "Read-only coverage variant names."
     },
     "deductiblePerEvent": {
       "type": "number",
@@ -64,7 +54,16 @@
     },
     "claimFilingDeadlineDays": {
       "type": "integer",
-      "minimum": 1
+      "minimum": 1,
+      "default": 180
+    },
+    "coverageSummary": {
+      "type": "string",
+      "description": "Read-only schedule-style summary of the selected coverage. Missing descriptive terms refer to the incorporated coverage terms."
+    },
+    "deductibleDescription": {
+      "type": "string",
+      "description": "Read-only deductible terms."
     }
   }
 }

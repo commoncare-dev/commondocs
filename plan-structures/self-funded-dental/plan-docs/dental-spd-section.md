@@ -10,18 +10,12 @@ source_document: ./dental-benefit-appendix.md
 
 ## CommonCare Self-Funded Dental
 
-This self-funded dental benefit pays preventive care and helps pay covered restorative and major dental treatment. It is not insurance and does not promise unlimited payment.
+This self-funded benefit pays covered dental expenses under the selected coverage's adopted terms. You may elect or decline it separately from other health coverage. Eligibility and the waiting period follow the Plan and applicable coverage terms.
 
-| Feature | Your benefit |
-|---|---|
-| Preventive care | 100% of the approved amount; no deductible; does not reduce annual maximums |
-| Nonpreventive deductible | ${extensions.selfFundedDental.deductiblePerEvent|currencyUSD} per clinically connected treatment event |
-| Plan share after deductible | ${extensions.selfFundedDental.planCoinsurance|percent} |
-| Individual annual maximum | ${extensions.selfFundedDental.individualAnnualMaximum|currencyUSD} |
-| Family annual maximum | ${extensions.selfFundedDental.familyAnnualMaximum|currencyUSD} |
+${extensions.selfFundedDental.coverageSummary}
 
-Covered preventive services generally include routine examinations, cleanings, ordinary preventive radiographs, child fluoride treatment, and child sealants. Covered nonpreventive services include specified fillings, extractions, periodontal treatment, crowns, root canals, implants, dentures, and related medically necessary anesthesia.
+Read the incorporated coverage details or contract furnished with this summary for covered services, exclusions, frequency and replacement rules, category-specific costs, and any required advance approval. An annual deductible is not charged separately for each event. Waiving a deductible does not automatically exclude the service from a benefit maximum. Maximums limit Plan payments, not your total spending.
 
-Contact ${administration.serviceContacts.providerNavigation.formatted} before expensive or multi-stage treatment. The Plan will identify or approve a complete cash price. If you use a provider that does not accept that price, the Plan calculates payment from the approved amount and you may owe the difference.
+Contact ${administration.serviceContacts.providerNavigation.formatted} before expensive or multi-stage care. The Plan uses approved complete cash prices. If your provider does not agree to accept the approved amount, you may owe the difference in addition to applicable cost sharing. There is no separate out-of-network benefit. Price approval does not guarantee payment beyond eligibility, covered services, or remaining limits.
 
-File claims through ${administration.serviceContacts.claims.formatted} within ${extensions.selfFundedDental.claimFilingDeadlineDays} days after the service. File appeals through ${administration.serviceContacts.appeals.formatted}.
+File claims through ${administration.serviceContacts.claims.formatted} by the deadline above; if the coverage sets none, it is 180 days after service. Ordinary post-service decisions are due within 30 days with one permitted 15-day extension and timely notice. You have at least 180 days after receiving a denial to appeal through ${administration.serviceContacts.appeals.formatted}; a single-level post-service appeal is decided within 60 days. Pre-service decisions are due within 15 days with one permitted 15-day extension, and their appeals within 30 days. Urgent requests and appeals are decided as medically required and no later than 72 hours, subject to applicable incomplete-claim rules. Requested missing claim information generally receives at least 45 days for response where the regulation requires it. You may use an authorized representative, submit evidence, and obtain relevant records without charge. Denials explain the reasons, governing terms, review rights, and applicable ERISA civil-action rights. The governing Appendix and incorporated materials supply the complete procedure; more protective lawful rules remain applicable.

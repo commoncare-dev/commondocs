@@ -16,83 +16,44 @@ Version: ${extensions.selfFundedDental.document.version}
 
 Effective Date: ${extensions.selfFundedDental.document.effectiveDate|dateLong}
 
-# Adoption and scope
+# Adoption and governing coverage terms
 
-The Employer adopts this Appendix as part of the Plan. It establishes a self-funded, limited-scope dental benefit. The Core Plan Document governs matters not specifically addressed here.
+The Employer adopts this self-funded, limited-scope dental benefit under the Core Plan Document. The adopted coverage details, benefit descriptions, service and frequency rules, exclusions, and any specifically identified coverage contract are incorporated for this benefit. The Plan Administrator retains the coverage version and enrollment records applicable to each coverage period and furnishes those materials with this Appendix. A reference to a coverage contract does not create one or replace missing substantive benefit terms.
 
-The benefit pays preventive dental care and a defined share of covered nonpreventive dental care. It is not dental insurance, major medical coverage, or an unlimited promise to pay dental expenses.
+Employer: ${sponsor.legalName}
 
-# Employer elections
+Eligible class: ${eligibility.defaultClass.description}
 
-| Term | Election |
-|---|---|
-| Employer | ${sponsor.legalName} |
-| Eligible class | ${eligibility.defaultClass.description} |
-| Waiting period | ${eligibility.defaultWaitingPeriod.description} |
-| Coverage tier | ${extensions.selfFundedDental.coverageTier|titleCase} |
-| Deductible | ${extensions.selfFundedDental.deductiblePerEvent|currencyUSD} per treatment event |
-| Plan share after deductible | ${extensions.selfFundedDental.planCoinsurance|percent} |
-| Individual annual maximum | ${extensions.selfFundedDental.individualAnnualMaximum|currencyUSD} |
-| Family annual maximum | ${extensions.selfFundedDental.familyAnnualMaximum|currencyUSD} |
-| Claim filing deadline | ${extensions.selfFundedDental.claimFilingDeadlineDays} days after the service date |
+Waiting period: ${eligibility.defaultWaitingPeriod.description}
 
-# Definitions
+# Coverage summary
 
-**Approved Amount** means the lesser of the provider's charge and the complete cash price approved by the Plan for the treatment.
+${extensions.selfFundedDental.coverageSummary}
 
-**Covered Dental Service** means a preventive or nonpreventive dental service expressly covered by this Appendix and its schedules.
+The summary records the selected coverage's adopted terms. Category-specific deductibles, copayments, coinsurance, and caps apply to their designated services. The applicable accumulation period and waiver conditions follow the coverage details; an annual deductible is not charged again for each event. A per-event deductible applies once to a clinically connected course of care, rather than separately to integral billing lines. Benefit maximums limit Plan payments, not total Participant spending or a provider's charge. Preventive treatment of deductibles and maximums follows the adopted coverage terms; no exemption from a payment maximum is implied merely by waiving a deductible.
 
-**Treatment Event** means a clinically connected course of treatment. Integral stages and billing lines do not create separate deductibles merely because they occur on different dates or use different codes.
+# Funding, enrollment, and continuation
 
-# Eligibility and enrollment
+Benefits are paid from Employer general assets and applicable Participant contributions. A bookkeeping balance does not itself establish a trust or individual ownership. General enrollment, election changes, leave, rehire, termination, statutory continuation, and restoration follow the Core and applicable coverage terms. A Participant may elect or decline this limited-scope benefit separately from other health coverage, whether or not a Participant contribution is required. Substantially all covered benefits concern treatment of the mouth; the benefit is intended to satisfy 29 CFR Section 2590.732(c)(3).
 
-Employees in the eligible class may enroll after satisfying the waiting period. Dependents may enroll only when included in the adopted coverage tier and when they satisfy the Plan's dependent rules. General enrollment, election-change, leave, rehire, and termination rules appear in the Core Plan Document, Appendix A, and Appendix D of the Core Plan Document.
+# Approved prices and Participant responsibility
 
-# Funding
+The Plan pays covered services using the lesser of the provider charge and the complete cash price approved under the coverage terms, after applicable cost sharing and payment limits. Approval compares qualified, reasonably accessible providers and the complete service, including integral professional, material, laboratory, fitting, and follow-up components as applicable. The Plan Administrator may approve a higher amount when clinical needs, continuity, disability access, urgency, or unreasonable travel make a lower-price option unusable.
 
-This benefit is self-funded. Benefits are paid from Employer general assets and applicable Participant contributions. Any bookkeeping balance records claims experience and does not itself establish a trust or individual ownership right.
+Participants may use a provider that accepts the approved price subject to stated cost sharing, or choose another provider and pay the difference. This is negotiated cash pricing, not a separate out-of-network benefit. A provider that has not agreed to accept the approved amount may bill the difference. Obtain any required predetermination before expensive or multi-stage care. A price approval does not guarantee eligibility, remaining benefits, or coverage of an excluded service.
 
-# Covered preventive services
+# Covered services and limitations
 
-The Plan pays 100% of the Approved Amount for covered preventive services without a deductible. Preventive payments do not reduce the individual or family annual maximum.
-
-Covered preventive services include routine examinations and cleanings, ordinary preventive radiographs, child fluoride treatment, and child sealants, subject to the frequencies and clinical conditions in the incorporated dental schedule.
-
-# Covered nonpreventive services
-
-Subject to the deductible, Plan share, Approved Amount, predetermination requirements, and remaining annual maximums, covered nonpreventive services include fillings, extractions, periodontal treatment, crowns, root-canal therapy, implants, dentures, and medically necessary anesthesia associated with covered dental treatment.
-
-For each Treatment Event:
-
-1. The allowed amount is the lesser of the provider charge and Approved Amount.
-2. The event deductible is subtracted once.
-3. The Plan pays the elected Plan share of the remainder.
-4. Payment is limited by both the Participant's individual remaining maximum and the family's remaining maximum.
-
-# Approved-price process and balance billing
-
-The Plan identifies qualified, reasonably accessible providers and comparable complete cash prices for the proposed treatment. A complete price includes the integral imaging, professional, material, laboratory, anesthesia, and follow-up components identified in the approval.
-
-The Participant may use a provider that accepts the Approved Amount as payment in full, subject to the Participant's stated cost sharing. If the Participant chooses a provider that does not accept that amount, the Plan still calculates its payment using the Approved Amount and the provider may bill the Participant for the difference.
-
-The Plan Administrator may approve a higher amount when the lower-priced option is not reasonably usable because of clinical complexity, continuity of care, disability access, pediatric specialization, urgency, material difference, or unreasonable travel.
-
-# Predetermination
-
-Predetermination is required for crowns, root canals, implants, dentures, periodontal treatment, oral surgery, and other expensive or multi-stage care identified in the schedule. A request must include enough clinical and pricing information to identify the complete treatment.
-
-Predetermination confirms the information and price then available. It does not guarantee payment if eligibility ends, maximums are exhausted, the treatment changes, or the service is not actually performed.
-
-# Exclusions
-
-The Plan does not cover cosmetic treatment, investigational treatment, medical or hospital charges, services by a non-dental provider, missed-appointment charges, financing charges, or treatment outside stated frequency and replacement rules unless the Plan Administrator approves an applicable exception under the governing schedule.
+Only services included by the adopted coverage terms are payable, subject to their frequency, replacement, clinical, and predetermination requirements. These terms also identify exclusions and any approved exceptions. An enrollment summary does not create additional services, an unlimited benefit, or major medical coverage. The Plan will not reimburse the same expense twice.
 
 # Claims and appeals
 
-Claims must be filed within the elected deadline. Claims and appeals otherwise follow the Core Plan Document and incorporated dental claims procedure. Participants receive at least the appeal period required by applicable ERISA group-health claims rules.
+File original claims by the deadline in the coverage summary, with itemized provider evidence, service dates, covered-person identification, and any required clinical or payment information. If the coverage does not specify an original filing period, it is 180 days after service. This filing period is separate from the appeal period.
 
-Claims contact: ${administration.serviceContacts.claims.formatted}
+Post-service claims are decided within 30 days, subject to a permitted extension of up to 15 days with timely notice; requested missing information receives at least 45 days for response, with lawful tolling. Pre-service claims are decided within 15 days with one permitted 15-day extension; urgent-care requests are decided as medically required and no later than 72 hours, subject to applicable incomplete-claim rules. Claimants have at least 180 days after receiving a denial to appeal. A single-level appeal is decided within 60 days for post-service claims, 30 days for pre-service claims, or 72 hours for urgent-care claims. Review is independent, gives the initial denial no deference, and includes required independent medical consultation. Claimants may use an authorized representative, submit evidence, and obtain relevant records without charge. Required denial explanations, review instructions, ERISA civil-action rights, and any additional protections follow the Core and 29 CFR Section 2560.503-1. A coverage contract may provide more protective lawful procedures.
 
-Appeals contact: ${administration.serviceContacts.appeals.formatted}
+Claims: ${administration.serviceContacts.claims.formatted}
 
-Provider navigation and predetermination: ${administration.serviceContacts.providerNavigation.formatted}
+Appeals: ${administration.serviceContacts.appeals.formatted}
+
+Provider pricing and predetermination: ${administration.serviceContacts.providerNavigation.formatted}

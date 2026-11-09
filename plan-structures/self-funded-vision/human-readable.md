@@ -1,5 +1,8 @@
 ## CommonCare Self-Funded Vision Plan
 
+> Document-generation note: The governing appendix and participant summary now use a schedule mapped from the selected coverage's actual variants, deductibles, coinsurance, caps, copayments, and other benefit details. Illustrative amounts, service lists, and frequency assumptions in this guide do not override that adopted coverage. Missing descriptive values refer to the incorporated coverage terms; the document setup does not require duplicate financial elections. The original claim filing deadline defaults to 180 days unless the coverage specifies another period.
+
+
 An employer vision plan that pays routine examinations in full, shares the cost of prescription eyewear, and limits nonpreventive payments through individual and family annual maximums. This guide follows the self-funded dental product's structure; the adopted vision appendix controls the actual benefit.
 
 ## Find what you need

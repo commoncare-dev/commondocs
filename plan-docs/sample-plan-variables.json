@@ -301,7 +301,8 @@
       "planCoinsurance": 0.75,
       "individualAnnualMaximum": 1000,
       "familyAnnualMaximum": 3000,
-      "claimFilingDeadlineDays": 180
+      "claimFilingDeadlineDays": 180,
+      "coverageSummary": "| Coverage term | Adopted coverage details |\n|---|---|\n| Sample only | See adopted coverage details; live generation maps the selected coverage. |"
     },
     "selfFundedDental": {
       "document": {
@@ -313,7 +314,9 @@
       "planCoinsurance": 0.75,
       "individualAnnualMaximum": 1000,
       "familyAnnualMaximum": 3000,
-      "claimFilingDeadlineDays": 180
+      "claimFilingDeadlineDays": 180,
+      "deductibleDescription": "General deductible: $50 per person per treatment event",
+      "coverageSummary": "| Coverage term | Adopted coverage details |\n|---|---|\n| Sample only | See adopted coverage details; live generation maps the selected coverage. |"
     },
     "selfFundedMec": {
       "document": {

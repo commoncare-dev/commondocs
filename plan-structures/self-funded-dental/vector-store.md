@@ -5,8 +5,8 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/self-funded-dental/human-readable.md
 metadata_document: plan-structures/self-funded-dental/metadata.yaml
-source_commit: dce1605c06d63fd8cf22d90754ae558c2ffba18e
-source_sha256: a019c14894bb769cade8022435130b6571bf09869c6e1eb11008355d4639c725
+source_commit: 4b27e8be2cb032b10e25218a004ec5d3f4841823
+source_sha256: d5b109a1fbf7f1357479f3a04dff7cde15c874d784e507afb6b78d07fdddd341
 metadata_sha256: e559c1066d3668c8b651b076980cb3afb95abe748f063c995094bfa7d0b35d45
 generation_method: deterministic-markdown-conversion
 canonical_source: false
@@ -23,6 +23,9 @@ last_reviewed: 2026-09-16
 <!-- record_id: plan.self-funded-dental.commoncare-self-funded-dental-plan -->
 ## CommonCare Self-Funded Dental Plan
 > Retrieval context: CommonCare Self-Funded Dental Plan — CommonCare Self-Funded Dental Plan
+
+> Document-generation note: The governing appendix and participant summary now use a schedule mapped from the selected coverage's actual variants, deductibles, coinsurance, caps, copayments, and other benefit details. Illustrative amounts, service lists, and frequency assumptions in this guide do not override that adopted coverage. Missing descriptive values refer to the incorporated coverage terms; the document setup does not require duplicate financial elections. The original claim filing deadline defaults to 180 days unless the coverage specifies another period.
+
 
 A simple employer dental plan that pays routine preventive care in full, shares the cost of restorative care, and limits employer exposure through individual and family benefit maximums.
 

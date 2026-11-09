@@ -5,8 +5,8 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/self-funded-vision/human-readable.md
 metadata_document: plan-structures/self-funded-vision/metadata.yaml
-source_commit: ebe8b2f1897af02319d1f2e33b2854dde4fe98bc
-source_sha256: 9b200e2504773596937d393ac9e132d926cdc78730dc23f0d81d94634c012699
+source_commit: 4b27e8be2cb032b10e25218a004ec5d3f4841823
+source_sha256: ad612ea2cb6d227f201fc138587d860404821340f9b5721b43c68503344f5b30
 metadata_sha256: f972647cc51635fa9a7aa99113fc55d27384addfc1287bdcf9ed19b3ca670c17
 generation_method: deterministic-markdown-conversion
 canonical_source: false
@@ -23,6 +23,9 @@ last_reviewed: 2026-11-09
 <!-- record_id: plan.self-funded-vision.commoncare-self-funded-vision-plan -->
 ## CommonCare Self-Funded Vision Plan
 > Retrieval context: CommonCare Self-Funded Vision Plan — CommonCare Self-Funded Vision Plan
+
+> Document-generation note: The governing appendix and participant summary now use a schedule mapped from the selected coverage's actual variants, deductibles, coinsurance, caps, copayments, and other benefit details. Illustrative amounts, service lists, and frequency assumptions in this guide do not override that adopted coverage. Missing descriptive values refer to the incorporated coverage terms; the document setup does not require duplicate financial elections. The original claim filing deadline defaults to 180 days unless the coverage specifies another period.
+
 
 An employer vision plan that pays routine examinations in full, shares the cost of prescription eyewear, and limits nonpreventive payments through individual and family annual maximums. This guide follows the self-funded dental product's structure; the adopted vision appendix controls the actual benefit.
 

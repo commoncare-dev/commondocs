@@ -10,22 +10,12 @@ source_document: ./vision-benefit-appendix.md
 
 ## CommonCare Self-Funded Vision
 
-This self-funded vision benefit pays routine vision examinations and helps pay covered prescription eyewear and fitting services. It is not insurance and does not promise unlimited payment.
+This self-funded benefit pays covered vision expenses under the selected coverage's adopted terms. You may elect or decline it separately from other health coverage. Eligibility and the waiting period follow the Plan and applicable coverage terms.
 
-| Feature | Your benefit |
-|---|---|
-| Preventive care | 100% of the approved amount; no deductible; does not reduce annual maximums |
-| Nonpreventive deductible | ${extensions.selfFundedVision.deductiblePerEvent|currencyUSD} per clinically connected treatment event |
-| Plan share after deductible | ${extensions.selfFundedVision.planCoinsurance|percent} |
-| Individual annual maximum | ${extensions.selfFundedVision.individualAnnualMaximum|currencyUSD} |
-| Family annual maximum | ${extensions.selfFundedVision.familyAnnualMaximum|currencyUSD} |
+${extensions.selfFundedVision.coverageSummary}
 
-You may elect or decline this benefit separately from other health coverage. One routine vision examination, including refraction, is covered per person per Plan Year. For each person, the Plan also covers either one complete pair of prescription eyeglasses or one supply of prescription contact lenses of up to 12 months and related fitting per Plan Year. Frames and lenses ordered together are one treatment event; contacts and their related fitting are one event. Annual maximums reset each Plan Year; unused amounts and frequency allowances do not carry forward.
+Read the incorporated coverage details or contract furnished with this summary for covered services, exclusions, frequency and replacement rules, category-specific costs, and any required advance approval. An annual deductible is not charged separately for each event. Waiving a deductible does not automatically exclude the service from a benefit maximum. Maximums limit Plan payments, not your total spending.
 
-Progressive lenses, specialty contacts, and lens enhancements require advance approval as covered options. Medical or surgical eye care, drugs, LASIK/PRK, nonprescription or cosmetic eyewear, accessories, warranties, and additional replacements beyond the frequency limit are excluded. This benefit is separate from major medical coverage.
+Contact ${administration.serviceContacts.providerNavigation.formatted} before expensive or multi-stage care. The Plan uses approved complete cash prices. If your provider does not agree to accept the approved amount, you may owe the difference in addition to applicable cost sharing. There is no separate out-of-network benefit. Price approval does not guarantee payment beyond eligibility, covered services, or remaining limits.
 
-Contact ${administration.serviceContacts.providerNavigation.formatted} before ordering progressive lenses, specialty contacts, lens enhancements, or other expensive or multi-stage vision care. The Plan will identify or approve a complete cash price. If you use a provider that does not accept that price, the Plan calculates payment from the approved amount and you may owe the difference.
-
-File claims through ${administration.serviceContacts.claims.formatted} within ${extensions.selfFundedVision.claimFilingDeadlineDays} days after the service. File appeals through ${administration.serviceContacts.appeals.formatted}.
-
-You have at least 180 days after a claim denial to appeal and may obtain relevant claim records without charge. Ordinary post-service claims are generally decided within 30 days, subject to a permitted extension; their appeals are decided within 60 days. Shorter deadlines apply to pre-service and urgent-care requests. The denial notice explains your review rights. Another payer's reimbursement reduces the expense remaining eligible for payment; the same expense is not reimbursed twice.
+File claims through ${administration.serviceContacts.claims.formatted} by the deadline above; if the coverage sets none, it is 180 days after service. Ordinary post-service decisions are due within 30 days with one permitted 15-day extension and timely notice. You have at least 180 days after receiving a denial to appeal through ${administration.serviceContacts.appeals.formatted}; a single-level post-service appeal is decided within 60 days. Pre-service decisions are due within 15 days with one permitted 15-day extension, and their appeals within 30 days. Urgent requests and appeals are decided as medically required and no later than 72 hours, subject to applicable incomplete-claim rules. Requested missing claim information generally receives at least 45 days for response where the regulation requires it. You may use an authorized representative, submit evidence, and obtain relevant records without charge. Denials explain the reasons, governing terms, review rights, and applicable ERISA civil-action rights. The governing Appendix and incorporated materials supply the complete procedure; more protective lawful rules remain applicable.
