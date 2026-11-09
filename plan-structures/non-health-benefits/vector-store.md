@@ -5,8 +5,8 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/non-health-benefits/human-readable.md
 metadata_document: plan-structures/non-health-benefits/metadata.yaml
-source_commit: 04820c4d79fd9dffcc4e4f4db9774fe231f57ad3
-source_sha256: 31d2dadc41bd3a630a9898478f1bad8768bdaa3b8d5a7c92b1a8fbbb0fe1badf
+source_commit: 47e1476658eba50dc381d22ce2328d998f120095
+source_sha256: d3a00bbed038ecc59c3dd2b3b9d3856e12f144bcd7134eedaf3939dce2ca03a4
 metadata_sha256: 160908958f31e5460ca02cc090d3de86a1c4e04e3e99136a16c6e93a7a2b64df
 generation_method: deterministic-markdown-conversion
 canonical_source: false
@@ -30,11 +30,13 @@ last_reviewed: 2026-11-09
 
 A shared insured-benefit wrap for employer-sponsored life, AD&D, short-term disability, long-term disability, and other expressly identified non-health welfare benefits. Add this concept to `welfare-plan`; use its governing appendix for plan-document output and summary for SPD output.
 
-<!-- record_id: plan.non-health-benefits.required-coverage-record -->
-## Required coverage record
-> Retrieval context: Non-Health Welfare Benefits — Non-Health Welfare Benefits > Required coverage record
+<!-- record_id: plan.non-health-benefits.governing-coverage-records -->
+## Governing coverage records
+> Retrieval context: Non-Health Welfare Benefits — Non-Health Welfare Benefits > Governing coverage records
 
-Each adopted benefit identifies its insurer, policy number, effective date, incorporated documents and versions, eligibility, benefit description, contributions and tax treatment, claims and appeals contacts, and continuation rights. Keep the actual policies, certificates, schedules, and endorsements with the document package and furnish their participant materials. A generic wrap cannot replace missing substantive coverage terms.
+Non-health benefits are independent of health benefits. This wrap does not select, coordinate with, or derive benefits from a health coverage, CommonFunds, or an ICHRA. It refers directly to the Employer's adopted non-health insurance contracts, certificates, and enrollment records. Those records identify the benefits and provide the substantive terms; the document setup does not require a second inventory of insurers, amounts, contacts, and coverage details. The current templates consume only the shared plan context, not a custom nonHealthBenefits extension.
+
+Keep and furnish the actual policies, certificates, schedules, and endorsements applicable to each coverage period. A generic wrap does not replace those materials or create a missing benefit promise.
 
 <!-- record_id: plan.non-health-benefits.boundaries -->
 ## Boundaries

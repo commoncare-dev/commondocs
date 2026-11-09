@@ -4,10 +4,7 @@
   "title": "Non-Health Welfare Benefits",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "effectiveDate",
-    "benefits"
-  ],
+  "required": [],
   "properties": {
     "effectiveDate": {
       "type": "string",
@@ -15,24 +12,10 @@
     },
     "benefits": {
       "type": "array",
-      "minItems": 1,
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "name",
-          "benefitType",
-          "insurer",
-          "policyNumber",
-          "effectiveDate",
-          "incorporatedDocuments",
-          "eligibility",
-          "benefitDescription",
-          "contributions",
-          "claimsContact",
-          "appealsContact",
-          "continuationRights"
-        ],
+        "required": [],
         "properties": {
           "name": {
             "type": "string",
@@ -90,5 +73,6 @@
         }
       }
     }
-  }
+  },
+  "description": "Optional legacy non-health schedule data. Current wrap templates refer to adopted non-health insurance contracts and enrollment records and do not require this duplicate inventory."
 }

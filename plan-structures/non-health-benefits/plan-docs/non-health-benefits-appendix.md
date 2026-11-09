@@ -6,43 +6,30 @@ title: Non-Health Welfare Benefits Appendix
 kind: benefit-appendix
 status: template
 version: "1.0"
-context_schema: ./non-health-benefits-plan-document-context.schema.json
+context_schema: ../../../plan-docs/plan-document-context.schema.json
 ---
 
 # Non-Health Welfare Benefits Appendix
 
-Effective Date: ${extensions.nonHealthBenefits.effectiveDate|dateLong}
+Effective Date: ${plan.effectiveDate|dateLong}
 
 # Adoption and scope
 
-The Employer adopts this Appendix under the Core Plan Document to wrap only the insured non-health welfare benefits identified below. These may include group life, accidental death and dismemberment, short-term disability, long-term disability, or another expressly identified non-health welfare benefit. An arrangement is included only if it is actually employer-sponsored and adopted; voluntary individual products satisfying an ERISA safe harbor, payroll practices outside ERISA, retirement benefits, and legally mandated programs are not incorporated merely because the Employer facilitates them.
+The Employer adopts this Appendix under the Core Plan Document to wrap the insured non-health welfare benefits it adopts through the applicable insurance contracts and enrollment records. These may include group life, accidental death and dismemberment, short-term disability, long-term disability, or another expressly identified non-health welfare benefit. An arrangement is included only if it is actually employer-sponsored and adopted; voluntary individual products satisfying an ERISA safe harbor, payroll practices outside ERISA, retirement benefits, and legally mandated programs are not incorporated merely because the Employer facilitates them.
 
 This Appendix does not establish medical coverage, an HRA, or an FSA. A self-funded benefit requires its own substantive benefit provisions and claims funding terms; this insured wrapper alone does not create one.
 
 # Adopted coverage and incorporated contracts
 
-${#each extensions.nonHealthBenefits.benefits as benefit}
-## ${benefit.name}
+The applicable insurance policies, certificates, benefit schedules, endorsements, and enrollment records identify each adopted non-health benefit, its insurer, policy number, eligible persons, coverage dates, benefit amounts or formulas, premium contributions, exclusions, claim contacts, and any conversion or portability rights. Those materials supply the coverage terms; this wrap does not require them to be entered again in a separate document schedule.
 
-| Term | Adopted provision |
-|---|---|
-| Benefit type | ${benefit.benefitType|titleCase} |
-| Insurer | ${benefit.insurer} |
-| Policy/group number | ${benefit.policyNumber} |
-| Coverage effective date | ${benefit.effectiveDate|dateLong} |
-| Incorporated documents and versions | ${benefit.incorporatedDocuments} |
-| Eligible persons and coverage conditions | ${benefit.eligibility} |
-| Benefit, limits, exclusions, and reductions | ${benefit.benefitDescription} |
-| Contributions and tax treatment election | ${benefit.contributions} |
-| Claims contact | ${benefit.claimsContact} |
-| Appeals contact | ${benefit.appealsContact} |
-| Conversion, portability, waiver, and continuation | ${benefit.continuationRights} |
+The Plan Administrator will furnish the applicable policies and certificates with this summary or explain how to obtain them. A missing description here does not create or expand coverage.
 
-${/each}
-
-The identified policies, certificates, benefit schedules, and endorsements are expressly incorporated as governing benefit terms for the identified coverage. The Employer must retain the identified versions and furnish them with the corresponding SPD summary. A marketing brochure or an unidentified policy is insufficient. Incorporated terms must describe benefit amounts or formulas, definitions, exclusions, reductions, eligibility and termination conditions, evidence-of-insurability requirements, beneficiary rights, claim filing, and any conversion or portability rights. This Appendix and those incorporated materials together define the benefit; a short enrollment description does not replace them.
+The policies, certificates, benefit schedules, and endorsements identified in the Employer's adopted non-health coverage and enrollment records are expressly incorporated as governing benefit terms for that coverage. The Employer must retain the identified versions and furnish them with the corresponding SPD summary. A marketing brochure or an unidentified policy is insufficient. Incorporated terms must describe benefit amounts or formulas, definitions, exclusions, reductions, eligibility and termination conditions, evidence-of-insurability requirements, beneficiary rights, claim filing, and any conversion or portability rights. This Appendix and those incorporated materials together define the benefit; a short enrollment description does not replace them.
 
 Applicable law controls. The Core governs shared administration and fiduciary duties. The incorporated policy controls the insurer's promised benefit, coverage conditions, and policy-specific determinations, subject to applicable law and the mandatory review protections below. Coverage settings and enrollment records apply those adopted terms; they cannot expand an insurer's liability or silently amend the Plan.
+
+Non-health benefits are separate from health benefits. Their adoption, eligibility, premiums, benefit payments, and claims do not depend on selecting or coordinating a health coverage. Shared welfare-plan administration does not merge their benefits or funding.
 
 # Enrollment, funding, and tax treatment
 
@@ -60,7 +47,7 @@ Coverage ends, reduces, or converts under the identified policies and applicable
 
 # Claims and review
 
-File with the applicable claims contact above using the incorporated policy's filing instructions and proof requirements. An authorized representative may act for the claimant. There is no filing or appeal fee. The insurer decides policy benefit claims to the extent delegated by its contract; the Plan Administrator decides retained Plan eligibility and administrative issues. A submission received by the wrong Plan contact will be directed promptly to the proper decision-maker without defeating a timely claim.
+File with the claims contact in the applicable policy or certificate using the incorporated policy's filing instructions and proof requirements. An authorized representative may act for the claimant. There is no filing or appeal fee. The insurer decides policy benefit claims to the extent delegated by its contract; the Plan Administrator decides retained Plan eligibility and administrative issues. A submission received by the wrong Plan contact will be directed promptly to the proper decision-maker without defeating a timely claim.
 
 For ERISA benefits other than disability determinations, the initial decision is due within 90 days, with one extension of up to 90 additional days for special circumstances disclosed before the first period ends. A claimant has at least 60 days after receiving the denial to appeal. A single-level appeal is decided within 60 days, with a permitted special-circumstances extension of up to 60 additional days and timely notice.
 
