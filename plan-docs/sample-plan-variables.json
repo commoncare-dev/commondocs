@@ -262,6 +262,18 @@
       "payrollRemittanceAvailable": true,
       "acknowledgmentDeadline": "Before the Marketplace coverage effective date"
     },
+    "selfFundedVision": {
+      "document": {
+        "version": "1.0",
+        "effectiveDate": "2027-01-01"
+      },
+      "coverageTier": "family",
+      "deductiblePerEvent": 50,
+      "planCoinsurance": 0.75,
+      "individualAnnualMaximum": 1000,
+      "familyAnnualMaximum": 3000,
+      "claimFilingDeadlineDays": 180
+    },
     "selfFundedDental": {
       "document": {
         "version": "1.0",

@@ -11,6 +11,7 @@ Each product structure has the document form appropriate to what the product act
 | DPC Companion | `plan-structures/dpc-companion/plan-docs/dpc-companion-benefit-appendix.md` | `dpc-companion-spd-section.md` | Independent DPC coverage election; allowance and employee contributions retain their classification under the applicable adopted benefits |
 | Premium Tax Credit Plan | `plan-structures/ptc-plan/plan-docs/ptc-strategy-adoption-schedule.md` | `ptc-participant-notice.md` | Employer strategy and participant notice; Marketplace policy remains outside the Plan |
 | Self-Funded Dental | `plan-structures/self-funded-dental/plan-docs/dental-benefit-appendix.md` | `dental-spd-section.md` | Benefit Appendix and SPD section |
+| Self-Funded Vision | `plan-structures/self-funded-vision/plan-docs/vision-benefit-appendix.md` | `vision-spd-section.md` | Benefit Appendix and SPD section |
 | Self-Funded Basic MEC | `plan-structures/self-funded-mec/basic-mec/plan-docs/mec-benefit-appendix.md` | `mec-spd-section.md` | Benefit Appendix and SPD section |
 
 Every folder also contains a registered extension schema and a composed product context schema. All templates consume the same base `PlanDocumentContext` and add only their product-specific extension.
