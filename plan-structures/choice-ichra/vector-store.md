@@ -5,7 +5,7 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/choice-ichra/human-readable.md
 metadata_document: plan-structures/choice-ichra/metadata.yaml
-source_commit: 2eb5a041ab7e0e85ce25d4dcd1bf54f659a209f1
+source_commit: 3c253b2c1f498b543adf20315b3fead15432e78e
 source_sha256: 346948dbf36718b17ad1d6978c9d79692d85d5a4daffbfc80448f7473c705b55
 metadata_sha256: 9b769bd2d50959f57bfb1171245902f69217a5d83d81470045364dd1d8325bb9
 generation_method: deterministic-markdown-conversion

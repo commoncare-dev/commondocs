@@ -7,14 +7,12 @@ kind: benefit-appendix
 status: template
 version: "1.0"
 parent_document: CommonCare Welfare Benefit Plan — Core Plan Document
-context_schema: ./choice-ichra-plan-document-context.schema.json
+context_schema: ../../../plan-docs/plan-document-context.schema.json
 ---
 
 # CHOICE Individual Coverage HRA Benefit Appendix
 
-Version: ${extensions.choiceIchra.document.version}
-
-Effective Date: ${extensions.choiceIchra.document.effectiveDate|dateLong}
+Effective Date: ${plan.year.startDate|dateLong}
 
 # Adoption and purpose
 
@@ -22,22 +20,17 @@ The Employer adopts this Appendix to establish an individual coverage health rei
 
 CHOICE may provide analysis and navigation concerning available individual coverage. A recommendation does not change the Participant's responsibility to select and enroll in coverage or change the terms of the policy selected.
 
-# Adopted coverage terms
+# Coverage terms and records
 
-| Term | Election |
-|---|---|
-| Eligible class | ${extensions.choiceIchra.eligibleClass} |
-| Waiting period | ${eligibility.defaultWaitingPeriod.description} |
-| Monthly Employer contribution | ${extensions.choiceIchra.monthlyEmployerContribution|currencyUSD} |
-| Permitted contribution variation | ${extensions.choiceIchra.contributionVariation} |
-| Reimbursable expenses | ${extensions.choiceIchra.permittedExpenses} |
-| Claims runout after participation ends | ${extensions.choiceIchra.claimsRunoutDays} days |
+Eligibility, waiting periods, eligible ICHRA classes, and any permitted contribution variations follow the adopted Plan settings and enrollment records. The standard CHOICE ICHRA amount is $1 per month unless a different ICHRA amount is expressly adopted in those settings. Health-flex credits, general flex credits, and Employee salary reductions remain separate funding sources; a combined displayed allowance does not increase the ICHRA amount.
 
-The standard CHOICE ICHRA amount is $1 per month unless the Employer adopts a different ICHRA amount. Health-flex credits, general flex credits, and Employee salary reductions remain separate funding sources; displaying a combined allowance does not increase this ICHRA amount. Enrollment disclosures and the required ICHRA notice must state the actual Participant-specific maximum, including any lawful proration.
+The ICHRA reimburses qualifying individual health insurance and Medicare premiums. Other medical expenses are reimbursable only if expressly included in the adopted ICHRA coverage terms. Claims incurred during participation may be submitted for 180 days after participation ends unless the adopted coverage terms provide a different runout period. This runout period does not extend coverage or change appeal deadlines.
+
+The Plan Administrator retains the applicable coverage settings and participant-specific enrollment disclosures for each coverage period. The required ICHRA notice must state each Participant's actual maximum dollar amount, including any lawful proration. Those operational records apply the governing terms; this document does not require separate custom entries duplicating them.
 
 # Eligibility and class treatment
 
-An Employee may participate only while included in the eligible class and otherwise satisfying the Plan's requirements. Class definitions and contribution variations follow the adopted Plan settings and participant notices and must be administered uniformly and applicable ICHRA class rules. If the Employer offers a traditional group health plan to another class, the class structure and any minimum-class-size requirement must be satisfied before the Plan Year begins.
+An Employee may participate only while included in the eligible class and otherwise satisfying the Plan's requirements. Class definitions and contribution variations follow the adopted Plan settings and participant notices and must be administered uniformly under applicable ICHRA class rules. If the Employer offers a traditional group health plan to another class, the class structure and any minimum-class-size requirement must be satisfied before the Plan Year begins.
 
 # Individual coverage requirement
 
@@ -51,7 +44,7 @@ An eligible Employee may decline or opt out of the ICHRA at least annually and w
 
 # Reimbursements
 
-The ICHRA reimburses only expenses within the scope stated above, incurred during participation, properly substantiated, and not reimbursed from another source. Insurance-premium reimbursement is made after proof of the expense and required individual coverage. The Participant may not receive cash instead of an unused ICHRA amount.
+The ICHRA reimburses only expenses within the adopted scope described above, incurred during participation, properly substantiated, and not reimbursed from another source. Insurance-premium reimbursement is made after proof of the expense and required individual coverage. The Participant may not receive cash instead of an unused ICHRA amount.
 
 Reimbursements are limited to the Participant's available balance. Unused amounts remain Employer assets unless the adopted schedule expressly provides lawful carryover. The arrangement is unfunded and paid from Employer general assets unless a schedule identifies another funding method.
 
@@ -63,4 +56,4 @@ Salary reduction under Section 125 may not be used to pay an individual-market p
 
 # Claims and appeals
 
-Submit reimbursement claims to ${administration.serviceContacts.claims.formatted}. Submit appeals to ${administration.serviceContacts.appeals.formatted}. The incorporated ICHRA claims procedure states substantiation requirements, deadlines, adverse determination content, and appeal rights.
+Submit reimbursement claims to the claims contact identified in the Plan administration records. Submit appeals to the appeals contact identified in the Plan administration records. The incorporated ICHRA claims procedure states substantiation requirements, deadlines, adverse determination content, and appeal rights.
