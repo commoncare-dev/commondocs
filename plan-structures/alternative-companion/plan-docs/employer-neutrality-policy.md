@@ -10,7 +10,8 @@ outside_plan: true
 
 # Alternative Companion Employer Neutrality Policy
 
-Version: ${extensions.alternativeCompanion.document.version}<br>
+Version: ${extensions.alternativeCompanion.document.version}
+
 Effective Date: ${extensions.alternativeCompanion.document.effectiveDate|dateLong}
 
 # Purpose

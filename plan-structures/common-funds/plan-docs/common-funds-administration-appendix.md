@@ -1,5 +1,5 @@
 ---
-template_set: {"key":"common-funds","name":"CommonFunds","implementations":{"plan-document":{"key":"administration","role":"appendix","order":10,"required":true,"requires":["health-fsa"],"description":"Adopt the coordinated administration provisions with the Health FSA component. Include the EBHRA component only when enabled in plan context."}}}
+template_set: {"key":"common-funds","name":"CommonFunds","implementations":{"plan-document":{"key":"administration","role":"appendix","order":10,"required":true,"description":"Shared CommonFunds administration. Add only the component documents enabled in the plan."}}}
 id: plan-document.benefit-appendix.common-funds
 title: CommonFunds Coordinated Benefit Appendix
 kind: benefit-appendix
@@ -14,8 +14,8 @@ component_documents:
 
 # CommonFunds Coordinated Benefit Appendix
 
-Version: ${extensions.commonFunds.document.version}<br>
-Appendix Number: ${extensions.commonFunds.document.appendixNumber}<br>
+Version: ${extensions.commonFunds.document.version}
+
 Effective Date: ${extensions.commonFunds.document.effectiveDate|dateLong}
 
 # 1. Adoption and purpose
@@ -24,28 +24,13 @@ The Employer adopts CommonFunds as one coordinated account-based medical benefit
 
 CommonFunds does not assume that every dollar has the same source or rules. The classification of an amount determines the applicable contribution limit, availability rule, eligible-expense scope, Employer or Participant control, claim procedure, and year-end treatment.
 
-# 2. Required underlying group coverage
+# 2. Coordinated coverage
 
-CommonFunds is offered only with the following non-excepted group health plan coverage made available by the Employer:
+Any coordinated medical coverage is identified in the Plan's coverage and enrollment records. Each component remains subject to its applicable eligibility and coverage conditions. Where an EBHRA requires an offer of non-excepted group health coverage, the Employer must make that coverage available to eligible Employees.
 
-| Coverage | Governing document | Non-excepted coverage offered |
-|---|---|---|
-| ${extensions.commonFunds.groupCoverage.description} | ${extensions.commonFunds.groupCoverage.documentId} | ${extensions.commonFunds.groupCoverage.isOffered|yesNo} |
+# 3. Components
 
-The required group coverage may be narrow MEC when otherwise valid for the adopted pathway. Eligibility to use a particular CommonFunds component remains subject to that component's additional conditions.
-
-# 3. Adopted pathway and component documents
-
-| Term | Adopted value |
-|---|---|
-| CommonFunds pathway | ${extensions.commonFunds.pathway|titleCase} |
-| CommonFunds HRA component enabled | ${extensions.commonFunds.hra.componentEnabled|yesNo} |
-| CommonFunds HRA component | ${extensions.commonFunds.hra.componentType|titleCase} |
-| Coordinated HRA coverage | ${extensions.commonFunds.hra.coordinatedCoverageType|titleCase} |
-| Coordinated HRA governing document | ${extensions.commonFunds.hra.documentId} |
-| Health FSA governing document | ${extensions.commonFunds.healthFsa.documentId} |
-
-On the excepted pathway, the CommonFunds HRA component must satisfy the EBHRA component document. On an ICHRA pathway, the CommonFunds HRA component is `none`: no EBHRA is offered, the separately adopted ICHRA document governs the ICHRA, and CommonFunds operates through its Health FSA component only. On an integrated-group pathway, the integrated HRA document governs any HRA component.
+The Health FSA and HRA portions are independently offered according to the CommonFunds coverage settings. The component provisions included in this Plan govern the portions offered. A separately offered ICHRA is governed by its own terms; the EBHRA component does not apply when an ICHRA is coordinated.
 
 # 4. Classification of contributions
 
@@ -53,7 +38,7 @@ CommonFunds classifies an amount when the election or allocation becomes binding
 
 | Source or election | Treatment |
 |---|---|
-| Genuinely Employer-only and unavailable as cash | HRA funding when the adopted HRA pathway permits it; otherwise another expressly adopted Employer benefit |
+| Genuinely Employer-only and unavailable as cash | HRA funding when the adopted HRA component permits it; otherwise another expressly adopted Employer benefit |
 | Cashable credit elected into the Health FSA | Participant salary reduction for Health FSA limit and availability purposes |
 | Direct Participant payroll election into the Health FSA | Participant salary reduction |
 | True Employer Health FSA contribution | Employer Health FSA funding, limited by the applicable maximum-benefit test and governing documents |
@@ -61,52 +46,33 @@ CommonFunds classifies an amount when the election or allocation becomes binding
 
 An amount does not become Employer-only merely because the Employer initially described it as an allowance or credit. If the Participant could receive the amount as cash or another taxable benefit and elects it into the Health FSA, it is salary reduction in substance.
 
-# 5. Adopted contribution inputs and allocation order
+# 5. Contributions and elections
 
-| Input | Adopted amount or rule |
-|---|---|
-| Monthly Employer-only amount | ${extensions.commonFunds.allocation.monthlyEmployerOnlyAmount|currencyUSD} |
-| Monthly health-only flex credit | ${extensions.commonFunds.allocation.monthlyHealthOnlyFlexCredit|currencyUSD} |
-| Monthly cashable flex credit | ${extensions.commonFunds.allocation.monthlyCashableFlexCredit|currencyUSD} |
-| Annual direct Participant Health FSA election | ${extensions.commonFunds.allocation.annualDirectEmployeeFsaElection|currencyUSD} |
-| Priority rule | ${extensions.commonFunds.allocation.priorityRule} |
-
-The administrator will reject, redirect, or return an amount that cannot lawfully fit within the selected component and election. It may not leave the amount in a unified balance without a valid classification.
+Employer-only contributions, health-only flex credits, cashable flex credits, and Participant salary reductions retain their respective classifications. Cashable credits elected into the Health FSA count as salary reduction. Amounts, class-specific contribution methods, and Participant elections are determined through the Plan's contribution settings and enrollment; this document does not establish a separate fixed allocation or Participant election.
 
 # 6. Claim routing
 
 ## CommonFunds deductible
 
-| Term | Adopted rule |
-|---|---|
-| Deductible enabled | ${extensions.commonFunds.deductible.enabled|yesNo} |
-| Applies to Health FSA | ${extensions.commonFunds.deductible.appliesToHealthFsa|yesNo} |
-| Applies to HRA | ${extensions.commonFunds.deductible.appliesToHra|yesNo} |
-| Amount source | the participant's coverage and enrollment records |
-| Accumulation | ${extensions.commonFunds.deductible.accumulationRule} |
-| Expenses credited | ${extensions.commonFunds.deductible.creditedExpenses} |
-| Before-deductible benefits | ${extensions.commonFunds.deductible.preDeductibleBenefitRule} |
-| Evidence of satisfaction | ${extensions.commonFunds.deductible.satisfactionEvidence} |
+Deductible amounts, accumulation periods, and applicable exceptions follow the coverage settings and are communicated through coverage and enrollment.
 
-When enabled for a component, CommonFunds does not reimburse an expense incurred before the applicable deductible is satisfied unless the expense falls within the adopted before-deductible benefit rule. An expense does not become reimbursable later merely because the Participant subsequently satisfies the deductible. The Plan Administrator must determine deductible status as of the date the expense was incurred and retain the evidence used.
+Unless expressly excluded by an applicable Appendix or the terms of coordinated coverage, all expenses for medical care described in Code section 213(d) are credited toward the applicable CommonFunds deductible upon proper billing evidence.
 
-For a Health FSA intended to preserve HSA eligibility, the restriction is administered as a post-deductible Health FSA: before the applicable statutory minimum deductible is satisfied, it may reimburse only preventive care or another category permitted without destroying HSA eligibility. The Plan's benefit terms and enrollment records may state a higher deductible, but not a lower one, when HSA compatibility depends on the post-deductible design.
+Crediting an expense toward a deductible does not establish a right to reimbursement. An expense incurred before an applicable deductible is satisfied does not become reimbursable solely because the deductible is later satisfied.
 
-The administrator applies the following sequence to every reimbursement request:
+Pre-deductible reimbursements are limited to preventive care expressly enabled by the applicable coverage settings and permitted by law.
 
-1. Determine the expense, service date, claimant, and substantiation.
-2. Determine which adopted components could reimburse that expense.
-3. Determine whether the CommonFunds deductible applied to that component was satisfied on the expense date.
-4. Apply any HSA-compatible limited-purpose or post-deductible restriction.
-5. Apply the component priority stated in the operational schedule.
-6. Confirm the component's available amount under its own availability rule.
-7. Pay from that component and retain the source, deductible determination, rule, and remaining component balance.
+A Health FSA may operate on a post-deductible basis where provided by the coverage settings. Where HSA compatibility is intended, applicable statutory restrictions continue to apply. Uniform coverage determines the available annual Health FSA benefit; it does not waive an applicable deductible.
 
-The same expense may not be reimbursed twice. A Participant-facing combined balance is a display of component availability, not a new source of benefits.
+For HSA-compatible post-deductible benefits, only expenses covered by the coordinated HDHP count toward satisfaction of its required deductible.
+
+The administrator routes properly documented claims to an eligible component under the coverage settings and prevents duplicate reimbursement. Each component retains its own availability and eligible-expense rules.
 
 # 7. Availability
 
+${#if extensions.commonFunds.healthFsa.componentEnabled}
 The Health FSA component follows uniform coverage: its adopted annual maximum reimbursement is available throughout the coverage period, reduced by prior reimbursements, without regard to payroll deductions collected to date.
+${/if}
 
 ${#if extensions.commonFunds.hra.componentEnabled}
 The HRA component follows its governing document. CommonFunds expresses HRA availability through an advance-month value. An advance value of `1` makes only the current accumulated monthly amount available. An advance value of `12` makes twelve monthly allocations available at once, but remains an HRA design choice rather than Health FSA uniform coverage.
@@ -116,21 +82,14 @@ ${/if}
 
 # 8. End-of-year balances and Employer ownership
 
-The default rule is: ${extensions.commonFunds.endingBalance.defaultRule}
+After timely eligible claims, year-end disposition follows the coverage settings and applicable component rules. If no different treatment is selected, the Employer retains unused funds and has discretion over the legally permitted use of experience gains. A displayed individual balance does not establish a right to a cash distribution.
 
-No carryover, rollover, or grace period applies unless the applicable component document expressly adopts it. After payment of timely eligible claims and expiration of any expressly adopted runout, unused amounts remain or revert to the Employer or Plan, subject to applicable plan-asset and cafeteria-plan rules. A displayed balance is not vested compensation and is not payable as cash merely because it was visible to the Participant.
+${extensions.commonFunds.endingBalance.rule|optional}
 
 # 9. Records and reconciliation
 
-The administrator will maintain a component ledger capable of reconstructing each amount from source through election, allocation, availability, claim payment, forfeiture, carryover, correction, and final accounting. Payroll, elections, claims, and displayed balances must be reconciled at the frequency stated in the operational schedule.
+The administrator retains the contribution settings, elections, allocations, claims, and component balances necessary to administer the benefit and reconcile its records.
 
-Claims contact: ${administration.serviceContacts.claims.formatted}<br>
+Claims contact: ${administration.serviceContacts.claims.formatted}
+
 Appeals contact: ${administration.serviceContacts.appeals.formatted}
-
-# 10. Incorporated schedules
-
-| Schedule | Version and effective date | Location or custodian |
-|---|---|---|
-${#each extensions.commonFunds.operationalSchedules as schedule}
-| ${schedule.name} | ${schedule.version}; effective ${schedule.effectiveDate|dateLong} | ${schedule.location} |
-${/each}

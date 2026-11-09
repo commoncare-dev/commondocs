@@ -97,7 +97,7 @@ function resolveValue(values, token) {
  * @returns {string}
  */
 function renderValue(value, formatter) {
-	if (!formatter) return value === null ? "" : String(value);
+	if (!formatter || formatter === "optional") return value == null ? "" : String(value);
 	if (formatter === "dash") return value === null || value === "" ? "—" : String(value);
 	if (formatter === "yesNo") return value ? "Yes" : "No";
 	if (formatter === "titleCase") {
@@ -171,7 +171,8 @@ function processTokens(content, values) {
 	const processed = content.replace(new RegExp(TOKEN_SOURCE, "g"), (token, tokenPath, formatter) => {
 		expressions.push(formatter ? `${tokenPath}|${formatter}` : tokenPath);
 		if (values === undefined) return token;
-		return renderValue(resolveValue(values, tokenPath), formatter);
+		try { return renderValue(resolveValue(values, tokenPath), formatter); }
+        catch(error) { if(formatter === 'optional' && error.message?.startsWith('Missing interpolation value: '))return ''; throw error; }
 	});
 	return { content: processed, expressions };
 }

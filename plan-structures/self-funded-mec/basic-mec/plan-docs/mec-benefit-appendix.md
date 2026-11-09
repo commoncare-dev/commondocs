@@ -12,8 +12,8 @@ context_schema: ./self-funded-mec-plan-document-context.schema.json
 
 # Self-Funded Basic MEC Benefit Appendix
 
-Version: ${extensions.selfFundedMec.document.version}<br>
-Benefit Appendix Number: ${extensions.selfFundedMec.document.appendixNumber}<br>
+Version: ${extensions.selfFundedMec.document.version}
+
 Effective Date: ${extensions.selfFundedMec.document.effectiveDate|dateLong}
 
 ---
@@ -64,7 +64,7 @@ The definitions in the Core Plan Document apply unless this Appendix provides a 
 
 **Approved Provider** means a qualified provider identified or approved by the Plan to furnish a Covered Service for the Approved Amount and to accept the Plan's payment arrangement as payment in full, except for amounts the Participant is expressly required to pay under this Appendix.
 
-**Covered Service** means an item or service covered under this Appendix, including a Required Preventive Service and any optional benefit expressly adopted in Schedule C.
+**Covered Service** means an item or service covered under this Appendix, including a Required Preventive Service and any optional benefit expressly adopted in Schedule B.
 
 **HDHP** means a high-deductible health plan satisfying Internal Revenue Code §223 and applicable guidance.
 
@@ -72,7 +72,7 @@ The definitions in the Core Plan Document apply unless this Appendix provides a 
 
 **Required Preventive Service** means an item or service that this non-grandfathered group health plan must cover under Public Health Service Act §2713 for the applicable Plan Year.
 
-**Service Schedule** means the versioned preventive-services and claims schedule maintained for this benefit and incorporated under Schedule B.
+**Service Schedule** means the preventive-service classifications and claims settings maintained in the applicable coverage records.
 
 ---
 
@@ -164,7 +164,7 @@ The Plan Administrator may resolve an individual access or pricing failure by ap
 
 # Optional benefits
 
-No benefit beyond the Required Preventive Services is covered unless the Employer expressly adopts it in Schedule C.
+No benefit beyond the Required Preventive Services is covered unless the Employer expressly adopts it in Schedule B.
 
 An adopted optional benefit must state:
 
@@ -180,7 +180,7 @@ If Schedule A identifies this benefit as an intended HDHP, a nonpreventive medic
 
 ## Direct primary care
 
-A direct-primary-care arrangement is not covered or paid by this Appendix unless Schedule C expressly establishes a structure reviewed for the applicable Plan Year. Permission for an individual to participate in a qualifying DPC arrangement does not, by itself, authorize this HDHP to pay the DPC fee before its deductible.
+A direct-primary-care arrangement is not covered or paid by this Appendix unless Schedule B expressly establishes a structure reviewed for the applicable Plan Year. Permission for an individual to participate in a qualifying DPC arrangement does not, by itself, authorize this HDHP to pay the DPC fee before its deductible.
 
 ---
 
@@ -219,7 +219,7 @@ The Plan Administrator will update indexed HDHP amounts before each applicable P
 
 # Claims, adverse determinations, and appeals
 
-Claims and appeals are governed by the Core Plan Document and the health-benefit claims procedure incorporated in Schedule B.
+Claims and appeals are governed by the Core Plan Document and the applicable health-benefit claims procedure under the Core Plan Document.
 
 The incorporated procedure must identify:
 
@@ -238,7 +238,7 @@ A provider-navigation request is not automatically a claim or appeal. If a reque
 
 # Coordination and continuation
 
-This benefit coordinates with other coverage under the coordination rules incorporated in Schedule B. The Plan may obtain information reasonably necessary to determine primary and secondary responsibility.
+This benefit coordinates with other coverage under the coordination rules of the Core Plan Document and this Appendix. The Plan may obtain information reasonably necessary to determine primary and secondary responsibility.
 
 COBRA or another continuation requirement applies only when the Employer, Plan, Participant, and qualifying event are subject to that law. Continuation coverage does not expand the benefits otherwise provided by this Appendix.
 
@@ -254,26 +254,14 @@ Participant-facing materials must accurately communicate that this benefit:
 - Does not provide minimum value unless Schedule A expressly states otherwise;
 - Is not comprehensive major medical coverage;
 - Covers Required Preventive Services through the Plan's approved-provider process;
-- Excludes services outside its narrow coverage unless Schedule C states otherwise; and
+- Excludes services outside its narrow coverage unless Schedule B states otherwise; and
 - Establishes HSA compatibility only when the benefit and the individual each satisfy the applicable requirements.
 
 The Summary of Benefits and Coverage, enrollment materials, provider directory, and other summaries do not replace or amend the governing terms of the Plan.
 
 ---
 
-# Schedule B — Incorporated operational schedules
-
-The following current schedules are incorporated into this Appendix. A schedule may be maintained separately and updated without restating this Appendix to the extent the amendment and notice rules permit.
-
-| Schedule | Version or effective date | Location or custodian |
-|---|---|---|
-${#each extensions.selfFundedMec.operationalSchedules as schedule}
-| ${schedule.name} | ${schedule.version}; effective ${schedule.effectiveDate|dateLong} | ${schedule.location} |
-${/each}
-
----
-
-# Schedule C — Optional benefit elections
+# Schedule B — Optional benefit elections
 
 No optional benefit is adopted unless described below or in an attached schedule expressly incorporated here.
 

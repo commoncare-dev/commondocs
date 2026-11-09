@@ -67,12 +67,36 @@
       "name": "Example Company, Inc."
     },
     "serviceContacts": {
-      "eligibility": { "email": "benefits@example.com", "phone": "(555) 555-0100", "formatted": "benefits@example.com; (555) 555-0100" },
-      "claims": { "email": "claims@example.com", "phone": "(555) 555-0101", "formatted": "claims@example.com; (555) 555-0101" },
-      "appeals": { "email": "appeals@example.com", "phone": "(555) 555-0102", "formatted": "appeals@example.com; (555) 555-0102" },
-      "providerNavigation": { "email": "navigation@example.com", "phone": "(555) 555-0103", "formatted": "navigation@example.com; (555) 555-0103" },
-      "continuation": { "email": "cobra@example.com", "phone": "(555) 555-0104", "formatted": "cobra@example.com; (555) 555-0104" },
-      "privacy": { "email": "privacy@example.com", "phone": "(555) 555-0105", "formatted": "privacy@example.com; (555) 555-0105" }
+      "eligibility": {
+        "email": "benefits@example.com",
+        "phone": "(555) 555-0100",
+        "formatted": "benefits@example.com; (555) 555-0100"
+      },
+      "claims": {
+        "email": "claims@example.com",
+        "phone": "(555) 555-0101",
+        "formatted": "claims@example.com; (555) 555-0101"
+      },
+      "appeals": {
+        "email": "appeals@example.com",
+        "phone": "(555) 555-0102",
+        "formatted": "appeals@example.com; (555) 555-0102"
+      },
+      "providerNavigation": {
+        "email": "navigation@example.com",
+        "phone": "(555) 555-0103",
+        "formatted": "navigation@example.com; (555) 555-0103"
+      },
+      "continuation": {
+        "email": "cobra@example.com",
+        "phone": "(555) 555-0104",
+        "formatted": "cobra@example.com; (555) 555-0104"
+      },
+      "privacy": {
+        "email": "privacy@example.com",
+        "phone": "(555) 555-0105",
+        "formatted": "privacy@example.com; (555) 555-0105"
+      }
     },
     "materialServiceProviders": []
   },
@@ -133,7 +157,10 @@
   },
   "extensions": {
     "alternativeCompanion": {
-      "document": { "version": "1.0", "effectiveDate": "2027-01-01" },
+      "document": {
+        "version": "1.0",
+        "effectiveDate": "2027-01-01"
+      },
       "marketplaceOperator": "CommonCare",
       "marketplaceContact": "support@example.com; (555) 555-0110",
       "postTaxPayrollAvailable": true,
@@ -142,16 +169,21 @@
       "acknowledgmentDeadline": "Before the first payroll deduction or direct payment"
     },
     "choiceIchra": {
-      "document": { "version": "1.0", "appendixNumber": "ICHRA-1", "effectiveDate": "2027-01-01" },
+      "document": {
+        "version": "1.0",
+        "effectiveDate": "2027-01-01"
+      },
       "eligibleClass": "All full-time salaried Employees in the adopted ICHRA class",
       "monthlyEmployerContribution": 400,
       "contributionVariation": "Amount varies only by participant age and family size under the adopted contribution schedule",
       "permittedExpenses": "Individual health insurance premiums and other Code section 213(d) medical expenses",
-      "claimsRunoutDays": 90,
-      "operationalSchedules": []
+      "claimsRunoutDays": 90
     },
     "commonFunded": {
-      "document": { "version": "1.0", "effectiveDate": "2027-01-01" },
+      "document": {
+        "version": "1.0",
+        "effectiveDate": "2027-01-01"
+      },
       "majorMedicalCoverage": {
         "name": "Example Major Medical Coverage",
         "documentId": "plan-document.benefit-appendix.example-major-medical",
@@ -162,73 +194,66 @@
         "documentId": "plan-document.benefit-appendix.common-funds"
       },
       "annexedCommonFundsDocuments": [
-        { "name": "CommonFunds Coordinated Benefit Appendix", "documentId": "plan-document.benefit-appendix.common-funds" },
-        { "name": "CommonFunds Health FSA Component", "documentId": "plan-document.component.common-funds-health-fsa" },
-        { "name": "CommonFunds Excepted Benefit HRA Component", "documentId": "plan-document.component.common-funds-ebhra" }
+        {
+          "name": "CommonFunds Coordinated Benefit Appendix",
+          "documentId": "plan-document.benefit-appendix.common-funds"
+        },
+        {
+          "name": "CommonFunds Health FSA Component",
+          "documentId": "plan-document.component.common-funds-health-fsa"
+        },
+        {
+          "name": "CommonFunds Excepted Benefit HRA Component",
+          "documentId": "plan-document.component.common-funds-ebhra"
+        }
       ],
       "allocationObjective": "Coordinate lower-premium major medical coverage with CommonFunds amounts available for eligible Participant expenses.",
       "bandingDescription": "Allowance amounts may be adjusted by Participant age and applicable insurance rating area as shown in the Enrollment Schedule and permitted by the underlying coverage rules."
     },
     "commonFunds": {
-      "document": { "version": "1.0", "appendixNumber": "CF-1", "effectiveDate": "2027-01-01" },
-      "pathway": "excepted",
+      "document": {
+        "version": "1.0",
+        "effectiveDate": "2027-01-01"
+      },
       "groupCoverage": {
         "isOffered": true,
         "documentId": "plan-document.benefit-appendix.self-funded-basic-mec",
         "description": "Self-Funded Basic MEC",
         "isNonExcepted": true
       },
-      "allocation": {
-        "monthlyEmployerOnlyAmount": 200,
-        "monthlyHealthOnlyFlexCredit": 100,
-        "monthlyCashableFlexCredit": 100,
-        "annualDirectEmployeeFsaElection": 1000,
-        "priorityRule": "Allocate genuinely Employer-only amounts to the EBHRA up to its limit, then allocate valid Employer Health FSA funding; treat cashable amounts elected into the Health FSA as salary reduction."
-      },
       "deductible": {
         "enabled": true,
         "appliesToHealthFsa": true,
         "appliesToHra": true,
-        "amountSource": "enrollment-schedule",
-        "enrollmentScheduleReference": "The deductible shown for the Participant's CommonFunded election in the applicable Enrollment Schedule",
-        "accumulationRule": "Individual deductible; eligible expenses incurred by the Participant accumulate during the coverage period.",
-        "creditedExpenses": "Expenses credited by the major medical coverage toward its in-network deductible, plus any additional eligible expenses expressly identified in the Enrollment Schedule.",
-        "preDeductibleBenefitRule": "No CommonFunds reimbursement before satisfaction of the deductible, except preventive care or another expense category expressly identified as available before the deductible and legally permitted for the applicable component.",
-        "satisfactionEvidence": "An explanation of benefits or other independent third-party record showing the service date, eligible expense, and amount credited toward the deductible."
+        "accumulationRule": "annual",
+        "coverage": {
+          "single": 1600,
+          "family": 3200,
+          "type": "annual"
+        },
+        "categories": {},
+        "preventive": false
       },
       "hra": {
         "componentEnabled": true,
         "componentType": "ebhra",
-        "coordinatedCoverageType": "ebhra",
         "documentId": "plan-document.component.common-funds-ebhra",
-        "annualEmployerAmount": 2200,
-        "monthlyAccrual": 183.33,
-        "advanceMonths": 1,
-        "recourseForUnaccruedAdvance": false,
-        "eligibleExpenses": "Eligible Code section 213(d) medical expenses other than premiums prohibited for an EBHRA",
-        "carryoverAllowed": false,
-        "carryoverRule": "No carryover is adopted; unused amounts remain Employer property after the applicable claims period."
+        "advanceMonths": 1
       },
       "healthFsa": {
-        "documentId": "plan-document.component.common-funds-health-fsa",
-        "annualSalaryReduction": 1000,
-        "annualCashableFlexElected": 1200,
-        "annualTrueEmployerContribution": 1200,
-        "annualMaximumBenefit": 3400,
-        "uniformCoverage": true,
-        "eligibleExpenses": "Eligible Code section 213(d) medical expenses permitted by the adopted Health FSA schedule",
-        "carryoverAllowed": false,
-        "gracePeriodAllowed": false,
-        "unusedAmountRule": "After the claims runout, unused amounts are forfeited and remain or revert to the Employer or Plan, subject to applicable law."
+        "componentEnabled": true,
+        "salaryReductionLimitDescription": "The maximum is the IRS limit applicable to the Plan Year."
       },
       "endingBalance": {
-        "defaultRule": "No component carries over by default. After timely claims are paid, unused amounts remain or revert to the Employer or Plan, subject to applicable law.",
-        "employerPropertySubjectToLaw": true
+        "rule": ""
       },
-      "operationalSchedules": []
+      "coordinatedCoverageType": "group-medical"
     },
     "ptcPlan": {
-      "document": { "version": "1.0", "effectiveDate": "2027-01-01" },
+      "document": {
+        "version": "1.0",
+        "effectiveDate": "2027-01-01"
+      },
       "employerAleStatus": "non-ale",
       "mecOfferDocumentId": "plan-document.benefit-appendix.self-funded-basic-mec",
       "ptcParticipantsMustDeclineMec": true,
@@ -238,19 +263,20 @@
       "acknowledgmentDeadline": "Before the Marketplace coverage effective date"
     },
     "selfFundedDental": {
-      "document": { "version": "1.0", "appendixNumber": "DENTAL-1", "effectiveDate": "2027-01-01" },
+      "document": {
+        "version": "1.0",
+        "effectiveDate": "2027-01-01"
+      },
       "coverageTier": "family",
       "deductiblePerEvent": 50,
       "planCoinsurance": 0.75,
       "individualAnnualMaximum": 1000,
       "familyAnnualMaximum": 3000,
-      "claimFilingDeadlineDays": 180,
-      "operationalSchedules": []
+      "claimFilingDeadlineDays": 180
     },
     "selfFundedMec": {
       "document": {
         "version": "1.0",
-        "appendixNumber": "MEC-1",
         "effectiveDate": "2027-01-01"
       },
       "enrollmentTier": "single",
@@ -263,7 +289,6 @@
         "selfOnlyDeductible": 1700,
         "selfOnlyOutOfPocketMaximum": 8500
       },
-      "operationalSchedules": [],
       "optionalBenefits": []
     }
   },

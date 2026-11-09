@@ -1184,7 +1184,7 @@ The employer bears early-utilization risk. Participants bear forfeiture risk. Th
 
 The Health FSA uniform coverage rule does not apply to the EBHRA. The plan may make EBHRA funds available annually, monthly, or under another permitted schedule.
 
-CommonFunds represents accelerated EBHRA availability in plan documents through `advanceMonths`. The application property `commonFundLoanMultiple` is a legacy alias for the same timing input and should be normalized to `advanceMonths` before document generation.
+CommonFunds represents accelerated EBHRA availability in plan documents through `advanceMonths`. The application property `settings.advanceMonths` is a legacy alias for the same timing input and should be normalized to `advanceMonths` before document generation.
 
 | Monthly allocation | `advanceMonths` | Initial availability | Meaning |
 |---:|---:|---:|---|
@@ -1205,7 +1205,7 @@ Availability and recourse are separate design decisions. When a participant is r
 | Accelerated access with no recourse | Employer accepts the risk of unrecovered advanced reimbursements |
 | Accelerated access with recourse | The plan may require repayment according to the applicable agreement |
 
-Never infer repayment from `advanceMonths` or the legacy `commonFundLoanMultiple` alias; review the plan document.
+Never infer repayment from `advanceMonths`; review the plan document.
 
 ---
 
@@ -1359,7 +1359,7 @@ For every claim, determine:
 | “The employee has only contributed \$100, so only \$100 is available.” | “Health FSA availability follows the annual election, not payroll contributions collected to date.” |
 | “All CommonFunds dollars are available immediately.” | “The Health FSA follows uniform coverage; the EBHRA follows its plan-defined availability schedule.” |
 | “The employer loses money because FSA funds are available immediately.” | “The Health FSA transfers risk in both directions: employers bear early-claim risk and participants bear forfeiture risk.” |
-| “`commonFundLoanMultiple` means the participant owes repayment.” | “The property controls availability timing; recourse depends on the plan document.” |
+| “`settings.advanceMonths` means the participant owes repayment.” | “The property controls availability timing; recourse depends on the plan document.” |
 | “You have \$2,000 saved in CommonFunds.” | “You have \$2,000 available for eligible reimbursement.” |
 | “Your employer deposited \$2,000 for you.” | “Your employer made \$2,000 available for eligible reimbursement.” |
 | “You lose your money if you do not use the EBHRA.” | “Unused EBHRA amounts are handled according to the plan terms.” |

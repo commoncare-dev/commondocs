@@ -1,5 +1,5 @@
 ---
-template_set: {"key":"common-funds","name":"CommonFunds","implementations":{"plan-document":{"key":"health-fsa","role":"component","order":20,"required":true,"requires":["administration"],"description":"Governing Health FSA provisions for the CommonFunds concept, including the ICHRA pathway where the CommonFunds HRA component is disabled."}}}
+template_set: {"key":"common-funds","name":"CommonFunds","implementations":{"plan-document":{"key":"health-fsa","role":"component","order":20,"required":true,"requires":["administration"],"description":"Governing Health FSA provisions, required only when the optional Health FSA component is enabled.","includeWhen":{"path":"extensions.commonFunds.healthFsa.componentEnabled","equals":true}}}}
 id: plan-document.component.common-funds-health-fsa
 title: CommonFunds Health FSA Component
 kind: benefit-component-template
@@ -15,18 +15,11 @@ context_schema: ./common-funds-plan-document-context.schema.json
 
 The Employer establishes this Health Flexible Spending Arrangement (**Health FSA**) component under the Section 125 arrangement established in Appendix D of the Core Plan Document. This component receives Participant salary reduction and any true Employer contribution validly allocated to it.
 
-# 2. Adopted terms
+# 2. Contributions and limits
 
-| Term | Adopted value |
-|---|---|
-| Governing document ID | ${extensions.commonFunds.healthFsa.documentId} |
-| Annual direct salary reduction | ${extensions.commonFunds.healthFsa.annualSalaryReduction|currencyUSD} |
-| Annual cashable flex elected into Health FSA | ${extensions.commonFunds.healthFsa.annualCashableFlexElected|currencyUSD} |
-| Annual true Employer contribution | ${extensions.commonFunds.healthFsa.annualTrueEmployerContribution|currencyUSD} |
-| Annual maximum benefit | ${extensions.commonFunds.healthFsa.annualMaximumBenefit|currencyUSD} |
-| Eligible expenses | ${extensions.commonFunds.healthFsa.eligibleExpenses} |
-| Carryover adopted | ${extensions.commonFunds.healthFsa.carryoverAllowed|yesNo} |
-| Grace period adopted | ${extensions.commonFunds.healthFsa.gracePeriodAllowed|yesNo} |
+Participant salary reductions, including cashable credits elected into the Health FSA, are limited to the maximum permitted under Code section 125 for the applicable Plan Year. ${extensions.commonFunds.healthFsa.salaryReductionLimitDescription}
+
+Participant elections and any Employer contributions are calculated and recorded through the Plan's contribution settings and enrollment. Employer contributions remain subject to applicable benefit limits. This document does not establish a separate Participant election or fixed Employer contribution.
 
 # 3. Salary-reduction classification
 
@@ -42,20 +35,22 @@ Uniform coverage allocates risk in both directions. The Plan bears the risk that
 
 # 5. Deductible restriction
 
-This Health FSA may be designed as a post-deductible Health FSA. Deductible restriction enabled for this component: ${extensions.commonFunds.deductible.appliesToHealthFsa|yesNo}. The applicable deductible is identified by the participant's coverage and enrollment records.
+Deductible amounts, accumulation periods, and applicable exceptions follow the coverage settings and are communicated through coverage and enrollment.
 
-When the restriction applies, the Health FSA pays an otherwise eligible expense only if the expense is incurred after the deductible has been satisfied, except as stated in the adopted before-deductible benefit rule: ${extensions.commonFunds.deductible.preDeductibleBenefitRule}
+Unless expressly excluded by an applicable Appendix or the terms of coordinated coverage, all expenses for medical care described in Code section 213(d) are credited toward the applicable CommonFunds deductible upon proper billing evidence.
 
-Deductible accumulation rule: ${extensions.commonFunds.deductible.accumulationRule}<br>
-Credited expenses: ${extensions.commonFunds.deductible.creditedExpenses}<br>
-Required evidence: ${extensions.commonFunds.deductible.satisfactionEvidence}
+Crediting an expense toward a deductible does not establish a right to reimbursement. An expense incurred before an applicable deductible is satisfied does not become reimbursable solely because the deductible is later satisfied.
 
-Uniform coverage determines how much of the elected annual maximum benefit is available; it does not eliminate the deductible or make an expense incurred before deductible satisfaction reimbursable. If the Health FSA is intended to preserve HSA eligibility, the post-deductible restriction will be administered consistently with Code section 223 and the applicable minimum HDHP deductible.
+Pre-deductible reimbursements are limited to preventive care expressly enabled by the applicable coverage settings and permitted by law.
+
+A Health FSA may operate on a post-deductible basis where provided by the coverage settings. Where HSA compatibility is intended, applicable statutory restrictions continue to apply. Uniform coverage determines the available annual Health FSA benefit; it does not waive an applicable deductible.
+
+For HSA-compatible post-deductible benefits, only expenses covered by the coordinated HDHP count toward satisfaction of its required deductible.
 
 # 6. Claims and forfeiture
 
 The Health FSA reimburses only eligible medical expenses incurred during the applicable coverage period, properly substantiated, and not reimbursed from another source. The CommonFunds routing procedure prevents duplicate reimbursement.
 
-Unused-amount rule: ${extensions.commonFunds.healthFsa.unusedAmountRule}
+After timely eligible claims, year-end disposition follows the coverage settings and applicable component rules. If no different treatment is selected, the Employer retains unused funds and has discretion over the legally permitted use of experience gains. A displayed individual balance does not establish a right to a cash distribution.
 
-Unless the adopted terms above expressly say otherwise, this component has no carryover and no grace period. After the applicable claim-submission period, unused amounts remain or revert to the Employer or Plan, subject to applicable plan-asset and cafeteria-plan rules, and are not paid to the Participant as cash.
+${extensions.commonFunds.endingBalance.rule|optional}

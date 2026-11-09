@@ -1,5 +1,5 @@
 ---
-template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"base","role":"base","order":0,"required":true,"description":"Base governing welfare plan document. Include required Appendices A, B, C, and D, then add applicable benefit concepts and their governing components.","requires":["appendix-a","appendix-b","appendix-c","appendix-d"]}}}
+template_set: {"key":"welfare-plan","name":"Welfare Benefit Plan","implementations":{"plan-document":{"key":"base","role":"base","order":0,"required":true,"description":"Base governing welfare plan document. Include required Appendices A, B, C, D, and E, then add applicable benefit concepts and their governing components.","requires":["appendix-a","appendix-b","appendix-c","appendix-d","appendix-e"]}}}
 id: plan-document.core
 title: CommonCare Welfare Benefit Plan — Core Plan Document
 kind: plan-document-template
@@ -21,7 +21,7 @@ Effective Date: ${plan.effectiveDate|dateLong}
 
 ${sponsor.legalName} (the **Employer** or **Plan Sponsor**) establishes ${plan.name} (the **Plan**) to provide the employee welfare benefits identified in adopted Benefit Appendices.
 
-The Plan consists of this Core Plan Document, Appendix A, Appendix B, Appendix C, Appendix D, each adopted Benefit Appendix, and each schedule or amendment incorporated by those documents. Together, those materials state the governing terms of the Plan. The Plan is intended to be maintained as an employee welfare benefit plan under ERISA except to the extent an adopted Benefit Appendix identifies a benefit to which ERISA does not apply.
+The Plan consists of this Core Plan Document, Appendix A, Appendix B, Appendix C, Appendix D, Appendix E, each adopted Benefit Appendix, and each schedule or amendment incorporated by those documents. Together, those materials state the governing terms of the Plan. The Plan is intended to be maintained as an employee welfare benefit plan under ERISA except to the extent an adopted Benefit Appendix identifies a benefit to which ERISA does not apply.
 
 This Core Plan Document states rules shared across the Plan. A Benefit Appendix states the promise, eligibility rules, funding method, limitations, claims rules, and other terms specific to a benefit. A schedule may state operational or frequently changing details only within the authority granted by the document incorporating it.
 
@@ -60,6 +60,12 @@ Unless a Benefit Appendix supplies a more specific definition for its benefit:
 
 **Participating Employer** means a related or successor employer that has adopted the Plan and is identified in Appendix A.
 
+**Employer Contribution** means an Employer-provided amount or credit available under the applicable benefit and contribution settings. Its permitted uses, allocation restrictions, and any cashability depend on the governing benefit provisions and the applicable settings; an account label alone does not determine its tax treatment.
+
+**Enrollment Records** means the participant-specific elections, contribution disclosures, coverage periods, confirmations, and related payroll records retained through the Plan's enrollment and administration workflows. These records apply the Plan's terms; they do not independently amend the governing documents.
+
+**Plan Settings** means the maintained administrative configuration used to apply the Plan's adopted eligibility, coverage, and contribution terms. Changes to those settings remain subject to the Plan's governing provisions and amendment requirements.
+
 **Plan Administrator** means the person or entity identified in Appendix A.
 
 **Plan Year** means the period identified in Appendix A.
@@ -82,6 +88,16 @@ Participation ends when the earliest applicable event occurs: the person no long
 
 Appendix A states the Plan's general rules for rehire, transfer between eligibility classes, and approved leave. A Benefit Appendix controls when the benefit or applicable law requires a different result. Statutory continuation and restoration rights, including rights applicable to qualifying family, medical, or uniformed-service leave, will be administered as required by law.
 
+## Protected leave and restoration
+
+To the extent FMLA applies, group health coverage, including an applicable Health FSA, may continue during qualifying leave on the same terms as active employment, including continued Employer contributions. An Employee on unpaid FMLA leave may revoke coverage or, if the Employer continues coverage, discontinue the Employee's payments during leave subject to lawful recovery. Coverage discontinued during leave will be reinstated on return as required by FMLA, without a new eligibility waiting period or exclusion that would not otherwise have applied.
+
+During paid leave, required contributions ordinarily continue through the usual payroll method. During unpaid FMLA leave, the Plan offers after-tax pay-as-you-go payments on the normal contribution schedule. Voluntary prepayment may also be elected before leave; pre-tax prepayment may not fund coverage in a later Plan Year. The Employer and Employee may agree before the coverage period to a catch-up arrangement under which the Employer advances contributions and the Employee repays them from available compensation after return, on a pre-tax basis where permitted or otherwise after tax. Lawful recovery of unpaid Employee contributions for coverage the Employer maintained is also permitted. FMLA payment options will be at least as favorable as options offered for comparable non-FMLA leave. Before terminating coverage for nonpayment, the Plan will provide the notice and grace period required by law. Health FSA coverage and reinstatement follow Treasury Regulation Section 1.125-3 and the adopted Health FSA provisions.
+
+Where USERRA applies, a person whose health coverage would end because of uniformed service may elect continuation for the shorter of 24 months after the absence begins or the period ending when the person fails to timely apply for or return to employment under USERRA. For service of fewer than 31 days, the required payment may not exceed the normal Employee share; for longer service, it may not exceed 102 percent of the full premium. On qualifying reemployment, coverage for the Employee and eligible dependents will be restored without a waiting period or exclusion that would not have applied without the military absence, subject to USERRA's exception for service-connected conditions. Reasonable election and payment procedures may not defeat these rights.
+
+Appendix A's general leave and rehire rules remain subject to these protections, other applicable continuation rights, and the benefit-specific terms. An approved leave does not by itself extend coverage beyond those terms.
+
 # 6. Elections and Section 125 treatment
 
 Appendix D establishes the Plan's Section 125 arrangement and states the governing terms for qualified-benefit elections, prospective salary reductions, employer flex credits, contribution limits, and permitted election changes. Employer-specific allowances and cashability restrictions are communicated through enrollment and retained with the applicable records as described in Appendix C. Appendix D forms part of this Plan's written terms.
@@ -94,13 +110,13 @@ A Benefit Appendix identifies whether the benefit is insured, paid from the Empl
 
 Participant contributions may be collected through pre-tax salary reduction, after-tax payroll deduction, direct payment, or another lawful method. Employer contributions may be fixed, formula-based, conditional, matching, or discretionary as stated in the applicable Benefit Appendix or contribution schedule.
 
-A bookkeeping account records rights and transactions but does not itself establish a trust or give a Participant an ownership interest in Employer assets. Plan assets, if any, will be identified and handled according to the documents and law governing those assets.
+A bookkeeping account records rights and transactions but does not itself establish a trust or give a Participant an ownership interest in Employer assets. Plan assets, if any, will be identified and handled according to the documents and law governing those assets. They may be used only to provide benefits to Participants and beneficiaries and pay reasonable Plan administration expenses, except as otherwise expressly permitted by applicable law; they may not be diverted to the Employer for another purpose.
 
 Refunds, dividends, credits, recoveries, and similar amounts will be allocated or applied according to the source of the payment, applicable contract terms, the Plan's funding method, and applicable law. They do not automatically belong exclusively to the Employer or to Participants.
 
 # 8. Plan administration
 
-The Employer appoints the Plan Administrator identified in Appendix A. The Plan Administrator has the authority necessary to administer the Plan consistently with its terms and applicable law, including authority to:
+The Employer appoints the Plan Administrator identified in Appendix A. Unless Appendix A identifies a different named fiduciary, the Plan Administrator is the named fiduciary responsible for controlling and managing Plan operation and administration. When acting as fiduciaries, those responsible for the Plan must act prudently, solely in the interest of Participants and beneficiaries, and for the exclusive purpose of providing benefits and paying reasonable Plan expenses. They must follow the governing documents to the extent consistent with ERISA and avoid prohibited conflicts and transactions. The Plan Administrator has the authority necessary to administer the Plan consistently with its terms and applicable law, including authority to:
 
 - interpret Plan provisions and resolve ambiguities;
 - determine eligibility, participation, and benefit entitlement;
@@ -141,13 +157,13 @@ The Plan will honor a qualified medical child support order and another legally 
 
 # 12. Privacy and information governance
 
-The Plan will use and disclose personal information only as permitted by the documents and law governing that information. Where HIPAA applies, the Plan Sponsor and Plan will maintain the required plan-document provisions, separation, safeguards, policies, notices, complaint process, and designated privacy and security responsibilities identified in the HIPAA Plan Administration Appendix.
+The Plan will use and disclose personal information only as permitted by the documents and law governing that information. Where HIPAA applies, the Plan Sponsor and Plan will maintain the required plan-document provisions, separation, safeguards, policies, notices, complaint process, and designated privacy and security responsibilities stated in Appendix E — HIPAA Plan Administration.
 
-Access to protected health information for Plan administration is limited to the persons and functions identified in that appendix or another authorized record. Employment decisions may not use protected health information received from the Plan except pursuant to a valid authorization or other lawful basis.
+Access to protected health information for Plan administration is limited to the persons and functions described in Appendix E. An administrative access record may identify the individuals within those classes but may not expand the permitted classes or purposes. Employment decisions may not use protected health information received from the Plan except pursuant to a valid authorization or other lawful basis.
 
 # 13. Participant disclosures and controlling records
 
-The Plan Administrator will furnish SPDs, summaries of material modifications, claims notices, privacy notices, and other disclosures required for an applicable benefit. Participant-facing materials will be generated from or reconciled to the same adopted terms and versioned operational schedules used to administer the Plan.
+The Plan Administrator will furnish SPDs, summaries of material modifications, claims notices, privacy notices, and other disclosures required for an applicable benefit. Participant-facing materials will be generated from or reconciled to the same adopted terms and current Plan and coverage records used to administer the Plan.
 
 An SPD explains the Plan but does not silently create, remove, or amend a benefit. When a participant communication reveals an inconsistency or omission, the Plan Administrator will investigate, correct the governing or participant-facing material as appropriate, preserve the affected versions, and provide any required notice.
 
@@ -175,7 +191,7 @@ The Plan is governed by applicable federal law, including ERISA and the Code whe
 
 # 18. Incorporation and execution
 
-Appendix A states the Plan's adopted identifying and administrative information. Appendix B identifies the Benefit Appendices currently adopted into the Plan. Appendix D states the Section 125 election and flex-credit terms. Appendix C describes how the Plan's contribution settings and participant enrollment records establish applicable contributions without requiring a separately authored schedule. A document not identified or otherwise validly adopted is not part of the Plan merely because it is distributed with Plan materials.
+Appendix A states the Plan's adopted identifying and administrative information. Appendix B identifies the Benefit Appendices currently adopted into the Plan. Appendix D states the Section 125 election and flex-credit terms. Appendix E supplies the HIPAA plan-administration provisions where applicable. Appendix C describes how the Plan's contribution settings and participant enrollment records establish applicable contributions without requiring a separately authored schedule. A document not identified or otherwise validly adopted is not part of the Plan merely because it is distributed with Plan materials.
 
 This Core Plan Document becomes effective on the effective date stated above and remains in effect until amended, replaced, or terminated according to the Plan.
 

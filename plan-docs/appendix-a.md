@@ -23,7 +23,7 @@ This Appendix A forms part of the CommonCare Welfare Benefit Plan Core Plan Docu
 | Plan Administrator address | ${administration.planAdministrator.address.formatted} |
 | Plan Administrator telephone/email | ${administration.planAdministrator.contact.formatted} |
 | Agent for service of legal process | ${administration.agentForServiceOfProcess.name}, ${administration.agentForServiceOfProcess.address.formatted} |
-| Named fiduciary, if different | ${administration.namedFiduciary.name} |
+| Named fiduciary (Plan Administrator unless otherwise identified) | ${administration.namedFiduciary.name} |
 | General eligibility class | ${eligibility.defaultClass.description} |
 | General waiting period | ${eligibility.defaultWaitingPeriod.description} |
 | Section 125 elections | Integrated into this Plan and administered through its enrollment workflow. |
@@ -38,4 +38,12 @@ ${#each sponsor.participatingEmployers as participatingEmployer}
 | ${participatingEmployer.legalName} | ${participatingEmployer.id} |
 ${/each}
 
-The Core Plan Document states the general enrollment, termination, rehire, and leave rules. Benefit-specific eligibility, contributions, and other terms stated in an adopted Benefit Appendix control for that benefit.
+## General rehire and leave rules
+
+Rehire and transfer back into an eligible class: ${eligibility.rehireRule}
+
+Approved leave: ${eligibility.leaveRule}
+
+These rules are subject to the Core Plan Document's protected-leave, contribution, continuation, and restoration provisions. The Plan Administrator administers FMLA contribution notices and payment arrangements and USERRA continuation requests.
+
+The Core Plan Document states the general enrollment and termination rules. Benefit-specific eligibility, contributions, and other terms stated in an adopted Benefit Appendix control for that benefit.

@@ -13,13 +13,13 @@ Welfare Benefit Plan
 ├── Core Plan Document
 ├── Appendix A — Employer and Plan Information
 ├── Appendix B — Adopted Benefit Appendices
-├── Appendix C — Enrollment Schedule Incorporation
+├── Appendix C — Contributions and Enrollment Records
+├── Appendix D — Section 125 Elections and Employer Flex Credits
+├── Appendix E — HIPAA Plan Administration
 ├── Benefit Appendix — [Coverage 1]
 │   ├── Coverage elections
-│   └── Incorporated operational schedules
 ├── Benefit Appendix — [Coverage 2]
 │   ├── Coverage elections
-│   └── Incorporated operational schedules
 └── Required participant notices and summaries
 ```
 
@@ -33,7 +33,7 @@ The product-specific inventory is maintained in `plan-docs/PRODUCT_DOCUMENT_TEMP
 
 - If a rule applies to the entire welfare benefit plan, put it in the Core Plan Document.
 - If a rule applies only to one benefit, put it in that Benefit Appendix.
-- If a value changes by employer, employee class, plan year, geography, age, family tier, provider, or product, put it in the Enrollment Schedule referenced by the applicable document. Do not restate allowance amounts in the Plan Document, Benefit Appendix, or SPD.
+- If a value changes by employer, employee class, plan year, geography, age, family tier, provider, or product, maintain its calculation in plan settings and disclose the resulting participant value through enrollment, as described in Appendix C. Do not restate allowance amounts in the Plan Document, Benefit Appendix, or SPD.
 - If an appendix merely agrees with the core, do not repeat the core language. Incorporate it by reference.
 - If an appendix needs a different rule, state only the difference and its scope.
 
@@ -82,34 +82,19 @@ A Benefit Appendix should contain only the provisions necessary to identify and 
 - Coordination with another plan component;
 - Tax treatment the design is intended to receive;
 - Coverage-specific continuation rules;
-- Incorporated operational schedules; and
 - Employer execution.
 
 Do not restate the core's amendment, privacy, fiduciary, general administrative, or general claims language unless the benefit actually changes or supplements that rule.
 
-## What belongs in an operational schedule
+## Coverage settings and enrollment records
 
-Use a schedule for information that is detailed, frequently updated, data-driven, or unsuitable for narrative plan language. Examples include:
-
-- Preventive-service matrices;
-- Procedure and product codes;
-- Formularies;
-- Provider and price lists;
-- Medicare locality calculations;
-- Cash-price approvals;
-- Contribution amounts;
-- Indexed deductibles and out-of-pocket limits;
-- Reimbursement substantiation requirements;
-- Claims addresses and contact information; and
-- Versioned clinical or administrative procedures.
-
-The governing document must clearly identify each incorporated schedule and explain which changes require a formal amendment or participant notice. Calling something a schedule does not permit the Plan to change a material benefit informally.
+Maintain detailed administrative data in the existing coverage, Plan, and enrollment records. Do not introduce an operational-schedules collection or require users to name, version, or locate separate administrative documents. Governing provisions and required participant notices continue to apply when material benefit terms change.
 
 ## Drafting workflow
 
 ### 1. Establish the core
 
-Start with the CommonCare Core Plan Document template. Complete its employer-specific Appendix A and adopted-benefits Appendix B. Confirm that the core does not contain assumptions unique to one benefit.
+Start with the CommonCare Core Plan Document template. Complete its employer-specific Appendix A, including the general rehire and leave rules, and adopted-benefits Appendix B. Include required Appendices C, D, and E. Appendix E applies only where HIPAA applies; retain the separate sponsor certification before sponsor access to PHI for Plan administration. The SPD must summarize the protected-leave and privacy rules consistently with the governing documents. Confirm that the core does not contain assumptions unique to one benefit.
 
 ### 2. Define the benefit before drafting
 
@@ -131,7 +116,7 @@ Begin the Benefit Appendix with adoption, scope, and a clear relationship to the
 
 Preferred:
 
-> Claims and appeals are governed by the Core Plan Document and the Health Benefit Claims Procedure incorporated in Schedule B. A pre-service provider approval under this benefit is treated as a pre-service claim when it requests a coverage determination.
+> Claims and appeals are governed by the Core Plan Document and the applicable Health Benefit Claims Procedure under the Core Plan Document. A pre-service provider approval under this benefit is treated as a pre-service claim when it requests a coverage determination.
 
 Avoid:
 
@@ -278,3 +263,25 @@ When asked to create a plan document:
 4. Put employer elections and mutable operational data in identified schedules.
 5. Never introduce a substantive rule only in an SPD, SBC, vector-store file, interface, or claims configuration.
 6. Validate the full assembled Plan before producing participant-facing or machine-readable derivatives.
+
+## Definitions and interpolation
+
+Define stable concepts once in the core Definitions section or the benefit appendix that owns them, then use those defined terms in operative provisions. Employer, Plan Administrator, Plan Year, Employer Contribution, and Enrollment Records should not become repeated free-text questions in every paragraph.
+
+Use interpolation for actual plan identity, configured dates, record-backed contacts, and genuinely variable adopted terms. Reuse a canonical context path for the same fact. Do not require storage IDs, duplicate administrative contacts, repeated benefit effective dates, or a separately authored Section 125 document.
+
+Keep dynamic, class-dependent contribution calculations in plan settings and enrollment records. Definitions should explain the nature and permitted use of a contribution; they should not require authors to transcribe every employee calculation into global plan prose.
+
+CommonCare draft generation may substitute visible `[Needs review: …]` prompts for missing scalar data. These are editorial placeholders, not adopted values or defaults. Drafts remain marked incomplete and retain unresolved-detail diagnostics. Conditions controlling document applicability, required choices, and invalid supplied values must still be resolved. Complete-document generation remains strict.
+
+## Coverage terms and CommonFunds
+
+Keep the plan-wide document generic wherever a rule is administered through coverage settings, contribution settings, or enrollment. CommonFunds does not require a separate schedule of monthly Employer-only amounts, flex credits, Participant elections, or fixed contribution formulas. State the classifications and the applicable statutory maximum; CommonCare supplies an annual salary-reduction-limit description from its existing limits table.
+
+Deductible amounts, accumulation periods, expense categories, and exceptions belong to the applicable coverage settings. Require proper billing evidence without a separately authored satisfaction-evidence or credited-expense argument. The only pre-deductible benefit exception in this product is preventive care enabled by coverage.preventive, subject to applicable law. Post-deductible Health FSA provisions remain available where adopted through coverage settings; applicable HSA restrictions continue to apply.
+
+Unused funds remain Employer property at year end, subject to eligible claims and applicable law. Carryover, grace periods, or a different permitted treatment must be established in the applicable coverage or Plan settings. CommonCare's coverage-level disposition enum is rendered as policy terms: Employer retention and discretion, legally permitted component-specific carryover, or pro-rata uniform distribution of legally distributable experience gains. Distribution is never based on individual unused balances or claims experience and does not convert HRA reimbursement rights to cash; do not maintain an independent document-only balance rule.
+
+Coverage-owned optional text may use `${path|optional}`. Missing, null, or empty values render as blank, including in CommonCare drafts; they do not create a value-to-complete prompt. Reserve this for genuinely optional terms such as a coverage-defined year-end exception. Required values and inclusion conditions remain strict. Allocation, coordinated-coverage metadata, and ending-balance rules are not manually entered document argument groups.
+
+CommonFunds credits all Code section 213(d) medical expenses toward its applicable deductible unless expressly excluded by an applicable Appendix or the terms of coordinated coverage. This is a standing default, not a document-specific argument. Credit toward a deductible does not itself authorize reimbursement. For HSA-compatible post-deductible benefits, only expenses covered by the coordinated HDHP count toward its required deductible (Notice 2008-59, Q&A 15).

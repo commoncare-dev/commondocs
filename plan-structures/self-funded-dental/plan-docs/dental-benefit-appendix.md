@@ -10,8 +10,8 @@ context_schema: ./self-funded-dental-plan-document-context.schema.json
 
 # CommonCare Self-Funded Dental Benefit Appendix
 
-Version: ${extensions.selfFundedDental.document.version}<br>
-Appendix Number: ${extensions.selfFundedDental.document.appendixNumber}<br>
+Version: ${extensions.selfFundedDental.document.version}
+
 Effective Date: ${extensions.selfFundedDental.document.effectiveDate|dateLong}
 
 # Adoption and scope
@@ -89,14 +89,8 @@ The Plan does not cover cosmetic treatment, investigational treatment, medical o
 
 Claims must be filed within the elected deadline. Claims and appeals otherwise follow the Core Plan Document and incorporated dental claims procedure. Participants receive at least the appeal period required by applicable ERISA group-health claims rules.
 
-Claims contact: ${administration.serviceContacts.claims.formatted}<br>
-Appeals contact: ${administration.serviceContacts.appeals.formatted}<br>
+Claims contact: ${administration.serviceContacts.claims.formatted}
+
+Appeals contact: ${administration.serviceContacts.appeals.formatted}
+
 Provider navigation and predetermination: ${administration.serviceContacts.providerNavigation.formatted}
-
-# Incorporated schedules
-
-| Schedule | Version and effective date | Location or custodian |
-|---|---|---|
-${#each extensions.selfFundedDental.operationalSchedules as schedule}
-| ${schedule.name} | ${schedule.version}; effective ${schedule.effectiveDate|dateLong} | ${schedule.location} |
-${/each}

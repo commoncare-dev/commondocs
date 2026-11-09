@@ -5,7 +5,7 @@
   "description": "Canonical input supplied to governing-plan and participant-facing document templates.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "sponsor", "plan", "administration", "eligibility", "benefits", "extensions"],
+  "required": ["schemaVersion", "sponsor", "plan", "administration", "eligibility", "benefits"],
   "properties": {
     "$schema": { "type": "string", "format": "uri-reference" },
     "schemaVersion": { "const": "1.3.0" },
@@ -88,7 +88,7 @@
       "properties": {
         "id": { "$ref": "#/$defs/nonEmptyString" },
         "legalName": { "$ref": "#/$defs/nonEmptyString" },
-        "ein": { "type": "string", "pattern": "^\\d{2}-\\d{7}$" },
+        "ein": { "type": "string", "pattern": "^\\d{2}-?\\d{7}$" },
         "effectiveDate": { "$ref": "#/$defs/date" },
         "terminationDate": { "anyOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }] },
         "status": { "enum": ["active", "terminated"] }
@@ -101,7 +101,7 @@
       "properties": {
         "id": { "type": "string" },
         "legalName": { "$ref": "#/$defs/nonEmptyString" },
-        "ein": { "type": "string", "pattern": "^\\d{2}-\\d{7}$" },
+        "ein": { "type": "string", "pattern": "^\\d{2}-?\\d{7}$" },
         "address": { "$ref": "#/$defs/address" },
         "participatingEmployers": {
           "type": "array",

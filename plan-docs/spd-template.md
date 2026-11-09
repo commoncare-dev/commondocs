@@ -10,20 +10,25 @@ source_documents:
   - ./core-doc-template.md
   - ./appendix-a.md
   - ./appendix-b.md
+  - ./appendix-c-allowances.md
   - ./appendix-d-section-125.md
+  - ./appendix-e-hipaa.md
 ---
 
 # ${plan.name}
 ## Summary Plan Description
 
-SPD ID: ${spd.documentId}<br>
-Version: ${spd.version}<br>
-Issued: ${spd.issueDate|dateLong}<br>
+SPD ID: ${spd.documentId}
+
+Version: ${spd.version}
+
+Issued: ${spd.issueDate|dateLong}
+
 Plan Year: ${plan.year.startDate|dateLong} through ${plan.year.endDate|dateLong}
 
 This Summary Plan Description explains the Plan to ${spd.audience}. ${spd.howToUse}
 
-The governing Plan consists of the Core Plan Document and adopted Benefit Appendices. This SPD summarizes those terms; it does not add a benefit or silently change the governing documents. Contact the Plan Administrator if this SPD and another Plan document appear inconsistent.
+The governing Plan consists of the Core Plan Document, Appendices A–E, and adopted Benefit Appendices. This SPD summarizes those terms; it does not add a benefit or silently change the governing documents. Contact the Plan Administrator if this SPD and another Plan document appear inconsistent.
 
 # Quick plan information
 
@@ -62,7 +67,11 @@ Rehire rule: ${eligibility.rehireRule}
 
 Approved leaves: ${eligibility.leaveRule}
 
-A benefit section below controls if it states a different or more specific rule.
+Where FMLA applies, eligible group health coverage may continue during qualifying leave on the same terms, including the Employer's contribution. During unpaid leave, you may discontinue coverage or payments as permitted by FMLA. You may pay your share after tax as payments come due; voluntary prepayment or an agreed catch-up arrangement may also be available under the Plan's rules. Required notices and grace periods apply before coverage ends for nonpayment. Coverage discontinued during leave is restored on qualifying return as required by law, including applicable Health FSA rights.
+
+Where USERRA applies, military-service continuation is available for up to 24 months, ending earlier if you fail to timely apply for or return to employment as required by USERRA. For service of fewer than 31 days, you pay no more than your normal share; for longer service, the charge may be up to 102 percent of the full premium. On qualifying reemployment, you and eligible dependents have reinstatement rights without new waiting periods or exclusions that would not otherwise apply, subject to the exception for service-connected conditions. Contact the Plan Administrator to arrange continuation or leave payments.
+
+A benefit section below controls if it states a different or more specific rule, subject to statutory continuation and restoration rights.
 
 # Elections and contributions
 
@@ -88,13 +97,13 @@ An adverse benefit determination will explain the material reason, identify the 
 
 # Administration, records, and corrections
 
-The Plan Administrator interprets Plan terms, determines eligibility and benefit entitlement, establishes reasonable procedures, delegates identified functions, and corrects administrative errors. A Participant must provide complete and accurate information reasonably needed to administer eligibility, elections, claims, coordination, and reporting.
+Plan fiduciaries must act prudently and solely in the interest of Participants and beneficiaries to provide benefits and pay reasonable Plan expenses. Plan assets may not be diverted to other purposes except as law expressly permits. The Plan Administrator interprets Plan terms, determines eligibility and benefit entitlement, establishes reasonable procedures, delegates identified functions, and corrects administrative errors. A Participant must provide complete and accurate information reasonably needed to administer eligibility, elections, claims, coordination, and reporting.
 
 When an error occurs, the Plan Administrator will determine what should have occurred under the governing terms, document the correction, and use a reasonable legally permitted method to correct records, contributions, coverage, or payments. Before materially adverse recovery action, the Plan Administrator will provide the explanation and review opportunity required by the Plan or applicable law.
 
 # Privacy
 
-The Plan uses and discloses personal information only as permitted by the governing documents and applicable law. Where HIPAA applies, the Plan maintains the required privacy and security provisions, limits access to authorized Plan-administration functions, and provides the applicable privacy notice.
+The Plan uses and discloses personal information only as permitted by the governing documents and applicable law. Where HIPAA applies, the Plan maintains the required privacy and security provisions, limits access to authorized Plan-administration functions, and provides the applicable privacy notice. Appendix E contains the governing sponsor-access rules. Employer personnel may receive Plan PHI for authorized Plan administration only under those rules; that access does not permit use for employment decisions or another employer benefit plan. Contact the Plan Administrator at ${administration.planAdministrator.contact.formatted} for the current privacy contact, notice, access or amendment requests, an accounting of disclosures, or a privacy complaint. Privacy complaints may be made without retaliation. This SPD does not replace the notice of privacy practices.
 
 # Amendment and termination
 

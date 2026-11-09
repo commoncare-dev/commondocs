@@ -8,11 +8,16 @@ Each product structure has the document form appropriate to what the product act
 | CHOICE ICHRA | `plan-structures/choice-ichra/plan-docs/ichra-benefit-appendix.md` | `ichra-spd-section.md` | Benefit Appendix and SPD section |
 | CommonFunded | `plan-structures/common-funded/plan-docs/common-funded-adoption-schedule.md` | `common-funded-spd-section.md` | Short overlay coordinating Major Medical Coverage, CommonFunds, and the incorporated Enrollment Schedule |
 | CommonFunds | `plan-structures/common-funds/plan-docs/common-funds-administration-appendix.md`, `common-funds-health-fsa-component.md`, and conditional `common-funds-ebhra-component.md` | `common-funds-spd-section.md` | One coordinated benefit with separately governed Health FSA and pathway-dependent HRA components |
+| DPC Companion | `plan-structures/dpc-companion/plan-docs/dpc-companion-benefit-appendix.md` | `dpc-companion-spd-section.md` | Independent DPC coverage election; allowance and employee contributions retain their classification under the applicable adopted benefits |
 | Premium Tax Credit Plan | `plan-structures/ptc-plan/plan-docs/ptc-strategy-adoption-schedule.md` | `ptc-participant-notice.md` | Employer strategy and participant notice; Marketplace policy remains outside the Plan |
 | Self-Funded Dental | `plan-structures/self-funded-dental/plan-docs/dental-benefit-appendix.md` | `dental-spd-section.md` | Benefit Appendix and SPD section |
 | Self-Funded Basic MEC | `plan-structures/self-funded-mec/basic-mec/plan-docs/mec-benefit-appendix.md` | `mec-spd-section.md` | Benefit Appendix and SPD section |
 
 Every folder also contains a registered extension schema and a composed product context schema. All templates consume the same base `PlanDocumentContext` and add only their product-specific extension.
+
+## Shared governing documents
+
+The `welfare-plan` governing set includes the Core Plan Document and required Appendices A–E. Appendix A states employer-specific rehire and leave rules; the core supplies statutory leave protections and fiduciary duties. Appendix E supplies HIPAA privacy and security plan-administration provisions where applicable. It is a shared administrative appendix, not a benefit to list in Appendix B. The base SPD summarizes these rules; it does not incorporate the full HIPAA appendix as a benefit section.
 
 ## SPD assembly
 

@@ -9,7 +9,8 @@ context_schema: ./ptc-plan-document-context.schema.json
 
 # Premium Tax Credit Plan Strategy Adoption Schedule
 
-Version: ${extensions.ptcPlan.document.version}<br>
+Version: ${extensions.ptcPlan.document.version}
+
 Effective Date: ${extensions.ptcPlan.document.effectiveDate|dateLong}
 
 # Purpose and boundary

@@ -116,6 +116,6 @@ export interface PlanDocumentContext {
     acceptedAt?: string;
     acceptedBy?: { userId?: string; name?: string; title?: string };
   };
-  extensions: Record<string, Record<string, unknown>>;
+  extensions?: Record<string, Record<string, unknown>>;
   custom?: Record<string, unknown>;
 }

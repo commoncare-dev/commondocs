@@ -7,14 +7,14 @@ status: template
 version: "1.0"
 parent_document: CommonFunds Coordinated Benefit Appendix
 context_schema: ./common-funds-plan-document-context.schema.json
-pathway: excepted-only
+componentType: ebhra
 ---
 
 # CommonFunds Excepted Benefit HRA Component
 
 # 1. Conditional adoption
 
-This component is adopted only when the CommonFunds pathway is **excepted** and the context identifies the HRA component as an **EBHRA**. It does not apply to a Participant offered an ICHRA. On an ICHRA pathway, the ICHRA document governs the HRA amount and this component is omitted from the assembled Plan and SPD.
+This component is adopted only when the context identifies the offered HRA component as an **EBHRA**. It does not apply to a Participant offered an ICHRA. When an ICHRA is coordinated, the ICHRA document governs the HRA amount and this component is omitted from the assembled Plan and SPD.
 
 # 2. Conditions
 
@@ -24,37 +24,30 @@ Amounts newly made available will not exceed the indexed EBHRA limit for the app
 
 # 3. Employer-only funding
 
-| Term | Adopted value |
-|---|---|
-| Governing document ID | ${extensions.commonFunds.hra.documentId} |
-| Annual Employer amount | ${extensions.commonFunds.hra.annualEmployerAmount|currencyUSD} |
-| Monthly accrual | ${extensions.commonFunds.hra.monthlyAccrual|currencyUSD} |
-| Advance months | ${extensions.commonFunds.hra.advanceMonths} |
-| Recourse for unaccrued advance | ${extensions.commonFunds.hra.recourseForUnaccruedAdvance|yesNo} |
-| Eligible expenses | ${extensions.commonFunds.hra.eligibleExpenses} |
-| Carryover adopted | ${extensions.commonFunds.hra.carryoverAllowed|yesNo} |
-| Carryover rule | ${extensions.commonFunds.hra.carryoverRule} |
+Only genuinely Employer-only amounts unavailable as cash or another taxable benefit may be credited to this component. Participant salary reductions and cashable credits elected into medical reimbursement are treated under the Health FSA provisions.
 
-Only genuinely Employer-only amounts unavailable as cash or another taxable benefit may be credited to this component. Participant salary reduction and a cashable credit elected into medical reimbursement belong in the Health FSA component, not this EBHRA.
+Contribution methods and amounts are determined through the Plan's contribution settings and enrollment, subject to the indexed EBHRA limit for the applicable Plan Year. This document does not establish separate monthly or annual Employer amounts.
 
 # 4. Availability and advances
 
-The available HRA amount equals the monthly accrual multiplied by the adopted advance months, limited by the annual Employer amount and reduced by prior reimbursements. Each later month restores availability only to the extent provided by the adopted schedule and annual limit.
-
-An advance-month value of `1` is the default and makes only the current accumulated amount available. A larger value accelerates access uniformly for similarly situated Participants. It does not convert this component into a Health FSA or cause Health FSA uniform coverage to apply.
-
-If recourse is elected, the Plan may recover reimbursement exceeding accrued allocations after participation ends only under a separately stated, legally permitted recovery method. Payroll withholding requires independent authorization where applicable. If recourse is not elected, the Employer bears the risk of an unrecovered accelerated reimbursement.
+Availability, including any acceleration of future allocations, follows the CommonFunds coverage settings and applicable annual limits. HRA advances do not create Health FSA uniform coverage. Any recovery of an unaccrued advance must be authorized by the applicable coverage terms and permitted by law.
 
 # 5. Deductible restriction
 
-Deductible restriction enabled for this component: ${extensions.commonFunds.deductible.appliesToHra|yesNo}. The applicable deductible is identified by the participant's coverage and enrollment records.
+Deductible amounts, accumulation periods, and applicable exceptions follow the coverage settings and are communicated through coverage and enrollment.
 
-When the restriction applies, the HRA pays an otherwise eligible expense only if the expense is incurred after the deductible has been satisfied, except as stated in the adopted before-deductible benefit rule: ${extensions.commonFunds.deductible.preDeductibleBenefitRule}
+Unless expressly excluded by an applicable Appendix or the terms of coordinated coverage, all expenses for medical care described in Code section 213(d) are credited toward the applicable CommonFunds deductible upon proper billing evidence.
 
-Deductible accumulation rule: ${extensions.commonFunds.deductible.accumulationRule}<br>
-Credited expenses: ${extensions.commonFunds.deductible.creditedExpenses}<br>
-Required evidence: ${extensions.commonFunds.deductible.satisfactionEvidence}
+Crediting an expense toward a deductible does not establish a right to reimbursement. An expense incurred before an applicable deductible is satisfied does not become reimbursable solely because the deductible is later satisfied.
+
+Pre-deductible reimbursements are limited to preventive care expressly enabled by the applicable coverage settings and permitted by law.
+
+A Health FSA may operate on a post-deductible basis where provided by the coverage settings. Where HSA compatibility is intended, applicable statutory restrictions continue to apply. Uniform coverage determines the available annual Health FSA benefit; it does not waive an applicable deductible.
+
+For HSA-compatible post-deductible benefits, only expenses covered by the coordinated HDHP count toward satisfaction of its required deductible.
 
 # 6. End-of-year treatment
 
-No carryover applies unless the adopted carryover field expressly says yes and the carryover rule states the amount and operation. Without an adopted carryover, unused amounts remain Employer property after the applicable claims period, subject to applicable Plan-asset law.
+After timely eligible claims, year-end disposition follows the coverage settings and applicable component rules. If no different treatment is selected, the Employer retains unused funds and has discretion over the legally permitted use of experience gains. A displayed individual balance does not establish a right to a cash distribution.
+
+${extensions.commonFunds.endingBalance.rule|optional}

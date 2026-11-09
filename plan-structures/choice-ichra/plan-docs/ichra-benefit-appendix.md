@@ -10,8 +10,8 @@ context_schema: ./choice-ichra-plan-document-context.schema.json
 
 # CHOICE Individual Coverage HRA Benefit Appendix
 
-Version: ${extensions.choiceIchra.document.version}<br>
-Appendix Number: ${extensions.choiceIchra.document.appendixNumber}<br>
+Version: ${extensions.choiceIchra.document.version}
+
 Effective Date: ${extensions.choiceIchra.document.effectiveDate|dateLong}
 
 # Adoption and purpose
@@ -60,11 +60,3 @@ Salary reduction under Section 125 may not be used to pay an individual-market p
 # Claims and appeals
 
 Submit reimbursement claims to ${administration.serviceContacts.claims.formatted}. Submit appeals to ${administration.serviceContacts.appeals.formatted}. The incorporated ICHRA claims procedure states substantiation requirements, deadlines, adverse determination content, and appeal rights.
-
-# Incorporated schedules
-
-| Schedule | Version and effective date | Location or custodian |
-|---|---|---|
-${#each extensions.choiceIchra.operationalSchedules as schedule}
-| ${schedule.name} | ${schedule.version}; effective ${schedule.effectiveDate|dateLong} | ${schedule.location} |
-${/each}

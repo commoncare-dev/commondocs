@@ -1546,7 +1546,7 @@ The employer bears early-utilization risk. Participants bear forfeiture risk. Th
 
 The Health FSA uniform coverage rule does not apply to the EBHRA. The plan may make EBHRA funds available annually, monthly, or under another permitted schedule.
 
-CommonFunds represents accelerated EBHRA availability in plan documents through `advanceMonths`. The application property `commonFundLoanMultiple` is a legacy alias for the same timing input and should be normalized to `advanceMonths` before document generation.
+CommonFunds represents accelerated EBHRA availability in plan documents through `advanceMonths`. The application property `settings.advanceMonths` is a legacy alias for the same timing input and should be normalized to `advanceMonths` before document generation.
 
 #### \$100
 <!-- record_id: product.commonfunds.rules.vector-store.4-when-funds-become-available-ebhra-availability-follows-the-plan.100; record_type: table-row -->
@@ -1596,7 +1596,7 @@ Availability and recourse are separate design decisions. When a participant is r
 - Result: The plan may require repayment according to the applicable agreement
 
 
-Never infer repayment from `advanceMonths` or the legacy `commonFundLoanMultiple` alias; review the plan document.
+Never infer repayment from `advanceMonths`; review the plan document.
 
 ---
 
@@ -1879,10 +1879,10 @@ For every claim, determine:
 - Avoid: “The employer loses money because FSA funds are available immediately.”
 - Use instead: “The Health FSA transfers risk in both directions: employers bear early-claim risk and participants bear forfeiture risk.”
 
-#### “commonFundLoanMultiple means the participant owes repayment.”
-<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.commonfundloanmultiple-means-the-participant-owes-repayment; record_type: table-row -->
+#### “settings.advanceMonths means the participant owes repayment.”
+<!-- record_id: product.commonfunds.rules.vector-store.8-practical-interpretation-guide.settings.advanceMonths-means-the-participant-owes-repayment; record_type: table-row -->
 - Context: CommonFunds — 8. Practical interpretation guide
-- Avoid: “`commonFundLoanMultiple` means the participant owes repayment.”
+- Avoid: “`settings.advanceMonths` means the participant owes repayment.”
 - Use instead: “The property controls availability timing; recourse depends on the plan document.”
 
 #### “You have \$2,000 saved in CommonFunds.”

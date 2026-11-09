@@ -10,7 +10,8 @@ context_schema: ./common-funded-plan-document-context.schema.json
 
 # CommonFunded Coverage Overlay
 
-Version: ${extensions.commonFunded.document.version}<br>
+Version: ${extensions.commonFunded.document.version}
+
 Effective Date: ${extensions.commonFunded.document.effectiveDate|dateLong}
 
 ## 1. Adoption and purpose

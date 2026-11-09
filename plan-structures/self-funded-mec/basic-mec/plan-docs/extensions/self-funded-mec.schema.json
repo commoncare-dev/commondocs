@@ -4,49 +4,86 @@
   "title": "Self-Funded Basic MEC Plan-Document Extension",
   "type": "object",
   "additionalProperties": false,
-  "required": ["document", "enrollmentTier", "isMec", "isMv", "isHdhp", "operationalSchedules", "optionalBenefits"],
+  "required": [
+    "document",
+    "enrollmentTier",
+    "isMec",
+    "isMv",
+    "isHdhp",
+    "optionalBenefits"
+  ],
   "properties": {
     "document": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["version", "appendixNumber", "effectiveDate"],
+      "required": [
+        "version",
+        "effectiveDate"
+      ],
       "properties": {
-        "version": { "type": "string", "minLength": 1 },
-        "appendixNumber": { "type": "string", "minLength": 1 },
-        "effectiveDate": { "type": "string", "format": "date" }
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "appendixNumber": {
+          "type": "string",
+          "description": "Optional legacy appendix label. Not required for document generation.",
+          "deprecated": true
+        },
+        "effectiveDate": {
+          "type": "string",
+          "format": "date"
+        }
       }
     },
     "enrollmentTier": {
-      "enum": ["single", "family"]
+      "enum": [
+        "single",
+        "family"
+      ]
     },
-    "isMec": { "type": "boolean" },
-    "isMv": { "type": "boolean" },
-    "isHdhp": { "type": "boolean" },
+    "isMec": {
+      "type": "boolean"
+    },
+    "isMv": {
+      "type": "boolean"
+    },
+    "isHdhp": {
+      "type": "boolean"
+    },
     "hdhp": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["calendarYear", "currency", "selfOnlyDeductible", "selfOnlyOutOfPocketMaximum"],
+      "required": [
+        "calendarYear",
+        "currency",
+        "selfOnlyDeductible",
+        "selfOnlyOutOfPocketMaximum"
+      ],
       "properties": {
-        "calendarYear": { "type": "integer", "minimum": 2000 },
-        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
-        "selfOnlyDeductible": { "type": "number", "minimum": 0 },
-        "selfOnlyOutOfPocketMaximum": { "type": "number", "minimum": 0 },
-        "familyDeductible": { "type": "number", "minimum": 0 },
-        "familyOutOfPocketMaximum": { "type": "number", "minimum": 0 }
-      }
-    },
-    "operationalSchedules": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": ["id", "name", "version", "effectiveDate"],
-        "properties": {
-          "id": { "type": "string", "minLength": 1 },
-          "name": { "type": "string", "minLength": 1 },
-          "version": { "type": "string", "minLength": 1 },
-          "effectiveDate": { "type": "string", "format": "date" },
-          "location": { "type": "string" }
+        "calendarYear": {
+          "type": "integer",
+          "minimum": 2000
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "selfOnlyDeductible": {
+          "type": "number",
+          "minimum": 0
+        },
+        "selfOnlyOutOfPocketMaximum": {
+          "type": "number",
+          "minimum": 0
+        },
+        "familyDeductible": {
+          "type": "number",
+          "minimum": 0
+        },
+        "familyOutOfPocketMaximum": {
+          "type": "number",
+          "minimum": 0
         }
       }
     },
@@ -55,12 +92,29 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["name", "coveredTerms", "deductibleAndParticipantCost", "effectiveDate"],
+        "required": [
+          "name",
+          "coveredTerms",
+          "deductibleAndParticipantCost",
+          "effectiveDate"
+        ],
         "properties": {
-          "name": { "type": "string", "minLength": 1 },
-          "coveredTerms": { "type": "string", "minLength": 1 },
-          "deductibleAndParticipantCost": { "type": "string", "minLength": 1 },
-          "effectiveDate": { "type": "string", "format": "date" }
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "coveredTerms": {
+            "type": "string",
+            "minLength": 1
+          },
+          "deductibleAndParticipantCost": {
+            "type": "string",
+            "minLength": 1
+          },
+          "effectiveDate": {
+            "type": "string",
+            "format": "date"
+          }
         }
       }
     }
@@ -68,10 +122,20 @@
   "allOf": [
     {
       "if": {
-        "properties": { "isHdhp": { "const": true } },
-        "required": ["isHdhp"]
+        "properties": {
+          "isHdhp": {
+            "const": true
+          }
+        },
+        "required": [
+          "isHdhp"
+        ]
       },
-      "then": { "required": ["hdhp"] }
+      "then": {
+        "required": [
+          "hdhp"
+        ]
+      }
     }
   ]
 }
