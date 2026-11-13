@@ -5,8 +5,8 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/common-funds/human-readable.md
 metadata_document: plan-structures/common-funds/metadata.yaml
-source_commit: 04820c4d79fd9dffcc4e4f4db9774fe231f57ad3
-source_sha256: e69461ee7ae4e0de73f2f302a4a62d564185a1b0e14f90fdd4562130d3e567cf
+source_commit: e8491e931ed6844ab1fd7db46bd98748ff9520f9
+source_sha256: b47a1760ff532e3342bfad32e71448857e9f1c9a7cbc93246ba0a7a41b7027d5
 metadata_sha256: ec2da998690975e56cbbb2bd3f6e342a3faf67c8c52304eb46facc31c41c1c61
 generation_method: deterministic-commonfunds-split-conversion
 canonical_source: false
@@ -398,31 +398,31 @@ CommonFunds may preserve HSA eligibility when every applicable reimbursement com
 
 The post-deductible threshold does not have to equal the deductible of the participant's particular HDHP. It may be higher. It must never allow nonpreventive, nonpermitted benefits before the applicable minimum annual deductible under § 223(c)(2)(A) has been satisfied.
 
-For calendar year 2026:
+For calendar year 2027:
 
 #### Maximum HSA contribution
 <!-- record_id: product.commonfunds.explaining.vector-store.the-essential-idea-hsa-compatibility-is-a-separate-test-permitted-hsa-co.maximum-hsa-contribution; record_type: table-row -->
 - Context: CommonFunds — The essential idea > HSA compatibility is a separate test > Permitted HSA-compatible designs
 - HSA/HDHP measure: Maximum HSA contribution
-- Self-only: \$4,400
-- Family: \$8,750
+- Self-only: \$4,500
+- Family: \$9,000
 
 #### Minimum HDHP deductible
 <!-- record_id: product.commonfunds.explaining.vector-store.the-essential-idea-hsa-compatibility-is-a-separate-test-permitted-hsa-co.minimum-hdhp-deductible; record_type: table-row -->
 - Context: CommonFunds — The essential idea > HSA compatibility is a separate test > Permitted HSA-compatible designs
 - HSA/HDHP measure: Minimum HDHP deductible
-- Self-only: \$1,700
-- Family: \$3,400
+- Self-only: \$1,750
+- Family: \$3,500
 
 #### Maximum HDHP out-of-pocket amount
 <!-- record_id: product.commonfunds.explaining.vector-store.the-essential-idea-hsa-compatibility-is-a-separate-test-permitted-hsa-co.maximum-hdhp-out-of-pocket-amount; record_type: table-row -->
 - Context: CommonFunds — The essential idea > HSA compatibility is a separate test > Permitted HSA-compatible designs
 - HSA/HDHP measure: Maximum HDHP out-of-pocket amount
-- Self-only: \$8,500
-- Family: \$17,000
+- Self-only: \$8,700
+- Family: \$17,400
 
 
-These amounts are indexed and must be updated for the applicable year. Beginning in 2026, eligible Exchange bronze and catastrophic plans receive separate statutory HSA treatment; the participant must still have no other disqualifying reimbursement coverage.
+These amounts are indexed and must be updated for the applicable year. Beginning in 2026, eligible Exchange bronze and catastrophic plans receive separate statutory HSA treatment; the participant must still have no other disqualifying reimbursement coverage. [IRS Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24)
 
 > [!WARNING]
 > The controlling date is the date the medical expense is **incurred**, not the date the claim is submitted, approved, or paid. An ordinary medical expense incurred before the deductible was satisfied cannot become reimbursable merely because the participant later meets the deductible.
@@ -564,7 +564,7 @@ This arrangement does not provide general first-dollar medical reimbursement. Th
 
 An employer may use the excepted pathway when it makes the required non-excepted group coverage available and structures CommonFunds through an EBHRA and an excepted-benefit Health FSA. See our [self-funded MEC](../self-funded-mec/human-readable.md) product for the simplest pathway to doing this.
 
-The EBHRA and Health FSA qualify under separate provisions. [45 C.F.R. § 146.145(b)(3)(viii)](https://www.law.cornell.edu/cfr/text/45/146.145) governs the EBHRA, including the indexed contribution limit and availability of nonexcepted, non-HRA group coverage. Paragraph `(b)(3)(v)` governs the excepted-benefit Health FSA, including its separate other-coverage and maximum-benefit tests. For plan years beginning in 2026, the EBHRA may make no more than \$2,200 newly available. When each component independently satisfies its rule, the arrangement can offer first-dollar medical reimbursement, HSA-compatible limited-purpose or post-deductible reimbursement, or both elections where permitted.
+The EBHRA and Health FSA qualify under separate provisions. [45 C.F.R. § 146.145(b)(3)(viii)](https://www.law.cornell.edu/cfr/text/45/146.145) governs the EBHRA, including the indexed contribution limit and availability of nonexcepted, non-HRA group coverage. Paragraph `(b)(3)(v)` governs the excepted-benefit Health FSA, including its separate other-coverage and maximum-benefit tests. For plan years beginning in 2027, the EBHRA may make no more than \$2,250 newly available. When each component independently satisfies its rule, the arrangement can offer first-dollar medical reimbursement, HSA-compatible limited-purpose or post-deductible reimbursement, or both elections where permitted. [IRS Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24)
 
 This can support employees enrolled in the employer plan, a spouse's group plan, or qualifying independent coverage contexts described elsewhere in this document. It can also preserve Marketplace PTC access when the employee declines the employer MEC and all separate PTC requirements are satisfied.
 

@@ -5,8 +5,8 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/self-funded-mec/basic-mec/human-readable.md
 metadata_document: plan-structures/self-funded-mec/basic-mec/metadata.yaml
-source_commit: fd4b179aca73f3a4046931d1137344304e1942a7
-source_sha256: 1fd7b7e12de8b81d478bc670411a67b38297299947bc665bde973911e12c3a9b
+source_commit: e8491e931ed6844ab1fd7db46bd98748ff9520f9
+source_sha256: b9f6eb87c4410f381cfc01fd92a059536f19e44b2fb50c73b451f1dd18241cd7
 metadata_sha256: 3f22f7be89472560c33929718aae296d5f9750ed1f1eecc4fd447dc86032e08a
 generation_method: deterministic-markdown-conversion
 canonical_source: false
@@ -570,7 +570,7 @@ To contribute to an HSA, an individual generally must:
 3. Not be enrolled in Medicare; and
 4. Not be claimable as another person's tax dependent.
 
-For 2026, the general HDHP minimum deductible is **\$1,700 for self-only coverage** and **\$3,400 for family coverage**, and the maximum out-of-pocket limit is **\$8,500 for self-only coverage** and **\$17,000 for family coverage**. These amounts are indexed and must be refreshed annually. [IRS Publication 15-B (2026)](https://www.irs.gov/publications/p15b)
+For 2027, the general HDHP minimum deductible is **\$1,750 for self-only coverage** and **\$3,500 for family coverage**, and the maximum out-of-pocket limit is **\$8,700 for self-only coverage** and **\$17,400 for family coverage**. These amounts are indexed and must be refreshed annually. [IRS Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24)
 
 An HDHP may provide federally recognized preventive care before the deductible without destroying HSA eligibility. That makes preventive-focused MEC and an HDHP potentially complementary. The plan documents must nevertheless establish all HDHP elements; “basic MEC” is not itself an IRS-recognized substitute for the HDHP test.
 
@@ -649,9 +649,9 @@ Beginning January 1, 2026, an otherwise HSA-eligible individual may participate 
 
 Both primary care and direct primary care (DPC) are good eligible services for this plan to cover due to the fact that they are unlikely to exceed the deductible and the plan can provide a meaningful tax-free wrap for DPC memberships.
 
-For 2026, the aggregate fixed periodic fees generally may not exceed **\$150 per month for one individual** or **\$300 per month for an arrangement covering more than one individual**. The arrangement must consist solely of qualifying primary-care services furnished by qualifying primary-care practitioners for a fixed periodic fee. Certain procedures requiring general anesthesia, most prescription drugs, and laboratory services not typically administered in an ambulatory primary-care setting are excluded from the statutory definition. [IRS Notice 2026-05](https://www.irs.gov/irb/2026-02_IRB)
+For 2027, the aggregate fixed periodic fees remain **\$150 per month for one individual** or **\$300 per month for an arrangement covering more than one individual**. The arrangement must consist solely of qualifying primary-care services furnished by qualifying primary-care practitioners for a fixed periodic fee. Certain procedures requiring general anesthesia, most prescription drugs, and laboratory services not typically administered in an ambulatory primary-care setting are excluded from the statutory definition. [IRS Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24) · [IRS Notice 2026-05](https://www.irs.gov/irb/2026-02_IRB)
 
-A **\$99-per-month DPC arrangement** may therefore fit within the 2026 individual dollar limit, but price alone is not enough. The services, providers, compensation arrangement, and interaction with employer funding must all qualify.
+A **\$99-per-month DPC arrangement** may therefore fit within the 2027 individual dollar limit, but price alone is not enough. The services, providers, compensation arrangement, and interaction with employer funding must all qualify.
 
 > [!IMPORTANT]
 > IRS guidance states that an HDHP itself may not pay for or provide a DPC membership before the HDHP deductible merely because the DPC arrangement would not separately disqualify the individual. A CommonCare “MEC + DPC” product must keep those concepts structurally distinct and receive tax and benefits review before promising HSA compatibility. See IRS Notice 2026-05, Q–15.
@@ -751,7 +751,8 @@ It should be judged against the purpose it claims—not against a promise it nev
 - [DOL: ACA Preventive Services FAQ Part 64](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/aca-part-64)
 - [HRSA: Women's Preventive Services Guidelines](https://www.hrsa.gov/womens-guidelines)
 - [USPSTF: Colorectal Cancer Screening](https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening)
-- [IRS: Notice 2026-05 and 2026 HSA Guidance](https://www.irs.gov/irb/2026-02_IRB)
+- [IRS: Revenue Procedure 2026-24 and 2027 HSA, HDHP, DPC, and EBHRA limits](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24)
+- [IRS: Notice 2026-05 DPC guidance](https://www.irs.gov/irb/2026-02_IRB)
 - [DOL: Summary of Benefits and Coverage Resources](https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/affordable-care-act/for-employers-and-advisers/summary-of-benefits)
 - [California FTB: Health Care Mandate](https://www.ftb.ca.gov/file/personal/filing-situations/health-care-mandate/personal.html)
 
@@ -830,7 +831,7 @@ The inventory reflects recommendations identified as current for plan years begi
 
 Prices below are national planning estimates. They are not quotations, fee schedules, or guarantees. Medicare amounts vary geographically and by facility setting. Commercial cash prices vary even more. The claims build should ultimately replace each range with codes, locality-specific Medicare values, contracted prices, and an explicit facility policy.
 
-CMS publishes the [2026 Physician Fee Schedule framework](https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f), [Clinical Laboratory Fee Schedule](https://www.cms.gov/medicare/payment/fee-schedules/clinical-laboratory-fee-schedule-clfs), [preventive-services coding resource](https://www.cms.gov/Medicare/Prevention/PrevntionGenInfo/medicare-preventive-services/MPS-QuickReferenceChart-1.html), and [vaccine pricing](https://www.cms.gov/medicare/payment/part-b-drugs/vaccine-pricing).
+CMS publishes the [2027 Physician Fee Schedule framework](https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2027-medicare-physician-fee-schedule-final-rule), [Clinical Laboratory Fee Schedule](https://www.cms.gov/medicare/payment/fee-schedules/clinical-laboratory-fee-schedule-clfs), [preventive-services coding resource](https://www.cms.gov/Medicare/Prevention/PrevntionGenInfo/medicare-preventive-services/MPS-QuickReferenceChart-1.html), and [vaccine pricing](https://www.cms.gov/medicare/payment/part-b-drugs/vaccine-pricing).
 
 <!-- record_id: plan.self-funded-basic-mec.cost-legend -->
 ### Cost legend

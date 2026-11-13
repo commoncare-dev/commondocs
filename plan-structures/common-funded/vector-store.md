@@ -5,8 +5,8 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/common-funded/human-readable.md
 metadata_document: plan-structures/common-funded/metadata.yaml
-source_commit: 4c66b2f8254f45dc7647ec4ba83255eefe58d286
-source_sha256: 302b4162b861a071d09406b37d6b143b0bf8c33b11542a5b2161a0d1628fa277
+source_commit: e8491e931ed6844ab1fd7db46bd98748ff9520f9
+source_sha256: 8243be404a242730b2c29258bda4cebbbe17680cde35dc102c0469f6df4aa568
 metadata_sha256: 42e9788ba0d45035151c510dea94356264b107da8e44622252f830af5db9aac3
 generation_method: deterministic-markdown-conversion
 canonical_source: false
@@ -94,6 +94,7 @@ The result preserves a familiar participant choice structure while reducing reli
 - [How to understand the concept versus reality](#how-to-understand-the-concept-versus-reality)
 - [Bounded partial self-funding](#bounded-partial-self-funding)
 - [The participant experience](#the-participant-experience)
+- [How the CommonFunded deductible works](#how-the-commonfunded-deductible-works)
 - [Where the savings come from](#where-the-savings-come-from)
 - [How CommonCare identifies the optimal plan](#how-commoncare-identifies-the-optimal-plan)
 - [Why cash-pay routine care matters](#why-cash-pay-routine-care-matters)
@@ -261,11 +262,11 @@ Instead, CommonCare can display:
 - Participant sees: Normalized plan choices such as A, B, and C
 - System administers: The underlying insurance or alternative coverage options
 
-#### Effective deductible after CommonFunds
-<!-- record_id: product.commonfunded.the-participant-experience.effective-deductible-after-commonfunds; record_type: table-row -->
+#### Effective exposure after CommonFunds
+<!-- record_id: product.commonfunded.the-participant-experience.effective-exposure-after-commonfunds; record_type: table-row -->
 - Context: CommonFunding — The participant experience
-- Participant sees: Effective deductible after CommonFunds
-- System administers: The contractual deductible plus available reimbursement
+- Participant sees: Effective exposure after CommonFunds
+- System administers: The participant-paid threshold plus any cost sharing not reimbursed by CommonFunds
 
 #### Effective maximum exposure
 <!-- record_id: product.commonfunded.the-participant-experience.effective-maximum-exposure; record_type: table-row -->
@@ -288,6 +289,27 @@ Instead, CommonCare can display:
 
 The participant sees the terms that matter economically without having to perform the reconciliation personally.
 
+<!-- record_id: product.commonfunded.how-the-commonfunded-deductible-works -->
+### How the CommonFunded deductible works
+> Retrieval context: CommonFunding — The participant experience > How the CommonFunded deductible works
+
+CommonFunded does not change the deductible in the major-medical contract. Instead, it can annex the CommonFunds documents and apply a separate **CommonFunds reimbursement deductible** before the applicable HRA or Health FSA begins paying.
+
+For example, assume the major-medical coverage has a \$9,200 contractual deductible and the Enrollment Schedule gives the participant a \$1,500 CommonFunds deductible. The participant bears eligible expenses through the CommonFunds threshold. After that threshold is satisfied, CommonFunds can reimburse otherwise eligible expenses under its HRA or Health FSA terms, up to the amount available. The carrier continues to apply its own \$9,200 deductible throughout. The participant-facing result may resemble lower-deductible coverage, but the two legal deductibles remain distinct.
+
+The Enrollment Schedule supplies the participant-specific CommonFunds deductible. The annexed CommonFunds documents supply the durable rules:
+
+- Which HRA or Health FSA component is subject to the deductible;
+- Which expenses accumulate toward it;
+- Whether it is individual, family, embedded, or aggregate;
+- What evidence establishes satisfaction;
+- Whether preventive care, dental, vision, or another permitted category may be reimbursed before satisfaction; and
+- Which component pays once the threshold is met.
+
+The Health FSA point is deliberate. Federal tax guidance expressly recognizes a post-deductible Health FSA, not only a post-deductible HRA. Ordinary medical expenses incurred before the applicable deductible is satisfied do not become reimbursable merely because the participant meets the deductible later. [IRS Revenue Ruling 2004-45](https://www.irs.gov/pub/irs-drop/rr-04-45.pdf) · [IRS Notice 2008-59](https://www.irs.gov/pub/irs-drop/n-08-59.pdf) · [IRS Publication 969](https://www.irs.gov/publications/p969)
+
+When HSA eligibility is intended, every reimbursement component available to the participant must independently satisfy the applicable HSA-compatibility rules. A CommonFunds threshold used only to shape participant cost sharing is a plan-design term; it should not be represented as HSA-compatible unless it also meets the statutory minimum and all related restrictions.
+
 ---
 
 <!-- record_id: product.commonfunded.where-the-savings-come-from -->
@@ -296,7 +318,7 @@ The participant sees the terms that matter economically without having to perfor
 
 CommonFunded replaces a portion of fixed insurance premium with a capped reimbursement promise.
 
-Suppose a participant chooses coverage with a \$9,200 deductible. CommonFunds can reduce the participant’s effective exposure to \$0—or another employer-selected amount—even though the insurance contract still has a \$9,200 deductible.
+Suppose a participant chooses coverage with a \$9,200 deductible and the Enrollment Schedule states a \$1,500 CommonFunds deductible. After the participant satisfies that threshold, CommonFunds can reimburse the eligible layer above it—even though the insurance contract still has a \$9,200 deductible. The participant's modeled exposure to deductible-subject expenses can therefore be reduced toward \$1,500, subject to the available CommonFunds amount and governing component terms.
 
 The economic difference appears when the participant incurs less than \$9,200 of eligible expense:
 
@@ -503,13 +525,13 @@ If the math is so strong, why has adoption and funding remained weaker than it s
 
 These are not arguments against HSAs. CommonCare considers the HSA model superb and has created plan structures intended to produce HSA eligibility with the lowest practical sunk cost, including the [self-funded MEC plan](https://commoncare.org/products/mec). HSA-driven options can be offered alongside CommonFunded and other CommonCare structures.
 
-<!-- record_id: product.commonfunded.2026-hsa-hdhp-ebhra-and-health-fsa-reference-amounts -->
-### 2026 HSA, HDHP, EBHRA, and Health FSA reference amounts
-> Retrieval context: CommonFunding — Why cash-pay routine care matters > 2026 HSA, HDHP, EBHRA, and Health FSA reference amounts
+<!-- record_id: product.commonfunded.2027-hsa-hdhp-ebhra-and-health-fsa-reference-amounts -->
+### 2027 HSA, HDHP, EBHRA, and Health FSA reference amounts
+> Retrieval context: CommonFunding — Why cash-pay routine care matters > 2027 HSA, HDHP, EBHRA, and Health FSA reference amounts
 
-For calendar year 2026, the HSA contribution limit is \$4,400 for self-only coverage and \$8,750 for family coverage. The general HDHP minimum deductible is \$1,700 self-only and \$3,400 family, and the HDHP out-of-pocket ceiling is \$8,500 self-only and \$17,000 family. Eligible Exchange bronze and catastrophic plans receive separate statutory HSA treatment beginning in 2026.
+For calendar year 2027, the HSA contribution limit is \$4,500 for self-only coverage and \$9,000 for family coverage. The general HDHP minimum deductible is \$1,750 self-only and \$3,500 family, and the HDHP out-of-pocket ceiling is \$8,700 self-only and \$17,400 family. Eligible Exchange bronze and catastrophic plans receive separate statutory HSA treatment beginning in 2026. [IRS Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24)
 
-For plan years beginning in 2026, the EBHRA limit is \$2,200 and the Health FSA salary-reduction limit is \$3,400. A Health FSA that adopts a carryover may permit up to \$680 to carry from the prior year without reducing the \$3,400 salary-reduction limit. These indexed amounts are reference values for 2026, not permanent product limits.
+For plan years beginning in 2027, the EBHRA limit is \$2,250 and the Health FSA salary-reduction limit is \$3,500. A Health FSA that adopts a carryover may permit up to \$700 to carry from the prior year without reducing the \$3,500 salary-reduction limit. These indexed amounts are reference values for 2027, not permanent product limits. [IRS Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24) · [IRS Revenue Procedure 2026-35, §3.16](https://www.irs.gov/pub/irs-drop/rp-26-35.pdf)
 
 <!-- record_id: product.commonfunded.how-commonfunded-improves-the-implementation -->
 ### How CommonFunded improves the implementation
@@ -671,6 +693,12 @@ The flexibility of CommonFunded comes from coordinating distinct components, not
 - Context: CommonFunding — Important implementation rules
 - Design issue: Health FSA risk
 - Operating rule: Apply uniform coverage and the governing forfeiture, carryover, and runout provisions
+
+#### CommonFunds deductible
+<!-- record_id: product.commonfunded.important-implementation-rules.commonfunds-deductible; record_type: table-row -->
+- Context: CommonFunding — Important implementation rules
+- Design issue: CommonFunds deductible
+- Operating rule: Source the participant threshold from the Enrollment Schedule; apply the annexed component rules to accumulation, expense-date testing, pre-deductible benefits, substantiation, and payment
 
 #### Participant-facing normalization
 <!-- record_id: product.commonfunded.important-implementation-rules.participant-facing-normalization; record_type: table-row -->

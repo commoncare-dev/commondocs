@@ -5,8 +5,8 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/dpc-companion/human-readable.md
 metadata_document: plan-structures/dpc-companion/metadata.yaml
-source_commit: 3248ad43c9a7d8964f35e9e5332ce12fe7a25fc0
-source_sha256: e8a9c37579d48e973d4a52278b017c3070f420882c9b23092b5c2d915c785c66
+source_commit: e8491e931ed6844ab1fd7db46bd98748ff9520f9
+source_sha256: af077f90433aa7f5c74b35c6d3b0129b3d6e9569be322b5afcc8cd665c11d33f
 metadata_sha256: 312d1ad714384c8bf99aa22418a4cb13ba807ddffa26d7f5515e406746646681
 generation_method: deterministic-markdown-conversion
 canonical_source: false
@@ -239,7 +239,7 @@ DPC Companion therefore adds a use for the allowance, rather than another allowa
 
 An employee may use an HSA for eligible DPC fees. Employer HSA contributions and employee HSA salary reductions can support that choice when the employee is eligible to contribute. Existing HSA funds may remain available for qualified expenses even after contribution eligibility ends. HSA assets belong to the employee; they are not another employer HRA balance. [26 USC 223(b)–(d)](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section223&num=0&edition=prelim).
 
-Beginning in 2026, section 223 provides a DPC exception for HSA contribution eligibility. The arrangement must meet the statutory primary-care, practitioner, fixed-fee, and service restrictions. The aggregate fee threshold is $150 a month, or $300 where the multi-person rule applies, for 2026; later years are indexed. HSA expense reimbursement has no corresponding fee ceiling for an otherwise qualifying DPC arrangement. [26 USC 223(c)(1)(E) and (d)(2)(C)(v)](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section223&num=0&edition=prelim); [IRS Notice 2026-5, Q&As 11–20](https://www.irs.gov/pub/irs-drop/n-26-05.pdf).
+Beginning in 2026, section 223 provides a DPC exception for HSA contribution eligibility. The arrangement must meet the statutory primary-care, practitioner, fixed-fee, and service restrictions. For 2027, the aggregate fee threshold remains $150 a month, or $300 where the multi-person rule applies. HSA expense reimbursement has no corresponding fee ceiling for an otherwise qualifying DPC arrangement. [26 USC 223(c)(1)(E) and (d)(2)(C)(v)](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section223&num=0&edition=prelim); [IRS Notice 2026-5, Q&As 11–20](https://www.irs.gov/pub/irs-drop/n-26-05.pdf); [IRS Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24).
 
 HSA contribution eligibility also depends on qualifying HDHP coverage and other coverage restrictions. MEC status alone is insufficient, and a general-purpose FSA or HRA may prevent contributions even when the DPC arrangement qualifies. The DPC exception does not authorize an HDHP itself to provide ordinary DPC benefits before its deductible. An expense already paid through an employer benefit cannot also be reimbursed from the HSA. [26 USC 223(c)](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section223&num=0&edition=prelim); [IRS Notice 2026-5, Q&As 15–18](https://www.irs.gov/pub/irs-drop/n-26-05.pdf).
 

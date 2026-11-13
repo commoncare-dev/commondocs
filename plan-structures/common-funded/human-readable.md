@@ -335,11 +335,11 @@ If the math is so strong, why has adoption and funding remained weaker than it s
 
 These are not arguments against HSAs. CommonCare considers the HSA model superb and has created plan structures intended to produce HSA eligibility with the lowest practical sunk cost, including the [self-funded MEC plan](https://commoncare.org/products/mec). HSA-driven options can be offered alongside CommonFunded and other CommonCare structures.
 
-### 2026 HSA, HDHP, EBHRA, and Health FSA reference amounts
+### 2027 HSA, HDHP, EBHRA, and Health FSA reference amounts
 
-For calendar year 2026, the HSA contribution limit is \$4,400 for self-only coverage and \$8,750 for family coverage. The general HDHP minimum deductible is \$1,700 self-only and \$3,400 family, and the HDHP out-of-pocket ceiling is \$8,500 self-only and \$17,000 family. Eligible Exchange bronze and catastrophic plans receive separate statutory HSA treatment beginning in 2026.
+For calendar year 2027, the HSA contribution limit is \$4,500 for self-only coverage and \$9,000 for family coverage. The general HDHP minimum deductible is \$1,750 self-only and \$3,500 family, and the HDHP out-of-pocket ceiling is \$8,700 self-only and \$17,400 family. Eligible Exchange bronze and catastrophic plans receive separate statutory HSA treatment beginning in 2026. [IRS Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24)
 
-For plan years beginning in 2026, the EBHRA limit is \$2,200 and the Health FSA salary-reduction limit is \$3,400. A Health FSA that adopts a carryover may permit up to \$680 to carry from the prior year without reducing the \$3,400 salary-reduction limit. These indexed amounts are reference values for 2026, not permanent product limits.
+For plan years beginning in 2027, the EBHRA limit is \$2,250 and the Health FSA salary-reduction limit is \$3,500. A Health FSA that adopts a carryover may permit up to \$700 to carry from the prior year without reducing the \$3,500 salary-reduction limit. These indexed amounts are reference values for 2027, not permanent product limits. [IRS Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24) · [IRS Revenue Procedure 2026-35, §3.16](https://www.irs.gov/pub/irs-drop/rp-26-35.pdf)
 
 ### How CommonFunded improves the implementation
 

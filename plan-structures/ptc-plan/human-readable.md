@@ -35,7 +35,7 @@ The plan is not a reimbursement arrangement for individual insurance. It is a co
 ## Navigate this document
 
 - [The economic decision](#part-i--the-economic-decision)
-- [2026 income guide](#2026-income-guide)
+- [2027 income guide](#2027-income-guide)
 - [Household illustrations](#household-illustrations)
 - [The PTC eligibility rule](#part-ii--the-ptc-eligibility-rule)
 - [Why non-ALE status matters](#why-non-ale-status-matters)
@@ -80,36 +80,36 @@ The PTC generally equals the lesser of:
 - The premium for the qualified health plan in which the household enrolls; or
 - The local SLCSP premium for the coverage family minus the household's expected contribution.
 
-The expected contribution is household income multiplied by the applicable percentage for the household's federal-poverty-level band. The SLCSP is therefore a benchmark, not a required plan selection. A household may apply the credit to another eligible bronze, silver, gold, or platinum qualified health plan. [IRS Publication 974, “Monthly credit amount”](https://www.irs.gov/publications/p974#en_US_2025_publink100023185) · [26 U.S.C. §36B](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section36B&num=0&edition=prelim)
+The expected contribution is household income multiplied by the applicable percentage for the household's federal-poverty-level band. The SLCSP is therefore a benchmark, not a required plan selection. A household may apply the credit to another eligible bronze, silver, gold, or platinum qualified health plan. [IRS Publication 974](https://www.irs.gov/publications/p974) · [26 U.S.C. §36B](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section36B&num=0&edition=prelim)
 
-## 2026 income guide
+## 2027 income guide
 
-For 2026 coverage in the contiguous United States and D.C., the Marketplace generally uses the **2025 federal poverty guidelines**. Under the law applicable for 2026, ordinary PTC eligibility generally runs from 100% through 400% of FPL, subject to the Medicaid rules, lawful-presence rules, tax-filing rules, access to other minimum essential coverage, and the other requirements of §36B. Alaska and Hawaii use different guidelines. [HHS 2025 Poverty Guidelines](https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines/prior-hhs-poverty-guidelines-federal-register-references/2025-poverty-guidelines-computations) · [IRS Revenue Procedure 2025-25](https://www.irs.gov/irb/2025-32_IRB#REV-PROC-2025-25)
+For 2027 coverage in the contiguous United States and D.C., the Marketplace generally uses the **2026 federal poverty guidelines**. Under the law applicable for 2027, ordinary PTC eligibility generally runs from 100% through 400% of FPL, subject to the Medicaid rules, lawful-presence rules, tax-filing rules, access to other minimum essential coverage, and the other requirements of §36B. Alaska and Hawaii use different guidelines. [HHS 2026 Poverty Guidelines](https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines/prior-hhs-poverty-guidelines-federal-register-references/2026-poverty-guidelines-computations) · [IRS Revenue Procedure 2026-26](https://www.irs.gov/irb/2026-31_irb#REV-PROC-2026-26)
 
-| Household size | 100% FPL | 200% FPL | 300% FPL | 400% FPL | General 2026 PTC income band |
+| Household size | 100% FPL | 200% FPL | 300% FPL | 400% FPL | General 2027 PTC income band |
 |---:|---:|---:|---:|---:|---:|
-| 1 | $15,650 | $31,300 | $46,950 | $62,600 | $15,650–$62,600 |
-| 2 | $21,150 | $42,300 | $63,450 | $84,600 | $21,150–$84,600 |
-| 3 | $26,650 | $53,300 | $79,950 | $106,600 | $26,650–$106,600 |
-| 4 | $32,150 | $64,300 | $96,450 | $128,600 | $32,150–$128,600 |
-| 5 | $37,650 | $75,300 | $112,950 | $150,600 | $37,650–$150,600 |
-| 6 | $43,150 | $86,300 | $129,450 | $172,600 | $43,150–$172,600 |
+| 1 | $15,960 | $31,920 | $47,880 | $63,840 | $15,960–$63,840 |
+| 2 | $21,640 | $43,280 | $64,920 | $86,560 | $21,640–$86,560 |
+| 3 | $27,320 | $54,640 | $81,960 | $109,280 | $27,320–$109,280 |
+| 4 | $33,000 | $66,000 | $99,000 | $132,000 | $33,000–$132,000 |
+| 5 | $38,680 | $77,360 | $116,040 | $154,720 | $38,680–$154,720 |
+| 6 | $44,360 | $88,720 | $133,080 | $177,440 | $44,360–$177,440 |
 
 > [!CAUTION]
 > This table is a screening tool, not a credit determination. The lower boundary interacts with Medicaid expansion and special rules for lawfully present individuals. Household MAGI, tax-family composition, location, ages, tobacco rating, access to other coverage, marriage and filing status, and midyear changes can alter eligibility or the final reconciled credit.
 
-### 2026 expected-contribution percentages
+### 2027 expected-contribution percentages
 
 | Household income as % of FPL | Applicable percentage of household income |
 |---:|---:|
-| Less than 133% | 2.10% |
-| 133% to less than 150% | 3.14%–4.19% |
-| 150% to less than 200% | 4.19%–6.60% |
-| 200% to less than 250% | 6.60%–8.44% |
-| 250% to less than 300% | 8.44%–9.96% |
-| 300% through 400% | 9.96% |
+| Less than 133% | 2.15% |
+| 133% to less than 150% | 3.23%–4.30% |
+| 150% to less than 200% | 4.30%–6.78% |
+| 200% to less than 250% | 6.78%–8.66% |
+| 250% to less than 300% | 8.66%–10.22% |
+| 300% through 400% | 10.22% |
 
-These are the 2026 statutory calculation percentages, not the employee's Marketplace premium and not a promise that every household in the band receives a credit. [IRS Revenue Procedure 2025-25, §3.01](https://www.irs.gov/irb/2025-32_IRB#REV-PROC-2025-25)
+These are the 2027 statutory calculation percentages, not the employee's Marketplace premium and not a promise that every household in the band receives a credit. [IRS Revenue Procedure 2026-26, §3.01](https://www.irs.gov/irb/2026-31_irb#REV-PROC-2026-26)
 
 ## Household illustrations
 
@@ -117,35 +117,35 @@ The examples below are deliberately simplified. They assume the household is oth
 
 | Household | Income and FPL | Assumed annual SLCSP | Approx. expected contribution | Illustrative annual PTC |
 |---|---:|---:|---:|---:|
-| Single employee | $40,000; about 256% FPL | $8,400 | $3,440 | **$4,960** |
-| Couple | $70,000; about 331% FPL | $15,600 | $6,972 | **$8,628** |
-| Family of four | $80,000; about 249% FPL | $21,600 | $6,720 | **$14,880** |
+| Single employee | $40,000; about 251% FPL | $8,400 | $3,472 | **$4,928** |
+| Couple | $70,000; about 323% FPL | $15,600 | $7,154 | **$8,446** |
+| Family of four | $80,000; about 242% FPL | $21,600 | $6,700 | **$14,900** |
 
 ### Illustration 1 — the roughly $5,000 household
 
-A single employee earns $40,000. Assume the local benchmark premium is $700 per month, or $8,400 per year. The household's expected contribution is approximately $3,440, producing an illustrative PTC of about **$4,960**.
+A single employee earns $40,000. Assume the local benchmark premium is $700 per month, or $8,400 per year. The household's expected contribution is approximately $3,472, producing an illustrative PTC of about **$4,928**.
 
 If the employer instead offers affordable minimum-value group coverage, the employee generally loses access to that credit even if a comparable group plan also costs $8,400. The group premium must then be paid entirely with employer and employee dollars. The relevant comparison is not “employer plan versus no plan”; it is:
 
 | Coverage route | Federal PTC | Employer/employee dollars needed for $8,400 premium |
 |---|---:|---:|
-| Marketplace with PTC | $4,960 | $3,440 |
+| Marketplace with PTC | $4,928 | $3,472 |
 | Group plan blocking PTC | $0 | $8,400 |
 
-The difference is compensation capacity. The $4,960 not consumed by premium can support wages, bonuses, HSA contributions, dental, vision, CommonFunds, retirement, or business investment.
+The difference is compensation capacity. The $4,928 not consumed by premium can support wages, bonuses, HSA contributions, dental, vision, CommonFunds, retirement, or business investment.
 
 ### Illustration 2 — a family decision, not just an employee decision
 
-A family of four earns $80,000. Assume its benchmark Marketplace premium is $1,800 per month. The illustrative PTC is about **$14,880 per year**. A small employer can spend substantial money subsidizing employee-only group coverage and still leave the family with an expensive dependent premium. Marketplace affordability and the PTC are household calculations; the family comparison must therefore include all covered family members, not just the employee rate.
+A family of four earns $80,000. Assume its benchmark Marketplace premium is $1,800 per month. The illustrative PTC is about **$14,900 per year**. A small employer can spend substantial money subsidizing employee-only group coverage and still leave the family with an expensive dependent premium. Marketplace affordability and the PTC are household calculations; the family comparison must therefore include all covered family members, not just the employee rate.
 
 ### Illustration 3 — paying twice for substantially equal protection
 
 Assume a couple can buy either:
 
-- A Marketplace silver plan with a $15,600 benchmark premium and an estimated $8,628 PTC; or
+- A Marketplace silver plan with a $15,600 benchmark premium and an estimated $8,446 PTC; or
 - A small-group plan with a comparable $15,600 premium and no PTC.
 
-If the employer and employee together pay $15,600 for the group plan, they have replaced $8,628 of available federal support with private compensation dollars. The group plan may still be better because of its network, contract terms, employer administration, or other facts. But “this is how employers normally do it” is not an economic reason.
+If the employer and employee together pay $15,600 for the group plan, they have replaced $8,446 of available federal support with private compensation dollars. The group plan may still be better because of its network, contract terms, employer administration, or other facts. But “this is how employers normally do it” is not an economic reason.
 
 > [!NOTE]
 > These examples show the mechanism, not a quote. CommonCare calculates the actual PTC from current household and Marketplace data and compares the actual plans available in the employee's rating area.
@@ -166,9 +166,9 @@ The PTC rules distinguish between an **offer** of employer coverage and **enroll
 | Employee enrolls in employer-sponsored MEC | Enrollment blocks PTC for enrolled months, even if the plan is unaffordable or fails minimum value |
 | Employer benefit consists only of excepted benefits | Excepted benefits are not MEC and do not themselves block PTC |
 
-The regulation states that employer-sponsored coverage generally counts against PTC eligibility when it is affordable and provides minimum value. But once an individual **enrolls** in eligible employer-sponsored coverage, the affordability and minimum-value exceptions no longer apply. [26 CFR §1.36B-2(c)(3)](https://www.law.cornell.edu/cfr/text/26/1.36B-2) · [IRS Publication 974, “Employer-Sponsored Plans”](https://www.irs.gov/publications/p974#en_US_2025_publink100023213)
+The regulation states that employer-sponsored coverage generally counts against PTC eligibility when it is affordable and provides minimum value. But once an individual **enrolls** in eligible employer-sponsored coverage, the affordability and minimum-value exceptions no longer apply. [26 CFR §1.36B-2(c)(3)](https://www.law.cornell.edu/cfr/text/26/1.36B-2) · [IRS Publication 974](https://www.irs.gov/publications/p974)
 
-For 2026, the employee affordability threshold under §36B is **9.96% of household income**. Family-member affordability is tested using the employee's required contribution for the family members offered coverage, not merely the self-only employee rate. [IRS PTC Questions and Answers](https://www.irs.gov/affordable-care-act/individuals-and-families/questions-and-answers-on-the-premium-tax-credit) · [IRS Revenue Procedure 2025-25, §3.02](https://www.irs.gov/irb/2025-32_IRB#REV-PROC-2025-25)
+For 2027, the employee affordability threshold under §36B is **10.22% of household income**. Family-member affordability is tested using the employee's required contribution for the family members offered coverage, not merely the self-only employee rate. [IRS Revenue Procedure 2026-26, §3.02](https://www.irs.gov/irb/2026-31_irb#REV-PROC-2026-26)
 
 ## Why non-ALE status matters
 
@@ -181,7 +181,7 @@ An employer is generally an applicable large employer for a calendar year if it 
 
 This is why the PTC Plan is principally a non-ALE strategy. A non-ALE can preserve PTC access without taking a §4980H penalty because §4980H does not apply to it.
 
-An ALE may intentionally accept §4980H(b) exposure for particular full-time employees when the household PTC and workforce economics are compelling. That is a lawful financial tradeoff, but it requires careful modeling and administration. For 2026, the indexed §4980H(b) amount is **$5,010 annually per affected full-time employee**, assessed monthly and subject to the statutory calculation and cap. [IRS Revenue Procedure 2025-26](https://www.irs.gov/irb/2025-33_IRB#REV-PROC-2025-26) · [26 CFR §54.4980H-5](https://www.law.cornell.edu/cfr/text/26/54.4980H-5)
+An ALE may intentionally accept §4980H(b) exposure for particular full-time employees when the household PTC and workforce economics are compelling. That is a lawful financial tradeoff, but it requires careful modeling and administration. For 2027, the indexed §4980H(b) amount is **$5,670 annually per affected full-time employee**, assessed monthly and subject to the statutory calculation and cap. The corresponding §4980H(a) amount is **$3,780 annually per full-time employee**, subject to the statutory reduction and monthly calculation. [IRS Revenue Procedure 2026-22](https://www.irs.gov/irb/2026-22_IRB#REV-PROC-2026-22) · [26 CFR §54.4980H-5](https://www.law.cornell.edu/cfr/text/26/54.4980H-5)
 
 > [!IMPORTANT]
 > “Non-ALE” is not synonymous with “fewer than 50 people on payroll today.” ALE status is a prior-year, full-time-plus-FTE, aggregated-employer calculation and must be confirmed each year.
@@ -222,9 +222,9 @@ See [CommonCare Self-Funded Dental](../self-funded-dental/human-readable.md) for
 
 ## HSA contributions
 
-An employee enrolled in an HSA-qualified Marketplace HDHP can remain eligible for employer HSA contributions if the employee has no disqualifying other coverage. For 2026, the HSA contribution limits are $4,400 for self-only coverage and $8,750 for family coverage. [IRS Revenue Procedure 2025-19](https://www.irs.gov/irb/2025-21_IRB#REV-PROC-2025-19)
+An employee enrolled in an HSA-qualified Marketplace HDHP can remain eligible for employer HSA contributions if the employee has no disqualifying other coverage. For 2027, the HSA contribution limits are $4,500 for self-only coverage and $9,000 for family coverage. [IRS Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24)
 
-Employer HSA contributions, and employee HSA contributions made through a §125 salary-reduction arrangement, are generally excluded from federal income-tax withholding, Social Security, Medicare, and FUTA when the contribution is reasonably believed excludable. [IRS Publication 15-B, “Health Savings Accounts”](https://www.irs.gov/publications/p15b#en_US_2026_publink1000193741) · [IRS Publication 15, “Health savings accounts”](https://www.irs.gov/publications/p15)
+Employer HSA contributions, and employee HSA contributions made through a §125 salary-reduction arrangement, are generally excluded from federal income-tax withholding, Social Security, Medicare, and FUTA when the contribution is reasonably believed excludable. [IRS Publication 15-B, “Health Savings Accounts”](https://www.irs.gov/publications/p15b) · [IRS Publication 15, “Health savings accounts”](https://www.irs.gov/publications/p15)
 
 The payroll-tax advantage should be stated precisely:
 
@@ -234,7 +234,7 @@ The payroll-tax advantage should be stated precisely:
 - FUTA and, depending on state law and rating mechanics, state unemployment or workers' compensation payroll charges may also be reduced.
 
 > [!WARNING]
-> A general-purpose Health FSA or HRA—an employer health account that can reimburse ordinary medical expenses before the HSA deductible is met—usually makes an employee ineligible to contribute to an HSA. An HSA-compatible CommonFunds design must instead use limited-purpose coverage, generally restricted to dental and vision expenses, or post-deductible coverage, which pays only after the required deductible is met. Those restrictions matter because they can preserve HSA eligibility. PTC compatibility and HSA compatibility are different questions. [IRS Publication 15-B](https://www.irs.gov/publications/p15b#en_US_2026_publink1000193716)
+> A general-purpose Health FSA or HRA—an employer health account that can reimburse ordinary medical expenses before the HSA deductible is met—usually makes an employee ineligible to contribute to an HSA. An HSA-compatible CommonFunds design must instead use limited-purpose coverage, generally restricted to dental and vision expenses, or post-deductible coverage, which pays only after the required deductible is met. Those restrictions matter because they can preserve HSA eligibility. PTC compatibility and HSA compatibility are different questions. [IRS Publication 15-B](https://www.irs.gov/publications/p15b)
 
 ## CommonFunds plus MEC: threading the needle
 
@@ -266,14 +266,14 @@ The two systems fit together because the excepted-benefit rules require the unde
 
 ### The CommonFunds components still have separate limits
 
-| Component | 2026 design constraint |
+| Component | 2027 design constraint |
 |---|---|
-| Excepted-benefit Health FSA | Maximum benefit cannot exceed 2× the employee salary-reduction election or, if greater, the election plus $500; employee salary reduction is separately capped at $3,400 for 2026 |
-| EBHRA | Newly available amount is capped at $2,200 for plan years beginning in 2026; carryovers are disregarded for this annual-new-money limit |
+| Excepted-benefit Health FSA | Maximum benefit cannot exceed 2× the employee salary-reduction election or, if greater, the election plus $500; employee salary reduction is separately capped at $3,500 for 2027 |
+| EBHRA | Newly available amount is capped at $2,250 for plan years beginning in 2027; carryovers are disregarded for this annual-new-money limit |
 | EBHRA premium reimbursement | Cannot reimburse individual major-medical, ordinary group-plan, or Medicare premiums; limited exceptions apply for COBRA/continuation and excepted-benefit premiums |
 | Both components | Must follow their documents, eligibility, substantiation, nondiscrimination, notice, and reimbursement rules separately |
 
-[45 CFR §146.145(b)(3)(v) and (viii)](https://www.law.cornell.edu/cfr/text/45/146.145) · [IRS Revenue Procedure 2025-19](https://www.irs.gov/irb/2025-21_IRB#REV-PROC-2025-19) · [IRS 2026 inflation adjustments](https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill)
+[45 CFR §146.145(b)(3)(v) and (viii)](https://www.law.cornell.edu/cfr/text/45/146.145) · [IRS Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24) · [IRS Revenue Procedure 2026-35, §3.16](https://www.irs.gov/pub/irs-drop/rp-26-35.pdf)
 
 ### What CommonFunds may reimburse
 
@@ -478,13 +478,14 @@ The employee should acknowledge that:
 | PTC statute and calculation | [26 U.S.C. §36B](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section36B&num=0&edition=prelim) |
 | PTC eligibility; employer offer and enrollment | [26 CFR §1.36B-2](https://www.law.cornell.edu/cfr/text/26/1.36B-2) |
 | IRS PTC operational guidance | [IRS Publication 974](https://www.irs.gov/publications/p974) |
-| 2026 PTC percentages and 9.96% affordability threshold | [Revenue Procedure 2025-25](https://www.irs.gov/irb/2025-32_IRB#REV-PROC-2025-25) |
-| 2025 poverty guidelines used for 2026 Marketplace coverage | [HHS Poverty Guidelines](https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines/prior-hhs-poverty-guidelines-federal-register-references/2025-poverty-guidelines-computations) |
+| 2027 PTC percentages and 10.22% affordability threshold | [Revenue Procedure 2026-26](https://www.irs.gov/irb/2026-31_irb#REV-PROC-2026-26) |
+| 2026 poverty guidelines used for 2027 Marketplace coverage | [HHS Poverty Guidelines](https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines/prior-hhs-poverty-guidelines-federal-register-references/2026-poverty-guidelines-computations) |
 | ALE determination | [IRS ALE determination guidance](https://www.irs.gov/affordable-care-act/employers/determining-if-an-employer-is-an-applicable-large-employer) |
 | §4980H(b) payment | [26 CFR §54.4980H-5](https://www.law.cornell.edu/cfr/text/26/54.4980H-5) |
-| 2026 §4980H indexed amounts | [Revenue Procedure 2025-26](https://www.irs.gov/irb/2025-33_IRB#REV-PROC-2025-26) |
+| 2027 §4980H indexed amounts | [Revenue Procedure 2026-22](https://www.irs.gov/irb/2026-22_IRB#REV-PROC-2026-22) |
 | Excepted-benefit dental, vision, Health FSA, and EBHRA | [45 CFR §146.145](https://www.law.cornell.edu/cfr/text/45/146.145) · [26 CFR §54.9831-1](https://www.law.cornell.edu/cfr/text/26/54.9831-1) |
-| 2026 EBHRA and HSA limits | [Revenue Procedure 2025-19](https://www.irs.gov/irb/2025-21_IRB#REV-PROC-2025-19) |
+| 2027 EBHRA, HSA, HDHP, and DPC limits | [Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24) |
+| 2027 Health FSA salary-reduction and carryover limits | [Revenue Procedure 2026-35](https://www.irs.gov/pub/irs-drop/rp-26-35.pdf) |
 | HSA tax treatment and incompatible coverage | [IRS Publication 15-B](https://www.irs.gov/publications/p15b) |
 | Unconditional wages versus individual-premium reimbursement | [IRS Notice 2015-17](https://www.irs.gov/irb/2015-14_IRB#NOT-2015-17) |
 | Voluntary insurance and payroll-remittance safe harbor | [29 CFR §2510.3-1(j)](https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XXV/subchapter-A/part-2510/section-2510.3-1#p-2510.3-1(j)) · [DOL Advisory Opinion 94-24A](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/advisory-opinions/1994-24a) |

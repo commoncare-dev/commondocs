@@ -5,8 +5,8 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: plan-structures/common-funds/human-readable.md
 metadata_document: plan-structures/common-funds/metadata.yaml
-source_commit: 04820c4d79fd9dffcc4e4f4db9774fe231f57ad3
-source_sha256: e69461ee7ae4e0de73f2f302a4a62d564185a1b0e14f90fdd4562130d3e567cf
+source_commit: e8491e931ed6844ab1fd7db46bd98748ff9520f9
+source_sha256: b47a1760ff532e3342bfad32e71448857e9f1c9a7cbc93246ba0a7a41b7027d5
 metadata_sha256: ec2da998690975e56cbbb2bd3f6e342a3faf67c8c52304eb46facc31c41c1c61
 generation_method: deterministic-commonfunds-split-conversion
 canonical_source: false
@@ -1276,7 +1276,7 @@ Assume:
 <!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.ebhra-limit; record_type: table-row -->
 - Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
 - Input: EBHRA limit
-- Amount: \$2,200
+- Amount: \$2,250
 
 #### Existing EBHRA amount
 <!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.existing-ebhra-amount; record_type: table-row -->
@@ -1294,25 +1294,25 @@ Assume:
 <!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.fsa-salary-reduction-limit; record_type: table-row -->
 - Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
 - Input: FSA salary reduction limit
-- Amount: \$3,400
+- Amount: \$3,500
 
 
 ```text
 fsa_salary_reduction = 2,000 + 1,000 = 3,000
 
 primary_employer_allocation
-= min(3,000, 2,200)
-= 2,200 to EBHRA
+= min(3,000, 2,250)
+= 2,250 to EBHRA
 
-employer_budget_after_primary = 3,000 - 2,200 = 800
+employer_budget_after_primary = 3,000 - 2,250 = 750
 
 maximum_true_employer_fsa_contribution
 = max(3,000, 500)
 = 3,000
 
 fsa_employer_contribution_from_budget
-= min(800, 3,000)
-= 800
+= min(750, 3,000)
+= 750
 
 unallocated_employer_noncashable_budget = 0
 ```
@@ -1321,7 +1321,7 @@ unallocated_employer_noncashable_budget = 0
 <!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.ebhra-newly-available; record_type: table-row -->
 - Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
 - Output: EBHRA newly available
-- Amount: \$2,200
+- Amount: \$2,250
 
 #### Health FSA salary reduction
 <!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.health-fsa-salary-reduction; record_type: table-row -->
@@ -1333,13 +1333,13 @@ unallocated_employer_noncashable_budget = 0
 <!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.health-fsa-employer-contribution; record_type: table-row -->
 - Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
 - Output: Health FSA employer contribution
-- Amount: \$800
+- Amount: \$750
 
 #### Total Health FSA maximum benefit
 <!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.total-health-fsa-maximum-benefit; record_type: table-row -->
 - Context: CommonFunds — 2. CommonFunds calculation engine > Worked example A — EBHRA pathway
 - Output: Total Health FSA maximum benefit
-- Amount: \$3,800
+- Amount: \$3,750
 
 #### Taxable wages
 <!-- record_id: product.commonfunds.rules.vector-store.2-commonfunds-calculation-engine-worked-example-a-ebhra-pathway.taxable-wages; record_type: table-row -->
@@ -1640,7 +1640,7 @@ The EBHRA limit applies to the amount newly made available for a plan year. It d
 
 The Section 125(i) limit restricts employee salary reduction into the Health FSA. It is not a total account limit.
 
-For plan years beginning in 2026, the Health FSA salary-reduction limit is \$3,400. If the plan adopts a carryover, up to \$680 may carry from the prior plan year without reducing the \$3,400 salary-reduction limit.
+For plan years beginning in 2027, the Health FSA salary-reduction limit is \$3,500. If the plan adopts a carryover, up to \$700 may carry from the prior plan year without reducing the \$3,500 salary-reduction limit. [IRS Revenue Procedure 2026-35, §3.16](https://www.irs.gov/pub/irs-drop/rp-26-35.pdf)
 
 It includes:
 
@@ -1665,12 +1665,12 @@ maximum total Health FSA benefit = max(2 * S, S + 500)
 maximum true employer contribution = max(S, 500)
 ```
 
-#### \$3,400
-<!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-employer-health-fsa-contributions.3-400; record_type: table-row -->
+#### \$3,500
+<!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-employer-health-fsa-contributions.3-500; record_type: table-row -->
 - Context: CommonFunds — 5. Annual limits are component-specific > Employer Health FSA contributions
-- Salary reduction (`S`): \$3,400
-- Maximum total benefit: \$6,800
-- Maximum employer contribution under this test: \$3,400
+- Salary reduction (`S`): \$3,500
+- Maximum total benefit: \$7,000
+- Maximum employer contribution under this test: \$3,500
 
 #### \$1,000
 <!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-employer-health-fsa-contributions.1-000; record_type: table-row -->
@@ -1700,28 +1700,28 @@ One participant could have:
 - Context: CommonFunds — 5. Annual limits are component-specific > Combined-limit example
 - Component: EBHRA
 - Source: Employer-only
-- Amount: \$2,200
+- Amount: \$2,250
 
 #### Health FSA
 <!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-combined-limit-example.health-fsa; record_type: table-row -->
 - Context: CommonFunds — 5. Annual limits are component-specific > Combined-limit example
 - Component: Health FSA
 - Source: Employee salary reduction
-- Amount: \$3,400
+- Amount: \$3,500
 
 #### Health FSA
 <!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-combined-limit-example.health-fsa-2; record_type: table-row -->
 - Context: CommonFunds — 5. Annual limits are component-specific > Combined-limit example
 - Component: Health FSA
 - Source: Employer contribution
-- Amount: \$3,400
+- Amount: \$3,500
 
 #### Combined availability
 <!-- record_id: product.commonfunds.rules.vector-store.5-annual-limits-are-component-specific-combined-limit-example.combined-availability; record_type: table-row -->
 - Context: CommonFunds — 5. Annual limits are component-specific > Combined-limit example
 - Component: **Combined availability**
 - Source:
-- Amount: **\$9,000**
+- Amount: **\$9,250**
 
 
 The combined balance exceeding an individual component’s limit does not itself create a compliance problem. Each component is tested separately.

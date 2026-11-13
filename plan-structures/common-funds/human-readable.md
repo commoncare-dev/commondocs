@@ -229,15 +229,15 @@ CommonFunds may preserve HSA eligibility when every applicable reimbursement com
 
 The post-deductible threshold does not have to equal the deductible of the participant's particular HDHP. It may be higher. It must never allow nonpreventive, nonpermitted benefits before the applicable minimum annual deductible under § 223(c)(2)(A) has been satisfied.
 
-For calendar year 2026:
+For calendar year 2027:
 
 | HSA/HDHP measure | Self-only | Family |
 |---|---:|---:|
-| Maximum HSA contribution | \$4,400 | \$8,750 |
-| Minimum HDHP deductible | \$1,700 | \$3,400 |
-| Maximum HDHP out-of-pocket amount | \$8,500 | \$17,000 |
+| Maximum HSA contribution | \$4,500 | \$9,000 |
+| Minimum HDHP deductible | \$1,750 | \$3,500 |
+| Maximum HDHP out-of-pocket amount | \$8,700 | \$17,400 |
 
-These amounts are indexed and must be updated for the applicable year. Beginning in 2026, eligible Exchange bronze and catastrophic plans receive separate statutory HSA treatment; the participant must still have no other disqualifying reimbursement coverage.
+These amounts are indexed and must be updated for the applicable year. Beginning in 2026, eligible Exchange bronze and catastrophic plans receive separate statutory HSA treatment; the participant must still have no other disqualifying reimbursement coverage. [IRS Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24)
 
 > [!WARNING]
 > The controlling date is the date the medical expense is **incurred**, not the date the claim is submitted, approved, or paid. An ordinary medical expense incurred before the deductible was satisfied cannot become reimbursable merely because the participant later meets the deductible.
@@ -315,7 +315,7 @@ This arrangement does not provide general first-dollar medical reimbursement. Th
 
 An employer may use the excepted pathway when it makes the required non-excepted group coverage available and structures CommonFunds through an EBHRA and an excepted-benefit Health FSA. See our [self-funded MEC](../self-funded-mec/human-readable.md) product for the simplest pathway to doing this.
 
-The EBHRA and Health FSA qualify under separate provisions. [45 C.F.R. § 146.145(b)(3)(viii)](https://www.law.cornell.edu/cfr/text/45/146.145) governs the EBHRA, including the indexed contribution limit and availability of nonexcepted, non-HRA group coverage. Paragraph `(b)(3)(v)` governs the excepted-benefit Health FSA, including its separate other-coverage and maximum-benefit tests. For plan years beginning in 2026, the EBHRA may make no more than \$2,200 newly available. When each component independently satisfies its rule, the arrangement can offer first-dollar medical reimbursement, HSA-compatible limited-purpose or post-deductible reimbursement, or both elections where permitted.
+The EBHRA and Health FSA qualify under separate provisions. [45 C.F.R. § 146.145(b)(3)(viii)](https://www.law.cornell.edu/cfr/text/45/146.145) governs the EBHRA, including the indexed contribution limit and availability of nonexcepted, non-HRA group coverage. Paragraph `(b)(3)(v)` governs the excepted-benefit Health FSA, including its separate other-coverage and maximum-benefit tests. For plan years beginning in 2027, the EBHRA may make no more than \$2,250 newly available. When each component independently satisfies its rule, the arrangement can offer first-dollar medical reimbursement, HSA-compatible limited-purpose or post-deductible reimbursement, or both elections where permitted. [IRS Revenue Procedure 2026-24](https://www.irs.gov/irb/2026-25_irb#REV-PROC-2026-24)
 
 This can support employees enrolled in the employer plan, a spouse's group plan, or qualifying independent coverage contexts described elsewhere in this document. It can also preserve Marketplace PTC access when the employee declines the employer MEC and all separate PTC requirements are satisfied.
 
@@ -1040,37 +1040,37 @@ Assume:
 | Cashable flex to Health FSA | \$2,000 |
 | Cashable flex to wages | \$400 |
 | Direct employee FSA election | \$1,000 |
-| EBHRA limit | \$2,200 |
+| EBHRA limit | \$2,250 |
 | Existing EBHRA amount | \$0 |
 | Existing employer FSA contribution | \$0 |
-| FSA salary reduction limit | \$3,400 |
+| FSA salary reduction limit | \$3,500 |
 
 ```text
 fsa_salary_reduction = 2,000 + 1,000 = 3,000
 
 primary_employer_allocation
-= min(3,000, 2,200)
-= 2,200 to EBHRA
+= min(3,000, 2,250)
+= 2,250 to EBHRA
 
-employer_budget_after_primary = 3,000 - 2,200 = 800
+employer_budget_after_primary = 3,000 - 2,250 = 750
 
 maximum_true_employer_fsa_contribution
 = max(3,000, 500)
 = 3,000
 
 fsa_employer_contribution_from_budget
-= min(800, 3,000)
-= 800
+= min(750, 3,000)
+= 750
 
 unallocated_employer_noncashable_budget = 0
 ```
 
 | Output | Amount |
 |---|---:|
-| EBHRA newly available | \$2,200 |
+| EBHRA newly available | \$2,250 |
 | Health FSA salary reduction | \$3,000 |
-| Health FSA employer contribution | \$800 |
-| Total Health FSA maximum benefit | \$3,800 |
+| Health FSA employer contribution | \$750 |
+| Total Health FSA maximum benefit | \$3,750 |
 | Taxable wages | \$400 |
 | Unallocated employer-only budget | \$0 |
 
@@ -1227,7 +1227,7 @@ The EBHRA limit applies to the amount newly made available for a plan year. It d
 
 The Section 125(i) limit restricts employee salary reduction into the Health FSA. It is not a total account limit.
 
-For plan years beginning in 2026, the Health FSA salary-reduction limit is \$3,400. If the plan adopts a carryover, up to \$680 may carry from the prior plan year without reducing the \$3,400 salary-reduction limit.
+For plan years beginning in 2027, the Health FSA salary-reduction limit is \$3,500. If the plan adopts a carryover, up to \$700 may carry from the prior plan year without reducing the \$3,500 salary-reduction limit. [IRS Revenue Procedure 2026-35, §3.16](https://www.irs.gov/pub/irs-drop/rp-26-35.pdf)
 
 It includes:
 
@@ -1252,7 +1252,7 @@ maximum true employer contribution = max(S, 500)
 
 | Salary reduction (`S`) | Maximum total benefit | Maximum employer contribution under this test |
 |---:|---:|---:|
-| \$3,400 | \$6,800 | \$3,400 |
+| \$3,500 | \$7,000 | \$3,500 |
 | \$1,000 | \$2,000 | \$1,000 |
 | \$100 | \$600 | \$500 |
 
@@ -1264,10 +1264,10 @@ One participant could have:
 
 | Component | Source | Amount |
 |---|---|---:|
-| EBHRA | Employer-only | \$2,200 |
-| Health FSA | Employee salary reduction | \$3,400 |
-| Health FSA | Employer contribution | \$3,400 |
-| **Combined availability** |  | **\$9,000** |
+| EBHRA | Employer-only | \$2,250 |
+| Health FSA | Employee salary reduction | \$3,500 |
+| Health FSA | Employer contribution | \$3,500 |
+| **Combined availability** |  | **\$9,250** |
 
 The combined balance exceeding an individual component’s limit does not itself create a compliance problem. Each component is tested separately.
 
