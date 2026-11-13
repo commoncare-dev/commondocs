@@ -18,6 +18,8 @@ node scripts/convert-human-readable.mjs plan-structures/self-funded-dental/human
 
 [convert-human-readable.mjs](convert-human-readable.mjs) requires the source filename to be `human-readable.md`. It replaces `vector-store.md` in the same directory. Pass one source path per invocation; it does not scan the whole repository.
 
+Each product-concept directory must also contain `AI-instructions.md`. The converter places those provenance and interpretation instructions near the top of the generated vector store and records the instruction path and SHA-256 hash in front matter. Keep product meaning in `human-readable.md`; keep repository-purpose and AI-interpretation guidance in `AI-instructions.md`.
+
 Headings receive record identifiers and retrieval context. Markdown table rows become labeled records with the column names retained. The output records the source path, metadata path, current commit, and hashes of the inputs.
 
 ## Convert CommonFunds

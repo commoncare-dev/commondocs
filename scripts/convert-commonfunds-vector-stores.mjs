@@ -2,12 +2,18 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { loadDocumentSource } from "./document-source.mjs";
+import { asVectorStoreSection, loadAiInstructions } from "./ai-instructions-source.mjs";
 
 const repoRoot = path.resolve(import.meta.dirname, "..");
 const sourceRel = "plan-structures/common-funds/human-readable.md";
 const sourceCommit = execFileSync("git", ["-C", repoRoot, "rev-parse", "HEAD"], { encoding: "utf8" }).trim();
 const { sourcePath, body, sourceSha256, metadataRel, metadataSha256, scalar } =
   await loadDocumentSource(repoRoot, sourceRel);
+const {
+  body: aiInstructions,
+  instructionsRel: aiInstructionsRel,
+  sha256: aiInstructionsSha256,
+} = await loadAiInstructions(repoRoot, sourcePath);
 
 const documentId = scalar("id", "product.commonfunds");
 const title = scalar("title", "CommonFunds");
@@ -98,9 +104,11 @@ kind: vector-store-source
 schema_version: "1.0"
 source_document: ${sourceRel}
 metadata_document: ${metadataRel}
+ai_instructions_document: ${aiInstructionsRel}
 source_commit: ${sourceCommit}
 source_sha256: ${sourceSha256}
 metadata_sha256: ${metadataSha256}
+ai_instructions_sha256: ${aiInstructionsSha256}
 generation_method: deterministic-commonfunds-split-conversion
 canonical_source: false
 ${sourceMetadata}
@@ -111,6 +119,8 @@ last_reviewed: ${scalar("last_reviewed", "unknown")}
 # ${title} — ${storeTitle}
 
 > Retrieval context: This generated document is the ${scope} retrieval view of \`${sourceRel}\`. The human-readable source remains canonical. Substantive edits belong in that source and must be regenerated here.
+
+${asVectorStoreSection(aiInstructions)}
 
 ${convert(section, storeId)}
 `;
