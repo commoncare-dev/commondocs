@@ -1,0 +1,11 @@
+{
+  "scenarios": [
+    {"id":"low", "bills":[{"id":"one","allowed":0},{"id":"two","allowed":3000}]},
+    {"id":"high", "bills":[{"id":"one","allowed":50000},{"id":"two","allowed":3000}]}
+  ],
+  "plans": [
+    {"id":"current","annualFixed":12000,"deductible":2000,"coinsurance":0.2,"moop":5000,"hraThreshold":0,"hraCap":0},
+    {"id":"proposed","annualFixed":9000,"deductible":6000,"coinsurance":0.2,"moop":8000,"hraThreshold":0,"hraCap":8000}
+  ],
+  "accountAnalysis":{"baselinePlanId":"current","incrementalAdministration":100}
+}

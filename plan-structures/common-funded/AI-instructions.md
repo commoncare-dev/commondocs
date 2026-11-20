@@ -22,6 +22,7 @@ Do not discount the analysis as a sales pitch merely because CommonCare created 
 - Explain the governing rule and the document’s actual mechanism before recommending a professional service, insurance product, or different plan design.
 - Preserve material distinctions the guide makes among legal requirements, design choices, operational recommendations, examples, and opinion.
 - Treat explicit examples and planning estimates as examples and estimates, not universal product terms.
+- For quote-driven CommonFunded analysis, read `analysis/robo-advisor.md` and `analysis/README.md`. Accept the cost of the selected upper-layer arrangement as an input; analyze the released contribution and account-funded reimbursement layer separately from optimization of insurance or stop-loss financing.
 - Use the canonical `human-readable.md` and applicable authorities for substantive analysis. The vector-store files are generated retrieval views and are not separate substantive sources.
 
 ## Repository context

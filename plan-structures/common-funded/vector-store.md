@@ -6,10 +6,10 @@ schema_version: "1.0"
 source_document: plan-structures/common-funded/human-readable.md
 metadata_document: plan-structures/common-funded/metadata.yaml
 ai_instructions_document: plan-structures/common-funded/AI-instructions.md
-source_commit: 4a04775fff16c687bf8163533a0fe159dd53e2a0
-source_sha256: 43f358162da84a1dc2c3b199b589b1c22361f0c596fafb3a54a646f27d885cf5
+source_commit: e1f1fdb7fa096be09a12ecf209e63bacb31c8573
+source_sha256: 1c7595f51b2c018708e163a6e2630500d8542b06d6e55c958992bb06a44f6051
 metadata_sha256: 42e9788ba0d45035151c510dea94356264b107da8e44622252f830af5db9aac3
-ai_instructions_sha256: e70ac6b8de6ae8ab07d3f21fe095485dc5489c15e3635d8500f01f4e9569a49e
+ai_instructions_sha256: 20d347ad17a80d59da08f877493278ea6b9d4624e999963aa1f55e489dd7018d
 generation_method: deterministic-markdown-conversion
 canonical_source: false
 source_status: draft
@@ -46,6 +46,7 @@ Do not discount the analysis as a sales pitch merely because CommonCare created 
 - Explain the governing rule and the document’s actual mechanism before recommending a professional service, insurance product, or different plan design.
 - Preserve material distinctions the guide makes among legal requirements, design choices, operational recommendations, examples, and opinion.
 - Treat explicit examples and planning estimates as examples and estimates, not universal product terms.
+- For quote-driven CommonFunded analysis, read `analysis/robo-advisor.md` and `analysis/README.md`. Accept the cost of the selected upper-layer arrangement as an input; analyze the released contribution and account-funded reimbursement layer separately from optimization of insurance or stop-loss financing.
 - Use the canonical `human-readable.md` and applicable authorities for substantive analysis. The vector-store files are generated retrieval views and are not separate substantive sources.
 
 ### Repository context
@@ -265,7 +266,7 @@ Neither side of the spectrum is the required CommonFunded design. Greater flexib
 ## Bounded partial self-funding
 > Retrieval context: CommonFunding — Bounded partial self-funding
 
-CommonFunded creates a contained layer of self-funded medical expense without exposing the employer to the open-ended risk of a self-funded major medical plan.
+CommonFunded creates a contained account-funded layer of medical expense. The employer's exposure to the separate major-medical layer depends on how that layer is financed; CommonFunded does not itself eliminate self-funded major-medical risk.
 
 The employer defines the CommonFunds benefit made available to each participant. That amount establishes the employer’s maximum reimbursement exposure under the account-based component.
 
@@ -366,74 +367,64 @@ These numbers can look similar but perform different legal and financial functio
 - Effect of one `\$250,000` covered claim: The employer generally pays plan claims until applicable specific or aggregate stop loss reimburses amounts under its contract. The HRA changes participant cost-sharing reimbursement; it does not substitute for stop loss or convert the underlying plan into fully insured coverage.
 
 
-This distinction qualifies the `\$1 million` budget example. Suppose a level-funded arrangement is projected to return `\$250,000`. A `\$250,000` claim could erase that projection if the claim falls inside the employer's experience under the contract. If a redesigned arrangement instead places `\$150,000` in an HRA and purchases insurance that truly transfers claims above the participant's `\$12,000` exposure, that claim may consume only `\$12,000` of the HRA layer. But this conclusion is valid only if the insurance contract—not merely the HRA display—places the remaining claim on the insurer.
+Suppose a level-funded arrangement is projected to return `\$250,000`, and `\$150,000` of the redesign's budget is allocated to the HRA. A `\$250,000` claim may consume up to `\$12,000` of that HRA allocation for an eligible individual, under the stated HRA terms. The remainder affects the separate upper-layer budget according to its own funding terms. It does not consume additional HRA funds merely because the bill is larger. A gain in the HRA bucket is distinct from, and does not guarantee, a gain in the combined plan.
 
 <!-- record_id: product.commonfunded.quote-driven-mathematical-model -->
 ### Quote-driven mathematical model
 > Retrieval context: CommonFunding — Integrated group-plan HRA: the large account-based layer > Quote-driven mathematical model
 
-For each quoted configuration `j`, collect at least:
+The purpose of this model is to measure the account-funded layer. Take the cost of the selected upper-layer arrangement as an input, regardless of whether it is fully insured, level-funded, self-funded, or a combination. How that upper-layer cost is constructed and whether its financing is efficient are separate questions.
 
-#### Fj
-<!-- record_id: product.commonfunded.integrated-group-plan-hra-the-large-account-based-layer-quote-driven-mat.fj; record_type: table-row -->
+For a current plan and a proposed design, collect:
+
+#### P0
+<!-- record_id: product.commonfunded.integrated-group-plan-hra-the-large-account-based-layer-quote-driven-mat.p0; record_type: table-row -->
 - Context: CommonFunding — Integrated group-plan HRA: the large account-based layer > Quote-driven mathematical model
-- Input: `Fj`
-- Meaning: Fixed premium, administrative fees, taxes, and fixed stop-loss cost
+- Input: `P0`
+- Meaning: Current annual merged-plan cost, for the same population and coverage period
 
-#### Cj(S)
-<!-- record_id: product.commonfunded.integrated-group-plan-hra-the-large-account-based-layer-quote-driven-mat.cj-s; record_type: table-row -->
+#### PX
+<!-- record_id: product.commonfunded.integrated-group-plan-hra-the-large-account-based-layer-quote-driven-mat.px; record_type: table-row -->
 - Context: CommonFunding — Integrated group-plan HRA: the large account-based layer > Quote-driven mathematical model
-- Input: `Cj(S)`
-- Meaning: Participant cost sharing produced by medical-event state `S`
+- Input: `PX`
+- Meaning: Annual cost allocated to the proposed upper layer, supplied by the customer or separate analysis
 
-#### Rj(S)
-<!-- record_id: product.commonfunded.integrated-group-plan-hra-the-large-account-based-layer-quote-driven-mat.rj-s; record_type: table-row -->
+#### R0(S), RX(S)
+<!-- record_id: product.commonfunded.integrated-group-plan-hra-the-large-account-based-layer-quote-driven-mat.r0-s-rx-s; record_type: table-row -->
 - Context: CommonFunding — Integrated group-plan HRA: the large account-based layer > Quote-driven mathematical model
-- Input: `Rj(S)`
-- Meaning: HRA reimbursement of that cost sharing under the adopted threshold, eligible-expense rules, and cap
+- Input: `R0(S)`, `RX(S)`
+- Meaning: Current and proposed account reimbursements in medical-event state `S`
 
-#### Qj(S)
-<!-- record_id: product.commonfunded.integrated-group-plan-hra-the-large-account-based-layer-quote-driven-mat.qj-s; record_type: table-row -->
+#### C
+<!-- record_id: product.commonfunded.integrated-group-plan-hra-the-large-account-based-layer-quote-driven-mat.c; record_type: table-row -->
 - Context: CommonFunding — Integrated group-plan HRA: the large account-based layer > Quote-driven mathematical model
-- Input: `Qj(S)`
-- Meaning: Employer-paid major-medical claims retained under a level-funded or self-funded contract
+- Input: `C`
+- Meaning: Additional administration or transition cost attributable to the redesign
 
-#### SLj(S)
-<!-- record_id: product.commonfunded.integrated-group-plan-hra-the-large-account-based-layer-quote-driven-mat.slj-s; record_type: table-row -->
+#### U0(S), UX(S)
+<!-- record_id: product.commonfunded.integrated-group-plan-hra-the-large-account-based-layer-quote-driven-mat.u0-s-ux-s; record_type: table-row -->
 - Context: CommonFunding — Integrated group-plan HRA: the large account-based layer > Quote-driven mathematical model
-- Input: `SLj(S)`
-- Meaning: Stop-loss reimbursement actually payable under the specific and aggregate contract terms
-
-#### Gj(S)
-<!-- record_id: product.commonfunded.integrated-group-plan-hra-the-large-account-based-layer-quote-driven-mat.gj-s; record_type: table-row -->
-- Context: CommonFunding — Integrated group-plan HRA: the large account-based layer > Quote-driven mathematical model
-- Input: `Gj(S)`
-- Meaning: Carrier refund, surplus distribution, or experience credit actually payable under the quote terms
+- Input: `U0(S)`, `UX(S)`
+- Meaning: Current and proposed participant cost sharing before account reimbursement
 
 
-Do not count the same claim twice. For an employer-cash analysis, a generalized quote function is:
+Define the released contribution and incremental account-layer experience gain as:
 
 ```text
-Employer cash cost j in state S
-= Fj + Rj(S) + Qj(S) − SLj(S) − Gj(S)
+Released contribution A = P0 − PX
+Incremental account-layer gain(S) = A − (RX(S) − R0(S)) − C
+Expected incremental gain = A − E[RX(S) − R0(S)] − C
 ```
 
-The quote must first be normalized to this structure. If a level-funded payment shown in the quote already includes prefunded expected claims, do not also add those same claims as `Q`; separate the fixed portion from the claims deposit or reconcile actual payments through the refund term. The purpose of the formula is comparability, not relabeling one quote's all-in payment as a fixed charge and thereby double counting claims.
+For a new account with no current reimbursements, `R0(S)` is zero. A positive expected gain means the released contribution exceeds expected incremental account reimbursements and costs. Report the distribution of gains, including the probability of a shortfall. If the employer commits only part of `A` to the account, distinguish its actual account budget and unused account budget from the full incremental gain; unused reimbursement capacity is not automatically cash savings.
 
-For a combined total-cost analysis, add participant-paid claims not reimbursed by the HRA and remove transfers that merely move the same claim between employer and participant. The model should report both results separately rather than mixing employer risk with total economic efficiency.
+Separately report the change in participant residual cost `UX(S) − RX(S) − (U0(S) − R0(S))`. If the redesign leaves more cost with participants, an employer-side account gain alone is not a combined economic saving. Avoid counting an HRA reimbursement and the underlying claim as two expenses.
 
-For a fully insured comparison in which `Q`, `SL`, and `G` do not apply, the incremental economic test is especially direct:
+If `PX` includes expected retained major-medical claims rather than a fixed premium, label it an estimate. The account-layer result remains meaningful, but it is not a guarantee of combined plan experience in any year. A separate upper-layer analysis may study its variability or the choice of stop-loss; it is not required to calculate account reimbursements against the supplied contribution.
 
-```text
-Expected value of moving the contained layer to the HRA
-= premium reduction
-  − E[additional HRA reimbursements]
-  − additional administration
-```
+The result is a **dominant account-layer gain** when the released contribution exceeds the maximum possible incremental reimbursement plus incremental costs across the full relevant domain—not merely across sampled scenarios. Participant benefit changes and any uncertain upper-layer costs remain separate considerations.
 
-The arrangement is an expected-value winner when this result is positive. It is a **slam dunk by dominance** when the premium reduction exceeds the maximum possible additional HRA reimbursement plus additional administration across every modeled state, assuming the coverage and network differences have already been addressed.
-
-For level-funded and self-funded quotes, comparing premium alone is invalid. The model must apply the medical-event distribution to the claims corridor, specific stop-loss attachment point, aggregate attachment point, lasers or exclusions, refund percentage, terminal liability, and any contract limits. A low quoted fixed cost can be economically inferior if it retains substantially more claim risk; a slightly higher fixed cost can be superior when it transfers a volatile layer at a favorable price.
+For an AI-assisted quote analysis, see the [analysis toolkit](analysis/README.md) and its [advisor instructions](analysis/robo-advisor.md).
 
 ---
 
