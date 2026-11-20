@@ -6,8 +6,8 @@ schema_version: "1.0"
 source_document: plan-structures/common-funded/human-readable.md
 metadata_document: plan-structures/common-funded/metadata.yaml
 ai_instructions_document: plan-structures/common-funded/AI-instructions.md
-source_commit: e1f1fdb7fa096be09a12ecf209e63bacb31c8573
-source_sha256: 1c7595f51b2c018708e163a6e2630500d8542b06d6e55c958992bb06a44f6051
+source_commit: 275250554839a681c85fee8a43f3deb495f33c2f
+source_sha256: ee9a38a27d6b88657535ed3b79a1faf782fce9b46e0324be8ea65a7001c8af55
 metadata_sha256: 42e9788ba0d45035151c510dea94356264b107da8e44622252f830af5db9aac3
 ai_instructions_sha256: 20d347ad17a80d59da08f877493278ea6b9d4624e999963aa1f55e489dd7018d
 generation_method: deterministic-markdown-conversion
@@ -57,7 +57,7 @@ Read the [CommonDocs README](../../README.md) in this checkout or the [public Co
 ## CommonFunded
 > Retrieval context: CommonFunding — CommonFunded
 
-> **CommonFunded pairs [CommonFunds](https://commoncare.org/products/common-funds) with major medical insurance or an alternative coverage arrangement to reduce sunk premium costs, preserve participant choice, and turn predictable healthcare spending into a bounded employer-funded benefit.**
+> **CommonFunded pairs [CommonFunds](https://commoncare.org/products/common-funds) with major-medical coverage or another arrangement. It tests whether reducing the cost of the coverage and funding a defined layer of participant cost sharing directly produces a better economic result.**
 
 CommonFunded is CommonCare’s core plan structure. It combines:
 
@@ -65,7 +65,7 @@ CommonFunded is CommonCare’s core plan structure. It combines:
 2. **Major medical insurance or another coverage vehicle** for larger and less predictable expenses; and
 3. **Integrated enrollment and administration** that presents the components as one coherent benefit.
 
-The result preserves a familiar participant choice structure while reducing reliance on insurance for expenses that are comparatively routine, priceable, and financially containable.
+The design can reduce reliance on insurance to pay routine expenses while retaining a separate arrangement for larger claims. Its value depends on the available prices, benefit terms, and actual claims.
 
 <!-- record_id: product.commonfunded.at-a-glance -->
 ## At a glance
@@ -142,30 +142,30 @@ The result preserves a familiar participant choice structure while reducing reli
 ## The design thesis
 > Retrieval context: CommonFunding — The design thesis
 
-“CommonFunded” is partial self-funding. The structure captures many of self-funding’s advantages without asking the employer to accept catastrophic claims risk, build a claims operation, or purchase the entire healthcare benefit directly.
+“CommonFunded” is partial self-funding: it separates an account-funded layer from the financing of larger claims. The employer's exposure to catastrophic claims depends on the selected upper-layer arrangement; the account structure alone does not transfer that risk.
 
-CommonCare’s coverage-ranking process simulates economic outcomes. It does not factor advertised "richness" of the plan, it ranks plans based on actuarial efficiency in realistic outcomes. A plan performs better when its projected total economic result is better.
+CommonCare compares plans using projected total cost: the cost of coverage plus claims paid outside it. A lower deductible is valuable only to the extent that it reduces those claims enough to justify its additional premium.
 
-That analysis repeatedly favors separating two different jobs:
+CommonFunded separates two financing jobs:
 
 #### Routine, lower-cost, high-frequency expenses
 <!-- record_id: product.commonfunded.the-design-thesis.routine-lower-cost-high-frequency-expenses; record_type: table-row -->
 - Context: CommonFunding — The design thesis
 - Healthcare need: Routine, lower-cost, high-frequency expenses
-- Best-suited funding mechanism: A bounded account-based benefit with direct price sensitivity
+- CommonFunded financing approach: A bounded account-based benefit with direct price sensitivity
 
 #### Large, concentrated, financially disruptive expenses
 <!-- record_id: product.commonfunded.the-design-thesis.large-concentrated-financially-disruptive-expenses; record_type: table-row -->
 - Context: CommonFunding — The design thesis
 - Healthcare need: Large, concentrated, financially disruptive expenses
-- Best-suited funding mechanism: Insurance or another risk-sharing vehicle
+- CommonFunded financing approach: Insurance or another risk-sharing vehicle
 
 
-Insurance adds overhead and reduces price sensitivity when applied to low-dollar, high-volume transactions. Its strongest economic purpose is protection against expensive events capable of producing serious financial harm.
+Insurance can add administrative costs to routine transactions and reduce price sensitivity. It also transfers risk and can protect against financially disruptive claims. Whether moving a particular layer out of premium saves money depends on the quote and the cost of claims in that layer.
 
 Healthcare spending is also highly concentrated. In 2022, the highest-spending 5% of people accounted for 49.7% of healthcare expenditures, while the bottom 50% accounted for only 2.8%. [AHRQ Medical Expenditure Panel Survey](https://www.meps.ahrq.gov/data_files/publications/st560/stat560.shtml)
 
-In essence, this means that the majority of insurance benefit is not in the \\$0-\\$10,000 range where deductibles apply and premiums exceed claims. The majority of the benefit is for larger transactions where participants are likely to reach their max out of pocket on any plan.
+Concentration of total spending does not by itself establish how much insurance pays above a deductible, or whether premium exceeds claims in a particular layer. It does show why a small number of high-cost periods can account for much of a population's total medical spending.
 
 This means much of insurance’s value is delivered through a relatively small number of high-cost periods. For many participants, differences in premium and maximum out-of-pocket exposure are more economically significant than the deductible alone.
 
@@ -328,7 +328,7 @@ The integrated design separates two financing jobs:
 - Financing role: Fully insured policy, level-funded contract, or self-funded plan with any applicable stop-loss protection
 
 
-The account layer preserves ordinary consumer incentives for routine care because an unused HRA promise is not a sunk insurance premium. The employer can expose prices, reimburse actual eligible spending, and retain amounts that are not paid as claims under the governing plan terms. Insurance remains responsible for the layer the contract actually insures.
+An unused HRA reimbursement promise is not an insurance premium already paid. The employer can make prices visible, reimburse eligible expenses, and retain amounts not paid under the plan terms. Whether a participant has an incentive to compare prices depends on the account design, the prices available, and the participant's circumstances. Insurance remains responsible for the layer the contract actually insures.
 
 This is materially different from placing the entire expected budget into one premium or carrier claims fund. It can also make the insurance decision easier to evaluate: the account layer is bounded, while the quote should reveal the price charged to transfer the larger-claim layer.
 
@@ -338,7 +338,7 @@ This is materially different from placing the entire expected budget into one pr
 
 An AI analysis and the plan documents must distinguish:
 
-1. **Participant deductible or MOOP.** The amount the major-medical plan assigns to the participant before or while the plan pays covered claims.
+1. **Participant deductible and MOOP.** The deductible is a threshold for specified covered claims; the MOOP limits applicable participant cost sharing. Each follows the underlying plan's rules.
 2. **HRA reimbursement threshold and cap.** The portion of participant expense CommonFunds will reimburse and the maximum employer liability under that account component.
 3. **Employer stop-loss attachment point.** In a self-funded or level-funded arrangement, the claim level at which the stop-loss carrier begins reimbursing the employer, subject to the contract.
 
@@ -425,6 +425,20 @@ If `PX` includes expected retained major-medical claims rather than a fixed prem
 The result is a **dominant account-layer gain** when the released contribution exceeds the maximum possible incremental reimbursement plus incremental costs across the full relevant domain—not merely across sampled scenarios. Participant benefit changes and any uncertain upper-layer costs remain separate considerations.
 
 For an AI-assisted quote analysis, see the [analysis toolkit](analysis/README.md) and its [advisor instructions](analysis/robo-advisor.md).
+
+<!-- record_id: product.commonfunded.a-fair-standard-of-evidence-for-both-designs -->
+### A fair standard of evidence for both designs
+> Retrieval context: CommonFunding — Integrated group-plan HRA: the large account-based layer > A fair standard of evidence for both designs
+
+Every financing arrangement makes a bet about future healthcare spending. An insurance quote fixes a premium for its contract period, but that price reflects an insurer's assumptions and may change at renewal. A reimbursement account replaces part of that fixed expenditure with a bounded promise whose realized cost depends on claims. Neither a carrier quote nor a simulation predicts an employer's exact future claims or renewal.
+
+The comparison should therefore show the price of certainty as well as the expected account result. Do not treat the existing premium as a neutral zero-cost baseline, or treat every dollar of potential account exposure as if it will certainly be spent. At the same time, do not portray premium as pure waste: it purchases the benefits and risk transfer in the contract. A plan that funds the contained layer directly can save money, cost more, or change participant protection depending on the actual quote and terms.
+
+The analysis toolkit is a **structural decision-making and quote tool**. Its precision depends on the evidence supplied and the adjudication it can perform. Actual quotes and census data make the comparison specific to the employer; complete historical claims and accurately implemented benefit rules can support a reproducible retrospective calculation for the observed period. Simulated future outcomes remain estimates, even when the inputs are detailed.
+
+For an alternative plan that was not actually in force, historical replay is a counterfactual calculation: it can be exact under explicitly specified prices, coverage, eligibility, claim ordering, and benefit rules, but it cannot establish how different networks, incentives, or utilization would actually have changed the claims. Use identical medical scenarios across designs, disclose missing or approximated benefits, show account and participant outcomes, and test whether reasonable changes alter the conclusion. Governing contracts and actual administration determine the final result.
+
+The current standalone toolkit accepts historical annual totals but does not yet adjudicate dated, service-level claims and all plan rules. Its retrospective output is exact only for its simplified formulas and supplied inputs; it must not be presented as exact historical plan adjudication when omitted details matter. Integrating detailed claims and CommonCare quoting capabilities can strengthen that result without conflating the capability with the current implementation.
 
 ---
 
@@ -562,7 +576,7 @@ CommonCare evaluates health plans as a **total-cost problem**. The economic ques
 
 Employer contributions, employee payroll deductions, and CommonFunds reimbursements determine who bears cost and when. They matter enormously to benefit design, affordability, liquidity, and participant experience, but they do not create or eliminate economic cost merely by moving dollars between the employer and participant. Those allocation questions should be evaluated separately from the insurance-efficiency calculation.
 
-CommonCare evaluates total cost using multiyear simulations populated with realistic medical events for each member of a household. A long simulation is more stable than pretending to predict one specific person’s next twelve months. The general ranking identifies the option expected to use the fewest total dollars across many possible years. Known needs can then be layered onto that analysis.
+CommonCare can compare total cost across simulated years for each household. More simulations reduce sampling noise, but they do not correct inaccurate assumptions. The ranking identifies the lowest expected cost under the model; known needs and material differences in coverage should be incorporated when available.
 
 <!-- record_id: product.commonfunded.the-mathematical-question -->
 ### The mathematical question
@@ -630,10 +644,10 @@ The economically efficient plan is the valid plan with the lowest expected total
 ### Why average spending is not enough
 > Retrieval context: CommonFunding — How CommonCare identifies the optimal plan > Why average spending is not enough
 
-The model does not insert average annual spending into a plan formula. In general:
+The model does not substitute average annual spending for the distribution of spending. For a simplified scalar annual spending variable `X` and plan cost function `T`, in general:
 
 ```text
-E[Tj(S)] is not equal to Tj(E[S])
+E[T(X)] is not equal to T(E[X])
 ```
 
 Cost sharing is nonlinear. Deductibles create thresholds, coinsurance changes the slope, and MOOP creates a ceiling. A population in which everyone incurs `\$5,000` of allowed claims can have the same average spending as a population in which 95% incur nothing and 5% incur `\$100,000`, while producing very different deductible, coinsurance, and MOOP results.

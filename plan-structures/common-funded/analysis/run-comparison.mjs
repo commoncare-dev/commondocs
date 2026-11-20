@@ -16,10 +16,14 @@ export function compare({ scenarios, plans, accountAnalysis }) {
       if (!['embedded','aggregate'].includes(p.family.deductibleType) || p.family.moop < p.moop) throw Error('Family deductibleType must be embedded or aggregate; family MOOP must cover individual MOOP');
     }
   }
+  let populationSignature;
   const rows = scenarios.map(s => {
     if (!Array.isArray(s.bills) || !s.bills.length) throw Error('Each scenario needs bills including zero-claim enrollees');
     const members = new Set();
     for (const b of s.bills) { if (!b.id || members.has(b.id)) throw Error('Each scenario needs unique person IDs'); members.add(b.id); num(b.allowed,'allowed'); }
+    const signature=JSON.stringify(s.bills.map(b=>[b.id,b.householdId||b.id]).sort((a,b)=>a[0].localeCompare(b[0])));
+    if(populationSignature && signature!==populationSignature) throw Error('Every scenario must contain the same people and household assignments, including zero-claim members');
+    populationSignature=signature;
     return plans.map(p => {
       let oop=0, hra=0;
       let fixed=0;
@@ -44,24 +48,26 @@ export function compare({ scenarios, plans, accountAnalysis }) {
       return { plan:p.id, fixed, oop, hra, participant:oop-hra, total:fixed+oop, employer:fixed+hra };
     });
   });
-  const results=plans.map((p,i)=>{ const a=rows.map(r=>r[i]); return { plan:p.id, expectedTotal:mean(a.map(x=>x.total)), expectedEmployer:mean(a.map(x=>x.employer)), expectedParticipant:mean(a.map(x=>x.participant)), expectedHra:mean(a.map(x=>x.hra)), totalP95:quantile(a.map(x=>x.total),.95) }; }).sort((a,b)=>a.expectedTotal-b.expectedTotal);
+  const results=plans.map((p,i)=>{ const a=rows.map(r=>r[i]); return { plan:p.id, expectedTotalBeforeIncrementalAdministration:mean(a.map(x=>x.total)), expectedEmployer:mean(a.map(x=>x.employer)), expectedParticipant:mean(a.map(x=>x.participant)), expectedHra:mean(a.map(x=>x.hra)), totalP95:quantile(a.map(x=>x.total),.95) }; }).sort((a,b)=>a.expectedTotalBeforeIncrementalAdministration-b.expectedTotalBeforeIncrementalAdministration);
   const winner=results[0].plan, wi=plans.findIndex(p=>p.id===winner);
-  const comparisons=plans.filter(p=>p.id!==winner).map(p=>{ const i=plans.findIndex(x=>x.id===p.id), differences=rows.map(r=>r[i].total-r[wi].total); return { plan:p.id, expectedSavings:mean(differences), winnerProbability:differences.filter(x=>x>0).length/differences.length, tieProbability:differences.filter(x=>x===0).length/differences.length, observedDominance:differences.every(x=>x>=0) }; });
+  const comparisons=plans.filter(p=>p.id!==winner).map(p=>{ const i=plans.findIndex(x=>x.id===p.id), differences=rows.map(r=>r[i].total-r[wi].total); return { plan:p.id, expectedSavingsBeforeIncrementalAdministration:mean(differences), winnerProbability:differences.filter(x=>x>0).length/differences.length, tieProbability:differences.filter(x=>x===0).length/differences.length, observedDominance:differences.every(x=>x>=0) }; });
   let accountLayer;
   if (accountAnalysis) {
     const base=plans.findIndex(p=>p.id===accountAnalysis.baselinePlanId);
     if(base<0) throw Error('accountAnalysis.baselinePlanId must identify a plan');
     const admin=num(accountAnalysis.incrementalAdministration ?? 0,'incrementalAdministration');
+    const budget=accountAnalysis.annualAccountBudget === undefined ? null : num(accountAnalysis.annualAccountBudget,'annualAccountBudget');
     accountLayer=plans.filter((_,i)=>i!==base).map(p=>{
       const i=plans.findIndex(x=>x.id===p.id);
       const release=rows.map(r=>r[base].fixed-r[i].fixed);
       const incrementalHra=rows.map(r=>r[i].hra-r[base].hra);
       const gains=rows.map((_,n)=>release[n]-incrementalHra[n]-admin);
       const residual=rows.map(r=>r[i].participant-r[base].participant);
-      return {plan:p.id,baseline:plans[base].id,expectedReleasedContribution:mean(release),expectedIncrementalReimbursement:mean(incrementalHra),incrementalAdministration:admin,expectedAccountLayerGain:mean(gains),accountGainP05:quantile(gains,.05),accountGainP95:quantile(gains,.95),probabilityOfAccountShortfall:gains.filter(x=>x<0).length/gains.length,expectedParticipantResidualChange:mean(residual),expectedCombinedCostChange:mean(residual)-mean(gains)};
+      const accountClaims=rows.map(r=>r[i].hra);
+      return {plan:p.id,baseline:plans[base].id,expectedReleasedContribution:mean(release),expectedIncrementalReimbursement:mean(incrementalHra),incrementalAdministration:admin,expectedAccountLayerGain:mean(gains),accountGainP05:quantile(gains,.05),accountGainP95:quantile(gains,.95),probabilityOfAccountShortfall:gains.filter(x=>x<0).length/gains.length,annualAccountBudget:budget,expectedUnusedAccountBudget:budget===null?null:mean(accountClaims.map(x=>Math.max(0,budget-x))),expectedClaimsAboveAccountBudget:budget===null?null:mean(accountClaims.map(x=>Math.max(0,x-budget))),expectedNetAccountBudget:budget===null?null:budget-mean(accountClaims),probabilityAccountClaimsExceedBudget:budget===null?null:accountClaims.filter(x=>x>budget).length/accountClaims.length,expectedParticipantResidualChange:mean(residual),expectedCombinedCostChange:mean(residual)-mean(gains)};
     });
   }
-  return { assumptions:'Supplied annual plan and upper-layer costs; identical allowed claims and covered services; annual deductible/coinsurance/MOOP; HRA reimburses cost sharing above household threshold. Family annual totals are processed in input order; event chronology is not modeled.', scenarioCount:rows.length, accountLayer, results, winner, comparisons, warning:'Account-layer gain is incremental to baseline and is not a guarantee of total-plan results if upper-layer cost is estimated. Observed dominance applies only to supplied scenarios; synthetic results depend on unvalidated assumptions. Family allocation and HRA eligibility can depend on actual claim timing.' };
+  return { assumptions:'Supplied annual plan and upper-layer costs; identical bills assumed deductible-subject; flat coinsurance after deductible capped at MOOP; HRA reimburses cost sharing above household threshold. Historical bills must exclude first-dollar preventive services; synthetic inputs do not identify them separately. Family annual totals are processed in input order; event chronology is not modeled.', scenarioCount:rows.length, accountLayer, results, winnerBeforeIncrementalAdministration:winner, comparisons, warning:'Account-layer gain is incremental to baseline and is not a guarantee of total-plan results if upper-layer cost is estimated. Account budget is a planning reserve, not a cap on promised reimbursements. Observed dominance applies only to supplied scenarios; synthetic results depend on unvalidated assumptions. Family allocation and HRA eligibility can depend on actual claim timing.' };
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   try { console.log(JSON.stringify(compare(JSON.parse(readFileSync(process.argv[2], 'utf8'))), null, 2)); } catch(e) { console.error(e.message); process.exitCode=1; }
