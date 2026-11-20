@@ -16,7 +16,7 @@ The result preserves a familiar participant choice structure while reducing reli
 |---|---|
 | Routine healthcare | Reimbursed through CommonFunds |
 | Large and unpredictable claims | Managed through major medical insurance or another selected coverage vehicle |
-| Employer risk | Capped by the CommonFunds benefit made available, subject to limited Health FSA uniform-coverage timing risk |
+| Employer account risk | Capped by the CommonFunds benefit made available, subject to limited Health FSA uniform-coverage timing risk; major-medical claim risk depends separately on the insurance, level-funding, self-funding, and stop-loss contracts |
 | Participant choice | Coverage and funding combinations can be evaluated participant by participant |
 | Savings mechanism | Replace a portion of premium with a bounded reimbursement benefit |
 | Experience gains | Unused notional balances remain employer assets and may cease to be liabilities according to the plan terms |
@@ -32,6 +32,7 @@ The result preserves a familiar participant choice structure while reducing reli
 - [The design thesis](#the-design-thesis)
 - [How to understand the concept versus reality](#how-to-understand-the-concept-versus-reality)
 - [Bounded partial self-funding](#bounded-partial-self-funding)
+- [Integrated group-plan HRA](#integrated-group-plan-hra-the-large-account-based-layer)
 - [The participant experience](#the-participant-experience)
 - [How the CommonFunded deductible works](#how-the-commonfunded-deductible-works)
 - [Where the savings come from](#where-the-savings-come-from)
@@ -139,9 +140,104 @@ When the applicable participant benefit has been exhausted, CommonFunds does not
 
 ### Why excepted-benefit status matters
 
-CommonFunds combines EBHRA and Health FSA components designed to qualify as excepted benefits. The components therefore operate under their own account limits and plan terms rather than assuming the comprehensive coverage obligations imposed on non-excepted ACA group health plans.
+The excepted CommonFunds pathway combines EBHRA and Health FSA components designed to qualify as excepted benefits. This is often the best fit when CommonFunds must remain available without requiring enrollment in one particular employer major-medical plan. Those components operate under their own limits and plan terms.
+
+Excepted benefits are not the only CommonFunds pathway. When a participant is actually enrolled in qualifying non-HRA group health coverage, CommonFunds can instead use an **integrated group-plan HRA**. An integrated HRA is not an EBHRA, is not an ICHRA, and is not subject to the EBHRA annual limit or the Health FSA salary-reduction limit. Its employer-funded maximum is established by the plan design, subject to the integration and other rules governing the arrangement.
 
 For the component structure, classifications, annual limits, and availability rules, see the [CommonFunds product documentation](https://commoncare.org/products/common-funds).
+
+## Integrated group-plan HRA: the large account-based layer
+
+An employer using fully insured, level-funded, or self-funded group major-medical coverage can pair that coverage with an integrated HRA when the applicable integration conditions are satisfied. The funding label on the underlying group plan does not itself decide HRA integration. The controlling questions include what non-HRA group coverage is offered, who is actually enrolled, what the HRA reimburses, whether the applicable coverage provides minimum value when the broader integration method is used, and whether the required opt-out and forfeiture provisions are present.
+
+This pathway can support a much larger account-based layer than the excepted pathway. For example, in 2027 a compliant non-grandfathered group plan may have cost sharing as high as `\$12,000` for self-only coverage and `\$24,000` for other-than-self-only coverage. An integrated HRA can be designed to reimburse some or all of that participant cost sharing without being constrained by the EBHRA annual limit or Health FSA salary-reduction limit. The HRA remains employer-only, and the plan sets its maximum reimbursement amount. [CMS 2027 cost-sharing parameters](https://www.cms.gov/files/document/2027-papi-parameters-guidance-2026-01-29.pdf) · [IRS Publication 969](https://www.irs.gov/publications/p969)
+
+### Federal integration methods
+
+[IRS Notice 2013-54, Q&A 4](https://www.irs.gov/pub/irs-drop/n-13-54.pdf) describes two group-plan integration methods relevant here:
+
+1. **Minimum value not required.** The employer offers non-HRA group coverage that is not solely excepted benefits; the HRA participant is actually enrolled in non-HRA group coverage; the HRA is available only while that enrollment exists; reimbursements are limited to cost sharing and premiums under that coverage plus medical care that is not an essential health benefit; and the required annual and termination opt-out rights apply.
+2. **Minimum value required.** The employer offers a group plan that provides minimum value; the HRA participant is actually enrolled in non-HRA group coverage that provides minimum value; the HRA is available only while that enrollment exists; and the required annual and termination opt-out rights apply. This method permits a broader general-purpose reimbursement design.
+
+Minimum value is therefore sufficient for the broader integration method, but it is not an absolute prerequisite for every integrated HRA. A deductible-only HRA tied to the enrolled group coverage may fit the first method when all its conditions are satisfied.
+
+Integration is person-specific. A family HRA cannot rely on self-only group coverage for family members who are not also enrolled in qualifying non-HRA group coverage. The HRA documents, eligibility records, and claims system must enforce the applicable enrollment and family-coverage conditions. [IRS Notice 2015-87, Q&A 4](https://www.irs.gov/pub/irs-drop/n-15-87.pdf)
+
+> [!IMPORTANT]
+> The integrated HRA may reimburse a `\$12,000` self-only deductible or as much as `\$24,000` of aggregate family cost sharing when the underlying plan, HRA terms, enrolled individuals, and applicable integration method support that design. In non-grandfathered coverage, the self-only cost-sharing ceiling applies to each individual even when enrolled in family coverage. Those figures are examples based on the 2027 federal cost-sharing ceilings, not permanent HRA limits or a statement that every group plan may impose those exact deductibles. [DOL embedded self-only cost-sharing guidance](https://www.dol.gov/sites/dolgov/files/EBSA/about-ebsa/our-activities/resource-center/faqs/aca-part-xxvii.pdf)
+
+> [!CAUTION]
+> This guide documents the integrated-HRA architecture, but the current reusable plan-document package does not yet include a complete governing integrated-HRA component template. Selecting `integrated-hra` in configuration is not a substitute for adopting compliant HRA terms, notices, enrollment controls, claims rules, and coordination provisions. Treat the implementation as incomplete until those governing materials are present and executed.
+
+### What changes economically
+
+The integrated design separates two financing jobs:
+
+| Layer | Financing role |
+|---|---|
+| Routine and contained participant cost sharing | Employer-funded HRA; only substantiated claims consume funds |
+| Larger covered claims | Fully insured policy, level-funded contract, or self-funded plan with any applicable stop-loss protection |
+
+The account layer preserves ordinary consumer incentives for routine care because an unused HRA promise is not a sunk insurance premium. The employer can expose prices, reimburse actual eligible spending, and retain amounts that are not paid as claims under the governing plan terms. Insurance remains responsible for the layer the contract actually insures.
+
+This is materially different from placing the entire expected budget into one premium or carrier claims fund. It can also make the insurance decision easier to evaluate: the account layer is bounded, while the quote should reveal the price charged to transfer the larger-claim layer.
+
+### Three thresholds that must never be confused
+
+An AI analysis and the plan documents must distinguish:
+
+1. **Participant deductible or MOOP.** The amount the major-medical plan assigns to the participant before or while the plan pays covered claims.
+2. **HRA reimbursement threshold and cap.** The portion of participant expense CommonFunds will reimburse and the maximum employer liability under that account component.
+3. **Employer stop-loss attachment point.** In a self-funded or level-funded arrangement, the claim level at which the stop-loss carrier begins reimbursing the employer, subject to the contract.
+
+These numbers can look similar but perform different legal and financial functions. An HRA that reimburses a participant's `\$12,000` deductible does **not** by itself cap a self-funded employer's medical claim at `\$12,000`. A `\$25,000` or `\$50,000` specific stop-loss attachment point is also not the participant's deductible. The quote must identify each threshold separately.
+
+### Fully insured, level-funded, and self-funded results differ
+
+| Funding arrangement | Effect of one `\$250,000` covered claim |
+|---|---|
+| Fully insured | The employer's premium ordinarily does not increase during the contract period merely because the claim occurred. If the integrated HRA reimburses only participant cost sharing, the claim consumes no more than the applicable HRA cap; the insurer bears the insured amount under the policy. |
+| Level-funded | The claim may reduce or eliminate a projected experience refund to the extent it is charged to the refundable claims fund. The HRA does not protect that refund unless the level-funded contract, specific stop loss, or another insured term actually removes the claim from employer experience. |
+| Self-funded | The employer generally pays plan claims until applicable specific or aggregate stop loss reimburses amounts under its contract. The HRA changes participant cost-sharing reimbursement; it does not substitute for stop loss or convert the underlying plan into fully insured coverage. |
+
+This distinction qualifies the `\$1 million` budget example. Suppose a level-funded arrangement is projected to return `\$250,000`. A `\$250,000` claim could erase that projection if the claim falls inside the employer's experience under the contract. If a redesigned arrangement instead places `\$150,000` in an HRA and purchases insurance that truly transfers claims above the participant's `\$12,000` exposure, that claim may consume only `\$12,000` of the HRA layer. But this conclusion is valid only if the insurance contract—not merely the HRA display—places the remaining claim on the insurer.
+
+### Quote-driven mathematical model
+
+For each quoted configuration `j`, collect at least:
+
+| Input | Meaning |
+|---|---|
+| `Fj` | Fixed premium, administrative fees, taxes, and fixed stop-loss cost |
+| `Cj(S)` | Participant cost sharing produced by medical-event state `S` |
+| `Rj(S)` | HRA reimbursement of that cost sharing under the adopted threshold, eligible-expense rules, and cap |
+| `Qj(S)` | Employer-paid major-medical claims retained under a level-funded or self-funded contract |
+| `SLj(S)` | Stop-loss reimbursement actually payable under the specific and aggregate contract terms |
+| `Gj(S)` | Carrier refund, surplus distribution, or experience credit actually payable under the quote terms |
+
+Do not count the same claim twice. For an employer-cash analysis, a generalized quote function is:
+
+```text
+Employer cash cost j in state S
+= Fj + Rj(S) + Qj(S) − SLj(S) − Gj(S)
+```
+
+The quote must first be normalized to this structure. If a level-funded payment shown in the quote already includes prefunded expected claims, do not also add those same claims as `Q`; separate the fixed portion from the claims deposit or reconcile actual payments through the refund term. The purpose of the formula is comparability, not relabeling one quote's all-in payment as a fixed charge and thereby double counting claims.
+
+For a combined total-cost analysis, add participant-paid claims not reimbursed by the HRA and remove transfers that merely move the same claim between employer and participant. The model should report both results separately rather than mixing employer risk with total economic efficiency.
+
+For a fully insured comparison in which `Q`, `SL`, and `G` do not apply, the incremental economic test is especially direct:
+
+```text
+Expected value of moving the contained layer to the HRA
+= premium reduction
+  − E[additional HRA reimbursements]
+  − additional administration
+```
+
+The arrangement is an expected-value winner when this result is positive. It is a **slam dunk by dominance** when the premium reduction exceeds the maximum possible additional HRA reimbursement plus additional administration across every modeled state, assuming the coverage and network differences have already been addressed.
+
+For level-funded and self-funded quotes, comparing premium alone is invalid. The model must apply the medical-event distribution to the claims corridor, specific stop-loss attachment point, aggregate attachment point, lasers or exclusions, refund percentage, terminal liability, and any contract limits. A low quoted fixed cost can be economically inferior if it retains substantially more claim risk; a slightly higher fixed cost can be superior when it transfers a volatile layer at a favorable price.
 
 ---
 
@@ -212,26 +308,81 @@ The following CommonCare quote comparison involved a 40-year-old man in Nashvill
 | Lower deductible | \$22,116 | \$5,900 | \$6,900 |
 | **Difference** | **+\$6,766** | **−\$4,700** | **−\$3,700** |
 
-The lower-deductible option required \$6,766 of additional premium to reduce maximum out-of-pocket exposure by \$3,700. Within those quoted terms, the additional premium exceeded even the maximum possible reduction in cost sharing.
+The lower-deductible option required \$6,766 of additional premium to reduce maximum out-of-pocket exposure by \$3,700 and the stated deductible by \$4,700. Under the simplified covered-claims curve, the additional premium exceeded the largest cost-sharing advantage the lower-deductible option could produce. The complete comparison must still adjudicate the actual copays, coinsurance, service rules, and networks rather than infer dominance from the three displayed fields alone.
 
 > [!TIP]
-> The model does not assume that every higher-deductible plan wins. It uses dominance before probability. A lower deductible has no economic value when the additional premium costs more than the largest reduction in out-of-pocket expense the plan can produce. If the lower-premium plan has a lower total cost at \$0 of claims, throughout the cost-sharing curve, and at premium plus MOOP, it wins at every possible claim level. Claim probability matters only when the plans’ total-cost curves cross.
+> The model does not assume that every higher-deductible plan wins. It uses dominance before probability. A lower deductible cannot justify its additional premium on total cost when that premium costs more than the largest reduction in claims paid outside insurance that the plan can produce. If the lower-premium plan has a lower total cost at \$0 of claims, throughout the cost-sharing curve, and at premium plus MOOP, it wins at every possible claim level. Claim probability matters only when the plans’ total-cost curves cross.
 
 ---
 
 ## How CommonCare identifies the optimal plan
 
-CommonCare evaluates health plans using multiyear simulations populated with realistic medical expenses for each member of a household. A long simulation is more stable than pretending to predict one specific person’s next twelve months.
+CommonCare evaluates health plans as a **total-cost problem**. The economic question is not whether the employer or employee writes a particular check. It is whether buying a richer insurance contract reduces claims paid outside the contract by more than the additional premium and other fixed cost required to buy that contract.
 
-The general ranking identifies the option expected to perform most efficiently across many possible years. Known needs can then be layered onto that analysis.
+Employer contributions, employee payroll deductions, and CommonFunds reimbursements determine who bears cost and when. They matter enormously to benefit design, affordability, liquidity, and participant experience, but they do not create or eliminate economic cost merely by moving dollars between the employer and participant. Those allocation questions should be evaluated separately from the insurance-efficiency calculation.
 
-Designing the plan to perform optimally in the majority of cases is the right recipe for success. However, CommonFunds really shines in adapting to specific needs.
+CommonCare evaluates total cost using multiyear simulations populated with realistic medical events for each member of a household. A long simulation is more stable than pretending to predict one specific person’s next twelve months. The general ranking identifies the option expected to use the fewest total dollars across many possible years. Known needs can then be layered onto that analysis.
+
+### The mathematical question
+
+For each plan `j`, define:
+
+```text
+Total cost under plan j in medical-event state s
+= fixed plan cost j
+  + claims paid outside insurance under plan j in state s
+  + plan-specific administrative or transaction cost
+```
+
+Premium is a fixed plan cost. Deductibles, copays, coinsurance, and the maximum out-of-pocket limit determine which covered claims are paid outside insurance. CommonFunds reimbursement is not an additional total cost when it reimburses one of those same claims; it changes the payer of the claim. Counting both the underlying claim and its reimbursement would count one healthcare expense twice.
+
+Let:
+
+| Variable | Meaning |
+|---|---|
+| `S` | A possible set of medical events during the period |
+| `Pj` | Total premium and other fixed acquisition cost of plan `j` |
+| `Uj(S)` | Healthcare cost not paid by insurance under plan `j` in state `S` |
+| `Aj(S)` | Administrative or transaction cost not already included elsewhere |
+| `Tj(S)` | Total economic cost of plan `j` in state `S` |
+
+Then:
+
+```text
+Tj(S) = Pj + Uj(S) + Aj(S)
+```
+
+The primary comparison is:
+
+```text
+Expected total cost of plan j = E[Tj(S)]
+```
+
+The economically efficient plan is the valid plan with the lowest expected total cost, subject to any separately stated constraints on networks, covered services, liquidity, risk tolerance, or participant protection.
+
+### Why average spending is not enough
+
+The model does not insert average annual spending into a plan formula. In general:
+
+```text
+E[Tj(S)] is not equal to Tj(E[S])
+```
+
+Cost sharing is nonlinear. Deductibles create thresholds, coinsurance changes the slope, and MOOP creates a ceiling. A population in which everyone incurs `\$5,000` of allowed claims can have the same average spending as a population in which 95% incur nothing and 5% incur `\$100,000`, while producing very different deductible, coinsurance, and MOOP results.
+
+The relevant input is therefore a distribution of medical-event states, not a single average claim amount. The model must preserve the frequency and concentration of spending across people and periods. It must also apply each plan's own coverage rules, allowed prices, network, formulary, and cost-sharing logic to the same underlying medical needs whenever those features differ materially.
+
+### Spending concentration does not make claim severity the decision variable
+
+Healthcare spending is highly concentrated, but the largest bill is not necessarily the bill that most affects the plan comparison. Insurance converts a medical event into a plan-specific amount paid outside insurance. Once both plans have reached their applicable MOOP, additional covered in-network claim dollars generally do not change the comparison.
+
+For that reason, a `\$100,000` claim is not ten times as important to the deductible decision as a `\$10,000` claim. In a simple design, both may place the participant at the same MOOP. The relevant quantity is the difference between the plans' cost-sharing results in that state, not the gross size of the claim.
 
 ### Known high-cost needs often simplify the decision
 
 Unknown claims require probability modeling. A known treatment need can be priced against each available plan directly.
 
-That means CommonFunded does not need to design the entire employer plan around a few expensive participants. Each participant can select among the available options using their own expected premium, claims, deductible, coinsurance, and maximum exposure (or we can auto-select the optimal plan based on their inputs).
+That means CommonFunded does not need to design the entire employer plan around a few expensive participants. Each participant can select among the available options using the total premium, expected medical events, plan-specific cost sharing, and maximum exposure—or CommonCare can rank the valid options using those inputs.
 
 > 🔑 For participants who have significant needs, the math for the optimal plan actually tends to get simpler. Most often entire plans optimize to solve a few significant problems - as if they were unknown. CommonFunded allows just that one employee to modify the cost-sharing structure to optimize for their needs - underlying insurance options allowing; see the section on [insurance options](#pluggable-coverages) for details.
 
@@ -240,43 +391,84 @@ That means CommonFunded does not need to design the entire employer plan around 
 For a simplified plan with one deductible and a uniform coinsurance rate:
 
 ```text
-Annual cost = P + min(M, min(x, D) + r × max(0, x − D))
+Total cost = P + min(M, min(x, D) + r × max(0, x − D))
 ```
 
 Where:
 
 | Variable | Meaning |
 |---|---|
-| `P` | Total annual premium |
+| `P` | Total annual premium and fixed plan cost |
 | `x` | Annual covered medical bills at the insurer’s allowed prices |
 | `D` | Annual deductible |
 | `r` | Participant coinsurance after the deductible, expressed as a decimal |
 | `M` | Annual maximum out-of-pocket limit, excluding premium |
 
-The formula adds annual premium to participant medical expense: deductible spending first, then coinsurance, capped at the maximum out-of-pocket limit.
+The formula adds fixed plan cost to claims paid outside insurance: deductible spending first, then coinsurance, capped at the maximum out-of-pocket limit. It is a deliberately simplified total-cost function for covered in-network care.
 
 #### Decision rule
 
-Additional premium is worthwhile when the reduction in expected out-of-pocket expense exceeds the additional annual premium:
+Let `H` be the higher-deductible, lower-premium plan and `L` the lower-deductible, higher-premium plan. Define the premium reduction from choosing `H` as:
 
 ```text
-Premium B − Premium A
-< Out-of-pocket cost A(x) − Out-of-pocket cost B(x)
+R = PL − PH
 ```
 
-Here, `A` is the lower-premium plan and `B` is the higher-premium plan. Equality is the break-even point. At any assumed annual bill amount `x`, the option with the lowest total annual cost is the least expensive choice.
+Buying the lower deductible is worthwhile on expected total cost only when the expected reduction in claims paid outside insurance exceeds its additional fixed cost:
+
+```text
+PL − PH < E[UH(S) − UL(S)]
+```
+
+Equivalently, the higher-deductible plan is more efficient when:
+
+```text
+R > E[UH(S) − UL(S)]
+```
+
+Equality is the expected-value break-even point. This is different from choosing one assumed annual bill amount `x`: that produces a scenario comparison, not an expectation.
+
+The same rule can be expressed as an expected net value of buying richer insurance:
+
+```text
+Value of richer insurance
+= E[UH(S) − UL(S)] − (PL − PH)
+```
+
+- A positive value favors the lower-deductible plan.
+- A negative value favors the higher-deductible plan.
+- Zero is the expected-cost break-even point.
 
 #### Dominance rule
 
-Calculate the difference over the entire relevant claims range:
+Expected value is unnecessary when one plan is cheaper in every possible relevant state. Calculate the difference over the entire medical-event domain:
 
 ```text
-Cost difference(x) = Annual cost B(x) − Annual cost A(x)
+Cost difference(S) = TL(S) − TH(S)
 ```
 
-- If the result is always positive, Plan A dominates Plan B.
-- If the result is always negative, Plan B dominates Plan A.
-- If the result changes sign, the plans have one or more break-even points and utilization assumptions become relevant.
+- If the result is always positive, the higher-deductible plan dominates.
+- If the result is always negative, the lower-deductible plan dominates.
+- If the result changes sign, neither plan dominates and the probability of the states on each side of the break-even boundary becomes relevant.
+
+Dominance is stronger than an expected-value result. It means no probability assumption can make the dominated plan cheaper within the modeled domain.
+
+#### Deductible and MOOP are layers, not independent prices
+
+The deductible and MOOP should not be valued as though every participant receives their full numerical difference. Their value depends on how often medical events reach each affected layer of cost sharing.
+
+In a simple deductible-only layer from `a` to `b`, the expected cost of that layer can be written using the survival function of allowed claims `X`:
+
+```text
+Expected claims in layer [a,b]
+= integral from a to b of Pr(X > t) dt
+```
+
+Each dollar in the layer is weighted by the probability that claims reach it. A dollar immediately above a low deductible may be incurred frequently; a dollar near the MOOP may be incurred rarely. Coinsurance multiplies the applicable portions of those layers, and the MOOP truncates them.
+
+This produces the correct interpretation of a premium reduction:
+
+> A dollar of premium is certain. A dollar of additional deductible or MOOP is contingent. The exchange is worthwhile when the certain premium saved exceeds the probability-weighted additional claims paid outside insurance.
 
 For very large covered claims, the comparison simplifies to:
 
@@ -293,8 +485,185 @@ Lower-deductible option:  \$22,116 +  \$6,900 = \$29,016
 
 The higher-deductible option costs **\$3,066 less even when both participants reach their MOOP**. A \$100,000 covered claim does not make the lower-deductible option perform better; it simply causes both options to reach maximum cost sharing.
 
+More generally, the incremental cost transferred by a higher MOOP is bounded in states where both plans reach their limits:
+
+```text
+UH(S) − UL(S) = MH − ML
+```
+
+The expected value of that difference depends on how often each plan reaches its MOOP and on the cost difference in states where only one plan reaches it. The total dollars in claims above both MOOP thresholds do not increase this cost-sharing difference.
+
+### What the primary result does and does not answer
+
+The primary result answers whether one insurance-and-direct-funding structure consumes fewer total economic resources than another. It deliberately does not answer:
+
+- How premium and claims should be divided between employer and employee;
+- Whether an employee can comfortably finance a claim before reimbursement;
+- How much volatility either party should accept;
+- Whether a particular allocation is equitable or behaviorally workable; or
+- Which legal benefit component should make a payment.
+
+Those are essential design questions, but they are downstream of the efficiency result. They should be reported separately so a transfer between parties is not mistaken for a saving and an economically efficient design is not mistaken for an automatically acceptable benefit design.
+
+### Minimum standard for a defensible comparison
+
+A total-cost result should be reproducible from disclosed inputs. At minimum, the analysis should state:
+
+1. **The comparison unit.** Individual, household, enrollment tier, or population; the coverage period; and any eligibility assumptions.
+2. **Fixed costs.** Full premium, fees, taxes, and administrative costs, without excluding a portion merely because a different party pays it.
+3. **Medical-event distribution.** The data source, experience period, population adjustments, medical trend, sampling method, and treatment of zero-claim and catastrophic periods.
+4. **Plan adjudication.** Covered services, allowed prices, network assumptions, deductible and MOOP accumulators, coinsurance, copays, prescription rules, and exclusions.
+5. **Direct-funding rules.** Which underlying claims may be reimbursed, applicable thresholds and caps, and confirmation that reimbursements are not counted again as new healthcare costs.
+6. **Approximations.** Every material simplification, its expected direction of bias, and the result under reasonable alternative assumptions.
+7. **Results.** Expected total cost, the cost difference between options, the probability each option is cheaper, relevant distribution percentiles, and whether either option dominates.
+
+The probability that a plan is cheaper is not the same as its expected savings. A plan can win in most years but lose by enough in a small number of years to have a higher expected total cost. Conversely, a plan can have the lowest expected cost without winning in a majority of simulated years. Both statistics should be reported, but expected total cost remains the primary efficiency measure unless a different objective is stated in advance.
+
+The analysis should also show the total-cost difference as the principal result:
+
+```text
+Expected savings from H versus L
+= E[TL(S)] − E[TH(S)]
+```
+
+A positive result is the expected economic value of choosing the higher-deductible structure. The result should be accompanied by scenario and sensitivity analysis, not replaced by a claim that one average level of spending represents the population.
+
+### Decision policy: choose the mathematical winner by default
+
+The total-cost analysis is intended to produce a decision, not merely another enrollment data point. Among plans that satisfy the required coverage and access constraints:
+
+1. Eliminate any plan that is mathematically dominated.
+2. If the remaining total-cost curves cross, apply the medical-event distribution and select the plan with the lowest expected total cost.
+3. State the expected dollar advantage of the winner.
+4. Choose a different plan only when a material advantage outside the modeled total-cost result justifies surrendering that dollar advantage.
+
+This is the default rule:
+
+> **Do not pay more premium to reduce cost sharing unless the probability-weighted reduction in cost sharing is worth more than the premium. Do not override the resulting winner for a vague preference. Identify the specific superiority for which the additional total cost is being paid.**
+
+This approach commits to playing the odds. It does not treat a possible high-cost year as though it were certain, and it does not treat a predictable premium as psychologically invisible. Premium is paid in every modeled state. Deductible, coinsurance, and MOOP exposure is paid only in the states that reach those layers.
+
+#### Example: a plan that loses before probability is considered
+
+In the Nashville comparison, the lower-deductible option charges `\$6,766` in additional annual premium. Its deductible is `\$4,700` lower and its MOOP is `\$3,700` lower. Under the simplified covered-claims curve, it cannot recover its additional premium through reduced cost sharing. The higher-deductible option also costs `\$3,066` less in the catastrophic endpoint:
+
+```text
+(\$22,116 + \$6,900) − (\$15,350 + \$10,600) = \$3,066
+```
+
+Subject to confirmation from the complete plan adjudication, the higher-deductible option is the mathematical choice without needing an assumption about average claims. Selecting the other plan is not a more cautious application of the same cost analysis; it is a decision to purchase some separate plan feature at an additional cost.
+
+#### Example: plans that require probability
+
+Assume the following event-level simulation results:
+
+| Plan | Annual fixed cost | Expected claims paid outside insurance | Expected total cost |
+|---|---:|---:|---:|
+| Higher deductible | \$10,000 | \$3,200 | \$13,200 |
+| Lower deductible | \$13,000 | \$1,800 | \$14,800 |
+
+The lower-deductible plan reduces expected claims outside insurance by `\$1,400` but charges `\$3,000` more in fixed cost:
+
+```text
+Expected value of richer insurance
+= \$1,400 − \$3,000
+= −\$1,600
+```
+
+The higher-deductible plan is the mathematical winner by `\$1,600` per year. The existence of years in which the lower-deductible plan wins does not reverse that result; those years are already represented in the expectation.
+
+#### Worked example: 50 people with a concentrated annual bill distribution
+
+Consider a hypothetical population of 50 people, all enrolled in single-only coverage for one year. To isolate the premium-versus-cost-sharing question, assume both plans cover the same services, use the same network and allowed prices, and have no uncounted administrative-cost difference.
+
+The plans are:
+
+| Plan | Annual fixed cost per person | Deductible | Coinsurance | MOOP |
+|---|---:|---:|---:|---:|
+| Higher deductible `H` | \$8,400 | \$6,000 | 20% | \$8,000 |
+| Lower deductible `L` | \$11,400 | \$2,000 | 20% | \$5,000 |
+
+For either plan, claims paid outside insurance are calculated as:
+
+```text
+U(x) = min(M, min(x,D) + r × max(0,x−D))
+```
+
+The hypothetical annual allowed-bill distribution is deliberately concentrated:
+
+| Annual allowed bills `x` | People | `UH(x)` each | `UL(x)` each | Population `UH` | Population `UL` |
+|---:|---:|---:|---:|---:|---:|
+| \$0 | 15 | \$0 | \$0 | \$0 | \$0 |
+| \$250 | 5 | \$250 | \$250 | \$1,250 | \$1,250 |
+| \$500 | 5 | \$500 | \$500 | \$2,500 | \$2,500 |
+| \$1,000 | 5 | \$1,000 | \$1,000 | \$5,000 | \$5,000 |
+| \$2,000 | 4 | \$2,000 | \$2,000 | \$8,000 | \$8,000 |
+| \$3,500 | 4 | \$3,500 | \$2,300 | \$14,000 | \$9,200 |
+| \$6,000 | 3 | \$6,000 | \$2,800 | \$18,000 | \$8,400 |
+| \$10,000 | 3 | \$6,800 | \$3,600 | \$20,400 | \$10,800 |
+| \$20,000 | 2 | \$8,000 | \$5,000 | \$16,000 | \$10,000 |
+| \$50,000 | 2 | \$8,000 | \$5,000 | \$16,000 | \$10,000 |
+| \$100,000 | 1 | \$8,000 | \$5,000 | \$8,000 | \$5,000 |
+| \$250,000 | 1 | \$8,000 | \$5,000 | \$8,000 | \$5,000 |
+| **Total** | **50** | — | — | **\$117,150** | **\$75,150** |
+
+Total allowed bills are `\$568,750`, or an average of `\$11,375` per person. The four highest-cost people account for `\$450,000`, or 79.1% of all allowed bills. The distribution therefore captures the central problem with a simple average: most people are far below the average, while a few claims are far above it.
+
+Now calculate total population cost:
+
+| Cost component | Higher deductible `H` | Lower deductible `L` |
+|---|---:|---:|
+| Fixed cost: 50 × annual premium | \$420,000 | \$570,000 |
+| Claims paid outside insurance | \$117,150 | \$75,150 |
+| **Total population cost** | **\$537,150** | **\$645,150** |
+| **Total cost per person** | **\$10,743** | **\$12,903** |
+
+The lower-deductible plan reduces claims paid outside insurance by `\$42,000`, but charges `\$150,000` in additional premium:
+
+```text
+Value of richer insurance
+= \$42,000 − \$150,000
+= −\$108,000
+```
+
+The higher-deductible plan wins by `\$108,000` for the population, or `\$2,160` per person. The lower-deductible plan returns only `\$0.28` in reduced cost sharing for each additional premium dollar:
+
+```text
+\$42,000 ÷ \$150,000 = 0.28
+```
+
+Applying the same formulas only to average bills produces the wrong decision:
+
+| Calculation at `x = \$11,375` | Higher deductible `H` | Lower deductible `L` |
+|---|---:|---:|
+| Fixed cost | \$8,400 | \$11,400 |
+| Claims paid outside insurance | \$7,075 | \$3,875 |
+| Apparent total cost | \$15,475 | \$15,275 |
+
+The average-person shortcut incorrectly favors the lower-deductible plan by `\$200` per person. The actual 50-person distribution favors the higher-deductible plan by `\$2,160` per person. This reversal occurs because cost sharing is nonlinear: the average bill is applied as though all 50 people incurred it, even though 34 people incurred `\$2,000` or less and the largest claims stopped changing either plan's result after the MOOP.
+
+The example demonstrates the complete decision rule:
+
+1. Preserve the distribution rather than collapsing it to average spending.
+2. Apply each plan's cost-sharing function to every person-period.
+3. Add the fixed premium paid for every person, including those with no claims.
+4. Sum total cost across the population.
+5. Select the lower total unless an identified superiority outside the model is worth more than the `\$108,000` expected advantage.
+
+#### How qualitative superiority can override the result
+
+Some differences are not reducible to a reliable claims estimate. A network may offer meaningfully better access to a trusted specialist, a plan may provide a materially better care experience, or one design may avoid an unacceptable administrative burden. These can justify choosing the more expensive option, but they should not be blended vaguely into the cost calculation.
+
+The mathematical result supplies the price of the override. In the preceding example, choosing the lower-deductible plan means paying an expected `\$1,600` per year for its unmodeled advantages. The decision becomes:
+
+> Is the specific network, access, service, or other qualitative superiority worth at least `\$1,600` per year?
+
+A modest preference should not override a large expected-cost advantage. A significant override should require significant, identifiable superiority. The larger the mathematical advantage, the stronger the non-mathematical reason must be.
+
+Not every network difference is qualitative. Different negotiated prices, covered providers, balance-billing exposure, drug coverage, and the expected cost of known care can often be modeled and belong inside `Tj(S)`. Only the residual value that cannot be estimated credibly should remain a qualitative override. This prevents a measurable economic difference from being hidden behind the word “network,” while acknowledging that convenience, trust, clinical relationships, and perceived quality may ultimately require informed judgment.
+
 > [!NOTE]
-> This simplified equation assumes covered, in-network care subject to one deductible and one coinsurance rate, with deductible spending counting toward the maximum out-of-pocket limit. Copays, embedded family deductibles, service-specific rules, prescriptions, separate limits, balance bills, and noncovered expenses require additional modeling.
+> This simplified equation assumes that both plans apply the same allowed prices to covered, in-network care subject to one deductible and one coinsurance rate, with deductible spending counting toward the MOOP. Copays, embedded family deductibles, service-specific rules, prescriptions, separate limits, network differences, balance bills, utilization management, and noncovered expenses require an event-level plan model rather than a single spending variable.
 
 ---
 
@@ -458,7 +827,9 @@ The flexibility of CommonFunded comes from coordinating distinct components, not
 
 | Design issue | Operating rule |
 |---|---|
-| CommonFunds classification | Maintain the EBHRA and Health FSA classifications, limits, funding sources, and claims rules separately |
+| CommonFunds classification | Maintain EBHRA, integrated-HRA, ICHRA, and Health FSA classifications, limits, funding sources, eligibility, and claims rules separately; never apply the EBHRA cap to an integrated group-plan HRA |
+| Group-plan HRA integration | Require actual qualifying group-plan enrollment, apply the selected Notice 2013-54 integration method, enforce family-member coverage and opt-out rules, and document the employer-only HRA maximum |
+| Risk thresholds | Store the participant deductible and MOOP, HRA threshold and cap, and specific and aggregate stop-loss attachment points as separate values |
 | Individual optimization | Recommend and enroll participants among valid available options; do not alter plan terms arbitrarily for an individual |
 | EBHRA availability | Apply the same terms to similarly situated individuals, regardless of health factor |
 | Health FSA risk | Apply uniform coverage and the governing forfeiture, carryover, and runout provisions |
@@ -469,7 +840,7 @@ The flexibility of CommonFunded comes from coordinating distinct components, not
 
 ## Core principle
 
-> **Use insurance for the risk that needs insurance. Fund routine care directly, cap the employer’s exposure, and optimize the combination for the participant standing in front of you.**
+> **Use insurance for the risk the contract actually transfers. Fund routine care directly through the appropriate account component, keep every retained layer explicit and bounded, and optimize the combination using total cost and the real claim distribution.**
 
 ## Implementation and pricing nuances
 
@@ -569,14 +940,18 @@ Lower elected deductible  → positive adjustment
 
 The same method works in reverse. If the employee selects a lower deductible than the benchmark, the accumulated expected cost is added to the benchmark premium rather than subtracted.
 
-### Cost sharing nuances
+### Cost-sharing model and conservative approximations
 
-The cost-sharing differences between insurance and CommonFunds are too nuanced to model accurately. Things such as:
+A complete comparison applies each plan's rules to event-level claims. Relevant rules include:
 
-- Preventive care being insurance-covered with no cost-sharing
-- The complexities of insurance coinsurance and co-pays in and out of network
-- Drug tiers
+- Preventive services covered without cost sharing;
+- Deductibles, copays, and coinsurance by service category;
+- In-network and out-of-network treatment;
+- Prescription formularies and drug tiers;
+- Embedded and aggregate family accumulators;
+- Separate medical and prescription limits; and
+- The plan's MOOP accumulation rules.
 
-Are practically impossible to price into cost simulations in great detail if using genuine claims data and not manufactured data.
+Historical claims data do not always contain enough information to reconstruct every rule reliably. When an exact plan adjudication is unavailable, the model may use a disclosed conservative approximation. The current simplified implementation does not remove preventive claims as insurance-paid, applies a global high coinsurance assumption, does not assume favorable specialty or drug tiers, and treats simulated bills as reaching the CommonFunds cost-sharing layer.
 
-Because of this, CommonCare simply assumes the conservative approach for each of these. We exclude no preventive care costs as being "insurance-paid," assume global high coinsurance rates, and assume no special tiers for specialty care or drugs. It is assumed that all of the bills simulated fall through fully to the CommonFunds cost sharing layer.
+These assumptions are model limitations, not mathematical necessities. Each production comparison should identify which plan features were modeled directly, which were approximated, the direction in which each approximation is expected to bias the result, and whether reasonable alternative assumptions change the plan ranking.
