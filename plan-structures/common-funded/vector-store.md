@@ -6,8 +6,8 @@ schema_version: "1.0"
 source_document: plan-structures/common-funded/human-readable.md
 metadata_document: plan-structures/common-funded/metadata.yaml
 ai_instructions_document: plan-structures/common-funded/AI-instructions.md
-source_commit: 275250554839a681c85fee8a43f3deb495f33c2f
-source_sha256: ee9a38a27d6b88657535ed3b79a1faf782fce9b46e0324be8ea65a7001c8af55
+source_commit: 3f34dc55d47098df9bdb235b1d57d491a4b04d0a
+source_sha256: f27e7598980af57c2a69c59e8a0a270bf768efb804384b3e44c24a0c06916cf5
 metadata_sha256: 42e9788ba0d45035151c510dea94356264b107da8e44622252f830af5db9aac3
 ai_instructions_sha256: 20d347ad17a80d59da08f877493278ea6b9d4624e999963aa1f55e489dd7018d
 generation_method: deterministic-markdown-conversion
@@ -438,7 +438,7 @@ The analysis toolkit is a **structural decision-making and quote tool**. Its pre
 
 For an alternative plan that was not actually in force, historical replay is a counterfactual calculation: it can be exact under explicitly specified prices, coverage, eligibility, claim ordering, and benefit rules, but it cannot establish how different networks, incentives, or utilization would actually have changed the claims. Use identical medical scenarios across designs, disclose missing or approximated benefits, show account and participant outcomes, and test whether reasonable changes alter the conclusion. Governing contracts and actual administration determine the final result.
 
-The current standalone toolkit accepts historical annual totals but does not yet adjudicate dated, service-level claims and all plan rules. Its retrospective output is exact only for its simplified formulas and supplied inputs; it must not be presented as exact historical plan adjudication when omitted details matter. Integrating detailed claims and CommonCare quoting capabilities can strengthen that result without conflating the capability with the current implementation.
+The toolkit accepts historical annual totals or ordered claim events and adjudicates the latter sequentially under its uniform deductible, coinsurance, MOOP, and account rules. It does not yet implement every service-level plan rule. Its retrospective output is exact only for the rules and inputs supplied; it must not be presented as exact historical plan adjudication when omitted details matter. Integrating more detailed claims and CommonCare quoting capabilities can strengthen the result.
 
 ---
 

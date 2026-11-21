@@ -1,14 +1,12 @@
 ## CommonFunded
 
-> **CommonFunded pairs [CommonFunds](https://commoncare.org/products/common-funds) with major-medical coverage or another arrangement. It tests whether reducing the cost of the coverage and funding a defined layer of participant cost sharing directly produces a better economic result.**
+> **CommonFunded separates funding for routine care from the financing of large medical claims. It uses [CommonFunds](https://commoncare.org/products/common-funds) to pay eligible expenses in a defined account-funded layer and a separate coverage arrangement for larger claims.**
 
-CommonFunded is CommonCare’s core plan structure. It combines:
+A conventional plan often includes both jobs in one insurance product: premiums fund coverage that pays some routine expenses as well as protection against large claims. CommonFunded tests whether buying coverage with higher participant cost sharing and funding that additional cost sharing through an account can reduce the total cost of care and coverage. The question is whether the reduction in coverage cost exceeds the additional eligible expenses the account pays, and whether the result remains favorable after changes in participant costs are included.
 
-1. **CommonFunds** for routine and lower-cost healthcare expenses;
-2. **Major medical insurance or another coverage vehicle** for larger and less predictable expenses; and
-3. **Integrated enrollment and administration** that presents the components as one coherent benefit.
+CommonFunds pays eligible expenses as participants incur them, subject to the adopted benefit terms. Unused reimbursement capacity is not automatically spent as premium. The insurance policy or other upper-layer arrangement retains responsibility for the claims its contract covers; an employer that self-funds that layer retains the risk specified by its funding and stop-loss arrangements.
 
-The design can reduce reliance on insurance to pay routine expenses while retaining a separate arrangement for larger claims. Its value depends on the available prices, benefit terms, and actual claims.
+CommonCare brings the coverage and account together in enrollment, administration, and the participant experience. The economic result depends on actual prices, plan terms, and claims; separating the layers does not guarantee a saving.
 
 ## At a glance
 
@@ -46,15 +44,17 @@ The design can reduce reliance on insurance to pay routine expenses while retain
 
 ## The design thesis
 
-“CommonFunded” is partial self-funding: it separates an account-funded layer from the financing of larger claims. The employer's exposure to catastrophic claims depends on the selected upper-layer arrangement; the account structure alone does not transfer that risk.
+The premise is that a plan can fund routine care through accounts while reserving insurance or another risk arrangement for the larger claims that can disrupt a household or a plan. This changes how the routine layer is paid: a fixed premium is exchanged for reimbursements that occur only when eligible expenses are incurred. It also makes the cost and experience of that layer visible on its own.
 
-CommonCare compares plans using projected total cost: the cost of coverage plus claims paid outside it. A lower deductible is valuable only to the extent that it reduces those claims enough to justify its additional premium.
+To test the premise, start with the cost of the current arrangement and the cost of the proposed higher-deductible arrangement for the same people and period. The difference is available to fund the additional account reimbursements. Compare that amount with expected reimbursements and their range across plausible claims; also account for any change in participant costs. If the quotes and claims do not support the exchange, the analysis should say so.
 
-CommonFunded separates two financing jobs:
+This is partial self-funding of an account layer, not a promise that the employer has transferred all larger-claim risk. The financing of that upper layer is a separate decision: it may be insured, level-funded, self-funded, or a combination. Use its cost in the comparison, whether that cost is a fixed premium or an explicitly identified estimate of premium plus retained claims.
+
+The structure separates two financing jobs:
 
 | Healthcare need | CommonFunded financing approach |
 |---|---|
-| Routine, lower-cost, high-frequency expenses | A bounded account-based benefit with direct price sensitivity |
+| Routine, lower-cost, high-frequency expenses | A bounded account-based benefit; price incentives depend on its terms |
 | Large, concentrated, financially disruptive expenses | Insurance or another risk-sharing vehicle |
 
 Insurance can add administrative costs to routine transactions and reduce price sensitivity. It also transfers risk and can protect against financially disruptive claims. Whether moving a particular layer out of premium saves money depends on the quote and the cost of claims in that layer.
@@ -72,7 +72,7 @@ This means much of insurance’s value is delivered through a relatively small n
 
 ## How to understand the concept versus reality
 
-The CommonFunded quote illustrates an economic proposition: routine and moderately predictable claims are often funded more efficiently outside the insurance premium, while insurance or another risk-sharing arrangement addresses less predictable and potentially catastrophic risk. The quote applies simulated claims to a simplified benefit design so an employer can compare fixed cost, expected claims, participant responsibility, and possible experience gains.
+The CommonFunded quote tests whether a particular plan can fund a defined layer of care through an account for less than the cost released by moving that layer out of coverage. It compares the current and proposed arrangements using supplied prices and either simulated or historical claims. The result shows the account reimbursements, participant costs, and potential experience gain under the modeled terms; its precision depends on the evidence and plan rules available.
 
 That illustration is not a requirement that every participant receive the exact arrangement depicted in the quote. It demonstrates the amount and location of potential value. The employer can then decide how much of that value to place in restricted coverage, flexible qualified benefits, participant-directed elections, or taxable compensation. CommonCare can support those choices through components such as an EBHRA, integrated HRA, CHOICE/ICHRA, Health FSA, HSA contribution, group health plan, or payroll flex arrangement.
 
@@ -80,7 +80,7 @@ Different components retain their own rules, but the employer is not required to
 
 The quote answers:
 
-> How much economic value may be created by moving an efficiently modeled layer of routine claims away from fixed insurance premium?
+> For this population, do the available coverage costs release enough money to fund the added account reimbursements, and how much might remain or fall short?
 
 The adopted plan must separately answer:
 
@@ -244,7 +244,7 @@ The analysis toolkit is a **structural decision-making and quote tool**. Its pre
 
 For an alternative plan that was not actually in force, historical replay is a counterfactual calculation: it can be exact under explicitly specified prices, coverage, eligibility, claim ordering, and benefit rules, but it cannot establish how different networks, incentives, or utilization would actually have changed the claims. Use identical medical scenarios across designs, disclose missing or approximated benefits, show account and participant outcomes, and test whether reasonable changes alter the conclusion. Governing contracts and actual administration determine the final result.
 
-The current standalone toolkit accepts historical annual totals but does not yet adjudicate dated, service-level claims and all plan rules. Its retrospective output is exact only for its simplified formulas and supplied inputs; it must not be presented as exact historical plan adjudication when omitted details matter. Integrating detailed claims and CommonCare quoting capabilities can strengthen that result without conflating the capability with the current implementation.
+The toolkit accepts historical annual totals or ordered claim events and adjudicates the latter sequentially under its uniform deductible, coinsurance, MOOP, and account rules. It does not yet implement every service-level plan rule. Its retrospective output is exact only for the rules and inputs supplied; it must not be presented as exact historical plan adjudication when omitted details matter. Integrating more detailed claims and CommonCare quoting capabilities can strengthen the result.
 
 ---
 
@@ -287,7 +287,7 @@ When HSA eligibility is intended, every reimbursement component available to the
 
 ## Where the savings come from
 
-CommonFunded replaces a portion of fixed insurance premium with a capped reimbursement promise.
+When the quoted higher-deductible arrangement costs less, CommonFunded can use the difference to fund a capped reimbursement promise. Savings arise only when the cost released exceeds the additional reimbursements and any other incremental costs, after accounting for changes in participant costs.
 
 Suppose a participant chooses coverage with a \$9,200 deductible and the Enrollment Schedule states a \$1,500 CommonFunds deductible. After the participant satisfies that threshold, CommonFunds can reimburse the eligible layer above it—even though the insurance contract still has a \$9,200 deductible. The participant's modeled exposure to deductible-subject expenses can therefore be reduced toward \$1,500, subject to the available CommonFunds amount and governing component terms.
 

@@ -3,6 +3,8 @@ import {strict as assert} from 'node:assert';
 import {compare} from './run-comparison.mjs';
 import {readFileSync} from 'node:fs';
 import {mockCensus} from './mock-census.mjs';
+import {adjudicateHousehold} from './cost-sharing-core.mjs';
+import {simulate} from './run-simulation.mjs';
 
 test('account gain uses incremental reimbursements and separates participant cost', () => {
   const input=JSON.parse(readFileSync(new URL('./example-comparison.json',import.meta.url)));
@@ -39,4 +41,27 @@ test('unused budget does not hide years above budget', () => {
   assert.equal(r.expectedUnusedAccountBudget,1500);
   assert.equal(r.expectedClaimsAboveAccountBudget,2500);
   assert.equal(r.expectedNetAccountBudget,-1000);
+});
+
+test('ordered family claims accumulate deductible and MOOP with preventive claims excluded', () => {
+  const plan={deductible:1000,coinsurance:.2,moop:2000,hraThreshold:0,hraCap:0,family:{deductible:2000,deductibleType:'embedded',moop:3000,hraThreshold:0,hraCap:3000}};
+  const result=adjudicateHousehold([
+    {id:'a',events:[{order:1,allowed:500,kind:'standard'},{order:3,allowed:10000,kind:'standard'}]},
+    {id:'b',events:[{order:0,allowed:100,kind:'preventive'},{order:2,allowed:1000,kind:'standard'}]}
+  ],plan);
+  assert.equal(result.members.a.oop,2000);
+  assert.equal(result.members.b.oop,1000);
+  assert.equal(result.oop,3000);
+  assert.equal(result.reimbursement,3000);
+  assert.equal(result.insurance,8600);
+  assert.throws(()=>adjudicateHousehold([{id:'a',events:[{order:1,allowed:100,kind:'standard'}]},{id:'b',events:[{order:1,allowed:100,kind:'standard'}]}],plan),/order must be unique/);
+});
+
+test('simulation uses independently drawn years and risk inputs', () => {
+  const args={census:[{id:'a',age:40,risk:5}],years:1000,seed:12};
+  const a=simulate(args),b=simulate(args);
+  assert.deepEqual(a,b);
+  assert.equal(a.source,'synthetic-independent');
+  assert.ok(new Set(a.scenarios.map(s=>s.bills[0].allowed)).size>2);
+  assert.equal(a.calibration.targetTotal,9800*1000);
 });

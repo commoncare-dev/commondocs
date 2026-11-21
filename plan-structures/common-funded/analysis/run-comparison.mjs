@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
+import {adjudicateHousehold} from './cost-sharing-core.mjs';
 
 const mean = xs => xs.reduce((a,b)=>a+b,0)/xs.length;
 const quantile = (xs,p) => { const a=[...xs].sort((a,b)=>a-b); return a[Math.ceil(p*a.length)-1]; };
@@ -20,7 +21,7 @@ export function compare({ scenarios, plans, accountAnalysis }) {
   const rows = scenarios.map(s => {
     if (!Array.isArray(s.bills) || !s.bills.length) throw Error('Each scenario needs bills including zero-claim enrollees');
     const members = new Set();
-    for (const b of s.bills) { if (!b.id || members.has(b.id)) throw Error('Each scenario needs unique person IDs'); members.add(b.id); num(b.allowed,'allowed'); }
+    for (const b of s.bills) { if (!b.id || members.has(b.id)) throw Error('Each scenario needs unique person IDs'); members.add(b.id); if(b.events===undefined) num(b.allowed,'allowed'); }
     const signature=JSON.stringify(s.bills.map(b=>[b.id,b.householdId||b.id]).sort((a,b)=>a[0].localeCompare(b[0])));
     if(populationSignature && signature!==populationSignature) throw Error('Every scenario must contain the same people and household assignments, including zero-claim members');
     populationSignature=signature;
@@ -34,16 +35,9 @@ export function compare({ scenarios, plans, accountAnalysis }) {
         if (family && !p.family) throw Error('Family plan terms required for multi-person households');
         const f=family ? p.family : null;
         fixed+=family ? f.annualFixed : p.annualFixed;
-        let familyDed=0, familyOop=0;
-        for (const b of members) {
-          const remainingFamilyDed=f ? Math.max(0,f.deductible-familyDed) : Infinity;
-          const remainingIndividualDed=f?.deductibleType==='aggregate' ? Infinity : p.deductible;
-          const ded=Math.min(b.allowed,remainingFamilyDed,remainingIndividualDed);
-          const u=Math.min(p.moop,f ? Math.max(0,f.moop-familyOop) : Infinity,ded+p.coinsurance*(b.allowed-ded));
-          familyDed+=Math.min(ded,u); familyOop+=u;
-        }
-        oop+=familyOop;
-        hra+=Math.min(f ? f.hraCap : p.hraCap,Math.max(0,familyOop-(f ? f.hraThreshold : p.hraThreshold)));
+        const result=adjudicateHousehold(members,p);
+        oop+=result.oop;
+        hra+=result.reimbursement;
       }
       return { plan:p.id, fixed, oop, hra, participant:oop-hra, total:fixed+oop, employer:fixed+hra };
     });
@@ -67,7 +61,7 @@ export function compare({ scenarios, plans, accountAnalysis }) {
       return {plan:p.id,baseline:plans[base].id,expectedReleasedContribution:mean(release),expectedIncrementalReimbursement:mean(incrementalHra),incrementalAdministration:admin,expectedAccountLayerGain:mean(gains),accountGainP05:quantile(gains,.05),accountGainP95:quantile(gains,.95),probabilityOfAccountShortfall:gains.filter(x=>x<0).length/gains.length,annualAccountBudget:budget,expectedUnusedAccountBudget:budget===null?null:mean(accountClaims.map(x=>Math.max(0,budget-x))),expectedClaimsAboveAccountBudget:budget===null?null:mean(accountClaims.map(x=>Math.max(0,x-budget))),expectedNetAccountBudget:budget===null?null:budget-mean(accountClaims),probabilityAccountClaimsExceedBudget:budget===null?null:accountClaims.filter(x=>x>budget).length/accountClaims.length,expectedParticipantResidualChange:mean(residual),expectedCombinedCostChange:mean(residual)-mean(gains)};
     });
   }
-  return { assumptions:'Supplied annual plan and upper-layer costs; identical bills assumed deductible-subject; flat coinsurance after deductible capped at MOOP; HRA reimburses cost sharing above household threshold. Historical bills must exclude first-dollar preventive services; synthetic inputs do not identify them separately. Family annual totals are processed in input order; event chronology is not modeled.', scenarioCount:rows.length, accountLayer, results, winnerBeforeIncrementalAdministration:winner, comparisons, warning:'Account-layer gain is incremental to baseline and is not a guarantee of total-plan results if upper-layer cost is estimated. Account budget is a planning reserve, not a cap on promised reimbursements. Observed dominance applies only to supplied scenarios; synthetic results depend on unvalidated assumptions. Family allocation and HRA eligibility can depend on actual claim timing.' };
+  return { assumptions:'Supplied annual plan and upper-layer costs; identical allowed claims across plans; uniform deductible and coinsurance capped at MOOP; account reimburses eligible cost sharing above the household threshold. Explicit preventive events have no cost sharing. Annual totals are processed in member order and do not establish actual claim chronology.', scenarioCount:rows.length, accountLayer, results, winnerBeforeIncrementalAdministration:winner, comparisons, warning:'Results are exact only for the specified simplified rules and supplied events. Copays, drugs, exclusions, different prices, and account-specific eligibility require additional modeling. Synthetic inputs do not identify preventive services. Account-layer gain is not a guarantee of total-plan results when upper-layer cost is estimated.' };
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   try { console.log(JSON.stringify(compare(JSON.parse(readFileSync(process.argv[2], 'utf8'))), null, 2)); } catch(e) { console.error(e.message); process.exitCode=1; }
