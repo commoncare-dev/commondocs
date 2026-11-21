@@ -1,12 +1,8 @@
 # Quote analysis toolkit
 
-CommonFunded separates two jobs that a health plan often pays for together: funding routine care and financing large, unpredictable claims. It moves a defined portion of participant cost sharing into an account-funded benefit, while a separate insurance or self-funded arrangement addresses claims above that layer. The account pays eligible expenses as they occur; unused reimbursement capacity is not automatically spent. The employer's exposure above the account layer still depends on the chosen coverage and funding contracts.
+This toolkit generates medical-spending scenarios and compares the supplied plans and account terms. Use [the CommonFunded AI instructions](../AI-instructions.md) for the concept and decision workflow; this file describes the inputs, commands, calculations and limits.
 
-This toolkit asks whether that split is worthwhile for the population and prices supplied. Compare the annual cost of the current plan with the cost of the proposed arrangement with its deductible and MOOP. Then compare the difference in those costs with the additional account reimbursements needed under the proposed design. Report changes in participant costs as well: an employer saving produced solely by shifting expense to participants is not a combined saving.
-
-For example, if the current plan costs $500,000 per year and the proposed upper-layer arrangement costs $350,000 for the same population, the difference is $150,000. If the proposed account pays $100,000 more in reimbursements than the current account, the account-layer gain is $50,000 before any specifically identified incremental costs. A combined saving of $50,000 also requires no change in participant residual costs. Actual claims may produce a different result. If the $350,000 includes estimated retained claims rather than a fixed premium, the combined result also depends on how those claims develop.
-
-Use carrier quotes or other supplied plan costs, a real or mock census, and simulated or historical claims. The model accepts the cost of the upper-layer arrangement as an input; choosing insurance, level funding, self-funding, or stop-loss for that layer is a separate analysis. Its calculations apply the simplified rules described below. CommonCare's standard annual shop cost sharing and GPS CommonFunded mapping use the same core; its per-event coverage and payout-cap rules remain separate. CommonCare also offers an in-memory GPS path using its existing shop spending generator.
+CommonCare's standard annual shop cost sharing and GPS CommonFunded mapping use the same cost-sharing core. Per-event coverage and payout-cap rules remain separate. CommonCare also offers an in-memory GPS path using its shop spending generator.
 
 ## Start here
 
