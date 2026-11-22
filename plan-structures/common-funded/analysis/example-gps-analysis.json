@@ -1,0 +1,18 @@
+{
+  "engine":"gps",
+  "business_year":2027,
+  "households":[
+    {"id":"household-1","people":[{"age":40,"relation":"self"}],"risk":3,"historical_years":[[1000],[5000]]},
+    {"id":"household-2","people":[{"age":50,"relation":"self"}],"risk":4,"historical_years":[[3000],[10000]]}
+  ],
+  "plans":[{"_id":"example-plan","type":"mm","name":"Example","premium":500,"deductible":{"single":5000,"family":10000},"moop":{"single":5000,"family":10000},"coinsurance":{"amount":0}}],
+  "deductible":{"single":5000,"family":10000},
+  "costSharing":{"coinsurance":0},
+  "comparison":{
+    "plans":[
+      {"id":"current","annualFixed":12000,"deductible":2000,"coinsurance":0.2,"moop":5000,"hraThreshold":0,"hraCap":0},
+      {"id":"proposed","annualFixed":9000,"deductible":5000,"coinsurance":0,"moop":5000,"hraThreshold":0,"hraCap":5000}
+    ],
+    "accountAnalysis":{"baselinePlanId":"current"}
+  }
+}
