@@ -18,7 +18,7 @@ The two generators share some input values but have different mechanics and shou
 
 ## Reproducible diagnostic
 
-In a CommonCare checkout, run `node scripts/compare-spend-models.mjs`. The script independently reproduces the former shop draw, the current shop draw and the standalone draw using fixed seeds; it does not call the production shop simulator. For 200,000 draws at age 40 and risk 3, one run produced:
+In a CommonCare server checkout, run `npm run compile` and then `node scripts/compare-spend-models.mjs`. The script independently reproduces the former shop draw, the current shop draw and the standalone draw using fixed seeds; it does not call the production shop simulator. For 200,000 draws at age 40 and risk 3, one run produced:
 
 | Reproduced model | Mean | Zero rate | Top 1% share | Top 5% share | Maximum |
 |---|---:|---:|---:|---:|---:|

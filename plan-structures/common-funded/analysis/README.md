@@ -2,6 +2,10 @@
 
 This toolkit generates medical-spending scenarios and compares the supplied plans and account terms. Use [the CommonFunded AI instructions](../AI-instructions.md) for the concept and decision workflow; this file describes the inputs, commands, calculations and limits.
 
+The scripts in this directory are public and run locally with Node.js; no CommonCare account or endpoint is required. Clone `https://github.com/commoncare-dev/commondocs`, change to `plan-structures/common-funded/analysis`, and run `node run-analysis.mjs example-analysis.json` for an illustration. The scripts are generated from the maintained CommonCare TypeScript implementation, and their full executable code is available here for inspection and independent use. To regenerate them from a CommonCare server checkout, run `node scripts/sync-commonfunded-analysis.mjs /path/to/commondocs`; add `--check` to detect differences without writing. The CommonCare GPS spending generator is separate from this toolkit's standalone sampler.
+
+The [explorer introduction](explorer-context.md), [account example](example-analysis.json), and [GPS example](example-gps-analysis.json) are also synced to CommonCare AIS for endpoint discovery. The GPS example is an input for CommonCare's GPS analysis path; the standalone scripts run the account example.
+
 CommonCare's standard annual shop cost sharing and GPS CommonFunded mapping use the same cost-sharing core. Per-event coverage and payout-cap rules remain separate. CommonCare also offers an in-memory GPS path using its shop spending generator.
 
 ## Start here
