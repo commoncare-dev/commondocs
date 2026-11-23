@@ -48,6 +48,27 @@ test('a large claim exhausts its own annual account only once', () => {
   }
 });
 
+test('monthly quote counts enrolled households, includes added cost, and distinguishes covering costs from winning', () => {
+  const plan=(id, annualFixed, deductible, familyRate)=>({
+    id, annualFixed, deductible, moop:deductible, coinsurance:0, hraCap:0, hraThreshold:0,
+    family:{annualFixed:familyRate,deductibleType:'embedded',deductible:deductible*2,moop:deductible*2,hraCap:0,hraThreshold:0}
+  });
+  const year=(single,dependent)=>({bills:[
+    {id:'employee1',allowed:single},
+    {id:'employee2',householdId:'family',allowed:0},
+    {id:'dependent',householdId:'family',allowed:dependent}
+  ]});
+  const {accountLayer}=compare({
+    plans:[plan('current',1200,0,3600),plan('proposed',960,600,2880)],
+    scenarios:[year(0,0),year(600,240)], accountAnalysis:{baselinePlanId:'current',incrementalAdministration:120}
+  });
+  assert.deepEqual(accountLayer[0].monthlyQuote,{
+    enrolledEmployees:2,currentRate:200,proposedRate:160,offeredReduction:40,
+    breakEvenReduction:22.5,breakEvenProposedRate:177.5,p90BreakEvenReduction:40,expectedSavings:17.5
+  });
+  assert.equal(accountLayer[0].totalCost.scenariosCheaper,1);
+});
+
 test('account cap frequency counts each funded household once per scenario, including unused benefits', () => {
   const {plans}=JSON.parse(readFileSync(new URL('./example-analysis.json',import.meta.url)));
   for (const plan of plans) {

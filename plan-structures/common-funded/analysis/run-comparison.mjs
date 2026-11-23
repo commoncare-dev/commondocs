@@ -40,16 +40,16 @@ export function compare({ scenarios, plans, accountAnalysis }) {
         if (populationSignature && signature !== populationSignature)
             throw Error('Every scenario must contain the same people and household assignments, including zero-claim members');
         populationSignature = signature;
+        const households = new Map();
+        for (const b of s.bills) {
+            const key = b.householdId || b.id;
+            if (!households.has(key))
+                households.set(key, []);
+            households.get(key).push(b);
+        }
         return plans.map((p, planIndex) => {
             let oop = 0, hra = 0;
             let fixed = 0;
-            const households = new Map();
-            for (const b of s.bills) {
-                const key = b.householdId || b.id;
-                if (!households.has(key))
-                    households.set(key, []);
-                households.get(key).push(b);
-            }
             for (const members of households.values()) {
                 const family = members.length > 1;
                 if (family && !p.family)
@@ -67,7 +67,7 @@ export function compare({ scenarios, plans, accountAnalysis }) {
                         usage.householdYearsAtCap++;
                 }
             }
-            return { plan: p.id, fixed, oop, hra, participant: oop - hra, total: fixed + oop, employer: fixed + hra };
+            return { plan: p.id, enrolledHouseholds: households.size, fixed, oop, hra, participant: oop - hra, total: fixed + oop, employer: fixed + hra };
         });
     });
     const results = plans.map((p, i) => { const a = rows.map(r => r[i]); return { plan: p.id, expectedTotalBeforeIncrementalAdministration: mean(a.map(x => x.total)), expectedEmployer: mean(a.map(x => x.employer)), expectedParticipant: mean(a.map(x => x.participant)), expectedHra: mean(a.map(x => x.hra)), accountCapUse: accountCapUse[i], totalP95: quantile(a.map(x => x.total), .95) }; }).sort((a, b) => a.expectedTotalBeforeIncrementalAdministration - b.expectedTotalBeforeIncrementalAdministration);
@@ -89,14 +89,27 @@ export function compare({ scenarios, plans, accountAnalysis }) {
             const accountClaims = rows.map(r => r[i].hra);
             // Count all cost sharing once, before allocating any of it to the account.
             const savings = rows.map(r => r[base].total - (r[i].total + admin));
+            const requiredReduction = rows.map(r => r[i].oop - r[base].oop + admin);
             const totalCost = {
                 expectedBaseline: mean(rows.map(r => r[base].total)),
                 expectedProposed: mean(rows.map(r => r[i].total)) + admin,
                 expectedSavings: mean(savings),
-                breakEvenAnnualFixedReduction: mean(rows.map(r => r[i].oop - r[base].oop)) + admin,
+                breakEvenAnnualFixedReduction: mean(requiredReduction),
                 scenariosCheaper: savings.filter(value => value > 0).length
             };
-            return { plan: p.id, baseline: plans[base].id, totalCost, expectedReleasedContribution: mean(release), expectedIncrementalReimbursement: mean(incrementalHra), incrementalAdministration: admin, expectedAccountLayerGain: mean(gains), accountGainP05: quantile(gains, .05), accountGainP95: quantile(gains, .95), probabilityOfAccountShortfall: gains.filter(x => x < 0).length / gains.length, annualAccountBudget: budget, expectedUnusedAccountBudget: budget === null ? null : mean(accountClaims.map(x => Math.max(0, budget - x))), expectedClaimsAboveAccountBudget: budget === null ? null : mean(accountClaims.map(x => Math.max(0, x - budget))), expectedNetAccountBudget: budget === null ? null : budget - mean(accountClaims), probabilityAccountClaimsExceedBudget: budget === null ? null : accountClaims.filter(x => x > budget).length / accountClaims.length, expectedParticipantResidualChange: mean(residual), expectedCombinedCostChange: -totalCost.expectedSavings };
+            // All scenarios cover the same households for a full year. A family is one enrolled employee.
+            const enrolledEmployees = rows[0][base].enrolledHouseholds;
+            const employeeMonths = enrolledEmployees * 12;
+            const currentRate = rows[0][base].fixed / employeeMonths;
+            const breakEvenReduction = totalCost.breakEvenAnnualFixedReduction / employeeMonths;
+            const monthlyQuote = {
+                enrolledEmployees, currentRate, proposedRate: rows[0][i].fixed / employeeMonths,
+                offeredReduction: mean(release) / employeeMonths, breakEvenReduction,
+                breakEvenProposedRate: currentRate - breakEvenReduction,
+                p90BreakEvenReduction: quantile(requiredReduction, .90) / employeeMonths,
+                expectedSavings: totalCost.expectedSavings / employeeMonths
+            };
+            return { plan: p.id, baseline: plans[base].id, monthlyQuote, totalCost, expectedReleasedContribution: mean(release), expectedIncrementalReimbursement: mean(incrementalHra), incrementalAdministration: admin, expectedAccountLayerGain: mean(gains), accountGainP05: quantile(gains, .05), accountGainP95: quantile(gains, .95), probabilityOfAccountShortfall: gains.filter(x => x < 0).length / gains.length, annualAccountBudget: budget, expectedUnusedAccountBudget: budget === null ? null : mean(accountClaims.map(x => Math.max(0, budget - x))), expectedClaimsAboveAccountBudget: budget === null ? null : mean(accountClaims.map(x => Math.max(0, x - budget))), expectedNetAccountBudget: budget === null ? null : budget - mean(accountClaims), probabilityAccountClaimsExceedBudget: budget === null ? null : accountClaims.filter(x => x > budget).length / accountClaims.length, expectedParticipantResidualChange: mean(residual), expectedCombinedCostChange: -totalCost.expectedSavings };
         });
     }
     return { scenarioCount: rows.length, accountLayer, results, winnerBeforeIncrementalAdministration: winner, comparisons, assumptions: 'Supplied annual plan and upper-layer costs, identical allowed claims across plans, and uniform deductible and coinsurance capped at MOOP. The account reimburses eligible cost sharing above the household threshold. The legacy expectedEmployer field sums the full coverage cost and reimbursements. Payroll contributions are unknown. Explicit preventive events have no cost sharing. Annual totals are processed in member order and do not establish actual claim chronology.', warning: 'Results are exact only for the specified simplified rules and supplied events. Copays, drugs, exclusions, different prices, and account-specific eligibility require additional modeling. Synthetic inputs do not identify preventive services. Account-layer gain is not a guarantee of total-plan results when upper-layer cost is estimated.' };

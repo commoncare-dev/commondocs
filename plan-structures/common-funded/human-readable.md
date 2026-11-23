@@ -1,5 +1,7 @@
 ## CommonFunded
 
+**How much must the monthly premium fall to make CommonFunded worthwhile?** The reduction must cover the additional cost sharing on the same care. The model calculates that price per enrolled employee, measures the saving at the rate offered, and counts how often the offer wins. In the published 50-single illustration, about **$111 per employee per month** breaks even on average. The hypothetical rate falls by **$250**, leaving **$139 per month** in expected savings per enrolled employee. [Quote output guide](AI-instructions.md#quote-output-guide)
+
 **CommonFunded chooses which dollars of every enrolled person's care the group will self-fund.** With level funding, 49 people can have a low-claims year and the fiftieth person's claim can consume the projected refund. What matters is how much of that claim the contract charges to the shared claims fund after stop-loss. With self-funding, the same exposure shows up as a loss against the claims budget. [Carrier explanation of a level-funded refund](https://www.uhc.com/employer/products-solutions/medical-plans/unitedhealthcare-level-funded-and-all-savers-alternate-funding) · [DOL explanation of stop-loss](https://www.dol.gov/agencies/ebsa/employers-and-advisers/guidance/technical-releases/14-01)
 
 CommonFunded keeps routine reimbursements outside that shared claims fund. Suppose the group takes back the first $12,000 of eligible annual cost sharing for each single enrollee, with both the deductible and out-of-pocket maximum at $12,000. A person with a $12,000 covered bill draws $12,000. A person with a $250,000 covered bill also draws $12,000. The other $238,000 belongs to the upper layer. If that person had already used $4,000 of the account this year, the new bill could draw only $8,000 more. **One person's bill can grow, but that person's annual reimbursement entitlement cannot.** Ten people using their full benefits can still draw $120,000.
@@ -141,20 +143,21 @@ This pathway can support a much larger account-based layer than the excepted pat
 
 ### Federal integration methods
 
-[IRS Notice 2013-54, Q&A 4](https://www.irs.gov/pub/irs-drop/n-13-54.pdf) describes two group-plan integration methods relevant here:
+Federal rules provide two relevant methods for integrating an HRA with group health coverage. Both require actual enrollment in qualifying coverage and an opportunity to opt out permanently at least annually. At termination of employment, the HRA must provide for forfeiture of the remaining balance or permit a permanent opt-out. [26 CFR § 54.9815-2711(d)(2)–(3)](https://www.ecfr.gov/current/title-26/chapter-I/subchapter-D/part-54/section-54.9815-2711#p-54.9815-2711(d)(2))
 
-1. **Minimum value not required.** The employer offers non-HRA group coverage that is not solely excepted benefits; the HRA participant is actually enrolled in non-HRA group coverage; the HRA is available only while that enrollment exists; reimbursements are limited to cost sharing and premiums under that coverage plus medical care that is not an essential health benefit; and the required annual and termination opt-out rights apply.
-2. **Minimum value required.** The employer offers a group plan that provides minimum value; the HRA participant is actually enrolled in non-HRA group coverage that provides minimum value; the HRA is available only while that enrollment exists; and the required annual and termination opt-out rights apply. This method permits a broader general-purpose reimbursement design.
-
-Minimum value is therefore sufficient for the broader integration method, but it is not an absolute prerequisite for every integrated HRA. A deductible-only HRA tied to the enrolled group coverage may fit the first method when all its conditions are satisfied.
+1. **Restricted reimbursements.** The employer offers non-HRA group coverage that includes benefits beyond excepted benefits. The HRA is available only to people enrolled in qualifying group coverage. It may reimburse copays, coinsurance, deductibles and premiums under that coverage, plus eligible medical expenses outside the essential health benefits. A deductible-only HRA can use this method without a minimum-value requirement.
+2. **Broader reimbursements.** The employer offers non-HRA group coverage providing minimum value and limits HRA eligibility to people actually enrolled in non-HRA group coverage providing minimum value. The employer sets the eligible expenses under the HRA. Enrollment and waiver requirements still apply.
 
 Integration is person-specific. A family HRA cannot rely on self-only group coverage for family members who are not also enrolled in qualifying non-HRA group coverage. The HRA documents, eligibility records, and claims system must enforce the applicable enrollment and family-coverage conditions. [IRS Notice 2015-87, Q&A 4](https://www.irs.gov/pub/irs-drop/n-15-87.pdf)
 
 > [!IMPORTANT]
 > The integrated HRA may reimburse a `\$12,000` self-only deductible or as much as `\$24,000` of aggregate family cost sharing when the underlying plan, HRA terms, enrolled individuals, and applicable integration method support that design. In non-grandfathered coverage, the self-only cost-sharing ceiling applies to each individual even when enrolled in family coverage. Those figures are examples based on the 2027 federal cost-sharing ceilings, not permanent HRA limits or a statement that every group plan may impose those exact deductibles. [DOL embedded self-only cost-sharing guidance](https://www.dol.gov/sites/dolgov/files/EBSA/about-ebsa/our-activities/resource-center/faqs/aca-part-xxvii.pdf)
 
-> [!CAUTION]
-> This guide documents the integrated-HRA architecture, but the current reusable plan-document package does not yet include a complete governing integrated-HRA component template. Selecting `integrated-hra` in configuration is not a substitute for adopting compliant HRA terms, notices, enrollment controls, claims rules, and coordination provisions. Treat the implementation as incomplete until those governing materials are present and executed.
+### Documenting the employer's integrated HRA
+
+The CommonFunded adoption schedule links the employer’s major medical coverage to its adopted reimbursement benefit. The SPD section explains that relationship to participants. The employer supplies or adopts governing HRA terms for its particular plan design. Those terms identify the qualifying coverage and enrollment, eligible expenses, individual and family reimbursement limits, when reimbursement starts, and the applicable waiver and claims procedures. [CommonFunded adoption schedule](plan-docs/common-funded-adoption-schedule.md) · [SPD section](plan-docs/common-funded-spd-section.md)
+
+For example, two employers can buy the same $12,000-deductible policy. One might reimburse eligible deductible expenses from the first dollar. The other might reimburse only expenses above $2,500. The calculator can compare both designs before either is adopted. The governing HRA terms tell participants and the claims administrator which promise the employer actually made.
 
 ### What changes economically
 
@@ -278,17 +281,9 @@ The economic difference appears when the participant incurs less than \$9,200 of
 - **Insurance buy-down:** The additional premium paid for a lower deductible is permanently spent, whether or not the participant uses the benefit.
 - **CommonFunds buy-down:** Only valid claims consume the employer-funded benefit. Unused notional availability remains employer property and may expire under the plan.
 
-### Where the example price breaks even
+### Reading a quote before choosing a plan
 
-The example's $66,420 annual break-even is the additional cost sharing on the same bills. To see what a different quote would do, keep the example's benefits, people, 100 group years and $12,000 current annual single premium fixed. Change only the proposed premium.
-
-| Proposed annual single premium | Annual premium reduction for the group | Average annual total saving | Simulated years cheaper |
-|---:|---:|---:|---:|
-| $9,000 (published example) | $150,000 | $83,580 | 100 of 100 |
-| $10,600 | $70,000 | $3,580 | 57 of 100 |
-| $11,000 | $50,000 | −$16,420 | 20 of 100 |
-
-At $70,000 the quote exceeds break-even by just $72 per person per year. A small increase in bills inside the account layer can use up that margin. Once a person's account is exhausted, a larger allowed bill draws zero additional dollars from it.
+With the example's current rate of $1,000 per month, the higher-deductible option breaks even at about $889.30 per enrolled employee. A lower rate leaves expected savings. The $750 rate in the example clears that price by $139.30. For a buyer who wants the premium reduction to cover the additional cost in at least 90 of these 100 simulated years, the corresponding reduction is $148.75 at cent precision. A different census, benefit design or claims distribution gets its own price. [Decision tables and inputs](AI-instructions.md#quote-output-guide)
 
 ### Illustrative 2026 comparison
 
@@ -484,6 +479,8 @@ UH(S) − UL(S) = MH − ML
 ```
 
 The expected value of that difference depends on how often each plan reaches its MOOP and on the cost difference in states where only one plan reaches it. The total dollars in claims above both MOOP thresholds do not increase this cost-sharing difference.
+
+In the 50-single simulation's plans, the largest added cost sharing per person is $7,600. At $12,000 of eligible bills, the proposal charges $12,000 and the current plan charges $4,400. As bills rise from $12,000 to $20,000 the proposed cost sharing stays flat and the current plan's cost sharing increases to $6,000. Above that point the difference is $6,000. To find a maximum for another plan pair, check every deductible and coinsurance transition as well as the point where both plans reach their limits.
 
 ### What the primary result does and does not answer
 

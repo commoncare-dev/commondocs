@@ -25,6 +25,13 @@ The decision uses one annual total per plan: full coverage cost plus cost sharin
 | `expectedSavings` | Quoted annual reduction less break-even reduction. Positive favors the proposal and negative favors the baseline |
 | `scenariosCheaper` | Divide by `scenarioCount` for the share of modeled years with strictly lower total cost. Ties contribute zero wins. For replayed bills this is a historical count |
 
+For the [quote output guide](../AI-instructions.md#quote-output-guide), use `accountLayer[].monthlyQuote`. Its rates are full group dollars divided by 12 months and the number of enrolled employee households. Count one employee per household, including a family with dependents. A mixed-tier result is a weighted average for the modeled enrollment. The plan inputs remain annual rates by tier.
+
+- `currentRate`, `proposedRate` and `offeredReduction` put both supplied prices on the same monthly basis.
+- `breakEvenReduction` is the mean additional cost sharing plus specified incremental expense per employee per month. `breakEvenProposedRate` is the current rate less that reduction. If the proposed price is unknown, report these two figures only.
+- `expectedSavings` is the offered reduction minus the break-even reduction. Use full precision to compare prices, then round for display.
+- `p90BreakEvenReduction` is the nearest-rank 90th percentile of the paired group-year additional cost sharing plus incremental expense, divided by employee-months. A reduction at the unrounded threshold covers that cost in at least 90% of the supplied years. Round a required coverage threshold **up** to a cent when quoting it as a sufficient rate reduction. The separate `scenariosCheaper` count excludes ties. For historical inputs describe the observed years.
+
 Each plan's `results[].accountCapUse` counts household-years in which reimbursements used the entire account cap (`householdYearsAtCap`) out of household-years with a positive account cap (`householdYearsWithCap`). The count includes singles and families, using each household's applicable limit once per year. A zero denominator means there was no funded account limit. The account limit can differ from the deductible.
 
 - **Current cost and upper-layer cost** are full annual costs for the same enrolled population and period. A quoted premium is fixed for its contract period; an upper-layer amount that includes expected self-funded claims is an estimate, and its volatility is outside this model.
