@@ -10,7 +10,7 @@ export function analyze(input) {
         throw Error('Provide census or mockCensus, not both');
     const simulation = simulate({ ...input.simulation, census: mock?.census || input.census });
     const comparison = compare({ scenarios: simulation.scenarios, plans: input.plans, accountAnalysis: input.accountAnalysis });
-    return { censusSummary: mock?.summary || { coveredPeople: input.census.length }, censusAssumptions: mock?.assumptions || 'User-supplied census', simulationAssumptions: simulation.assumptions, calibration: simulation.calibration, ...comparison };
+    return { censusSummary: mock?.summary || { coveredPeople: input.census.length }, ...comparison, censusAssumptions: mock?.assumptions || 'User-supplied census', simulationAssumptions: simulation.assumptions, calibration: simulation.calibration };
 }
 
 import {readFileSync} from 'node:fs';

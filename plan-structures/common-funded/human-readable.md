@@ -1,12 +1,22 @@
 ## CommonFunded
 
-> **CommonFunded separates funding for routine care from the financing of large medical claims. It uses [CommonFunds](https://commoncare.org/products/common-funds) to pay eligible expenses in a defined account-funded layer and a separate coverage arrangement for larger claims.**
+**What does your carrier charge to lower the deductible, and how much care would that extra premium actually pay for?** Insurers price coverage to pay expected claims, cover expenses and earn a margin. With otherwise comparable plans, the difference between two quotes is the price your group can pay to insure that additional care. The quotes alone cannot identify the carrier's profit on the difference. [CMS rate filing instructions, §2.2.3](https://www.cms.gov/files/document/py27-unified-rate-review-instructions.pdf)
 
-A conventional plan often includes both jobs in one insurance product: premiums fund coverage that pays some routine expenses as well as protection against large claims. CommonFunded tests whether buying coverage with higher participant cost sharing and funding that additional cost sharing through an account can reduce the total cost of care and coverage. The question is whether the reduction in coverage cost exceeds the additional eligible expenses the account pays, and whether the result remains favorable after changes in participant costs are included.
+CommonFunded keeps coverage for large bills and uses an account for eligible care below a chosen limit. Take a single plan with a $12,000 deductible, out-of-pocket maximum and first-dollar reimbursement cap. One person with $12,000 in eligible annual bills draws $12,000 from the account. One person with $120,000 in bills also draws $12,000. Ten people with $12,000 each draw $120,000. The exposure depends on how much of the layer each person uses.
 
-CommonFunds pays eligible expenses as participants incur them, subject to the adopted benefit terms. Unused reimbursement capacity is not automatically spent as premium. The insurance policy or other upper-layer arrangement retains responsibility for the claims its contract covers; an employer that self-funds that layer retains the risk specified by its funding and stop-loss arrangements.
+**Try it with two rate sheets, their benefit summaries and enrollment by tier.** An agent can use a mock census for a first pass or replay the group's claims. It compares the full annual premium reduction with the extra cost sharing on the same care. You get the average dollars saved or lost and the number of modeled years the proposal costs less. Payroll allocation does not enter that calculation. [Run the analysis](analysis/README.md)
 
-CommonCare brings the coverage and account together in enrollment, administration, and the participant experience. The economic result depends on actual prices, plan terms, and claims; separating the layers does not guarantee a saving.
+### What would make the answer change?
+
+In the runnable 50-person example, the proposed account pays about $152,540 per year. The current plan already leaves $86,120 of those same bills outside the premium. The additional care the group would fund costs **$66,420 per year** on average. That is the break-even premium reduction. Change only the proposed premium and the verdict changes:
+
+| Annual premium reduction for the group | Average annual total saving | Simulated years cheaper |
+|---:|---:|---:|
+| $150,000 | $83,580 | 100 of 100 |
+| $70,000 | $3,580 | 57 of 100 |
+| $50,000 | −$16,420 | 20 of 100 |
+
+At the first price, about 44 cents of each premium dollar released covers the additional claims and 56 cents remains as savings. At the last price, keeping the current plan costs less on average. All three rows use the same people, bills and benefits, with zero assumed savings from price shopping. To reproduce them, set the proposed annual single premium to $9,000, $10,600 or $11,000 against the current $12,000. [Runnable example](analysis/example-analysis.json)
 
 ## At a glance
 
@@ -44,35 +54,15 @@ CommonCare brings the coverage and account together in enrollment, administratio
 
 ## The design thesis
 
-The premise is that a plan can fund routine care through accounts while reserving insurance or another risk arrangement for the larger claims that can disrupt a household or a plan. This changes how the routine layer is paid: a fixed premium is exchanged for reimbursements that occur only when eligible expenses are incurred. It also makes the cost and experience of that layer visible on its own.
+Price the layer person by person. A single group-average bill spreads medical spending across people who each have a fresh deductible, even if the actual spending belongs to only a few people. In U.S. expenditure data for 2022, the highest-spending 5% accounted for 49.7% of spending. Applying the plan to each person's bills, with the household limits where applicable, preserves the effect of that concentration. [AHRQ Medical Expenditure Panel Survey](https://www.meps.ahrq.gov/data_files/publications/st560/stat560.shtml)
 
-To test the premise, start with the cost of the current arrangement and the cost of the proposed higher-deductible arrangement for the same people and period. The difference is available to fund the additional account reimbursements. Compare that amount with expected reimbursements and their range across plausible claims; also account for any change in participant costs. If the quotes and claims do not support the exchange, the analysis should say so.
-
-This is partial self-funding of an account layer, not a promise that the employer has transferred all larger-claim risk. The financing of that upper layer is a separate decision: it may be insured, level-funded, self-funded, or a combination. Use its cost in the comparison, whether that cost is a fixed premium or an explicitly identified estimate of premium plus retained claims.
-
-The structure separates two financing jobs:
-
-| Healthcare need | CommonFunded financing approach |
-|---|---|
-| Routine, lower-cost, high-frequency expenses | A bounded account-based benefit; price incentives depend on its terms |
-| Large, concentrated, financially disruptive expenses | Insurance or another risk-sharing vehicle |
-
-Insurance can add administrative costs to routine transactions and reduce price sensitivity. It also transfers risk and can protect against financially disruptive claims. Whether moving a particular layer out of premium saves money depends on the quote and the cost of claims in that layer.
-
-Healthcare spending is also highly concentrated. In 2022, the highest-spending 5% of people accounted for 49.7% of healthcare expenditures, while the bottom 50% accounted for only 2.8%. [AHRQ Medical Expenditure Panel Survey](https://www.meps.ahrq.gov/data_files/publications/st560/stat560.shtml)
-
-Concentration of total spending does not by itself establish how much insurance pays above a deductible, or whether premium exceeds claims in a particular layer. It does show why a small number of high-cost periods can account for much of a population's total medical spending.
-
-This means much of insurance’s value is delivered through a relatively small number of high-cost periods. For many participants, differences in premium and maximum out-of-pocket exposure are more economically significant than the deductible alone.
-
-> [!IMPORTANT]
-> Individual circumstances still matter. CommonFunded uses the generally efficient structure as its default, then evaluates available options participant by participant. A predictable high-cost claimant may spend less overall with a lower-deductible plan; another participant may spend substantially less with lower premium, higher cost sharing, and CommonFunds.
+Use the supplied price for the upper layer. A group might retain claims from $12,000 to a $25,000 stop-loss attachment and buy protection above that. In that case its upper-layer price includes expected retained claims and the stop-loss premium. A claim above $12,000 can affect that separate estimate while adding nothing to an exhausted $12,000 account for the year.
 
 ---
 
 ## How to understand the concept versus reality
 
-The CommonFunded quote tests whether a particular plan can fund a defined layer of care through an account for less than the cost released by moving that layer out of coverage. It compares the current and proposed arrangements using supplied prices and either simulated or historical claims. The result shows the account reimbursements, participant costs, and potential experience gain under the modeled terms; its precision depends on the evidence and plan rules available.
+The quote prices both arrangements for the same people, on the same care. It shows the expected total cost difference and how much of the new cost sharing the account would reimburse. Supplied rates and replayed claims can establish the difference for an observed year under the modeled rules. Simulated claims estimate it for a hypothetical year.
 
 That illustration is not a requirement that every participant receive the exact arrangement depicted in the quote. It demonstrates the amount and location of potential value. The employer can then decide how much of that value to place in restricted coverage, flexible qualified benefits, participant-directed elections, or taxable compensation. CommonCare can support those choices through components such as an EBHRA, integrated HRA, CHOICE/ICHRA, Health FSA, HSA contribution, group health plan, or payroll flex arrangement.
 
@@ -80,7 +70,7 @@ Different components retain their own rules, but the employer is not required to
 
 The quote answers:
 
-> For this population, do the available coverage costs release enough money to fund the added account reimbursements, and how much might remain or fall short?
+> For this population, how much does the coverage price fall, how much additional cost sharing do the same bills incur, and which design costs less in total?
 
 The adopted plan must separately answer:
 
@@ -216,17 +206,20 @@ For a current plan and a proposed design, collect:
 | `C` | Additional administration or transition cost attributable to the redesign |
 | `U0(S)`, `UX(S)` | Current and proposed participant cost sharing before account reimbursement |
 
-Define the released contribution and incremental account-layer experience gain as:
+Compare the two full annual costs first. Then calculate the funding available for account reimbursements.
 
 ```text
 Released contribution A = P0 − PX
+Expected total saving = A − E[UX(S) − U0(S)] − C
+Break-even coverage price reduction = E[UX(S) − U0(S)] + C
+
 Incremental account-layer gain(S) = A − (RX(S) − R0(S)) − C
 Expected incremental gain = A − E[RX(S) − R0(S)] − C
 ```
 
 For a new account with no current reimbursements, `R0(S)` is zero. A positive expected gain means the released contribution exceeds expected incremental account reimbursements and costs. Report the distribution of gains, including the probability of a shortfall. If the employer commits only part of `A` to the account, distinguish its actual account budget and unused account budget from the full incremental gain; unused reimbursement capacity is not automatically cash savings.
 
-Separately report the change in participant residual cost `UX(S) − RX(S) − (U0(S) − R0(S))`. If the redesign leaves more cost with participants, an employer-side account gain alone is not a combined economic saving. Avoid counting an HRA reimbursement and the underlying claim as two expenses.
+To reconcile account funding with total savings, subtract the change in unreimbursed cost sharing `(UX − RX) − (U0 − R0)` from the account-layer gain. The reimbursements cancel. The result is the same total saving calculated directly from coverage prices and cost sharing.
 
 If `PX` includes expected retained major-medical claims rather than a fixed premium, label it an estimate. The account-layer result remains meaningful, but it is not a guarantee of combined plan experience in any year. A separate upper-layer analysis may study its variability or the choice of stop-loss; it is not required to calculate account reimbursements against the supplied contribution.
 
@@ -234,17 +227,11 @@ The result is a **dominant account-layer gain** when the released contribution e
 
 For an AI-assisted quote analysis, see the [analysis toolkit](analysis/README.md) and its [advisor instructions](analysis/robo-advisor.md).
 
-### A fair standard of evidence for both designs
+### What the quoted result measures
 
-Every financing arrangement makes a bet about future healthcare spending. An insurance quote fixes a premium for its contract period, but that price reflects an insurer's assumptions and may change at renewal. A reimbursement account replaces part of that fixed expenditure with a bounded promise whose realized cost depends on claims. Neither a carrier quote nor a simulation predicts an employer's exact future claims or renewal.
+For fixed premiums, the price difference is known for the contract year. The uncertainty is how much additional cost sharing the group incurs. A simulation reports how often the quoted reduction exceeds that amount across its draws. A historical replay reports what happened on the supplied bills under the modeled rules. A single replayed year can establish a dollar difference for that year but cannot estimate next year's odds by itself.
 
-The comparison should therefore show the price of certainty as well as the expected account result. Do not treat the existing premium as a neutral zero-cost baseline, or treat every dollar of potential account exposure as if it will certainly be spent. At the same time, do not portray premium as pure waste: it purchases the benefits and risk transfer in the contract. A plan that funds the contained layer directly can save money, cost more, or change participant protection depending on the actual quote and terms.
-
-The analysis toolkit is a **structural decision-making and quote tool**. Its precision depends on the evidence supplied and the adjudication it can perform. Actual quotes and census data make the comparison specific to the employer; complete historical claims and accurately implemented benefit rules can support a reproducible retrospective calculation for the observed period. Simulated future outcomes remain estimates, even when the inputs are detailed.
-
-For an alternative plan that was not actually in force, historical replay is a counterfactual calculation: it can be exact under explicitly specified prices, coverage, eligibility, claim ordering, and benefit rules, but it cannot establish how different networks, incentives, or utilization would actually have changed the claims. Use identical medical scenarios across designs, disclose missing or approximated benefits, show account and participant outcomes, and test whether reasonable changes alter the conclusion. Governing contracts and actual administration determine the final result.
-
-The toolkit accepts historical annual totals or ordered claim events and adjudicates the latter sequentially under its uniform deductible, coinsurance, MOOP, and account rules. It does not yet implement every service-level plan rule. Its retrospective output is exact only for the rules and inputs supplied; it must not be presented as exact historical plan adjudication when omitted details matter. Integrating more detailed claims and CommonCare quoting capabilities can strengthen the result.
+The toolkit can replay annual allowed amounts or ordered claims under the supported deductible, coinsurance, out-of-pocket and account rules. Check a contract detail when it could change the dollar verdict. Reconcile with actual payments before describing a replay as exact for the historical plan.
 
 ---
 
@@ -287,7 +274,7 @@ When HSA eligibility is intended, every reimbursement component available to the
 
 ## Where the savings come from
 
-When the quoted higher-deductible arrangement costs less, CommonFunded can use the difference to fund a capped reimbursement promise. Savings arise only when the cost released exceeds the additional reimbursements and any other incremental costs, after accounting for changes in participant costs.
+When the quoted higher-deductible arrangement costs less, CommonFunded can use the difference to fund a capped reimbursement promise. The structural saving is the price reduction minus the increase in cost sharing on the same care and any specifically identified additional costs.
 
 Suppose a participant chooses coverage with a \$9,200 deductible and the Enrollment Schedule states a \$1,500 CommonFunds deductible. After the participant satisfies that threshold, CommonFunds can reimburse the eligible layer above it—even though the insurance contract still has a \$9,200 deductible. The participant's modeled exposure to deductible-subject expenses can therefore be reduced toward \$1,500, subject to the available CommonFunds amount and governing component terms.
 
@@ -295,15 +282,6 @@ The economic difference appears when the participant incurs less than \$9,200 of
 
 - **Insurance buy-down:** The additional premium paid for a lower deductible is permanently spent, whether or not the participant uses the benefit.
 - **CommonFunds buy-down:** Only valid claims consume the employer-funded benefit. Unused notional availability remains employer property and may expire under the plan.
-
-### Sources of value
-
-- Many participants do not reach their annual deductible.
-- Insured preventive services are generally covered without participant cost sharing, reducing the draw on CommonFunds.
-- Participants with predictable high claims can select a different available option when its total economics are better.
-- Higher-deductible options frequently produce substantial premium reductions.
-- Routine claims remain individually visible rather than disappearing into a shared premium pool.
-- Unused reimbursement availability can produce employer experience gains.
 
 ### Illustrative 2026 comparison
 
@@ -676,23 +654,11 @@ Not every network difference is qualitative. Different negotiated prices, covere
 
 ## Why cash-pay routine care matters
 
-A small percentage of healthcare transactions accounts for an enormous share of total spending. Those limited, expensive events are where insurance provides its strongest risk-transfer value.
+An account can change the purchase itself. Suppose two facilities quote $350 and $600 for the same scheduled imaging service. If either bill is fully reimbursable and below the remaining account limit, choosing the first uses $250 less of the account and leaves $250 available for later eligible care. Whether that matters personally depends on whether the participant can use the remaining balance. The year's net saving also depends on later claims against the cap.
 
-Routine care often works better as a direct transaction:
+Patients have responded to an actual price choice. After CalPERS introduced a reference payment for colonoscopy, patients shifted toward lower-priced facilities and the adjusted price per procedure fell 21%. In a different employer study, moving to a high deductible reduced the quantity of care people used, with no detectable shift toward lower-priced providers. The design matters: people need to see a price, have a practical choice and have a reason to act on it. [CalPERS reference-payment study](https://pubmed.ncbi.nlm.nih.gov/26348851/) · [Employer deductible study](https://doi.org/10.1093/qje/qjx013)
 
-- Prices can be known before care is delivered;
-- Providers can offer straightforward services without designing the encounter around insurer billing rules;
-- Participants regain an incentive to compare price and value; and
-- Administrative cost does not need to be added to every small claim.
-
-Direct-pay models can also create a less encumbered provider relationship. The provider can focus on meeting the patient’s stated need rather than maximizing reimbursable codes under a third-party contract.
-
-> [!EXAMPLE]
->  Ex: If you crash your mountain bike riding down a hill and break your arm, there's a good chance fixing the bike will cost more than fixing your arm—assuming you don't head straight to the ER and instead go to a private clinic, where the price is better, the company is better, and the expertise is more focused.
->
-> If you feel that's an absurd priority tree, and you'd rather escalate any possible emergency to the maximally defensive treatment, that's ok; the CommonFunded model still works well if you end up spending more of your deductible. Some people will prefer to escalate their care. Most will avoid it.
-
-The broader point is not that every participant should make the same care decision. It is that routine healthcare priorities and purchasing decisions do not need to be socialized through insurance before they can be funded effectively.
+The structural comparison holds care and prices fixed. To test a purchasing change separately, use actual prices for identified services and a stated assumption about how often people switch. Apply the revised bills only to the proposed design, carry them through the annual accumulators, and report the change from the same-care result. A lower bill above an exhausted account cap saves that account zero.
 
 ---
 

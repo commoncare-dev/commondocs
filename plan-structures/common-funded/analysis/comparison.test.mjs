@@ -17,6 +17,37 @@ test('account gain uses incremental reimbursements and separates participant cos
   assert.equal(result.expectedCombinedCostChange,-3600);
 });
 
+test('total-cost break-even depends on cost sharing and added expense, independent of account allocation', () => {
+  const input=JSON.parse(readFileSync(new URL('./example-comparison.json',import.meta.url)));
+  const decision=()=>compare(input).accountLayer[0].totalCost;
+  const expected={expectedBaseline:28700,expectedProposed:25100,expectedSavings:3600,breakEvenAnnualFixedReduction:2400,scenariosCheaper:2};
+  assert.deepEqual(decision(),expected);
+  input.plans[0].hraCap=5000;
+  input.plans[1].hraCap=0;
+  input.accountAnalysis.annualAccountBudget=0;
+  assert.deepEqual(decision(),expected);
+  // Two enrolled singles: a $1,200 reduction each exactly meets group break-even.
+  input.plans[1].annualFixed=10800;
+  assert.equal(decision().expectedSavings,0);
+  assert.equal(decision().scenariosCheaper,1);
+  input.plans[1].annualFixed+=1;
+  assert.equal(decision().expectedSavings,-2);
+});
+
+test('a large claim exhausts its own annual account only once', () => {
+  const {plans}=JSON.parse(readFileSync(new URL('./example-analysis.json',import.meta.url)));
+  const adjudicate=(amounts)=>adjudicateHousehold([{id:'one',events:amounts.map((allowed,order)=>({allowed,order,kind:'standard'}))}],plans[1]);
+  for (const [bills,account,upper] of [
+    [[12000],12000,0],
+    [[120000],12000,108000],
+    [[4000,8000,108000],12000,108000]
+  ]) {
+    const result=adjudicate(bills);
+    assert.equal(result.reimbursement,account);
+    assert.equal(result.insurance,upper);
+  }
+});
+
 test('mock census matches requested employee mean and family count', () => {
   const r=mockCensus({employeeCount:50,averageAge:40,familyFraction:.2,seed:12});
   assert.equal(r.summary.averageEmployeeAge,40);
