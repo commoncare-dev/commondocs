@@ -3,7 +3,7 @@
   "simulation":{"years":100,"seed":23},
   "plans":[
     {"id":"current","annualFixed":12000,"deductible":2500,"coinsurance":0.2,"moop":6000,"hraThreshold":0,"hraCap":0},
-    {"id":"proposed","annualFixed":9000,"deductible":12000,"coinsurance":0,"moop":12000,"hraThreshold":0,"hraCap":12000}
+    {"id":"proposed","annualFixed":7725,"deductible":12000,"coinsurance":0,"moop":12000,"hraThreshold":0,"hraCap":12000}
   ],
-  "accountAnalysis":{"baselinePlanId":"current","incrementalAdministration":0,"annualAccountBudget":150000}
+  "accountAnalysis":{"baselinePlanId":"current","incrementalAdministration":0,"annualAccountBudget":213750}
 }

@@ -6,6 +6,15 @@ import {mockCensus} from './mock-census.mjs';
 import {adjudicateHousehold} from './cost-sharing-core.mjs';
 import {simulate} from './run-simulation.mjs';
 
+test('the illustrative annual premium reduction is 45% of the increase in single deductible', () => {
+  const {plans}=JSON.parse(readFileSync(new URL('./example-analysis.json',import.meta.url)));
+  const current=plans.find(plan=>plan.id==='current');
+  const proposed=plans.find(plan=>plan.id==='proposed');
+  const annualReduction=current.annualFixed-proposed.annualFixed;
+  assert.equal(annualReduction,0.45*(proposed.deductible-current.deductible));
+  assert.equal(annualReduction/12,356.25);
+});
+
 test('account gain uses incremental reimbursements and separates participant cost', () => {
   const input=JSON.parse(readFileSync(new URL('./example-comparison.json',import.meta.url)));
   const result=compare(input).accountLayer[0];
@@ -64,7 +73,8 @@ test('monthly quote counts enrolled households, includes added cost, and disting
   });
   assert.deepEqual(accountLayer[0].monthlyQuote,{
     enrolledEmployees:2,currentRate:200,proposedRate:160,offeredReduction:40,
-    breakEvenReduction:22.5,breakEvenProposedRate:177.5,p90BreakEvenReduction:40,expectedSavings:17.5
+    breakEvenReduction:22.5,breakEvenProposedRate:177.5,p90BreakEvenReduction:40,expectedSavings:17.5,
+    currentExpectedTotal:200,proposedExpectedTotal:182.5
   });
   assert.equal(accountLayer[0].totalCost.scenariosCheaper,1);
 });
@@ -81,8 +91,8 @@ test('account cap frequency counts each funded household once per scenario, incl
     {id:'three',allowed:0}
   ]});
   const {results}=compare({plans,scenarios:[year(0),year(12000)]});
-  assert.deepEqual(results.find(r=>r.plan==='current').accountCapUse,{householdYearsAtCap:0,householdYearsWithCap:0});
-  assert.deepEqual(results.find(r=>r.plan==='proposed').accountCapUse,{householdYearsAtCap:1,householdYearsWithCap:4});
+  assert.deepEqual(results.find(r=>r.plan==='current').accountCapUse,{householdYearsAtCap:0,householdYearsWithCap:0,maxHouseholdsAtCapInOneYear:0});
+  assert.deepEqual(results.find(r=>r.plan==='proposed').accountCapUse,{householdYearsAtCap:1,householdYearsWithCap:4,maxHouseholdsAtCapInOneYear:1});
 });
 
 test('mock census matches requested employee mean and family count', () => {

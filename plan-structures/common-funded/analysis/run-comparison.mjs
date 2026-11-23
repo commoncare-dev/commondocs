@@ -24,7 +24,7 @@ export function compare({ scenarios, plans, accountAnalysis }) {
         }
     }
     let populationSignature;
-    const accountCapUse = plans.map(() => ({ householdYearsAtCap: 0, householdYearsWithCap: 0 }));
+    const accountCapUse = plans.map(() => ({ householdYearsAtCap: 0, householdYearsWithCap: 0, maxHouseholdsAtCapInOneYear: 0 }));
     const rows = scenarios.map(s => {
         if (!Array.isArray(s.bills) || !s.bills.length)
             throw Error('Each scenario needs bills including zero-claim enrollees');
@@ -50,6 +50,8 @@ export function compare({ scenarios, plans, accountAnalysis }) {
         return plans.map((p, planIndex) => {
             let oop = 0, hra = 0;
             let fixed = 0;
+            let householdsAtCap = 0;
+            const usage = accountCapUse[planIndex];
             for (const members of households.values()) {
                 const family = members.length > 1;
                 if (family && !p.family)
@@ -61,12 +63,13 @@ export function compare({ scenarios, plans, accountAnalysis }) {
                 hra += result.reimbursement;
                 const cap = (f ?? p).hraCap;
                 if (cap > 0) {
-                    const usage = accountCapUse[planIndex];
                     usage.householdYearsWithCap++;
                     if (result.reimbursement >= cap)
-                        usage.householdYearsAtCap++;
+                        householdsAtCap++;
                 }
             }
+            usage.householdYearsAtCap += householdsAtCap;
+            usage.maxHouseholdsAtCapInOneYear = Math.max(usage.maxHouseholdsAtCapInOneYear, householdsAtCap);
             return { plan: p.id, enrolledHouseholds: households.size, fixed, oop, hra, participant: oop - hra, total: fixed + oop, employer: fixed + hra };
         });
     });
@@ -107,7 +110,9 @@ export function compare({ scenarios, plans, accountAnalysis }) {
                 offeredReduction: mean(release) / employeeMonths, breakEvenReduction,
                 breakEvenProposedRate: currentRate - breakEvenReduction,
                 p90BreakEvenReduction: quantile(requiredReduction, .90) / employeeMonths,
-                expectedSavings: totalCost.expectedSavings / employeeMonths
+                expectedSavings: totalCost.expectedSavings / employeeMonths,
+                currentExpectedTotal: totalCost.expectedBaseline / employeeMonths,
+                proposedExpectedTotal: totalCost.expectedProposed / employeeMonths
             };
             return { plan: p.id, baseline: plans[base].id, monthlyQuote, totalCost, expectedReleasedContribution: mean(release), expectedIncrementalReimbursement: mean(incrementalHra), incrementalAdministration: admin, expectedAccountLayerGain: mean(gains), accountGainP05: quantile(gains, .05), accountGainP95: quantile(gains, .95), probabilityOfAccountShortfall: gains.filter(x => x < 0).length / gains.length, annualAccountBudget: budget, expectedUnusedAccountBudget: budget === null ? null : mean(accountClaims.map(x => Math.max(0, budget - x))), expectedClaimsAboveAccountBudget: budget === null ? null : mean(accountClaims.map(x => Math.max(0, x - budget))), expectedNetAccountBudget: budget === null ? null : budget - mean(accountClaims), probabilityAccountClaimsExceedBudget: budget === null ? null : accountClaims.filter(x => x > budget).length / accountClaims.length, expectedParticipantResidualChange: mean(residual), expectedCombinedCostChange: -totalCost.expectedSavings };
         });

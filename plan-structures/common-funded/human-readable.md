@@ -1,6 +1,6 @@
 ## CommonFunded
 
-**How much must the monthly premium fall to make CommonFunded worthwhile?** The reduction must cover the additional cost sharing on the same care. The model calculates that price per enrolled employee, measures the saving at the rate offered, and counts how often the offer wins. In the published 50-single illustration, about **$111 per employee per month** breaks even on average. The hypothetical rate falls by **$250**, leaving **$139 per month** in expected savings per enrolled employee. [Quote output guide](AI-instructions.md#quote-output-guide)
+**How much must the monthly premium fall to make CommonFunded worthwhile?** The reduction must cover the additional cost sharing on the same care. The model calculates that price per enrolled employee, measures the saving at the rate offered, and counts how often the offer wins. In the published 50-single illustration, about **$111 per employee per month** breaks even on average. The example assumes that raising the single deductible from $2,500 to $12,000 reduces the annual premium by **45% of the $9,500 increase**, or $4,275. That cuts the monthly rate from **$1,000 to $643.75**, leaving **$245.55 per employee per month** in expected savings on the same care. [Quote output guide](AI-instructions.md#quote-output-guide)
 
 **CommonFunded chooses which dollars of every enrolled person's care the group will self-fund.** With level funding, 49 people can have a low-claims year and the fiftieth person's claim can consume the projected refund. What matters is how much of that claim the contract charges to the shared claims fund after stop-loss. With self-funding, the same exposure shows up as a loss against the claims budget. [Carrier explanation of a level-funded refund](https://www.uhc.com/employer/products-solutions/medical-plans/unitedhealthcare-level-funded-and-all-savers-alternate-funding) · [DOL explanation of stop-loss](https://www.dol.gov/agencies/ebsa/employers-and-advisers/guidance/technical-releases/14-01)
 
@@ -8,9 +8,11 @@ CommonFunded keeps routine reimbursements outside that shared claims fund. Suppo
 
 That boundary is the reason to select this layer. The price question is whether it is worth selecting at the quoted rates. Insurers price for claims, expenses and a margin. The quotes show what the group can recover in premium. The bills show how much of that reduction the additional cost sharing would use. [CMS rate filing instructions, §2.2.3](https://www.cms.gov/files/document/py27-unified-rate-review-instructions.pdf)
 
-**Try it with two rate sheets, their benefit summaries and enrollment by tier.** An agent can use a mock census for a first pass or replay the group's claims. It compares the full annual premium reduction with the extra cost sharing on the same care. You get the average dollars saved or lost and the number of modeled years the proposal costs less. Payroll allocation does not enter that calculation. [Run the analysis](analysis/README.md)
+**Try the example before gathering any data.** The explorer has already compared both designs for a simulated group. Ask it to change a rate or a benefit and show what happens. Bring actual quotes to test the price you can get, a census to model who's covered, or eligible claims to replay your experience. [Open the explorer](https://api.commoncare.org/gps/commonfunded) · [Use the open-source model](analysis/README.md)
 
-In the published example, the premium falls by **$150,000** for 50 single enrollees. The same bills move **$66,420** more cost sharing outside insurance on average. The group saves **$83,580 a year** and spends less in **100 of 100 simulated years**. About six people per year use the full $12,000 account. The other 44 draw less or nothing. The group keeps about 56 cents of each premium dollar released at this price. [Runnable example](analysis/example-analysis.json)
+In that example, average monthly cost sharing rises from **$143.53 to $254.23 per enrolled employee**. Total monthly cost falls from **$1,143.53 to $897.98**, a **21.5%** saving. The proposal cost less in **100 of 100 simulated group years**. The $12,000 annual account limit was reached by an average of **5.72 of the 50** single enrollees. The most who reached it in any year was **13**. [Runnable example](analysis/example-analysis.json)
+
+If your own group regularly has far more people exhaust the account, use your claims to price the layer. If the extra cost sharing consumes the quoted premium reduction year after year, CommonFunded is a poor fit at that price. Compare CHOICE, CommonCare’s ICHRA model, if you want to set a contribution toward individual insurance. A ZIP is enough to start looking at local individual-market prices. [Explore CHOICE](../choice-ichra/human-readable.md)
 
 ## At a glance
 
@@ -283,7 +285,7 @@ The economic difference appears when the participant incurs less than \$9,200 of
 
 ### Reading a quote before choosing a plan
 
-With the example's current rate of $1,000 per month, the higher-deductible option breaks even at about $889.30 per enrolled employee. A lower rate leaves expected savings. The $750 rate in the example clears that price by $139.30. For a buyer who wants the premium reduction to cover the additional cost in at least 90 of these 100 simulated years, the corresponding reduction is $148.75 at cent precision. A different census, benefit design or claims distribution gets its own price. [Decision tables and inputs](AI-instructions.md#quote-output-guide)
+With the example's current rate of $1,000 per month, the higher-deductible option breaks even at about $889.30 per enrolled employee. A lower rate leaves expected savings. The $643.75 rate in the example clears that price by $245.55 per enrolled employee per month. For a buyer who wants the premium reduction to cover the additional cost in at least 90 of these 100 simulated years, the corresponding reduction is $148.75 at cent precision. A different census, benefit design or claims distribution gets its own price. [Decision tables and inputs](AI-instructions.md#quote-output-guide)
 
 ### Illustrative 2026 comparison
 
@@ -929,6 +931,6 @@ A complete comparison applies each plan's rules to event-level claims. Relevant 
 - Separate medical and prescription limits; and
 - The plan's MOOP accumulation rules.
 
-Historical claims data do not always contain enough information to reconstruct every rule reliably. When an exact plan adjudication is unavailable, the model may use a disclosed conservative approximation. The current simplified implementation does not remove preventive claims as insurance-paid, applies a global high coinsurance assumption, does not assume favorable specialty or drug tiers, and treats simulated bills as reaching the CommonFunds cost-sharing layer.
+The explorer’s account comparison uses each plan’s supplied coinsurance between its deductible and out-of-pocket maximum. A historical event marked preventive has zero cost sharing. Annual totals cannot identify preventive services, so exclude those dollars from historical deductible-subject totals. Synthetic totals do not separate them. The GPS exposure map has its own configurable coinsurance assumption.
 
-These assumptions are model limitations, not mathematical necessities. Each production comparison should identify which plan features were modeled directly, which were approximated, the direction in which each approximation is expected to bias the result, and whether reasonable alternative assumptions change the plan ranking.
+If an omitted rule could change which plan wins at the quoted price, identify it and test its effect. An exact claim about the historical plan requires reconciliation to its actual payments. [Analysis inputs and replay rules](analysis/README.md#build-the-request)

@@ -16,19 +16,27 @@ The prior shop logic could convert small generated bills to zero: it compared pe
 
 The two generators share some input values but have different mechanics and should not be treated as interchangeable. Neither models persistent conditions, correlated family health, claim timing, changes in care or prices, or separately identifies preventive services in synthetic totals. Matching assumed concentration targets does not validate a generator against actual claims.
 
+## How unusual are 20 full accounts?
+
+In the published 100-year run, 572 of 5,000 single-enrollee years reached the $12,000 account cap (11.44%). A typical year's count is better described by the observed mean of 5.72 and maximum of 13 than by the constructed example of 20. No year in the run reached 20. For this first-dollar design with a $12,000 deductible and out-of-pocket maximum, reaching $12,000 of eligible bills also exhausts the account.
+
+The sampler permits a separate probability check. For the seed-17 census at risk 3, sum the probability widths of the spending bands at or above $12,000 for each age. That gives 43 enrollees a 10% chance and seven a 15% chance of reaching the cap. Under independent draws the expected count is 43 × 0.10 + 7 × 0.15 = 5.35. The chance of at least 20 is about 0.0000069%, found by summing the coefficients for powers 20 through 50 of `(0.90 + 0.10z)^43 (0.85 + 0.15z)^7`. These odds apply to this synthetic census and distribution. For a group that reports 20 actual cap hits, use its observed claims.
+
+Even a cap count does not decide the quote. Suppose exactly 20 people each have $12,000 of eligible bills and 30 have zero. Each of the 20 incurs $4,400 under the current design and $12,000 under the proposed design. Across all 50 employees that adds **$253.33 per employee per month** (20 × $7,600 ÷ 50 ÷ 12). A $250 monthly premium cut would lose $3.33 on those bills. The example’s $356.25 cut saves $102.92. Other spending among the 50 would change that result.
+
 ## What changed at risk 4?
 
-Using `example-analysis.json`, retain census seed 17, spending seed 23, and all benefits. Set `simulation.years` to 1,000 for this audit. Run `simulation.risk` at 3 and 4. The age-band mean multiplier changes from 0.65 to 0.80. With the same draws, positive bills grow by 23.1% and zero bills stay zero. The $70,000 price test uses a proposed annual single premium of $10,600. The published price uses $9,000.
+Using `example-analysis.json`, retain census seed 17, spending seed 23, and all benefits. Set `simulation.years` to 1,000 for this audit. Run `simulation.risk` at 3 and 4. The age-band mean multiplier changes from 0.65 to 0.80. With the same draws, positive bills grow by 23.1% and zero bills stay zero. The example’s monthly premium reduction is $356.25 per enrolled employee ($9,500 of additional deductible × 45% ÷ 12). A separate near-break-even test uses a proposed annual single premium of $10,600, a monthly reduction of $116.67 rounded.
 
-| Annual group result (50 singles) | Risk 3 | Risk 4 |
+| 1,000 simulated years, 50 singles | Risk 3 | Risk 4 |
 |---|---:|---:|
 | Reach $2,500 of allowed bills | 19.42 people | 19.42 people |
 | Reach $12,000 of allowed bills and exhaust the account | 5.45 people | 7.04 people |
-| Proposed account reimbursements | $150,564 | $166,471 |
-| Current cost sharing on the same bills | $85,519 | $92,461 |
-| Extra cost sharing, the break-even reduction | $65,045 | $74,010 |
-| Total savings at $150,000 reduction | $84,955 | $75,990 |
-| Total savings at $70,000 reduction | $4,955 | −$4,010 |
+| Annual group account reimbursements | $150,564 | $166,471 |
+| Annual group cost sharing on the current plan | $85,519 | $92,461 |
+| Annual group break-even premium reduction | $65,045 | $74,010 |
+| Savings per employee per month at the $356.25 cut | $247.84 | $232.90 |
+| Savings per employee per month at the near-break-even price | $8.26 | −$6.68 |
 
 Pairing the same person-years across runs explains the $8,965 increase in break-even. People below $12,000 in both runs add $10,060 to the annual difference. Those newly at the cap reduce the difference by $323, and those already capped reduce it by $772. Cost sharing on the current plan continues to accrue at 20% up to $20,000 of allowed bills. For an individual at $12,000, cost sharing is $4,400 under the current plan and $12,000 under the proposal. At $120,000 it is $6,000 and $12,000. The largest difference for these two designs is $7,600 per person, at $12,000 of eligible spending.
 

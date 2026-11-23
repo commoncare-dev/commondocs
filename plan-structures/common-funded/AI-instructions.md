@@ -1,41 +1,28 @@
-# Working with CommonFunded
+# Assess CommonFunded for fit
 
-CommonFunded is worth pursuing when the reduction in the price of coverage pays for the additional cost sharing the group takes back and leaves enough savings to justify the change. The tool answers the buyer’s first question: **How much lower must my monthly rate be, and does my quote clear that price?** Insurers budget for claims, expenses and a margin. That gives a group a reason to price this layer for itself. Establish how often the exchange works for this group from its quotes and claims.
+Would this group spend less by buying coverage for large claims and using an account to pay a capped portion of routine bills? Price both designs on the same care. The quoted premium reduction applies for the plan year. A dollar of cost sharing comes due only when someone incurs it. Subtract the **increase** in cost sharing and any specified incremental expense from the premium reduction. Count each dollar of care once, whoever pays it. A gain, a loss and a break-even price are all useful answers.
 
 ## Quote output guide
 
-For a first exploration, use the computed `exampleResult`. For a customer analysis, replace every illustrative figure below with the result of their run. Identify the source of the premiums and bills in one line. Keep the opening answer to a verdict, the two tables and one request for the missing data.
+Start with the computed example if the user has supplied nothing. Use their figures as soon as they provide them. Answer in three parts.
 
-**Example verdict.** For these 50 single enrollees, the higher deductible needs to cut the monthly rate by about **$111 per enrolled employee** to save money on average. The hypothetical quote cuts it by **$250**. That leaves **$139 per employee per month**, or **$83,580 per year** across the group. The proposal cost less in **100 of 100 simulated group years**.
+1. **Decision.** Say what price would break even and whether the offered price clears it. Give the gain or loss per enrolled employee per month. Identify the premiums as illustrative, benchmark or quoted, and the bills as simulated or historical. With simulated bills, give the number of group years the proposal cost less out of the number run. With historical bills, say how many observed years it would have cost less under the modeled rules.
+2. **Show the arithmetic.** Use one table like the one below. Mention why one large bill has limited impact. In the example, one person with $12,000 or $250,000 in eligible annual bills draws the same $12,000 from the first-dollar account. How many different people draw on it still matters.
+3. **Offer a useful next call.** Pick the next question this user can answer. For example, “A ZIP lets me check local individual-market prices. If you have your two group rates, I can test the actual price difference.” Use the route in the explorer’s `actions` yourself when the information is available. A user who has their answer can stop here.
 
-| What to look for on the rate sheet | Monthly per enrolled employee |
-|---|---:|
-| Current rate → proposed rate | $1,000 → $750 |
-| Reduction needed to break even on average | $110.70 |
-| Reduction that covers the added cost in 90 of these 100 years | $148.75 |
-| Reduction offered | $250.00 |
-| Expected saving at the offered rate | $139.30 |
+| Monthly dollars per enrolled employee | Show the result of this run |
+|---|---|
+| Premium reduction | Current rate → proposed rate, and the difference |
+| Reduction needed to break even | Additional cost sharing on the same bills, plus any specified incremental expense |
+| **Expected total savings or loss** | **Offered reduction minus required reduction** |
 
-| What the group pays in a year | Current | Proposed |
-|---|---:|---:|
-| Full coverage price | $600,000 | $450,000 |
-| Expected cost sharing on the same bills, counted once | $86,120 | $152,540 |
-| **Expected total** | **$686,120** | **$602,540** |
+Read the rows from `accountLayer[].monthlyQuote` using `currentRate`, `proposedRate`, `offeredReduction`, `breakEvenReduction` and `expectedSavings`. Count wins from `totalCost.scenariosCheaper` out of `scenarioCount`. If a percentage helps, divide savings by `currentExpectedTotal` when positive and label it “percent of current total cost.” One family enrollment counts as one employee. Use group dollars when the user asks about their group budget.
 
-The premium falls by $150,000. Only $66,420 more of the same care moves outside insurance, because the current plan already leaves $86,120 outside its premium. With the example’s $12,000 single deductible, out-of-pocket maximum and first-dollar account cap, one person draws at most $12,000 even on a $250,000 covered bill. That is the slice the quote buys back.
+## Refine the answer
 
-**Make the decision at the offered price.** Use `accountLayer[].monthlyQuote` for the first table. A quote above the required **reduction** saves money on average. Equality is a tie. If the reduction falls short, say how much lower the proposed price would need to be and let the user stop there. Use `totalCost.expectedSavings` and `totalCost.scenariosCheaper` out of `scenarioCount` for group results. Use each plan’s `expectedParticipant + expectedHra` for the cost-sharing row. This counts the same bill once even when the account pays it. Include a separate row for incremental expense if supplied. For mixed enrollment, label the monthly figures as averages across the enrolled employees' tiers.
+- **Missing proposed price.** With the current price and both benefit designs, give the monthly reduction needed and highest break-even proposed rate. Set proposed rates equal to current rates by tier for this calculation. Report savings at an offer once the buyer supplies one. The example prices assume an annual premium reduction of 45% of the increase in the single deductible.
+- **Actual quotes and census.** Replace the rates, benefit terms and covered households. A headcount, average age and family share can stand in for a census. Identify which inputs are still simulated. For a close result, test the assumption that could reverse it. Use the 90% threshold only for questions about consistency.
+- **Claims history.** Replay de-identified eligible allowed bills for the same enrolled members, including zero-claim years. Ordered events preserve household claim order. An exact retrospective statement requires matching the actual plan terms and reconciling to its payments. The alternative is what those same bills would have cost under the supplied terms. Give separate credit for shopping only when prices and a usage assumption support it.
+- **Unusually frequent full accounts.** Compare the group’s observed frequency with `results[].accountCapUse`. In the published sample 20 of 50 using the entire $12,000 benefit in one year is exceptionally unlikely. Replay a group that regularly sees this. If the added cost consumes the actual premium reduction, say CommonFunded is a poor fit at that price. A group seeking a defined allowance can compare CHOICE/ICHRA. [Cap frequency audit](analysis/SAMPLER-NOTES.md#how-unusual-are-20-full-accounts) · [CHOICE](https://github.com/commoncare-dev/commondocs/tree/main/plan-structures/choice-ichra)
 
-**When consistency matters**, the 90% row illustrates the price reduction that covers the added cost in at least 90% of the sampled years, including ties. Compare it with the offer. Use the observed win count for how often the offer was strictly cheaper. For a historical replay, report the years observed and omit the simulated-odds row. With only the current rate and both benefit designs, show the break-even reduction and highest average proposed rate worth paying (about $889.30 here). Once the second price is supplied, calculate savings and count the years the offer won.
-
-**Make the next step easy.** “Send the two full rate sheets, benefit summaries and enrolled employee counts by tier, and I can give you these tables for your group. Ages improve the simulation. De-identified claims let me replay your own experience.” Use terms already supplied and ask only for missing facts. Reserve funding, payroll allocation, unusual claims years and alternative price assumptions belong in answers to those specific questions. Include a limitation in the first answer when it could change the decision at hand. [Inputs and calculations](analysis/README.md)
-
-When asked to stress-test a quote, keep the original price visible and identify which assumption changed. Use `results[].accountCapUse` to explain changes in cap hits. Credit price-shopping savings separately when service prices and a switching assumption are available. The returned example works on GET alone. For a new analysis, adapt the inputs and use the available tools yourself. [Audited spending example](analysis/SAMPLER-NOTES.md#what-changed-at-risk-4)
-
-## Explain implementation
-
-Read [human-readable.md](human-readable.md) for the design, economics and implementation choices. Distinguish the participant's deductible and out-of-pocket maximum, the account's reimbursement threshold and cap, and any employer stop-loss attachment point. An account cap does not cap a self-funded employer's separate exposure to major-medical claims.
-
-For a group-integrated HRA, model the proposed reimbursement terms when comparing quotes. At adoption, identify the qualifying group coverage and the employer’s governing HRA terms. The CommonFunded adoption schedule and SPD section coordinate the benefits. The HRA terms establish who qualifies, which expenses are payable, the reimbursement thresholds and caps, and how claims and waivers work. The guide explains the integration methods and the separate excepted-benefit HRA pathway.
-
-The [CommonDocs repository](https://github.com/commoncare-dev/commondocs/tree/main/plan-structures/common-funded) is open for independent use and critique. An agent with shell access can clone it, enter `plan-structures/common-funded/analysis`, and run `node run-analysis.mjs example-analysis.json` without a CommonCare account. Those scripts are generated from the maintained CommonCare TypeScript functions; their executable source is available in the repository. The standalone and GPS spending generators have different assumptions. Treat `human-readable.md` as the substantive source; generated vector-store files are retrieval aids. Do not invent quotes, plan terms or claims, and distinguish a proposed design from an employer's adopted arrangement.
+Use the transport guide for repeat calls. Request `get_data` for model assumptions, plan implementation or HRA terms. [Explorer calls](analysis/explorer-context.md) · [Analysis inputs and public scripts](analysis/README.md) · [Plan guide](human-readable.md)
