@@ -48,6 +48,22 @@ test('a large claim exhausts its own annual account only once', () => {
   }
 });
 
+test('account cap frequency counts each funded household once per scenario, including unused benefits', () => {
+  const {plans}=JSON.parse(readFileSync(new URL('./example-analysis.json',import.meta.url)));
+  for (const plan of plans) {
+    plan.family={deductibleType:'embedded',deductible:2*plan.deductible,moop:2*plan.moop,
+      annualFixed:2*plan.annualFixed,hraThreshold:0,hraCap:2*plan.hraCap};
+  }
+  const year=(secondMember)=>({bills:[
+    {id:'one',householdId:'family',allowed:120000},
+    {id:'two',householdId:'family',allowed:secondMember},
+    {id:'three',allowed:0}
+  ]});
+  const {results}=compare({plans,scenarios:[year(0),year(12000)]});
+  assert.deepEqual(results.find(r=>r.plan==='current').accountCapUse,{householdYearsAtCap:0,householdYearsWithCap:0});
+  assert.deepEqual(results.find(r=>r.plan==='proposed').accountCapUse,{householdYearsAtCap:1,householdYearsWithCap:4});
+});
+
 test('mock census matches requested employee mean and family count', () => {
   const r=mockCensus({employeeCount:50,averageAge:40,familyFraction:.2,seed:12});
   assert.equal(r.summary.averageEmployeeAge,40);

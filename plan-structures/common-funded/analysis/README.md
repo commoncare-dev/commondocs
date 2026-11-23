@@ -25,6 +25,8 @@ The decision uses one annual total per plan: full coverage cost plus cost sharin
 | `expectedSavings` | Quoted annual reduction less break-even reduction. Positive favors the proposal and negative favors the baseline |
 | `scenariosCheaper` | Divide by `scenarioCount` for the share of modeled years with strictly lower total cost. Ties contribute zero wins. For replayed bills this is a historical count |
 
+Each plan's `results[].accountCapUse` counts household-years in which reimbursements used the entire account cap (`householdYearsAtCap`) out of household-years with a positive account cap (`householdYearsWithCap`). The count includes singles and families, using each household's applicable limit once per year. A zero denominator means there was no funded account limit. The account limit can differ from the deductible.
+
 - **Current cost and upper-layer cost** are full annual costs for the same enrolled population and period. A quoted premium is fixed for its contract period; an upper-layer amount that includes expected self-funded claims is an estimate, and its volatility is outside this model.
 - **Released contribution** is current cost minus the proposed upper-layer cost. It is not automatically a deposited account balance or a guaranteed saving.
 - **Reimbursement** is the eligible claim paid by the account under the modeled threshold and cap. The current implementation approximates eligibility using aggregate cost sharing, not individual expense categories or dates.

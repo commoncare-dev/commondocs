@@ -24,6 +24,7 @@ export function compare({ scenarios, plans, accountAnalysis }) {
         }
     }
     let populationSignature;
+    const accountCapUse = plans.map(() => ({ householdYearsAtCap: 0, householdYearsWithCap: 0 }));
     const rows = scenarios.map(s => {
         if (!Array.isArray(s.bills) || !s.bills.length)
             throw Error('Each scenario needs bills including zero-claim enrollees');
@@ -39,7 +40,7 @@ export function compare({ scenarios, plans, accountAnalysis }) {
         if (populationSignature && signature !== populationSignature)
             throw Error('Every scenario must contain the same people and household assignments, including zero-claim members');
         populationSignature = signature;
-        return plans.map(p => {
+        return plans.map((p, planIndex) => {
             let oop = 0, hra = 0;
             let fixed = 0;
             const households = new Map();
@@ -58,11 +59,18 @@ export function compare({ scenarios, plans, accountAnalysis }) {
                 const result = adjudicateHousehold(members, p);
                 oop += result.oop;
                 hra += result.reimbursement;
+                const cap = (f ?? p).hraCap;
+                if (cap > 0) {
+                    const usage = accountCapUse[planIndex];
+                    usage.householdYearsWithCap++;
+                    if (result.reimbursement >= cap)
+                        usage.householdYearsAtCap++;
+                }
             }
             return { plan: p.id, fixed, oop, hra, participant: oop - hra, total: fixed + oop, employer: fixed + hra };
         });
     });
-    const results = plans.map((p, i) => { const a = rows.map(r => r[i]); return { plan: p.id, expectedTotalBeforeIncrementalAdministration: mean(a.map(x => x.total)), expectedEmployer: mean(a.map(x => x.employer)), expectedParticipant: mean(a.map(x => x.participant)), expectedHra: mean(a.map(x => x.hra)), totalP95: quantile(a.map(x => x.total), .95) }; }).sort((a, b) => a.expectedTotalBeforeIncrementalAdministration - b.expectedTotalBeforeIncrementalAdministration);
+    const results = plans.map((p, i) => { const a = rows.map(r => r[i]); return { plan: p.id, expectedTotalBeforeIncrementalAdministration: mean(a.map(x => x.total)), expectedEmployer: mean(a.map(x => x.employer)), expectedParticipant: mean(a.map(x => x.participant)), expectedHra: mean(a.map(x => x.hra)), accountCapUse: accountCapUse[i], totalP95: quantile(a.map(x => x.total), .95) }; }).sort((a, b) => a.expectedTotalBeforeIncrementalAdministration - b.expectedTotalBeforeIncrementalAdministration);
     const winner = results[0].plan, wi = plans.findIndex(p => p.id === winner);
     const comparisons = plans.filter(p => p.id !== winner).map(p => { const i = plans.findIndex(x => x.id === p.id), differences = rows.map(r => r[i].total - r[wi].total); return { plan: p.id, expectedSavingsBeforeIncrementalAdministration: mean(differences), winnerProbability: differences.filter(x => x > 0).length / differences.length, tieProbability: differences.filter(x => x === 0).length / differences.length, observedDominance: differences.every(x => x >= 0) }; });
     let accountLayer;

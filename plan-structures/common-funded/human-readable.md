@@ -1,22 +1,14 @@
 ## CommonFunded
 
-**What does your carrier charge to lower the deductible, and how much care would that extra premium actually pay for?** Insurers price coverage to pay expected claims, cover expenses and earn a margin. With otherwise comparable plans, the difference between two quotes is the price your group can pay to insure that additional care. The quotes alone cannot identify the carrier's profit on the difference. [CMS rate filing instructions, §2.2.3](https://www.cms.gov/files/document/py27-unified-rate-review-instructions.pdf)
+**CommonFunded chooses which dollars of every enrolled person's care the group will self-fund.** With level funding, 49 people can have a low-claims year and the fiftieth person's claim can consume the projected refund. What matters is how much of that claim the contract charges to the shared claims fund after stop-loss. With self-funding, the same exposure shows up as a loss against the claims budget. [Carrier explanation of a level-funded refund](https://www.uhc.com/employer/products-solutions/medical-plans/unitedhealthcare-level-funded-and-all-savers-alternate-funding) · [DOL explanation of stop-loss](https://www.dol.gov/agencies/ebsa/employers-and-advisers/guidance/technical-releases/14-01)
 
-CommonFunded keeps coverage for large bills and uses an account for eligible care below a chosen limit. Take a single plan with a $12,000 deductible, out-of-pocket maximum and first-dollar reimbursement cap. One person with $12,000 in eligible annual bills draws $12,000 from the account. One person with $120,000 in bills also draws $12,000. Ten people with $12,000 each draw $120,000. The exposure depends on how much of the layer each person uses.
+CommonFunded keeps routine reimbursements outside that shared claims fund. Suppose the group takes back the first $12,000 of eligible annual cost sharing for each single enrollee, with both the deductible and out-of-pocket maximum at $12,000. A person with a $12,000 covered bill draws $12,000. A person with a $250,000 covered bill also draws $12,000. The other $238,000 belongs to the upper layer. If that person had already used $4,000 of the account this year, the new bill could draw only $8,000 more. **One person's bill can grow, but that person's annual reimbursement entitlement cannot.** Ten people using their full benefits can still draw $120,000.
+
+That boundary is the reason to select this layer. The price question is whether it is worth selecting at the quoted rates. Insurers price for claims, expenses and a margin. The quotes show what the group can recover in premium. The bills show how much of that reduction the additional cost sharing would use. [CMS rate filing instructions, §2.2.3](https://www.cms.gov/files/document/py27-unified-rate-review-instructions.pdf)
 
 **Try it with two rate sheets, their benefit summaries and enrollment by tier.** An agent can use a mock census for a first pass or replay the group's claims. It compares the full annual premium reduction with the extra cost sharing on the same care. You get the average dollars saved or lost and the number of modeled years the proposal costs less. Payroll allocation does not enter that calculation. [Run the analysis](analysis/README.md)
 
-### What would make the answer change?
-
-In the runnable 50-person example, the proposed account pays about $152,540 per year. The current plan already leaves $86,120 of those same bills outside the premium. The additional care the group would fund costs **$66,420 per year** on average. That is the break-even premium reduction. Change only the proposed premium and the verdict changes:
-
-| Annual premium reduction for the group | Average annual total saving | Simulated years cheaper |
-|---:|---:|---:|
-| $150,000 | $83,580 | 100 of 100 |
-| $70,000 | $3,580 | 57 of 100 |
-| $50,000 | −$16,420 | 20 of 100 |
-
-At the first price, about 44 cents of each premium dollar released covers the additional claims and 56 cents remains as savings. At the last price, keeping the current plan costs less on average. All three rows use the same people, bills and benefits, with zero assumed savings from price shopping. To reproduce them, set the proposed annual single premium to $9,000, $10,600 or $11,000 against the current $12,000. [Runnable example](analysis/example-analysis.json)
+In the published example, the premium falls by **$150,000** for 50 single enrollees. The same bills move **$66,420** more cost sharing outside insurance on average. The group saves **$83,580 a year** and spends less in **100 of 100 simulated years**. About six people per year use the full $12,000 account. The other 44 draw less or nothing. The group keeps about 56 cents of each premium dollar released at this price. [Runnable example](analysis/example-analysis.json)
 
 ## At a glance
 
@@ -122,11 +114,16 @@ Neither side of the spectrum is the required CommonFunded design. Greater flexib
 
 ## Bounded partial self-funding
 
-CommonFunded creates a contained account-funded layer of medical expense. The employer's exposure to the separate major-medical layer depends on how that layer is financed; CommonFunded does not itself eliminate self-funded major-medical risk.
+### What happens to a projected $250,000 gain?
 
-The employer defines the CommonFunds benefit made available to each participant. That amount establishes the employer’s maximum reimbursement exposure under the account-based component.
+Suppose a group budgeted $1 million and is on track to finish $250,000 under budget. One previously unanticipated $250,000 covered claim arrives. Hold all other claims fixed.
 
-When the applicable participant benefit has been exhausted, CommonFunds does not create additional reimbursement liability. Larger expenses remain the job of the selected insurance or alternative coverage arrangement.
+| Where the gain was expected | What that one claim can consume |
+|---|---|
+| A shared claims fund with a projected $250,000 surplus | If the full claim is retained after stop-loss, it uses all $250,000. If the contract charges only $25,000 to the fund, it uses $25,000. A level-funded refund follows the contract's surplus-sharing terms. |
+| A CommonFunded design with $150,000 of the projected gain in the account layer and $100,000 in the upper layer | With an unused $12,000 single benefit, the claim can reduce the projected account gain from $150,000 to $138,000. The other $238,000 affects the upper layer under its own terms. |
+
+The $138,000 is what remains of **account-layer gain** in this example. A single claim can erase a smaller account gain only if the household has at least that much benefit left to draw. A fully insured upper layer has its quoted premium for the contract year. A group that retains upper-layer claims can lose some or all of its separate $100,000 margin or run over budget there. Even in that case, the additional reimbursement on this person's account stops at $12,000. The same arithmetic applies with the remaining applicable individual and household limits in a family design.
 
 ### Why excepted-benefit status matters
 
@@ -189,8 +186,6 @@ These numbers can look similar but perform different legal and financial functio
 | Fully insured | The employer's premium ordinarily does not increase during the contract period merely because the claim occurred. If the integrated HRA reimburses only participant cost sharing, the claim consumes no more than the applicable HRA cap; the insurer bears the insured amount under the policy. |
 | Level-funded | The claim may reduce or eliminate a projected experience refund to the extent it is charged to the refundable claims fund. The HRA does not protect that refund unless the level-funded contract, specific stop loss, or another insured term actually removes the claim from employer experience. |
 | Self-funded | The employer generally pays plan claims until applicable specific or aggregate stop loss reimburses amounts under its contract. The HRA changes participant cost-sharing reimbursement; it does not substitute for stop loss or convert the underlying plan into fully insured coverage. |
-
-Suppose a level-funded arrangement is projected to return `\$250,000`, and `\$150,000` of the redesign's budget is allocated to the HRA. A `\$250,000` claim may consume up to `\$12,000` of that HRA allocation for an eligible individual, under the stated HRA terms. The remainder affects the separate upper-layer budget according to its own funding terms. It does not consume additional HRA funds merely because the bill is larger. A gain in the HRA bucket is distinct from, and does not guarantee, a gain in the combined plan.
 
 ### Quote-driven mathematical model
 
@@ -282,6 +277,18 @@ The economic difference appears when the participant incurs less than \$9,200 of
 
 - **Insurance buy-down:** The additional premium paid for a lower deductible is permanently spent, whether or not the participant uses the benefit.
 - **CommonFunds buy-down:** Only valid claims consume the employer-funded benefit. Unused notional availability remains employer property and may expire under the plan.
+
+### Where the example price breaks even
+
+The example's $66,420 annual break-even is the additional cost sharing on the same bills. To see what a different quote would do, keep the example's benefits, people, 100 group years and $12,000 current annual single premium fixed. Change only the proposed premium.
+
+| Proposed annual single premium | Annual premium reduction for the group | Average annual total saving | Simulated years cheaper |
+|---:|---:|---:|---:|
+| $9,000 (published example) | $150,000 | $83,580 | 100 of 100 |
+| $10,600 | $70,000 | $3,580 | 57 of 100 |
+| $11,000 | $50,000 | −$16,420 | 20 of 100 |
+
+At $70,000 the quote exceeds break-even by just $72 per person per year. A small increase in bills inside the account layer can use up that margin. Once a person's account is exhausted, a larger allowed bill draws zero additional dollars from it.
 
 ### Illustrative 2026 comparison
 
