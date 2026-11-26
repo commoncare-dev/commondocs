@@ -6,8 +6,8 @@ schema_version: "1.0"
 source_document: plan-structures/alternative-companion/human-readable.md
 metadata_document: plan-structures/alternative-companion/metadata.yaml
 ai_instructions_document: plan-structures/alternative-companion/AI-instructions.md
-source_commit: 7c761ddb3ef1a90bb0dd2e95470faa40f83d9bb7
-source_sha256: 9ff550c85ca7197b2958467b219a299c3d060fb72c373d6d2eaf7d586427d682
+source_commit: aeb9150a19fc90b1905769a857e086824d0b8893
+source_sha256: f277cb43c7b14bdd3af23e75f025ec020a3d6a39baaeabeecbcf34bb860dafd1
 metadata_sha256: da5e6b0b873fa5932441cf208b9b3c7cf3175df9b6397c0e10188ada317567a7
 ai_instructions_sha256: e70ac6b8de6ae8ab07d3f21fe095485dc5489c15e3635d8500f01f4e9569a49e
 generation_method: deterministic-markdown-conversion
@@ -55,21 +55,11 @@ Read the [CommonDocs README](../../README.md) in this checkout or the [public Co
 ## Private alternative options alongside an employer plan
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Private alternative options alongside an employer plan
 
-> **An employer can sponsor a health plan without making that plan the price of admission to every other healthcare option.** Alternative Companion gives employees a separate, post-tax path to health shares, crowdfunded models, and other private alternatives the employer does not sponsor.
+Alternative Companion gives employees a way to compare and buy private healthcare options alongside an employer health plan. Employees choose and pay for these options themselves, through direct payment or post-tax payroll deductions. Options include health care sharing ministries, secular medical-cost-sharing communities, CrowdHealth-style models, and related cash-pay strategies.
 
-In practice, the alternatives employees ask about are not an abstract universe of experimental products. They are usually health care sharing ministries, secular medical-cost-sharing communities, CrowdHealth-style crowdfunding and member-support models, and the cash-pay care strategies that accompany them.
+These options may offer lower monthly costs, more provider choice, and access to cash prices. Their terms can also leave households responsible for bills that insurance would cover. CommonCare helps employees compare costs, coverage gaps, and payment terms before choosing.
 
-For relatively healthy households that understand the rules, these options can be extremely compelling: dramatically lower fixed cost, no provider network, direct cash-price purchasing, and a pool whose membership and incentives may be more favorable to them than an ACA insurance pool.
-
-CommonCare makes those choices as easy to examine and administer as traditional options without turning them into employer benefits. The employer's position is simple: **these are not our plans, but employment here does not require pretending our plans are your only choices.**
-
-> [!Important]
-> This companion plan structure works alongside any type of employer plan for any size of employer
-
-This document is the canonical source for employer neutrality, non-sponsorship, voluntary access, and post-tax payment of independently selected options. It does not replace:
-
-- The [Premium Tax Credit Plan](../ptc-plan/human-readable.md), which controls PTC eligibility, MEC offer-and-enrollment rules, non-ALE strategy, and Marketplace-specific administration; or
-- [CommonFunds](../common-funds/human-readable.md), which controls EBHRA, Health FSA, ICHRA, allowance classification, account limits, and claims availability.
+Employers of any size can use this design alongside their sponsored plan. See the [Premium Tax Credit Plan](../ptc-plan/human-readable.md) for Marketplace tax credits and MEC rules, and [CommonFunds](../common-funds/human-readable.md) for HRAs, Health FSAs, and allowance rules.
 
 <!-- record_id: product.alternative-companion.at-a-glance -->
 ## At a glance
@@ -164,6 +154,8 @@ This document is the canonical source for employer neutrality, non-sponsorship, 
 - [The legal boundary](#part-ii--the-legal-boundary)
 - [The DOL voluntary-program safe harbor](#the-dol-voluntary-program-safe-harbor)
 - [What endorsement means](#what-endorsement-means)
+- [How courts applied the rule](#how-courts-applied-the-rule)
+- [What this means for enrollment](#what-this-means-for-enrollment)
 - [How CommonCare separates the two environments](#how-commoncare-separates-the-two-environments)
 - [Why group and list-bill arrangements are the wrong shortcut](#why-group-and-list-bill-arrangements-are-the-wrong-shortcut)
 - [Payroll and employer allowances](#part-iv--payroll-and-employer-allowances)
@@ -181,106 +173,41 @@ This document is the canonical source for employer neutrality, non-sponsorship, 
 ## What Alternative Companion is actually for
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part I — Why preserve a private path > What Alternative Companion is actually for
 
-Alternative Companion exists to correct one practical failure of employer benefits: an employee can choose only the products the employer is willing to sponsor, or leave the benefits system and assemble an alternative alone.
+Employees who want a private alternative often have to research it, enroll, and arrange payment on their own. Alternative Companion makes that process easier. Employees can compare their employer plan with health sharing, medical crowdfunding, and direct-pay care using the same cost and access measures.
 
-That failure matters because health shares and crowdfunded models—of which CrowdHealth is currently the most prominent example, though CommonCare does not speak for it—do not merely offer a different insurance card. They can create a substantially different healthcare experience:
+These models can give households more control over providers and cash prices. Members often pay for routine care themselves and rely on community funding for larger eligible bills. Eligibility, pre-existing-condition rules, and access to that funding depend on the agreement. Two households with similar monthly costs can face very different exposure to unpaid bills.
 
-- Lower monthly fixed costs for households that fit the membership rules;
-- Broad provider access without a carrier network;
-- Direct negotiation and cash-price purchasing;
-- More visibility into the relationship between a medical bill and the money used to pay it;
-- Member eligibility or lifestyle rules that can produce a differently composed risk pool;
-- Greater personal responsibility for routine and manageable expenses; and
-- Community support or crowdfunding for larger eligible needs.
-
-Health shares are generally not insurance. Crowdfunded models may not make an insurance promise or operate as a health care sharing ministry. Their agreements can limit pre-existing conditions, define eligible needs differently, rely on member funding, or reserve discretion that an insurance policy does not reserve in the same way. Those differences are material and must be explained.
-
-They are not, however, the end of the analysis. Insurance presents a different package of risks: premium is a guaranteed expense; networks constrain provider choice; prior authorization and claim adjudication can delay or deny payment; and routine care is routed through a structure that weakens price sensitivity and adds administrative cost.
-
-> **“Not insurance” tells a participant what legal structure the product does not use. It does not tell the participant whether the product is a good value.**
-
-CommonCare's role is to make the comparison possible, not to sell the alternative. The participant should be able to compare the employer plan, a health share, a CrowdHealth-style option, and any compatible direct-care strategy with the same seriousness.
+Insurance has its own tradeoffs. Premiums are due regardless of use, and networks, prior authorization, and coverage rules can affect access to care. A useful comparison accounts for those costs and constraints as well as the strength of each option's payment promise.
 
 <!-- record_id: product.alternative-companion.the-two-reasons-employers-resist -->
 ## The two reasons employers resist
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part I — Why preserve a private path > The two reasons employers resist
 
-When an employer does not want employees to see or select a private alternative, the objection usually reduces to one of two positions. Both can be good reasons. Both should be carefully measured by actual outcomes instead of sentiment.
+<!-- record_id: product.alternative-companion.1-the-employer-wants-to-keep-healthier-employees-in-the-group-plan -->
+### 1. The employer wants to keep healthier employees in the group plan
+> Retrieval context: Private Alternatives Alongside an Employer Plan — Part I — Why preserve a private path > The two reasons employers resist > 1. The employer wants to keep healthier employees in the group plan
 
-<!-- record_id: product.alternative-companion.1-the-employer-wants-healthier-employees-inside-the-employer-plan -->
-### 1. The employer wants healthier employees inside the employer plan
-> Retrieval context: Private Alternatives Alongside an Employer Plan — Part I — Why preserve a private path > The two reasons employers resist > 1. The employer wants healthier employees inside the employer plan
+When healthier employees leave, the remaining group may face higher costs. Keeping them enrolled can help preserve the risk pool. It can also leave those employees paying more for coverage they value less. Employers that restrict access for this reason should estimate the effect on the group and explain the tradeoff to employees.
 
-Employer-plan premiums and renewals depend in part on the claims performance or expected risk of the group. If relatively healthy employees leave for lower-cost alternatives while higher-cost employees remain, the employer plan may become more expensive.
+<!-- record_id: product.alternative-companion.2-the-employer-worries-about-employees-taking-on-too-much-risk -->
+### 2. The employer worries about employees taking on too much risk
+> Retrieval context: Private Alternatives Alongside an Employer Plan — Part I — Why preserve a private path > The two reasons employers resist > 2. The employer worries about employees taking on too much risk
 
-Retaining lower-risk employees to subsidize higher-risk employees is therefore a coherent risk-pool strategy. It is also a redistribution decision. The employer is asking one group of employees to accept higher fixed costs or a less suitable product so that another group can get more affordable pooled coverage.
-
-Employers are often uncomfortable stating the decision in those terms. Instead, they describe the single-plan approach as fairness, safety, or generosity. That rhetorical move is the real problem. It hides the financial purpose from the people bearing its cost and makes an employer-selected insurance pool look like a moral decision.
-
-For whom is equalizing the cost of care fair: the conscientious healthcare consumer, the high-utilizing consumer, or the person born with an expensive condition? These are complex questions with substantial consequences. Taking a hard position under which employees forfeit compensation if they choose another path warrants a clear, articulable justification.
-
-Businesses should be cautious taking responsibility for equalizing healthcare outcomes through compulsory participation in one financing structure. Equal access, equal employer contribution, equal insurance enrollment, and equal health outcomes are different objectives. Pursuing one can produce very unequal consequences under another.
-
-An employer may still decide that preserving the group pool is worth limiting alternatives. If so, it should make that decision consciously, quantify the effect, and communicate the tradeoff honestly.
-
-<!-- record_id: product.alternative-companion.2-the-employer-believes-alternatives-are-an-unacceptable-risk -->
-### 2. The employer believes alternatives are an unacceptable risk
-> Retrieval context: Private Alternatives Alongside an Employer Plan — Part I — Why preserve a private path > The two reasons employers resist > 2. The employer believes alternatives are an unacceptable risk
-
-The second position is paternalistic in the literal sense: the employer believes some employees will choose badly unless the employer withholds or discourages the alternative.
-
-That judgment may be reasonable for a particular product or person. Someone with active expensive treatment, little ability to absorb an unpaid bill, or a need for a benefit excluded by the alternative may be poorly served by leaving regulated major medical coverage. A product with weak reserves, vague rules, poor administration, or a bad payment record should not receive a polite pass because it calls itself a community.
-
-But the standard must run both ways. It is odd to call neutral access to a health share “unsafe” while presenting employer-selected insurance as a factually safe default after years of premium escalation, network disruption, prior authorization, opaque pricing, and highly public claim disputes. A legal payment promise is valuable. It is not the same thing as certainty, affordability, or a frictionless claim experience.
-
-Allowing employees to select alternatives does not require the employer to endorse a health share. It prevents the employer's unexamined preference for insurance from becoming the employee's only administratively realistic choice.
-
-> **Price sensitivity is not hostility to care. It is one of the forces that makes useful care available at sustainable prices.**
+A household in active treatment or with limited savings may struggle if a private option excludes a bill or takes longer to fund it. Vague rules and a weak payment record also deserve scrutiny. Employers can give people access to a comparison that shows those risks alongside the premiums, network limitations, and coverage rules of the employer plan.
 
 <!-- record_id: product.alternative-companion.why-the-effort-can-be-worthwhile -->
 ## Why the effort can be worthwhile
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part I — Why preserve a private path > Why the effort can be worthwhile
 
-Once the two objections above are addressed, the employer does not need to sponsor or administer the alternative. Its central design decision is simply not to make the entire employer allowance use-it-or-lose-it within the sponsored plan. CommonCare performs the separate comparison and administration described below.
-
-For the right participant—often a relatively healthy household comfortable with active healthcare purchasing—the difference can be substantial:
-
-- Hundreds or thousands of dollars per month in lower fixed cost;
-- Networkless access to physicians and facilities willing to accept the member as a cash-pay patient;
-- Better cash prices for routine and planned care;
-- A structure aligned with the participant's actual health needs;
-- Freedom from paying for benefits the participant does not value;
-- More control over providers, treatment, and timing; or
-- A better combination of personal reserves, direct care, negotiated bills, and community funding for larger eligible needs.
-
-The relevant question is not whether a private alternative is best for everyone. It is whether the value for the people it fits is large enough to justify making an informed choice possible. Often it is.
+For households comfortable paying cash and managing costs directly, lower monthly payments and more provider choice can justify a closer look. Employees can weigh those advantages against the savings they need to absorb an unpaid bill and the terms for funding larger expenses. Where the employer makes part of compensation available as unrestricted taxable wages, employees can use those wages toward whichever option fits their household.
 
 <!-- record_id: product.alternative-companion.the-question-of-compensation-tied-to-health-insurance-preference -->
 ## The question of compensation tied to health insurance preference
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part I — Why preserve a private path > The question of compensation tied to health insurance preference
 
-> Here we digress into the philosophical and moral concerns that often dominate the conversation of "why employers control health insurance." A technical reader looking for implementation details may skip this section. For many people, these concerns are really the main concern involved in this document and discussion.
+When employees lose a benefit credit if they decline the employer plan, part of their compensation depends on choosing that coverage. Maintaining a strong risk pool can justify that condition. The employer should be able to explain what value the pool delivers, who bears the cost, and what workforce goal the restriction serves.
 
-The question of why employers should allow access to alternative solutions can be addressed without regard to any particular alternative. Employer health benefits are compensation designated for healthcare. When that compensation is forfeited unless it is used within the employer's plan, the employer is saying: **“When you work here, you get extra pay if you choose this health plan.”**
-
-That is a strong condition to attach to compensation. Employees (and their families) need groceries, housing, clothing, power, transportation, and education. Employers may disagree with how employees spend money in every one of those categories, but the employee does not ordinarily forfeit compensation by making the “wrong” choice. It might be argued that every one of these categories has more impact on work performance than health insurance choice.
-
-Employers often defend the exception by saying, “We need our employees healthy enough to work.” Despite decades of research, enormous healthcare spending, and no shortage of opportunities to prove the point, no meaningful evidence establishes that more health insurance produces healthier employees, fewer missed workdays, or employees who can do more or better work. In fact, evidence is almost completely absent that health outcomes are improved by more health insurance at all.
-
-The evidence most often offered for that proposition instead shows that more generous coverage causes people to consume more healthcare. That is not the same result. The RAND experiment found much higher consumption under free care but no improvement in average health outcomes. Its handful of favorable findings came from four of thirty measures within the poorest and sickest six percent of participants and combined unrelated outcomes such as blood-pressure control, vision, dental care, and a collection of “serious symptoms.” The Oregon Medicaid experiment likewise produced more consumption, more diagnoses, and more medication without statistically significant improvement in measured blood pressure, cholesterol, or blood sugar. Its labor analysis found no significant improvement in employment or earnings. Research specifically on missed work is observational, conflicting, and incapable of establishing that insurance caused better attendance. Even when the evidence isolates populations most plausibly expected to benefit from more healthcare services, it still comes up nearly empty on the broad health-and-work claim. ([RAND](https://www.rand.org/pubs/research_briefs/RB9174.html); [Oregon clinical outcomes](https://pubmed.ncbi.nlm.nih.gov/23635051/); [Oregon labor outcomes](https://www.nber.org/papers/w19547); [absence studies](https://pubmed.ncbi.nlm.nih.gov/16404205/), [2025](https://pubmed.ncbi.nlm.nih.gov/40345984/))
-
-There is abundant evidence that insurance changes who pays, how much care people consume, when they seek care, and how medical bills are distributed. Those may be important effects. They are not evidence that employer-sponsored insurance makes a workforce healthier or more capable. That crucial claim is continually asserted and conspicuously unproven.
-
-Meanwhile, exercise is known to improve function, sleep, and numerous health outcomes. Sleep, nutrition, stress, substance use, and daily habits have direct relationships with health and working capacity. Yet compensation packages do not ordinarily say, “Keep an exercise log, improve your diet, sleep eight hours, and receive extra pay.” ([CDC](https://www.cdc.gov/physical-activity-basics/health-benefits/adults.html))
-
-The point is not that employers should begin policing those choices. It is that requiring an employee to choose a specific health-insurance structure or forfeit pay is an odd and powerful social norm. The ACA wrote insurance more deeply into the legal and financial architecture of healthcare through compulsory rules, subsidies, required benefits, and employer obligations. Its rhetoric is frequently the rhetoric of human rights, while the mechanism remains a commercial financing industry operating inside a healthcare economy that consumed $5.3 trillion—18 percent of U.S. GDP—in 2024. That contradiction deserves examination, not reverence. ([CMS](https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/historical))
-
-Maintaining a health risk pool is still a valid reason to restrict the compensation. But saying so should require the employer to establish two things:
-
-1. The risk pool has been verified as producing better-than-market value for the workforce; otherwise, preserving it may make the benefit backward.
-2. The employer knows what business or workforce objective it gains from the restriction and why that objective is worth compelling employees to finance it.
-
-Without those findings, how did equalizing healthcare financing become a business priority the employer is prepared to enforce through compensation? “We offer benefits” is not an answer. It is merely a description of the arrangement under question.
+If the goal is better health or attendance, define the outcome and ask what evidence supports it. In the RAND experiment, people with free care used more services. Health improvements were concentrated among poorer and sicker participants. The Oregon Medicaid experiment found greater use of care, less depression, and less financial strain, with no statistically significant improvements in the physical measures studied over two years. A separate analysis found no significant effect on employment or earnings. Neither study directly tested whether tying compensation to a particular employer plan improves attendance or work performance. [RAND Health Insurance Experiment](https://www.rand.org/pubs/research_briefs/RB9174.html) · [Oregon clinical outcomes](https://www.nejm.org/doi/full/10.1056/NEJMsa1212321) · [Oregon labor outcomes](https://www.nber.org/papers/w19547)
 
 <!-- record_id: product.alternative-companion.who-may-benefit -->
 ## Who may benefit
@@ -310,8 +237,6 @@ This is why CommonCare analyzes rather than sells products. CommonCare never tak
 <!-- record_id: product.alternative-companion.two-separate-environments -->
 ## Two separate environments
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part II — The legal boundary > Two separate environments
-
-We should draw a bright line:
 
 #### Defined in the employer's plan documents
 <!-- record_id: product.alternative-companion.part-ii-the-legal-boundary-two-separate-environments.defined-in-the-employer-s-plan-documents; record_type: table-row -->
@@ -350,89 +275,44 @@ We should draw a bright line:
 - Independent private environment: Employer remains neutral toward private alternatives
 
 
-Calling something “voluntary” is not enough. The documents, money, communications, enrollment flow, payroll treatment, compensation, and actual conduct must all support the distinction.
+Plan documents, enrollment screens, payroll records, and the employer's day-to-day role should tell employees the same thing about who provides and pays for each option.
 
 <!-- record_id: product.alternative-companion.the-dol-voluntary-program-safe-harbor -->
 ## The DOL voluntary-program safe harbor
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part II — The legal boundary > The DOL voluntary-program safe harbor
 
-Department of Labor regulation 29 CFR §2510.3-1(j) excludes a group or group-type insurance program from the definition of an ERISA employee welfare benefit plan when all four conditions are satisfied:
+The DOL's safe harbor excludes group or group-type insurance from the definition of an ERISA welfare plan when all four conditions apply.
 
-1. **The employer makes no contribution;** (this is why allowances that can be used on alternatives must be unrestricted wages)
-2. **Employee participation is completely voluntary;**
-3. **The employer's sole functions, without endorsing the program, are permitting the insurer to publicize it, collecting premiums through payroll deductions, and remitting those premiums;** and
-4. **The employer receives no consideration in connection with the program, other than reasonable compensation—without profit—for payroll-administration services actually performed.**
+1. The employer makes no contribution.
+2. Employee participation is completely voluntary.
+3. The employer allows the insurer to publicize the program and may collect and remit premiums through payroll deductions. The employer's role is limited to those functions, without endorsement.
+4. The employer receives no consideration in connection with the program, except reasonable compensation without profit for payroll administration it actually performs.
 
-[29 CFR §2510.3-1(j), current eCFR](https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XXV/subchapter-A/part-2510/section-2510.3-1#p-2510.3-1(j)) · [DOL Advisory Opinion 94-24A applying the rule](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/advisory-opinions/1994-24a)
+[29 C.F.R. § 2510.3-1(j)](https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XXV/subchapter-A/part-2510/section-2510.3-1#p-2510.3-1(j))
 
-The rule is unusually practical. It expressly permits a neutral employer to support voluntary access and post-tax payroll collection without converting the program into an employer plan.
-
-> [!IMPORTANT]
-> This safe harbor expressly addresses a program “offered by an insurer.” A health sharing ministry, direct-care membership, discount program, or other non-insurance arrangement does not become insurance by following it. For those products, CommonCare uses the same neutrality discipline to support the broader conclusion that the employer has not established or maintained the arrangement, but does not label the product as automatically protected by the insurance safe harbor. Any product-specific regulator agreement, disclosure requirement, or enforcement history must be reviewed separately rather than assumed to extend the insurance safe harbor.
+The safe harbor applies to programs offered by an insurer. For health sharing, crowdfunding, and other non-insurance arrangements, assess whether the employer established or maintained an employee welfare benefit plan under ERISA. The insurance cases below help illustrate how employer conduct can shape that assessment. Review applicable product-specific requirements separately. [29 U.S.C. § 1002(1)](https://uscode.house.gov/us/usc/t29/s1002/)
 
 <!-- record_id: product.alternative-companion.what-endorsement-means -->
 ## What endorsement means
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part II — The legal boundary > What endorsement means
 
-The DOL's central question is whether employer conduct would lead employees reasonably to view the program as part of the employer's benefit arrangement.
+DOL Advisory Opinions 94-24A and 94-25A explain that an employer or employee organization endorses a program if it encourages participation or acts in a way that would lead a reasonable employee or member to see the program as part of a benefit arrangement it established or maintains. The opinions involved materials that presented coverage as the Air Line Pilots Association's own. Their footnotes also explain that saying an employer “arranged” coverage can signal endorsement depending on what else the employer did. [DOL Advisory Opinion 94-24A](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/advisory-opinions/1994-24a) · [DOL Advisory Opinion 94-25A](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/advisory-opinions/1994-25a)
 
-DOL Advisory Opinion 94-24A says endorsement occurs when the employer:
+<!-- record_id: product.alternative-companion.how-courts-applied-the-rule -->
+### How courts applied the rule
+> Retrieval context: Private Alternatives Alongside an Employer Plan — Part II — The legal boundary > What endorsement means > How courts applied the rule
 
-- Urges or encourages participation; or
-- Acts in a way that would cause an employee reasonably to conclude that the program is part of an employer-established or employer-maintained benefit arrangement.
+- **Optional coverage alongside basic benefits.** In *Murdock*, employees could elect enhanced disability insurance through the employer's benefits menu, which also offered basic disability options. The court denied the insurer's summary judgment motion because the record did not establish endorsement of the enhanced policy as a matter of law. [*Murdock v. Unum Provident Corp.*, 265 F. Supp. 2d 539, 543–45 (W.D. Pa. 2002)](https://law.justia.com/cases/federal/district-courts/FSupp2/265/539/2459637/)
+- **Company communications and payroll deductions.** In *Johnson*, the employer sent the insurer's materials with a company cover letter recommending the coverage and handled payroll deductions. The First Circuit upheld the finding of no endorsement. The materials identified the policy as another organization's offering, and the employer had no substantive role in designing or operating it. [*Johnson v. Watts Regulator Co.*, 63 F.3d 1129, 1135–37 (1st Cir. 1995)](https://app.midpage.ai/document/johnson-v-watts-regulator-co-196254)
+- **Employer control and plan documents.** In *Butero*, the employer chose the insurer, set key coverage and eligibility terms, and incorporated the policy into its cafeteria plan's summary plan description. The Eleventh Circuit held that the arrangement fell outside the safe harbor. [*Butero v. Royal Maccabees Life Insurance Co.*, 174 F.3d 1207, 1213–14 (11th Cir. 1999)](https://law.justia.com/cases/federal/appellate-courts/F3/174/1207/519014/)
 
-It also says the employer may facilitate publicity and marketing only to a point **short of endorsement**. [DOL Advisory Opinion 94-24A](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/advisory-opinions/1994-24a)
+<!-- record_id: product.alternative-companion.what-this-means-for-enrollment -->
+### What this means for enrollment
+> Retrieval context: Private Alternatives Alongside an Employer Plan — Part II — The legal boundary > What endorsement means > What this means for enrollment
 
-DOL Advisory Opinion 94-25A gives concrete examples. Saying the employer is “enthusiastic” about a program is endorsement. Saying the employer has “arranged” the program can also communicate endorsement when combined with other employer activity. [DOL Advisory Opinion 94-25A](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/advisory-opinions/1994-25a)
+A shared guide or portal is one part of what an employee sees. A factual link to a third-party option can give employees access alongside employer benefits. Naming the provider and explaining who controls enrollment, terms, and claims helps employees understand the employer's role. Presenting an option as part of the employer's benefits package, including it in the plan's summary plan description, or setting its eligibility or coverage terms can signal endorsement even without the word “sponsored.” These inferences depend on how the option is presented and how it actually works. [*Johnson*, 63 F.3d at 1135–37](https://app.midpage.ai/document/johnson-v-watts-regulator-co-196254) · [*Murdock*, 265 F. Supp. 2d at 543–45](https://law.justia.com/cases/federal/district-courts/FSupp2/265/539/2459637/) · [*Butero*, 174 F.3d at 1213–14](https://law.justia.com/cases/federal/appellate-courts/F3/174/1207/519014/)
 
-The DOL has described employer neutrality as the key reason a voluntary program is not treated as an employer benefit. An employer exceeds that neutral role when it chooses the coverage or provider, assists with claims, or otherwise begins operating the program. [DOL Advisory Opinion 1975-06](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/advisory-opinions/1975-06)
-
-<!-- record_id: product.alternative-companion.neutral-facilitation-versus-sponsorship -->
-### Neutral facilitation versus sponsorship
-> Retrieval context: Private Alternatives Alongside an Employer Plan — Part II — The legal boundary > What endorsement means > Neutral facilitation versus sponsorship
-
-#### Identifying the option as independent
-<!-- record_id: product.alternative-companion.part-ii-the-legal-boundary-what-endorsement-means-neutral-facilitation-v.identifying-the-option-as-independent; record_type: table-row -->
-- Context: Private Alternatives Alongside an Employer Plan — Part II — The legal boundary > What endorsement means > Neutral facilitation versus sponsorship
-- Neutral facilitation: Identifying the option as independent
-- Evidence of sponsorship or endorsement: Calling it employer sponsored
-
-#### Allowing completely voluntary access
-<!-- record_id: product.alternative-companion.part-ii-the-legal-boundary-what-endorsement-means-neutral-facilitation-v.allowing-completely-voluntary-access; record_type: table-row -->
-- Context: Private Alternatives Alongside an Employer Plan — Part II — The legal boundary > What endorsement means > Neutral facilitation versus sponsorship
-- Neutral facilitation: Allowing completely voluntary access
-- Evidence of sponsorship or endorsement: Incentivizing employees to enroll
-
-#### Post-tax payroll collection
-<!-- record_id: product.alternative-companion.part-ii-the-legal-boundary-what-endorsement-means-neutral-facilitation-v.post-tax-payroll-collection; record_type: table-row -->
-- Context: Private Alternatives Alongside an Employer Plan — Part II — The legal boundary > What endorsement means > Neutral facilitation versus sponsorship
-- Neutral facilitation: Post-tax payroll collection
-- Evidence of sponsorship or endorsement: Employer allowances tied to the option
-
-#### Allowing factual provider materials where the safe harbor applies
-<!-- record_id: product.alternative-companion.part-ii-the-legal-boundary-what-endorsement-means-neutral-facilitation-v.allowing-factual-provider-materials-where-the-safe-harbor-applies; record_type: table-row -->
-- Context: Private Alternatives Alongside an Employer Plan — Part II — The legal boundary > What endorsement means > Neutral facilitation versus sponsorship
-- Neutral facilitation: Allowing factual provider materials where the safe harbor applies
-- Evidence of sponsorship or endorsement: Employer praise, recommendation, or sales messaging
-
-#### Using an independent analytical platform
-<!-- record_id: product.alternative-companion.part-ii-the-legal-boundary-what-endorsement-means-neutral-facilitation-v.using-an-independent-analytical-platform; record_type: table-row -->
-- Context: Private Alternatives Alongside an Employer Plan — Part II — The legal boundary > What endorsement means > Neutral facilitation versus sponsorship
-- Neutral facilitation: Using an independent analytical platform
-- Evidence of sponsorship or endorsement: Employer selecting or negotiating the product
-
-#### Directing product questions to the provider
-<!-- record_id: product.alternative-companion.part-ii-the-legal-boundary-what-endorsement-means-neutral-facilitation-v.directing-product-questions-to-the-provider; record_type: table-row -->
-- Context: Private Alternatives Alongside an Employer Plan — Part II — The legal boundary > What endorsement means > Neutral facilitation versus sponsorship
-- Neutral facilitation: Directing product questions to the provider
-- Evidence of sponsorship or endorsement: Employer handling claims or disputes
-
-#### Receiving no product compensation
-<!-- record_id: product.alternative-companion.part-ii-the-legal-boundary-what-endorsement-means-neutral-facilitation-v.receiving-no-product-compensation; record_type: table-row -->
-- Context: Private Alternatives Alongside an Employer Plan — Part II — The legal boundary > What endorsement means > Neutral facilitation versus sponsorship
-- Neutral facilitation: Receiving no product compensation
-- Evidence of sponsorship or endorsement: Employer or administrator receiving commissions tied to enrollment
-
+Alternative Companion uses a factual link and leaves product recommendations, selection, terms, and claims outside the employer's role. That design reflects DOL's position on encouragement as well as the courts' focus on how the arrangement works in practice.
 
 ---
 
@@ -448,7 +328,7 @@ The DOL has described employer neutrality as the key reason a voluntary program 
 ### 1. Define the employer plan affirmatively
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part III — The CommonCare structure > How CommonCare separates the two environments > 1. Define the employer plan affirmatively
 
-The employer-sponsored plan is not defined by everything an employee can see in CommonCare. It is defined by its governing documents.
+Use the governing documents to identify which benefits the employer has adopted. Make those benefits clear to employees during enrollment.
 
 CommonCare identifies:
 
@@ -463,11 +343,11 @@ CommonCare identifies:
 ### 2. Label private options unmistakably
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part III — The CommonCare structure > How CommonCare separates the two environments > 2. Label private options unmistakably
 
-Independent options appear in a separate environment and are labeled consistently:
+A CommonCare enrollment page can show the employer's plan and include a link labeled **Explore independent options**. The link opens the marketplace, where each option identifies its provider and displays this disclosure.
 
 > **Not employer sponsored. Not part of the employer's group health plan. Voluntary individual purchase paid with post-tax funds.**
 
-The participant—not the employer—decides whether to examine or select them.
+Employees open the marketplace and choose whether to enroll. They accept the provider's terms through a separate election.
 
 <!-- record_id: product.alternative-companion.3-keep-the-employer-out-of-promotion-and-selection -->
 ### 3. Keep the employer out of promotion and selection
@@ -487,7 +367,7 @@ The employer does not:
 ### 4. Keep CommonCare economically neutral
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part III — The CommonCare structure > How CommonCare separates the two environments > 4. Keep CommonCare economically neutral
 
-CommonCare does not sell the options, act as their commissioned broker, or accept product commissions. A product does not move up the ranking because its provider pays CommonCare.
+CommonCare compares options without selling them, acting as their commissioned broker, or accepting product commissions.
 
 CommonCare applies the same disclosed analytical framework across employer-sponsored and independent options. It identifies differences in:
 
@@ -502,7 +382,7 @@ CommonCare applies the same disclosed analytical framework across employer-spons
 - Administrative friction; and
 - Fit with the participant's stated needs.
 
-The resulting analysis belongs to CommonCare—not to the employer. The employer neither approves nor adopts an independent option by making neutral analysis available.
+CommonCare prepares the analysis independently. Employers can give employees access to it without approving or adopting the options.
 
 <!-- record_id: product.alternative-companion.5-preserve-a-distinct-election-and-payment-record -->
 ### 5. Preserve a distinct election and payment record
@@ -516,7 +396,7 @@ When an employee selects an independent option:
 - The amount is not shown as an employer health-plan contribution;
 - Product service, claims, sharing, and disputes remain between the participant and provider.
 
-The administrative convenience of having payroll remit the employee's funds directly to the alternative provider is permitted as discussed below.
+For payroll remittance, follow the payment rules below.
 
 <!-- record_id: product.alternative-companion.why-group-and-list-bill-arrangements-are-the-wrong-shortcut -->
 ## Why group and list-bill arrangements are the wrong shortcut
@@ -567,9 +447,9 @@ CommonCare then administers the individual transaction separately:
 ## Post-tax payroll is permitted—but it must remain employee money
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part IV — Payroll and employer allowances > Post-tax payroll is permitted—but it must remain employee money
 
-The DOL safe harbor expressly contemplates collecting premiums through payroll deduction and remitting them to the insurer. That administrative convenience does not itself create sponsorship when the employer satisfies the remaining conditions.
+The insurance safe harbor permits an employer to collect premiums through payroll deduction and remit them to the insurer when the other conditions are met. For a non-insurance option, review the employer's full role and the rules for that arrangement before using payroll remittance.
 
-CommonCare payroll reports therefore classify each independent-option payment as:
+When payroll remittance is available, CommonCare records it this way.
 
 #### Funding source
 <!-- record_id: product.alternative-companion.part-iv-payroll-and-employer-allowances-post-tax-payroll-is-permitted-bu.funding-source; record_type: table-row -->
@@ -616,8 +496,6 @@ An employer may pay ordinary taxable wages. Once paid without a health-purchase 
 
 The employer cannot preserve nonsponsored treatment by calling a conditional health reimbursement “post-tax.” The Departments state that an arrangement reimbursing an individual-market policy is an employer health arrangement even when the payment is treated as post-tax. [DOL ACA FAQ Part XXII, Q1](https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/aca-part-22)
 
-The dividing line is therefore:
-
 #### Paid whether or not the employee buys the option
 <!-- record_id: product.alternative-companion.part-iv-payroll-and-employer-allowances-taxable-wages-are-different-from.paid-whether-or-not-the-employee-buys-the-option; record_type: table-row -->
 - Context: Private Alternatives Alongside an Employer Plan — Part IV — Payroll and employer allowances > Taxable wages are different from reimbursement
@@ -643,8 +521,6 @@ The dividing line is therefore:
 - Employer health reimbursement: Employer conditions access on health behavior
 
 
-> **Tax treatment does not cure sponsorship. Unconditional ownership does.**
-
 <!-- record_id: product.alternative-companion.use-it-or-lose-it-restrictions-belong-only-inside-the-employer-plan -->
 ## Use-it-or-lose-it restrictions belong only inside the employer plan
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part IV — Payroll and employer allowances > Use-it-or-lose-it restrictions belong only inside the employer plan
@@ -658,13 +534,11 @@ Accordingly:
 - A private-option purchase may be funded through post-tax employee payroll deduction; and
 - Any employer amount available for that purchase must first become unconditional taxable wages—not a reimbursement, match, credit, or use-it-or-lose-it allowance tied to the purchase.
 
-This preserves both sides of the structure: real employer benefits where the employer intends to sponsor them, and real private choice where it does not.
-
 <!-- record_id: product.alternative-companion.split-allowance-example -->
 ### Split-allowance example
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part IV — Payroll and employer allowances > Use-it-or-lose-it restrictions belong only inside the employer plan > Split-allowance example
 
-An employer may establish a `\$300` monthly compensation package as two legally distinct rights:
+An employer can divide a $300 monthly package into a $150 benefit credit and a $150 cashable credit.
 
 #### Restricted employer-benefit credit
 <!-- record_id: product.alternative-companion.part-iv-payroll-and-employer-allowances-use-it-or-lose-it-restrictions-b.restricted-employer-benefit-credit; record_type: table-row -->
@@ -773,29 +647,23 @@ Equal analysis does not mean pretending the products are identical.
 - Health share or CrowdHealth-style alternative: None under Alternative Companion
 
 
-CommonCare models the option that actually exists. It does not penalize a private arrangement merely because it is not insurance, and it does not award it imaginary guarantees it does not provide. It also does not treat insurance's legal form as proof that the participant will receive affordable, timely, network-accessible care.
+CommonCare uses each option's actual terms to estimate what the household could pay and what care it could access.
 
-<!-- record_id: product.alternative-companion.commoncare-shop-bias -->
-### CommonCare shop bias
-> Retrieval context: Private Alternatives Alongside an Employer Plan — Part V — Decision quality > How options are evaluated > CommonCare shop bias
-
-CommonCare deliberately corrects for the ordinary shopping bias that treats insurance as the safe default and every alternative as a deviation requiring special defense.
+<!-- record_id: product.alternative-companion.comparing-household-costs -->
+### Comparing household costs
+> Retrieval context: Private Alternatives Alongside an Employer Plan — Part V — Decision quality > How options are evaluated > Comparing household costs
 
 The comparison begins with total expected cost. CommonCare simulates realistic medical bills for each household member across many possible years and applies each option's actual rules. For insurance, that includes premium, deductible, copays, coinsurance, covered services, maximum out-of-pocket rules, and network assumptions. For a private alternative, it includes membership cost, the member's initial responsibility, eligibility rules, sharing limits, direct-pay expenses, and any expenses the agreement leaves with the member.
 
 Premium must remain visible as risk. It is a certain expense, not the absence of expense. A participant should not be told that a `\$20,000` premium is “safe” while a possible `\$10,000` unshared bill is uniquely dangerous without comparing probability, total exposure, liquidity, and the value actually received.
 
-The simulation does not settle qualitative questions. Provider access, payment timing, service quality, member support, organizational reserves, discretion, and the participant's ability to navigate cash-pay care still matter. CommonCare exposes those issues rather than burying them beneath a metal level or actuarial-value label.
+Alongside the estimates, CommonCare reports provider access, payment timing, service quality, member support, reserves, and any discretion over payment. Households can weigh those factors against their ability to manage cash-pay care.
 
 <!-- record_id: product.alternative-companion.health-sharing-in-particular -->
 ## Health sharing in particular
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part V — Decision quality > Health sharing in particular
 
 Health sharing commonly offers lower fixed costs and more understandable rules for people who fit its eligibility model. Many programs exclude active pre-existing conditions for a period, phase in sharing over time, impose lifestyle or membership standards, lack a contractual insurance guarantee, and depend on available member contributions.
-
-Those are genuine tradeoffs—not a reason to pretend the arrangement has no value.
-
-Insurance carries different risks: expensive fixed premiums, opaque adjudication, network restrictions, prior authorization, and claims that can be delayed or denied. Those are not theoretical footnotes. They are part of the product's actual performance. “Not insurance” identifies the legal structure; it does not decide comparative value.
 
 <!-- record_id: product.alternative-companion.crowdfunded-models -->
 ### Crowdfunded models
@@ -881,7 +749,7 @@ For every independent option shown or administered, CommonCare should retain:
 > Retrieval context: Private Alternatives Alongside an Employer Plan — Part VI — Operational specification > Employer implementation checklist
 
 - [ ] Identify every employer-sponsored option in formal plan documents.
-- [ ] Place independent options in a clearly separate participant environment.
+- [ ] Identify the provider and route employees to a distinct marketplace election for independent options.
 - [ ] Use consistent “not employer sponsored” language.
 - [ ] Prohibit employer recommendations and product-specific promotion.
 - [ ] Confirm that participation is completely voluntary.
