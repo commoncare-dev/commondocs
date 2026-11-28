@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:commondocs:employer-allowance:assessment-result:1",
+  "title": "CommonDocs employer allowance assessment result",
+  "description": "Scoped findings with traceable evidence and exact rational US-cent amounts.",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "rulesVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "inputDigest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "revisionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "planId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subjectRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "asOf": {
+      "type": "string",
+      "format": "date"
+    },
+    "purpose": {
+      "enum": [
+        "design",
+        "group_36b_employee",
+        "group_36b_related",
+        "group_4980h",
+        "ichra_36b",
+        "ichra_4980h",
+        "reporting_group",
+        "reporting_ichra"
+      ]
+    },
+    "status": {
+      "enum": [
+        "pass",
+        "fail",
+        "missing_evidence",
+        "review_required",
+        "not_applicable"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ruleId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "fail",
+              "missing_evidence",
+              "review_required",
+              "not_applicable"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "factPaths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "unresolvedFactPaths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "evidenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "authorities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "pinpoint": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "url",
+                "pinpoint"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "ruleId",
+          "scope",
+          "status",
+          "message",
+          "factPaths",
+          "unresolvedFactPaths",
+          "evidenceIds",
+          "authorities"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "affordability": {
+      "type": "object",
+      "properties": {
+        "baselineCents": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/exactCents"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ordinaryOperativeCents": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/exactCents"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ichraFlexScenarioCents": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/exactCents"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "healthFlexCents": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/exactCents"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "waiverCents": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/exactCents"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "otherGroupNetAdjustmentCents": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/exactCents"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "monthlyThresholdCents": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/exactCents"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ordinaryThresholdResult": {
+          "enum": [
+            "affordable",
+            "above_threshold",
+            "undetermined",
+            "not_applicable"
+          ]
+        },
+        "status": {
+          "enum": [
+            "determined",
+            "undetermined",
+            "review_required",
+            "not_applicable"
+          ]
+        },
+        "blockingFindings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ruleId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scope": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "ruleId",
+              "scope"
+            ],
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "baselineCents",
+        "ordinaryOperativeCents",
+        "ichraFlexScenarioCents",
+        "healthFlexCents",
+        "waiverCents",
+        "otherGroupNetAdjustmentCents",
+        "monthlyThresholdCents",
+        "ordinaryThresholdResult",
+        "status",
+        "blockingFindings"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "rulesVersion",
+    "inputDigest",
+    "revisionId",
+    "planId",
+    "subjectRef",
+    "asOf",
+    "purpose",
+    "status",
+    "findings",
+    "affordability"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "exactCents": {
+      "type": "object",
+      "properties": {
+        "numerator": {
+          "type": "string",
+          "pattern": "^-?[0-9]+$"
+        },
+        "denominator": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

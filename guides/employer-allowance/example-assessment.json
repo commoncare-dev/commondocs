@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "example-2027-v1",
+  "planId": "example-plan",
+  "subjectRef": "example-employee",
+  "objective": "Reach a $220 employee premium while preserving flexible compensation.",
+  "asOf": "2027-06-01",
+  "planYearStart": "2027-01-01",
+  "planYearEnd": "2027-12-31",
+  "purpose": "group_36b_employee",
+  "evidence": {
+    "terms": {
+      "kind": "adopted_terms",
+      "locator": "synthetic:terms",
+      "version": "1",
+      "effectiveFrom": "2027-01-01",
+      "effectiveThrough": "2027-12-31",
+      "verification": "verified",
+      "verifiedBy": "fixture-reviewer"
+    },
+    "tests": {
+      "kind": "test_result",
+      "locator": "synthetic:tests",
+      "version": "1",
+      "effectiveFrom": "2027-01-01",
+      "effectiveThrough": "2027-12-31",
+      "verification": "verified",
+      "verifiedBy": "fixture-reviewer"
+    },
+    "offer": {
+      "kind": "offer",
+      "locator": "synthetic:offer",
+      "version": "1",
+      "effectiveFrom": "2027-01-01",
+      "effectiveThrough": "2027-12-31",
+      "verification": "verified",
+      "verifiedBy": "fixture-reviewer"
+    },
+    "threshold": {
+      "kind": "review_decision",
+      "locator": "synthetic:threshold",
+      "version": "1",
+      "effectiveFrom": "2027-01-01",
+      "effectiveThrough": "2027-12-31",
+      "verification": "verified",
+      "verifiedBy": "fixture-reviewer"
+    }
+  },
+  "termsReconciled": {
+    "value": true,
+    "evidenceIds": [
+      "terms"
+    ]
+  },
+  "tranches": [
+    {
+      "id": "protected-health",
+      "kind": "health_flex",
+      "vehicle": "cafeteria",
+      "funding": {
+        "value": {
+          "maximumCents": 5000,
+          "period": "month"
+        },
+        "evidenceIds": [
+          "terms"
+        ]
+      },
+      "allowedUses": {
+        "value": {
+          "unrestricted": false,
+          "categories": [
+            "medical-care"
+          ],
+          "coverageIds": [
+            "employee-medical"
+          ]
+        },
+        "evidenceIds": [
+          "terms"
+        ]
+      },
+      "healthFlex": {
+        "currentYearSection125": {
+          "value": true,
+          "evidenceIds": [
+            "terms"
+          ]
+        },
+        "taxableElectionAvailable": {
+          "value": false,
+          "evidenceIds": [
+            "terms"
+          ]
+        },
+        "canPayApplicableMec": {
+          "value": true,
+          "evidenceIds": [
+            "terms"
+          ]
+        },
+        "medicalCareOnly213": {
+          "value": true,
+          "evidenceIds": [
+            "terms"
+          ]
+        },
+        "separateAndNotInBaseline": {
+          "value": true,
+          "evidenceIds": [
+            "terms"
+          ]
+        },
+        "monthlyAvailableCents": {
+          "value": 5000,
+          "evidenceIds": [
+            "terms"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cashable-flex",
+      "kind": "general_flex",
+      "vehicle": "cafeteria",
+      "funding": {
+        "value": {
+          "maximumCents": 10000,
+          "period": "month"
+        },
+        "evidenceIds": [
+          "terms"
+        ]
+      },
+      "cashPolicy": {
+        "value": {
+          "right": "elective",
+          "limit": {
+            "unit": "cents",
+            "value": 10000
+          },
+          "disposition": "payroll"
+        },
+        "evidenceIds": [
+          "terms"
+        ]
+      },
+      "healthFlex": {
+        "taxableElectionAvailable": {
+          "value": true,
+          "evidenceIds": [
+            "terms"
+          ]
+        }
+      }
+    }
+  ],
+  "cafeteria": {
+    "writtenPlan": {
+      "value": true,
+      "evidenceIds": [
+        "terms"
+      ]
+    },
+    "eligibilityTestPass": {
+      "value": true,
+      "evidenceIds": [
+        "tests"
+      ]
+    },
+    "contributionsTestPass": {
+      "value": true,
+      "evidenceIds": [
+        "tests"
+      ]
+    },
+    "keyQualifiedBenefitCents": {
+      "value": 150000,
+      "evidenceIds": [
+        "tests"
+      ]
+    },
+    "totalQualifiedBenefitCents": {
+      "value": 1000000,
+      "evidenceIds": [
+        "tests"
+      ]
+    }
+  },
+  "affordability": {
+    "methodAndOfferVerified": {
+      "value": true,
+      "evidenceIds": [
+        "offer"
+      ]
+    },
+    "allAdjustmentsIdentified": {
+      "value": true,
+      "evidenceIds": [
+        "offer"
+      ]
+    },
+    "netGroupPremiumCents": {
+      "value": 27000,
+      "evidenceIds": [
+        "offer"
+      ]
+    },
+    "otherGroupNetAdjustmentCents": {
+      "value": 0,
+      "evidenceIds": [
+        "offer"
+      ]
+    },
+    "monthlyThresholdCents": {
+      "value": 22000,
+      "evidenceIds": [
+        "threshold"
+      ]
+    }
+  }
+}

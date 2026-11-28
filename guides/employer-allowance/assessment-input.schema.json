@@ -1,0 +1,1056 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:commondocs:employer-allowance:assessment-input:1",
+  "title": "CommonDocs employer allowance assessment input",
+  "description": "One allowance revision, subject, date and assessment purpose. Money is in US cents. Verified facts cite effective evidence.",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "revisionId": {
+      "$ref": "#/$defs/id"
+    },
+    "planId": {
+      "$ref": "#/$defs/id"
+    },
+    "subjectRef": {
+      "$ref": "#/$defs/id"
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "asOf": {
+      "type": "string",
+      "format": "date"
+    },
+    "planYearStart": {
+      "type": "string",
+      "format": "date"
+    },
+    "planYearEnd": {
+      "type": "string",
+      "format": "date"
+    },
+    "purpose": {
+      "enum": [
+        "design",
+        "group_36b_employee",
+        "group_36b_related",
+        "group_4980h",
+        "ichra_36b",
+        "ichra_4980h",
+        "reporting_group",
+        "reporting_ichra"
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/$defs/id"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "termsReconciled": {
+      "$ref": "#/$defs/booleanFact"
+    },
+    "tranches": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tranche"
+      },
+      "minItems": 1
+    },
+    "cafeteria": {
+      "type": "object",
+      "properties": {
+        "writtenPlan": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "eligibilityTestPass": {
+          "description": "Verified Section 125 plan-year eligibility determination, including any applicable eligibility-specific relief.",
+          "$ref": "#/$defs/booleanFact"
+        },
+        "contributionsTestPass": {
+          "description": "Verified Section 125 plan-year contributions-and-benefits determination, covering availability and applicable utilization or test-specific relief.",
+          "$ref": "#/$defs/booleanFact"
+        },
+        "nondiscriminationExceptionVerified": {
+          "description": "Set true only with verified relief that covers all three Section 125 nondiscrimination checks for the plan year. The checker skips all three when true.",
+          "$ref": "#/$defs/booleanFact"
+        },
+        "keyQualifiedBenefitCents": {
+          "description": "Plan-year statutory qualified benefits provided to key employees under the cafeteria plan, across applicable benefits.",
+          "$ref": "#/$defs/centsFact"
+        },
+        "totalQualifiedBenefitCents": {
+          "description": "Plan-year statutory qualified benefits provided to all employees under the cafeteria plan, using the same scope as the key-employee numerator.",
+          "$ref": "#/$defs/centsFact"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "ichra": {
+      "type": "object",
+      "properties": {
+        "regulatoryClassVerified": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "noProhibitedDualOffer": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "mixedOffer": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "sizeRuleApplies": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "sameTermsVerified": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "usesAgeVariation": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "coverageIntegration": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "annualSubstantiation": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "ongoingSubstantiation": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "optOutAndTermination": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "notice": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "additionalTestsReviewed": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "oldestComparableMaximumCents": {
+          "$ref": "#/$defs/centsFact"
+        },
+        "youngestComparableMaximumCents": {
+          "$ref": "#/$defs/centsFact"
+        },
+        "expectedEmployerHeadcount": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/count"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "evidenceIds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "value",
+            "evidenceIds"
+          ],
+          "additionalProperties": false
+        },
+        "classOfferHeadcount": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/count"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "evidenceIds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "value",
+            "evidenceIds"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "healthFsa": {
+      "type": "object",
+      "properties": {
+        "claimsExceptedStatus": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "otherGroupCoverageAvailable": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "salaryReductionCents": {
+          "$ref": "#/$defs/centsFact",
+          "description": "Annual salary reduction before the separately supplied cashable credits elected into the FSA."
+        },
+        "cashableCreditElectedCents": {
+          "$ref": "#/$defs/centsFact"
+        },
+        "annualMaximumBenefitCents": {
+          "$ref": "#/$defs/centsFact"
+        },
+        "annualSalaryReductionLimitCents": {
+          "$ref": "#/$defs/centsFact"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "privateOption": {
+      "type": "object",
+      "properties": {
+        "noEmployerFunding": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "voluntary": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "neutralLimitedFunctions": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "noDisallowedConsideration": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "nonInsuranceSponsorshipReviewed": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "kind": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "insured_safe_harbor",
+                    "noninsurance"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "evidenceIds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "value",
+            "evidenceIds"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "affordability": {
+      "type": "object",
+      "properties": {
+        "methodAndOfferVerified": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "allAdjustmentsIdentified": {
+          "$ref": "#/$defs/booleanFact"
+        },
+        "netGroupPremiumCents": {
+          "$ref": "#/$defs/centsFact",
+          "description": "Monthly employee premium net of direct funding and excluding the separate flex and waiver adjustments assessed here."
+        },
+        "lowestCostSilverCents": {
+          "$ref": "#/$defs/centsFact"
+        },
+        "newHraAmountCents": {
+          "$ref": "#/$defs/centsFact",
+          "description": "Newly available self-only dollars or the coverage-independent maximum, as applicable. Exclude carryover and amounts that fail the timeliness rule."
+        },
+        "monthlyThresholdCents": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/cents"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "numerator": {
+                          "type": "string",
+                          "pattern": "^[0-9]+$"
+                        },
+                        "denominator": {
+                          "type": "string",
+                          "pattern": "^[1-9][0-9]*$"
+                        }
+                      },
+                      "required": [
+                        "numerator",
+                        "denominator"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "evidenceIds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "value",
+            "evidenceIds"
+          ],
+          "additionalProperties": false
+        },
+        "monthsAvailable": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 12
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "evidenceIds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "value",
+            "evidenceIds"
+          ],
+          "additionalProperties": false
+        },
+        "otherGroupNetAdjustmentCents": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "evidenceIds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "value",
+            "evidenceIds"
+          ],
+          "additionalProperties": false,
+          "description": "Signed monthly total of remaining verified adjustments. Zero states there are none. Excludes health flex and waiver items computed by the checker."
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "revisionId",
+    "planId",
+    "subjectRef",
+    "objective",
+    "asOf",
+    "planYearStart",
+    "planYearEnd",
+    "purpose",
+    "evidence",
+    "tranches"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,119}$"
+    },
+    "cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "adopted_terms",
+            "offer",
+            "schedule",
+            "enrollment",
+            "payroll",
+            "census",
+            "benchmark",
+            "test_result",
+            "authority",
+            "review_decision"
+          ]
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effectiveFrom": {
+          "type": "string",
+          "format": "date"
+        },
+        "effectiveThrough": {
+          "type": "string",
+          "format": "date"
+        },
+        "verification": {
+          "enum": [
+            "verified",
+            "unverified",
+            "conflicted"
+          ]
+        },
+        "verifiedBy": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "kind",
+        "locator",
+        "version",
+        "effectiveFrom",
+        "verification"
+      ],
+      "additionalProperties": false,
+      "if": {
+        "properties": {
+          "verification": {
+            "const": "verified"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "verifiedBy"
+        ]
+      }
+    },
+    "tranche": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "health_flex",
+            "general_flex",
+            "direct_benefit",
+            "unrestricted_wages",
+            "waiver_payment"
+          ]
+        },
+        "vehicle": {
+          "enum": [
+            "cafeteria",
+            "group_direct",
+            "ichra",
+            "other_hra",
+            "health_fsa",
+            "hsa",
+            "payroll",
+            "other"
+          ]
+        },
+        "scope": {
+          "type": "object",
+          "properties": {
+            "benefitClassId": {
+              "$ref": "#/$defs/id"
+            },
+            "coverageId": {
+              "$ref": "#/$defs/id"
+            },
+            "enrollmentEventId": {
+              "$ref": "#/$defs/id"
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "funding": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "maximumCents": {
+                      "$ref": "#/$defs/cents"
+                    },
+                    "period": {
+                      "enum": [
+                        "month",
+                        "plan_year",
+                        "pay_period"
+                      ]
+                    },
+                    "scheduleEvidenceId": {
+                      "$ref": "#/$defs/id"
+                    }
+                  },
+                  "required": [
+                    "maximumCents",
+                    "period"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "evidenceIds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "value",
+            "evidenceIds"
+          ],
+          "additionalProperties": false
+        },
+        "allowedUses": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "categories": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/$defs/id"
+                      },
+                      "uniqueItems": true
+                    },
+                    "coverageIds": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/$defs/id"
+                      },
+                      "uniqueItems": true
+                    },
+                    "unrestricted": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "categories",
+                    "coverageIds",
+                    "unrestricted"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "evidenceIds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "value",
+            "evidenceIds"
+          ],
+          "additionalProperties": false
+        },
+        "healthFlex": {
+          "type": "object",
+          "properties": {
+            "currentYearSection125": {
+              "$ref": "#/$defs/booleanFact"
+            },
+            "taxableElectionAvailable": {
+              "$ref": "#/$defs/booleanFact"
+            },
+            "canPayApplicableMec": {
+              "$ref": "#/$defs/booleanFact"
+            },
+            "medicalCareOnly213": {
+              "$ref": "#/$defs/booleanFact"
+            },
+            "separateAndNotInBaseline": {
+              "$ref": "#/$defs/booleanFact"
+            },
+            "monthlyAvailableCents": {
+              "$ref": "#/$defs/centsFact"
+            },
+            "eligibleOffExchangeMecUse": {
+              "$ref": "#/$defs/booleanFact",
+              "description": "For a separate ICHRA flex scenario, verify the amount can pay eligible unreimbursed off-Exchange MEC premium."
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "cashPolicy": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "right": {
+                      "enum": [
+                        "none",
+                        "elective",
+                        "conditional"
+                      ]
+                    },
+                    "limit": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "unit": {
+                              "enum": [
+                                "cents",
+                                "basis_points"
+                              ]
+                            },
+                            "value": {
+                              "$ref": "#/$defs/cents"
+                            }
+                          },
+                          "required": [
+                            "unit",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "disposition": {
+                      "enum": [
+                        "payroll",
+                        "forfeit",
+                        "retain_as_permitted"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "right",
+                    "limit",
+                    "disposition"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "evidenceIds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "value",
+            "evidenceIds"
+          ],
+          "additionalProperties": false
+        },
+        "cashGate": {
+          "type": "object",
+          "properties": {
+            "minimumMonthlyCents": {
+              "$ref": "#/$defs/centsFact"
+            },
+            "eligibilityScope": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "scope": {
+                          "enum": [
+                            "any_qualified_benefit",
+                            "specified_coverages"
+                          ]
+                        },
+                        "coverageIds": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/$defs/id"
+                          },
+                          "uniqueItems": true
+                        }
+                      },
+                      "required": [
+                        "scope",
+                        "coverageIds"
+                      ],
+                      "additionalProperties": false,
+                      "allOf": [
+                        {
+                          "if": {
+                            "properties": {
+                              "scope": {
+                                "const": "specified_coverages"
+                              }
+                            }
+                          },
+                          "then": {
+                            "properties": {
+                              "coverageIds": {
+                                "minItems": 1
+                              }
+                            }
+                          },
+                          "else": {
+                            "properties": {
+                              "coverageIds": {
+                                "maxItems": 0
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "evidenceIds": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/id"
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "value",
+                "evidenceIds"
+              ],
+              "additionalProperties": false
+            },
+            "elections": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "anyOf": [
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "coverageId": {
+                            "$ref": "#/$defs/id"
+                          },
+                          "qualifies": {
+                            "type": "boolean"
+                          },
+                          "monthlyCents": {
+                            "$ref": "#/$defs/cents"
+                          }
+                        },
+                        "required": [
+                          "coverageId",
+                          "qualifies",
+                          "monthlyCents"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "uniqueItems": true
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "evidenceIds": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/id"
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "value",
+                "evidenceIds"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "waiver": {
+          "type": "object",
+          "properties": {
+            "monthlyPaymentCents": {
+              "$ref": "#/$defs/centsFact"
+            },
+            "approvedMonthlyAdditionCents": {
+              "$ref": "#/$defs/centsFact"
+            },
+            "adoptedOn": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "evidenceIds": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/id"
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "value",
+                "evidenceIds"
+              ],
+              "additionalProperties": false
+            },
+            "kind": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "anyOf": [
+                    {
+                      "enum": [
+                        "unconditional",
+                        "conditional"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "evidenceIds": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/id"
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "value",
+                "evidenceIds"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "individualPremium": {
+          "type": "object",
+          "properties": {
+            "section125ExchangePurchase": {
+              "$ref": "#/$defs/booleanFact"
+            },
+            "statutoryExchangeExceptionVerified": {
+              "$ref": "#/$defs/booleanFact"
+            },
+            "employerFundingOrConditionedPayment": {
+              "$ref": "#/$defs/booleanFact"
+            },
+            "compliantVehicleVerified": {
+              "$ref": "#/$defs/booleanFact"
+            },
+            "offExchangeIChraSalaryReduction": {
+              "$ref": "#/$defs/booleanFact"
+            },
+            "unreimbursedPremiumOnly": {
+              "$ref": "#/$defs/booleanFact"
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "unrestrictedWages": {
+          "type": "object",
+          "properties": {
+            "taxablePayroll": {
+              "$ref": "#/$defs/booleanFact"
+            },
+            "employeeControlsSpending": {
+              "$ref": "#/$defs/booleanFact"
+            },
+            "noPurchaseOrCoverageCondition": {
+              "$ref": "#/$defs/booleanFact"
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "vehicleReviewPassed": {
+          "$ref": "#/$defs/booleanFact"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "vehicle"
+      ],
+      "additionalProperties": false
+    },
+    "booleanFact": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidenceIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "value",
+        "evidenceIds"
+      ],
+      "additionalProperties": false
+    },
+    "centsFact": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/cents"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidenceIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "value",
+        "evidenceIds"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
